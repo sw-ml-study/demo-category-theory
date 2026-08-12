@@ -117,6 +117,26 @@ breaks compatibility immediately: flattened cell `0` becomes `3` versus `4`.
 Sources: [CLI lesson](demos/09-natural-transformations/transpose.mlpl),
 [web lesson](demos/web/natural_transformation.mlpl).
 
+### 10. Homomorphisms form a category
+
+![Z4 connected to itself by identity and then to Z2 by parity](assets/previews/10-homomorphisms.svg)
+
+What to notice: identity preserves modular addition, parity preserves it, and
+their composition is parity again. The preservation checker is copied and
+attributed from the sibling algebra demo; this repository supplies the
+categorical reading. Sources: [CLI lesson](demos/10-homomorphisms/compose.mlpl),
+[web lesson](demos/web/homomorphisms.mlpl).
+
+### 11. Associativity buys parallel execution
+
+![A balanced reduction tree combining two independent sums into 15](assets/previews/11-lawful-reduction.svg)
+
+What to notice: `(8+4)` and `(2+1)` can run independently before combining,
+because reassociation keeps the answer `15`. Subtraction reaches `1` serially
+but `3` when regrouped, showing why the law is operationally necessary.
+Sources: [CLI lesson](demos/11-lawful-reduction/regroup.mlpl),
+[web lesson](demos/web/lawful_reduction.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

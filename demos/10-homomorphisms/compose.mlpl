@@ -1,0 +1,19 @@
+# Lesson 10 -- homomorphisms form a category.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/category.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 10 -- STRUCTURE-PRESERVING MAPS COMPOSE", intro: "Use the sibling algebra checker locally, then verify identity and composition turn groups-with-homomorphisms into a category."})
+def u:add4(x, y) { mod(x + y, 4) }
+def u:add2(x, y) { mod(x + y, 2) }
+z4 = table(:u:add4, range(4), range(4))
+z2 = table(:u:add2, range(2), range(2))
+id4 = u:identity_map(4)
+parity = [0, 1, 0, 1]
+composed = u:compose_maps(id4, parity)
+disp([id4, parity, composed])
+wrote = write_text("out/10-homomorphisms.svg", u:hom_diagram())
+u:epilog_open()
+u:explain("out/10-homomorphisms.svg", "Z4 and Z2 are objects. Identity and parity are arrows; following both produces parity again and still preserves addition.")
+u:takeaway("The algebra checker supplies preservation; categorical identity and composition supply the category.")
+if u:is_homomorphism(id4, z4, z4) * u:is_homomorphism(parity, z4, z2) * u:is_homomorphism(composed, z4, z2) * is_ok(wrote) { ok("homomorphisms form a category") } else { err("homomorphism composition failed") }

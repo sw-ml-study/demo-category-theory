@@ -89,3 +89,21 @@ def u:naturality_counterexample(f, component, m) {
   lower = each(f, call(component, [m]))
   u:array_map_counterexample(upper, lower)
 }
+
+# Homomorphism checker copied and attributed from
+# ../demo-abstract-algebra/lib/algebra.mlpl (verified 2026-08-12). Kept local so
+# standalone demo repositories have no runtime cross-repository dependency.
+def u:apply_names(t, p) { reshape(gather_rows(reshape(p, [tally(p), 1]), flatten(t)), shape(t)) }
+def u:gather2(t, idx) { transpose(gather_rows(transpose(gather_rows(t, idx)), idx)) }
+def u:hom_lhs(f, s) { u:apply_names(s, f) }
+def u:hom_rhs(f, t) { u:gather2(t, f) }
+def u:is_homomorphism(f, s, t) { equal(u:hom_lhs(f, s), u:hom_rhs(f, t)) }
+def u:compose_maps(f, g) { flatten(gather_rows(reshape(g, [tally(g), 1]), f)) }
+def u:identity_map(n) { range(n) }
+
+# Four-leaf reduction trees make reassociation visible without teaching the
+# algebra ladder again. Equality licenses regrouping; inequality forbids it.
+def u:sum_left4(xs) { ((take(xs, 0, 0) + take(xs, 0, 1)) + take(xs, 0, 2)) + take(xs, 0, 3) }
+def u:sum_tree4(xs) { (take(xs, 0, 0) + take(xs, 0, 1)) + (take(xs, 0, 2) + take(xs, 0, 3)) }
+def u:subtract_left4(xs) { ((take(xs, 0, 0) - take(xs, 0, 1)) - take(xs, 0, 2)) - take(xs, 0, 3) }
+def u:subtract_tree4(xs) { (take(xs, 0, 0) - take(xs, 0, 1)) - (take(xs, 0, 2) - take(xs, 0, 3)) }

@@ -1,0 +1,19 @@
+# Lesson 11 -- associativity licenses reduction regrouping.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/category.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 11 -- A LAW BUYS PARALLEL EXECUTION", intro: "Compare a serial four-value reduction with a balanced tree. Associative addition agrees; subtraction warns what happens without the law."})
+def u:add(x, y) { x + y }
+def u:subtract(x, y) { x - y }
+xs = [8, 4, 2, 1]
+sum_serial = u:sum_left4(xs)
+sum_tree = u:sum_tree4(xs)
+sub_serial = u:subtract_left4(xs)
+sub_tree = u:subtract_tree4(xs)
+disp([sum_serial, sum_tree, sub_serial, sub_tree])
+wrote = write_text("out/11-lawful-reduction.svg", u:reduction_diagram())
+u:epilog_open()
+u:explain("out/11-lawful-reduction.svg", "The serial sum and balanced sum both reach 15, so the two lower branches may run together. Subtraction reaches 1 versus 3 and cannot be regrouped safely.")
+u:takeaway("Associativity is operational permission: an implementation may rebalance and parallelize a lawful reduction without changing its answer.")
+if eq(sum_serial, 15) * eq(sum_tree, 15) * (1 - eq(sub_serial, sub_tree)) * is_ok(wrote) { ok("lawful regrouping verified") } else { err("reduction regrouping failed") }

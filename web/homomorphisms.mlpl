@@ -1,0 +1,21 @@
+# Web Lesson 10 -- homomorphisms compose.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Identity followed by parity is parity, still preserving modular addition.
+# ***************************************************************************
+;
+id4 = range(4)  # identity homomorphism on Z4
+parity = [0, 1, 0, 1]  # homomorphism Z4 to Z2
+disp([id4, parity])  # the two composable arrows
+# ***************************************************************************
+# * THE VISUAL
+# * Follow identity, then parity: the composed arrow remains structure-preserving.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 760 250\" width=\"760\" height=\"250\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(410px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(410px)}}</style><rect width=\"760\" height=\"250\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"45\" y=\"80\" width=\"150\" height=\"80\" rx=\"14\"/><rect class=\"obj\" x=\"305\" y=\"80\" width=\"150\" height=\"80\" rx=\"14\"/><rect class=\"obj\" x=\"565\" y=\"80\" width=\"150\" height=\"80\" rx=\"14\"/><line class=\"arrow\" x1=\"195\" y1=\"120\" x2=\"305\" y2=\"120\"/><line class=\"arrow\" x1=\"455\" y1=\"120\" x2=\"565\" y2=\"120\"/><text x=\"120\" y=\"127\" text-anchor=\"middle\">Z4</text><text x=\"380\" y=\"127\" text-anchor=\"middle\">Z4</text><text x=\"640\" y=\"127\" text-anchor=\"middle\">Z2</text><text x=\"250\" y=\"105\">id</text><text x=\"500\" y=\"105\">parity</text><circle class=\"token\" cx=\"180\" cy=\"145\" r=\"9\"/></svg>"  # categorical composition
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * The local MLPL checker verifies preservation; the diagram shows composition.
+# * THE POINT -- identity and composition make homomorphisms into morphisms.
+# ***************************************************************************

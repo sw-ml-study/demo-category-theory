@@ -106,6 +106,12 @@ commutes with cellwise `each`. Fixed functions and arrays are enough to teach
 and test the naturality equation. Quantifying generically over arbitrary
 functors remains a separate candidate, not a blocker for this lesson.
 
+Step 7 verifies that the sibling's array-based homomorphism checker copies
+cleanly into this standalone repository and that fixed four-leaf reduction
+trees are expressible with function references. No new language capability is
+required for identity/composition of homomorphisms or for demonstrating why
+associativity permits regrouping and parallel evaluation.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

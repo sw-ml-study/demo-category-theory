@@ -22,3 +22,7 @@ array-functor-web	demos/web/array_functor.mlpl	web	functor-identity-composition	
 shape-preservation-web	demos/web/shape_preservation.mlpl	web	structure-preservation	0	0	svg	each,transpose	runnable
 natural-transformation	demos/09-natural-transformations/transpose.mlpl	09-natural-transformations	transpose-naturality	0	0	ascii,svg	each,transpose	runnable
 natural-transformation-web	demos/web/natural_transformation.mlpl	web	transpose-naturality	0	0	svg	each,transpose	runnable
+homomorphisms	demos/10-homomorphisms/compose.mlpl	10-homomorphisms	homomorphism-category	0	0	ascii,svg	current	runnable
+lawful-reduction	demos/11-lawful-reduction/regroup.mlpl	11-lawful-reduction	associative-parallelism	0	0	ascii,svg	current	runnable
+homomorphisms-web	demos/web/homomorphisms.mlpl	web	homomorphism-category	0	0	svg	current	runnable
+lawful-reduction-web	demos/web/lawful_reduction.mlpl	web	associative-parallelism	0	0	svg	current	runnable

@@ -1,6 +1,6 @@
 number = 7
 slug = "homomorphisms-and-reduction"
-status = "pending"
+status = "in-progress"
 description = "Implement Lessons 10-11. Copy and attribute the stable homomorphism fixture/c..."
 role = "production"
 context_files = []

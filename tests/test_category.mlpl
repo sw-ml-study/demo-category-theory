@@ -12,6 +12,10 @@ def u:negate(x) { 0 - x }
 def u:inc_double(x) { 2 * (x + 1) }
 def u:transpose_component(m) { transpose(m) }
 def u:broken_component(m) { each(:u:inc, transpose(m)) }
+def u:add4(x, y) { mod(x + y, 4) }
+def u:add2(x, y) { mod(x + y, 2) }
+def u:sum2(x, y) { x + y }
+def u:subtract2(x, y) { x - y }
 
 @test {name: "identity and application", tags: ["laws"]}
 def u:test_identity() { "Identity leaves finite inputs unchanged.";
@@ -97,6 +101,28 @@ def u:test_naturality() { "Mapping then transposing equals transposing then mapp
   u:assert_eq(bad.expected, 3, "wrong upper witness")?;
   u:assert_eq(bad.actual, 4, "wrong lower witness")?;
   ok({test: "naturality", cases: 6})
+}
+
+@test {name: "homomorphisms close under identity and composition", tags: ["homomorphisms"]}
+def u:test_hom_category() { "Identity and composed structure-preserving maps remain homomorphisms.";
+  z4 = table(:u:add4, range(4), range(4));
+  z2 = table(:u:add2, range(2), range(2));
+  parity = [0, 1, 0, 1];
+  id4 = u:identity_map(4);
+  u:assert_eq(u:is_homomorphism(id4, z4, z4), 1, "identity not homomorphic")?;
+  u:assert_eq(u:is_homomorphism(parity, z4, z2), 1, "parity not homomorphic")?;
+  composed = u:compose_maps(id4, parity);
+  u:assert_eq(equal(composed, parity), 1, "identity composition changed map")?;
+  u:assert_eq(u:is_homomorphism(composed, z4, z2), 1, "composition not homomorphic")?;
+  ok({test: "hom-category", cases: 4})
+}
+
+@test {name: "associativity licenses reduction regrouping", tags: ["reductions"]}
+def u:test_reduction_trees() { "Sum trees agree while subtraction trees expose the danger.";
+  xs = [8, 4, 2, 1];
+  u:assert_eq(u:sum_left4(xs), u:sum_tree4(xs), "sum regrouping")?;
+  u:assert_true(1 - eq(u:subtract_left4(xs), u:subtract_tree4(xs)), "subtraction regrouping unexpectedly equal")?;
+  ok({test: "reduction-trees", cases: 2})
 }
 
 u:run_registered_tests()
