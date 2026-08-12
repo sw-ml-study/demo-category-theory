@@ -1,6 +1,6 @@
 number = 1
 slug = "foundation-capability-survey"
-status = "pending"
+status = "in-progress"
 description = "Build the repository foundation and perform a measured sw-MLPL capability sur..."
 role = "production"
 context_files = []

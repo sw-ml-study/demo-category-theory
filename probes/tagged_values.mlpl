@@ -1,0 +1,14 @@
+# Probe: records as tagged alternatives in sw-MLPL 0.20.0.
+# visual: ascii
+# loops: 0
+
+def u:left(x) { {tag: "left", value: x} }
+def u:right(x) { {tag: "right", value: x} }
+def u:fold(v, on_left, on_right) {
+  if equal(v.tag, "left") { call(on_left, [v.value]) } else { call(on_right, [v.value]) }
+}
+def u:inc(x) { x + 1 }
+def u:double(x) { x * 2 }
+a = u:fold(u:left(3), :u:inc, :u:double)
+b = u:fold(u:right(3), :u:inc, :u:double)
+ok({probe: "tagged-values", expected: [4, 6], left: a, right: b})

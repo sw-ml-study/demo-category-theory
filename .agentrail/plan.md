@@ -120,6 +120,10 @@ Keep decisions pure; runners own display and file effects.
 
 ## Lesson sequence
 
+The sequence is capability-gated, not merely conceptual. Implement the first
+available row whose prerequisites are verified on the configured interpreter;
+do not hold an executable lesson behind a lesson awaiting an upstream fix.
+
 | # | Lesson | Executable claim | Visual payoff |
 |---|---|---|---|
 | 01 | Arrows are functions | A morphism maps each source value to one target value | Tokens cross a single labelled arrow; source/target arrays sit below |
@@ -133,6 +137,29 @@ Keep decisions pure; runners own display and file effects.
 | 09 | Natural transformations | one component per shape makes every naturality square commute | A grid of squares lights together; a bad component exposes one cell |
 | 10 | Homomorphisms form a category | identity and composition preserve the operation | Two algebra tables become objects; structure-preserving arrows compose |
 | 11 | Why laws buy execution freedom | associative reductions may be regrouped; non-associative ones may not | A serial reduction tree rebalances into parallel branches |
+
+### Capability-first delivery order
+
+The Step 1 baseline on sw-MLPL 0.20.0 supports fixed-arity function
+composition, record-held function references, nested equality, and manual
+tagged records. Therefore the working order is:
+
+1. **Available now:** Lessons 01-06 (fixed paths, squares, concrete products
+   and coproducts), followed by Lesson 11's concrete reduction comparison.
+2. **Measure, then build if supported:** Lessons 07-08 using the actual array
+   mapping primitive. These require a concrete lawful map, not generic functor
+   machinery.
+3. **Conditional:** Lesson 10 once the sibling homomorphism fixture is stable
+   enough to copy and attribute.
+4. **Deferred when capability-bound:** Lesson 09 as a generic natural-
+   transformation treatment, and any “full functor support” lesson requiring
+   type constructors or generic constraints. A concrete naturality square may
+   ship earlier only if ordinary records/functions express it honestly.
+
+When a prerequisite is missing, mark the catalog row `constrained`, add a
+verified probe/upstream ask, and move to the next available lesson. Revisit
+constrained rows after the relevant sw-MLPL fix; do not embed a sprawling
+compatibility layer merely to preserve lesson numbering.
 
 Lessons 01-04 establish the diagram language before introducing universal
 properties. Lessons 05-06 use concrete records/tagged records rather than
@@ -172,10 +199,11 @@ ideas remain explicitly provisional.
 4. **Lessons 05-06: products and coproducts** — executable universal-property
    checks with concrete finite values; record type/tag friction rather than
    inventing syntax.
-5. **Lessons 07-08: array functors** — identity/composition laws for `each` or
-   the verified mapping primitive, plus transformations that clarify which
-   structure is preserved.
-6. **Lesson 09: natural transformations** — naturality squares over a small
+5. **Lessons 07-08: array functors, capability-gated** — first probe the actual
+   mapping primitive; implement identity/composition laws only with supported
+   current behavior, plus transformations that clarify which structure is
+   preserved. If blocked, record the ask and advance to an available step.
+6. **Lesson 09: natural transformations, capability-gated** — naturality squares over a small
    family of array shapes, including a minimal failing component.
 7. **Lessons 10-11: bridges and payoff** — adopt/copy the algebra
    homomorphism fixture, prove closure under categorical composition, then
@@ -200,6 +228,11 @@ step. The per-step delivery gate is mandatory:
 Do not begin the next step when any check fails, either commit is missing, or
 the push has not succeeded. A credential, network, or branch-protection failure
 is reported as a blocking handoff with the branch, commit IDs, and exact error.
+
+At the start of every demo step, consult `docs/sw-mlpl-capabilities.md` and run
+the relevant probes. If the intended demo depends on a missing feature, record
+the evidence, mark it constrained, and work on the next currently supported
+demo instead. Upstream-dependent demos remain queued for later adoption.
 
 When a step adds or materially changes a visual lesson, it also regenerates a
 stable representative SVG under `assets/previews/` and updates `README.md` to

@@ -1,0 +1,10 @@
+# Probe: SVG construction through the verified byte-array bridge.
+# Direct string addition fails in sw-MLPL 0.20.0; see docs/upstream-asks.md.
+# visual: svg
+# loops: 0
+
+def u:cat(a, b) { decode_bytes(concat(tokenize_bytes(a), tokenize_bytes(b))) }
+s = u:cat("<svg xmlns=\"http://www.w3.org/2000/svg\">", "</svg>")
+if equal(s, "<svg xmlns=\"http://www.w3.org/2000/svg\"></svg>") {
+  ok({probe: "text-svg", bridge: "tokenize/concat/decode"})
+} else { err("text bridge behavior changed") }

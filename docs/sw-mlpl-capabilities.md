@@ -31,12 +31,12 @@ candidate's status.
 
 | Capability | Lessons | Initial status | What would count as support |
 |---|---:|---|---|
-| First-class function values | 02-04, 07-09 | candidate | Functions can be passed, returned, and retained in a value used by a generic path runner. |
-| Function composition | 02-04 | candidate | A reusable pure helper can construct `g after f` without named dispatch or duplicated wrappers. |
-| Equality over nested arrays and records | all | candidate | Law checks can compare the actual structured results and report a differing path/value. |
+| First-class function values | 02-04, 07-09 | awkward | Function references can be passed and stored in records, but a list literal of function references is rejected as neither all-string nor all-number. Generic variable-length paths therefore need a different representation. |
+| Function composition | 02-04 | supported | `call(f, [x])` permits reusable apply and fixed-arity composition helpers. Returning a newly composed closure is not yet established or required. |
+| Equality over nested arrays and records | all | supported | `equal` compares nested numeric arrays and records containing strings/arrays in the measured fixtures. |
 | Higher-order array mapping | 07-09 | candidate | A mapping operation accepts an ordinary user function and preserves the documented array context. |
-| Tagged alternatives and case analysis | 06 | candidate | Coproduct examples can represent left/right values and dispatch exhaustively without fragile numeric conventions. |
-| Text and SVG construction | all visuals | candidate | Labels, numeric values, and SVG fragments can be composed without byte-array or JSON-formatting bridges. |
+| Tagged alternatives and case analysis | 06 | awkward | `{tag, value}` records plus `if equal(v.tag, ...)` work, but exhaustiveness is manual and unchecked. |
+| Text and SVG construction | all visuals | awkward | String `+` fails; `decode_bytes(concat(tokenize_bytes(a), tokenize_bytes(b)))` works as a bridge. |
 | Property/law checking helpers | all | candidate | A reusable library can evaluate finite domains and return the first counterexample, without special syntax. |
 | Generic context mapping (functor abstraction) | 07-09 | candidate | One abstraction can associate a mapping operation with more than one context and verify identity/composition laws. |
 | Parametric/type-constructor abstraction | 07-09+ | candidate | If static types are in scope for sw-MLPL, a general API can express a context `F` and maps `A -> B` to `F A -> F B`. |
@@ -64,6 +64,25 @@ The first curriculum requires Level 1 and investigates Level 2. Level 3 is a
 legitimate upstream design question only if the demos show a useful abstraction
 across multiple real ML/data contexts. Level 4 should begin as library/test
 infrastructure. None of these levels implies adding `functor` as a keyword.
+
+## Measured baseline
+
+Measured 2026-08-12 with `mlpl-repl 0.20.0`, build commit `d373584c`:
+
+- `probes/function_values.mlpl`: function references pass through parameters
+  and record fields and execute via `call`; fixed-arity composition succeeds.
+  A separate negative measurement found `[:u:inc, :u:double]` rejected because
+  list literals accept only all-string or all-number values.
+- `probes/nested_equality.mlpl`: equal nested arrays/records compare equal and
+  a changed string tag compares unequal.
+- `probes/tagged_values.mlpl`: record tags and manual branch dispatch implement
+  a small value-level coproduct.
+- `probes/text_svg.mlpl`: the byte tokenize/concatenate/decode bridge constructs
+  SVG text. A separate negative measurement found `"a" + "b"` rejected with
+  `expected an array value, got a string`.
+
+These results deliberately put composition, finite path laws, commutative
+squares, and concrete products/coproducts before generic functor machinery.
 
 ## Decision rule for upstream requests
 

@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+catalog=${1:?usage: validate-catalog catalog.tsv}
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+case "$catalog" in /*) path=$catalog;; *) path="$repo_root/$catalog";; esac
+[ -f "$path" ] || { echo "catalog not found: $path" >&2; exit 1; }
+awk -F '\t' -v root="$repo_root" -v name="$catalog" '
+NR == 1 { want="id\tpath\tlesson\tconcept\texplicit_loops\ttarget_loops\tvisual\trequired_features\tstatus"; if ($0 != want) bad=1; next }
+NF == 0 { next }
+NF != 9 { print name ":" NR ": expected 9 fields" > "/dev/stderr"; bad=1; next }
+{
+  if ($1 in ids) { print name ": duplicate id " $1 > "/dev/stderr"; bad=1 } ids[$1]=1
+  if ($2 in paths) { print name ": duplicate path " $2 > "/dev/stderr"; bad=1 } paths[$2]=1
+  if ($5 !~ /^[0-9]+$/ || $6 !~ /^[0-9]+$/ || $6 > $5) { print name ":" NR ": bad loop counts" > "/dev/stderr"; bad=1 }
+  if ($9 !~ /^(runnable|constrained|gated)$/) { print name ":" NR ": bad status" > "/dev/stderr"; bad=1 }
+  if ($9 != "gated" && system("test -f \"" root "/" $2 "\"") != 0) { print name ": missing " $2 > "/dev/stderr"; bad=1 }
+}
+END { if (bad) exit 1; print name ": ok (" length(ids) " entries)" }
+' "$path"

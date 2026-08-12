@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+mlpl=$("$repo_root/scripts/select-mlpl")
+for probe in "$repo_root"/probes/*.mlpl; do
+  [ -f "$probe" ] || continue
+  echo "probe: ${probe#$repo_root/}"
+  "$mlpl" --source-dir "$repo_root" "$probe"
+done

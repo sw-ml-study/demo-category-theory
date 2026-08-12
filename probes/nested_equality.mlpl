@@ -1,0 +1,13 @@
+# Probe: equality over nested arrays and records in sw-MLPL 0.20.0.
+# visual: ascii
+# loops: 0
+
+a = {tag: "left", value: [1, 2]}
+b = {tag: "left", value: [1, 2]}
+c = {tag: "right", value: [1, 2]}
+same = equal(a, b)
+different = equal(a, c)
+nested = equal([[1, 2]], [[1, 2]])
+if same * (1 - different) * nested {
+  ok({probe: "nested-equality", records: same, tags_differ: 1 - different, arrays: nested})
+} else { err("structured equality behavior changed") }

@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
+"$repo_root/scripts/build-web-demos" "$tmp/web" >/dev/null
+"$repo_root/scripts/build-assets" "$tmp/assets/previews" >/dev/null
+for tree in web assets; do
+  mkdir -p "$repo_root/$tree" "$tmp/$tree"
+  local_files=$(find "$repo_root/$tree" -type f | sed "s|$repo_root/$tree/||" | sort)
+  built_files=$(find "$tmp/$tree" -type f | sed "s|$tmp/$tree/||" | sort)
+  [ "$local_files" = "$built_files" ] || { echo "$tree/ file list is stale" >&2; exit 1; }
+  for rel in $local_files; do cmp "$repo_root/$tree/$rel" "$tmp/$tree/$rel" >/dev/null || { echo "$tree/$rel is stale" >&2; exit 1; }; done
+done
+echo "generated trees: up to date"

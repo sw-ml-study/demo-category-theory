@@ -1,0 +1,14 @@
+# Probe: function references as values in sw-MLPL 0.20.0 (d373584c).
+# visual: ascii
+# loops: 0
+
+def u:inc(x) { x + 1 }
+def u:double(x) { x * 2 }
+def u:apply(f, x) { call(f, [x]) }
+def u:compose_apply(f, g, x) { call(g, [call(f, [x])]) }
+f = :u:inc
+ops = {map: :u:double}
+direct = u:apply(f, 3)
+record = u:apply(ops.map, 3)
+composed = u:compose_apply(:u:inc, :u:double, 3)
+ok({probe: "function-values", expected: [4, 6, 8], direct: direct, record: record, composed: composed})

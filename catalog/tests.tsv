@@ -1,0 +1,2 @@
+id	path	lesson	concept	explicit_loops	target_loops	visual	required_features	status
+category-laws	tests/test_category.mlpl	foundation	path-law-checks	0	0	none	current	runnable

@@ -259,6 +259,10 @@ Category theory exercises the language; it does not dictate new syntax.
   or law-testing support.
 - Advanced concepts (monads, optics, profunctors, adjunctions) are outside the
   first saga unless the plan is explicitly revised.
+- Develop in capability order. Before a demo step, run its relevant probes and
+  prefer lessons supported by the current interpreter. Mark feature-dependent
+  lessons `constrained`, document the upstream requirement, and defer them
+  rather than accumulating compatibility machinery or blocking available work.
 
 ## Project rules
 

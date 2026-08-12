@@ -1,0 +1,8 @@
+id	path	lesson	concept	explicit_loops	target_loops	visual	required_features	status
+function-values	probes/function_values.mlpl	probes	first-class-functions	0	0	ascii	current	runnable
+nested-equality	probes/nested_equality.mlpl	probes	structured-equality	0	0	ascii	current	runnable
+tagged-values	probes/tagged_values.mlpl	probes	coproduct-encoding	0	0	ascii	current	runnable
+text-svg	probes/text_svg.mlpl	probes	text-construction	0	0	svg	byte-bridge	constrained
+arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	gated
+identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	gated
+associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	gated

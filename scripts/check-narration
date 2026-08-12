@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+bad=0
+for f in "$repo_root"/demos/web/*.mlpl; do
+  [ -f "$f" ] || continue
+  for phrase in 'WHAT THIS SHOWS' 'HOW TO READ THE RESULT' 'THE POINT'; do
+    grep -qF "$phrase" "$f" || { echo "${f#$repo_root/}: missing $phrase" >&2; bad=1; }
+  done
+  awk 'BEGIN{bad=0} /^[[:space:]]*(def |[A-Za-z_][A-Za-z0-9_]*[[:space:]]*=|u:[A-Za-z_]|svg\()/ && $0 !~ /#/ {print FILENAME ": executable line lacks trailing comment: " NR > "/dev/stderr"; bad=1} END{exit bad}' "$f" || bad=1
+done
+[ "$bad" -eq 0 ]
+echo "narration: ok"

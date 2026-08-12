@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+mlpl=$("$repo_root/scripts/select-mlpl")
+runner=${MLPLUNIT:-$(command -v mlplunit 2>/dev/null || true)}
+if [ -z "$runner" ] && [ -x "$repo_root/../../softwarewrighter/mlplunit/bin/mlplunit" ]; then
+  runner="$repo_root/../../softwarewrighter/mlplunit/bin/mlplunit"
+fi
+[ -n "$runner" ] && [ -x "$runner" ] || { echo "mlplunit not found; set MLPLUNIT" >&2; exit 1; }
+if [ "$#" -gt 0 ]; then exec "$runner" --mlpl "$mlpl" --config "$repo_root/mlplunit.conf" "$@"; fi
+exec "$runner" --mlpl "$mlpl" --config "$repo_root/mlplunit.conf" "$repo_root/tests/test_category.mlpl"

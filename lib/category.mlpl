@@ -1,0 +1,31 @@
+# lib/category.mlpl -- executable paths and finite-domain equality checks.
+#
+# A path is evaluated by applying named function references. Law checkers
+# compare both paths over a finite domain and return the first witness.
+# The list-of-functions abstraction is intentionally absent: probe evidence
+# shows MLPL 0.20.0 rejects function references in homogeneous list literals.
+# loops: 0
+
+def u:id(x) { x }
+def u:apply(f, x) { take(call(f, [x]), 0, 0) }
+def u:then_apply(f, g, x) { u:apply(g, u:apply(f, x)) }
+def u:three_apply(f, g, h, x) { u:apply(h, u:then_apply(f, g, x)) }
+
+# Evaluate two unary functions over a numeric array.
+def u:map_call(f, xs) { each(f, xs) }
+def u:path_outputs(f, xs) { u:map_call(f, xs) }
+
+# Compare two named unary paths over xs. The stable witness is the first
+# differing input, with both observed outputs. When equal, found is 0.
+def u:path_counterexample(left, right, xs) {
+  lhs = u:path_outputs(left, xs)
+  rhs = u:path_outputs(right, xs)
+  agree = eq(lhs, rhs)
+  found = 1 - reduce(:and, flatten(agree))
+  i = take(grade_up(flatten(agree)), 0, 0) * found
+  {found: found, input: take(xs, 0, i), left: take(lhs, 0, i), right: take(rhs, 0, i)}
+}
+
+def u:paths_equal(left, right, xs) {
+  1 - u:path_counterexample(left, right, xs).found
+}
