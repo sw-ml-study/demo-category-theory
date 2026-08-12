@@ -1,9 +1,10 @@
 number = 7
 slug = "homomorphisms-and-reduction"
-status = "in-progress"
+status = "completed"
 description = "Implement Lessons 10-11. Copy and attribute the stable homomorphism fixture/c..."
 role = "production"
 context_files = []
 created_at = "2026-08-12T14:46:54"
+completed_at = "2026-08-12T15:51:10"
 task_type = "lesson"
-commits = []
+commits = ["684ed8bdb6144e77f1a8c2f6672a31501ec0c388"]
