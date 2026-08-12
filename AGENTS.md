@@ -252,6 +252,11 @@ Category theory exercises the language; it does not dictate new syntax.
 - Do not edit `../sw-mlpl`, `../demo-abstract-algebra`, or another sibling from
   a session in this repository. Put verified language friction in
   `docs/upstream-asks.md` with an executable probe.
+- Keep `docs/sw-mlpl-capabilities.md` current. Distinguish candidate ideas,
+  verified awkwardness, blockers, supported idioms, and declined proposals.
+  "Full functor support" is not one requirement: document whether a lesson
+  needs concrete mapping, several context-specific maps, a generic interface,
+  or law-testing support.
 - Advanced concepts (monads, optics, profunctors, adjunctions) are outside the
   first saga unless the plan is explicitly revised.
 

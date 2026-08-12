@@ -42,7 +42,9 @@ obeys**.
   adjunctions are a later saga. They enter only after the first curriculum
   proves the visual grammar and reveals the actual language limits.
 - Never edit sibling repositories from this repository. Record sw-MLPL gaps in
-  `docs/upstream-asks.md` with a minimal executable probe.
+  `docs/upstream-asks.md` with a minimal executable probe. Maintain the broader
+  capability/design ledger in `docs/sw-mlpl-capabilities.md`, including ideas
+  such as generic or "full" functor support that are not yet verified asks.
 
 ## Demo contract
 
@@ -152,6 +154,10 @@ Likely probes include first-class composition, passing function values through
 records/lists, equality over nested arrays/records, tagged-value ergonomics,
 and SVG/text construction. Verify each against the configured interpreter;
 documentation is not evidence of runtime behavior.
+
+Update `docs/sw-mlpl-capabilities.md` as evidence accumulates. Only verified
+`awkward` or `blocked` findings graduate into `docs/upstream-asks.md`; candidate
+ideas remain explicitly provisional.
 
 ## Delivery sequence (Agentrail steps)
 
