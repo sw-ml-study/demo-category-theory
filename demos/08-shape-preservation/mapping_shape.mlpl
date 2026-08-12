@@ -1,0 +1,18 @@
+# Lesson 08 -- mapping preserves array shape while other transforms may not.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/category.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 08 -- NAME THE STRUCTURE BEING PRESERVED", intro: "each changes every matrix cell while retaining shape; transpose preserves values but swaps axes."})
+def u:inc(x) { x + 1 }
+m = [[1, 2, 3], [4, 5, 6]]
+mapped = each(:u:inc, m)
+turned = transpose(m)
+disp(m)
+disp(mapped)
+disp(turned)
+wrote = write_text("out/08-shape-preservation.svg", u:shape_diagram())
+u:epilog_open()
+u:explain("out/08-shape-preservation.svg", "Both rounded boxes are 2x3. Every cell increases by one, but its coordinate remains in the same container position.")
+u:takeaway("Preservation must name a structure: each preserves array shape; transpose preserves entries but changes 2x3 into 3x2.")
+if equal(shape(mapped), [2, 3]) * equal(shape(turned), [3, 2]) * is_ok(wrote) { ok("shape distinction verified") } else { err("shape lesson invariant failed") }

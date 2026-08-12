@@ -3,6 +3,7 @@ function-values	probes/function_values.mlpl	probes	first-class-functions	0	0	asc
 nested-equality	probes/nested_equality.mlpl	probes	structured-equality	0	0	ascii	current	runnable
 tagged-values	probes/tagged_values.mlpl	probes	coproduct-encoding	0	0	ascii	current	runnable
 text-svg	probes/text_svg.mlpl	probes	text-construction	0	0	svg	byte-bridge	constrained
+array-mapping	probes/array_mapping.mlpl	probes	concrete-array-functor	0	0	ascii	each	runnable
 arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	runnable
 identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	runnable
 associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	runnable
@@ -15,3 +16,7 @@ products	demos/05-products/projections.mlpl	05-products	universal-product	0	0	as
 coproducts	demos/06-coproducts/case_analysis.mlpl	06-coproducts	universal-coproduct	0	0	ascii,svg	manual-tags	runnable
 products-web	demos/web/products.mlpl	web	universal-product	0	0	svg	current	runnable
 coproducts-web	demos/web/coproducts.mlpl	web	universal-coproduct	0	0	svg	manual-tags	runnable
+array-functor	demos/07-array-functors/map_laws.mlpl	07-array-functors	functor-identity-composition	0	0	ascii,svg	each	runnable
+shape-preservation	demos/08-shape-preservation/mapping_shape.mlpl	08-shape-preservation	structure-preservation	0	0	ascii,svg	each,transpose	runnable
+array-functor-web	demos/web/array_functor.mlpl	web	functor-identity-composition	0	0	svg	each	runnable
+shape-preservation-web	demos/web/shape_preservation.mlpl	web	structure-preservation	0	0	svg	each,transpose	runnable

@@ -1,0 +1,20 @@
+# Lesson 07 -- arrays as one concrete functor.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/category.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 07 -- ARRAY MAP PRESERVES IDENTITY AND COMPOSITION", intro: "Lift scalar functions with each, then execute the two functor laws over a visible vector."})
+def u:inc(x) { x + 1 }
+def u:double(x) { 2 * x }
+def u:inc_double(x) { 2 * (x + 1) }
+xs = [1, 2, 3]
+lifted = each(:u:double, each(:u:inc, xs))
+once = each(:u:inc_double, xs)
+bad = [3, 2, 1]
+witness = u:array_map_counterexample(xs, bad)
+disp([xs, lifted, once, bad])
+wrote = write_text("out/07-array-functor.svg", u:functor_diagram())
+u:epilog_open()
+u:explain("out/07-array-functor.svg", "The top arrow maps one scalar; the bottom arrow maps the whole array. Both pulse together because lifting preserves composition.")
+u:takeaway("For arrays, each(id)=id and each(g after f)=each(g) after each(f). A fake lift that reverses exposes index 0: expected 1, actual 3.")
+if u:array_functor_identity(xs) * u:array_functor_composition(:u:inc, :u:double, :u:inc_double, xs) * witness.found * eq(witness.index, 0) * is_ok(wrote) { ok("array functor laws verified") } else { err("array functor law failed") }

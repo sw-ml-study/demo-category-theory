@@ -9,6 +9,7 @@ def u:also_inc(x) { 1 + x }
 def u:double(x) { 2 * x }
 def u:plus2(x) { x + 2 }
 def u:negate(x) { 0 - x }
+def u:inc_double(x) { 2 * (x + 1) }
 
 @test {name: "identity and application", tags: ["laws"]}
 def u:test_identity() { "Identity leaves finite inputs unchanged.";
@@ -66,6 +67,20 @@ def u:test_coproduct() { "Both injections determine case analysis.";
   bad = u:coproduct_agrees(:u:inc, :u:negate, range(3), range(3), [1, 2, 4], [0, -1, -2]);
   u:assert_eq(bad.commutes, 0, "bad case map accepted")?;
   ok({test: "coproduct", cases: 5})
+}
+
+@test {name: "arrays obey concrete functor laws", tags: ["functors", "arrays"]}
+def u:test_array_functor() { "each preserves identity and composition.";
+  v = [1, 2, 3];
+  m = [[1, 2], [3, 4]];
+  u:assert_eq(u:array_functor_identity(v), 1, "vector identity")?;
+  u:assert_eq(u:array_functor_identity(m), 1, "matrix identity")?;
+  u:assert_eq(u:array_functor_composition(:u:inc, :u:double, :u:inc_double, v), 1, "composition")?;
+  u:assert_eq(equal(shape(u:array_map(:u:inc, m)), shape(m)), 1, "map changed shape")?;
+  bad = u:array_map_counterexample(v, [3, 2, 1]);
+  u:assert_eq(bad.found, 1, "bad lift accepted")?;
+  u:assert_eq(bad.index, 0, "wrong bad-lift witness")?;
+  ok({test: "array-functor", cases: 6})
 }
 
 u:run_registered_tests()

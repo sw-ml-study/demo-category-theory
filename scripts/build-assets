@@ -10,4 +10,6 @@ cp "$repo_root/out/03-composition-associativity.svg" "$dest/03-composition-assoc
 cp "$repo_root/out/04-commutative-square.svg" "$dest/04-commutative-square.svg"
 cp "$repo_root/out/05-product.svg" "$dest/05-product.svg"
 cp "$repo_root/out/06-coproduct.svg" "$dest/06-coproduct.svg"
+cp "$repo_root/out/07-array-functor.svg" "$dest/07-array-functor.svg"
+cp "$repo_root/out/08-shape-preservation.svg" "$dest/08-shape-preservation.svg"
 echo "README previews written"

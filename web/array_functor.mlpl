@@ -1,0 +1,27 @@
+# Web Lesson 07 -- arrays as a concrete functor.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Mapping identity and composition over arrays preserves those two laws.
+# ***************************************************************************
+;
+def u:inc(x) { x + 1 }  # scalar f
+def u:double(x) { 2 * x }  # scalar g
+def u:both(x) { 2 * (x + 1) }  # g after f
+def u:same(x) { x }  # scalar identity
+xs = [1, 2, 3]  # one concrete array context
+twice = each(:u:double, each(:u:inc, xs))  # map(g) after map(f)
+once = each(:u:both, xs)  # map(g after f)
+identity = each(:u:same, xs)  # map(identity)
+disp([xs, identity, twice, once])  # rows 1=2 and rows 3=4
+# ***************************************************************************
+# * THE VISUAL
+# * Scalar and lifted arrows move in lockstep; both arrive at 4 / [4,6,8].
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 760 300\" width=\"760\" height=\"300\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(400px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(400px)}}</style><rect width=\"760\" height=\"300\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"70\" y=\"55\" width=\"150\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"540\" y=\"55\" width=\"150\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"70\" y=\"200\" width=\"150\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"540\" y=\"200\" width=\"150\" height=\"60\" rx=\"14\"/><line class=\"arrow\" x1=\"220\" y1=\"85\" x2=\"540\" y2=\"85\"/><line class=\"arrow\" x1=\"220\" y1=\"230\" x2=\"540\" y2=\"230\"/><text x=\"145\" y=\"92\" text-anchor=\"middle\">1</text><text x=\"615\" y=\"92\" text-anchor=\"middle\">4</text><text x=\"145\" y=\"237\" text-anchor=\"middle\">[1,2,3]</text><text x=\"615\" y=\"237\" text-anchor=\"middle\">[4,6,8]</text><text x=\"380\" y=\"75\" text-anchor=\"middle\">g after f</text><text x=\"380\" y=\"220\" text-anchor=\"middle\">each(g) after each(f)</text><circle class=\"token\" cx=\"200\" cy=\"102\" r=\"9\"/></svg>"  # synchronized scalar and array views
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Equal rows execute identity and composition laws for this array context.
+# * THE POINT -- arrays are a concrete functor; no generic keyword is needed.
+# ***************************************************************************

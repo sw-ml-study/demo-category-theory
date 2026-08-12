@@ -1,0 +1,25 @@
+# Web Lesson 08 -- preserved structure.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * each changes matrix values without changing shape; transpose swaps axes.
+# ***************************************************************************
+;
+def u:inc(x) { x + 1 }  # cell transformation
+m = [[1, 2, 3], [4, 5, 6]]  # shape 2x3
+mapped = each(:u:inc, m)  # still shape 2x3
+turned = transpose(m)  # shape 3x2
+disp(m)  # original cells and shape
+disp(mapped)  # changed cells, same positions
+disp(turned)  # same entries, exchanged axes
+# ***************************************************************************
+# * THE VISUAL
+# * Both boxes stay 2x3 under each(+1); the shape itself is the invariant.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 760 280\" width=\"760\" height=\"280\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(370px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(370px)}}</style><rect width=\"760\" height=\"280\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"55\" y=\"60\" width=\"230\" height=\"160\" rx=\"14\"/><rect class=\"obj\" x=\"475\" y=\"60\" width=\"230\" height=\"160\" rx=\"14\"/><line class=\"arrow\" x1=\"285\" y1=\"140\" x2=\"475\" y2=\"140\"/><text x=\"170\" y=\"120\" text-anchor=\"middle\">1 2 3</text><text x=\"170\" y=\"160\" text-anchor=\"middle\">4 5 6</text><text x=\"590\" y=\"120\" text-anchor=\"middle\">2 3 4</text><text x=\"590\" y=\"160\" text-anchor=\"middle\">5 6 7</text><text x=\"170\" y=\"205\" text-anchor=\"middle\">shape 2x3</text><text x=\"590\" y=\"205\" text-anchor=\"middle\">shape 2x3</text><text x=\"380\" y=\"125\" text-anchor=\"middle\">each(+1)</text><circle class=\"token\" cx=\"270\" cy=\"160\" r=\"9\"/></svg>"  # shape stays fixed
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Mapping preserves coordinates and shape; transpose preserves different data.
+# * THE POINT -- always say which structure a transformation preserves.
+# ***************************************************************************

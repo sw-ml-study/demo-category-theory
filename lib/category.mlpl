@@ -65,3 +65,16 @@ def u:coproduct_agrees(on_left, on_right, left_inputs, right_inputs, candidate_l
   canonical_right = each(on_right, right_inputs)
   {commutes: equal(canonical_left, candidate_left) * equal(canonical_right, candidate_right), unique: equal(canonical_left, candidate_left) * equal(canonical_right, candidate_right)}
 }
+
+# Arrays as one concrete functor: lift a scalar function with each.
+def u:array_map(f, xs) { each(f, xs) }
+def u:array_functor_identity(xs) { equal(u:array_map(:u:id, xs), xs) }
+def u:array_functor_composition(f, g, composed, xs) {
+  equal(u:array_map(g, u:array_map(f, xs)), u:array_map(composed, xs))
+}
+def u:array_map_counterexample(expected, actual) {
+  agree = eq(flatten(expected), flatten(actual))
+  found = 1 - reduce(:and, agree)
+  i = take(grade_up(agree), 0, 0) * found
+  {found: found, index: i, expected: take(flatten(expected), 0, i), actual: take(flatten(actual), 0, i)}
+}

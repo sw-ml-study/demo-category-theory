@@ -34,7 +34,7 @@ candidate's status.
 | First-class function values | 02-04, 07-09 | awkward | Function references can be passed and stored in records, but a list literal of function references is rejected as neither all-string nor all-number. Generic variable-length paths therefore need a different representation. |
 | Function composition | 02-04 | supported | `call(f, [x])` permits reusable apply and fixed-arity composition helpers. Returning a newly composed closure is not yet established or required. |
 | Equality over nested arrays and records | all | supported | `equal` compares nested numeric arrays and records containing strings/arrays in the measured fixtures. |
-| Higher-order array mapping | 07-09 | candidate | A mapping operation accepts an ordinary user function and preserves the documented array context. |
+| Higher-order array mapping | 07-09 | supported | `each` accepts user function references, maps vectors/matrices cellwise, and preserves measured shapes. |
 | Tagged alternatives and case analysis | 06 | awkward | `{tag, value}` records plus `if equal(v.tag, ...)` work, but exhaustiveness is manual and unchecked. |
 | Text and SVG construction | all visuals | awkward | String `+` fails; `decode_bytes(concat(tokenize_bytes(a), tokenize_bytes(b)))` works as a bridge. |
 | Property/law checking helpers | all | candidate | A reusable library can evaluate finite domains and return the first counterexample, without special syntax. |
@@ -93,6 +93,12 @@ Step 4 confirms that ordinary records are sufficient for concrete products and
 tagged value-level coproducts. The demos intentionally do not model type-level
 universal quantification or statically exhaustive alternatives. Manual tag
 dispatch remains `awkward`; it does not block these concrete lessons.
+
+Step 5 verifies `each` over vectors and matrices in
+`probes/array_mapping.mlpl`. It preserves the measured container shape and
+satisfies identity and composition for ordinary scalar functions. This is full
+support for the concrete array functor lesson, not evidence that MLPL already
+has—or needs—a generic functor interface across arbitrary contexts.
 
 ## Decision rule for upstream requests
 

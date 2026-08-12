@@ -88,6 +88,25 @@ value. This is an executable value-level coproduct, not a claim that MLPL has
 statically exhaustive sum types. Sources: [CLI lesson](demos/06-coproducts/case_analysis.mlpl),
 [web lesson](demos/web/coproducts.mlpl).
 
+### 7. Array mapping preserves identity and composition
+
+![A scalar arrow and a lifted array arrow moving in parallel](assets/previews/07-array-functor.svg)
+
+What to notice: applying `inc` then `double` cellwise gives the same array as
+mapping their composition once. Mapping identity returns the original array.
+Sources: [CLI lesson](demos/07-array-functors/map_laws.mlpl),
+[web lesson](demos/web/array_functor.mlpl).
+
+### 8. Preservation must name the structure
+
+![Two 2 by 3 matrices connected by an each plus one arrow](assets/previews/08-shape-preservation.svg)
+
+What to notice: every number changes while the `2×3` shape stays fixed.
+Transpose illustrates a different preservation claim: it keeps entries but
+changes the axes to `3×2`. Sources:
+[CLI lesson](demos/08-shape-preservation/mapping_shape.mlpl),
+[web lesson](demos/web/shape_preservation.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

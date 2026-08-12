@@ -1,6 +1,6 @@
 number = 5
 slug = "array-functors"
-status = "pending"
+status = "in-progress"
 description = "Implement Lessons 07-08: array mapping as a functor and shape-aware transform..."
 role = "production"
 context_files = []
