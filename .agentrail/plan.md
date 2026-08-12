@@ -106,6 +106,7 @@ lib/render.mlpl         shared SVG diagram primitives
 demos/NN-topic/         CLI lessons and their local fixtures
 demos/web/              authored playground demos
 web/                    generated standalone copies
+assets/previews/        stable demo-generated visuals embedded by README
 probes/                 minimal interpreter capability probes
 tests/                  law, renderer, narration, and generated-file checks
 scripts/                thin build/check entry points
@@ -185,7 +186,28 @@ ideas remain explicitly provisional.
 
 Each step must leave the scoped suite green, update user-facing documentation
 with its demos, and record newly discovered language friction in the same
-step.
+step. The per-step delivery gate is mandatory:
+
+1. run the complete pre-commit suite (`just check` after the foundation creates
+   it), with no skipped hooks or known failures;
+2. inspect and stage named files, including current Agentrail state;
+3. create a detailed work commit whose message records behavior, verification,
+   design choices, and known limitations;
+4. run `agentrail complete` with its detailed summary/actions;
+5. commit the resulting Agentrail completion metadata; and
+6. push both commits and verify the branch is no longer ahead of its upstream.
+
+Do not begin the next step when any check fails, either commit is missing, or
+the push has not succeeded. A credential, network, or branch-protection failure
+is reported as a blocking handoff with the branch, commit IDs, and exact error.
+
+When a step adds or materially changes a visual lesson, it also regenerates a
+stable representative SVG under `assets/previews/` and updates `README.md` to
+embed it with descriptive alt text, a brief “what to notice” explanation, and
+links to the CLI and web demo sources. README images must be outputs of the
+demos and covered by the generated-file freshness gate; do not substitute an
+illustration that the executable lesson did not produce. The foundation step
+documents this convention without inventing screenshots before demos exist.
 
 ## What would make this plan wrong
 

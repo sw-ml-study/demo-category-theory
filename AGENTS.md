@@ -262,9 +262,30 @@ Category theory exercises the language; it does not dictate new syntax.
 
 ## Project rules
 
-- Follow `agentrail next`, `agentrail begin`, work, full gate, commit,
-  `agentrail complete`, commit the resulting Agentrail metadata, then stop.
-  Never hand-edit append-only `.agentrail/` state.
+- **Every Agentrail step must finish remotely visible.** Follow this sequence
+  for every step without exception:
+  1. `agentrail next`, then `agentrail begin`.
+  2. Do only the current step's work, adding newly discovered work with
+     `agentrail insert` or `agentrail add` rather than hiding it in the step.
+  3. Run the repository's complete pre-commit gate (`just check` once the
+     harness exists, plus any narrower checks needed while diagnosing). Do not
+     commit with a failing gate and do not bypass hooks with `--no-verify`.
+  4. Inspect `git status` and the staged diff. Stage named files, including the
+     current tracked `.agentrail/` state, and exclude unrelated user changes.
+  5. Commit before `agentrail complete`. Use a descriptive subject and a body
+     that records the behavior delivered, tests/checks run, important design
+     decisions, and any capability finding or known limitation.
+  6. Run `agentrail complete` with a concrete summary, reward, and actions (and
+     `--done` only for the final step).
+  7. Commit the completion metadata produced under `.agentrail/`; this metadata
+     commit is the only change allowed after `agentrail complete`.
+  8. Push both commits to the configured remote and verify the local branch is
+     not ahead of its upstream. A step is not done and the next step must not
+     begin until the push succeeds.
+- If credentials, branch protection, or network access prevents pushing, stop
+  and report the exact branch, commits, and error. Do not mark the step as a
+  successful handoff, do not begin another step, and do not retry indefinitely.
+- Never hand-edit append-only `.agentrail/` state.
 - Use TDD for executable behavior. Law checks return a verdict and a concrete
   counterexample, not a bare boolean.
 - Keep functions small and pure; isolate display and filesystem effects in thin
@@ -276,7 +297,9 @@ Category theory exercises the language; it does not dictate new syntax.
 - Use a `justfile` as the routine entry point once the harness exists. Keep
   recipes thin and do not add a Makefile without an explicit requirement.
 - Update the catalog and learner-facing documentation in the same step as a
-  demo. Every commit leaves the scoped suite green.
+  demo. When a demo introduces or materially changes a useful visual, rebuild
+  its stable preview and add or update that visual in `README.md` in the same
+  step. Every commit leaves the scoped suite green.
 
 ## Every demo explains its picture
 
@@ -300,11 +323,15 @@ Category theory exercises the language; it does not dictate new syntax.
 - A diagram that does not clarify the executable law should be removed.
 - The MLPL law result is authoritative if a viewer duplicates checks in
   JavaScript; pin shared fixtures with conformance tests.
+- README visuals come from the demos, not hand-drawn substitutes. Store stable,
+  reproducibly generated preview SVGs under `assets/previews/`, use relative
+  Markdown image links with descriptive alt text, and place a short “what to
+  notice” explanation beside each one. Do not commit transient `out/` files.
 
 ## Git and handoff
 
 - Name files explicitly when staging; preserve unrelated user changes.
-- Push completed saga work when credentials and the project workflow permit.
-  If push is unavailable, record the branch and unpushed state plainly in the
-  completion summary and user handoff.
+- Push every completed step. Confirm the remote contains both the detailed work
+  commit and the subsequent Agentrail completion-metadata commit before moving
+  on. Push failure is a blocking handoff failure, not an optional exception.
 - Do not continue committing on a handed-off `pr/*` branch.
