@@ -1,9 +1,10 @@
 number = 4
 slug = "products-coproducts"
-status = "in-progress"
+status = "completed"
 description = "Implement Lessons 05-06: products and coproducts as concrete finite value-lev..."
 role = "production"
 context_files = []
 created_at = "2026-08-12T14:46:54"
+completed_at = "2026-08-12T15:20:16"
 task_type = "lesson"
-commits = []
+commits = ["aedea7a534fae26f167bd184ebdff77ae03e0395"]
