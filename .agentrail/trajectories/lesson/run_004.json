@@ -1,0 +1,11 @@
+{
+  "task_type": "lesson",
+  "state": {
+    "number": 5,
+    "step": "array-functors"
+  },
+  "action": "Added and ran array mapping probe; implemented concrete functor helpers, laws, failure witness, tests, visual lessons and docs; regenerated web/assets; ran full gate; committed detailed work.",
+  "result": "success",
+  "reward": 1,
+  "timestamp": "2026-08-12T15:24:57"
+}
