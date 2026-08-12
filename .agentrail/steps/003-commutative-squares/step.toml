@@ -1,9 +1,10 @@
 number = 3
 slug = "commutative-squares"
-status = "in-progress"
+status = "completed"
 description = "Implement Lesson 04: an executable commutative square and a deliberately brok..."
 role = "production"
 context_files = []
 created_at = "2026-08-12T14:46:54"
+completed_at = "2026-08-12T15:16:12"
 task_type = "lesson"
-commits = []
+commits = ["ec917200194dc8b3eb18ae0923a2631669dd4f65"]
