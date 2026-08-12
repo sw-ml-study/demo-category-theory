@@ -1,0 +1,25 @@
+# Web Lesson 06 -- coproducts.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Tagged left and right values determine one case-analysis function.
+# ***************************************************************************
+;
+def u:inc(x) { x + 1 }  # action for left values
+def u:negate(x) { 0 - x }  # action for right values
+left = {tag: "left", value: 3}  # left injection
+right = {tag: "right", value: 3}  # right injection
+left_result = call(:u:inc, [left.value])  # chosen by the left tag
+right_result = call(:u:negate, [right.value])  # chosen by the right tag
+disp([left_result, right_result])  # destinations 4 and -3
+# ***************************************************************************
+# * THE VISUAL
+# * Two tagged entrances converge; their tags select different behavior.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 280\" width=\"700\" height=\"280\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{fill:none;stroke:#9ece6a;stroke-width:4}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateY(90px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateY(90px)}}</style><rect width=\"700\" height=\"280\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"65\" y=\"45\" width=\"150\" height=\"65\" rx=\"14\"/><rect class=\"obj\" x=\"485\" y=\"45\" width=\"150\" height=\"65\" rx=\"14\"/><rect class=\"obj\" x=\"275\" y=\"200\" width=\"150\" height=\"60\" rx=\"14\"/><path class=\"arrow\" d=\"M185 110L300 200M515 110L400 200\"/><text x=\"140\" y=\"82\" text-anchor=\"middle\">left 3 -&gt; 4</text><text x=\"560\" y=\"82\" text-anchor=\"middle\">right 3 -&gt; -3</text><text x=\"350\" y=\"237\" text-anchor=\"middle\">case analysis</text><circle class=\"token\" cx=\"140\" cy=\"95\" r=\"10\"/></svg>"  # tagged branches converge
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * The tag remembers the entrance, so one map can apply inc or negate.
+# * THE POINT -- this models values, not statically exhaustive sum types.
+# ***************************************************************************

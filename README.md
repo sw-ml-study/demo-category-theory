@@ -71,6 +71,23 @@ Changing only the bottom arrow from `+2` to `+1` makes the first input land at
 Sources: [CLI lesson](demos/04-commutative-squares/two_routes.mlpl),
 [web lesson](demos/web/commutative_square.mlpl).
 
+### 5. Products are fixed by their projections
+
+![A pair object projecting along two green arrows to values 3 and 8](assets/previews/05-product.svg)
+
+What to notice: satisfying both projections leaves only `pair(3,8)`; a
+candidate such as `pair(3,9)` fails the second triangle. Sources:
+[CLI lesson](demos/05-products/projections.mlpl), [web lesson](demos/web/products.mlpl).
+
+### 6. Coproducts preserve which branch a value entered
+
+![Left and right tagged values converging through case analysis](assets/previews/06-coproduct.svg)
+
+What to notice: the tag chooses `inc` for a left value and `negate` for a right
+value. This is an executable value-level coproduct, not a claim that MLPL has
+statically exhaustive sum types. Sources: [CLI lesson](demos/06-coproducts/case_analysis.mlpl),
+[web lesson](demos/web/coproducts.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

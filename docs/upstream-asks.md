@@ -51,3 +51,18 @@ context/type-constructor abstraction remains a candidate in
 `docs/sw-mlpl-capabilities.md`, not a verified request. The curriculum will
 implement what current MLPL supports first and defer a generic functor lesson
 until multiple concrete contexts establish a generally useful need.
+
+## 3. Tagged record dispatch is not exhaustive
+
+Status: **awkward**, not blocking the concrete coproduct lesson.
+
+`probes/tagged_values.mlpl` verifies that `{tag, value}` plus an `if` dispatch
+works. Nothing checks that every possible tag is handled or rejects an unknown
+tag before runtime. Algebraic data types or exhaustive pattern matching would
+help error/result handling and heterogeneous data pipelines as well as
+coproduct examples, but this lesson is not by itself evidence for a specific
+type-system design.
+
+Acceptance direction: define a closed two-case value and have tooling reject a
+case analysis that omits either branch. Exact syntax remains an upstream design
+decision.

@@ -11,3 +11,7 @@ identity-web	demos/web/identity_composition.mlpl	web	identity-and-composition	0	
 associativity-web	demos/web/composition_associativity.mlpl	web	composition-associativity	0	0	svg	current	runnable
 commutative-square	demos/04-commutative-squares/two_routes.mlpl	04-commutative-squares	path-equality-and-witness	0	0	ascii,svg	current	runnable
 commutative-square-web	demos/web/commutative_square.mlpl	web	path-equality-and-witness	0	0	svg	current	runnable
+products	demos/05-products/projections.mlpl	05-products	universal-product	0	0	ascii,svg	current	runnable
+coproducts	demos/06-coproducts/case_analysis.mlpl	06-coproducts	universal-coproduct	0	0	ascii,svg	manual-tags	runnable
+products-web	demos/web/products.mlpl	web	universal-product	0	0	svg	current	runnable
+coproducts-web	demos/web/coproducts.mlpl	web	universal-coproduct	0	0	svg	manual-tags	runnable

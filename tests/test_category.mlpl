@@ -8,6 +8,7 @@ def u:inc(x) { x + 1 }
 def u:also_inc(x) { 1 + x }
 def u:double(x) { 2 * x }
 def u:plus2(x) { x + 2 }
+def u:negate(x) { 0 - x }
 
 @test {name: "identity and application", tags: ["laws"]}
 def u:test_identity() { "Identity leaves finite inputs unchanged.";
@@ -40,6 +41,31 @@ def u:test_square() { "Both routes agree, or the checker names the first split."
   u:assert_eq(broken.upper, 2, "wrong upper result")?;
   u:assert_eq(broken.lower, 1, "wrong lower result")?;
   ok({test: "square", cases: 5})
+}
+
+@test {name: "concrete product universal property", tags: ["products"]}
+def u:test_product() { "Both projections force the unique pair.";
+  p = u:pair(3, 8);
+  u:assert_eq(u:fst(p), 3, "first projection")?;
+  u:assert_eq(u:snd(p), 8, "second projection")?;
+  lawful = u:product_factor(3, 8, p);
+  u:assert_eq(lawful.commutes, 1, "pair does not commute")?;
+  u:assert_eq(lawful.unique, 1, "pair not unique")?;
+  bad = u:product_factor(3, 8, u:pair(3, 9));
+  u:assert_eq(bad.commutes, 0, "wrong pair accepted")?;
+  ok({test: "product", cases: 5})
+}
+
+@test {name: "concrete coproduct universal property", tags: ["coproducts"]}
+def u:test_coproduct() { "Both injections determine case analysis.";
+  u:assert_eq(u:copair(u:left_value(3), :u:inc, :u:negate), 4, "left case")?;
+  u:assert_eq(u:copair(u:right_value(3), :u:inc, :u:negate), -3, "right case")?;
+  law = u:coproduct_agrees(:u:inc, :u:negate, range(3), range(3), [1, 2, 3], [0, -1, -2]);
+  u:assert_eq(law.commutes, 1, "case restrictions disagree")?;
+  u:assert_eq(law.unique, 1, "case map not uniquely determined")?;
+  bad = u:coproduct_agrees(:u:inc, :u:negate, range(3), range(3), [1, 2, 4], [0, -1, -2]);
+  u:assert_eq(bad.commutes, 0, "bad case map accepted")?;
+  ok({test: "coproduct", cases: 5})
 }
 
 u:run_registered_tests()

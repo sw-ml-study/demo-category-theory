@@ -89,6 +89,11 @@ for the first three visual lessons. No new core feature was required; the only
 shared bridge is the already-recorded byte-array string concatenation used by
 the SVG renderer.
 
+Step 4 confirms that ordinary records are sufficient for concrete products and
+tagged value-level coproducts. The demos intentionally do not model type-level
+universal quantification or statically exhaustive alternatives. Manual tag
+dispatch remains `awkward`; it does not block these concrete lessons.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

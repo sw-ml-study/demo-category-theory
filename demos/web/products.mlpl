@@ -1,0 +1,21 @@
+# Web Lesson 05 -- products.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * A pair is the unique value fixed by its first and second projections.
+# ***************************************************************************
+;
+p = {first: 3, second: 8}  # the mediator into the product
+candidate = {first: 3, second: 9}  # a competitor that misses one projection
+disp([p.first, p.second, candidate.first, candidate.second])  # 3,8 versus 3,9
+# ***************************************************************************
+# * THE VISUAL
+# * Both green arrows leave one pair; each projection fixes one coordinate.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 280\" width=\"700\" height=\"280\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{fill:none;stroke:#9ece6a;stroke-width:4}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateY(90px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateY(90px)}}</style><rect width=\"700\" height=\"280\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"275\" y=\"45\" width=\"150\" height=\"65\" rx=\"14\"/><rect class=\"obj\" x=\"65\" y=\"200\" width=\"150\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"485\" y=\"200\" width=\"150\" height=\"60\" rx=\"14\"/><path class=\"arrow\" d=\"M300 110L185 200M400 110L515 200\"/><text x=\"350\" y=\"82\" text-anchor=\"middle\">pair(3,8)</text><text x=\"230\" y=\"150\">fst</text><text x=\"455\" y=\"150\">snd</text><text x=\"140\" y=\"237\" text-anchor=\"middle\">3</text><text x=\"560\" y=\"237\" text-anchor=\"middle\">8</text><circle class=\"token\" cx=\"350\" cy=\"95\" r=\"10\"/></svg>"  # the product cone
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Matching both targets forces (3,8); the candidate (3,9) cannot compete.
+# * THE POINT -- the universal property is existence plus uniqueness.
+# ***************************************************************************

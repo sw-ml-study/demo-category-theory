@@ -43,3 +43,25 @@ def u:square_counterexample(top, right, left, bottom, xs) {
 def u:square_commutes(top, right, left, bottom, xs) {
   1 - u:square_counterexample(top, right, left, bottom, xs).found
 }
+
+# Concrete value-level products. The universal-property check says a proposed
+# mediator is forced to be the pair when both projections have the right value.
+def u:pair(a, b) { {first: a, second: b} }
+def u:fst(p) { p.first }
+def u:snd(p) { p.second }
+def u:product_factor(a, b, candidate) {
+  {commutes: equal(u:fst(candidate), a) * equal(u:snd(candidate), b), unique: equal(candidate, u:pair(a, b))}
+}
+
+# Concrete value-level coproducts. Tags are manually checked records: MLPL
+# does not provide statically exhaustive algebraic data types.
+def u:left_value(x) { {tag: "left", value: x} }
+def u:right_value(x) { {tag: "right", value: x} }
+def u:copair(v, on_left, on_right) {
+  if equal(v.tag, "left") { u:apply(on_left, v.value) } else { u:apply(on_right, v.value) }
+}
+def u:coproduct_agrees(on_left, on_right, left_inputs, right_inputs, candidate_left, candidate_right) {
+  canonical_left = each(on_left, left_inputs)
+  canonical_right = each(on_right, right_inputs)
+  {commutes: equal(canonical_left, candidate_left) * equal(canonical_right, candidate_right), unique: equal(canonical_left, candidate_left) * equal(canonical_right, candidate_right)}
+}

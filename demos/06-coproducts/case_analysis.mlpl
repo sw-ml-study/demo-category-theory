@@ -1,0 +1,17 @@
+# Lesson 06 -- coproducts through tagged injections and case analysis.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/category.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 06 -- A COPRODUCT IS TAGGED CHOICE", intro: "Left and right injections retain their origin, so one case map can handle each branch exactly once."})
+def u:inc(x) { x + 1 }
+def u:negate(x) { 0 - x }
+left_result = u:copair(u:left_value(3), :u:inc, :u:negate)
+right_result = u:copair(u:right_value(3), :u:inc, :u:negate)
+law = u:coproduct_agrees(:u:inc, :u:negate, range(3), range(3), [1, 2, 3], [0, -1, -2])
+disp([left_result, right_result, law.unique])
+wrote = write_text("out/06-coproduct.svg", u:coproduct_diagram())
+u:epilog_open()
+u:explain("out/06-coproduct.svg", "Values enter through a left or right tag and converge on one case-analysis target. The tag chooses inc or negate without confusing the branches.")
+u:takeaway("This is a concrete value-level coproduct. MLPL records carry tags, but the language does not statically prove exhaustive cases.")
+if eq(left_result, 4) * eq(right_result, -3) * law.commutes * law.unique * is_ok(wrote) { ok("coproduct universal property verified") } else { err("coproduct invariant failed") }

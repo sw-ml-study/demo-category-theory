@@ -339,3 +339,6 @@ Category theory exercises the language; it does not dictate new syntax.
   commit and the subsequent Agentrail completion-metadata commit before moving
   on. Push failure is a blocking handoff failure, not an optional exception.
 - Do not continue committing on a handed-off `pr/*` branch.
+- Every step-completion handoff names the next Agentrail step, summarizes what
+  it will deliver, lists its verified prerequisites and known/potential
+  blockers, and says whether it can proceed immediately or must be deferred.
