@@ -1,9 +1,10 @@
 number = 1
 slug = "foundation-capability-survey"
-status = "in-progress"
+status = "completed"
 description = "Build the repository foundation and perform a measured sw-MLPL capability sur..."
 role = "production"
 context_files = []
 created_at = "2026-08-12T14:46:54"
+completed_at = "2026-08-12T15:01:00"
 task_type = "scaffold"
-commits = []
+commits = ["ad85f6b1b89b2c4c05e941f745eb577ae7e0de00"]
