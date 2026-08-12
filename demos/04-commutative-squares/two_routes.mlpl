@@ -1,0 +1,22 @@
+# Lesson 04 -- a commuting square and the first witness from a broken one.
+# visual: ascii, svg
+# loops: 0
+
+include "../../lib/category.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 04 -- TWO ROUTES, ONE RESULT", intro: "A square commutes when going across-then-down equals down-then-across for every input. Beside it, one changed arrow exposes the first split."})
+def u:inc(x) { x + 1 }
+def u:double(x) { 2 * x }
+def u:plus2(x) { x + 2 }
+xs = range(6)
+upper = u:route_outputs(:u:inc, :u:double, xs)
+lower = u:route_outputs(:u:double, :u:plus2, xs)
+broken_lower = u:route_outputs(:u:double, :u:inc, xs)
+disp([xs, upper, lower, broken_lower])
+lawful = u:square_counterexample(:u:inc, :u:double, :u:double, :u:plus2, xs)
+broken = u:square_counterexample(:u:inc, :u:double, :u:double, :u:inc, xs)
+wrote = write_text("out/04-commutative-square.svg", u:square_diagram())
+u:epilog_open()
+u:explain("out/04-commutative-square.svg", "Left: both pink tokens carry input 0 along different routes and meet at 2 inside a green halo. Right: replacing +2 by +1 splits the arrivals into red 2 and 1.")
+u:takeaway("A commutative square is an equality of composed functions. When it fails, input 0 and outputs 2 versus 1 explain exactly why.")
+if (1 - lawful.found) * broken.found * eq(broken.input, 0) * eq(broken.upper, 2) * eq(broken.lower, 1) * is_ok(wrote) { ok("square law and witness verified") } else { err("square lesson invariant failed") }

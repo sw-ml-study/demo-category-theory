@@ -7,6 +7,7 @@ include "lib/category.mlpl";
 def u:inc(x) { x + 1 }
 def u:also_inc(x) { 1 + x }
 def u:double(x) { 2 * x }
+def u:plus2(x) { x + 2 }
 
 @test {name: "identity and application", tags: ["laws"]}
 def u:test_identity() { "Identity leaves finite inputs unchanged.";
@@ -27,6 +28,18 @@ def u:test_witness() { "Equal paths pass; unequal paths name the first input.";
   u:assert_eq(w.left, 1, "wrong left value")?;
   u:assert_eq(w.right, 0, "wrong right value")?;
   ok({test: "witness", cases: 5})
+}
+
+@test {name: "commutative square and broken witness", tags: ["laws", "squares"]}
+def u:test_square() { "Both routes agree, or the checker names the first split.";
+  xs = range(5);
+  u:assert_eq(u:square_commutes(:u:inc, :u:double, :u:double, :u:plus2, xs), 1, "lawful square rejected")?;
+  broken = u:square_counterexample(:u:inc, :u:double, :u:double, :u:inc, xs);
+  u:assert_eq(broken.found, 1, "broken square accepted")?;
+  u:assert_eq(broken.input, 0, "wrong witness input")?;
+  u:assert_eq(broken.upper, 2, "wrong upper result")?;
+  u:assert_eq(broken.lower, 1, "wrong lower result")?;
+  ok({test: "square", cases: 5})
 }
 
 u:run_registered_tests()

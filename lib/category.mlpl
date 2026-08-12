@@ -29,3 +29,17 @@ def u:path_counterexample(left, right, xs) {
 def u:paths_equal(left, right, xs) {
   1 - u:path_counterexample(left, right, xs).found
 }
+
+# A square commutes when top-then-right and left-then-bottom agree everywhere.
+def u:route_outputs(first, second, xs) { each(second, each(first, xs)) }
+def u:square_counterexample(top, right, left, bottom, xs) {
+  upper = u:route_outputs(top, right, xs)
+  lower = u:route_outputs(left, bottom, xs)
+  agree = eq(upper, lower)
+  found = 1 - reduce(:and, flatten(agree))
+  i = take(grade_up(flatten(agree)), 0, 0) * found
+  {found: found, input: take(xs, 0, i), upper: take(upper, 0, i), lower: take(lower, 0, i)}
+}
+def u:square_commutes(top, right, left, bottom, xs) {
+  1 - u:square_counterexample(top, right, left, bottom, xs).found
+}

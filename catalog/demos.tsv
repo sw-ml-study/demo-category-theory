@@ -9,3 +9,5 @@ associativity	demos/03-associativity/bracketing.mlpl	03-associativity	compositio
 arrows-web	demos/web/arrows.mlpl	web	objects-and-morphisms	0	0	svg	current	runnable
 identity-web	demos/web/identity_composition.mlpl	web	identity-and-composition	0	0	svg	current	runnable
 associativity-web	demos/web/composition_associativity.mlpl	web	composition-associativity	0	0	svg	current	runnable
+commutative-square	demos/04-commutative-squares/two_routes.mlpl	04-commutative-squares	path-equality-and-witness	0	0	ascii,svg	current	runnable
+commutative-square-web	demos/web/commutative_square.mlpl	web	path-equality-and-witness	0	0	svg	current	runnable

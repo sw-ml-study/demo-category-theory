@@ -1,6 +1,6 @@
 number = 3
 slug = "commutative-squares"
-status = "pending"
+status = "in-progress"
 description = "Implement Lesson 04: an executable commutative square and a deliberately brok..."
 role = "production"
 context_files = []

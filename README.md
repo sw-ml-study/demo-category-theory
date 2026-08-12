@@ -61,6 +61,16 @@ finish together. Parentheses group the composition; they do not reroute it.
 Sources: [CLI lesson](demos/03-associativity/bracketing.mlpl),
 [web lesson](demos/web/composition_associativity.mlpl).
 
+### 4. A commutative square is an equality you can run
+
+![A lawful square with a green shared destination beside a broken square with split red destinations 2 and 1](assets/previews/04-commutative-square.svg)
+
+What to notice: the lawful square sends input `0` to `2` along both routes.
+Changing only the bottom arrow from `+2` to `+1` makes the first input land at
+`2` versus `1`; the red split is the concrete counterexample returned by MLPL.
+Sources: [CLI lesson](demos/04-commutative-squares/two_routes.mlpl),
+[web lesson](demos/web/commutative_square.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 
