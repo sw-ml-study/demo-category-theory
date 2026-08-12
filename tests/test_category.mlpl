@@ -10,6 +10,8 @@ def u:double(x) { 2 * x }
 def u:plus2(x) { x + 2 }
 def u:negate(x) { 0 - x }
 def u:inc_double(x) { 2 * (x + 1) }
+def u:transpose_component(m) { transpose(m) }
+def u:broken_component(m) { each(:u:inc, transpose(m)) }
 
 @test {name: "identity and application", tags: ["laws"]}
 def u:test_identity() { "Identity leaves finite inputs unchanged.";
@@ -81,6 +83,20 @@ def u:test_array_functor() { "each preserves identity and composition.";
   u:assert_eq(bad.found, 1, "bad lift accepted")?;
   u:assert_eq(bad.index, 0, "wrong bad-lift witness")?;
   ok({test: "array-functor", cases: 6})
+}
+
+@test {name: "transpose is natural for cellwise maps", tags: ["natural-transformations"]}
+def u:test_naturality() { "Mapping then transposing equals transposing then mapping.";
+  a = [[1, 2, 3], [4, 5, 6]];
+  b = [[1, 2], [3, 4], [5, 6]];
+  u:assert_eq(u:transpose_natural(:u:inc, a), 1, "2x3 square")?;
+  u:assert_eq(u:transpose_natural(:u:double, b), 1, "3x2 square")?;
+  bad = u:naturality_counterexample(:u:double, :u:broken_component, a);
+  u:assert_eq(bad.found, 1, "broken component accepted")?;
+  u:assert_eq(bad.index, 0, "wrong naturality witness index")?;
+  u:assert_eq(bad.expected, 3, "wrong upper witness")?;
+  u:assert_eq(bad.actual, 4, "wrong lower witness")?;
+  ok({test: "naturality", cases: 6})
 }
 
 u:run_registered_tests()

@@ -1,0 +1,24 @@
+# Web Lesson 09 -- transpose as a natural transformation.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Transpose commutes with cellwise mapping across explicit matrix shapes.
+# ***************************************************************************
+;
+def u:inc(x) { x + 1 }  # a morphism mapped over every cell
+m = [[1, 2, 3], [4, 5, 6]]  # the 2x3 component's input
+upper = transpose(each(:u:inc, m))  # map, then component
+lower = each(:u:inc, transpose(m))  # component, then map
+disp(upper)  # first route
+disp(lower)  # same destination by naturality
+# ***************************************************************************
+# * THE VISUAL
+# * Green is the commuting component; red shows a bad +1 component: 3 != 4.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 820 330\" width=\"820\" height=\"330\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{fill:none;stroke:#7aa2f7;stroke-width:4}.token{fill:#f7768e;animation:p 4s infinite alternate}.good{fill:none;stroke:#9ece6a;stroke-width:7}.bad{fill:none;stroke:#f7768e;stroke-width:7}@keyframes p{to{transform:translate(150px,140px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translate(150px,140px)}}</style><rect width=\"820\" height=\"330\" fill=\"#1a1b26\"/><text x=\"410\" y=\"25\" text-anchor=\"middle\">transpose(each(f,m)) = each(f,transpose(m))</text><g><rect class=\"obj\" x=\"50\" y=\"55\" width=\"110\" height=\"55\" rx=\"12\"/><rect class=\"obj\" x=\"250\" y=\"55\" width=\"110\" height=\"55\" rx=\"12\"/><rect class=\"obj\" x=\"50\" y=\"230\" width=\"110\" height=\"55\" rx=\"12\"/><rect class=\"obj\" x=\"250\" y=\"230\" width=\"110\" height=\"55\" rx=\"12\"/><path class=\"arrow\" d=\"M160 82H250M105 110V230M305 110V230M160 257H250\"/><circle class=\"good\" cx=\"305\" cy=\"257\" r=\"24\"/><circle class=\"token\" cx=\"105\" cy=\"82\" r=\"9\"/><text x=\"205\" y=\"70\">each(f)</text><text x=\"75\" y=\"175\">T</text></g><g transform=\"translate(410 0)\"><rect class=\"obj\" x=\"50\" y=\"55\" width=\"110\" height=\"55\" rx=\"12\"/><rect class=\"obj\" x=\"250\" y=\"55\" width=\"110\" height=\"55\" rx=\"12\"/><rect class=\"obj\" x=\"50\" y=\"230\" width=\"110\" height=\"55\" rx=\"12\"/><rect class=\"obj\" x=\"250\" y=\"230\" width=\"110\" height=\"55\" rx=\"12\"/><path class=\"arrow\" d=\"M160 82H250M105 110V230M305 110V230M160 257H250\"/><circle class=\"bad\" cx=\"290\" cy=\"257\" r=\"20\"/><circle class=\"bad\" cx=\"325\" cy=\"257\" r=\"20\"/><text x=\"290\" y=\"263\" text-anchor=\"middle\">3</text><text x=\"325\" y=\"263\" text-anchor=\"middle\">4</text><text x=\"75\" y=\"175\">T,+1</text></g></svg>"  # lawful and minimally broken components
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Equal matrices prove one component; the family repeats for each shape.
+# * THE POINT -- naturality means every component square commutes.
+# ***************************************************************************

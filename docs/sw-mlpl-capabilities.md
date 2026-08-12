@@ -100,6 +100,12 @@ satisfies identity and composition for ordinary scalar functions. This is full
 support for the concrete array functor lesson, not evidence that MLPL already
 has—or needs—a generic functor interface across arbitrary contexts.
 
+Step 6 verifies a concrete natural transformation without new language
+features: transpose supplies a component for each explicit matrix shape and
+commutes with cellwise `each`. Fixed functions and arrays are enough to teach
+and test the naturality equation. Quantifying generically over arbitrary
+functors remains a separate candidate, not a blocker for this lesson.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

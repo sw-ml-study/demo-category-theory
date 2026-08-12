@@ -78,3 +78,14 @@ def u:array_map_counterexample(expected, actual) {
   i = take(grade_up(agree), 0, 0) * found
   {found: found, index: i, expected: take(flatten(expected), 0, i), actual: take(flatten(actual), 0, i)}
 }
+
+# A concrete natural transformation: transpose commutes with every cellwise
+# map. The two routes are transpose(map(f,m)) and map(f,transpose(m)).
+def u:transpose_after_map(f, m) { transpose(each(f, m)) }
+def u:map_after_transpose(f, m) { each(f, transpose(m)) }
+def u:transpose_natural(f, m) { equal(u:transpose_after_map(f, m), u:map_after_transpose(f, m)) }
+def u:naturality_counterexample(f, component, m) {
+  upper = call(component, [each(f, m)])
+  lower = each(f, call(component, [m]))
+  u:array_map_counterexample(upper, lower)
+}

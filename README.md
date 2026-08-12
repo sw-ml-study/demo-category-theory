@@ -107,6 +107,16 @@ changes the axes to `3×2`. Sources:
 [CLI lesson](demos/08-shape-preservation/mapping_shape.mlpl),
 [web lesson](demos/web/shape_preservation.mlpl).
 
+### 9. Naturality is a family of commuting squares
+
+![A green transpose naturality square beside a broken red component whose first outputs are 3 and 4](assets/previews/09-natural-transformation.svg)
+
+What to notice: transposing after a cellwise map equals mapping after
+transpose, for each tested matrix shape. Adding `+1` inside one component
+breaks compatibility immediately: flattened cell `0` becomes `3` versus `4`.
+Sources: [CLI lesson](demos/09-natural-transformations/transpose.mlpl),
+[web lesson](demos/web/natural_transformation.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

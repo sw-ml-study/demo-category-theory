@@ -1,0 +1,22 @@
+# Lesson 09 -- transpose as a concrete natural transformation.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/category.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 09 -- A WHOLE FAMILY OF COMMUTING SQUARES", intro: "Transpose supplies one component for each matrix shape. Cellwise mapping commutes with every component."})
+def u:inc(x) { x + 1 }
+def u:double(x) { 2 * x }
+def u:broken_component(m) { each(:u:inc, transpose(m)) }
+a = [[1, 2, 3], [4, 5, 6]]
+b = [[1, 2], [3, 4], [5, 6]]
+upper = u:transpose_after_map(:u:inc, a)
+lower = u:map_after_transpose(:u:inc, a)
+witness = u:naturality_counterexample(:u:double, :u:broken_component, a)
+disp(upper)
+disp(lower)
+disp([witness.index, witness.expected, witness.actual])
+wrote = write_text("out/09-natural-transformation.svg", u:naturality_diagram())
+u:epilog_open()
+u:explain("out/09-natural-transformation.svg", "Each green square chooses a matrix shape, maps every cell, and transposes. Either order lands at the same transposed matrix. The red square adds one inside its component and splits cell 0 into 3 versus 4.")
+u:takeaway("A natural transformation is a compatible family of component maps. Here transpose is the family; generic abstraction over arbitrary contexts is not required to execute its naturality squares.")
+if u:transpose_natural(:u:inc, a) * u:transpose_natural(:u:double, b) * witness.found * eq(witness.index, 0) * eq(witness.expected, 3) * eq(witness.actual, 4) * is_ok(wrote) { ok("transpose naturality verified") } else { err("naturality invariant failed") }

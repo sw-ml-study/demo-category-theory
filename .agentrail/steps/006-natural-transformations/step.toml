@@ -1,6 +1,6 @@
 number = 6
 slug = "natural-transformations"
-status = "pending"
+status = "in-progress"
 description = "Implement Lesson 09: natural transformations over a small, explicit family of..."
 role = "production"
 context_files = []

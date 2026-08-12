@@ -20,3 +20,5 @@ array-functor	demos/07-array-functors/map_laws.mlpl	07-array-functors	functor-id
 shape-preservation	demos/08-shape-preservation/mapping_shape.mlpl	08-shape-preservation	structure-preservation	0	0	ascii,svg	each,transpose	runnable
 array-functor-web	demos/web/array_functor.mlpl	web	functor-identity-composition	0	0	svg	each	runnable
 shape-preservation-web	demos/web/shape_preservation.mlpl	web	structure-preservation	0	0	svg	each,transpose	runnable
+natural-transformation	demos/09-natural-transformations/transpose.mlpl	09-natural-transformations	transpose-naturality	0	0	ascii,svg	each,transpose	runnable
+natural-transformation-web	demos/web/natural_transformation.mlpl	web	transpose-naturality	0	0	svg	each,transpose	runnable
