@@ -1,0 +1,25 @@
+# Web Lesson 03 -- associativity of composition.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Two bracketings of three arrows trace the same route in the same order.
+# ***************************************************************************
+;
+def u:f(x) { x + 1 }  # A to B
+def u:g(x) { 2 * x }  # B to C
+def u:h(x) { x * x }  # C to D
+xs = range(5)  # finite visible witnesses
+left = each(:u:h, each(:u:g, each(:u:f, xs)))  # (f ; g) ; h
+right = each(:u:h, each(:u:g, each(:u:f, xs)))  # f ; (g ; h)
+disp([left, right])  # equal rows verify associativity
+# ***************************************************************************
+# * THE VISUAL
+# * Brackets never change the A-to-B-to-C-to-D order, so arrivals coincide.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 760 220\" width=\"760\" height=\"220\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.o{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.a{stroke:#9ece6a;stroke-width:4}.t{fill:#f7768e;animation:m 4s infinite alternate}@keyframes m{to{transform:translateX(555px)}}@media(prefers-reduced-motion:reduce){.t{animation:none;transform:translateX(555px)}}</style><rect width=\"760\" height=\"220\" fill=\"#1a1b26\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\">(f ; g) ; h = f ; (g ; h)</text><rect class=\"o\" x=\"30\" y=\"80\" width=\"110\" height=\"70\" rx=\"14\"/><rect class=\"o\" x=\"220\" y=\"80\" width=\"110\" height=\"70\" rx=\"14\"/><rect class=\"o\" x=\"410\" y=\"80\" width=\"110\" height=\"70\" rx=\"14\"/><rect class=\"o\" x=\"600\" y=\"80\" width=\"110\" height=\"70\" rx=\"14\"/><line class=\"a\" x1=\"140\" y1=\"115\" x2=\"220\" y2=\"115\"/><line class=\"a\" x1=\"330\" y1=\"115\" x2=\"410\" y2=\"115\"/><line class=\"a\" x1=\"520\" y1=\"115\" x2=\"600\" y2=\"115\"/><text x=\"85\" y=\"122\" text-anchor=\"middle\">A</text><text x=\"275\" y=\"122\" text-anchor=\"middle\">B</text><text x=\"465\" y=\"122\" text-anchor=\"middle\">C</text><text x=\"655\" y=\"122\" text-anchor=\"middle\">D</text><circle class=\"t\" cx=\"120\" cy=\"140\" r=\"11\"/></svg>"  # one route, either bracketing
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Both rows and the single route say the same thing: only grouping changed.
+# * THE POINT -- composition is associative because arrow order is unchanged.
+# ***************************************************************************

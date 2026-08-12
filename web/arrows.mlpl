@@ -1,0 +1,22 @@
+# Web Lesson 01 -- arrows are functions.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * A concrete morphism: five source numbers and the five results of doubling.
+# ***************************************************************************
+;
+def u:double(x) { 2 * x }  # the arrow's behavior
+xs = range(5)  # the visible source object
+ys = each(:u:double, xs)  # follow the arrow for every source value
+disp([xs, ys])  # rows are source values and their destinations
+# ***************************************************************************
+# * THE VISUAL
+# * The pink token is the same input before and after crossing double.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 220\" width=\"700\" height=\"220\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.o{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.a{stroke:#9ece6a;stroke-width:4}.t{fill:#f7768e;animation:m 3s infinite alternate}@keyframes m{to{transform:translateX(400px)}}@media(prefers-reduced-motion:reduce){.t{animation:none;transform:translateX(400px)}}</style><rect width=\"700\" height=\"220\" fill=\"#1a1b26\"/><rect class=\"o\" x=\"60\" y=\"70\" width=\"150\" height=\"90\" rx=\"16\"/><rect class=\"o\" x=\"490\" y=\"70\" width=\"150\" height=\"90\" rx=\"16\"/><line class=\"a\" x1=\"210\" y1=\"115\" x2=\"490\" y2=\"115\"/><text x=\"350\" y=\"95\" text-anchor=\"middle\">double</text><text x=\"135\" y=\"125\" text-anchor=\"middle\">3</text><text x=\"565\" y=\"125\" text-anchor=\"middle\">6</text><circle class=\"t\" cx=\"190\" cy=\"140\" r=\"11\"/></svg>"  # dependency-free inline SVG
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * The two array rows verify every mapping; the token makes one mapping seen.
+# * THE POINT -- an arrow is an executable function, not decorative notation.
+# ***************************************************************************

@@ -9,6 +9,9 @@ tests *args:
 probes:
     ./scripts/run-probes
 
+demos:
+    ./scripts/run-all
+
 web:
     ./scripts/build-web-demos
 
@@ -22,5 +25,6 @@ audit:
     ./scripts/check-narration
     ./scripts/check-web-size
     ./scripts/check-generated
+    ./scripts/check-visual-grammar
 
-check: probes tests audit
+check: probes demos tests audit

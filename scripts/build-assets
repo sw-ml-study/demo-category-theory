@@ -3,5 +3,8 @@ set -eu
 repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 dest=${1:-"$repo_root/assets/previews"}
 mkdir -p "$dest"
-# Preview-producing demos are added in Step 2. Never invent placeholders.
+"$repo_root/scripts/run-all" >/dev/null
+cp "$repo_root/out/01-arrows.svg" "$dest/01-arrows.svg"
+cp "$repo_root/out/02-identity-composition.svg" "$dest/02-identity-composition.svg"
+cp "$repo_root/out/03-composition-associativity.svg" "$dest/03-composition-associativity.svg"
 echo "README previews written"

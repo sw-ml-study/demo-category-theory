@@ -1,6 +1,6 @@
 number = 2
 slug = "category-laws-lessons"
-status = "pending"
+status = "in-progress"
 description = "Implement Lessons 01-03 from docs/plan.md: arrows as functions, identity/comp..."
 role = "production"
 context_files = []

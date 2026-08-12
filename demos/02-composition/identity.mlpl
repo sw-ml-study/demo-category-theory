@@ -1,0 +1,20 @@
+# Lesson 02 -- identity and composition.
+# visual: ascii, svg
+# loops: 0
+
+include "../../lib/category.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 02 -- IDENTITY AND COMPOSITION", intro: "Compare f with identity before and after f over every input."})
+def u:inc(x) { x + 1 }
+def u:id_then_inc(x) { u:then_apply(:u:id, :u:inc, x) }
+def u:inc_then_id(x) { u:then_apply(:u:inc, :u:id, x) }
+xs = range(6)
+plain = each(:u:inc, xs)
+left = each(:u:id_then_inc, xs)
+right = each(:u:inc_then_id, xs)
+disp([plain, left, right])
+wrote = write_text("out/02-identity-composition.svg", u:identity_diagram())
+u:epilog_open()
+u:explain("out/02-identity-composition.svg", "The identity loop changes nothing, so it can disappear from either side of the green arrow.")
+u:takeaway("Identity is a do-nothing morphism that leaves composition unchanged on either side.")
+if equal(plain, left) * equal(plain, right) * is_ok(wrote) { ok("both identity laws hold") } else { err("identity law failed") }

@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+bad=0
+for svg in "$repo_root"/assets/previews/*.svg; do
+  [ -f "$svg" ] || continue
+  rel=${svg#$repo_root/}
+  for token in 'class="obj"' 'class="arrow"' 'class="token"' 'prefers-reduced-motion:reduce' 'role="img"'; do
+    grep -qF "$token" "$svg" || { echo "$rel: missing visual grammar token $token" >&2; bad=1; }
+  done
+done
+[ "$bad" -eq 0 ]
+echo "visual grammar: ok"

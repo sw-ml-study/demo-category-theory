@@ -1,0 +1,25 @@
+# Web Lesson 02 -- identity and composition.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Adding a do-nothing identity before or after inc changes no destination.
+# ***************************************************************************
+;
+def u:inc(x) { x + 1 }  # the meaningful arrow
+def u:id(x) { x }  # the identity arrow
+xs = range(6)  # check more than the pictured token
+plain = each(:u:inc, xs)  # f
+before = each(:u:inc, each(:u:id, xs))  # id then f
+after = each(:u:id, each(:u:inc, xs))  # f then id
+disp([plain, before, after])  # all three rows must match
+# ***************************************************************************
+# * THE VISUAL
+# * The loop is identity. The token finishes at B whether the loop is used.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 220\" width=\"700\" height=\"220\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.o{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.a{fill:none;stroke:#9ece6a;stroke-width:4}.t{fill:#f7768e;animation:m 3s infinite alternate}@keyframes m{to{transform:translateX(400px)}}@media(prefers-reduced-motion:reduce){.t{animation:none;transform:translateX(400px)}}</style><rect width=\"700\" height=\"220\" fill=\"#1a1b26\"/><rect class=\"o\" x=\"60\" y=\"85\" width=\"150\" height=\"80\" rx=\"16\"/><rect class=\"o\" x=\"490\" y=\"85\" width=\"150\" height=\"80\" rx=\"16\"/><line class=\"a\" x1=\"210\" y1=\"125\" x2=\"490\" y2=\"125\"/><path class=\"a\" d=\"M90 85C70 25 200 25 180 85\"/><text x=\"135\" y=\"35\" text-anchor=\"middle\">id</text><text x=\"350\" y=\"105\" text-anchor=\"middle\">inc</text><circle class=\"t\" cx=\"190\" cy=\"145\" r=\"11\"/></svg>"  # identity loop and main arrow
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Three equal rows are the proof; the optional loop changes no endpoint.
+# * THE POINT -- id ; f = f = f ; id for every checked input.
+# ***************************************************************************

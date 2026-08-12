@@ -3,6 +3,9 @@ function-values	probes/function_values.mlpl	probes	first-class-functions	0	0	asc
 nested-equality	probes/nested_equality.mlpl	probes	structured-equality	0	0	ascii	current	runnable
 tagged-values	probes/tagged_values.mlpl	probes	coproduct-encoding	0	0	ascii	current	runnable
 text-svg	probes/text_svg.mlpl	probes	text-construction	0	0	svg	byte-bridge	constrained
-arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	gated
-identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	gated
-associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	gated
+arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	runnable
+identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	runnable
+associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	runnable
+arrows-web	demos/web/arrows.mlpl	web	objects-and-morphisms	0	0	svg	current	runnable
+identity-web	demos/web/identity_composition.mlpl	web	identity-and-composition	0	0	svg	current	runnable
+associativity-web	demos/web/composition_associativity.mlpl	web	composition-associativity	0	0	svg	current	runnable

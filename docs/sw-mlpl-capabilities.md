@@ -84,6 +84,11 @@ Measured 2026-08-12 with `mlpl-repl 0.20.0`, build commit `d373584c`:
 These results deliberately put composition, finite path laws, commutative
 squares, and concrete products/coproducts before generic functor machinery.
 
+Step 2 confirms that these supported fixed-arity capabilities are sufficient
+for the first three visual lessons. No new core feature was required; the only
+shared bridge is the already-recorded byte-array string concatenation used by
+the SVG renderer.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:
