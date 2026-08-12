@@ -1,0 +1,9 @@
+number = 2
+slug = "category-laws-lessons"
+status = "pending"
+description = "Implement Lessons 01-03 from docs/plan.md: arrows as functions, identity/comp..."
+role = "production"
+context_files = []
+created_at = "2026-08-12T14:46:54"
+task_type = "lesson"
+commits = []

@@ -1,0 +1,1 @@
+Implement Lesson 04: an executable commutative square and a deliberately broken square. Animate the same finite inputs along both routes, show equal arrivals in green, and expose the first unequal input/output pair in red. Make MLPL checks authoritative, add conformance and narration tests, update catalog/docs, and run the full gate.
