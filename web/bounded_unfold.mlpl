@@ -1,0 +1,26 @@
+# Web Lesson 17 -- bounded deterministic unfold.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * A seed, step, and explicit count generate one finite arithmetic sequence.
+# ***************************************************************************
+;
+def u:unfold_schedule(seed, step, count) { "Generate a bounded arithmetic checkpoint schedule."; seed + range(count) * step }  # finite generator
+generated = u:unfold_schedule(3, 2, 4)  # [3,5,7,9]
+recovered_seed = take(generated, 0, 0)  # fold-like observation
+recovered_step = take(generated, 0, 1) - recovered_seed  # first difference
+regenerated = u:unfold_schedule(recovered_seed, recovered_step, 4)  # exact round-trip
+irregular = [3, 5, 8, 9]  # outside the arithmetic fixture
+irregular_regenerated = u:unfold_schedule(3, 2, 4)  # differs visibly
+disp([equal(generated, regenerated), equal(irregular, irregular_regenerated)])  # 1 then 0
+# ***************************************************************************
+# * THE VISUAL
+# * Green expands seed 3 by step 2; red exposes an irregular non-round-trip.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 820 270\" width=\"820\" height=\"270\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.bad{stroke:#f7768e}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(470px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(470px)}}</style><rect width=\"820\" height=\"270\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"45\" y=\"45\" width=\"190\" height=\"65\" rx=\"14\"/><rect class=\"obj\" x=\"590\" y=\"45\" width=\"185\" height=\"65\" rx=\"14\"/><line class=\"arrow\" x1=\"235\" y1=\"77\" x2=\"590\" y2=\"77\"/><text x=\"140\" y=\"84\" text-anchor=\"middle\">seed 3, step 2</text><text x=\"682\" y=\"84\" text-anchor=\"middle\">[3,5,7,9]</text><rect class=\"obj\" x=\"120\" y=\"180\" width=\"220\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"480\" y=\"180\" width=\"220\" height=\"60\" rx=\"14\"/><line class=\"arrow bad\" x1=\"340\" y1=\"210\" x2=\"480\" y2=\"210\"/><text x=\"230\" y=\"217\" text-anchor=\"middle\">irregular [3,5,8,9]</text><text x=\"590\" y=\"217\" text-anchor=\"middle\">arithmetic [3,5,7,9]</text><circle class=\"token\" cx=\"215\" cy=\"97\" r=\"9\"/></svg>"  # bounded generation and witness
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Recovered arithmetic parameters regenerate only sequences in this fixture.
+# * THE POINT -- bounded unfold is generation, not unrestricted recursion.
+# ***************************************************************************

@@ -188,6 +188,25 @@ batch decision. Sources:
 [CLI lesson](demos/15-dependent-contexts/batch_after_load.mlpl),
 [web lesson](demos/web/dependent_contexts.mlpl).
 
+### 16. A lawful fold can fuse useful work
+
+![A metric array following mapped-then-folded and fused routes that both produce 40](assets/previews/16-fold-fusion.svg)
+
+What to notice: doubling every metric and then summing produces the same `40`
+as summing once and doubling the summary. Squaring supplies the counterexample:
+`120` is not `400`. Sources: [CLI lesson](demos/16-folds/fuse_summary.mlpl),
+[web lesson](demos/web/fold_fusion.mlpl).
+
+### 17. An unfold generates a bounded schedule
+
+![Seed 3 and step 2 generating the finite schedule 3, 5, 7, 9 beside an irregular counterexample](assets/previews/17-bounded-unfold.svg)
+
+What to notice: seed `3`, step `2`, and count `4` deterministically generate
+`[3,5,7,9]`. Recovering the first two parameters regenerates arithmetic
+fixtures exactly, while `[3,5,8,9]` exposes the boundary. Sources:
+[CLI lesson](demos/17-unfolds/bounded_generation.mlpl),
+[web lesson](demos/web/bounded_unfold.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

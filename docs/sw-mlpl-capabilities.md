@@ -147,6 +147,14 @@ is required for these concrete Lessons 14-15. The helpers intentionally choose
 one deterministic first failure; accumulating multiple diagnostics and generic
 `Applicative`/`Monad` interfaces remain outside the demonstrated capability.
 
+Step 4 probe `probes/finite_folds_unfolds.mlpl` confirms that current
+`each`, `reduce_add`, `range`, `shape`, and `take` are sufficient for finite
+fold/unfold lessons. A linear scale fuses through additive reduction, and a
+bounded arithmetic sequence can recover its seed/step and regenerate exactly.
+An irregular sequence supplies the failing witness. Recursive records or a
+generic recursion-scheme interface were not needed or claimed. No upstream
+ask follows from these bounded array fixtures.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

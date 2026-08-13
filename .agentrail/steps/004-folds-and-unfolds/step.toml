@@ -1,6 +1,6 @@
 number = 4
 slug = "folds-and-unfolds"
-status = "pending"
+status = "in-progress"
 description = "Implement Lessons 16-17 with a finite practical array or small-tree workload...."
 role = "production"
 context_files = []

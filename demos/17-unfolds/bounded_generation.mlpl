@@ -1,0 +1,19 @@
+# Lesson 17 -- unfold as bounded deterministic generation.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_recursion.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 17 -- AN UNFOLD GROWS A BOUNDED SEQUENCE", intro: "Generate four scheduled checkpoints from a seed and step, then recover those parameters and regenerate the same array."})
+generated = u:bounded_arithmetic_unfold(3, 2, 4)
+parameters = u:recover_arithmetic_parameters(generated)
+regenerated = u:regenerate_arithmetic_sequence(generated)
+irregular = [3, 5, 8, 9]
+irregular_regenerated = u:regenerate_arithmetic_sequence(irregular)
+broken_witness = u:finite_law_witness(irregular, irregular_regenerated)
+disp(generated)
+disp([parameters.seed, parameters.step, equal(generated, regenerated), broken_witness.found])
+wrote = write_text("out/17-bounded-unfold.svg", u:bounded_unfold_diagram())
+u:epilog_open()
+u:explain("out/17-bounded-unfold.svg", "Seed 3 and step 2 expand to [3,5,7,9]. Recovering the first difference regenerates it; irregular input [3,5,8,9] does not round-trip.")
+u:takeaway("This unfold is deterministic and explicitly bounded. The round-trip belongs to arithmetic sequences, not arbitrary arrays or general recursion schemes.")
+if equal(generated, [3, 5, 7, 9]) * equal(generated, regenerated) * broken_witness.found * is_ok(wrote) { ok("bounded unfold round-trip verified") } else { err("bounded unfold invariant failed") }

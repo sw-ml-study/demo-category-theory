@@ -285,8 +285,9 @@ Current implementation status (2026-08-12): Lessons 12-13 are executable with
 generated CLI/web visuals and law tests on the concrete success/failure
 context. Lessons 14-15 are also executable: independent results combine into a
 product, while dependent bind passes an earlier payload into later work.
-Lessons 16-19 remain capability-gated in the order shown; folds/unfolds are
-the next measured target.
+Lessons 16-17 are now executable over finite arrays: a linear fold-fusion law
+and a bounded arithmetic unfold round-trip each include a failing witness.
+Lessons 18-19 remain capability-gated; lawful nested-record access is next.
 
 ### Delivery sequence for the second saga
 

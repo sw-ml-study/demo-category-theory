@@ -8,4 +8,4 @@ if [ -z "$runner" ] && [ -x "$repo_root/../../softwarewrighter/mlplunit/bin/mlpl
 fi
 [ -n "$runner" ] && [ -x "$runner" ] || { echo "mlplunit not found; set MLPLUNIT" >&2; exit 1; }
 if [ "$#" -gt 0 ]; then exec "$runner" --mlpl "$mlpl" --config "$repo_root/mlplunit.conf" "$@"; fi
-exec "$runner" --mlpl "$mlpl" --config "$repo_root/mlplunit.conf" "$repo_root/tests/test_category.mlpl" "$repo_root/tests/test_context.mlpl"
+exec "$runner" --mlpl "$mlpl" --config "$repo_root/mlplunit.conf" "$repo_root/tests/test_category.mlpl" "$repo_root/tests/test_context.mlpl" "$repo_root/tests/test_finite_recursion.mlpl"

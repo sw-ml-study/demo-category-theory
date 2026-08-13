@@ -1,0 +1,12 @@
+# lib/finite_recursion.mlpl -- finite fold/unfold fixtures for Lessons 16-17.
+#
+# These helpers model bounded arrays only; they are not a generic recursion-
+# scheme interface and do not construct recursive data types.
+# loops: 0
+
+def u:fold_sum(values) { "Consume a finite numeric array into its additive summary."; reduce_add(values) }
+def u:fold_after_map(values, transform) { "Map a scalar transform over a finite array and then consume it by addition."; reduce_add(each(transform, values)) }
+def u:bounded_arithmetic_unfold(seed, step, count) { "Generate a deterministic finite arithmetic sequence from seed, step, and count."; seed + range(count) * step }
+def u:recover_arithmetic_parameters(values) { "Recover seed and step from a finite arithmetic sequence with at least two values."; seed = take(values, 0, 0); {seed: seed, step: take(values, 0, 1) - seed} }
+def u:regenerate_arithmetic_sequence(values) { "Recover arithmetic parameters and unfold a sequence of the same finite length."; parameters = u:recover_arithmetic_parameters(values); count = take(shape(values), 0, 0); u:bounded_arithmetic_unfold(parameters.seed, parameters.step, count) }
+def u:finite_law_witness(expected, actual) { "Retain expected and actual finite results when a fold or unfold law fails."; {found: 1 - equal(expected, actual), expected: expected, actual: actual} }

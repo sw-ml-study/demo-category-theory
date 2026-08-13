@@ -1239,3 +1239,18 @@ current product helper deterministically retains the first failure rather than
 accumulating diagnostics. The next research target is finite folds/unfolds;
 recursive representation and bounded generation should be probed before those
 lessons are designed.
+
+Lessons 16 and 17 evidence, 2026-08-12
+
+Finite arrays are the cleanest current representation. The useful fold law is
+operational: doubling each metric before `reduce_add` equals doubling the
+already folded summary, because scaling preserves addition. Squaring provides
+the counterexample and prevents an invalid fusion. For generation, an explicit
+seed, step, and count produce a deterministic arithmetic schedule. Recovering
+seed and first difference regenerates lawful fixtures, while an irregular
+sequence fails visibly.
+
+This supports bounded fold/unfold teaching without recursive records. It does
+not demonstrate general catamorphism, anamorphism, stream, or recursion-scheme
+support, so no sw-MLPL feature request is justified by this step. Lawful nested
+record access for Lesson 18 is the next supported research question.

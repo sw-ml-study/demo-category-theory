@@ -1,0 +1,20 @@
+# Lesson 16 -- fold as structured finite consumption.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_recursion.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 16 -- A FOLD CONSUMES STRUCTURE INTO A SUMMARY", intro: "Double a finite metric batch and sum it, then fuse the linear transform through the fold."})
+def u:double_metric(value) { "Double one metric before the additive fold."; value * 2 }
+def u:square_metric(value) { "Square one metric for the deliberately broken fusion comparison."; value * value }
+metrics = [2, 4, 6, 8]
+mapped_then_folded = u:fold_after_map(metrics, :u:double_metric)
+folded_then_scaled = 2 * u:fold_sum(metrics)
+square_then_folded = u:fold_after_map(metrics, :u:square_metric)
+folded_then_squared = u:fold_sum(metrics) * u:fold_sum(metrics)
+broken_witness = u:finite_law_witness(square_then_folded, folded_then_squared)
+disp([mapped_then_folded, folded_then_scaled, square_then_folded, folded_then_squared, broken_witness.found])
+wrote = write_text("out/16-fold-fusion.svg", u:fold_fusion_diagram())
+u:epilog_open()
+u:explain("out/16-fold-fusion.svg", "The upper path doubles each metric before summing; the lower path sums once and doubles the summary. Both reach 40.")
+u:takeaway("A linear transform is a homomorphism for addition, so it fuses through this finite fold. Squaring is the visible counterexample.")
+if equal(mapped_then_folded, folded_then_scaled) * broken_witness.found * is_ok(wrote) { ok("finite fold fusion verified") } else { err("finite fold invariant failed") }

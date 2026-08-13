@@ -1,0 +1,25 @@
+# Web Lesson 16 -- finite fold fusion.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * A linear transform can move through an additive finite fold unchanged.
+# ***************************************************************************
+;
+def u:double_metric(value) { "Double one metric before its finite fold."; value * 2 }  # lawful transform
+metrics = [2, 4, 6, 8]  # finite batch
+mapped_then_folded = reduce_add(each(:u:double_metric, metrics))  # upper route
+folded_then_scaled = 2 * reduce_add(metrics)  # fused lower route
+square_then_folded = reduce_add(metrics * metrics)  # 120
+folded_then_squared = reduce_add(metrics) * reduce_add(metrics)  # 400, broken
+disp([mapped_then_folded, folded_then_scaled, square_then_folded, folded_then_squared])  # equality and witness
+# ***************************************************************************
+# * THE VISUAL
+# * Green routes meet at 40; the nonlinear square comparison splits.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 820 270\" width=\"820\" height=\"270\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(500px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(500px)}}</style><rect width=\"820\" height=\"270\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"35\" y=\"50\" width=\"180\" height=\"65\" rx=\"14\"/><rect class=\"obj\" x=\"320\" y=\"50\" width=\"180\" height=\"65\" rx=\"14\"/><rect class=\"obj\" x=\"625\" y=\"50\" width=\"160\" height=\"65\" rx=\"14\"/><line class=\"arrow\" x1=\"215\" y1=\"82\" x2=\"320\" y2=\"82\"/><line class=\"arrow\" x1=\"500\" y1=\"82\" x2=\"625\" y2=\"82\"/><text x=\"125\" y=\"89\" text-anchor=\"middle\">[2,4,6,8]</text><text x=\"410\" y=\"89\" text-anchor=\"middle\">double each</text><text x=\"705\" y=\"89\" text-anchor=\"middle\">sum 40</text><rect class=\"obj\" x=\"225\" y=\"180\" width=\"370\" height=\"60\" rx=\"14\"/><text x=\"410\" y=\"217\" text-anchor=\"middle\">2 * sum = 40; square warns 120 != 400</text><circle class=\"token\" cx=\"195\" cy=\"102\" r=\"9\"/></svg>"  # fused routes
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Doubling respects addition, so map and fold can fuse; squaring does not.
+# * THE POINT -- fold laws justify useful execution rewrites.
+# ***************************************************************************
