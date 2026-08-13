@@ -1,9 +1,10 @@
 number = 7
 slug = "advanced-curriculum-integration"
-status = "in-progress"
+status = "completed"
 description = "Integrate and audit the advanced curriculum. Run every probe/demo/test/narrat..."
 role = "production"
 context_files = []
 created_at = "2026-08-12T17:20:36"
+completed_at = "2026-08-12T18:21:39"
 task_type = "validation"
-commits = []
+commits = ["8ab7b0d9235c34c82a624a1b47befc6677c00ef7"]
