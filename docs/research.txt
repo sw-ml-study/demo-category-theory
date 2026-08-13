@@ -1254,3 +1254,18 @@ This supports bounded fold/unfold teaching without recursive records. It does
 not demonstrate general catamorphism, anamorphism, stream, or recursion-scheme
 support, so no sw-MLPL feature request is justified by this step. Lawful nested
 record access for Lesson 18 is the next supported research question.
+
+Lesson 18 evidence, 2026-08-12
+
+A practical nested model configuration supports a lawful learning-rate lens.
+Named get, set, and update helpers execute get-put, put-get, and put-put while
+preserving model name, batch size, and metadata. A deliberately broken setter
+resets batch size and makes the get-put violation visible.
+
+The implementation cost is manual immutable reconstruction: updating one
+nested field repeats the surrounding record shape. For one concrete structure
+this is understandable and self-documenting, not evidence for an optics DSL.
+If a second materially different nested structure repeats the same boilerplate,
+record-update syntax may become a generally useful sw-MLPL question. The next
+step is to audit whether any constructions already implemented yield a genuine
+and teachable adjunction; no lesson should be forced if they do not.

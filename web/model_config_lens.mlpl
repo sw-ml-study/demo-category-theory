@@ -1,0 +1,27 @@
+# Web Lesson 18 -- lawful nested model configuration access.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * A focused learning-rate update preserves every surrounding model field.
+# ***************************************************************************
+;
+def u:get_rate(configuration) { "Read the nested learning rate from a model configuration."; configuration.training.learning_rate }  # getter
+def u:set_rate(configuration, learning_rate) { "Rebuild the configuration with only its nested learning rate changed."; {name: configuration.name, training: {learning_rate: learning_rate, batch_size: configuration.training.batch_size}, metadata: configuration.metadata} }  # lawful setter
+configuration = {name: "classifier", training: {learning_rate: 0.01, batch_size: 32}, metadata: {version: 3}}  # practical fixture
+get_put = u:set_rate(configuration, u:get_rate(configuration))  # original record
+put_get = u:get_rate(u:set_rate(configuration, 0.02))  # replacement focus
+put_put = u:set_rate(u:set_rate(configuration, 0.02), 0.03)  # last write wins
+direct_put = u:set_rate(configuration, 0.03)  # same last write
+broken = {name: configuration.name, training: {learning_rate: 0.01, batch_size: 1}, metadata: configuration.metadata}  # sibling corrupted
+disp([equal(get_put, configuration), put_get, equal(put_put, direct_put), broken.training.batch_size])  # three laws and witness
+# ***************************************************************************
+# * THE VISUAL
+# * Green changes only rate. Red resets batch size and violates get-put.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 840 290\" width=\"840\" height=\"290\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.bad{stroke:#f7768e}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(440px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(440px)}}</style><rect width=\"840\" height=\"290\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"30\" y=\"45\" width=\"240\" height=\"90\" rx=\"14\"/><rect class=\"obj\" x=\"570\" y=\"45\" width=\"240\" height=\"90\" rx=\"14\"/><line class=\"arrow\" x1=\"270\" y1=\"90\" x2=\"570\" y2=\"90\"/><text x=\"150\" y=\"82\" text-anchor=\"middle\">rate .01, batch 32</text><text x=\"150\" y=\"110\" text-anchor=\"middle\">version 3</text><text x=\"690\" y=\"82\" text-anchor=\"middle\">rate .02, batch 32</text><text x=\"690\" y=\"110\" text-anchor=\"middle\">version 3</text><rect class=\"obj\" x=\"145\" y=\"195\" width=\"220\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"475\" y=\"195\" width=\"220\" height=\"60\" rx=\"14\"/><line class=\"arrow bad\" x1=\"365\" y1=\"225\" x2=\"475\" y2=\"225\"/><text x=\"255\" y=\"232\" text-anchor=\"middle\">expected batch 32</text><text x=\"585\" y=\"232\" text-anchor=\"middle\">broken batch 1</text><circle class=\"token\" cx=\"250\" cy=\"110\" r=\"9\"/></svg>"  # lawful focus and broken sibling
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * The focus changes while its surrounding record remains observationally same.
+# * THE POINT -- three lens laws make nested access and update predictable.
+# ***************************************************************************

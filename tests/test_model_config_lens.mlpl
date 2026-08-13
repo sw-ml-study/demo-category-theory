@@ -1,0 +1,32 @@
+# Tests for the concrete model-configuration learning-rate lens.
+include "lib/model_config_lens.mlpl";
+
+def u:double_learning_rate(value) { "Double one focused model learning rate."; value * 2 }
+
+@test {name: "model configuration lens obeys three laws", tags: ["lens", "optics", "records"]}
+def u:test_model_configuration_lens_laws() { "The concrete learning-rate getter and setter obey get-put, put-get, and put-put.";
+  configuration = {name: "classifier", training: {learning_rate: 0.01, batch_size: 32}, metadata: {version: 3}};
+  get_put = u:set_model_learning_rate(configuration, u:get_model_learning_rate(configuration));
+  u:assert_eq(equal(get_put, configuration), 1, "get-put")?;
+  put_get = u:get_model_learning_rate(u:set_model_learning_rate(configuration, 0.02));
+  u:assert_eq(equal(put_get, 0.02), 1, "put-get")?;
+  put_put = u:set_model_learning_rate(u:set_model_learning_rate(configuration, 0.02), 0.03);
+  direct_put = u:set_model_learning_rate(configuration, 0.03);
+  u:assert_eq(equal(put_put, direct_put), 1, "put-put")?;
+  updated = u:update_model_learning_rate(configuration, :u:double_learning_rate);
+  u:assert_eq(equal(updated.training.learning_rate, 0.02), 1, "focused update")?;
+  u:assert_eq(equal(updated.training.batch_size, 32) * equal(updated.metadata, configuration.metadata), 1, "siblings preserved")?;
+  ok({test: "model-config-lens-laws", cases: 5})
+}
+
+@test {name: "broken model setter exposes a get-put witness", tags: ["lens", "counterexample", "records"]}
+def u:test_broken_model_configuration_setter() { "Resetting a sibling field violates get-put even when the focused value is unchanged.";
+  configuration = {name: "classifier", training: {learning_rate: 0.01, batch_size: 32}, metadata: {version: 3}};
+  broken = u:set_model_learning_rate_broken(configuration, u:get_model_learning_rate(configuration));
+  witness = u:lens_law_witness("get-put", configuration, broken);
+  u:assert_eq(witness.found, 1, "broken setter witness")?;
+  u:assert_eq(equal(broken.training.batch_size, 1), 1, "sibling corruption visible")?;
+  ok({test: "broken-model-config-setter", cases: 2})
+}
+
+u:run_registered_tests()

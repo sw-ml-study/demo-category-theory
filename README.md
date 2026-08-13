@@ -207,6 +207,16 @@ fixtures exactly, while `[3,5,8,9]` exposes the boundary. Sources:
 [CLI lesson](demos/17-unfolds/bounded_generation.mlpl),
 [web lesson](demos/web/bounded_unfold.mlpl).
 
+### 18. A lawful lens changes one nested focus
+
+![A model learning-rate update preserving batch size and metadata beside a broken setter](assets/previews/18-model-config-lens.svg)
+
+What to notice: the lawful path changes learning rate `0.01` to `0.02` while
+batch size `32` and version `3` stay fixed. The red setter resets batch size to
+`1`, visibly violating get-put. Sources:
+[CLI lesson](demos/18-optics/model_learning_rate.mlpl),
+[web lesson](demos/web/model_config_lens.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

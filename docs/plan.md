@@ -287,7 +287,9 @@ context. Lessons 14-15 are also executable: independent results combine into a
 product, while dependent bind passes an earlier payload into later work.
 Lessons 16-17 are now executable over finite arrays: a linear fold-fusion law
 and a bounded arithmetic unfold round-trip each include a failing witness.
-Lessons 18-19 remain capability-gated; lawful nested-record access is next.
+Lesson 18 is now executable as one concrete model-configuration lens obeying
+get-put, put-get, and put-put, with a sibling-corrupting counterexample. Lesson
+19 remains conditional on the adjunction audit; it must not be forced.
 
 ### Delivery sequence for the second saga
 

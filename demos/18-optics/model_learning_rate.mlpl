@@ -1,0 +1,21 @@
+# Lesson 18 -- one concrete lawful lens over nested model configuration.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/model_config_lens.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 18 -- FOCUS ONE FIELD, PRESERVE THE WHOLE", intro: "Read and update a nested model learning rate while retaining batch size, model name, and metadata."})
+def u:double_focused_rate(value) { "Double the focused model learning rate."; value * 2 }
+configuration = {name: "classifier", training: {learning_rate: 0.01, batch_size: 32}, metadata: {version: 3}}
+get_put = u:set_model_learning_rate(configuration, u:get_model_learning_rate(configuration))
+put_get = u:get_model_learning_rate(u:set_model_learning_rate(configuration, 0.02))
+put_put = u:set_model_learning_rate(u:set_model_learning_rate(configuration, 0.02), 0.03)
+direct_put = u:set_model_learning_rate(configuration, 0.03)
+updated = u:update_model_learning_rate(configuration, :u:double_focused_rate)
+broken = u:set_model_learning_rate_broken(configuration, u:get_model_learning_rate(configuration))
+broken_witness = u:lens_law_witness("get-put", configuration, broken)
+disp([equal(get_put, configuration), put_get, equal(put_put, direct_put), updated.training.learning_rate, updated.training.batch_size, broken.training.batch_size, broken_witness.found])
+wrote = write_text("out/18-model-config-lens.svg", u:model_config_lens_diagram())
+u:epilog_open()
+u:explain("out/18-model-config-lens.svg", "The green update changes rate 0.01 to 0.02 while batch 32 and version 3 remain fixed. The red setter resets batch size to 1 and violates get-put.")
+u:takeaway("A lawful lens makes focused nested updates predictable through get-put, put-get, and put-put. This is one concrete record lens, not a generic optics DSL.")
+if equal(get_put, configuration) * equal(put_get, 0.02) * equal(put_put, direct_put) * equal(updated.training.batch_size, 32) * broken_witness.found * is_ok(wrote) { ok("concrete lens laws verified") } else { err("model configuration lens invariant failed") }

@@ -1,6 +1,6 @@
 number = 5
 slug = "lawful-optics"
-status = "pending"
+status = "in-progress"
 description = "Implement Lesson 18 for a real nested ML/data configuration or model record. ..."
 role = "production"
 context_files = []

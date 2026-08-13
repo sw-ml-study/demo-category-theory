@@ -155,6 +155,15 @@ An irregular sequence supplies the failing witness. Recursive records or a
 generic recursion-scheme interface were not needed or claimed. No upstream
 ask follows from these bounded array fixtures.
 
+Step 5 probe `probes/nested_record_optics.mlpl` confirms nested field reads,
+nested record equality, and immutable reconstruction preserve sibling fields
+and metadata. Lesson 18 executes get-put, put-get, and put-put for one concrete
+model learning-rate lens. The friction is precise: MLPL has no record-update
+syntax, so the setter repeats the enclosing record structure. That repetition
+is manageable for one fixture and does not yet justify an optics DSL or generic
+lens interface. A second concrete structure would be required before promoting
+this from local idiom to an upstream capability request.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

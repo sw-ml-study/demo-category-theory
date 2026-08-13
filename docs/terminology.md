@@ -21,6 +21,7 @@ mathematical meaning and the executable approximation.
 | monadic bind | Sequencing contextual work whose later step receives the earlier payload | `context_bind` with a row-count-dependent batching stage | A generic `Monad` interface or mutable sequencing |
 | fold | Consuming finite structure into a summary | `reduce_add` over a bounded numeric array | Merely reshaping an array or unrestricted structural recursion |
 | unfold | Generating finite structure from seed state | `seed + range(count) * step` | An unbounded stream or a generic recursion-scheme primitive |
+| lens | A getter and setter focused on one part of a larger value, obeying get-put, put-get, and put-put | Named learning-rate helpers that rebuild one nested model configuration | A camera lens or a generic optics DSL |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

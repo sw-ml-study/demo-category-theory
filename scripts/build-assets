@@ -21,4 +21,5 @@ cp "$repo_root/out/14-independent-contexts.svg" "$dest/14-independent-contexts.s
 cp "$repo_root/out/15-dependent-contexts.svg" "$dest/15-dependent-contexts.svg"
 cp "$repo_root/out/16-fold-fusion.svg" "$dest/16-fold-fusion.svg"
 cp "$repo_root/out/17-bounded-unfold.svg" "$dest/17-bounded-unfold.svg"
+cp "$repo_root/out/18-model-config-lens.svg" "$dest/18-model-config-lens.svg"
 echo "README previews written"
