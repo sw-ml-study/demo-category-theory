@@ -17,7 +17,12 @@ obeys**.
 - concrete success/failure map, apply, and bind laws;
 - finite-array fold fusion and bounded arithmetic unfold;
 - one lawful nested model-configuration lens; and
-- diagonal duplication left adjoint to concrete product.
+- diagonal duplication left adjoint to concrete product;
+- finite duality and universal endpoints;
+- bounded equalizers, coequalizers, pullbacks, and pushouts;
+- cones, cocones, and finite (co)limit unification;
+- walking-arrow representable/corepresentable hom-functors; and
+- a finite Yoneda correspondence and category of elements.
 
 ## Owned by demo-abstract-algebra
 
@@ -35,4 +40,5 @@ Generic `Functor`, `Applicative`, `Monad`, lens/optics, and recursion-scheme
 interfaces remain deferred; the lessons demonstrate laws on named concrete
 representations, not type-constructor abstraction. Bifunctors and profunctors
 also remain research candidates until a practical two-sided transformation
-needs them. No category-specific syntax is proposed.
+needs them. Completeness, cocompleteness, and the general density theorem are
+not inferred from bounded fixtures. No category-specific syntax is proposed.

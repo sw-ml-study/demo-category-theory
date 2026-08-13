@@ -1,6 +1,6 @@
 number = 8
 slug = "saga-integration"
-status = "pending"
+status = "in-progress"
 description = "Audit stable IDs CT020-CT044 for implemented, constrained, or declined status..."
 role = "validation"
 context_files = []

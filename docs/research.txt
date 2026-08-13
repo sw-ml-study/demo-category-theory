@@ -1434,3 +1434,12 @@ The category of elements has nodes `(A,10)` and `(B,20)` with one induced
 arrow over `f`. Reading the element values reconstructs `[10,20]`. This is a
 bounded illustration of reconstruction from representable pieces, not a proof
 or implementation of the general density colimit theorem.
+
+CT020-CT044 integration audit, 2026-08-13
+
+All twenty-five stable IDs now have an explicit status in
+`docs/ct020-ct044-audit.md`. CT020-CT034 and CT037-CT043 have executable finite
+evidence. CT035 completeness, CT036 cocompleteness, and the general CT044
+density theorem remain constrained rather than silently promoted from bounded
+examples. The next capability-ordered saga is CT045-CT064: finite diagram and
+unique-isomorphism work first, wide/indexed and filtered systems later.

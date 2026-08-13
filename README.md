@@ -10,7 +10,7 @@ builds toward commutative diagrams, products, coproducts, array functors, and
 natural transformations; then applies the same law-first method to contexts,
 folds/unfolds, optics, and one concrete adjunction.
 
-All nineteen lessons are implemented and checked. Start with the
+All twenty-eight current lessons are implemented and checked. Start with the
 [viewing guide](docs/viewing-guide.md) for the recommended paths through them.
 
 ## Run it
