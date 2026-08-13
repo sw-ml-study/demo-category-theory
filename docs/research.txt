@@ -1223,3 +1223,19 @@ generic Functor or Monad abstraction. Lessons 14 and 15 should therefore reuse
 the stable concrete context next, first combining independent computations and
 then contrasting that with dependent bind. Recursion schemes, optics, and any
 adjunction remain later capability-gated work.
+
+Lessons 14 and 15 evidence, 2026-08-12
+
+The same context cleanly exposes the programming distinction between
+independence and dependency. A contextual function can be applied to an
+independently obtained contextual scalar, and two successful feature values
+can converge into a product record. Separately, bind can pass a loaded row
+count into the batching decision that requires it. Identity/composition
+fixtures, failure preservation, and deliberately broken outcomes all execute.
+
+This is enough to teach applicative-style and monadic structure concretely,
+but it does not create or require generic Applicative/Monad interfaces. The
+current product helper deterministically retains the first failure rather than
+accumulating diagnostics. The next research target is finite folds/unfolds;
+recursive representation and bounded generation should be probed before those
+lessons are designed.

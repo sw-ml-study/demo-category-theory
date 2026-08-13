@@ -283,8 +283,10 @@ a useful ML/data-programming pattern already made executable in sw-MLPL.
 
 Current implementation status (2026-08-12): Lessons 12-13 are executable with
 generated CLI/web visuals and law tests on the concrete success/failure
-context. Lessons 14-15 are next because they can build on that measured
-surface. Lessons 16-19 remain capability-gated in the order shown.
+context. Lessons 14-15 are also executable: independent results combine into a
+product, while dependent bind passes an earlier payload into later work.
+Lessons 16-19 remain capability-gated in the order shown; folds/unfolds are
+the next measured target.
 
 ### Delivery sequence for the second saga
 

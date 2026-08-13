@@ -138,6 +138,15 @@ left identity, right identity, and associativity over the measured fixtures.
 Failure short-circuiting is preserved visibly and in tests. This supports the
 concrete pipeline; it still does not justify a generic `Monad` interface.
 
+Step 3 confirms that function references can themselves be payloads of the
+concrete context. `context_apply` therefore executes identity and composed
+transform fixtures, while `context_pair` combines two independent successful
+features. The existing `context_bind` also passes a loaded row count into a
+dependent batching decision and preserves an earlier failure. No sw-MLPL fix
+is required for these concrete Lessons 14-15. The helpers intentionally choose
+one deterministic first failure; accumulating multiple diagnostics and generic
+`Applicative`/`Monad` interfaces remain outside the demonstrated capability.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

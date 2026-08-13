@@ -1,6 +1,6 @@
 number = 3
 slug = "independent-dependent-contexts"
-status = "pending"
+status = "in-progress"
 description = "Implement Lessons 14-15 only on the stable concrete context from Lessons 12-1..."
 role = "production"
 context_files = []

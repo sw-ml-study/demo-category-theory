@@ -168,6 +168,26 @@ identity, and associativity are executable tests rather than assumed jargon.
 Sources: [CLI lesson](demos/13-kleisli-pipelines/fallible_stages.mlpl),
 [web lesson](demos/web/kleisli_pipeline.mlpl).
 
+### 14. Independent results converge after both succeed
+
+![Two independent contextual feature computations converging into one product](assets/previews/14-independent-contexts.svg)
+
+What to notice: row count `120` and threshold `0.8` travel on separate
+branches. Neither result chooses the other; they form a product only after
+both contexts succeed. Concrete identity and composition fixtures are checked.
+Sources: [CLI lesson](demos/14-independent-contexts/combine_features.mlpl),
+[web lesson](demos/web/independent_contexts.mlpl).
+
+### 15. Dependent work consumes the earlier result
+
+![A dataset load producing 120 rows before a dependent batching decision produces 12](assets/previews/15-dependent-contexts.svg)
+
+What to notice: the batching stage needs the loaded row count, so it cannot be
+an independent branch. A missing dataset follows the red path and prevents any
+batch decision. Sources:
+[CLI lesson](demos/15-dependent-contexts/batch_after_load.mlpl),
+[web lesson](demos/web/dependent_contexts.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

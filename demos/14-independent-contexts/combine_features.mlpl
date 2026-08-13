@@ -1,0 +1,24 @@
+# Lesson 14 -- independent contextual computation.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/context.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 14 -- INDEPENDENT RESULTS MEET AT A PRODUCT", intro: "Validate a row count and a model threshold separately, then combine both successful results."})
+def u:identity_feature(value) { "Return one independently contextual feature unchanged."; value }
+def u:increment_feature(value) { "Increment one independently contextual numeric feature."; value + 1 }
+def u:double_feature(value) { "Double one independently contextual numeric feature."; value * 2 }
+def u:increment_then_double_feature(value) { "Increment and then double one independently contextual numeric feature."; 2 * (value + 1) }
+row_count = u:context_success(120)
+threshold = u:context_success(0.8)
+combined = u:context_pair(row_count, threshold)
+identity_result = u:context_apply(u:context_success(:u:identity_feature), row_count)
+sequential = u:context_apply(u:context_success(:u:double_feature), u:context_apply(u:context_success(:u:increment_feature), row_count))
+composed = u:context_apply(u:context_success(:u:increment_then_double_feature), row_count)
+failed = u:context_pair(u:context_failure("row count invalid"), threshold)
+broken_witness = u:context_counterexample(failed, u:context_success({left: 0, right: 0.8}))
+disp([combined.value.left, combined.value.right, equal(identity_result, row_count), equal(sequential, composed), broken_witness.found])
+wrote = write_text("out/14-independent-contexts.svg", u:independent_context_diagram())
+u:epilog_open()
+u:explain("out/14-independent-contexts.svg", "The row count and threshold travel on separate branches. Only after both succeed do they converge into one product record.")
+u:takeaway("Applicative-style combination expresses independent work. On this concrete context, identity and composition preserve results while failures remain visible.")
+if equal(combined, u:context_success({left: 120, right: 0.8})) * equal(identity_result, row_count) * equal(sequential, composed) * equal(failed, u:context_failure("row count invalid")) * broken_witness.found * is_ok(wrote) { ok("independent contextual laws verified") } else { err("independent context invariant failed") }

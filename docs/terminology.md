@@ -17,6 +17,8 @@ mathematical meaning and the executable approximation.
 | homomorphism | Map preserving an algebraic operation | Finite map vector checked against two Cayley tables | Every category-theory morphism in general |
 | context | A value carrying success/failure structure around a payload | `{tag, value, message}` record | Runtime process or global execution environment |
 | Kleisli composition | Composition of functions that return a context | `context_bind` between fallible stages | Ordinary composition that ignores failure structure |
+| applicative-style combination | Combining contextual computations that do not depend on each other's values | `context_apply` and `context_pair` on the concrete success/failure context | A generic `Applicative` interface |
+| monadic bind | Sequencing contextual work whose later step receives the earlier payload | `context_bind` with a row-count-dependent batching stage | A generic `Monad` interface or mutable sequencing |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

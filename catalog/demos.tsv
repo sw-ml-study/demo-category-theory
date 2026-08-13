@@ -31,3 +31,7 @@ context-map	demos/12-context-map/error_tracks.mlpl	12-context-map	optional-error
 kleisli-pipeline	demos/13-kleisli-pipelines/fallible_stages.mlpl	13-kleisli-pipelines	fallible-composition	0	0	ascii,svg	records,call	runnable
 context-map-web	demos/web/context_map.mlpl	web	optional-error-functor	0	0	svg	records	runnable
 kleisli-pipeline-web	demos/web/kleisli_pipeline.mlpl	web	fallible-composition	0	0	svg	records	runnable
+independent-contexts	demos/14-independent-contexts/combine_features.mlpl	14-independent-contexts	applicative-style-independence	0	0	ascii,svg	records,function-values	runnable
+dependent-contexts	demos/15-dependent-contexts/batch_after_load.mlpl	15-dependent-contexts	monadic-dependency	0	0	ascii,svg	records,call	runnable
+independent-contexts-web	demos/web/independent_contexts.mlpl	web	applicative-style-independence	0	0	svg	records	runnable
+dependent-contexts-web	demos/web/dependent_contexts.mlpl	web	monadic-dependency	0	0	svg	records	runnable

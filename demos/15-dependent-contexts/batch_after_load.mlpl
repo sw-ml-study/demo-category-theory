@@ -1,0 +1,20 @@
+# Lesson 15 -- dependent contextual computation.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/context.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 15 -- LATER WORK CAN DEPEND ON EARLIER DATA", intro: "Load a dataset row count, then use that actual count to choose the number of batches."})
+def u:load_dataset_row_count(dataset_id) { "Return the row count for one known dataset or a contextual failure."; scalar = take(dataset_id, 0, 0); if equal(scalar, 7) { u:context_success(120) } else { u:context_failure("dataset missing") } }
+def u:choose_batches_from_rows(row_count) { "Choose one batch per ten rows using the earlier contextual result."; scalar = take(row_count, 0, 0); u:context_success(scalar / 10) }
+successful = u:kleisli_apply_two(:u:load_dataset_row_count, :u:choose_batches_from_rows, 7)
+missing = u:kleisli_apply_two(:u:load_dataset_row_count, :u:choose_batches_from_rows, -1)
+direct = call(:u:load_dataset_row_count, [7])
+left_identity = u:context_bind(call(:u:context_return_called, [7]), :u:load_dataset_row_count)
+right_identity = u:context_bind(direct, :u:context_return_called)
+broken_witness = u:kleisli_law_witness(-1, missing, u:context_success(10))
+disp([successful.value, equal(left_identity, direct), equal(right_identity, direct), broken_witness.found])
+wrote = write_text("out/15-dependent-contexts.svg", u:dependent_context_diagram())
+u:epilog_open()
+u:explain("out/15-dependent-contexts.svg", "Dataset 7 yields 120 rows, which the next stage uses to choose 12 batches. A missing dataset stops before batching.")
+u:takeaway("Monadic bind expresses dependency: the shape of later work can use an earlier value. The claim is concrete and law-tested, not a generic Monad interface.")
+if equal(successful, u:context_success(12)) * equal(missing, u:context_failure("dataset missing")) * equal(left_identity, direct) * equal(right_identity, direct) * broken_witness.found * is_ok(wrote) { ok("dependent contextual laws verified") } else { err("dependent context invariant failed") }
