@@ -1,0 +1,11 @@
+{
+  "task_type": "lesson",
+  "state": {
+    "number": 4,
+    "step": "pullbacks-pushouts"
+  },
+  "action": "Implemented CT031 pullbacks as keyed database joins and CT032 pushouts as tagged interface merges. Added readable docstring-first MLPL helpers, universal mediator/factorization witnesses, broken-square counterexamples, CLI and authored/generated web lessons, SVG previews, README integration, catalogs, tests, and synchronized research/capability/inventory/plan/terminology/viewing docs. Pre-commit gate: just check; 27/27 tests passed and all catalog, docstring, narration, generated-tree, web-size, and visual-grammar checks passed. Next: Step 005 will present cones and cocones and unify the existing product/equalizer/pullback and coproduct/coequalizer/pushout fixtures as finite limits and colimits. Boundary: finite executable fixtures can demonstrate universal cones but cannot prove that a category is complete or cocomplete; those claims remain explicitly deferred.",
+  "result": "success",
+  "reward": 1,
+  "timestamp": "2026-08-12T19:13:57"
+}
