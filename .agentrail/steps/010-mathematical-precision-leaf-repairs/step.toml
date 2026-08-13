@@ -1,9 +1,10 @@
 number = 10
 slug = "mathematical-precision-leaf-repairs"
-status = "in-progress"
+status = "completed"
 description = "Apply research2 mathematical precision fixes to affected leaves: first arrows..."
 role = "production"
 context_files = []
 created_at = "2026-08-13T12:38:26"
+completed_at = "2026-08-13T15:35:39"
 task_type = "curriculum"
-commits = []
+commits = ["2e6ad1f2a5de8225c030132156a93243c75ac277"]
