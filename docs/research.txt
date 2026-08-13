@@ -1523,3 +1523,12 @@ teaching and how naturally sw-MLPL expresses the concept. Queued Agentrail
 steps migrate all existing leaves, repair associativity and Yoneda, upgrade
 SVG accessibility, and audit integration before CT055 work resumes. All future
 concept sagas must apply these recommendations from their first plan/probe.
+
+Research2 leaf-language audit, 2026-08-13
+
+All 32 authored CLI/web lesson pairs were audited for the distinction between
+computation names and categorical-role docstrings. Boilerplate “Compute ... for
+this executable category-theory example” text was replaced with the role the
+map, branch action, equation route, or counterexample plays. Cryptic route
+variables such as `upper`, `lower`, `once`, and `twice` became equation-readable
+names. A repository gate prevents regression. SVG accessibility is next.

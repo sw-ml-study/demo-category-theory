@@ -4,8 +4,8 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 06 -- A COPRODUCT IS TAGGED CHOICE", intro: "Left and right injections retain their origin, so one case map can handle each branch exactly once."})
-def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
-def u:negate(x) { "Compute negate for this executable category-theory example.";  0 - x }
+def u:increment(x) { "Serve as the scalar morphism f whose lifted or composed action is being tested.";  x + 1 }
+def u:negate(x) { "Provide the right-branch morphism selected by coproduct case analysis.";  0 - x }
 left_result = u:copair(u:left_value(3), :u:increment, :u:negate)
 right_result = u:copair(u:right_value(3), :u:increment, :u:negate)
 law = u:coproduct_agrees(:u:increment, :u:negate, range(3), range(3), [1, 2, 3], [0, -1, -2])

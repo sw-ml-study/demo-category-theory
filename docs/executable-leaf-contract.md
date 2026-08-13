@@ -24,6 +24,10 @@ Authored web leaves use these block-comment headings before executable code:
 Existing leaves are being migrated in the queued curriculum-quality steps.
 All newly authored leaves must use the headings immediately.
 
+The naming/docstring migration is recorded in `docs/leaf-language-audit.md`.
+`scripts/check-leaf-language` rejects the former boilerplate and known cryptic
+semantic route names.
+
 ## Code language
 
 - Names say what the computation does and remain readable without nearby

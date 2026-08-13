@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+failed=0
+if grep -R -n -E 'Compute .* for this executable category-theory example|Return the .* diagram for the web renderer' "$repo_root/demos" --include='*.mlpl'; then
+  echo "leaf language: boilerplate docstring repeats implementation instead of categorical role" >&2
+  failed=1
+fi
+if grep -R -n -E '^(upper|lower|left|right|once|twice|lawful_factor|broken_mediator)[[:space:]]*=' "$repo_root/demos" --include='*.mlpl'; then
+  echo "leaf language: cryptic semantic assignment name" >&2
+  failed=1
+fi
+[ "$failed" -eq 0 ] || exit 1
+echo "leaf language: ok"

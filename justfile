@@ -28,5 +28,6 @@ audit:
     ./scripts/check-generated
     ./scripts/check-visual-grammar
     ./scripts/check-curriculum-docs
+    ./scripts/check-leaf-language
 
 check: probes demos tests audit

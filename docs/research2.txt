@@ -674,3 +674,9 @@ That second purpose is especially important. The associativity example has alrea
 
 So I would not bulk-add explanatory comments to the current leaves yet. I would first build the contextual spine, establish a leaf contract, fix the object/element visual grammar, and then audit each leaf against two independent questions: “Does this accurately witness the CT concept?” and “Does sw-MLPL express the concept naturally?”. That gives you a much more meaningful dogfooding exercise than simply making every file understandable in isolation.
 
+Implementation note, 2026-08-13: the repository adopted the learning-spine
+and executable-leaf architecture, generated `web/START_HERE.md`, and completed
+the first all-leaf naming/docstring migration. `docs/leaf-language-audit.md`
+records the result and `scripts/check-leaf-language` enforces the measurable
+portion for future concepts. Visual, associativity, precision, integration,
+and progressive-Yoneda migrations are subsequent Agentrail steps.

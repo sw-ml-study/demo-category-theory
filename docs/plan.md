@@ -14,6 +14,9 @@ Before further concepts, the research2 curriculum-quality sequence establishes
 docstrings, visuals, associativity, mathematical precision, and Yoneda. Every
 future concept inherits these standards.
 
+The leaf naming/docstring audit is complete and enforced by
+`scripts/check-leaf-language`; visual accessibility migration is next.
+
 Current continuation status: CT020-CT043 are implemented as Lessons 20-28,
 except CT035-CT036 remain explicitly constrained. CT044 has an executable
 bounded reconstruction but the general density theorem remains constrained.

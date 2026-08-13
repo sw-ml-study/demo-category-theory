@@ -1,6 +1,6 @@
 number = 7
 slug = "leaf-naming-docstring-audit"
-status = "pending"
+status = "in-progress"
 description = "Audit every authored web/CLI MLPL leaf against research2 naming and docstring..."
 role = "production"
 context_files = []

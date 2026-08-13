@@ -5,11 +5,11 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 03 -- COMPOSITION IS ASSOCIATIVE", intro: "Move brackets around three functions without changing the route or result."})
-def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
-def u:double(x) { "Compute double for this executable category-theory example.";  2 * x }
-def u:square(x) { "Compute square for this executable category-theory example.";  x * x }
-def u:left_bracketing_result(x) { "Compute left bracketing result for this executable category-theory example.";  u:apply(:u:square, u:then_apply(:u:increment, :u:double, x)) }
-def u:right_bracketing_result(x) { "Compute right bracketing result for this executable category-theory example.";  u:then_apply(:u:increment, :u:double, x) * u:then_apply(:u:increment, :u:double, x) }
+def u:increment(x) { "Serve as the scalar morphism f whose lifted or composed action is being tested.";  x + 1 }
+def u:double(x) { "Serve as the scalar morphism g whose lifted or composed action is being tested.";  2 * x }
+def u:square(x) { "Serve as the third morphism h in the associativity equation.";  x * x }
+def u:left_bracketing_result(x) { "Execute the left-associated side of the composition associativity law.";  u:apply(:u:square, u:then_apply(:u:increment, :u:double, x)) }
+def u:right_bracketing_result(x) { "Execute the right-associated side of the composition associativity law.";  u:then_apply(:u:increment, :u:double, x) * u:then_apply(:u:increment, :u:double, x) }
 xs = range(5)
 lhs = each(:u:left_bracketing_result, xs)
 rhs = each(:u:right_bracketing_result, xs)

@@ -4,16 +4,16 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 09 -- A WHOLE FAMILY OF COMMUTING SQUARES", intro: "Transpose supplies one component for each matrix shape. Cellwise mapping commutes with every component."})
-def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
-def u:double(x) { "Compute double for this executable category-theory example.";  2 * x }
-def u:offset_transpose_component(m) { "Compute offset transpose component for this executable category-theory example.";  each(:u:increment, transpose(m)) }
+def u:increment(x) { "Serve as the scalar morphism f whose lifted or composed action is being tested.";  x + 1 }
+def u:double(x) { "Serve as the scalar morphism g whose lifted or composed action is being tested.";  2 * x }
+def u:offset_transpose_component(m) { "Provide a deliberately non-natural transpose component for the counterexample.";  each(:u:increment, transpose(m)) }
 a = [[1, 2, 3], [4, 5, 6]]
 b = [[1, 2], [3, 4], [5, 6]]
-upper = u:transpose_after_map(:u:increment, a)
-lower = u:map_after_transpose(:u:increment, a)
+map_then_transpose = u:transpose_after_map(:u:increment, a)
+transpose_then_map = u:map_after_transpose(:u:increment, a)
 witness = u:naturality_counterexample(:u:double, :u:offset_transpose_component, a)
-disp(upper)
-disp(lower)
+disp(map_then_transpose)
+disp(transpose_then_map)
 disp([witness.index, witness.expected, witness.actual])
 wrote = write_text("out/09-natural-transformation.svg", u:naturality_diagram())
 u:epilog_open()
