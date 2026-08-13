@@ -15,7 +15,7 @@ finite unless a later lesson proves a stronger statement.
 | CT051 | diagonal functor | same finite constant-diagram construction, with functor laws | runnable |
 | CT052 | limit cone | array/record legs plus unique mediator-count vector | runnable after generalized finite leg helper |
 | CT053 | colimit cocone | dual legs plus unique mediator-count vector | runnable |
-| CT054 | uniqueness up to unique isomorphism | two universal candidates and mutually inverse forced maps | runnable now; next lesson |
+| CT054 | uniqueness up to unique isomorphism | two universal candidates and mutually inverse forced maps | implemented as Lesson 29 |
 | CT055 | preservation of limits | compare source universal cone with its image under named functor | runnable for finite fixtures |
 | CT056 | preservation of colimits | dual before/after universal checks | runnable for finite fixtures |
 | CT057 | creation of limits | target cone with unique lifted source cone | candidate; requires explicit lifting tables |
@@ -40,3 +40,12 @@ No new upstream request is justified by this survey alone. Later steps must
 probe dynamic arity, lifting, quotienting, or enumeration at the point a real
 lesson needs it. General small/infinite (co)limits remain mathematical scope
 boundaries, not missing syntax that a finite test can erase.
+
+## Step 2 implementation evidence
+
+Lesson 29 represents one binary product twice: `P` uses ordinary pair order
+and `Q` uses swapped storage order. Requiring both projections to agree forces
+the comparison table `[0,2,1,3]` in each direction. Both composites are the
+four-point identity. The identity index table is a visible counterexample
+because it fails a required projection. CT054 is therefore executable with
+current finite function tables; no sw-MLPL change is needed.

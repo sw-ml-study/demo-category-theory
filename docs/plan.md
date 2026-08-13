@@ -1,6 +1,6 @@
 # Implementation plan: category theory you can watch execute
 
-Status: **twenty-eight capability-gated lessons implemented; the 245-concept
+Status: **twenty-nine capability-gated lessons implemented; the 245-concept
 program remains active**.
 
 The broader program continues through the 245 tracked concepts in
@@ -13,8 +13,9 @@ except CT035-CT036 remain explicitly constrained. CT044 has an executable
 bounded reconstruction but the general density theorem remains constrained.
 The active CT045-CT064 saga has measured its finite representation surface in
 `docs/ct045-ct064-capability-matrix.md`. CT054's uniqueness up to unique
-isomorphism is the next runnable lesson; infinite-family claims and unprobed
-lifting/comma-category constructions remain explicitly deferred.
+isomorphism is implemented as Lesson 29. Finite diagram, constant-diagram, and
+diagonal functors are next; infinite-family claims and unprobed lifting or
+comma-category constructions remain explicitly deferred.
 
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the

@@ -317,6 +317,18 @@ two functor values. Sources:
 [CLI lesson](demos/28-yoneda-elements/correspondence.mlpl),
 [web lesson](demos/web/finite_yoneda.mlpl).
 
+### 29. Universal objects are uniquely isomorphic
+
+![Two product representations connected by uniquely forced inverse comparison arrows](assets/previews/29-unique-universal-isomorphism.svg)
+
+What to notice: `P` and `Q` store the same binary product differently.
+Preserving both projections forces the green comparison map `[0,2,1,3]` in
+each direction, and both round trips are identities. The dashed red identity
+index map fails a projection, so it is not a competing universal comparison.
+Sources:
+[CLI lesson](demos/29-unique-universal-isomorphism/forced_inverse.mlpl),
+[web lesson](demos/web/unique_universal_isomorphism.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

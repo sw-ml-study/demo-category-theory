@@ -247,6 +247,12 @@ Creation, reflection, and final/initial functors require their own lifting and
 comma-category probes. No upstream ask follows from the survey alone. See
 `docs/ct045-ct064-capability-matrix.md` for all twenty per-concept decisions.
 
+Lesson 29 confirms the first decision: four-point function tables express the
+unique comparison arrows between two finite product encodings, projection
+preservation, and both inverse equations. A competing table exposes failure.
+No generic isomorphism type or universal-object keyword is needed for CT054's
+bounded executable claim.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

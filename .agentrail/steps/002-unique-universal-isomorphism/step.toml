@@ -1,6 +1,6 @@
 number = 2
 slug = "unique-universal-isomorphism"
-status = "pending"
+status = "in-progress"
 description = "Implement CT054 uniqueness up to unique isomorphism using two finite universa..."
 role = "production"
 context_files = []

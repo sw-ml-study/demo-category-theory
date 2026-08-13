@@ -1459,3 +1459,18 @@ stabilization; inverse/direct limits are limited to named finite stages, and
 final/initial functors still need comma-category connectivity probes. No new
 sw-MLPL capability request is justified yet. Dynamic arity, lifting, quotient,
 or enumeration requests must be backed by the later lesson that needs them.
+
+CT054 implementation evidence, 2026-08-13
+
+Lesson 29 encodes the four elements of a binary product in two orders. Matching
+both product projections forces `[0,2,1,3]` as the comparison table in either
+direction. Composing the tables in either order returns `[0,1,2,3]`, so the
+forced arrows are inverse. The superficially simpler identity index table
+fails a projection and supplies the counterexample.
+
+This demonstrates the theorem's mechanism for two enumerated universal
+candidates: universality supplies the unique comparison arrows, and uniqueness
+forces their composites to be identities. It does not claim generic universal
+objects or proof automation. Current sw-MLPL tables are sufficient, so no
+upstream capability request follows. CT049-CT051 finite diagram, constant, and
+diagonal functors are next and have no known blocker.

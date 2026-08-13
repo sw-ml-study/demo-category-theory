@@ -1,0 +1,21 @@
+# Lesson 29 -- uniqueness up to unique isomorphism.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/unique_universal_isomorphism.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 29 -- UNIVERSAL OBJECTS ARE UNIQUE UP TO UNIQUE ISOMORPHISM", intro: "Represent the same binary product two ways; matching projections forces one comparison arrow each way."})
+forward_map = u:product_comparison_map()
+backward_map = u:product_comparison_map()
+identity_map = [0, 1, 2, 3]
+forward_then_backward = u:compose_four_point_maps(forward_map, backward_map)
+backward_then_forward = u:compose_four_point_maps(backward_map, forward_map)
+unique_isomorphism = u:universal_candidates_are_uniquely_isomorphic(forward_map, backward_map)
+failure = u:unique_universal_failure_witness(identity_map)
+disp([forward_map, backward_map, forward_then_backward, backward_then_forward])
+disp([unique_isomorphism, failure.found])
+disp([failure.expected, failure.actual])
+wrote = write_text("out/29-unique-universal-isomorphism.svg", u:unique_universal_isomorphism_diagram())
+u:epilog_open()
+u:explain("out/29-unique-universal-isomorphism.svg", "P stores pairs in ordinary order; Q swaps storage order. Requiring both projections to agree forces the green swap map in each direction, and the two composites are identities.")
+u:takeaway("A universal object need not be literally equal to another choice. Its universal property forces exactly one structure-preserving isomorphism between them.")
+if unique_isomorphism * failure.found * equal(forward_then_backward, identity_map) * equal(backward_then_forward, identity_map) * is_ok(wrote) { ok("unique universal isomorphism verified") } else { err("unique universal isomorphism invariant failed") }

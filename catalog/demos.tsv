@@ -28,6 +28,8 @@ representable-hom	demos/27-representable-hom/hom_tables.mlpl	27-representable-ho
 representable-hom-web	demos/web/representable_hom.mlpl	web	CT025-CT026-CT037-CT041-representables	0	0	svg	each,take	runnable
 finite-yoneda	demos/28-yoneda-elements/correspondence.mlpl	28-yoneda-elements	CT042-CT044-Yoneda-elements-density	0	0	ascii,svg	records,take	runnable
 finite-yoneda-web	demos/web/finite_yoneda.mlpl	web	CT042-CT044-Yoneda-elements-density	0	0	svg	records,take	runnable
+unique-universal-isomorphism	demos/29-unique-universal-isomorphism/forced_inverse.mlpl	29-unique-universal-isomorphism	CT054-unique-universal-isomorphism	0	0	ascii,svg	records,take	runnable
+unique-universal-isomorphism-web	demos/web/unique_universal_isomorphism.mlpl	web	CT054-unique-universal-isomorphism	0	0	svg	take	runnable
 arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	runnable
 identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	runnable
 associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	runnable

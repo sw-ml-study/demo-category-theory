@@ -41,6 +41,7 @@ mathematical meaning and the executable approximation.
 | Yoneda lemma | Natural transformations from `Hom(A,-)` to `F` correspond to elements of `F(A)` | Both-direction round trip and naturality for one walking-arrow functor | A generic reflection or serialization mechanism |
 | category of elements | Objects pair each source object with one functor element; arrows respect functor action | Rows `(A,10)`, `(B,20)` and their induced arrow | Merely flattening an array |
 | density | Reconstruction from representable pieces | Bounded recovery of `[10,20]` only | A claim that the general density theorem was proved here |
+| uniqueness up to unique isomorphism | Any two choices satisfying the same universal property have exactly one compatible isomorphism | Two finite product encodings with projection-forced inverse comparison tables | Literal equality of representations or an arbitrary bijection |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or
