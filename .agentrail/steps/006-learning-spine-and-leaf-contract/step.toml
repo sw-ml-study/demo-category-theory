@@ -1,9 +1,10 @@
 number = 6
 slug = "learning-spine-and-leaf-contract"
-status = "in-progress"
+status = "completed"
 description = "Implement research2's learning-spine architecture before further CT concepts:..."
 role = "production"
 context_files = []
 created_at = "2026-08-13T12:38:26"
+completed_at = "2026-08-13T12:40:37"
 task_type = "curriculum"
-commits = []
+commits = ["4697596a211786ce334ea9aa20422565301deedd"]
