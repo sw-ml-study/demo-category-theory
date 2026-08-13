@@ -1,0 +1,11 @@
+{
+  "task_type": "validation",
+  "state": {
+    "number": 8,
+    "step": "saga-integration"
+  },
+  "action": "Audited every CT020-CT044 stable ID against CLI/web lessons, tests, probes, previews, and documentation. CT020-CT034 and CT037-CT043 have executable finite evidence; CT035 completeness, CT036 cocompleteness, and the general CT044 density theorem remain explicitly constrained. Added docs/ct020-ct044-audit.md, corrected README and scope to 28 lessons, marked CT045-CT064 next in the 245-concept inventory, and replaced the completed saga plan with a capability-first indexed-limits-and-preservation plan. Agentrail audit matched all eight steps with zero orphan steps; historical second commits are retained. Rebuilt web/previews and ran just check: 33/33 tests and all repository gates passed. Next saga: probe CT045-CT064 first, then implement currently supported unique-isomorphism and finite diagram-functor concepts before bounded indexed and filtered systems.",
+  "result": "success",
+  "reward": 1,
+  "timestamp": "2026-08-13T11:15:55"
+}
