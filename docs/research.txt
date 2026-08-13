@@ -1360,3 +1360,20 @@ square plus unique mediator. Lesson 25 treats schema integration as a pushout:
 shared fields are identified and private fields remain distinct, with unique
 factorization into a compatible target. Both are bounded finite fixtures; the
 pushout does not claim generic quotient construction.
+
+Web custom-SVG presentation finding, 2026-08-12
+
+Loading `web/array_functor.mlpl` exposed a presentation distinction: the web
+renderer correctly recognizes an evaluation result beginning with `<svg` and
+draws it, but the transcript first echoes the source expression after the
+`mlpl>` prompt. When the expression itself is a full inline SVG literal, this
+looks like a duplicate raw-SVG result. The prompt renderer also risks treating
+an escaped hexadecimal color such as `#1a1b26` as an inline comment.
+
+The local lesson now returns the diagram from the readable,
+docstring-first `array_functor_visual` function and uses `rgb(...)` colors, so
+the visual entry is a short, relatable call and avoids the comment ambiguity.
+This is only a presentation workaround. sw-MLPL still needs either a dedicated
+custom-SVG display primitive or a compact/collapsible source echo for visual
+results. The remaining authored custom-SVG lessons should migrate to the named
+visual-function pattern as their saga steps touch them.
