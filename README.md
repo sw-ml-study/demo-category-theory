@@ -10,6 +10,17 @@ builds toward commutative diagrams, products, coproducts, array functors, and
 natural transformations; and closes by connecting homomorphisms and lawful
 reductions to practical array programming.
 
+The first eleven-lesson curriculum is implemented and checked.
+
+## Run it
+
+```sh
+just check   # probes, all CLI demos, tests, documentation and generated files
+just demos   # terminal lessons and SVG output under out/
+just web     # rebuild standalone browser lessons under web/
+just assets  # rebuild the README previews
+```
+
 ## Planned visual progression
 
 The first curriculum will make these relationships visible:
@@ -150,3 +161,9 @@ reading.
 
 See [`AGENTS.md`](AGENTS.md) for the mandatory Agentrail workflow and demo
 quality rules.
+
+Terminology is defined in [`docs/terminology.md`](docs/terminology.md), the
+sibling-repository contract in
+[`docs/scope-boundary.md`](docs/scope-boundary.md), and the intentionally
+deferred curriculum in
+[`docs/advanced-saga-boundary.md`](docs/advanced-saga-boundary.md).

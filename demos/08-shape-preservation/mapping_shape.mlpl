@@ -4,9 +4,9 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 08 -- NAME THE STRUCTURE BEING PRESERVED", intro: "each changes every matrix cell while retaining shape; transpose preserves values but swaps axes."})
-def u:inc(x) { x + 1 }
+def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
 m = [[1, 2, 3], [4, 5, 6]]
-mapped = each(:u:inc, m)
+mapped = each(:u:increment, m)
 turned = transpose(m)
 disp(m)
 disp(mapped)

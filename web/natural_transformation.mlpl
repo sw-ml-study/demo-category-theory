@@ -6,10 +6,10 @@
 # * Transpose commutes with cellwise mapping across explicit matrix shapes.
 # ***************************************************************************
 ;
-def u:inc(x) { x + 1 }  # a morphism mapped over every cell
+def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }  # a morphism mapped over every cell
 m = [[1, 2, 3], [4, 5, 6]]  # the 2x3 component's input
-upper = transpose(each(:u:inc, m))  # map, then component
-lower = each(:u:inc, transpose(m))  # component, then map
+upper = transpose(each(:u:increment, m))  # map, then component
+lower = each(:u:increment, transpose(m))  # component, then map
 disp(upper)  # first route
 disp(lower)  # same destination by naturality
 # ***************************************************************************

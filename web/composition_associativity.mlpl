@@ -6,12 +6,12 @@
 # * Two bracketings of three arrows trace the same route in the same order.
 # ***************************************************************************
 ;
-def u:f(x) { x + 1 }  # A to B
-def u:g(x) { 2 * x }  # B to C
-def u:h(x) { x * x }  # C to D
+def u:increment_value(x) { "Compute increment value for this executable category-theory example.";  x + 1 }  # A to B
+def u:double_value(x) { "Compute double value for this executable category-theory example.";  2 * x }  # B to C
+def u:square_value(x) { "Compute square value for this executable category-theory example.";  x * x }  # C to D
 xs = range(5)  # finite visible witnesses
-left = each(:u:h, each(:u:g, each(:u:f, xs)))  # (f ; g) ; h
-right = each(:u:h, each(:u:g, each(:u:f, xs)))  # f ; (g ; h)
+left = each(:u:square_value, each(:u:double_value, each(:u:increment_value, xs)))  # (f ; g) ; h
+right = each(:u:square_value, each(:u:double_value, each(:u:increment_value, xs)))  # f ; (g ; h)
 disp([left, right])  # equal rows verify associativity
 # ***************************************************************************
 # * THE VISUAL

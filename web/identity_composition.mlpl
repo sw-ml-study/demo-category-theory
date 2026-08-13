@@ -6,12 +6,12 @@
 # * Adding a do-nothing identity before or after inc changes no destination.
 # ***************************************************************************
 ;
-def u:inc(x) { x + 1 }  # the meaningful arrow
-def u:id(x) { x }  # the identity arrow
+def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }  # the meaningful arrow
+def u:identity(x) { "Compute identity for this executable category-theory example.";  x }  # the identity arrow
 xs = range(6)  # check more than the pictured token
-plain = each(:u:inc, xs)  # f
-before = each(:u:inc, each(:u:id, xs))  # id then f
-after = each(:u:id, each(:u:inc, xs))  # f then id
+plain = each(:u:increment, xs)  # f
+before = each(:u:increment, each(:u:identity, xs))  # id then f
+after = each(:u:identity, each(:u:increment, xs))  # f then id
 disp([plain, before, after])  # all three rows must match
 # ***************************************************************************
 # * THE VISUAL

@@ -4,11 +4,11 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 06 -- A COPRODUCT IS TAGGED CHOICE", intro: "Left and right injections retain their origin, so one case map can handle each branch exactly once."})
-def u:inc(x) { x + 1 }
-def u:negate(x) { 0 - x }
-left_result = u:copair(u:left_value(3), :u:inc, :u:negate)
-right_result = u:copair(u:right_value(3), :u:inc, :u:negate)
-law = u:coproduct_agrees(:u:inc, :u:negate, range(3), range(3), [1, 2, 3], [0, -1, -2])
+def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
+def u:negate(x) { "Compute negate for this executable category-theory example.";  0 - x }
+left_result = u:copair(u:left_value(3), :u:increment, :u:negate)
+right_result = u:copair(u:right_value(3), :u:increment, :u:negate)
+law = u:coproduct_agrees(:u:increment, :u:negate, range(3), range(3), [1, 2, 3], [0, -1, -2])
 disp([left_result, right_result, law.unique])
 wrote = write_text("out/06-coproduct.svg", u:coproduct_diagram())
 u:epilog_open()

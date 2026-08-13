@@ -1,0 +1,21 @@
+# Category-theory terminology used here
+
+Each lesson uses concrete finite values, so these definitions say both the
+mathematical meaning and the executable approximation.
+
+| Term | Meaning here | Executable representation | Not to be confused with |
+|---|---|---|---|
+| object | A node in the demonstrated category | A finite numeric domain, algebra table, or array shape | An object/record value in MLPL |
+| morphism / arrow | A composable map between objects | A named unary function or finite map vector | Any arbitrary relation |
+| identity | The do-nothing arrow on one object | `u:identity` or `range(n)` for finite maps | The identity element of a monoid |
+| composition | Following one arrow and then another | `u:then_apply` or `u:compose_maps` | Multiplication of values |
+| commutative diagram | Every directed route with shared endpoints agrees | Both paths executed over a finite domain | Commutative binary operation |
+| product | Universal object with two projections | `{first, second}` plus bounded mediator checks | Numeric multiplication or Cartesian array outer product |
+| coproduct | Universal object with two injections | `{tag, value}` plus manual case analysis | Concatenating arrays |
+| functor | Structure-preserving mapping of objects and arrows | Concrete array context with `each` | A callable object in C++ terminology |
+| natural transformation | Compatible component map between functors | Transpose components whose naturality squares execute | An arbitrary conversion between arrays |
+| homomorphism | Map preserving an algebraic operation | Finite map vector checked against two Cayley tables | Every category-theory morphism in general |
+
+The product/coproduct lessons demonstrate value-level universal properties;
+they do not claim that sw-MLPL has parametric types, algebraic data types, or
+type-level uniqueness proofs.

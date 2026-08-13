@@ -5,13 +5,13 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 02 -- IDENTITY AND COMPOSITION", intro: "Compare f with identity before and after f over every input."})
-def u:inc(x) { x + 1 }
-def u:id_then_inc(x) { u:then_apply(:u:id, :u:inc, x) }
-def u:inc_then_id(x) { u:then_apply(:u:inc, :u:id, x) }
+def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
+def u:identity_then_increment(x) { "Compute identity then increment for this executable category-theory example.";  u:then_apply(:u:identity, :u:increment, x) }
+def u:increment_then_identity(x) { "Compute increment then identity for this executable category-theory example.";  u:then_apply(:u:increment, :u:identity, x) }
 xs = range(6)
-plain = each(:u:inc, xs)
-left = each(:u:id_then_inc, xs)
-right = each(:u:inc_then_id, xs)
+plain = each(:u:increment, xs)
+left = each(:u:identity_then_increment, xs)
+right = each(:u:increment_then_identity, xs)
 disp([plain, left, right])
 wrote = write_text("out/02-identity-composition.svg", u:identity_diagram())
 u:epilog_open()

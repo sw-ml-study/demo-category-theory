@@ -4,10 +4,10 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 10 -- STRUCTURE-PRESERVING MAPS COMPOSE", intro: "Use the sibling algebra checker locally, then verify identity and composition turn groups-with-homomorphisms into a category."})
-def u:add4(x, y) { mod(x + y, 4) }
-def u:add2(x, y) { mod(x + y, 2) }
-z4 = table(:u:add4, range(4), range(4))
-z2 = table(:u:add2, range(2), range(2))
+def u:add_modulo_four(x, y) { "Compute add modulo four for this executable category-theory example.";  mod(x + y, 4) }
+def u:add_modulo_two(x, y) { "Compute add modulo two for this executable category-theory example.";  mod(x + y, 2) }
+z4 = table(:u:add_modulo_four, range(4), range(4))
+z2 = table(:u:add_modulo_two, range(2), range(2))
 id4 = u:identity_map(4)
 parity = [0, 1, 0, 1]
 composed = u:compose_maps(id4, parity)

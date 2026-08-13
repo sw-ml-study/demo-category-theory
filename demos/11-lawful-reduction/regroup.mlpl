@@ -4,8 +4,8 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 11 -- A LAW BUYS PARALLEL EXECUTION", intro: "Compare a serial four-value reduction with a balanced tree. Associative addition agrees; subtraction warns what happens without the law."})
-def u:add(x, y) { x + y }
-def u:subtract(x, y) { x - y }
+def u:add(x, y) { "Compute add for this executable category-theory example.";  x + y }
+def u:subtract(x, y) { "Compute subtract for this executable category-theory example.";  x - y }
 xs = [8, 4, 2, 1]
 sum_serial = u:sum_left4(xs)
 sum_tree = u:sum_tree4(xs)

@@ -4,33 +4,33 @@
 
 include "lib/category.mlpl";
 
-def u:inc(x) { x + 1 }
-def u:also_inc(x) { 1 + x }
-def u:double(x) { 2 * x }
-def u:plus2(x) { x + 2 }
-def u:negate(x) { 0 - x }
-def u:inc_double(x) { 2 * (x + 1) }
-def u:transpose_component(m) { transpose(m) }
-def u:broken_component(m) { each(:u:inc, transpose(m)) }
-def u:add4(x, y) { mod(x + y, 4) }
-def u:add2(x, y) { mod(x + y, 2) }
-def u:sum2(x, y) { x + y }
-def u:subtract2(x, y) { x - y }
+def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
+def u:alternate_increment(x) { "Compute alternate increment for this executable category-theory example.";  1 + x }
+def u:double(x) { "Compute double for this executable category-theory example.";  2 * x }
+def u:add_two(x) { "Compute add two for this executable category-theory example.";  x + 2 }
+def u:negate(x) { "Compute negate for this executable category-theory example.";  0 - x }
+def u:increment_then_double(x) { "Compute increment then double for this executable category-theory example.";  2 * (x + 1) }
+def u:transpose_component(m) { "Compute transpose component for this executable category-theory example.";  transpose(m) }
+def u:offset_transpose_component(m) { "Compute offset transpose component for this executable category-theory example.";  each(:u:increment, transpose(m)) }
+def u:add_modulo_four(x, y) { "Compute add modulo four for this executable category-theory example.";  mod(x + y, 4) }
+def u:add_modulo_two(x, y) { "Compute add modulo two for this executable category-theory example.";  mod(x + y, 2) }
+def u:add_pair(x, y) { "Compute add pair for this executable category-theory example.";  x + y }
+def u:subtract_pair(x, y) { "Compute subtract pair for this executable category-theory example.";  x - y }
 
 @test {name: "identity and application", tags: ["laws"]}
 def u:test_identity() { "Identity leaves finite inputs unchanged.";
   xs = range(5);
-  u:assert_eq(u:paths_equal(:u:id, :u:id, xs), 1, "identity differs")?;
-  u:assert_eq(u:apply(:u:inc, 3), 4, "function reference call")?;
-  u:assert_eq(u:then_apply(:u:inc, :u:double, 3), 8, "composition order")?;
+  u:assert_eq(u:paths_equal(:u:identity, :u:identity, xs), 1, "identity differs")?;
+  u:assert_eq(u:apply(:u:increment, 3), 4, "function reference call")?;
+  u:assert_eq(u:then_apply(:u:increment, :u:double, 3), 8, "composition order")?;
   ok({test: "identity", cases: 3})
 }
 
 @test {name: "path equality returns a witness", tags: ["laws", "witness"]}
 def u:test_witness() { "Equal paths pass; unequal paths name the first input.";
   xs = range(4);
-  u:assert_eq(u:paths_equal(:u:inc, :u:also_inc, xs), 1, "equal paths rejected")?;
-  w = u:path_counterexample(:u:inc, :u:double, xs);
+  u:assert_eq(u:paths_equal(:u:increment, :u:alternate_increment, xs), 1, "equal paths rejected")?;
+  w = u:path_counterexample(:u:increment, :u:double, xs);
   u:assert_eq(w.found, 1, "missing witness")?;
   u:assert_eq(w.input, 0, "wrong first input")?;
   u:assert_eq(w.left, 1, "wrong left value")?;
@@ -41,8 +41,8 @@ def u:test_witness() { "Equal paths pass; unequal paths name the first input.";
 @test {name: "commutative square and broken witness", tags: ["laws", "squares"]}
 def u:test_square() { "Both routes agree, or the checker names the first split.";
   xs = range(5);
-  u:assert_eq(u:square_commutes(:u:inc, :u:double, :u:double, :u:plus2, xs), 1, "lawful square rejected")?;
-  broken = u:square_counterexample(:u:inc, :u:double, :u:double, :u:inc, xs);
+  u:assert_eq(u:square_commutes(:u:increment, :u:double, :u:double, :u:add_two, xs), 1, "lawful square rejected")?;
+  broken = u:square_counterexample(:u:increment, :u:double, :u:double, :u:increment, xs);
   u:assert_eq(broken.found, 1, "broken square accepted")?;
   u:assert_eq(broken.input, 0, "wrong witness input")?;
   u:assert_eq(broken.upper, 2, "wrong upper result")?;
@@ -53,8 +53,8 @@ def u:test_square() { "Both routes agree, or the checker names the first split."
 @test {name: "concrete product universal property", tags: ["products"]}
 def u:test_product() { "Both projections force the unique pair.";
   p = u:pair(3, 8);
-  u:assert_eq(u:fst(p), 3, "first projection")?;
-  u:assert_eq(u:snd(p), 8, "second projection")?;
+  u:assert_eq(u:first_projection(p), 3, "first projection")?;
+  u:assert_eq(u:second_projection(p), 8, "second projection")?;
   lawful = u:product_factor(3, 8, p);
   u:assert_eq(lawful.commutes, 1, "pair does not commute")?;
   u:assert_eq(lawful.unique, 1, "pair not unique")?;
@@ -65,12 +65,12 @@ def u:test_product() { "Both projections force the unique pair.";
 
 @test {name: "concrete coproduct universal property", tags: ["coproducts"]}
 def u:test_coproduct() { "Both injections determine case analysis.";
-  u:assert_eq(u:copair(u:left_value(3), :u:inc, :u:negate), 4, "left case")?;
-  u:assert_eq(u:copair(u:right_value(3), :u:inc, :u:negate), -3, "right case")?;
-  law = u:coproduct_agrees(:u:inc, :u:negate, range(3), range(3), [1, 2, 3], [0, -1, -2]);
+  u:assert_eq(u:copair(u:left_value(3), :u:increment, :u:negate), 4, "left case")?;
+  u:assert_eq(u:copair(u:right_value(3), :u:increment, :u:negate), -3, "right case")?;
+  law = u:coproduct_agrees(:u:increment, :u:negate, range(3), range(3), [1, 2, 3], [0, -1, -2]);
   u:assert_eq(law.commutes, 1, "case restrictions disagree")?;
   u:assert_eq(law.unique, 1, "case map not uniquely determined")?;
-  bad = u:coproduct_agrees(:u:inc, :u:negate, range(3), range(3), [1, 2, 4], [0, -1, -2]);
+  bad = u:coproduct_agrees(:u:increment, :u:negate, range(3), range(3), [1, 2, 4], [0, -1, -2]);
   u:assert_eq(bad.commutes, 0, "bad case map accepted")?;
   ok({test: "coproduct", cases: 5})
 }
@@ -81,8 +81,8 @@ def u:test_array_functor() { "each preserves identity and composition.";
   m = [[1, 2], [3, 4]];
   u:assert_eq(u:array_functor_identity(v), 1, "vector identity")?;
   u:assert_eq(u:array_functor_identity(m), 1, "matrix identity")?;
-  u:assert_eq(u:array_functor_composition(:u:inc, :u:double, :u:inc_double, v), 1, "composition")?;
-  u:assert_eq(equal(shape(u:array_map(:u:inc, m)), shape(m)), 1, "map changed shape")?;
+  u:assert_eq(u:array_functor_composition(:u:increment, :u:double, :u:increment_then_double, v), 1, "composition")?;
+  u:assert_eq(equal(shape(u:array_map(:u:increment, m)), shape(m)), 1, "map changed shape")?;
   bad = u:array_map_counterexample(v, [3, 2, 1]);
   u:assert_eq(bad.found, 1, "bad lift accepted")?;
   u:assert_eq(bad.index, 0, "wrong bad-lift witness")?;
@@ -93,9 +93,9 @@ def u:test_array_functor() { "each preserves identity and composition.";
 def u:test_naturality() { "Mapping then transposing equals transposing then mapping.";
   a = [[1, 2, 3], [4, 5, 6]];
   b = [[1, 2], [3, 4], [5, 6]];
-  u:assert_eq(u:transpose_natural(:u:inc, a), 1, "2x3 square")?;
+  u:assert_eq(u:transpose_natural(:u:increment, a), 1, "2x3 square")?;
   u:assert_eq(u:transpose_natural(:u:double, b), 1, "3x2 square")?;
-  bad = u:naturality_counterexample(:u:double, :u:broken_component, a);
+  bad = u:naturality_counterexample(:u:double, :u:offset_transpose_component, a);
   u:assert_eq(bad.found, 1, "broken component accepted")?;
   u:assert_eq(bad.index, 0, "wrong naturality witness index")?;
   u:assert_eq(bad.expected, 3, "wrong upper witness")?;
@@ -105,8 +105,8 @@ def u:test_naturality() { "Mapping then transposing equals transposing then mapp
 
 @test {name: "homomorphisms close under identity and composition", tags: ["homomorphisms"]}
 def u:test_hom_category() { "Identity and composed structure-preserving maps remain homomorphisms.";
-  z4 = table(:u:add4, range(4), range(4));
-  z2 = table(:u:add2, range(2), range(2));
+  z4 = table(:u:add_modulo_four, range(4), range(4));
+  z2 = table(:u:add_modulo_two, range(2), range(2));
   parity = [0, 1, 0, 1];
   id4 = u:identity_map(4);
   u:assert_eq(u:is_homomorphism(id4, z4, z4), 1, "identity not homomorphic")?;

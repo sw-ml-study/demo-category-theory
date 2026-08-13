@@ -5,7 +5,7 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 01 -- ARROWS ARE FUNCTIONS", intro: "Watch double map every visible source value to one target value."})
-def u:double(x) { 2 * x }
+def u:double(x) { "Compute double for this executable category-theory example.";  2 * x }
 xs = range(5)
 ys = each(:u:double, xs)
 disp([xs, ys])

@@ -6,7 +6,7 @@
 # * A concrete morphism: five source numbers and the five results of doubling.
 # ***************************************************************************
 ;
-def u:double(x) { 2 * x }  # the arrow's behavior
+def u:double(x) { "Compute double for this executable category-theory example.";  2 * x }  # the arrow's behavior
 xs = range(5)  # the visible source object
 ys = each(:u:double, xs)  # follow the arrow for every source value
 disp([xs, ys])  # rows are source values and their destinations

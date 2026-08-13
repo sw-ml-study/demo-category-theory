@@ -1,5 +1,7 @@
 # Implementation plan: category theory you can watch execute
 
+Status: **first curriculum implemented; final integration verified in Step 8**.
+
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the
 categorical reading of maps between structures. It does not repeat the sibling

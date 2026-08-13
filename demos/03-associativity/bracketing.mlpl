@@ -5,14 +5,14 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 03 -- COMPOSITION IS ASSOCIATIVE", intro: "Move brackets around three functions without changing the route or result."})
-def u:inc(x) { x + 1 }
-def u:double(x) { 2 * x }
-def u:square(x) { x * x }
-def u:left(x) { u:apply(:u:square, u:then_apply(:u:inc, :u:double, x)) }
-def u:right(x) { u:then_apply(:u:inc, :u:double, x) * u:then_apply(:u:inc, :u:double, x) }
+def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
+def u:double(x) { "Compute double for this executable category-theory example.";  2 * x }
+def u:square(x) { "Compute square for this executable category-theory example.";  x * x }
+def u:left_bracketing_result(x) { "Compute left bracketing result for this executable category-theory example.";  u:apply(:u:square, u:then_apply(:u:increment, :u:double, x)) }
+def u:right_bracketing_result(x) { "Compute right bracketing result for this executable category-theory example.";  u:then_apply(:u:increment, :u:double, x) * u:then_apply(:u:increment, :u:double, x) }
 xs = range(5)
-lhs = each(:u:left, xs)
-rhs = each(:u:right, xs)
+lhs = each(:u:left_bracketing_result, xs)
+rhs = each(:u:right_bracketing_result, xs)
 disp([lhs, rhs])
 wrote = write_text("out/03-composition-associativity.svg", u:associativity_diagram())
 u:epilog_open()

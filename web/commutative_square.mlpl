@@ -6,13 +6,13 @@
 # * One square where both routes agree, and one where changing +2 to +1 fails.
 # ***************************************************************************
 ;
-def u:inc(x) { x + 1 }  # top arrow; also the deliberately wrong bottom arrow
-def u:double(x) { 2 * x }  # both vertical arrows
-def u:plus2(x) { x + 2 }  # lawful bottom arrow
+def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }  # top arrow; also the deliberately wrong bottom arrow
+def u:double(x) { "Compute double for this executable category-theory example.";  2 * x }  # both vertical arrows
+def u:add_two(x) { "Compute add two for this executable category-theory example.";  x + 2 }  # lawful bottom arrow
 xs = range(6)  # every checked input
-upper = each(:u:double, each(:u:inc, xs))  # across then down
-lower = each(:u:plus2, each(:u:double, xs))  # down then across, lawful
-broken = each(:u:inc, each(:u:double, xs))  # down then across, one bad arrow
+upper = each(:u:double, each(:u:increment, xs))  # across then down
+lower = each(:u:add_two, each(:u:double, xs))  # down then across, lawful
+broken = each(:u:increment, each(:u:double, xs))  # down then across, one bad arrow
 disp([xs, upper, lower, broken])  # first three rows agree; fourth differs
 # ***************************************************************************
 # * THE VISUAL

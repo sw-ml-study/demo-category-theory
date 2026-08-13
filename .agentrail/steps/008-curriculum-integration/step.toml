@@ -1,6 +1,6 @@
 number = 8
 slug = "curriculum-integration"
-status = "pending"
+status = "in-progress"
 description = "Integrate and audit the complete first curriculum. Run the full test/render/n..."
 role = "production"
 context_files = []

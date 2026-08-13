@@ -294,6 +294,9 @@ Category theory exercises the language; it does not dictate new syntax.
   counterexample, not a bare boolean.
 - Keep functions small and pure; isolate display and filesystem effects in thin
   runners. Prefer whole-array operations and document unavoidable loops.
+- Every `.mlpl` `def` begins with an MLPL docstring as its first expression.
+  Function names state their category-theory or transformation role; avoid
+  one-letter names and cryptic abbreviations when a readable name exists.
 - Demos are deterministic, standalone, and self-checking. They end with
   `ok(...)` or `err(...)`; rendering is never the authority for correctness.
 - Do not install or overwrite the user's stable sw-MLPL binaries. Use the

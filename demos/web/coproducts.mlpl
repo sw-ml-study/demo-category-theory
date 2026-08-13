@@ -6,11 +6,11 @@
 # * Tagged left and right values determine one case-analysis function.
 # ***************************************************************************
 ;
-def u:inc(x) { x + 1 }  # action for left values
-def u:negate(x) { 0 - x }  # action for right values
+def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }  # action for left values
+def u:negate(x) { "Compute negate for this executable category-theory example.";  0 - x }  # action for right values
 left = {tag: "left", value: 3}  # left injection
 right = {tag: "right", value: 3}  # right injection
-left_result = call(:u:inc, [left.value])  # chosen by the left tag
+left_result = call(:u:increment, [left.value])  # chosen by the left tag
 right_result = call(:u:negate, [right.value])  # chosen by the right tag
 disp([left_result, right_result])  # destinations 4 and -3
 # ***************************************************************************

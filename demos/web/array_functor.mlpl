@@ -6,14 +6,14 @@
 # * Mapping identity and composition over arrays preserves those two laws.
 # ***************************************************************************
 ;
-def u:inc(x) { x + 1 }  # scalar f
-def u:double(x) { 2 * x }  # scalar g
-def u:both(x) { 2 * (x + 1) }  # g after f
-def u:same(x) { x }  # scalar identity
+def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }  # scalar f
+def u:double(x) { "Compute double for this executable category-theory example.";  2 * x }  # scalar g
+def u:increment_then_double(x) { "Compute increment then double for this executable category-theory example.";  2 * (x + 1) }  # g after f
+def u:identity_value(x) { "Compute identity value for this executable category-theory example.";  x }  # scalar identity
 xs = [1, 2, 3]  # one concrete array context
-twice = each(:u:double, each(:u:inc, xs))  # map(g) after map(f)
-once = each(:u:both, xs)  # map(g after f)
-identity = each(:u:same, xs)  # map(identity)
+twice = each(:u:double, each(:u:increment, xs))  # map(g) after map(f)
+once = each(:u:increment_then_double, xs)  # map(g after f)
+identity = each(:u:identity_value, xs)  # map(identity)
 disp([xs, identity, twice, once])  # rows 1=2 and rows 3=4
 # ***************************************************************************
 # * THE VISUAL

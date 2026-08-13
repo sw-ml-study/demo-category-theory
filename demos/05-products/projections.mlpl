@@ -7,7 +7,7 @@ u:prolog({title: "LESSON 05 -- A PRODUCT IS FORCED BY ITS PROJECTIONS", intro: "
 p = u:pair(3, 8)
 good = u:product_factor(3, 8, p)
 bad = u:product_factor(3, 8, u:pair(3, 9))
-disp([u:fst(p), u:snd(p), good.unique, bad.unique])
+disp([u:first_projection(p), u:second_projection(p), good.unique, bad.unique])
 wrote = write_text("out/05-product.svg", u:product_diagram())
 u:epilog_open()
 u:explain("out/05-product.svg", "The pair at the top has two green projections. Requiring fst=3 and snd=8 leaves no freedom: pair(3,9) visibly misses the second target.")
