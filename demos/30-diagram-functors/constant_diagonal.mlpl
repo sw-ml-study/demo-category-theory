@@ -1,0 +1,22 @@
+# Lesson 30 -- diagram category, constant diagram, and diagonal functor.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_diagram_functors.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 30 -- A DIAGONAL FUNCTOR REPEATS ONE OBJECT ACROSS A DIAGRAM", intro: "Use the composable-pair shape 0 to 1 to 2; copy one object and its identity arrow to every node and edge, then compose diagram transformations pointwise."})
+constant_diagram = u:constant_diagram_on_three_points(3)
+constant_laws = u:constant_diagram_preserves_category_laws(constant_diagram)
+identity_components = [[0, 1, 2], [0, 1, 2], [0, 1, 2]]
+first_components = [[1, 2, 0], [1, 2, 0], [1, 2, 0]]
+second_components = [[2, 0, 1], [2, 0, 1], [2, 0, 1]]
+transformation_category_laws = u:diagram_transformations_form_category(identity_components, first_components, second_components)
+broken_diagram = {objects: [3, 3, 3], first_arrow: [0, 1, 2], second_arrow: [0, 1, 2], composite_arrow: [1, 0, 2]}
+failure = u:broken_constant_diagram_witness(broken_diagram)
+disp(constant_diagram.objects)
+disp([constant_diagram.first_arrow, constant_diagram.second_arrow, constant_diagram.composite_arrow])
+disp([constant_laws, transformation_category_laws, failure.found])
+wrote = write_text("out/30-diagram-functors.svg", u:finite_diagram_functors_visual())
+u:epilog_open()
+u:explain("out/30-diagram-functors.svg", "The top row is the constant diagram: one object X and its identity repeat over every node and arrow. Blue vertical components form a diagram transformation and compose pointwise.")
+u:takeaway("A diagram category has functors as objects and natural transformations as arrows. The diagonal functor sends one object to the constant diagram of that shape.")
+if constant_laws * transformation_category_laws * failure.found * is_ok(wrote) { ok("finite diagram and diagonal functor laws verified") } else { err("finite diagram functor invariant failed") }

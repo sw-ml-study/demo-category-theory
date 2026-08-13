@@ -33,4 +33,5 @@ cp "$repo_root/out/26-finite-limits-colimits.svg" "$dest/26-finite-limits-colimi
 cp "$repo_root/out/27-representable-hom.svg" "$dest/27-representable-hom.svg"
 cp "$repo_root/out/28-finite-yoneda.svg" "$dest/28-finite-yoneda.svg"
 cp "$repo_root/out/29-unique-universal-isomorphism.svg" "$dest/29-unique-universal-isomorphism.svg"
+cp "$repo_root/out/30-diagram-functors.svg" "$dest/30-diagram-functors.svg"
 echo "README previews written"

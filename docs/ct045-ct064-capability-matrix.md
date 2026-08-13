@@ -10,9 +10,9 @@ finite unless a later lesson proves a stronger statement.
 | CT046 | wide coproduct | bounded tagged index/value rows plus case table | runnable with numeric tags; exhaustive static dispatch absent |
 | CT047 | indexed limit | finite diagram record and enumerated cone candidates | runnable for named bounded diagram |
 | CT048 | indexed colimit | finite diagram record and enumerated cocone candidates | runnable for named bounded diagram |
-| CT049 | diagram category | records of object/arrow tables and pointwise transformations | runnable for one explicit source shape |
-| CT050 | constant diagram functor | repeat one object code and identity arrow over a finite shape | runnable |
-| CT051 | diagonal functor | same finite constant-diagram construction, with functor laws | runnable |
+| CT049 | diagram category | records of object/arrow tables and pointwise transformations | implemented as Lesson 30 |
+| CT050 | constant diagram functor | repeat one object code and identity arrow over a finite shape | implemented as Lesson 30 |
+| CT051 | diagonal functor | same finite constant-diagram construction, with functor laws | implemented as Lesson 30 |
 | CT052 | limit cone | array/record legs plus unique mediator-count vector | runnable after generalized finite leg helper |
 | CT053 | colimit cocone | dual legs plus unique mediator-count vector | runnable |
 | CT054 | uniqueness up to unique isomorphism | two universal candidates and mutually inverse forced maps | implemented as Lesson 29 |
@@ -49,3 +49,9 @@ the comparison table `[0,2,1,3]` in each direction. Both composites are the
 four-point identity. The identity index table is a visible counterexample
 because it fails a required projection. CT054 is therefore executable with
 current finite function tables; no sw-MLPL change is needed.
+
+Lesson 30 uses the three-node composable-pair index category. The diagonal
+construction repeats one object code and identity table, preserves the named
+composite, and diagram transformations obey identities and composition
+pointwise. A changed composite table is rejected. This implements CT049-CT051
+for one explicit finite shape without claiming a generic diagram type.

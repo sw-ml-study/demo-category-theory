@@ -329,6 +329,16 @@ Sources:
 [CLI lesson](demos/29-unique-universal-isomorphism/forced_inverse.mlpl),
 [web lesson](demos/web/unique_universal_isomorphism.mlpl).
 
+### 30. Diagonal functors build constant diagrams
+
+![A constant three-node diagram above pointwise natural-transformation components](assets/previews/30-diagram-functors.svg)
+
+What to notice: the composable-pair shape receives the same object `X` and
+identity arrow at every node and edge. Blue components connect two diagram
+objects and compose pointwise. A changed composite arrow breaks the functor
+law. Sources: [CLI lesson](demos/30-diagram-functors/constant_diagonal.mlpl),
+[web lesson](demos/web/diagram_constant_diagonal.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

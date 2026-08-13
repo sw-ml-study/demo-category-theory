@@ -253,6 +253,12 @@ preservation, and both inverse equations. A competing table exposes failure.
 No generic isomorphism type or universal-object keyword is needed for CT054's
 bounded executable claim.
 
+Lesson 30 confirms that a named finite index category, constant diagram, and
+pointwise diagram transformations fit current records and rectangular arrays.
+Identity/composition checks need no generic category or functor value. The
+result supports CT049-CT051 for one explicit shape, not quantification over
+arbitrary index categories.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

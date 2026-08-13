@@ -42,6 +42,8 @@ mathematical meaning and the executable approximation.
 | category of elements | Objects pair each source object with one functor element; arrows respect functor action | Rows `(A,10)`, `(B,20)` and their induced arrow | Merely flattening an array |
 | density | Reconstruction from representable pieces | Bounded recovery of `[10,20]` only | A claim that the general density theorem was proved here |
 | uniqueness up to unique isomorphism | Any two choices satisfying the same universal property have exactly one compatible isomorphism | Two finite product encodings with projection-forced inverse comparison tables | Literal equality of representations or an arbitrary bijection |
+| diagram category | Category whose objects are diagrams of one fixed shape and arrows are natural transformations | Explicit three-node diagram records with component tables composed pointwise | The index category itself |
+| constant diagram / diagonal functor | Repeat one object and its identity arrows over every part of an index shape | Object-code and identity-table rows over the walking composable pair | Duplicating arbitrary data without functor laws |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

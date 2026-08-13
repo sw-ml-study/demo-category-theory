@@ -1,0 +1,20 @@
+# Tests for CT049-CT051 finite diagram functors.
+include "lib/finite_diagram_functors.mlpl";
+@test {name: "constant diagram preserves identity and composition", tags: ["CT050", "CT051", "functor"]}
+def u:test_constant_diagram_laws() { "Verify the diagonal construction copies one object and respects the index-category composite.";
+  diagram = u:constant_diagram_on_three_points(3);
+  u:assert_eq(equal(diagram.objects, [3, 3, 3]), 1, "object copied across shape")?;
+  u:assert_eq(u:constant_diagram_preserves_category_laws(diagram), 1, "constant diagram laws")?;
+  ok({test: "constant-diagram", cases: 2})
+}
+@test {name: "finite diagram transformations compose pointwise", tags: ["CT049", "diagram-category"]}
+def u:test_diagram_transformation_category() { "Verify identities and componentwise composition for three-node diagram transformations.";
+  identities = [[0, 1, 2], [0, 1, 2], [0, 1, 2]];
+  first = [[1, 2, 0], [1, 2, 0], [1, 2, 0]];
+  second = [[2, 0, 1], [2, 0, 1], [2, 0, 1]];
+  u:assert_eq(u:diagram_transformations_form_category(identities, first, second), 1, "pointwise category laws")?;
+  broken = {objects: [3, 3, 3], first_arrow: [0, 1, 2], second_arrow: [0, 1, 2], composite_arrow: [1, 0, 2]};
+  u:assert_eq(u:broken_constant_diagram_witness(broken).found, 1, "bad composite rejected")?;
+  ok({test: "diagram-category", cases: 2})
+}
+u:run_registered_tests()

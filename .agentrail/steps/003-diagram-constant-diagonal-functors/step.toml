@@ -1,6 +1,6 @@
 number = 3
 slug = "diagram-constant-diagonal-functors"
-status = "pending"
+status = "in-progress"
 description = "Implement CT049-CT051 diagram category, constant diagram functor, and diagona..."
 role = "production"
 context_files = []

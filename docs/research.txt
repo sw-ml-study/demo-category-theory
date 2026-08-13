@@ -1474,3 +1474,15 @@ forces their composites to be identities. It does not claim generic universal
 objects or proof automation. Current sw-MLPL tables are sufficient, so no
 upstream capability request follows. CT049-CT051 finite diagram, constant, and
 diagonal functors are next and have no known blocker.
+
+CT049-CT051 implementation evidence, 2026-08-13
+
+Lesson 30 represents the walking composable pair `0 -> 1 -> 2` with its named
+composite. The constant/diagonal construction repeats object `X` three times
+and sends both generating arrows and their composite to the three-point
+identity table. Pointwise component tables verify identity and composition for
+arrows in the finite diagram category. Replacing only the composite by
+`[1,0,2]` supplies the functor-law counterexample. Records, arrays, `fill`, and
+`take` are sufficient; no upstream capability request follows. CT045-CT048
+bounded wide/indexed products and coproducts are next. Arbitrary index
+categories and unbounded families remain explicit scope boundaries.
