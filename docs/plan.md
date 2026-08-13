@@ -1,6 +1,6 @@
 # Implementation plan: category theory you can watch execute
 
-Status: **thirty-one capability-gated lessons implemented; the 245-concept
+Status: **thirty-two capability-gated lessons implemented; the 245-concept
 program remains active**.
 
 The broader program continues through the 245 tracked concepts in
@@ -16,7 +16,8 @@ The active CT045-CT064 saga has measured its finite representation surface in
 isomorphism is implemented as Lesson 29. CT049-CT051 finite diagram,
 constant-diagram, and diagonal functors are implemented as Lesson 30. Bounded
 wide/indexed products and coproducts are implemented at finite width three as
-Lesson 31. Generalized bounded limit/colimit cones are next; infinite-family claims and unprobed lifting or
+Lesson 31. CT052-CT053 bounded chain cones are Lesson 32. Preservation,
+creation, and reflection are next; infinite-family claims and unprobed lifting or
 comma-category constructions remain explicitly deferred.
 
 Derived from `docs/research.txt` and the ownership contract in

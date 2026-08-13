@@ -13,8 +13,8 @@ finite unless a later lesson proves a stronger statement.
 | CT049 | diagram category | records of object/arrow tables and pointwise transformations | implemented as Lesson 30 |
 | CT050 | constant diagram functor | repeat one object code and identity arrow over a finite shape | implemented as Lesson 30 |
 | CT051 | diagonal functor | same finite constant-diagram construction, with functor laws | implemented as Lesson 30 |
-| CT052 | limit cone | array/record legs plus unique mediator-count vector | runnable after generalized finite leg helper |
-| CT053 | colimit cocone | dual legs plus unique mediator-count vector | runnable |
+| CT052 | limit cone | array/record legs plus unique mediator-count vector | implemented as Lesson 32 for a two-arrow chain |
+| CT053 | colimit cocone | dual legs plus unique mediator-count vector | implemented as Lesson 32 for a two-arrow chain |
 | CT054 | uniqueness up to unique isomorphism | two universal candidates and mutually inverse forced maps | implemented as Lesson 29 |
 | CT055 | preservation of limits | compare source universal cone with its image under named functor | runnable for finite fixtures |
 | CT056 | preservation of colimits | dual before/after universal checks | runnable for finite fixtures |
@@ -61,3 +61,8 @@ objects. Three legs force product mediator `[2,5,7]`; three tagged injections
 force case outputs `[12,25,37]`. Changed third components are rejected. This is
 an honest finite indexed (co)limit and a bounded analogue of a wide
 (co)product, not support for arbitrary or infinite families.
+
+Lesson 32 adds actual diagram compatibility to the bounded representation.
+For `A -> B -> C`, cone and cocone legs must satisfy two equations before
+mediator counts `[1,1,1]` establish universality. A changed final cone leg and
+counts `[1,2,1]` separately expose compatibility and uniqueness failures.

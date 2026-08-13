@@ -1,4 +1,4 @@
-number = 7
+number = 8
 slug = "filtered-directed-systems"
 status = "pending"
 description = "Attempt CT059-CT063 filtered categories/colimits, directed colimits, inverse ..."

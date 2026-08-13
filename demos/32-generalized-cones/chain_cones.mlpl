@@ -1,0 +1,21 @@
+# Lesson 32 -- generalized bounded limit cones and colimit cocones.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_limits_colimits.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 32 -- CONES MUST COMMUTE BEFORE THEY CAN BE UNIVERSAL", intro: "Add two compatibility arrows to the three-object diagram, then require both commuting equations and unique bounded mediators."})
+first_arrow = [0, 1]
+second_arrow = [0, 1]
+cone_routes = u:chain_cone_routes(first_arrow, second_arrow, [0, 1], [0, 1], [0, 1])
+cocone_routes = u:chain_cocone_routes(first_arrow, second_arrow, [0, 1], [0, 1], [0, 1])
+limit_law = u:bounded_chain_cone_is_limit(cone_routes, [1, 1, 1])
+colimit_law = u:bounded_chain_cocone_is_colimit(cocone_routes, [1, 1, 1])
+broken_cone = u:chain_cone_routes(first_arrow, second_arrow, [0, 1], [0, 1], [1, 0])
+nonunique_colimit = u:bounded_chain_cocone_is_colimit(cocone_routes, [1, 2, 1])
+disp([cone_routes.first_route, cone_routes.second_route, cocone_routes.through_middle, cocone_routes.through_last])
+disp([limit_law, colimit_law, 1 - broken_cone.commutes, 1 - nonunique_colimit])
+wrote = write_text("out/32-generalized-bounded-cones.svg", u:generalized_bounded_cones_visual())
+u:epilog_open()
+u:explain("out/32-generalized-bounded-cones.svg", "Blue cone legs point into the chain and blue cocone legs point out. Both adjacent squares must commute; only then do mediator counts [1,1,1] establish bounded universality.")
+u:takeaway("Compatibility makes a family of legs a cone or cocone; unique factorization makes that cone a limit or that cocone a colimit.")
+if limit_law * colimit_law * (1 - broken_cone.commutes) * (1 - nonunique_colimit) * is_ok(wrote) { ok("bounded chain limit and colimit cones verified") } else { err("bounded chain cone invariant failed") }

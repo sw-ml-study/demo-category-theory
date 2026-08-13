@@ -1,6 +1,6 @@
 number = 5
 slug = "generalized-limit-colimit-cones"
-status = "pending"
+status = "in-progress"
 description = "Implement CT052-CT053 limit and colimit cones by generalizing bounded diagram..."
 role = "production"
 context_files = []

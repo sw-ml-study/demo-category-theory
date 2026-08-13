@@ -1,0 +1,9 @@
+number = 6
+slug = "clarify-yoneda-web-lesson"
+status = "pending"
+description = "Repair Lesson 28's web/CLI pedagogy after user feedback that the Yoneda diagr..."
+role = "production"
+context_files = []
+created_at = "2026-08-13T12:12:38"
+task_type = "lesson"
+commits = []

@@ -1,0 +1,18 @@
+# Tests for CT052-CT053 generalized bounded cones.
+include "lib/finite_limits_colimits.mlpl";
+@test {name: "two-arrow chain cone commutes and is bounded universal", tags: ["CT052", "limit-cone"]}
+def u:test_chain_limit_cone() { "Verify two compatibility equations and unique mediator counts for a bounded limit cone.";
+  routes = u:chain_cone_routes([0, 1], [0, 1], [0, 1], [0, 1], [0, 1]);
+  u:assert_eq(u:bounded_chain_cone_is_limit(routes, [1, 1, 1]), 1, "bounded limit")?;
+  broken = u:chain_cone_routes([0, 1], [0, 1], [0, 1], [0, 1], [1, 0]);
+  u:assert_eq(1 - broken.commutes, 1, "broken second equation")?;
+  ok({test: "chain-limit-cone", cases: 2})
+}
+@test {name: "two-arrow chain cocone commutes and is bounded universal", tags: ["CT053", "colimit-cocone"]}
+def u:test_chain_colimit_cocone() { "Verify two compatibility equations and reject nonunique mediators for a bounded colimit cocone.";
+  routes = u:chain_cocone_routes([0, 1], [0, 1], [0, 1], [0, 1], [0, 1]);
+  u:assert_eq(u:bounded_chain_cocone_is_colimit(routes, [1, 1, 1]), 1, "bounded colimit")?;
+  u:assert_eq(1 - u:bounded_chain_cocone_is_colimit(routes, [1, 2, 1]), 1, "nonunique rejected")?;
+  ok({test: "chain-colimit-cocone", cases: 2})
+}
+u:run_registered_tests()

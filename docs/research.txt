@@ -1497,3 +1497,12 @@ Thus product/coproduct are respectively the limit/colimit of this finite
 discrete diagram. “Wide” here means wider than binary but bounded at three.
 Arbitrary and infinite families remain deferred; no upstream request follows.
 CT052-CT053 generalized bounded cones are next.
+
+CT052-CT053 implementation evidence, 2026-08-13
+
+Lesson 32 advances from a discrete family to the two-arrow chain `A -> B -> C`.
+Three cone legs and three cocone legs each satisfy both adjacent compatibility
+equations. Only after commutation do mediator counts `[1,1,1]` select the
+bounded limit cone and colimit cocone. Changing the final cone leg breaks
+commutation; `[1,2,1]` breaks uniqueness. Current fixed tables suffice, with no
+upstream ask. CT055-CT058 preservation, creation, and reflection are next.

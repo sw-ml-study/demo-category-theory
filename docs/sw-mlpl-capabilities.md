@@ -264,6 +264,10 @@ three-branch numeric-tagged coproduct case maps execute with current arrays.
 This supports finite discrete CT045-CT048 fixtures only. Dynamic or infinite
 family abstraction remains unmeasured and is not implied by the bounded result.
 
+Lesson 32 confirms that fixed three-leg records can express two compatibility
+equations plus bounded mediator uniqueness for CT052-CT053. It does not add a
+generic cone type or quantify over diagram shapes; no runtime change is needed.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

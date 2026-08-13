@@ -46,6 +46,7 @@ mathematical meaning and the executable approximation.
 | constant diagram / diagonal functor | Repeat one object and its identity arrows over every part of an index shape | Object-code and identity-table rows over the walking composable pair | Duplicating arbitrary data without functor laws |
 | wide / indexed product and coproduct | Universal product or coproduct over an indexed family | Three projection legs or three numeric-tagged injections for a discrete diagram | Evidence for arbitrary or infinite families |
 | indexed limit / colimit | Universal cone or cocone over a diagram selected by an index category | Product or coproduct of the explicit three-object discrete diagram | A generic or unbounded construction |
+| limit cone / colimit cocone | A compatible cone terminal among cones, or compatible cocone initial among cocones | Three legs over `A → B → C`, two commuting equations, and bounded unique mediator counts | Any family of legs without compatibility or universality |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

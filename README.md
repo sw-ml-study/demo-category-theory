@@ -349,6 +349,16 @@ and colimit, but the demonstrated width is three—not arbitrary or infinite.
 Sources: [CLI lesson](demos/31-bounded-indexed-products/three_object_family.mlpl),
 [web lesson](demos/web/bounded_indexed_products.mlpl).
 
+### 32. Compatibility turns legs into universal cones
+
+![A limit cone into a two-arrow chain and a colimit cocone out of it](assets/previews/32-generalized-bounded-cones.svg)
+
+What to notice: unlike the discrete diagram, `A → B → C` imposes two
+compatibility equations. Blue legs form a cone or cocone only when both
+commute; mediator counts `[1,1,1]` then establish bounded universality. Sources:
+[CLI lesson](demos/32-generalized-cones/chain_cones.mlpl),
+[web lesson](demos/web/generalized_bounded_cones.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 
