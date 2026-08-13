@@ -13,7 +13,7 @@ expression.
 | Concept family | Current CT teaching | Current expression | Pressure / queued action |
 |---|---|---|---|
 | morphisms and identity | moderate | strong | Clarify concrete-category boundary and object/element grammar |
-| composition and associativity | moderate | weak | Build distinct composition values/trees; probe first-class composition |
+| composition and associativity | strong | honest workaround | Distinct executable trees now expose the remaining callable-returning composition gap |
 | array functor | strong | strong | Say array construction plus `each`, not “arrays”, is the functorial action |
 | natural transformation | moderate | strong | Name both functors and call equality a finite naturality instance |
 | products/coproducts | strong | strong | Retain universal-property witnesses |

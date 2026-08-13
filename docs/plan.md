@@ -372,3 +372,13 @@ containers, elements are tokens, arrows are directed and labeled, failures
 use dashed paths and words in addition to color, and every SVG has a title and
 description. The next step repairs the associativity computation so the two
 genuinely different composition trees are executable rather than merely prose.
+### Honest associativity repair (2026-08-13)
+
+Lesson 03 now constructs two different syntax trees—left-nested and
+right-nested—and evaluates both over the fixture. Its SVG shows both trees
+beside the common `A -f-> B -g-> C -h-> D` path. The workaround establishes a
+measured upstream ask for callable-returning function composition.
+
+Next: repair the remaining research2 mathematical-precision issues in the
+arrows, product/coproduct, functor, naturality, and universal-construction
+leaves. No blocker prevents that audit.

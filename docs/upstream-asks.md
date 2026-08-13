@@ -85,3 +85,13 @@ pipelines beyond category-theory demos.
 Acceptance direction: document and regularize the `call` return-shape contract,
 or provide an invocation form whose scalar return preserves scalar rank while
 record returns remain records. Exact API remains an upstream design decision.
+# Callable-returning function composition
+
+- Evidence: Lesson 03 needs structurally distinct left- and right-associated
+  composites, while nested calls erase the parenthesization.
+- Current workaround: record-valued composition trees plus a recursive
+  evaluator in `lib/category.mlpl`.
+- Requested capability: `compose(f, g)` should return a callable function
+  value that applies `f` and then `g`.
+- General value: readable preprocessing, model, validation, and data-pipeline
+  assembly; this is not Category-Theory-specific syntax.

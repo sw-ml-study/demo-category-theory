@@ -686,3 +686,8 @@ directed arrows, non-color counterexample cues, reduced-motion behavior, and
 the object-container/element-token distinction are enforced by
 `scripts/check-visual-grammar` for authored browser leaves and preview assets.
 Future concepts must follow this standard before entering the curriculum.
+Implementation note (2026-08-13, Step 009): the associativity criticism is
+resolved with two genuinely distinct executable composition trees and a visual
+that displays both structures beside their common path. Because sw-MLPL lacks
+a callable-returning `compose`, the lesson uses a documented record-tree
+interpreter and records that general capability request in the upstream ledger.

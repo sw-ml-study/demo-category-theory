@@ -1544,3 +1544,17 @@ so values 3 and 6 read as elements rather than categorical objects.
 Next: execute honest left- and right-associated composition trees. There is no
 current blocker; progressive path animation remains selective because it
 should teach a path law rather than decorate every diagram.
+## Honest associativity composition, 2026-08-13
+
+The previous Lesson 03 evaluated the same nested expression twice while its
+comments claimed two parenthesizations. The repaired lesson constructs actual
+`compose(compose(f,g),h)` and `compose(f,compose(g,h))` records, verifies their
+different shapes, and evaluates both extensionally. The visual now shows both
+trees beside their shared arrow path.
+
+This dogfooding exercise found a concrete sw-MLPL ergonomics gap: function
+references work, but a general `compose(f,g)` cannot yet return a callable
+function value. The explicit tree interpreter is honest and executable, while
+`docs/upstream-asks.md` records why native/library support would benefit normal
+ML and data pipelines. Next is the broader mathematical-precision leaf audit;
+there is no blocker.

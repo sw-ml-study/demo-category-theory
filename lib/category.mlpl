@@ -99,6 +99,10 @@ def u:homomorphism_left_side(f, s) { "Compute homomorphism left side for this ex
 def u:homomorphism_right_side(f, t) { "Compute homomorphism right side for this executable category-theory example.";  u:gather_table_axes(t, f) }
 def u:is_homomorphism(f, s, t) { "Compute is homomorphism for this executable category-theory example.";  equal(u:homomorphism_left_side(f, s), u:homomorphism_right_side(f, t)) }
 def u:compose_maps(f, g) { "Compute compose maps for this executable category-theory example.";  flatten(gather_rows(reshape(g, [tally(g), 1]), f)) }
+
+def u:composition_leaf(arrow_name, arrow_function) { "Represent one named morphism as a leaf in an executable composition tree."; {tag: "leaf", name: arrow_name, arrow: arrow_function, first: 0, second: 0} }
+def u:compose_expressions(first_expression, second_expression) { "Construct a composition node that executes the first expression and then the second."; {tag: "compose", name: "compose", arrow: :u:identity, first: first_expression, second: second_expression} }
+def u:evaluate_composition(expression, input_value) { "Evaluate a composition tree while preserving its explicit parenthesized structure."; if equal(expression.tag, "leaf") { u:apply(expression.arrow, input_value) } else { u:evaluate_composition(expression.second, u:evaluate_composition(expression.first, input_value)) } }
 def u:identity_map(n) { "Compute identity map for this executable category-theory example.";  range(n) }
 
 # Four-leaf reduction trees make reassociation visible without teaching the

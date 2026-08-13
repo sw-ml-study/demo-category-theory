@@ -297,3 +297,15 @@ The strongest candidates are deliberately broader than category theory:
 
 If a proposal cannot demonstrate such a payoff, the demo should work around it
 locally or leave the concept explanatory rather than reshape the language.
+# First-class composition gap measured in Lesson 03 (2026-08-13)
+
+Function references can be stored in records and invoked, so an explicit
+composition tree is executable today. However, sw-MLPL has no general
+`compose(f, g)` primitive that returns a callable function value. Lesson 03
+therefore constructs `compose(compose(f,g),h)` and
+`compose(f,compose(g,h))` as distinct records and interprets them.
+
+An upstream callable-returning composition helper would remove this small
+interpreter and improve ordinary pipeline construction as well as Category
+Theory demos. This is a general language/library ergonomics request, not a
+request for Category Theory syntax.

@@ -7,6 +7,7 @@ include "lib/category.mlpl";
 def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
 def u:alternate_increment(x) { "Compute alternate increment for this executable category-theory example.";  1 + x }
 def u:double(x) { "Compute double for this executable category-theory example.";  2 * x }
+def u:square(x) { "Serve as the third morphism in the explicit associativity trees."; x * x }
 def u:add_two(x) { "Compute add two for this executable category-theory example.";  x + 2 }
 def u:negate(x) { "Compute negate for this executable category-theory example.";  0 - x }
 def u:increment_then_double(x) { "Compute increment then double for this executable category-theory example.";  2 * (x + 1) }
@@ -123,6 +124,20 @@ def u:test_reduction_trees() { "Sum trees agree while subtraction trees expose t
   u:assert_eq(u:sum_left4(xs), u:sum_tree4(xs), "sum regrouping")?;
   u:assert_true(1 - eq(u:subtract_left4(xs), u:subtract_tree4(xs)), "subtraction regrouping unexpectedly equal")?;
   ok({test: "reduction-trees", cases: 2})
+}
+
+@test {name: "distinct composition trees evaluate associatively", tags: ["category", "composition"]}
+def u:test_explicit_composition_trees() { "Verify differently nested composition syntax yields one extensional morphism.";
+  f = u:composition_leaf("increment", :u:increment);
+  g = u:composition_leaf("double", :u:double);
+  h = u:composition_leaf("square", :u:square);
+  left_tree = u:compose_expressions(u:compose_expressions(f, g), h);
+  right_tree = u:compose_expressions(f, u:compose_expressions(g, h));
+  u:assert_eq(equal(left_tree.first.tag, "compose"), 1, "left tree did not group f and g")?;
+  u:assert_eq(equal(right_tree.second.tag, "compose"), 1, "right tree did not group g and h")?;
+  left_outputs = [u:evaluate_composition(left_tree, 0), u:evaluate_composition(left_tree, 1), u:evaluate_composition(left_tree, 2), u:evaluate_composition(left_tree, 3), u:evaluate_composition(left_tree, 4)];
+  right_outputs = [u:evaluate_composition(right_tree, 0), u:evaluate_composition(right_tree, 1), u:evaluate_composition(right_tree, 2), u:evaluate_composition(right_tree, 3), u:evaluate_composition(right_tree, 4)];
+  u:assert_eq(left_outputs, right_outputs, "composition trees differ extensionally")
 }
 
 u:run_registered_tests()

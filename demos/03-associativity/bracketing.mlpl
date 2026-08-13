@@ -8,14 +8,20 @@ u:prolog({title: "LESSON 03 -- COMPOSITION IS ASSOCIATIVE", intro: "Move bracket
 def u:increment(x) { "Serve as the scalar morphism f whose lifted or composed action is being tested.";  x + 1 }
 def u:double(x) { "Serve as the scalar morphism g whose lifted or composed action is being tested.";  2 * x }
 def u:square(x) { "Serve as the third morphism h in the associativity equation.";  x * x }
-def u:left_bracketing_result(x) { "Execute the left-associated side of the composition associativity law.";  u:apply(:u:square, u:then_apply(:u:increment, :u:double, x)) }
-def u:right_bracketing_result(x) { "Execute the right-associated side of the composition associativity law.";  u:then_apply(:u:increment, :u:double, x) * u:then_apply(:u:increment, :u:double, x) }
+f_expression = u:composition_leaf("f: increment", :u:increment)
+g_expression = u:composition_leaf("g: double", :u:double)
+h_expression = u:composition_leaf("h: square", :u:square)
+left_composition_tree = u:compose_expressions(u:compose_expressions(f_expression, g_expression), h_expression)
+right_composition_tree = u:compose_expressions(f_expression, u:compose_expressions(g_expression, h_expression))
+def u:left_bracketing_result(x) { "Evaluate the explicitly constructed compose(compose(f,g),h) tree."; u:evaluate_composition(left_composition_tree, x) }
+def u:right_bracketing_result(x) { "Evaluate the explicitly constructed compose(f,compose(g,h)) tree."; u:evaluate_composition(right_composition_tree, x) }
 xs = range(5)
 lhs = each(:u:left_bracketing_result, xs)
 rhs = each(:u:right_bracketing_result, xs)
 disp([lhs, rhs])
-wrote = write_text("out/03-composition-associativity.svg", u:associativity_diagram())
+disp([equal(left_composition_tree.first.tag, "compose"), equal(right_composition_tree.second.tag, "compose")])
+wrote = write_text("out/03-composition-associativity.svg", u:associativity_trees_diagram())
 u:epilog_open()
-u:explain("out/03-composition-associativity.svg", "Both bracketings follow A to B to C to D; brackets organize evaluation but do not alter the arrows.")
-u:takeaway("Composition is associative because both bracketings apply f, then g, then h in exactly that order.")
+u:explain("out/03-composition-associativity.svg", "The two trees place the inner compose node on opposite sides. Their shared path still applies f, then g, then h.")
+u:takeaway("Associativity says these distinct composition structures denote the same morphism. sw-MLPL evaluates an explicit tree because it lacks a callable-returning compose primitive.")
 if equal(lhs, rhs) * is_ok(wrote) { ok("composition associativity holds") } else { err("composition associativity failed") }
