@@ -1,0 +1,9 @@
+number = 2
+slug = "duality-universal-endpoints"
+status = "pending"
+description = "Implement visual lessons for CT020-CT024: opposite category, dual statements,..."
+role = "production"
+context_files = []
+created_at = "2026-08-12T18:32:14"
+task_type = "lesson"
+commits = []

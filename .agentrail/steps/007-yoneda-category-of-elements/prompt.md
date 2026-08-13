@@ -1,0 +1,1 @@
+Implement CT042-CT044: finite Yoneda embedding/lemma correspondence, category of elements, and bounded density intuition. Verify both-direction round trips, naturality, and a failing witness; add visuals/tests/docs, full gate, commits, push.

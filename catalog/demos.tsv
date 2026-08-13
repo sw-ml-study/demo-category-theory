@@ -7,6 +7,7 @@ array-mapping	probes/array_mapping.mlpl	probes	concrete-array-functor	0	0	ascii	
 context-values	probes/context_values.mlpl	probes	contextual-records-map-bind	0	0	ascii	records,call	runnable
 finite-folds-unfolds	probes/finite_folds_unfolds.mlpl	probes	finite-consumption-generation	0	0	ascii	range,reduce_add	runnable
 nested-record-optics	probes/nested_record_optics.mlpl	probes	concrete-nested-lens	0	0	ascii	records,nested-access	runnable
+universal-constructions	probes/universal_constructions.mlpl	probes	ct020-ct044-finite-representations	0	0	ascii	range,transpose,take	runnable
 arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	runnable
 identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	runnable
 associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	runnable

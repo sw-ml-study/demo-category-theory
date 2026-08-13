@@ -172,6 +172,20 @@ runtime capability is required. Fold/unfold, context operations, and the lens
 were declined as adjunction candidates because this repository has not
 implemented the required categories and hom-set correspondences for them.
 
+## CT020-CT044 finite universal-construction surface
+
+`probes/universal_constructions.mlpl` confirms zero-length and singleton
+domains, numeric function tables, nested function-table families, transposed
+finite relations, and pointwise commuting cone routes. These support the next
+saga's finite lessons without new sw-MLPL features. Explicit records/tables
+remain necessary because the language has no generic category, functor,
+natural-transformation, quotient, or small-diagram abstraction.
+
+Completeness/cocompleteness cannot be inferred from bounded fixtures. Density
+also remains conditional until the finite Yoneda/category-of-elements work
+produces an honest reconstruction. See
+`docs/ct020-ct044-capability-matrix.md` for the per-ID decision.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

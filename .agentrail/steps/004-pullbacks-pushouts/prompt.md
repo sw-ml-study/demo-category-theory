@@ -1,0 +1,1 @@
+Implement CT031-CT032 using a practical database join/fiber-product and tagged merge/pushout. Verify universal properties and counterexamples visually, update every artifact/doc, run the full gate, commit, and push.

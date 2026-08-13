@@ -1,0 +1,9 @@
+number = 1
+slug = "inventory-capability-matrix"
+status = "in-progress"
+description = "Map CT020-CT044 from docs/concept-inventory.md to executable representations ..."
+role = "meta"
+context_files = []
+created_at = "2026-08-12T18:32:14"
+task_type = "research"
+commits = []

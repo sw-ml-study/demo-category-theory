@@ -3,6 +3,11 @@
 Status: **all nineteen capability-gated lessons implemented; advanced saga
 integration complete**.
 
+The broader program continues through the 245 tracked concepts in
+`docs/concept-inventory.md`. The next implementation plan is
+`docs/next-saga-plan.md`; completion of a bounded saga is never completion of
+the program-level inventory.
+
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the
 categorical reading of maps between structures. It does not repeat the sibling

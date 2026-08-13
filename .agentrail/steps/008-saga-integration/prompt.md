@@ -1,0 +1,1 @@
+Audit stable IDs CT020-CT044 for implemented, constrained, or declined status; rebuild all CLI/web/previews; run every gate; finalize README/viewing/terminology/scope/capability/research docs; create the next dependency-ordered saga plan from the inventory; complete this saga only when green, commit metadata, and push.

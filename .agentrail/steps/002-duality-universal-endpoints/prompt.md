@@ -1,0 +1,1 @@
+Implement visual lessons for CT020-CT024: opposite category, dual statements, initial object, terminal object, and zero-object distinction. Use finite functions, verify unique-arrow laws with counterexamples, update all artifacts/docs, run the full gate, commit details and Agentrail metadata, and push.

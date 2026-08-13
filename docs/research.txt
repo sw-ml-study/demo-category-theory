@@ -1302,3 +1302,28 @@ the bounded arrays used here. Bifunctors and profunctors need an actual
 two-sided transformation problem. Until those workloads appear, the current
 concrete curriculum is complete and no category-specific sw-MLPL syntax is
 recommended.
+
+Program continuation, 2026-08-12
+
+The nineteen lessons are a foundation, not an exhaustive Category Theory
+curriculum. `docs/concept-inventory.md` now tracks 245 stable concept IDs across
+duality and universal constructions, limits, closure, monoidal/process
+theories, profunctors and coends, Kan extensions, algebra categories,
+fibrations, categorical logic, and higher categories. Completion is managed as
+multiple dependency-ordered sagas. The immediate next saga is CT020-CT044:
+duality, universal endpoints, equalizers/coequalizers, pullbacks/pushouts,
+finite limits/colimits, representability, hom-functors, the category of
+elements, and finite Yoneda evidence.
+
+CT020-CT044 capability survey, 2026-08-12
+
+The first undeveloped layer is executable with explicit finite encodings.
+Zero-length and singleton arrays model endpoint domains; numeric arrays model
+function tables; transpose reverses a finite relation; nested tables enumerate
+small hom-sets; and pointwise indexing checks cone commutativity. This supports
+duality, endpoint objects, equalizers/coequalizers, pullbacks/pushouts, finite
+limits/colimits, representables, hom-functors, and a bounded Yoneda lesson.
+
+The evidence does not establish completeness, cocompleteness, or the density
+theorem in general. Those remain clearly labelled boundaries. The next lesson
+step can therefore begin with CT020-CT024 without waiting for sw-MLPL changes.

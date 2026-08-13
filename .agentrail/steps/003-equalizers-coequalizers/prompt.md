@@ -1,0 +1,1 @@
+Implement CT029-CT030 as practical finite equalizer and coequalizer lessons. Verify universal factorization and failing mediators, add CLI/web visuals/tests/catalog/docs, run the full gate, create detailed commits, and push.

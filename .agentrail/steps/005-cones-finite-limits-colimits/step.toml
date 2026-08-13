@@ -1,0 +1,9 @@
+number = 5
+slug = "cones-finite-limits-colimits"
+status = "pending"
+description = "Implement CT027-CT035 and boundary material CT036-CT037 by unifying prior con..."
+role = "production"
+context_files = []
+created_at = "2026-08-12T18:32:14"
+task_type = "lesson"
+commits = []

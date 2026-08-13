@@ -1,0 +1,1 @@
+Implement CT027-CT035 and boundary material CT036-CT037 by unifying prior constructions as cones/cocones and finite limits/colimits. Execute honest finite laws, explicitly constrain completeness/cocompleteness, update visuals/tests/docs, full gate, commits, push.

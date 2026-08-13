@@ -1,0 +1,9 @@
+number = 7
+slug = "yoneda-category-of-elements"
+status = "pending"
+description = "Implement CT042-CT044: finite Yoneda embedding/lemma correspondence, category..."
+role = "production"
+context_files = []
+created_at = "2026-08-12T18:32:14"
+task_type = "lesson"
+commits = []

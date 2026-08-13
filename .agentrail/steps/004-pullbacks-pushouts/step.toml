@@ -1,0 +1,9 @@
+number = 4
+slug = "pullbacks-pushouts"
+status = "pending"
+description = "Implement CT031-CT032 using a practical database join/fiber-product and tagge..."
+role = "production"
+context_files = []
+created_at = "2026-08-12T18:32:14"
+task_type = "lesson"
+commits = []

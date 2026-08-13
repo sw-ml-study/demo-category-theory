@@ -1,0 +1,9 @@
+number = 8
+slug = "saga-integration"
+status = "pending"
+description = "Audit stable IDs CT020-CT044 for implemented, constrained, or declined status..."
+role = "validation"
+context_files = []
+created_at = "2026-08-12T18:32:14"
+task_type = "validation"
+commits = []

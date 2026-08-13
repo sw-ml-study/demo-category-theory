@@ -1,0 +1,19 @@
+# Probe: finite representations for CT020-CT044 on sw-MLPL 0.20.0.
+# visual: ascii
+# loops: 0
+def u:apply_finite_function(function_table, input) { "Apply a zero-based finite function table to one scalar input."; take(function_table, 0, input) }
+def u:reverse_finite_relation(adjacency) { "Represent an opposite finite relation by transposing its adjacency matrix."; transpose(adjacency) }
+def u:commuting_binary_cone_witness(left_leg, right_leg, left_route, right_route) { "Compare two cone routes over a two-element apex and retain their outputs."; left_outputs = [take(left_route, 0, take(left_leg, 0, 0)), take(left_route, 0, take(left_leg, 0, 1))]; right_outputs = [take(right_route, 0, take(right_leg, 0, 0)), take(right_route, 0, take(right_leg, 0, 1))]; {commutes: equal(left_outputs, right_outputs), left_outputs: left_outputs, right_outputs: right_outputs} }
+empty_domain = range(0)
+singleton_domain = [0]
+swap_function = [1, 0]
+swapped = u:apply_finite_function(swap_function, 0)
+relation = [[0, 1], [0, 0]]
+opposite_relation = u:reverse_finite_relation(relation)
+left_leg = [0, 1]
+right_leg = [1, 0]
+left_route = [0, 1]
+right_route = [1, 0]
+cone = u:commuting_binary_cone_witness(left_leg, right_leg, left_route, right_route)
+function_tables = [[0, 0], [0, 1], [1, 0], [1, 1]]
+ok({probe: "universal-constructions", empty_size: take(shape(empty_domain), 0, 0), singleton_size: take(shape(singleton_domain), 0, 0), swapped: swapped, opposite_relation: opposite_relation, cone_commutes: cone.commutes, binary_endofunction_count: take(shape(function_tables), 0, 0)})

@@ -1,0 +1,9 @@
+number = 6
+slug = "representables-hom-functors"
+status = "pending"
+description = "Implement CT025-CT026 and CT038-CT043 except Yoneda lemma: universal arrows/e..."
+role = "production"
+context_files = []
+created_at = "2026-08-12T18:32:14"
+task_type = "lesson"
+commits = []

@@ -1,0 +1,1 @@
+Implement CT025-CT026 and CT038-CT043 except Yoneda lemma: universal arrows/elements, representable/corepresentable functors, covariant/contravariant hom-functors, and Yoneda embedding preparation using finite function tables. Probe first, defer blockers, full artifacts/gate/commits/push.

@@ -1,0 +1,1 @@
+Map CT020-CT044 from docs/concept-inventory.md to executable representations and prerequisites. Probe finite-set arrows, opposite lookup, empty/singleton domains, commuting cones, and finite function tables. Update plan/research/capability/upstream docs, run the full gate, make detailed commits, and push. Report the next step and blockers.
