@@ -20,7 +20,7 @@ disp([xs, identity, twice, once])  # rows 1=2 and rows 3=4
 # * THE VISUAL
 # * Scalar and lifted arrows move in lockstep; both arrive at 4 / [4,6,8].
 # ***************************************************************************
-u:array_functor_visual()  # synchronized scalar and array views
+array_functor_visual = u:array_functor_visual()  # bind and display once
 # ***************************************************************************
 # * HOW TO READ THE RESULT
 # * Equal rows execute identity and composition laws for this array context.
