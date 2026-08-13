@@ -392,3 +392,14 @@ primary; and Lesson 19 introduces its adjunction in three prerequisite stages.
 
 Next: run the curriculum-wide eight-part quality integration audit. No blocker
 is known; the audit may identify individual leaves requiring follow-up.
+### Curriculum quality integration audit (2026-08-13)
+
+All 32 executable browser leaves now have one authoritative row in
+`docs/lesson-quality.tsv`, covering the eight-part contract plus separate CT
+teaching and sw-MLPL expression ratings. The audit records 31 strong/moderate
+teaching leaves and one intentionally weak leaf, finite Yoneda, whose concrete
+progressive redesign is already Step 012. No weak expression rating remains.
+
+Future concepts must start from `docs/web-leaf-template.mlpl`, add a manifest
+row, and pass `scripts/check-lesson-quality`. Next is the already queued Yoneda
+repair. There is no blocker.

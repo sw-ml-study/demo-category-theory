@@ -1,0 +1,27 @@
+# Web Lesson NN -- concept name.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES
+# * Name only concepts the learner must already know.
+# * CATEGORICAL SETTING
+# * Name the concrete category, objects, and morphisms used by the fixture.
+# * LAW / UNIVERSAL PROPERTY
+# * State the exact equality, compatibility, or unique-factorization claim.
+# * BOUNDARY
+# * State what this finite execution does not prove or what is only analogy.
+# * WHAT THIS SHOWS
+# * Say what the executable witness and counterexample will make observable.
+# ***************************************************************************
+;
+# Replace this comment with docstring-first, semantically named computations.
+# ***************************************************************************
+# * THE VISUAL
+# * Use the maintained object/arrow/token grammar and accessible SVG metadata.
+# ***************************************************************************
+# Bind the named SVG constructor result and display that variable exactly once.
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Connect visible outputs to the law, counterexample, and boundary.
+# * THE POINT -- state one precise takeaway.
+# ***************************************************************************

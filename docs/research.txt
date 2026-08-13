@@ -1571,3 +1571,16 @@ triangle identities as three stages.
 `scripts/check-mathematical-boundaries` prevents the strongest misleading
 phrases from returning. Next is the curriculum-wide quality audit; there is no
 known blocker.
+## Curriculum quality integration audit, 2026-08-13
+
+The complete 32-leaf browser curriculum was audited against prerequisites,
+setting, law/universal property, executable witness, counterexample,
+accessible visual, boundary, and dual CT/sw-MLPL ratings. Results are tracked
+in `docs/lesson-quality.tsv` and checked for exact leaf coverage. Thirty-one
+leaves are strong or moderate for CT teaching; finite Yoneda remains weak for
+beginners and points to the already queued progressive redesign. No sw-MLPL
+expression rating is weak; composition remains an honest moderate workaround
+with its upstream ask recorded.
+
+A canonical web-leaf template and quality gate make this the default for all
+future concepts. Next is Step 012's Yoneda repair; no blocker is present.

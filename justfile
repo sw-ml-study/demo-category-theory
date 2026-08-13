@@ -30,5 +30,6 @@ audit:
     ./scripts/check-curriculum-docs
     ./scripts/check-leaf-language
     ./scripts/check-mathematical-boundaries
+    ./scripts/check-lesson-quality
 
 check: probes demos tests audit

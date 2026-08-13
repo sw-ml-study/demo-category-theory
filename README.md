@@ -48,6 +48,9 @@ The authoritative curriculum and delivery sequence are in
 [`docs/plan.md`](docs/plan.md). Potential language capabilities—including the
 different meanings of “full functor support”—are tracked in
 [`docs/sw-mlpl-capabilities.md`](docs/sw-mlpl-capabilities.md).
+The browser order is in [`web/START_HERE.md`](web/START_HERE.md), and the
+checked teaching/expression audit for every visual leaf is in
+[`docs/lesson-quality.tsv`](docs/lesson-quality.tsv).
 
 ## Demo visuals
 

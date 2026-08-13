@@ -1,6 +1,6 @@
 number = 11
 slug = "curriculum-quality-integration-audit"
-status = "pending"
+status = "in-progress"
 description = "Audit all existing executable leaves against research2's eight-part contract,..."
 role = "validation"
 context_files = []

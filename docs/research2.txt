@@ -696,3 +696,8 @@ recommendations for arrows, array functor action, transpose naturality,
 equalizers, and the diagonal/product adjunction are implemented in CLI/browser
 narration, the learning path, and README. A dedicated check now requires
 setting/boundary metadata and rejects the previously overstrong formulations.
+Implementation note (2026-08-13, Step 011): all 32 browser leaves now have a
+checked quality-manifest row covering the eight-part contract and independent
+CT-teaching/sw-MLPL-expression ratings. The only weak teaching rating is the
+known finite Yoneda leaf, linked to Step 012. A canonical future-leaf template
+and `scripts/check-lesson-quality` enforce the approach going forward.

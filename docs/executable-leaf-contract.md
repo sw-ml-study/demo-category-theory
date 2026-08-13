@@ -24,6 +24,11 @@ Authored web leaves use these block-comment headings before executable code:
 Existing leaves are being migrated in the queued curriculum-quality steps.
 All newly authored leaves must use the headings immediately.
 
+For existing compact leaves, the specific prerequisite, setting, law,
+counterexample, boundary, two-axis rating, and follow-up are maintained in
+`lesson-quality.tsv`. The four local narrative sections remain mandatory. New
+leaves must provide both the local headings and one manifest row.
+
 The naming/docstring migration is recorded in `docs/leaf-language-audit.md`.
 `scripts/check-leaf-language` rejects the former boilerplate and known cryptic
 semantic route names.

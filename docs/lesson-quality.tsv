@@ -1,0 +1,33 @@
+leaf	prerequisites	setting	law_or_property	counterexample	boundary	ct_teaching	mlpl_expression	follow_up
+arrows.mlpl	none	finite sets and functions	one function maps each input	no	morphisms need not be functions	strong	strong	none
+identity_composition.mlpl	arrows	finite functions	left and right identity	no	finite extensional check	strong	strong	add explicit failure only if pedagogically useful
+composition_associativity.mlpl	composition	explicit function-expression trees	associativity	no	finite extensional check	strong	moderate	upstream callable compose ask recorded
+commutative_square.mlpl	composition	finite functions	path equality	yes	one finite square	strong	strong	none
+products.mlpl	commutative squares	finite records	product universal property	yes	bounded candidate fixture	strong	strong	none
+coproducts.mlpl	commutative squares	manually tagged records	coproduct universal property	yes	no static exhaustive sum type	strong	moderate	manual tag boundary retained
+array_functor.mlpl	identity and composition	arrays plus each	functor identity and composition	yes	concrete action not generic Functor	strong	strong	none
+shape_preservation.mlpl	array mapping	finite arrays	shape preservation versus entry preservation	yes	property-specific fixture	strong	strong	none
+natural_transformation.mlpl	functor action	2D arrays and transpose	naturality square	yes	finite instances not general proof	strong	strong	none
+homomorphisms.mlpl	category laws and algebra	table-checked finite groups	homomorphisms close under identity/composition	yes	finite algebra fixture	strong	moderate	sibling algebra dependency retained
+lawful_reduction.mlpl	associativity	four-value reductions	associative regrouping	yes	finite operational consequence	strong	strong	none
+context_map.mlpl	functor action	tagged success/failure records	map identity and composition	yes	concrete context not generic interface	strong	strong	none
+kleisli_pipeline.mlpl	context map	fallible record stages	Kleisli identity and associativity	yes	concrete context	strong	strong	none
+independent_contexts.mlpl	context map	independent validation records	applicative-style combination	yes	analogy not generic Applicative	strong	moderate	boundary retained
+dependent_contexts.mlpl	Kleisli pipeline	dependent record stages	bind dependency and short circuit	yes	analogy not generic Monad	strong	strong	none
+fold_fusion.mlpl	associativity and mapping	finite arrays	fold fusion	yes	bounded fixture	strong	strong	none
+bounded_unfold.mlpl	finite generation	arithmetic arrays	bounded unfold round trip	yes	no infinite coalgebra claim	strong	strong	none
+model_config_lens.mlpl	nested records	model configuration record	three lens laws	yes	concrete optic not generic lens	strong	strong	none
+diagonal_product_adjunction.mlpl	products and functors	finite Set product fixture	two triangle identities	yes	advanced leaf assumes staged context	moderate	moderate	parent context now staged
+opposite_duality.mlpl	composition	finite arrow relation	opposite reverses arrows and composition	yes	finite presentation	strong	strong	none
+universal_endpoints.mlpl	unique arrows	finite sets and pointed fixture	initial terminal and zero universality	yes	zero object only in pointed fixture	strong	moderate	none
+equalizer.mlpl	parallel arrows and products	finite sets	equalizer unique factorization	yes	agreeing subset is Set intuition	strong	moderate	none
+coequalizer.mlpl	parallel arrows and coproducts	finite quotient labels	coequalizer unique factorization	yes	bounded quotient fixture	strong	moderate	none
+pullback.mlpl	products and equalizers	finite keyed records	pullback universal property	yes	keyed join is Set intuition	strong	moderate	none
+pushout.mlpl	coproducts and coequalizers	finite tagged schemas	pushout universal property	yes	tagged merge is Set intuition	strong	moderate	none
+finite_limits_colimits.mlpl	cones and universal properties	finite arrow diagram	finite limit and colimit universality	yes	bounded candidates only	moderate	moderate	none
+representable_hom.mlpl	hom functors	walking-arrow category	representable hom actions and universal element	yes	finite category fixture	moderate	moderate	none
+finite_yoneda.mlpl	representables and naturality	walking-arrow category	finite Yoneda round trip	yes	density panel is intuition only	weak	moderate	Step 012 progressive redesign
+unique_universal_isomorphism.mlpl	universal properties	finite product candidates	uniqueness up to unique isomorphism	yes	bounded candidates	strong	moderate	none
+diagram_constant_diagonal.mlpl	functors and natural transformations	finite chain diagrams	diagonal functor and pointwise composition	yes	finite diagram category	moderate	moderate	none
+bounded_indexed_products.mlpl	products and coproducts	three-object discrete diagram	bounded indexed limit and colimit	yes	no arbitrary or infinite family	strong	moderate	none
+generalized_bounded_cones.mlpl	finite limits and colimits	two-arrow chain	cone compatibility and bounded universality	yes	bounded mediators only	strong	moderate	none

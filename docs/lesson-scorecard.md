@@ -12,17 +12,20 @@ expression.
 
 | Concept family | Current CT teaching | Current expression | Pressure / queued action |
 |---|---|---|---|
-| morphisms and identity | moderate | strong | Clarify concrete-category boundary and object/element grammar |
+| morphisms and identity | strong | strong | Concrete-category boundary and object/element grammar are explicit |
 | composition and associativity | strong | honest workaround | Distinct executable trees now expose the remaining callable-returning composition gap |
 | array functor | strong | strong | Say array construction plus `each`, not “arrays”, is the functorial action |
-| natural transformation | moderate | strong | Name both functors and call equality a finite naturality instance |
+| natural transformation | strong | strong | Concrete contexts and finite-instance boundary are explicit |
 | products/coproducts | strong | strong | Retain universal-property witnesses |
-| equalizer/coequalizer | moderate | moderate | Lead from Set intuition to unique factorization |
+| equalizer/coequalizer | strong | moderate | Set intuition is subordinate to unique factorization |
 | contextual/Kleisli pipeline | strong | strong | Keep concrete-context boundary |
-| adjunction | weak for beginners | moderate | Add incremental parent context before triangle-law leaf |
+| adjunction | moderate | moderate | Incremental context precedes the triangle-law leaf |
 | representables/Yoneda | weak for beginners | moderate | Progressive Yoneda stages; separate density extension |
 | bounded indexed (co)limits | moderate | moderate | Preserve finite-width and candidate-enumeration boundaries |
 
 The integration audit updates this table after migrations. Any `weak`
 expression rating must create a capability probe or a documented decision not
 to reshape sw-MLPL.
+
+The authoritative per-leaf results are in `lesson-quality.tsv`; this family
+table is only a summary.
