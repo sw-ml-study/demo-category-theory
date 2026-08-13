@@ -1,0 +1,11 @@
+{
+  "task_type": "research",
+  "state": {
+    "number": 1,
+    "step": "capability-matrix-probes"
+  },
+  "action": "Mapped CT045-CT064 to finite executable representations and prerequisites. The indexed-limits probe verified nested diagram records, bounded families, finite function-table composition, mediator uniqueness, and explicit stabilization; no upstream sw-MLPL ask is justified. Next: implement CT054 uniqueness up to unique isomorphism with two finite universal candidates and forced inverse mediators. Blockers: none for that finite fixture; arbitrary diagram families and infinite (co)limit claims remain deferred boundaries.",
+  "result": "success",
+  "reward": 1,
+  "timestamp": "2026-08-13T11:25:44"
+}
