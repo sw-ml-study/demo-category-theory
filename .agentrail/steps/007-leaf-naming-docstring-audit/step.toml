@@ -1,9 +1,10 @@
 number = 7
 slug = "leaf-naming-docstring-audit"
-status = "in-progress"
+status = "completed"
 description = "Audit every authored web/CLI MLPL leaf against research2 naming and docstring..."
 role = "production"
 context_files = []
 created_at = "2026-08-13T12:38:26"
+completed_at = "2026-08-13T14:48:22"
 task_type = "curriculum"
-commits = []
+commits = ["641496696f8991709707d62bf53380802de7fddd"]
