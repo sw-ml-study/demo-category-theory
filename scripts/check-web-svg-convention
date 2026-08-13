@@ -1,0 +1,31 @@
+#!/bin/sh
+set -eu
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+bad=0
+for file in "$repo_root"/demos/web/*.mlpl; do
+  [ -f "$file" ] || continue
+  rel=${file#"$repo_root"/}
+  grep -q '^# visual: svg' "$file" || continue
+  if grep -q '^"<svg' "$file"; then
+    echo "$rel: top-level SVG literal exposes raw markup in the transcript" >&2
+    bad=1
+  fi
+  grep -q '# bind visual constant$' "$file" || {
+    echo "$rel: missing named visual binding" >&2
+    bad=1
+  }
+  grep -q '# display bound visual once$' "$file" || {
+    echo "$rel: missing single bound-visual display" >&2
+    bad=1
+  }
+  grep -q '<marker id=\\"arrowhead\\"' "$file" || {
+    echo "$rel: missing shared arrowhead marker" >&2
+    bad=1
+  }
+  grep -Eq '\.(arrow|a)\{marker-end:url\(\\\\23 arrowhead\);' "$file" || {
+    echo "$rel: semantic arrow style does not use the arrowhead marker" >&2
+    bad=1
+  }
+done
+[ "$bad" -eq 0 ]
+echo "web SVG convention: ok"

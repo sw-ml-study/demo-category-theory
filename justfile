@@ -24,6 +24,7 @@ audit:
     ./scripts/check-docstrings
     ./scripts/check-narration
     ./scripts/check-web-size
+    ./scripts/check-web-svg-convention
     ./scripts/check-generated
     ./scripts/check-visual-grammar
 

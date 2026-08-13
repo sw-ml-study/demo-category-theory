@@ -1381,3 +1381,19 @@ This is only a presentation workaround. sw-MLPL still needs either a dedicated
 custom-SVG display primitive or a compact/collapsible source echo for visual
 results. The remaining authored custom-SVG lessons should migrate to the named
 visual-function pattern as their saga steps touch them.
+
+Web SVG convention audit, 2026-08-12
+
+The problem was curriculum-wide rather than specific to the array lesson: 24
+other authored web lessons returned a full SVG literal at top level. They now
+use the same documented constructor, variable binding, and single bare-variable
+display sequence. Hex colors were replaced by `rgb(...)` forms to avoid the
+web transcript's escaped-string comment ambiguity.
+
+The audit also found that most connectors were styled as lines without arrow
+heads. That makes Lesson 1 especially misleading: it is intended to show the
+morphism `double : Numbers -> Numbers`, with the token witnessing `3 -> 6`,
+but an undirected line does not communicate domain, codomain, or direction.
+Every web SVG now defines the same `arrowhead` marker and applies it to the
+semantic `.arrow`/`.a` style. A repository gate enforces emission, binding,
+single display, and directed-arrow conventions for future lessons.

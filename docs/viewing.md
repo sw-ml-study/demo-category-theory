@@ -24,6 +24,11 @@ immediately before rendering it, and closes with `HOW TO READ THE RESULT` and
 just web
 ```
 
+Custom diagrams follow one presentation sequence: a named constructor builds
+the SVG, an assignment preserves it as a variable, and one bare-variable
+expression displays it. Semantic connectors have arrowheads; a plain line is
+reserved for non-directional layout or comparison.
+
 Every animation has a meaningful final state and a
 `prefers-reduced-motion: reduce` rule that displays that state without motion.
 

@@ -82,6 +82,10 @@ Each web file follows the proven sibling anatomy:
 - small definitions and executable statements, each with a useful trailing
   `#` comment;
 - a framed explanation immediately before every visual, naming what moves,
+- a docstring-first, concept-named SVG constructor; assign its constant result
+  to a readable variable and evaluate that variable exactly once;
+- the common `arrowhead` SVG marker on every semantic `.arrow` or `.a`
+  connector, so morphism direction remains visible rather than implied;
   what colors mean, and which equality is being tested; and
 - a trailing framed epilog headed `HOW TO READ THE RESULT` and `THE POINT`.
 
