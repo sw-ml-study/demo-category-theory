@@ -28,9 +28,9 @@ function-reference, and array probes remain prerequisites.
 | CT039 | covariant hom-functor | postcomposition over finite function tables | implemented: `idA` postcomposes to `f` |
 | CT040 | contravariant hom-functor | precomposition over finite function tables | implemented: `idB` precomposes to `f` |
 | CT041 | Yoneda embedding | map each finite object to its hom-functor table | prepared by distinct walking-arrow hom rows; full correspondence remains Step 7 |
-| CT042 | Yoneda lemma | transformations from representable to a finite functor correspond to one selected element | runnable by bounded enumeration and round-trip |
-| CT043 | category of elements | tagged `(object, element)` records plus induced arrows | runnable with manual tags/dispatch; no static exhaustiveness |
-| CT044 | density intuition | reconstruct finite functor data from representable pieces | conditional lesson section; do not claim the general density theorem without a natural colimit implementation |
+| CT042 | Yoneda lemma | transformations from representable to a finite functor correspond to one selected element | implemented in Lesson 28 with both round trips, naturality, and a broken component |
+| CT043 | category of elements | tagged `(object, element)` records plus induced arrows | implemented in Lesson 28 as `(A,10) -> (B,20)` |
+| CT044 | density intuition | reconstruct finite functor data from representable pieces | bounded reconstruction implemented; general density theorem explicitly not claimed |
 
 ## Measured findings
 

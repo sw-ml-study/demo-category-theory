@@ -307,6 +307,16 @@ recovers the selected arrow uniquely. Sources:
 [CLI lesson](demos/27-representable-hom/hom_tables.mlpl),
 [web lesson](demos/web/representable_hom.mlpl).
 
+### 28. Yoneda turns transformations into elements
+
+![An element generating and recovering a natural transformation above its category of elements](assets/previews/28-finite-yoneda.svg)
+
+What to notice: selecting `10` generates components `10` and `20`; evaluation
+at `idA` recovers `10`. Below, `(A,10) → (B,20)` reconstructs this fixture's
+two functor values. Sources:
+[CLI lesson](demos/28-yoneda-elements/correspondence.mlpl),
+[web lesson](demos/web/finite_yoneda.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

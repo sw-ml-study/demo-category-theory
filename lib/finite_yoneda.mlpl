@@ -1,0 +1,12 @@
+# lib/finite_yoneda.mlpl -- bounded Yoneda and category-of-elements fixture.
+# loops: 0
+def u:walking_functor_action(element) { "Map the sole F(A) element along the walking arrow into F(B)."; if equal(element, 10) { 20 } else { -1 } }
+def u:transformation_from_selected_element(selected_element) { "Build the two components of Hom(A,-) to F from one selected element of F(A)."; {at_a: selected_element, at_b: u:walking_functor_action(selected_element)} }
+def u:selected_element_from_transformation(transformation) { "Recover the selected element by evaluating the A-component at identity A."; transformation.at_a }
+def u:yoneda_round_trip_from_element(selected_element) { "Send an element to its transformation and recover it at identity A."; u:selected_element_from_transformation(u:transformation_from_selected_element(selected_element)) }
+def u:yoneda_round_trip_from_transformation(transformation) { "Recover an element from a transformation and regenerate both components."; u:transformation_from_selected_element(u:selected_element_from_transformation(transformation)) }
+def u:yoneda_naturality(transformation) { "Check that the walking-arrow action commutes with the two transformation components."; equal(u:walking_functor_action(transformation.at_a), transformation.at_b) }
+def u:category_of_elements_nodes() { "Encode the two category-of-elements objects as rows object-code and element."; [[0, 10], [1, 20]] }
+def u:category_of_elements_edge() { "Encode the induced arrow from (A,10) to (B,20)."; [0, 1] }
+def u:reconstruct_functor_from_elements(nodes) { "Recover the element column from category-of-elements rows."; take(transpose(nodes), 0, 1) }
+def u:yoneda_failure_witness(expected, actual) { "Retain a naturality or round-trip counterexample."; {found: 1 - equal(expected, actual), expected: expected, actual: actual} }

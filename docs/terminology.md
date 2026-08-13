@@ -38,6 +38,9 @@ mathematical meaning and the executable approximation.
 | covariant / contravariant hom-functor | Hom viewed by postcomposition in the target or precomposition in the source | Walking-arrow tables sending `idA` or `idB` to `f` | Arbitrary matrix orientation |
 | representable / corepresentable functor | A functor naturally equivalent to `Hom(A,-)` or dually `Hom(-,B)` | Two-object records of finite hom sets | Any function stored in a record |
 | universal element / universal arrow | A distinguished element or arrow through which every relevant value factors uniquely | Identity code plus explicit existence/uniqueness checks | Merely a commonly used value |
+| Yoneda lemma | Natural transformations from `Hom(A,-)` to `F` correspond to elements of `F(A)` | Both-direction round trip and naturality for one walking-arrow functor | A generic reflection or serialization mechanism |
+| category of elements | Objects pair each source object with one functor element; arrows respect functor action | Rows `(A,10)`, `(B,20)` and their induced arrow | Merely flattening an array |
+| density | Reconstruction from representable pieces | Bounded recovery of `[10,20]` only | A claim that the general density theorem was proved here |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

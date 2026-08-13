@@ -1,6 +1,6 @@
 # Implementation plan: category theory you can watch execute
 
-Status: **twenty-seven capability-gated lessons implemented; the 245-concept
+Status: **twenty-eight capability-gated lessons implemented; the 245-concept
 program remains active**.
 
 The broader program continues through the 245 tracked concepts in
@@ -8,9 +8,10 @@ The broader program continues through the 245 tracked concepts in
 `docs/next-saga-plan.md`; completion of a bounded saga is never completion of
 the program-level inventory.
 
-Current continuation status: CT020-CT034 and CT037-CT041 are implemented or
-prepared as Lessons 20-27; CT035-CT036 are explicitly constrained. The finite
-Yoneda correspondence, category of elements, and density boundary are next.
+Current continuation status: CT020-CT043 are implemented as Lessons 20-28,
+except CT035-CT036 remain explicitly constrained. CT044 has an executable
+bounded reconstruction but the general density theorem remains constrained.
+Step 8 audits the saga and queues the next concept range.
 
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the

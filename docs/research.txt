@@ -1421,3 +1421,16 @@ maps `[idA]` to `[f]`, while contravariant precomposition maps `[idB]` to
 universal element factors the selected `f` through exactly one representing
 arrow, and distinct numeric hom-count rows prepare the two-object Yoneda
 embedding. The Yoneda correspondence itself remains Step 7.
+
+CT042-CT044 implementation evidence, 2026-08-13
+
+For the walking-arrow functor `F(A)=[10]`, `F(B)=[20]`, and `F(f)(10)=20`, the
+element `10` generates the transformation components `eta_A(idA)=10` and
+`eta_B(f)=20`. Evaluation at `idA` recovers `10`, and regeneration recovers
+both components. Naturality is the executable equality `F(f)(10)=20`; changing
+the B component to `21` supplies the failing witness.
+
+The category of elements has nodes `(A,10)` and `(B,20)` with one induced
+arrow over `f`. Reading the element values reconstructs `[10,20]`. This is a
+bounded illustration of reconstruction from representable pieces, not a proof
+or implementation of the general density colimit theorem.

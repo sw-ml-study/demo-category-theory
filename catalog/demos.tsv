@@ -25,6 +25,8 @@ finite-limits-colimits-web	demos/web/finite_limits_colimits.mlpl	web	CT027-CT036
 hom-functor-actions	probes/hom_functor_actions.mlpl	probes	CT039-CT040-hom-actions	0	0	ascii	each,take	runnable
 representable-hom	demos/27-representable-hom/hom_tables.mlpl	27-representable-hom	CT025-CT026-CT037-CT041-representables	0	0	ascii,svg	records,each,take	runnable
 representable-hom-web	demos/web/representable_hom.mlpl	web	CT025-CT026-CT037-CT041-representables	0	0	svg	each,take	runnable
+finite-yoneda	demos/28-yoneda-elements/correspondence.mlpl	28-yoneda-elements	CT042-CT044-Yoneda-elements-density	0	0	ascii,svg	records,take	runnable
+finite-yoneda-web	demos/web/finite_yoneda.mlpl	web	CT042-CT044-Yoneda-elements-density	0	0	svg	records,take	runnable
 arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	runnable
 identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	runnable
 associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	runnable

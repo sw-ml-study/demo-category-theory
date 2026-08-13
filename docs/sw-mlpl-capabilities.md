@@ -222,6 +222,15 @@ corepresentable lessons plus universal-element factorization without a new
 runtime feature. Generic category/functor parameters and natural-isomorphism
 types remain absent; Step 7 therefore continues with explicit finite tables.
 
+Lesson 28 confirms that records, numeric element tables, and transpose-based
+column extraction are sufficient for a two-object Yoneda round trip and
+category-of-elements reconstruction. The first CLI display attempted to pack
+different-rank artifacts into one rectangular array and was corrected to
+separate displays; this is an honest array-shape constraint, not a blocker.
+No generic natural-transformation enumeration or colimit construction exists,
+so the general Yoneda and density theorems are not represented as language
+abstractions. The bounded correspondence needs no new runtime feature.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

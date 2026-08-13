@@ -1,6 +1,6 @@
 number = 7
 slug = "yoneda-category-of-elements"
-status = "pending"
+status = "in-progress"
 description = "Implement CT042-CT044: finite Yoneda embedding/lemma correspondence, category..."
 role = "production"
 context_files = []
