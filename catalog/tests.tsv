@@ -3,3 +3,4 @@ category-laws	tests/test_category.mlpl	foundation	path-law-checks	0	0	none	curre
 context-laws	tests/test_context.mlpl	advanced-foundation	context-map-bind-laws	0	0	none	records,call	runnable
 finite-recursion-laws	tests/test_finite_recursion.mlpl	16-17	fold-fusion-unfold-round-trip	0	0	none	range,reduce_add	runnable
 model-config-lens-laws	tests/test_model_config_lens.mlpl	18-optics	get-put-put-get-put-put	0	0	none	records,nested-access	runnable
+diagonal-product-adjunction	tests/test_diagonal_product_adjunction.mlpl	19-adjunction	diagonal-product-triangles	0	0	none	records,nested-equality	runnable

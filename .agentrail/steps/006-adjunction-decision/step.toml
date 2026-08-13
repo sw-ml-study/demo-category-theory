@@ -1,6 +1,6 @@
 number = 6
 slug = "adjunction-decision"
-status = "pending"
+status = "in-progress"
 description = "Audit the constructions implemented in Lessons 12-18 for a genuine, pedagogic..."
 role = "production"
 context_files = []

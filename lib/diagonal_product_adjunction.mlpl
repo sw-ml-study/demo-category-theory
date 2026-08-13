@@ -1,0 +1,8 @@
+# lib/diagonal_product_adjunction.mlpl -- concrete diagonal/product triangles.
+# loops: 0
+
+def u:diagonal_duplicate(value) { "Duplicate one value into the two components of the diagonal functor."; {left: value, right: value} }
+def u:product_counit(pair_of_pairs) { "Project the left value from the first pair and the right value from the second pair."; {left: pair_of_pairs.left.left, right: pair_of_pairs.right.right} }
+def u:map_diagonal_unit(pair) { "Apply the diagonal unit independently to both components of a product-category value."; {left: u:diagonal_duplicate(pair.left), right: u:diagonal_duplicate(pair.right)} }
+def u:product_counit_broken(pair_of_pairs) { "Demonstrate a bad counit by selecting the left component from both nested pairs."; {left: pair_of_pairs.left.left, right: pair_of_pairs.right.left} }
+def u:adjunction_law_witness(triangle, expected, actual) { "Retain one named adjunction-triangle counterexample with expected and actual values."; {found: 1 - equal(expected, actual), triangle: triangle, expected: expected, actual: actual} }

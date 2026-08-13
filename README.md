@@ -217,6 +217,17 @@ batch size `32` and version `3` stay fixed. The red setter resets batch size to
 [CLI lesson](demos/18-optics/model_learning_rate.mlpl),
 [web lesson](demos/web/model_config_lens.mlpl).
 
+### 19. Diagonal duplication is left adjoint to product
+
+![A product duplicated and restored by matching projections beside a broken left-left projection](assets/previews/19-diagonal-product-adjunction.svg)
+
+What to notice: duplicating `(3,5)` and then selecting the matching left/right
+components returns `(3,5)` in both triangle identities. Selecting left twice
+instead produces `(3,3)`. Sources:
+[CLI lesson](demos/19-adjunction/duplicate_and_pair.mlpl),
+[web lesson](demos/web/diagonal_product_adjunction.mlpl), and the
+[adjunction decision](docs/adjunction-decision.md).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

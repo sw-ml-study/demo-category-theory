@@ -1,0 +1,27 @@
+# Web Lesson 19 -- diagonal/product adjunction.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Duplicate and matching product projections cancel in both triangles.
+# ***************************************************************************
+;
+def u:duplicate(value) { "Duplicate one value into both diagonal components."; {left: value, right: value} }  # unit
+def u:matching_projections(pair_of_pairs) { "Select left from the first pair and right from the second pair."; {left: pair_of_pairs.left.left, right: pair_of_pairs.right.right} }  # counit
+product_value = {left: 3, right: 5}  # product object value
+first_triangle = u:matching_projections(u:duplicate(product_value))  # returns (3,5)
+diagonal_value = {left: 3, right: 5}  # value of the diagonal object pair
+expanded = {left: u:duplicate(diagonal_value.left), right: u:duplicate(diagonal_value.right)}  # unit on both components
+second_triangle = u:matching_projections(expanded)  # returns (3,5)
+broken = {left: product_value.left, right: product_value.left}  # bad counit selects left twice
+disp([equal(first_triangle, product_value), equal(second_triangle, diagonal_value), broken.left, broken.right])  # triangles and witness
+# ***************************************************************************
+# * THE VISUAL
+# * Green duplicate/project returns (3,5). Red projects left twice to (3,3).
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 840 290\" width=\"840\" height=\"290\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.bad{stroke:#f7768e}.token{fill:#f7768e;animation:p 4s infinite alternate}@keyframes p{to{transform:translateX(500px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(500px)}}</style><rect width=\"840\" height=\"290\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"25\" y=\"45\" width=\"160\" height=\"65\" rx=\"14\"/><rect class=\"obj\" x=\"300\" y=\"45\" width=\"220\" height=\"65\" rx=\"14\"/><rect class=\"obj\" x=\"655\" y=\"45\" width=\"160\" height=\"65\" rx=\"14\"/><line class=\"arrow\" x1=\"185\" y1=\"77\" x2=\"300\" y2=\"77\"/><line class=\"arrow\" x1=\"520\" y1=\"77\" x2=\"655\" y2=\"77\"/><text x=\"105\" y=\"84\" text-anchor=\"middle\">(3,5)</text><text x=\"410\" y=\"84\" text-anchor=\"middle\">((3,5),(3,5))</text><text x=\"735\" y=\"84\" text-anchor=\"middle\">(3,5)</text><rect class=\"obj\" x=\"165\" y=\"190\" width=\"220\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"500\" y=\"190\" width=\"170\" height=\"60\" rx=\"14\"/><line class=\"arrow bad\" x1=\"385\" y1=\"220\" x2=\"500\" y2=\"220\"/><text x=\"275\" y=\"227\" text-anchor=\"middle\">select left twice</text><text x=\"585\" y=\"227\" text-anchor=\"middle\">broken (3,3)</text><circle class=\"token\" cx=\"165\" cy=\"97\" r=\"9\"/></svg>"  # lawful triangle and broken counit
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Unit duplicates; counit keeps matching projections; both triangles are id.
+# * THE POINT -- this concrete product construction genuinely has an adjoint.
+# ***************************************************************************

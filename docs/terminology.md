@@ -22,6 +22,7 @@ mathematical meaning and the executable approximation.
 | fold | Consuming finite structure into a summary | `reduce_add` over a bounded numeric array | Merely reshaping an array or unrestricted structural recursion |
 | unfold | Generating finite structure from seed state | `seed + range(count) * step` | An unbounded stream or a generic recursion-scheme primitive |
 | lens | A getter and setter focused on one part of a larger value, obeying get-put, put-get, and put-put | Named learning-rate helpers that rebuild one nested model configuration | A camera lens or a generic optics DSL |
+| adjunction | A pair of functors linked by a natural hom-set correspondence, equivalently a unit/counit obeying triangle identities | Concrete diagonal duplication left adjoint to product, checked on finite records | Any two operations that appear to undo each other |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

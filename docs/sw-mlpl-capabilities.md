@@ -164,6 +164,14 @@ is manageable for one fixture and does not yet justify an optics DSL or generic
 lens interface. A second concrete structure would be required before promoting
 this from local idiom to an upstream capability request.
 
+Step 6's audit found one existing construction pair that meets the adjunction
+threshold: diagonal duplication is left adjoint to the concrete product from
+Lesson 5. Nested records execute both unit/counit triangle identities, and a
+bad counit that selects the left component twice supplies a witness. No new
+runtime capability is required. Fold/unfold, context operations, and the lens
+were declined as adjunction candidates because this repository has not
+implemented the required categories and hom-set correspondences for them.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

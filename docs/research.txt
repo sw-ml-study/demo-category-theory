@@ -1269,3 +1269,17 @@ If a second materially different nested structure repeats the same boilerplate,
 record-update syntax may become a generally useful sw-MLPL question. The next
 step is to audit whether any constructions already implemented yield a genuine
 and teachable adjunction; no lesson should be forced if they do not.
+
+Lesson 19 decision, 2026-08-12
+
+The audit found a genuine adjunction already latent in Lesson 5: diagonal
+duplication is left adjoint to product. Its unit duplicates a value into two
+views; its counit takes the matching left and right projections. Both triangle
+composites return representative finite record values unchanged. Taking the
+left projection twice breaks a triangle and returns `(3,3)` for `(3,5)`.
+
+Fold/unfold, the success/failure context, and the model lens were rejected as
+candidates because the implemented fixtures do not supply the categories,
+hom-set correspondence, unit, and counit needed for those claims. The accepted
+lesson is consequently narrow and honest: `diagonal ⊣ product` in the concrete
+finite-set/record interpretation, with no proposed adjunction syntax.

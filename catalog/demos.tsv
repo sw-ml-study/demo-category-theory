@@ -43,3 +43,5 @@ fold-fusion-web	demos/web/fold_fusion.mlpl	web	finite-fold-fusion	0	0	svg	each,r
 bounded-unfold-web	demos/web/bounded_unfold.mlpl	web	bounded-arithmetic-generation	0	0	svg	range,take	runnable
 model-config-lens	demos/18-optics/model_learning_rate.mlpl	18-optics	concrete-lawful-lens	0	0	ascii,svg	records,nested-access	runnable
 model-config-lens-web	demos/web/model_config_lens.mlpl	web	concrete-lawful-lens	0	0	svg	records,nested-access	runnable
+diagonal-product-adjunction	demos/19-adjunction/duplicate_and_pair.mlpl	19-adjunction	diagonal-left-adjoint-product	0	0	ascii,svg	records,nested-equality	runnable
+diagonal-product-adjunction-web	demos/web/diagonal_product_adjunction.mlpl	web	diagonal-left-adjoint-product	0	0	svg	records,nested-equality	runnable
