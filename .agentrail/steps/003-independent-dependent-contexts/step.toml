@@ -1,9 +1,10 @@
 number = 3
 slug = "independent-dependent-contexts"
-status = "in-progress"
+status = "completed"
 description = "Implement Lessons 14-15 only on the stable concrete context from Lessons 12-1..."
 role = "production"
 context_files = []
 created_at = "2026-08-12T17:20:36"
+completed_at = "2026-08-12T17:55:34"
 task_type = "lesson"
-commits = []
+commits = ["3252e40ae9ede6a720e4a46151de385fa67d24e6"]
