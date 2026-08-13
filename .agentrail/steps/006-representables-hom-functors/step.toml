@@ -1,6 +1,6 @@
 number = 6
 slug = "representables-hom-functors"
-status = "pending"
+status = "in-progress"
 description = "Implement CT025-CT026 and CT038-CT043 except Yoneda lemma: universal arrows/e..."
 role = "production"
 context_files = []

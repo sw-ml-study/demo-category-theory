@@ -8,3 +8,4 @@ universal-endpoints	tests/test_universal_endpoints.mlpl	20-21	CT020-CT024-dualit
 equalizer-coequalizer	tests/test_equalizer_coequalizer.mlpl	22-23	CT029-CT030-parallel-arrow-universals	0	0	none	records,take	runnable
 pullback-pushout	tests/test_pullback_pushout.mlpl	24-25	CT031-CT032-universal-squares	0	0	none	records,take	runnable
 finite-limits-colimits	tests/test_finite_limits_colimits.mlpl	26	CT027-CT036-bounded-universal-cones	0	0	none	records,take,fill	runnable
+representable-hom	tests/test_representable_hom.mlpl	27	CT025-CT026-CT037-CT041-finite-hom-functors	0	0	none	records,each,take	runnable

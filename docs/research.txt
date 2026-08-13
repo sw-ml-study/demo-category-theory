@@ -1412,3 +1412,12 @@ limit shapes and their duals as finite colimit shapes. It is evidence about
 these enumerated families only, not a proof of completeness or cocompleteness.
 CT037 representability remains next because it needs hom-functor tables rather
 than another cone fixture.
+
+CT025-CT026 and CT037-CT041 implementation evidence, 2026-08-12
+
+The walking-arrow category uses `idA=0`, `f=1`, and `idB=2`. Postcomposition
+maps `[idA]` to `[f]`, while contravariant precomposition maps `[idB]` to
+`[f]`. Records encode Hom(A,-) and Hom(-,B) without ragged arrays. The identity
+universal element factors the selected `f` through exactly one representing
+arrow, and distinct numeric hom-count rows prepare the two-object Yoneda
+embedding. The Yoneda correspondence itself remains Step 7.

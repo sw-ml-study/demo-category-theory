@@ -1,6 +1,6 @@
 # Implementation plan: category theory you can watch execute
 
-Status: **twenty-six capability-gated lessons implemented; the 245-concept
+Status: **twenty-seven capability-gated lessons implemented; the 245-concept
 program remains active**.
 
 The broader program continues through the 245 tracked concepts in
@@ -8,10 +8,9 @@ The broader program continues through the 245 tracked concepts in
 `docs/next-saga-plan.md`; completion of a bounded saga is never completion of
 the program-level inventory.
 
-Current continuation status: CT020-CT024 and CT027-CT034 are implemented as
-Lessons 20-26; CT035-CT036 are explicitly constrained. Representables,
-corepresentables, hom-functors, universal arrows, and universal elements are
-next in Step 6.
+Current continuation status: CT020-CT034 and CT037-CT041 are implemented or
+prepared as Lessons 20-27; CT035-CT036 are explicitly constrained. The finite
+Yoneda correspondence, category of elements, and density boundary are next.
 
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the

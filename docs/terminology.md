@@ -35,6 +35,9 @@ mathematical meaning and the executable approximation.
 | cone / cocone | Compatible arrows from one apex into a diagram, or dually from the diagram into one apex | Finite function-table legs with both routes compared | An arbitrary collection of arrows |
 | finite limit / finite colimit | Terminal cone or initial cocone for a finite diagram shape | Bounded candidates with exactly one factorization mediator | Merely the smallest or largest value |
 | complete / cocomplete | Having limits or colimits for every small diagram | Definition-only boundary; not established by finite fixtures | Passing every test in this repository |
+| covariant / contravariant hom-functor | Hom viewed by postcomposition in the target or precomposition in the source | Walking-arrow tables sending `idA` or `idB` to `f` | Arbitrary matrix orientation |
+| representable / corepresentable functor | A functor naturally equivalent to `Hom(A,-)` or dually `Hom(-,B)` | Two-object records of finite hom sets | Any function stored in a record |
+| universal element / universal arrow | A distinguished element or arrow through which every relevant value factors uniquely | Identity code plus explicit existence/uniqueness checks | Merely a commonly used value |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

@@ -11,8 +11,8 @@ function-reference, and array probes remain prerequisites.
 | CT022 | initial object | `range(0)` with the unique empty function table to each finite target | implemented in Lesson 21; empty arrays have shape zero |
 | CT023 | terminal object | singleton `[0]` with the unique constant map from each finite source | implemented in Lesson 21 |
 | CT024 | zero object | object verified both initial and terminal in one finite category | implemented in Lesson 21 using a pointed hand-authored category; ordinary FinSet has none |
-| CT025 | universal arrow | record containing candidate arrow plus factorization checks | runnable for named finite functors only |
-| CT026 | universal element | distinguished finite element plus unique representing arrow | runnable after representable fixture |
+| CT025 | universal arrow | record containing candidate arrow plus factorization checks | implemented in Lesson 27 for one named finite representable |
+| CT026 | universal element | distinguished finite element plus unique representing arrow | implemented in Lesson 27 with the representing identity |
 | CT027 | cone | record/arrays of legs whose composed function tables agree | implemented in Lesson 26 with a lawful and broken finite cone |
 | CT028 | cocone | arrow-reversed cone with pointwise route equality | implemented in Lesson 26 as the outward-leg dual fixture |
 | CT029 | equalizer | indices where two parallel function tables agree, plus inclusion | implemented in Lesson 22 with universal factorization |
@@ -23,11 +23,11 @@ function-reference, and array probes remain prerequisites.
 | CT034 | finite colimit | initial cocone selected from bounded candidates | implemented in Lesson 26; coproduct/coequalizer/pushout shapes unified |
 | CT035 | completeness | definition and finite-category boundary | constrained and documented: bounded fixtures cannot establish all small limits |
 | CT036 | cocompleteness | definition and finite-category boundary | constrained and documented: bounded fixtures cannot establish all small colimits |
-| CT037 | representable functor | finite natural-transformation/function tables isomorphic to a hom table | runnable after table enumeration |
-| CT038 | corepresentable functor | dual finite hom table | runnable |
-| CT039 | covariant hom-functor | postcomposition over finite function tables | runnable with named composition helpers |
-| CT040 | contravariant hom-functor | precomposition over finite function tables | runnable with named composition helpers |
-| CT041 | Yoneda embedding | map each finite object to its hom-functor table | runnable for one small explicit category |
+| CT037 | representable functor | finite natural-transformation/function tables isomorphic to a hom table | implemented in Lesson 27 as `Hom(A,-)` records |
+| CT038 | corepresentable functor | dual finite hom table | implemented in Lesson 27 as `Hom(-,B)` records |
+| CT039 | covariant hom-functor | postcomposition over finite function tables | implemented: `idA` postcomposes to `f` |
+| CT040 | contravariant hom-functor | precomposition over finite function tables | implemented: `idB` precomposes to `f` |
+| CT041 | Yoneda embedding | map each finite object to its hom-functor table | prepared by distinct walking-arrow hom rows; full correspondence remains Step 7 |
 | CT042 | Yoneda lemma | transformations from representable to a finite functor correspond to one selected element | runnable by bounded enumeration and round-trip |
 | CT043 | category of elements | tagged `(object, element)` records plus induced arrows | runnable with manual tags/dispatch; no static exhaustiveness |
 | CT044 | density intuition | reconstruct finite functor data from representable pieces | conditional lesson section; do not claim the general density theorem without a natural colimit implementation |

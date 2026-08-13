@@ -1,0 +1,10 @@
+# Probe: walking-arrow hom actions for CT025-CT026 and CT037-CT041.
+# visual: ascii
+# loops: 0
+def u:postcompose_walking_arrow(arrows) { "Postcompose the Hom(A,A) identity with the walking arrow f."; each(:u:send_identity_a_to_f, arrows) }
+def u:send_identity_a_to_f(arrow) { "Send the identity on A to f under postcomposition by f."; if equal(arrow, 0) { 1 } else { -1 } }
+def u:precompose_walking_arrow(arrows) { "Precompose the Hom(B,B) identity with the walking arrow f."; each(:u:send_identity_b_to_f, arrows) }
+def u:send_identity_b_to_f(arrow) { "Send the identity on B to f under precomposition by f."; if equal(arrow, 2) { 1 } else { -1 } }
+covariant_action = u:postcompose_walking_arrow([0])
+contravariant_action = u:precompose_walking_arrow([2])
+ok({probe: "hom-functor-actions", covariant: covariant_action, contravariant: contravariant_action, supported: equal(covariant_action, [1]) * equal(contravariant_action, [1])})

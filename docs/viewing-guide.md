@@ -1,7 +1,7 @@
 # Viewing guide
 
-The curriculum currently contains twenty-six self-checking CLI lessons,
-twenty-six standalone web lessons, and twenty-six generated SVG previews. Run `just check`
+The curriculum currently contains twenty-seven self-checking CLI lessons,
+twenty-seven standalone web lessons, and twenty-seven generated SVG previews. Run `just check`
 for the authoritative executable audit, or follow one of these paths.
 
 ## Foundations: Lessons 1-6

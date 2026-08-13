@@ -1,0 +1,20 @@
+# Lesson 27 -- representables and hom-functor action.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/representable_hom.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 27 -- HOM-FUNCTORS TURN COMPOSITION INTO DATA MOTION", intro: "Use the walking arrow A-to-B to execute covariant postcomposition, contravariant precomposition, and their universal representing elements."})
+representable = u:representable_hom_from_a()
+corepresentable = u:corepresentable_hom_into_b()
+covariant = u:postcompose_by_walking_arrow(representable.at_a)
+contravariant = u:precompose_by_walking_arrow(corepresentable.at_b)
+element = u:universal_element_factorization(1, take(representable.at_b, 0, 0))
+universal_arrow = u:universal_arrow_factorization(1, 1, 1)
+broken = u:hom_action_witness([1], [0])
+disp([representable.at_a, representable.at_b, corepresentable.at_a, corepresentable.at_b, covariant, contravariant])
+disp([element.exists, element.unique, universal_arrow.commutes, universal_arrow.unique, broken.found])
+wrote = write_text("out/27-representable-hom.svg", u:representable_hom_diagram())
+u:epilog_open()
+u:explain("out/27-representable-hom.svg", "Postcomposition moves id-A to f in Hom(A,-); precomposition moves id-B to f in Hom(-,B). The identity elements generate the displayed arrows uniquely.")
+u:takeaway("A representable functor is a hom-view from one object. This finite table prepares Yoneda without claiming generic functor syntax.")
+if equal(covariant, [1]) * equal(contravariant, [1]) * element.exists * element.unique * universal_arrow.commutes * universal_arrow.unique * broken.found * is_ok(wrote) { ok("finite representables verified") } else { err("representable invariant failed") }

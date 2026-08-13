@@ -297,6 +297,16 @@ finite-colimit shapes. Sources:
 [CLI lesson](demos/26-finite-limits-colimits/universal_cones.mlpl),
 [web lesson](demos/web/finite_limits_colimits.mlpl).
 
+### 27. Representables turn composition into hom-set motion
+
+![Postcomposition and precomposition meeting at the walking arrow f](assets/previews/27-representable-hom.svg)
+
+What to notice: postcomposition sends `idA` to `f`, while contravariant
+precomposition sends `idB` to the same `f`. The representing identity element
+recovers the selected arrow uniquely. Sources:
+[CLI lesson](demos/27-representable-hom/hom_tables.mlpl),
+[web lesson](demos/web/representable_hom.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

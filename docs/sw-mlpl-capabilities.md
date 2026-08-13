@@ -214,6 +214,14 @@ Finite candidate enumeration still cannot establish completeness or
 cocompleteness, which remains a mathematical evidence boundary rather than a
 missing runtime feature.
 
+Lesson 27's dedicated hom-action probe confirms that named `each` mappings can
+execute covariant postcomposition and contravariant precomposition in the
+walking-arrow category. Records, rather than ragged arrays, hold differently
+sized hom-sets at each object. This supports finite representable and
+corepresentable lessons plus universal-element factorization without a new
+runtime feature. Generic category/functor parameters and natural-isomorphism
+types remain absent; Step 7 therefore continues with explicit finite tables.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:
