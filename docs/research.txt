@@ -1371,11 +1371,12 @@ looks like a duplicate raw-SVG result. The prompt renderer also risks treating
 an escaped hexadecimal color such as `#1a1b26` as an inline comment.
 
 The local lesson now constructs the diagram with the readable, docstring-first
-`array_functor_visual` function, assigns that constant result to the
-`array_functor_visual` variable, and uses the assignment's result as the sole
-display. This binds the visual for later inspection without evaluating a second
-bare-variable expression. It also uses `rgb(...)` colors, so the visual entry
-is readable and avoids the comment ambiguity.
+`array_functor_visual` function and assigns that constant result to the
+`array_functor_visual` variable. MLPL assignment does not send the SVG payload
+to the renderer, so one following bare-variable expression is required and is
+the sole display. This binds the visual for later inspection and displays it
+exactly once. It also uses `rgb(...)` colors, so the visual entry is readable
+and avoids the comment ambiguity.
 This is only a presentation workaround. sw-MLPL still needs either a dedicated
 custom-SVG display primitive or a compact/collapsible source echo for visual
 results. The remaining authored custom-SVG lessons should migrate to the named
