@@ -365,3 +365,10 @@ revisiting generic contextual interfaces; another nested configuration could
 justify record-update ergonomics; recursive or streaming data could justify
 recursion-scheme research; and a real two-input transformation could motivate
 bifunctors or profunctors. None is currently a committed lesson.
+### Research2 visual-grammar migration (2026-08-13)
+
+Step 008 makes the diagram language explicit and checked: objects are
+containers, elements are tokens, arrows are directed and labeled, failures
+use dashed paths and words in addition to color, and every SVG has a title and
+description. The next step repairs the associativity computation so the two
+genuinely different composition trees are executable rather than merely prose.

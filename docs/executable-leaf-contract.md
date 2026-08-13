@@ -49,6 +49,10 @@ panels. Commutative diagrams should animate routes when motion clarifies the
 law. The named-constructor, variable-binding, single-display convention remains
 mandatory for web SVGs.
 
+The complete maintained convention, including non-color failure cues and the
+object/container versus element/token distinction, is in
+[`visual-grammar.md`](visual-grammar.md).
+
 ## Evidence language
 
 Use “verifies this finite instance” rather than “proves” unless a general proof

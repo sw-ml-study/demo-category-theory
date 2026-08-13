@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+
+for file in "$repo_root"/demos/web/*.mlpl; do
+  grep -q 'role=\\"img\\"' "$file" || continue
+  grep -q '<title>' "$file" && continue
+  lesson=$(sed -n '1s/^# Web Lesson [0-9][0-9]* -- //p' "$file" | sed 's/[.]$//')
+  [ -n "$lesson" ] || lesson="category theory lesson"
+  LESSON_TITLE="$lesson" perl -0pi -e 's/role=\\"img\\">/role=\\"img\\"><title>$ENV{LESSON_TITLE}<\/title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.<\/desc>/' "$file"
+done
+
+for file in "$repo_root"/lib/*.mlpl; do
+  grep -q 'role=' "$file" || continue
+  grep -q '<title>' "$file" && continue
+  lesson=$(basename "$file" .mlpl | tr '_' ' ')
+  LESSON_TITLE="$lesson" perl -0pi -e 's/(role=[^>]+>)/$1<title>$ENV{LESSON_TITLE}<\/title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and text labels distinguish failures without relying on color.<\/desc>/g' "$file"
+done

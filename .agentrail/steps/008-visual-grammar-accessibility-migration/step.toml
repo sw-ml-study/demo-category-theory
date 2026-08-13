@@ -1,6 +1,6 @@
 number = 8
 slug = "visual-grammar-accessibility-migration"
-status = "pending"
+status = "in-progress"
 description = "Apply research2 visual recommendations across existing authored SVG lessons: ..."
 role = "production"
 context_files = []

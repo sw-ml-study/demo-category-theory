@@ -5,9 +5,23 @@ bad=0
 for svg in "$repo_root"/assets/previews/*.svg; do
   [ -f "$svg" ] || continue
   rel=${svg#$repo_root/}
-  for token in 'class="obj"' 'class="arrow"' 'class="token"' 'prefers-reduced-motion:reduce' 'role="img"'; do
+  for token in 'class="obj"' 'class="arrow"' 'class="token"' 'prefers-reduced-motion:reduce' 'role="img"' '<title>' '<desc>'; do
     grep -qF "$token" "$svg" || { echo "$rel: missing visual grammar token $token" >&2; bad=1; }
   done
+done
+for leaf in "$repo_root"/demos/web/*.mlpl; do
+  grep -q 'role=\\"img\\"' "$leaf" || continue
+  rel=${leaf#$repo_root/}
+  for token in '<title>' '<desc>' 'marker-end:'; do
+    grep -qF "$token" "$leaf" || { echo "$rel: missing accessible SVG token $token" >&2; bad=1; }
+  done
+  if grep -q 'animation:' "$leaf"; then
+    grep -qF 'prefers-reduced-motion:reduce' "$leaf" || { echo "$rel: animated SVG lacks reduced-motion behavior" >&2; bad=1; }
+  fi
+  if grep -q '\.bad{' "$leaf"; then
+    grep -q 'stroke-dasharray:' "$leaf" || { echo "$rel: counterexample depends on color alone" >&2; bad=1; }
+    grep -Eq 'COUNTEREXAMPLE|DIFFERS|BROKEN|broken|bad ' "$leaf" || { echo "$rel: counterexample lacks a text label" >&2; bad=1; }
+  fi
 done
 [ "$bad" -eq 0 ]
 echo "visual grammar: ok"

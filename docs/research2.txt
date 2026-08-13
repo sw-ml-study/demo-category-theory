@@ -680,3 +680,9 @@ the first all-leaf naming/docstring migration. `docs/leaf-language-audit.md`
 records the result and `scripts/check-leaf-language` enforces the measurable
 portion for future concepts. Visual, associativity, precision, integration,
 and progressive-Yoneda migrations are subsequent Agentrail steps.
+Implementation note (2026-08-13, Step 008): the visual recommendations are now
+the maintained standard in `docs/visual-grammar.md`. Titles/descriptions,
+directed arrows, non-color counterexample cues, reduced-motion behavior, and
+the object-container/element-token distinction are enforced by
+`scripts/check-visual-grammar` for authored browser leaves and preview assets.
+Future concepts must follow this standard before entering the curriculum.

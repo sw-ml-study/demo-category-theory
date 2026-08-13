@@ -1532,3 +1532,15 @@ this executable category-theory example” text was replaced with the role the
 map, branch action, equation route, or counterexample plays. Cryptic route
 variables such as `upper`, `lower`, `once`, and `twice` became equation-readable
 names. A repository gate prevents regression. SVG accessibility is next.
+## Research2 visual accessibility migration, 2026-08-13
+
+The 32 authored browser SVGs now carry titles and descriptions, and the
+preview assets use the same accessibility metadata. The visual grammar is no
+longer implicit: object containers, element tokens, labeled directed arrows,
+dashed counterexamples, and reduced-motion behavior are documented and
+checked. The first arrows leaf now labels both enclosing objects as `Numbers`,
+so values 3 and 6 read as elements rather than categorical objects.
+
+Next: execute honest left- and right-associated composition trees. There is no
+current blocker; progressive path animation remains selective because it
+should teach a path law rather than decorate every diagram.
