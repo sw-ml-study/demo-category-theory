@@ -1,0 +1,1 @@
+Attempt CT059-CT063 filtered categories/colimits, directed colimits, inverse limits, and direct limits using bounded chains and finite stabilization. Do not equate finite prefixes with infinite results. Probe, implement or constrain, update all docs/artifacts, gate, commit, and push.

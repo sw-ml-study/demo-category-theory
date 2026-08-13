@@ -1,0 +1,1 @@
+Implement CT049-CT051 diagram category, constant diagram functor, and diagonal functor with named finite object/arrow tables and identity/composition checks. Add artifacts/docs/tests and full commit/push workflow.

@@ -1,0 +1,1 @@
+Implement CT055-CT058 preservation of limits/colimits, creation of limits, and reflection of limits with small explicit functors. Distinguish all terms using before/after universal checks and counterexamples; ship all artifacts and required workflow.

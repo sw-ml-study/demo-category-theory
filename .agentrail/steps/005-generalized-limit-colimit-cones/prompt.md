@@ -1,0 +1,1 @@
+Implement CT052-CT053 limit and colimit cones by generalizing bounded diagram-leg representations only as supported by probes. Verify universal mediators and failures; add CLI/web visuals, tests, docs, full gate, commits, and pushes.

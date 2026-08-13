@@ -1,0 +1,9 @@
+number = 7
+slug = "filtered-directed-systems"
+status = "pending"
+description = "Attempt CT059-CT063 filtered categories/colimits, directed colimits, inverse ..."
+role = "production"
+context_files = []
+created_at = "2026-08-13T11:16:17"
+task_type = "lesson"
+commits = []

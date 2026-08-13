@@ -1,0 +1,1 @@
+Implement CT054 uniqueness up to unique isomorphism using two finite universal candidates and forced mutually inverse comparison arrows. Include laws, counterexample, CLI/web directed visual, tests, README preview, all docs, full gate, detailed commit, completion commit, and pushes.

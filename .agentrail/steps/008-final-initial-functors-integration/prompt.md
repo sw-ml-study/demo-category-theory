@@ -1,0 +1,1 @@
+Implement or constrain CT064 final and initial functors, audit CT045-CT064 status and every artifact, rebuild web/previews, run full and Agentrail gates, update all docs including research, queue CT065-CT084, complete/archive saga, commit metadata, and push.

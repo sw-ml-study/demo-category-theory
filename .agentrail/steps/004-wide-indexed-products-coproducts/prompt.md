@@ -1,0 +1,1 @@
+Attempt CT045-CT048 wide products, wide coproducts, indexed limits, and indexed colimits over bounded arrays. Probe first; implement honest finite laws and counterexamples, and explicitly defer genuinely unbounded families. Add all artifacts/docs/gates/commits/pushes.
