@@ -1,0 +1,11 @@
+{
+  "task_type": "lesson",
+  "state": {
+    "number": 6,
+    "step": "representables-hom-functors"
+  },
+  "action": "Implemented CT025-CT026 and CT037-CT040, with CT041 Yoneda embedding prepared, using the walking-arrow category idA=0, f=1, idB=2. Added a capability probe proving covariant postcomposition and contravariant precomposition both map the relevant identity to f; record-backed representable Hom(A,-) and corepresentable Hom(-,B) fixtures; universal element/arrow existence and uniqueness checks; broken hom-action witness; and distinct hom rows for Step 7. Added docstring-first library, 2 tests, CLI/web Lesson 27 with standardized bound SVG and directed arrowheads, generated README preview, catalogs, and all documentation ledgers. Full gate: 31/31 tests and every repository check passed. Next: Step 007 implements CT042 Yoneda lemma correspondence, CT043 category of elements, and bounded CT044 density intuition. Boundary: explicit finite tables support enumeration, but no generic functor or natural-isomorphism types exist.",
+  "result": "success",
+  "reward": 1,
+  "timestamp": "2026-08-12T20:12:42"
+}
