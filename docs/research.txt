@@ -1283,3 +1283,22 @@ candidates because the implemented fixtures do not supply the categories,
 hom-set correspondence, unit, and counit needed for those claims. The accepted
 lesson is consequently narrow and honest: `diagonal ⊣ product` in the concrete
 finite-set/record interpretation, with no proposed adjunction syntax.
+
+Advanced curriculum integration, 2026-08-12
+
+The completed repository now has nineteen paired CLI/web lessons and nineteen
+reproducible previews. The advanced sequence remained capability-first: it
+used concrete success/failure records, finite arrays, manual immutable record
+reconstruction, and finite product records. Every lesson states both its law
+and its counterexample or boundary, and every MLPL function definition is
+docstring-first with a readable name.
+
+The next boundary is evidence-driven rather than the next textbook chapter.
+Generic Functor/Applicative/Monad interfaces need a second useful contextual
+representation and a practical common API. Generic optics or record-update
+support needs repeated boilerplate across another real nested structure.
+Generic recursion schemes need recursive data or streaming workloads beyond
+the bounded arrays used here. Bifunctors and profunctors need an actual
+two-sided transformation problem. Until those workloads appear, the current
+concrete curriculum is complete and no category-specific sw-MLPL syntax is
+recommended.

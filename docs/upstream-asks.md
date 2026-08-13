@@ -44,13 +44,14 @@ reports, and SVG/HTML generation.
 Acceptance case: combine two strings without converting through byte arrays,
 including an empty string and non-ASCII text.
 
-## Not yet an upstream ask: generic functors
+## Not an upstream ask: generic contextual interfaces
 
-Concrete array mapping and its laws have not yet been measured. Generic
-context/type-constructor abstraction remains a candidate in
-`docs/sw-mlpl-capabilities.md`, not a verified request. The curriculum will
-implement what current MLPL supports first and defer a generic functor lesson
-until multiple concrete contexts establish a generally useful need.
+Concrete array and success/failure mapping have been measured and their laws
+execute. Applicative-style application and monadic bind also execute for the
+named success/failure context. This still does not establish a practical need
+or representation for generic type-constructor interfaces. Generic Functor,
+Applicative, and Monad support therefore remains a documented boundary, not a
+verified upstream request.
 
 ## 3. Tagged record dispatch is not exhaustive
 

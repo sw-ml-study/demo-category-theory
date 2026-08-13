@@ -13,7 +13,11 @@ obeys**.
 - arrays as a concrete functor;
 - transpose as a concrete natural transformation;
 - the categorical reading of identity/composed homomorphisms; and
-- the execution payoff of associative reduction regrouping.
+- the execution payoff of associative reduction regrouping;
+- concrete success/failure map, apply, and bind laws;
+- finite-array fold fusion and bounded arithmetic unfold;
+- one lawful nested model-configuration lens; and
+- diagonal duplication left adjoint to concrete product.
 
 ## Owned by demo-abstract-algebra
 
@@ -25,9 +29,10 @@ The small checker copied into `lib/category.mlpl` is attributed to that sibling
 and intentionally local: neither standalone repository has a runtime
 dependency on the other.
 
-## Deferred
+## Deferred beyond the concrete curriculum
 
-Monads, applicatives, Kleisli composition, folds/unfolds as recursion schemes,
-bifunctors, profunctors, optics, and adjunctions belong to a later saga. Generic
-functor/type-constructor abstraction is investigated only after several real
-ML/data contexts justify it.
+Generic `Functor`, `Applicative`, `Monad`, lens/optics, and recursion-scheme
+interfaces remain deferred; the lessons demonstrate laws on named concrete
+representations, not type-constructor abstraction. Bifunctors and profunctors
+also remain research candidates until a practical two-sided transformation
+needs them. No category-specific syntax is proposed.

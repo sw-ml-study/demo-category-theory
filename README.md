@@ -7,10 +7,11 @@ inputs, and failed laws show a concrete counterexample.
 The project is deliberately an sw-MLPL forcing function, not a proposal for a
 category-theory DSL. It starts with functions, identity, and composition;
 builds toward commutative diagrams, products, coproducts, array functors, and
-natural transformations; and closes by connecting homomorphisms and lawful
-reductions to practical array programming.
+natural transformations; then applies the same law-first method to contexts,
+folds/unfolds, optics, and one concrete adjunction.
 
-The first eleven-lesson curriculum is implemented and checked.
+All nineteen lessons are implemented and checked. Start with the
+[viewing guide](docs/viewing-guide.md) for the recommended paths through them.
 
 ## Run it
 
@@ -21,9 +22,9 @@ just web     # rebuild standalone browser lessons under web/
 just assets  # rebuild the README previews
 ```
 
-## Planned visual progression
+## Visual progression
 
-The first curriculum will make these relationships visible:
+The foundational curriculum makes these relationships visible:
 
 ```text
 value ──f──▶ value                 one morphism

@@ -1,9 +1,9 @@
-# Boundary for the queued advanced-concepts saga
+# Boundary and outcome of the advanced-concepts saga
 
-The first curriculum is complete at natural transformations, with two bridge
-lessons for homomorphisms and lawful reductions. The queued second saga starts
-from concrete optional/error pipelines and must not simply continue a textbook
-table of contents. Its detailed lesson and delivery order is in `docs/plan.md`.
+The advanced saga is complete. It followed concrete optional/error pipelines
+through independent/dependent contexts, finite folds/unfolds, one lawful lens,
+and the accepted diagonal/product adjunction. It did not simply continue a
+textbook table of contents; every lesson passed the entry criteria below.
 
 ## Entry criteria
 
@@ -25,8 +25,9 @@ Begin only when each proposed lesson has:
 5. optics for nested model/configuration data; and
 6. adjunctions only where two implemented constructions already exhibit one.
 
-The first five items are queued as capability-gated work. The sixth is a
-decision step, not a promise to manufacture an adjunction lesson.
+Items one through five shipped on measured current capabilities. The sixth was
+treated as a decision: diagonal duplication left adjoint to product passed,
+while context, fold/unfold, and lens candidates were explicitly declined.
 
 ## Explicit non-goals
 
@@ -36,5 +37,6 @@ decision step, not a promise to manufacture an adjunction lesson.
   contexts demonstrate shared operations and laws.
 - No lesson that cannot produce an executable law check and a useful visual.
 
-The capability ledger in `docs/sw-mlpl-capabilities.md` is the starting input
-for that saga; candidates are not promises.
+The capability ledger in `docs/sw-mlpl-capabilities.md` records the evidence
+and the next boundary. Completed concrete lessons are not evidence for generic
+interfaces.

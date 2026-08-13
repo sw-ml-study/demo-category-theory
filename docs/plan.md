@@ -1,7 +1,7 @@
 # Implementation plan: category theory you can watch execute
 
-Status: **first curriculum implemented; advanced curriculum queued in a second
-Agentrail saga**.
+Status: **all nineteen capability-gated lessons implemented; advanced saga
+integration complete**.
 
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the
@@ -42,8 +42,9 @@ obeys**.
 - Reduction may appear here only for the categorical/practical payoff
   (reassociation and parallel execution), not as a second monoid lesson.
 - Applicatives, monads, Kleisli arrows, folds/unfolds, optics, profunctors, and
-  adjunctions are a later saga. They enter only after the first curriculum
-  proves the visual grammar and reveals the actual language limits.
+  adjunctions were gated behind the first curriculum's visual grammar and
+  measured language limits. The implemented concrete subset is below;
+  profunctors and generic interfaces remain deferred.
 - Never edit sibling repositories from this repository. Record sw-MLPL gaps in
   `docs/upstream-asks.md` with a minimal executable probe. Maintain the broader
   capability/design ledger in `docs/sw-mlpl-capabilities.md`, including ideas
@@ -324,3 +325,13 @@ Bifunctors and profunctors remain research candidates until a real two-sided
 data transformation needs them. Generic `Functor`, `Applicative`, or `Monad`
 interfaces remain deferred until at least two useful concrete contexts expose
 the same operations and laws. Category-specific syntax remains out of scope.
+
+### Completion handoff
+
+The advanced saga delivered Lessons 12-19 and closed with a full generated and
+law-suite audit. The next work should begin from a concrete ML/data workload,
+not an unused category-theory term. A second practical context could justify
+revisiting generic contextual interfaces; another nested configuration could
+justify record-update ergonomics; recursive or streaming data could justify
+recursion-scheme research; and a real two-input transformation could motivate
+bifunctors or profunctors. None is currently a committed lesson.
