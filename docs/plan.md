@@ -382,3 +382,13 @@ measured upstream ask for callable-returning function composition.
 Next: repair the remaining research2 mathematical-precision issues in the
 arrows, product/coproduct, functor, naturality, and universal-construction
 leaves. No blocker prevents that audit.
+### Research2 mathematical-precision repair (2026-08-13)
+
+The affected leaves now name their categorical setting and claim boundary.
+Lesson 01 restricts function language to its concrete category; Lesson 07
+names array construction plus `each` as the functorial action; Lesson 09 calls
+its results finite naturality instances; Lesson 22 makes unique factorization
+primary; and Lesson 19 introduces its adjunction in three prerequisite stages.
+
+Next: run the curriculum-wide eight-part quality integration audit. No blocker
+is known; the audit may identify individual leaves requiring follow-up.

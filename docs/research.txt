@@ -1558,3 +1558,16 @@ function value. The explicit tree interpreter is honest and executable, while
 `docs/upstream-asks.md` records why native/library support would benefit normal
 ML and data pipelines. Next is the broader mathematical-precision leaf audit;
 there is no blocker.
+## Research2 mathematical-precision repairs, 2026-08-13
+
+Five high-risk claims now carry explicit setting and boundary metadata in their
+browser leaves. Functions model morphisms only in the selected concrete
+category. Array construction together with `each` supplies the functorial
+action. Matrix equalities verify finite naturality instances. The equalizer's
+agreeing subset is Set intuition subordinate to unique factorization. The
+diagonal/product adjunction now introduces duplication, unit/counit, and
+triangle identities as three stages.
+
+`scripts/check-mathematical-boundaries` prevents the strongest misleading
+phrases from returning. Next is the curriculum-wide quality audit; there is no
+known blocker.

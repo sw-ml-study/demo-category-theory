@@ -10,8 +10,8 @@ not, by itself, a proof in arbitrary categories.
 1. `arrows.mlpl` — begin in a concrete category where ordinary functions model
    morphisms; categorical morphisms are not functions in every category.
 2. `identity_composition.mlpl` — identity changes neither side of composition.
-3. `composition_associativity.mlpl` — prerequisite: composition; this lesson is
-   queued for a more honest two-tree representation.
+3. `composition_associativity.mlpl` — prerequisite: composition; distinct
+   left- and right-associated trees execute to the same morphism.
 4. `commutative_square.mlpl` — two directed routes execute to one result.
 5. `products.mlpl`, then `coproducts.mlpl` — universal projections versus
    universal tagged case analysis.
@@ -50,7 +50,9 @@ identity, then treat category-of-elements/density separately.
   `independent_contexts.mlpl` / `dependent_contexts.mlpl`
 - `lawful_reduction.mlpl` → `fold_fusion.mlpl` → `bounded_unfold.mlpl`
 - `model_config_lens.mlpl`
-- `diagonal_product_adjunction.mlpl` after products and functors
+- `diagonal_product_adjunction.mlpl` after products and functors: first read
+  duplicate `X -> (X,X)`, then product `(A,B) -> A times B`, then unit/counit,
+  and only then interpret the two executable triangle identities
 
 These are concrete programming contexts, not generic `Functor`, `Monad`, lens,
 or adjunction interfaces.

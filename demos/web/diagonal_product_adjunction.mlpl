@@ -4,6 +4,11 @@
 # ***************************************************************************
 # * WHAT THIS SHOWS
 # * Duplicate and matching product projections cancel in both triangles.
+# * SETTING -- the diagonal/product adjunction in a finite product fixture.
+# * BOUNDARY -- this leaf assumes products and functors; it is not a first definition.
+# * STAGE 1 -- duplicate sends X to (X,X); product sends (A,B) to A times B.
+# * STAGE 2 -- unit duplicates and counit selects the matching projections.
+# * STAGE 3 -- the two triangle composites below return their starting values.
 # ***************************************************************************
 ;
 def u:duplicate(value) { "Duplicate one value into both diagonal components."; {left: value, right: value} }  # unit
@@ -25,5 +30,5 @@ diagonal_product_adjunction_visual  # display bound visual once
 # ***************************************************************************
 # * HOW TO READ THE RESULT
 # * Unit duplicates; counit keeps matching projections; both triangles are id.
-# * THE POINT -- this concrete product construction genuinely has an adjoint.
+# * THE POINT -- this fixture executes the two triangles after the adjunction context.
 # ***************************************************************************

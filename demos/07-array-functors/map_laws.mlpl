@@ -1,4 +1,4 @@
-# Lesson 07 -- arrays as one concrete functor.
+# Lesson 07 -- array construction and each as one concrete functorial action.
 # visual: ascii, svg
 # loops: 0
 include "../../lib/category.mlpl"
@@ -16,5 +16,5 @@ disp([xs, lifted, composition_mapped_once, bad])
 wrote = write_text("out/07-array-functor.svg", u:functor_diagram())
 u:epilog_open()
 u:explain("out/07-array-functor.svg", "The top arrow maps one scalar; the bottom arrow maps the whole array. Both pulse together because lifting preserves composition.")
-u:takeaway("For arrays, each(id)=id and each(g after f)=each(g) after each(f). A fake lift that reverses exposes index 0: expected 1, actual 3.")
+u:takeaway("The array construction maps value types to array types, while each maps arrows and preserves identity/composition. Arrays alone are not the functor.")
 if u:array_functor_identity(xs) * u:array_functor_composition(:u:increment, :u:double, :u:increment_then_double, xs) * witness.found * eq(witness.index, 0) * is_ok(wrote) { ok("array functor laws verified") } else { err("array functor law failed") }

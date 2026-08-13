@@ -3,7 +3,7 @@
 # loops: 0
 include "../../lib/diagonal_product_adjunction.mlpl"
 include "../../lib/render.mlpl"
-u:prolog({title: "LESSON 19 -- DUPLICATE AND PAIR CANCEL IN TRIANGLES", intro: "Duplicate values into two views, then project the matching components back into one product."})
+u:prolog({title: "LESSON 19 -- DUPLICATE AND PRODUCT FORM AN ADJUNCTION", intro: "Stage 1 names diagonal duplication and product; stage 2 identifies unit/counit; stage 3 executes both triangle identities."})
 product_value = {left: 3, right: 5}
 product_triangle = u:product_counit(u:diagonal_duplicate(product_value))
 diagonal_value = {left: 3, right: 5}
@@ -13,6 +13,6 @@ broken_witness = u:adjunction_law_witness("product triangle", product_value, bro
 disp([product_triangle.left, product_triangle.right, equal(product_triangle, product_value), equal(diagonal_triangle, diagonal_value), broken.left, broken.right, broken_witness.found])
 wrote = write_text("out/19-diagonal-product-adjunction.svg", u:diagonal_product_adjunction_diagram())
 u:epilog_open()
-u:explain("out/19-diagonal-product-adjunction.svg", "The unit duplicates product (3,5); the counit takes the matching left and right projections and returns (3,5). A bad counit takes left twice and returns (3,3).")
+u:explain("out/19-diagonal-product-adjunction.svg", "After products and functors are known: the unit duplicates (3,5), the counit takes matching projections, and each triangle returns its starting value. A bad counit returns (3,3).")
 u:takeaway("The two triangle identities make diagonal duplication left adjoint to product. This concrete Set example earns the adjunction vocabulary.")
 if equal(product_triangle, product_value) * equal(diagonal_triangle, diagonal_value) * broken_witness.found * is_ok(wrote) { ok("diagonal-product adjunction verified") } else { err("adjunction triangle invariant failed") }

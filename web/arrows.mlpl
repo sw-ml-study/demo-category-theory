@@ -1,9 +1,11 @@
-# Web Lesson 01 -- arrows are functions.
+# Web Lesson 01 -- our first arrows are executable functions.
 # visual: svg
 # loops: 0
 # ***************************************************************************
 # * WHAT THIS SHOWS
 # * A concrete morphism: five source numbers and the five results of doubling.
+# * SETTING -- finite number sets with sw-MLPL functions as morphisms.
+# * BOUNDARY -- morphisms are not literally functions in every category.
 # ***************************************************************************
 ;
 def u:double(x) { "Serve as the scalar morphism g whose lifted or composed action is being tested.";  2 * x }  # the arrow's behavior
@@ -14,11 +16,11 @@ disp([xs, ys])  # rows are source values and their destinations
 # * THE VISUAL
 # * The pink token is the same input before and after crossing double.
 # ***************************************************************************
-def u:arrows_visual() { "Render the directed SVG witness for this lesson categorical law."; "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 220\" width=\"700\" height=\"220\" role=\"img\"><title>arrows are functions</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.token{fill:rgb(247,118,142);animation:m 3s infinite alternate}@keyframes m{to{transform:translateX(400px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(400px)}}</style><rect width=\"700\" height=\"220\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"60\" y=\"70\" width=\"150\" height=\"90\" rx=\"16\"/><rect class=\"obj\" x=\"490\" y=\"70\" width=\"150\" height=\"90\" rx=\"16\"/><text x=\"135\" y=\"92\" text-anchor=\"middle\">Numbers</text><text x=\"565\" y=\"92\" text-anchor=\"middle\">Numbers</text><line class=\"arrow\" x1=\"210\" y1=\"115\" x2=\"490\" y2=\"115\"/><text x=\"350\" y=\"95\" text-anchor=\"middle\">double</text><text x=\"135\" y=\"125\" text-anchor=\"middle\">3</text><text x=\"565\" y=\"125\" text-anchor=\"middle\">6</text><circle class=\"token\" cx=\"190\" cy=\"140\" r=\"11\"/></svg>" }  # named custom visual
+def u:arrows_visual() { "Render the directed SVG witness for this lesson categorical law."; "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 220\" width=\"700\" height=\"220\" role=\"img\"><title>our first arrows are executable functions</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.token{fill:rgb(247,118,142);animation:m 3s infinite alternate}@keyframes m{to{transform:translateX(400px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(400px)}}</style><rect width=\"700\" height=\"220\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"60\" y=\"70\" width=\"150\" height=\"90\" rx=\"16\"/><rect class=\"obj\" x=\"490\" y=\"70\" width=\"150\" height=\"90\" rx=\"16\"/><text x=\"135\" y=\"92\" text-anchor=\"middle\">Numbers</text><text x=\"565\" y=\"92\" text-anchor=\"middle\">Numbers</text><line class=\"arrow\" x1=\"210\" y1=\"115\" x2=\"490\" y2=\"115\"/><text x=\"350\" y=\"95\" text-anchor=\"middle\">double</text><text x=\"135\" y=\"125\" text-anchor=\"middle\">3</text><text x=\"565\" y=\"125\" text-anchor=\"middle\">6</text><circle class=\"token\" cx=\"190\" cy=\"140\" r=\"11\"/></svg>" }  # named custom visual
 arrows_visual = u:arrows_visual()  # bind visual constant
 arrows_visual  # display bound visual once
 # ***************************************************************************
 # * HOW TO READ THE RESULT
 # * The two array rows verify every mapping; the token makes one mapping seen.
-# * THE POINT -- an arrow is an executable function, not decorative notation.
+# * THE POINT -- in this concrete category, the arrow is an executable function.
 # ***************************************************************************

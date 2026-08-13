@@ -18,5 +18,5 @@ disp([witness.index, witness.expected, witness.actual])
 wrote = write_text("out/09-natural-transformation.svg", u:naturality_diagram())
 u:epilog_open()
 u:explain("out/09-natural-transformation.svg", "Each green square chooses a matrix shape, maps every cell, and transposes. Either order lands at the same transposed matrix. The red square adds one inside its component and splits cell 0 into 3 versus 4.")
-u:takeaway("A natural transformation is a compatible family of component maps. Here transpose is the family; generic abstraction over arbitrary contexts is not required to execute its naturality squares.")
+u:takeaway("Transpose supplies components between the 2D-array shape contexts before and after axis reversal. These finite matrices verify instances of naturality; they do not prove the law for every matrix or category.")
 if u:transpose_natural(:u:increment, a) * u:transpose_natural(:u:double, b) * witness.found * eq(witness.index, 0) * eq(witness.expected, 3) * eq(witness.actual, 4) * is_ok(wrote) { ok("transpose naturality verified") } else { err("naturality invariant failed") }

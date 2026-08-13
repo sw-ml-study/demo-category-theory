@@ -1,10 +1,10 @@
-# Lesson 01 -- objects and morphisms as finite values and functions.
+# Lesson 01 -- our first arrows are executable functions.
 # visual: ascii, svg
 # loops: 0
 
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
-u:prolog({title: "LESSON 01 -- ARROWS ARE FUNCTIONS", intro: "Watch double map every visible source value to one target value."})
+u:prolog({title: "LESSON 01 -- OUR FIRST ARROWS ARE FUNCTIONS", intro: "Work in a concrete category of finite number sets and sw-MLPL functions; other categories can have non-function morphisms."})
 def u:double(x) { "Serve as the scalar morphism g whose lifted or composed action is being tested.";  2 * x }
 xs = range(5)
 ys = each(:u:double, xs)
@@ -12,5 +12,5 @@ disp([xs, ys])
 wrote = write_text("out/01-arrows.svg", u:arrow_diagram())
 u:epilog_open()
 u:explain("out/01-arrows.svg", "The pink token crosses the arrow labelled double. The two boxes are concrete finite sets of numbers.")
-u:takeaway("A morphism is direction plus behavior: each visible input has exactly one visible output.")
+u:takeaway("In this chosen concrete category, a morphism is represented by a function with direction and behavior. This is not a definition of morphisms in every category.")
 if equal(ys, [0, 2, 4, 6, 8]) * is_ok(wrote) { ok("arrow mapped every input") } else { err("arrow lesson invariant failed") }

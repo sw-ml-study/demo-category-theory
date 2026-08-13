@@ -1,4 +1,4 @@
-# Lesson 22 -- equalizer as the universal agreeing subset.
+# Lesson 22 -- equalizer by universal factorization in finite sets.
 # visual: ascii, svg
 # loops: 0
 include "../../lib/equalizer_coequalizer.mlpl"
@@ -16,6 +16,6 @@ disp(routes.right)
 disp([factorization.commutes, factorization.unique, broken_witness.found])
 wrote = write_text("out/22-equalizer.svg", u:equalizer_diagram())
 u:epilog_open()
-u:explain("out/22-equalizer.svg", "Rows 0 and 2 are the largest subset where classifiers f and g agree. Any lawful mediator into A must land there and factors through E.")
-u:takeaway("An equalizer is more than filtering: it is the universal subobject on which parallel arrows become equal.")
+u:explain("out/22-equalizer.svg", "In finite sets, rows 0 and 2 give the familiar agreeing subset. The decisive check is that every map into A equalizing f and g factors uniquely through E.")
+u:takeaway("The agreeing subset is Set intuition; unique factorization through its inclusion is the categorical definition used by this fixture.")
 if equal(inclusion, [0, 2]) * equal(routes.left, routes.right) * factorization.commutes * factorization.unique * broken_witness.found * is_ok(wrote) { ok("equalizer universal property verified") } else { err("equalizer invariant failed") }

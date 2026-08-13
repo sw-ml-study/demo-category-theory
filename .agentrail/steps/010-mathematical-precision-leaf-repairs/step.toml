@@ -1,6 +1,6 @@
 number = 10
 slug = "mathematical-precision-leaf-repairs"
-status = "pending"
+status = "in-progress"
 description = "Apply research2 mathematical precision fixes to affected leaves: first arrows..."
 role = "production"
 context_files = []

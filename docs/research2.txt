@@ -691,3 +691,8 @@ resolved with two genuinely distinct executable composition trees and a visual
 that displays both structures beside their common path. Because sw-MLPL lacks
 a callable-returning `compose`, the lesson uses a documented record-tree
 interpreter and records that general capability request in the upstream ledger.
+Implementation note (2026-08-13, Step 010): the mathematical-precision
+recommendations for arrows, array functor action, transpose naturality,
+equalizers, and the diagonal/product adjunction are implemented in CLI/browser
+narration, the learning path, and README. A dedicated check now requires
+setting/boundary metadata and rejects the previously overstrong formulations.

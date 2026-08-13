@@ -4,6 +4,8 @@
 # ***************************************************************************
 # * WHAT THIS SHOWS
 # * The equalizer keeps exactly the inputs where two classifiers agree.
+# * SETTING -- finite sets, where the equalizer appears as an agreeing subset.
+# * BOUNDARY -- the categorical definition is unique factorization, not size.
 # ***************************************************************************
 ;
 left_classifier = [0, 1, 1, 2]  # first parallel arrow
@@ -13,7 +15,7 @@ left_route = [take(left_classifier, 0, 0), take(left_classifier, 0, 2)]  # throu
 right_route = [take(right_classifier, 0, 0), take(right_classifier, 0, 2)]  # through g
 factor_through_equalizer = [0, 1]  # reconstructs inclusion [0,2]
 mediator_using_disagreeing_row = [0, 1]  # includes a disagreeing source row
-disp(equalizer)  # largest agreeing subset
+disp(equalizer)  # agreeing subset in this finite Set fixture
 disp([equal(left_route, right_route), equal(mediator_using_disagreeing_row, equalizer)])  # 1 then 0
 # ***************************************************************************
 # * THE VISUAL
@@ -25,5 +27,5 @@ equalizer_visual  # display bound visual once
 # ***************************************************************************
 # * HOW TO READ THE RESULT
 # * Every lawful mediator lands in E and therefore factors through inclusion.
-# * THE POINT -- equalizer is the universal agreeing subobject.
+# * THE POINT -- every equalizing map factors uniquely through E's inclusion.
 # ***************************************************************************

@@ -51,13 +51,15 @@ different meanings of “full functor support”—are tracked in
 
 ## Demo visuals
 
-### 1. An arrow is an executable function
+### 1. Our first arrows are executable functions
 
 ![A pink value token moving from a Numbers object to another Numbers object along an arrow labelled double](assets/previews/01-arrows.svg)
 
 What to notice: the colored token retains its identity while its value changes
 from `3` to `6`. The diagram is backed by the displayed mapping of every input,
-not a single cherry-picked value. Sources: [CLI lesson](demos/01-arrows/arrows.mlpl),
+not a single cherry-picked value. This is the chosen concrete category of
+finite number sets and functions; morphisms are not functions in every
+category. Sources: [CLI lesson](demos/01-arrows/arrows.mlpl),
 [web lesson](demos/web/arrows.mlpl).
 
 ### 2. Identity changes no destination
@@ -111,6 +113,8 @@ statically exhaustive sum types. Sources: [CLI lesson](demos/06-coproducts/case_
 
 What to notice: applying `inc` then `double` cellwise gives the same array as
 mapping their composition once. Mapping identity returns the original array.
+The functorial action is the array construction on value types together with
+`each` on arrows—not arrays by themselves.
 Sources: [CLI lesson](demos/07-array-functors/map_laws.mlpl),
 [web lesson](demos/web/array_functor.mlpl).
 
@@ -131,6 +135,8 @@ changes the axes to `3×2`. Sources:
 What to notice: transposing after a cellwise map equals mapping after
 transpose, for each tested matrix shape. Adding `+1` inside one component
 breaks compatibility immediately: flattened cell `0` becomes `3` versus `4`.
+These computations verify finite naturality instances; they are not a general
+proof for all shapes or categories.
 Sources: [CLI lesson](demos/09-natural-transformations/transpose.mlpl),
 [web lesson](demos/web/natural_transformation.mlpl).
 
@@ -229,7 +235,8 @@ batch size `32` and version `3` stay fixed. The red setter resets batch size to
 
 What to notice: duplicating `(3,5)` and then selecting the matching left/right
 components returns `(3,5)` in both triangle identities. Selecting left twice
-instead produces `(3,3)`. Sources:
+instead produces `(3,3)`. Read this after products and functors: duplication
+and product come first, then unit/counit, then the triangle checks. Sources:
 [CLI lesson](demos/19-adjunction/duplicate_and_pair.mlpl),
 [web lesson](demos/web/diagonal_product_adjunction.mlpl), and the
 [adjunction decision](docs/adjunction-decision.md).
@@ -254,13 +261,14 @@ ways is zero; ordinary finite sets do not have a zero object. Sources:
 [CLI lesson](demos/21-universal-endpoints/unique_arrows.mlpl),
 [web lesson](demos/web/universal_endpoints.mlpl).
 
-### 22. An equalizer keeps the largest agreeing subset
+### 22. An equalizer universally includes the agreeing inputs
 
 ![Inputs 0 and 2 included where two parallel classifiers agree, with row 1 rejected](assets/previews/22-equalizer.svg)
 
 What to notice: classifiers `f` and `g` agree exactly on rows `0` and `2`.
-Every mediator on which they agree must land in that subset and factors through
-its inclusion. Sources: [CLI lesson](demos/22-equalizers/agreeing_rows.mlpl),
+In finite sets this looks like an agreeing subset, but the categorical content
+is that every equalizing mediator factors uniquely through its inclusion.
+Sources: [CLI lesson](demos/22-equalizers/agreeing_rows.mlpl),
 [web lesson](demos/web/equalizer.mlpl).
 
 ### 23. A coequalizer imposes the forced quotient

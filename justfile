@@ -29,5 +29,6 @@ audit:
     ./scripts/check-visual-grammar
     ./scripts/check-curriculum-docs
     ./scripts/check-leaf-language
+    ./scripts/check-mathematical-boundaries
 
 check: probes demos tests audit

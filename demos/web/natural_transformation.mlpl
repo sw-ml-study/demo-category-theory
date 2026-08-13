@@ -4,6 +4,8 @@
 # ***************************************************************************
 # * WHAT THIS SHOWS
 # * Transpose commutes with cellwise mapping across explicit matrix shapes.
+# * SETTING -- two concrete 2D-array shape contexts connected by transpose.
+# * BOUNDARY -- finite equalities verify instances; they do not prove naturality generally.
 # ***************************************************************************
 ;
 def u:increment(x) { "Serve as the scalar morphism f whose lifted or composed action is being tested.";  x + 1 }  # a morphism mapped over every cell
@@ -21,6 +23,6 @@ natural_transformation_visual = u:natural_transformation_visual()  # bind visual
 natural_transformation_visual  # display bound visual once
 # ***************************************************************************
 # * HOW TO READ THE RESULT
-# * Equal matrices prove one component; the family repeats for each shape.
-# * THE POINT -- naturality means every component square commutes.
+# * Equal matrices verify this finite instance of one naturality square.
+# * THE POINT -- naturality requires every component square, beyond this fixture.
 # ***************************************************************************
