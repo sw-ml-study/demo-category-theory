@@ -1,6 +1,6 @@
 number = 1
 slug = "context-capability-survey"
-status = "pending"
+status = "in-progress"
 description = "Measure the current sw-MLPL surface needed for the advanced curriculum before..."
 role = "production"
 context_files = []

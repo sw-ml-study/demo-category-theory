@@ -1,0 +1,42 @@
+# Conformance for the concrete contextual record and its mapping/bind behavior.
+# loops: 0
+include "lib/context.mlpl";
+def u:identity_payload(value) { "Return one payload unchanged."; value }
+def u:increment_payload(value) { "Increment one numeric payload."; value + 1 }
+def u:double_payload(value) { "Double one numeric payload."; value * 2 }
+def u:increment_then_double_payload(value) { "Increment and then double one numeric payload."; 2 * (value + 1) }
+def u:validate_positive_payload(value) { "Double a positive payload or return a contextual failure."; scalar = take(value, 0, 0); if equal(lt(0, scalar), 1) { u:context_success(scalar * 2) } else { u:context_failure("not positive") } }
+
+@test {name: "context records retain nested payloads", tags: ["contexts", "records"]}
+def u:test_context_records() { "Nested records and arrays survive contextual wrapping and equality.";
+  nested = u:context_success({items: [1, 2], meta: {count: 2}});
+  u:assert_eq(equal(nested, u:context_success({items: [1, 2], meta: {count: 2}})), 1, "nested payload changed")?;
+  u:assert_eq(u:context_is_success(nested), 1, "success tag missing")?;
+  u:assert_eq(u:context_is_failure(u:context_failure("bad")), 1, "failure tag missing")?;
+  ok({test: "context-records", cases: 3})
+}
+
+@test {name: "context map obeys concrete functor laws", tags: ["contexts", "laws"]}
+def u:test_context_map_laws() { "Mapping identity/composition works and failures short-circuit.";
+  success = u:context_success(3);
+  failure = u:context_failure("bad input");
+  u:assert_eq(equal(u:context_map(success, :u:identity_payload), success), 1, "identity law")?;
+  mapped_twice = u:context_map(u:context_map(success, :u:increment_payload), :u:double_payload);
+  mapped_once = u:context_map(success, :u:increment_then_double_payload);
+  u:assert_eq(equal(mapped_twice, mapped_once), 1, "composition law")?;
+  u:assert_eq(equal(u:context_map(failure, :u:increment_payload), failure), 1, "failure was transformed")?;
+  ok({test: "context-map-laws", cases: 3})
+}
+
+@test {name: "context bind returns contexts and preserves failures", tags: ["contexts", "bind"]}
+def u:test_context_bind_surface() { "Contextual function returns survive call and earlier failures skip later work.";
+  bound = u:context_bind(u:context_success(4), :u:validate_positive_payload);
+  u:assert_eq(equal(bound, u:context_success(8)), 1, "context return distorted")?;
+  earlier = u:context_failure("earlier");
+  u:assert_eq(equal(u:context_bind(earlier, :u:validate_positive_payload), earlier), 1, "failure did not short-circuit")?;
+  witness = u:context_counterexample(u:context_success(8), u:context_success(9));
+  u:assert_eq(witness.found, 1, "context witness absent")?;
+  ok({test: "context-bind-surface", cases: 3})
+}
+
+u:run_registered_tests()

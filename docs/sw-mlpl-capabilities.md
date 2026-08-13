@@ -41,6 +41,9 @@ candidate's status.
 | Generic context mapping (functor abstraction) | 07-09 | candidate | One abstraction can associate a mapping operation with more than one context and verify identity/composition laws. |
 | Parametric/type-constructor abstraction | 07-09+ | candidate | If static types are in scope for sw-MLPL, a general API can express a context `F` and maps `A -> B` to `F A -> F B`. |
 | Generic constraints/protocols | 07-09+ | candidate | Multiple lawful mapping contexts can share an interface without hard-coded type or tag dispatch. |
+| Contextual record returns | 12-15 | supported | Functions invoked with `call` can return tagged records with nested payloads without distortion. |
+| Contextual map and short-circuit bind | 12-15 | supported | Record-tag dispatch maps only successful payloads and preserves an earlier failure unchanged. |
+| Exhaustive contextual variants | 12-15 | awkward | Success/failure tags work dynamically, but the language does not prove that every case is handled. |
 
 ## What “full functor support” could mean
 
@@ -111,6 +114,23 @@ cleanly into this standalone repository and that fixed four-leaf reduction
 trees are expressible with function references. No new language capability is
 required for identity/composition of homomorphisms or for demonstrating why
 associativity permits regrouping and parallel evaluation.
+
+## Advanced-saga measured baseline
+
+Measured 2026-08-12 with the same sw-MLPL 0.20.0 build:
+
+- `probes/context_values.mlpl` verifies tagged success/failure records with
+  nested record/array payloads, equality after wrapping, contextual mapping,
+  contextual records returned through `call`, and failure short-circuiting.
+- `lib/context.mlpl` confines one call-boundary detail: ordinary unary numeric
+  transforms return a one-element array through `call`, so contextual map
+  normalizes that result with `take(..., 0, 0)`. Context-returning functions do
+  not need that normalization; their records survive intact.
+- The concrete context is sufficient to proceed with contextual functor and
+  Kleisli laws. It is not evidence for a generic higher-kinded interface.
+
+No new sw-MLPL capability blocks Lessons 12-13. Static exhaustiveness remains
+awkward and is already captured as a broader tagged-value design question.
 
 ## Decision rule for upstream requests
 

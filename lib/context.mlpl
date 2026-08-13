@@ -1,0 +1,14 @@
+# lib/context.mlpl -- concrete success/failure context for advanced lessons.
+#
+# This is a value-level context represented by a record. It deliberately does
+# not claim static exhaustiveness or a generic Monad interface.
+# loops: 0
+
+def u:context_success(value) { "Wrap one payload in the successful context."; {tag: "success", value: value, message: ""} }
+def u:context_failure(message) { "Wrap one diagnostic message in the failed context."; {tag: "failure", value: 0, message: message} }
+def u:context_is_success(context) { "Return one when the context contains a successful payload."; equal(context.tag, "success") }
+def u:context_is_failure(context) { "Return one when the context contains a failure message."; equal(context.tag, "failure") }
+def u:normalize_called_scalar(value) { "Extract the scalar returned by call for an ordinary unary transform."; take(value, 0, 0) }
+def u:context_map(context, transform) { "Transform a successful payload while preserving an existing failure unchanged."; if u:context_is_success(context) { u:context_success(u:normalize_called_scalar(call(transform, [context.value]))) } else { context } }
+def u:context_bind(context, contextual_step) { "Run the next contextual stage only when the current context is successful."; if u:context_is_success(context) { call(contextual_step, [context.value]) } else { context } }
+def u:context_counterexample(expected, actual) { "Describe whether two contextual results differ and retain both observed values."; {found: 1 - equal(expected, actual), expected: expected, actual: actual} }

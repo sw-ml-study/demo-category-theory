@@ -1,0 +1,13 @@
+# Probe: contextual records, nested payloads, map, bind, and short-circuiting.
+# Measured against sw-MLPL 0.20.0 build d373584c.
+# visual: ascii
+# loops: 0
+include "../lib/context.mlpl"
+def u:increment_payload(value) { "Increment one numeric contextual payload."; value + 1 }
+def u:validate_positive_payload(value) { "Double a positive payload or return a contextual failure."; scalar = take(value, 0, 0); if equal(lt(0, scalar), 1) { u:context_success(scalar * 2) } else { u:context_failure("not positive") } }
+nested = u:context_success({items: [1, 2], meta: {count: 2}})
+mapped = u:context_map(u:context_success(3), :u:increment_payload)
+preserved_failure = u:context_map(u:context_failure("bad input"), :u:increment_payload)
+bound = u:context_bind(u:context_success(4), :u:validate_positive_payload)
+short_circuited = u:context_bind(u:context_failure("earlier"), :u:validate_positive_payload)
+ok({probe: "context-values", nested_equal: equal(nested, u:context_success({items: [1, 2], meta: {count: 2}})), mapped: mapped, preserved_failure: preserved_failure, bound: bound, short_circuited: short_circuited})

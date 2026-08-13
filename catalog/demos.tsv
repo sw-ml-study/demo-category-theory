@@ -4,6 +4,7 @@ nested-equality	probes/nested_equality.mlpl	probes	structured-equality	0	0	ascii
 tagged-values	probes/tagged_values.mlpl	probes	coproduct-encoding	0	0	ascii	current	runnable
 text-svg	probes/text_svg.mlpl	probes	text-construction	0	0	svg	byte-bridge	constrained
 array-mapping	probes/array_mapping.mlpl	probes	concrete-array-functor	0	0	ascii	each	runnable
+context-values	probes/context_values.mlpl	probes	contextual-records-map-bind	0	0	ascii	records,call	runnable
 arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	runnable
 identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	runnable
 associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	runnable

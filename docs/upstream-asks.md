@@ -66,3 +66,21 @@ type-system design.
 Acceptance direction: define a closed two-case value and have tooling reject a
 case analysis that omits either branch. Exact syntax remains an upstream design
 decision.
+
+## 4. `call` scalar results require shape normalization
+
+Status: **awkward**, not blocking contextual map or Kleisli lessons.
+
+Calling an ordinary unary numeric transform with `call(transform, [value])`
+returns a one-element array, while calling a function that returns a record
+returns that record directly. `lib/context.mlpl` therefore uses
+`take(result, 0, 0)` for contextual map but must not apply it to contextual
+bind.
+
+This is usable once understood, but generic higher-order helpers must know the
+return kind in order to unwrap correctly. That affects configurable data/model
+pipelines beyond category-theory demos.
+
+Acceptance direction: document and regularize the `call` return-shape contract,
+or provide an invocation form whose scalar return preserves scalar rank while
+record returns remain records. Exact API remains an upstream design decision.
