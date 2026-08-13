@@ -1443,3 +1443,19 @@ evidence. CT035 completeness, CT036 cocompleteness, and the general CT044
 density theorem remain constrained rather than silently promoted from bounded
 examples. The next capability-ordered saga is CT045-CT064: finite diagram and
 unique-isomorphism work first, wide/indexed and filtered systems later.
+
+CT045-CT064 capability survey, 2026-08-13
+
+`probes/indexed_limits.mlpl` verifies that nested diagram records, rectangular
+bounded families, finite function-table composition, mediator-count
+uniqueness, and three-stage stabilization all execute with the current
+interpreter. This puts CT054's uniqueness up to unique isomorphism first in the
+implementation queue, followed by bounded wide/indexed constructions and
+finite preservation examples.
+
+The survey does not turn a finite prefix into an infinite construction.
+Filtered/direct limits remain constrained unless a fixture proves finite
+stabilization; inverse/direct limits are limited to named finite stages, and
+final/initial functors still need comma-category connectivity probes. No new
+sw-MLPL capability request is justified yet. Dynamic arity, lifting, quotient,
+or enumeration requests must be backed by the later lesson that needs them.

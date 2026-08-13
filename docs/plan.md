@@ -11,7 +11,10 @@ the program-level inventory.
 Current continuation status: CT020-CT043 are implemented as Lessons 20-28,
 except CT035-CT036 remain explicitly constrained. CT044 has an executable
 bounded reconstruction but the general density theorem remains constrained.
-Step 8 audits the saga and queues the next concept range.
+The active CT045-CT064 saga has measured its finite representation surface in
+`docs/ct045-ct064-capability-matrix.md`. CT054's uniqueness up to unique
+isomorphism is the next runnable lesson; infinite-family claims and unprobed
+lifting/comma-category constructions remain explicitly deferred.
 
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the

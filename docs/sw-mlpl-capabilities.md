@@ -231,6 +231,22 @@ No generic natural-transformation enumeration or colimit construction exists,
 so the general Yoneda and density theorems are not represented as language
 abstractions. The bounded correspondence needs no new runtime feature.
 
+## CT045-CT064 indexed-limit surface
+
+Measured 2026-08-13, `probes/indexed_limits.mlpl` confirms that current records
+and rectangular arrays can represent one finite diagram and bounded indexed
+family. Numeric function tables compose, explicit mediator counts distinguish
+existence-and-uniqueness from failure, and a three-stage chain can report
+stabilization. These capabilities make CT054 and the later finite wide/indexed
+and preservation fixtures runnable without a new language feature.
+
+The evidence does not quantify over arbitrary diagram shapes or infinite
+families. Filtered/direct colimits remain constrained to finite or explicitly
+stabilized chains; inverse/direct limits remain fixed-stage constructions.
+Creation, reflection, and final/initial functors require their own lifting and
+comma-category probes. No upstream ask follows from the survey alone. See
+`docs/ct045-ct064-capability-matrix.md` for all twenty per-concept decisions.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

@@ -65,7 +65,8 @@ interface-respecting schema pushout.
 - authored browser lessons: `demos/web/*.mlpl`
 - generated browser copies: `web/*.mlpl`
 - README-ready generated visuals: `assets/previews/*.svg`
-- capability evidence: `probes/*.mlpl`
+- capability evidence: `probes/*.mlpl`, with the active CT045-CT064 decisions
+  summarized in `docs/ct045-ct064-capability-matrix.md`
 - law suites: `tests/*.mlpl`
 - vocabulary and boundaries: `docs/terminology.md` and
   `docs/sw-mlpl-capabilities.md`
