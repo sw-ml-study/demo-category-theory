@@ -1,9 +1,10 @@
 number = 3
 slug = "equalizers-coequalizers"
-status = "in-progress"
+status = "completed"
 description = "Implement CT029-CT030 as practical finite equalizer and coequalizer lessons. ..."
 role = "production"
 context_files = []
 created_at = "2026-08-12T18:32:14"
+completed_at = "2026-08-12T18:59:37"
 task_type = "lesson"
-commits = []
+commits = ["0e5eaec2539e718b664bafbdeabf144697d5fd14"]
