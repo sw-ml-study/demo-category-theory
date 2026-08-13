@@ -1,0 +1,9 @@
+number = 1
+slug = "context-capability-survey"
+status = "pending"
+description = "Measure the current sw-MLPL surface needed for the advanced curriculum before..."
+role = "production"
+context_files = []
+created_at = "2026-08-12T17:20:36"
+task_type = "scaffold"
+commits = []

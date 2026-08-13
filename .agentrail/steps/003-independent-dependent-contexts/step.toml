@@ -1,0 +1,9 @@
+number = 3
+slug = "independent-dependent-contexts"
+status = "pending"
+description = "Implement Lessons 14-15 only on the stable concrete context from Lessons 12-1..."
+role = "production"
+context_files = []
+created_at = "2026-08-12T17:20:36"
+task_type = "lesson"
+commits = []

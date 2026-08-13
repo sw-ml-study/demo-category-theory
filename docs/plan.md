@@ -1,6 +1,7 @@
 # Implementation plan: category theory you can watch execute
 
-Status: **first curriculum implemented; final integration verified in Step 8**.
+Status: **first curriculum implemented; advanced curriculum queued in a second
+Agentrail saga**.
 
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the
@@ -260,3 +261,55 @@ documents this convention without inventing screenshots before demos exist.
 - If natural transformations cannot be explained cleanly with the established
   visual grammar, end the first curriculum at functors and move lesson 09 into
   the later saga rather than weakening the earlier lessons.
+
+## Advanced curriculum: contexts, recursion, and structured access
+
+The second curriculum follows `docs/advanced-saga-boundary.md`. Its thesis is
+that advanced category-theory vocabulary earns a lesson only when it explains
+a useful ML/data-programming pattern already made executable in sw-MLPL.
+
+### Capability-first lesson sequence
+
+| # | Lesson | Concrete programming subject | Executable law / visual | Gate |
+|---|---|---|---|---|
+| 12 | Optional/error contexts | Tagged success, absence, and failure in data pipelines | Context map preserves identity/composition; colored tracks retain failure | Probe records, nested payloads, and reusable dispatch first |
+| 13 | Kleisli composition | Pipelines whose stages may fail | Left/right identity and associativity over finite inputs; failure short-circuits visibly | Requires honest contextual return values and readable composition helpers |
+| 14 | Independent contextual computation | Combine validations or independent feature computations | Product-style combination and applicative identity/composition fixtures | Build only if two independent contextual operations have a practical example |
+| 15 | Dependent contextual computation | A later step chooses work from an earlier result | `bind` laws over the same concrete context, with a broken witness | Do not generalize to “Monad” until Lesson 12/13 APIs are stable |
+| 16 | Folds as structured consumption | Aggregate arrays/trees into summaries | Fold fusion or homomorphism law; serial and lawful regrouped views | Probe the smallest useful recursive/tree representation first |
+| 17 | Unfolds as structured generation | Generate arrays/streams from seeds | Unfold/fold round-trip over a bounded fixture | Must remain finite and deterministic in the first version |
+| 18 | Optics for nested data | Read/update nested model or configuration records | Get-put, put-get, and put-put laws with a counterexample | Requires a concrete nested ML/data record; no optics DSL |
+| 19 | Adjunction candidate | Relationship between two already implemented constructions | Unit/counit triangles made executable and visual | Conditional: omit unless Lessons 12-18 naturally exhibit an adjunction |
+
+### Delivery sequence for the second saga
+
+1. **Context capability survey** — probe reusable tagged payloads, contextual
+   function return/call behavior, nested equality, and composition ergonomics;
+   define an explicit result/optional representation and record upstream asks.
+2. **Lessons 12-13: contextual map and Kleisli pipelines** — implement the
+   concrete context and its identity/composition laws, then compose fallible
+   stages and verify Kleisli laws with visible short-circuit paths.
+3. **Lessons 14-15: independent and dependent effects** — implement only after
+   the context APIs prove useful; teach applicative/monadic structure as laws
+   of the concrete pipeline rather than as generic interfaces.
+4. **Lessons 16-17: folds and unfolds** — choose finite array/tree workloads,
+   visualize consumption/generation, and connect laws to fusion or safe
+   execution transformations.
+5. **Lesson 18: optics** — implement lawful access/update for a real nested
+   data fixture and show the three lens laws plus a broken accessor.
+6. **Lesson 19 decision and integration** — audit whether implemented
+   constructions genuinely exhibit an adjunction. Ship the lesson only with
+   concrete evidence; otherwise document the declined candidate and complete
+   integration without it.
+
+Every advanced step inherits the existing demo, docstring/name, generated
+visual, pre-commit, detailed-commit, Agentrail metadata, and push requirements.
+If a lesson is feature-blocked, record a minimal probe and advance to the next
+supported lesson rather than hiding the gap behind a large compatibility layer.
+
+### Deliberately deferred beyond the second saga
+
+Bifunctors and profunctors remain research candidates until a real two-sided
+data transformation needs them. Generic `Functor`, `Applicative`, or `Monad`
+interfaces remain deferred until at least two useful concrete contexts expose
+the same operations and laws. Category-specific syntax remains out of scope.

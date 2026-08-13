@@ -1,0 +1,9 @@
+number = 6
+slug = "adjunction-decision"
+status = "pending"
+description = "Audit the constructions implemented in Lessons 12-18 for a genuine, pedagogic..."
+role = "production"
+context_files = []
+created_at = "2026-08-12T17:20:36"
+task_type = "lesson"
+commits = []

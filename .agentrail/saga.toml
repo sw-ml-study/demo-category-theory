@@ -1,6 +1,6 @@
-name = "visual-category-theory-lessons"
-status = "completed"
-current_step = 8
-created_at = "2026-08-12T14:46:36"
+name = "advanced-category-contexts-and-recursion"
+status = "active"
+current_step = 1
+created_at = "2026-08-12T17:20:18"
 plan_file = ".agentrail/plan.md"
 retroactive = false

@@ -1,0 +1,9 @@
+number = 4
+slug = "folds-and-unfolds"
+status = "pending"
+description = "Implement Lessons 16-17 with a finite practical array or small-tree workload...."
+role = "production"
+context_files = []
+created_at = "2026-08-12T17:20:36"
+task_type = "lesson"
+commits = []

@@ -1,8 +1,9 @@
-# Proposed boundary for a later advanced-concepts saga
+# Boundary for the queued advanced-concepts saga
 
 The first curriculum is complete at natural transformations, with two bridge
-lessons for homomorphisms and lawful reductions. A later saga must not simply
-continue a textbook table of contents.
+lessons for homomorphisms and lawful reductions. The queued second saga starts
+from concrete optional/error pipelines and must not simply continue a textbook
+table of contents. Its detailed lesson and delivery order is in `docs/plan.md`.
 
 ## Entry criteria
 
@@ -14,7 +15,7 @@ Begin only when each proposed lesson has:
 4. a decision about whether missing support is a library concern, a generally
    useful language capability, or category-specific encoding overhead.
 
-## Candidate sequence
+## Capability-gated sequence
 
 1. error/optional pipelines and Kleisli composition;
 2. independent contextual computations (applicative structure);
@@ -23,6 +24,9 @@ Begin only when each proposed lesson has:
 4. folds and unfolds tied to arrays, streams, or model/data traversal;
 5. optics for nested model/configuration data; and
 6. adjunctions only where two implemented constructions already exhibit one.
+
+The first five items are queued as capability-gated work. The sixth is a
+decision step, not a promise to manufacture an adjunction lesson.
 
 ## Explicit non-goals
 
