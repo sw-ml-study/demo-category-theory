@@ -1,0 +1,1 @@
+Completed and fully validated nineteen-lesson concrete category-theory curriculum; future work is evidence-gated by real ML/data workloads.
