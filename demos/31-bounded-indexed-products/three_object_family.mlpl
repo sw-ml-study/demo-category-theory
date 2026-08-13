@@ -1,0 +1,23 @@
+# Lesson 31 -- bounded wide and indexed products/coproducts.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/bounded_indexed_products.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 31 -- THREE OBJECTS FORM A BOUNDED INDEXED LIMIT AND COLIMIT", intro: "Use a discrete three-object diagram: its finite product is the limit and its tagged finite coproduct is the colimit."})
+legs = [2, 5, 7]
+product_mediator = u:three_object_product(2, 5, 7)
+product_law = u:three_object_product_is_universal(product_mediator, legs)
+bad_product_rejected = 1 - u:three_object_product_is_universal([2, 5, 8], legs)
+injections = u:three_object_coproduct_injections(2, 5, 7)
+case_outputs = u:three_object_coproduct_case_outputs(injections)
+coproduct_law = u:three_object_coproduct_is_universal(case_outputs, [12, 25, 37])
+bad_case_rejected = 1 - u:three_object_coproduct_is_universal([12, 25, 38], [12, 25, 37])
+indexed_laws = u:bounded_discrete_limit_and_colimit_laws(product_mediator, legs, case_outputs, [12, 25, 37])
+disp([legs, product_mediator, case_outputs])
+disp(injections)
+disp([product_law, coproduct_law, indexed_laws, bad_product_rejected, bad_case_rejected])
+wrote = write_text("out/31-bounded-indexed-products.svg", u:bounded_indexed_products_visual())
+u:epilog_open()
+u:explain("out/31-bounded-indexed-products.svg", "Three projections point from the product into A, B, and C; three tagged injections point from those objects into the coproduct. The discrete index has no nonidentity compatibility equations.")
+u:takeaway("For a finite discrete diagram, product is its limit and coproduct is its colimit. This is width three, not a claim about arbitrary or infinite families.")
+if indexed_laws * bad_product_rejected * bad_case_rejected * is_ok(wrote) { ok("bounded indexed product and coproduct verified") } else { err("bounded indexed construction invariant failed") }

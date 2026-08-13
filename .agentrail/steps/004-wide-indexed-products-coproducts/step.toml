@@ -1,6 +1,6 @@
 number = 4
 slug = "wide-indexed-products-coproducts"
-status = "pending"
+status = "in-progress"
 description = "Attempt CT045-CT048 wide products, wide coproducts, indexed limits, and index..."
 role = "production"
 context_files = []

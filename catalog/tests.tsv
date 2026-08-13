@@ -12,3 +12,4 @@ representable-hom	tests/test_representable_hom.mlpl	27	CT025-CT026-CT037-CT041-f
 finite-yoneda	tests/test_finite_yoneda.mlpl	28	CT042-CT044-round-trip-elements-density	0	0	none	records,take	runnable
 unique-universal-isomorphism	tests/test_unique_universal_isomorphism.mlpl	29	CT054-forced-inverse-comparisons	0	0	none	records,take	runnable
 finite-diagram-functors	tests/test_finite_diagram_functors.mlpl	30	CT049-CT051-diagram-constant-diagonal	0	0	none	records,fill,take	runnable
+bounded-indexed-products	tests/test_bounded_indexed_products.mlpl	31	CT045-CT048-bounded-discrete-limit-colimit	0	0	none	records,take	runnable

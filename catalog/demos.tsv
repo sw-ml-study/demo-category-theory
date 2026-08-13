@@ -32,6 +32,8 @@ unique-universal-isomorphism	demos/29-unique-universal-isomorphism/forced_invers
 unique-universal-isomorphism-web	demos/web/unique_universal_isomorphism.mlpl	web	CT054-unique-universal-isomorphism	0	0	svg	take	runnable
 diagram-functors	demos/30-diagram-functors/constant_diagonal.mlpl	30-diagram-functors	CT049-CT051-diagram-constant-diagonal	0	0	ascii,svg	records,fill,take	runnable
 diagram-functors-web	demos/web/diagram_constant_diagonal.mlpl	web	CT049-CT051-diagram-constant-diagonal	0	0	svg	take	runnable
+bounded-indexed-products	demos/31-bounded-indexed-products/three_object_family.mlpl	31-bounded-indexed-products	CT045-CT048-bounded-indexed-products-coproducts	0	0	ascii,svg	records,take	runnable
+bounded-indexed-products-web	demos/web/bounded_indexed_products.mlpl	web	CT045-CT048-bounded-indexed-products-coproducts	0	0	svg	take	runnable
 arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	runnable
 identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	runnable
 associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	runnable

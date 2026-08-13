@@ -44,6 +44,8 @@ mathematical meaning and the executable approximation.
 | uniqueness up to unique isomorphism | Any two choices satisfying the same universal property have exactly one compatible isomorphism | Two finite product encodings with projection-forced inverse comparison tables | Literal equality of representations or an arbitrary bijection |
 | diagram category | Category whose objects are diagrams of one fixed shape and arrows are natural transformations | Explicit three-node diagram records with component tables composed pointwise | The index category itself |
 | constant diagram / diagonal functor | Repeat one object and its identity arrows over every part of an index shape | Object-code and identity-table rows over the walking composable pair | Duplicating arbitrary data without functor laws |
+| wide / indexed product and coproduct | Universal product or coproduct over an indexed family | Three projection legs or three numeric-tagged injections for a discrete diagram | Evidence for arbitrary or infinite families |
+| indexed limit / colimit | Universal cone or cocone over a diagram selected by an index category | Product or coproduct of the explicit three-object discrete diagram | A generic or unbounded construction |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

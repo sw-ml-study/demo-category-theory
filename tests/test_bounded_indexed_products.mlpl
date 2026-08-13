@@ -1,0 +1,18 @@
+# Tests for CT045-CT048 bounded indexed products and coproducts.
+include "lib/bounded_indexed_products.mlpl";
+@test {name: "three-object product is a bounded discrete limit", tags: ["CT045", "CT047", "limit"]}
+def u:test_three_object_product_limit() { "Verify three projections force one product mediator and reject a changed leg.";
+  legs = [2, 5, 7];
+  u:assert_eq(u:three_object_product_is_universal(u:three_object_product(2, 5, 7), legs), 1, "three-leg mediator")?;
+  u:assert_eq(1 - u:three_object_product_is_universal([2, 5, 8], legs), 1, "changed leg rejected")?;
+  ok({test: "bounded-product-limit", cases: 2})
+}
+@test {name: "three-object coproduct is a bounded discrete colimit", tags: ["CT046", "CT048", "colimit"]}
+def u:test_three_object_coproduct_colimit() { "Verify three tagged branches force one case map and reject a changed output.";
+  injections = u:three_object_coproduct_injections(2, 5, 7);
+  outputs = u:three_object_coproduct_case_outputs(injections);
+  u:assert_eq(u:three_object_coproduct_is_universal(outputs, [12, 25, 37]), 1, "three-branch case map")?;
+  u:assert_eq(1 - u:three_object_coproduct_is_universal([12, 25, 38], [12, 25, 37]), 1, "changed branch rejected")?;
+  ok({test: "bounded-coproduct-colimit", cases: 2})
+}
+u:run_registered_tests()

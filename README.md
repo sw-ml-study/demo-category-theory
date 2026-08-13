@@ -339,6 +339,16 @@ objects and compose pointwise. A changed composite arrow breaks the functor
 law. Sources: [CLI lesson](demos/30-diagram-functors/constant_diagonal.mlpl),
 [web lesson](demos/web/diagram_constant_diagonal.mlpl).
 
+### 31. Three objects form a bounded indexed limit and colimit
+
+![Three product projections into a discrete family and three coproduct injections out](assets/previews/31-bounded-indexed-products.svg)
+
+What to notice: `[2,5,7]` is forced by three projections; the tagged coproduct
+case map is forced by three injections. This finite discrete index has a limit
+and colimit, but the demonstrated width is three—not arbitrary or infinite.
+Sources: [CLI lesson](demos/31-bounded-indexed-products/three_object_family.mlpl),
+[web lesson](demos/web/bounded_indexed_products.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

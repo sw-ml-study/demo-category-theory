@@ -259,6 +259,11 @@ Identity/composition checks need no generic category or functor value. The
 result supports CT049-CT051 for one explicit shape, not quantification over
 arbitrary index categories.
 
+Lesson 31 and the extended probe show that three-leg product mediators and
+three-branch numeric-tagged coproduct case maps execute with current arrays.
+This supports finite discrete CT045-CT048 fixtures only. Dynamic or infinite
+family abstraction remains unmeasured and is not implied by the bounded result.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

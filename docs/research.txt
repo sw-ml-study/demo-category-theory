@@ -1486,3 +1486,14 @@ arrows in the finite diagram category. Replacing only the composite by
 `take` are sufficient; no upstream capability request follows. CT045-CT048
 bounded wide/indexed products and coproducts are next. Arbitrary index
 categories and unbounded families remain explicit scope boundaries.
+
+CT045-CT048 implementation evidence, 2026-08-13
+
+The extended probe and Lesson 31 confirm that a discrete family of exactly
+three objects is expressible with current rectangular arrays. Product legs
+force mediator `[2,5,7]`; numeric-tagged coproduct injections force case
+outputs `[12,25,37]`. Altering the third component supplies counterexamples.
+Thus product/coproduct are respectively the limit/colimit of this finite
+discrete diagram. “Wide” here means wider than binary but bounded at three.
+Arbitrary and infinite families remain deferred; no upstream request follows.
+CT052-CT053 generalized bounded cones are next.

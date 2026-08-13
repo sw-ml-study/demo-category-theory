@@ -6,10 +6,10 @@ finite unless a later lesson proves a stronger statement.
 
 | ID | Concept | Executable representation | Status / boundary |
 |---|---|---|---|
-| CT045 | wide product | bounded rectangular family plus projection rows | runnable for fixed finite arity; arbitrary family unproven |
-| CT046 | wide coproduct | bounded tagged index/value rows plus case table | runnable with numeric tags; exhaustive static dispatch absent |
-| CT047 | indexed limit | finite diagram record and enumerated cone candidates | runnable for named bounded diagram |
-| CT048 | indexed colimit | finite diagram record and enumerated cocone candidates | runnable for named bounded diagram |
+| CT045 | wide product | bounded rectangular family plus projection rows | implemented at finite width three; arbitrary family deferred |
+| CT046 | wide coproduct | bounded tagged index/value rows plus case table | implemented at finite width three; arbitrary family deferred |
+| CT047 | indexed limit | finite diagram record and enumerated cone candidates | implemented for a three-object discrete diagram |
+| CT048 | indexed colimit | finite diagram record and enumerated cocone candidates | implemented for a three-object discrete diagram |
 | CT049 | diagram category | records of object/arrow tables and pointwise transformations | implemented as Lesson 30 |
 | CT050 | constant diagram functor | repeat one object code and identity arrow over a finite shape | implemented as Lesson 30 |
 | CT051 | diagonal functor | same finite constant-diagram construction, with functor laws | implemented as Lesson 30 |
@@ -55,3 +55,9 @@ construction repeats one object code and identity table, preserves the named
 composite, and diagram transformations obey identities and composition
 pointwise. A changed composite table is rejected. This implements CT049-CT051
 for one explicit finite shape without claiming a generic diagram type.
+
+Lesson 31 implements CT045-CT048 for a discrete diagram with exactly three
+objects. Three legs force product mediator `[2,5,7]`; three tagged injections
+force case outputs `[12,25,37]`. Changed third components are rejected. This is
+an honest finite indexed (co)limit and a bounded analogue of a wide
+(co)product, not support for arbitrary or infinite families.
