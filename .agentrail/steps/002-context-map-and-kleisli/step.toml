@@ -1,6 +1,6 @@
 number = 2
 slug = "context-map-and-kleisli"
-status = "pending"
+status = "in-progress"
 description = "Implement Lessons 12-13 from docs/plan.md using the verified concrete optiona..."
 role = "production"
 context_files = []

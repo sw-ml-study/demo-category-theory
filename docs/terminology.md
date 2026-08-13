@@ -15,6 +15,8 @@ mathematical meaning and the executable approximation.
 | functor | Structure-preserving mapping of objects and arrows | Concrete array context with `each` | A callable object in C++ terminology |
 | natural transformation | Compatible component map between functors | Transpose components whose naturality squares execute | An arbitrary conversion between arrays |
 | homomorphism | Map preserving an algebraic operation | Finite map vector checked against two Cayley tables | Every category-theory morphism in general |
+| context | A value carrying success/failure structure around a payload | `{tag, value, message}` record | Runtime process or global execution environment |
+| Kleisli composition | Composition of functions that return a context | `context_bind` between fallible stages | Ordinary composition that ignores failure structure |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

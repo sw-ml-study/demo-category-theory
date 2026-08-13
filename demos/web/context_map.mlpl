@@ -1,0 +1,25 @@
+# Web Lesson 12 -- contextual mapping.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Mapping changes a success payload while preserving a failure unchanged.
+# ***************************************************************************
+;
+def u:increment_payload(value) { "Increment one successful payload."; value + 1 }  # mapped transform
+success = {tag: "success", value: 3, message: ""}  # successful context
+failure = {tag: "failure", value: 0, message: "bad input"}  # failed context
+mapped_success = {tag: "success", value: u:increment_payload(success.value), message: ""}  # map success
+mapped_failure = failure  # map skips failure payload
+disp([success.value, mapped_success.value, equal(failure, mapped_failure)])  # 3, 4, preserved
+# ***************************************************************************
+# * THE VISUAL
+# * Green transforms 3 to 4; red carries the same failure around the function.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 760 270\" width=\"760\" height=\"270\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.failed{stroke:#f7768e}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(380px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(380px)}}</style><rect width=\"760\" height=\"270\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"50\" y=\"55\" width=\"160\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"550\" y=\"55\" width=\"160\" height=\"60\" rx=\"14\"/><line class=\"arrow\" x1=\"210\" y1=\"85\" x2=\"550\" y2=\"85\"/><text x=\"130\" y=\"92\" text-anchor=\"middle\">success 3</text><text x=\"630\" y=\"92\" text-anchor=\"middle\">success 4</text><rect class=\"obj\" x=\"50\" y=\"170\" width=\"160\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"550\" y=\"170\" width=\"160\" height=\"60\" rx=\"14\"/><line class=\"arrow failed\" x1=\"210\" y1=\"200\" x2=\"550\" y2=\"200\"/><text x=\"130\" y=\"207\" text-anchor=\"middle\">failure bad</text><text x=\"630\" y=\"207\" text-anchor=\"middle\">failure bad</text><circle class=\"token\" cx=\"190\" cy=\"105\" r=\"9\"/></svg>"  # two context tracks
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * The success payload changes; the failure record remains equal to itself.
+# * THE POINT -- map preserves the context while transforming its value.
+# ***************************************************************************
+

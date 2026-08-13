@@ -132,6 +132,12 @@ Measured 2026-08-12 with the same sw-MLPL 0.20.0 build:
 No new sw-MLPL capability blocks Lessons 12-13. Static exhaustiveness remains
 awkward and is already captured as a broader tagged-value design question.
 
+Step 2 implements both lessons using that surface. The concrete success/failure
+context obeys map identity/composition, and its fallible stages obey Kleisli
+left identity, right identity, and associativity over the measured fixtures.
+Failure short-circuiting is preserved visibly and in tests. This supports the
+concrete pipeline; it still does not justify a generic `Monad` interface.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

@@ -12,3 +12,7 @@ def u:normalize_called_scalar(value) { "Extract the scalar returned by call for 
 def u:context_map(context, transform) { "Transform a successful payload while preserving an existing failure unchanged."; if u:context_is_success(context) { u:context_success(u:normalize_called_scalar(call(transform, [context.value]))) } else { context } }
 def u:context_bind(context, contextual_step) { "Run the next contextual stage only when the current context is successful."; if u:context_is_success(context) { call(contextual_step, [context.value]) } else { context } }
 def u:context_counterexample(expected, actual) { "Describe whether two contextual results differ and retain both observed values."; {found: 1 - equal(expected, actual), expected: expected, actual: actual} }
+def u:context_return_called(value) { "Lift a value received through call into the successful context."; u:context_success(u:normalize_called_scalar(value)) }
+def u:kleisli_apply_two(first_stage, second_stage, input) { "Compose two context-returning stages and apply them to one input."; u:context_bind(call(first_stage, [input]), second_stage) }
+def u:kleisli_apply_three(first_stage, second_stage, third_stage, input) { "Compose three context-returning stages and apply them left to right."; u:context_bind(u:kleisli_apply_two(first_stage, second_stage, input), third_stage) }
+def u:kleisli_law_witness(input, expected, actual) { "Return a stable contextual-law witness for one concrete input."; {found: 1 - equal(expected, actual), input: input, expected: expected, actual: actual} }

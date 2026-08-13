@@ -27,3 +27,7 @@ homomorphisms	demos/10-homomorphisms/compose.mlpl	10-homomorphisms	homomorphism-
 lawful-reduction	demos/11-lawful-reduction/regroup.mlpl	11-lawful-reduction	associative-parallelism	0	0	ascii,svg	current	runnable
 homomorphisms-web	demos/web/homomorphisms.mlpl	web	homomorphism-category	0	0	svg	current	runnable
 lawful-reduction-web	demos/web/lawful_reduction.mlpl	web	associative-parallelism	0	0	svg	current	runnable
+context-map	demos/12-context-map/error_tracks.mlpl	12-context-map	optional-error-functor	0	0	ascii,svg	records,call	runnable
+kleisli-pipeline	demos/13-kleisli-pipelines/fallible_stages.mlpl	13-kleisli-pipelines	fallible-composition	0	0	ascii,svg	records,call	runnable
+context-map-web	demos/web/context_map.mlpl	web	optional-error-functor	0	0	svg	records	runnable
+kleisli-pipeline-web	demos/web/kleisli_pipeline.mlpl	web	fallible-composition	0	0	svg	records	runnable

@@ -281,6 +281,11 @@ a useful ML/data-programming pattern already made executable in sw-MLPL.
 | 18 | Optics for nested data | Read/update nested model or configuration records | Get-put, put-get, and put-put laws with a counterexample | Requires a concrete nested ML/data record; no optics DSL |
 | 19 | Adjunction candidate | Relationship between two already implemented constructions | Unit/counit triangles made executable and visual | Conditional: omit unless Lessons 12-18 naturally exhibit an adjunction |
 
+Current implementation status (2026-08-12): Lessons 12-13 are executable with
+generated CLI/web visuals and law tests on the concrete success/failure
+context. Lessons 14-15 are next because they can build on that measured
+surface. Lessons 16-19 remain capability-gated in the order shown.
+
 ### Delivery sequence for the second saga
 
 1. **Context capability survey** — probe reusable tagged payloads, contextual

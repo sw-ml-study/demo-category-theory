@@ -6,6 +6,8 @@ def u:increment_payload(value) { "Increment one numeric payload."; value + 1 }
 def u:double_payload(value) { "Double one numeric payload."; value * 2 }
 def u:increment_then_double_payload(value) { "Increment and then double one numeric payload."; 2 * (value + 1) }
 def u:validate_positive_payload(value) { "Double a positive payload or return a contextual failure."; scalar = take(value, 0, 0); if equal(lt(0, scalar), 1) { u:context_success(scalar * 2) } else { u:context_failure("not positive") } }
+def u:require_even_payload(value) { "Return half of an even payload or a contextual failure."; scalar = take(value, 0, 0); if equal(mod(scalar, 2), 0) { u:context_success(scalar / 2) } else { u:context_failure("not even") } }
+def u:add_ten_payload(value) { "Add ten to a contextual payload."; scalar = take(value, 0, 0); u:context_success(scalar + 10) }
 
 @test {name: "context records retain nested payloads", tags: ["contexts", "records"]}
 def u:test_context_records() { "Nested records and arrays survive contextual wrapping and equality.";
@@ -37,6 +39,24 @@ def u:test_context_bind_surface() { "Contextual function returns survive call an
   witness = u:context_counterexample(u:context_success(8), u:context_success(9));
   u:assert_eq(witness.found, 1, "context witness absent")?;
   ok({test: "context-bind-surface", cases: 3})
+}
+
+@test {name: "Kleisli composition obeys identity and associativity", tags: ["contexts", "kleisli", "laws"]}
+def u:test_kleisli_laws() { "Concrete fallible stages obey left/right identity and associativity.";
+  input = 4;
+  direct = call(:u:validate_positive_payload, [input]);
+  left_identity = u:context_bind(call(:u:context_return_called, [input]), :u:validate_positive_payload);
+  u:assert_eq(equal(left_identity, direct), 1, "left identity")?;
+  right_identity = u:context_bind(direct, :u:context_return_called);
+  u:assert_eq(equal(right_identity, direct), 1, "right identity")?;
+  left_grouped = u:context_bind(u:context_bind(direct, :u:require_even_payload), :u:add_ten_payload);
+  right_grouped = u:kleisli_apply_three(:u:validate_positive_payload, :u:require_even_payload, :u:add_ten_payload, input);
+  u:assert_eq(equal(left_grouped, right_grouped), 1, "associativity")?;
+  failed = u:kleisli_apply_three(:u:validate_positive_payload, :u:require_even_payload, :u:add_ten_payload, -1);
+  u:assert_eq(equal(failed, u:context_failure("not positive")), 1, "failure did not short-circuit")?;
+  witness = u:kleisli_law_witness(-1, u:context_failure("not positive"), u:context_success(9));
+  u:assert_eq(witness.found, 1, "failure witness absent")?;
+  ok({test: "kleisli-laws", cases: 5})
 }
 
 u:run_registered_tests()

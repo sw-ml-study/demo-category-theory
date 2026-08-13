@@ -1207,3 +1207,19 @@ And the interesting language pressure coming out of demo-abstract-algebra would 
 Those are almost all useful capabilities for ML/data programming independently of abstract algebra.
 
 So I'd put magmas near the very beginning of this effort. RPS/RPSLS gives you the approachable visual hook; editable Cayley tables give you the teaching tool; exhaustive enumeration gives you the serious array-programming demo; property checking gives you the forcing function; and homomorphisms give you a natural bridge from abstract algebra into the Category Theory material you originally wanted to understand better.
+
+Advanced curriculum evidence, 2026-08-12
+
+The concrete success/failure context now provides the next supported bridge.
+Mapping changes only a successful payload and preserves an existing failure;
+executable fixtures verify identity and composition. Context-returning stages
+also compose without a generic higher-kinded interface: left identity, right
+identity, associativity, and failure short-circuiting all execute in sw-MLPL
+0.20.0. The visual result is two complementary views: parallel success/failure
+tracks for context map, and a fallible pipeline whose later stages visibly stop.
+
+This evidence supports Lessons 12 and 13 now. It does not support claiming a
+generic Functor or Monad abstraction. Lessons 14 and 15 should therefore reuse
+the stable concrete context next, first combining independent computations and
+then contrasting that with dependent bind. Recursion schemes, optics, and any
+adjunction remain later capability-gated work.

@@ -1,0 +1,24 @@
+# Lesson 13 -- Kleisli composition for fallible pipeline stages.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/context.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 13 -- COMPOSE STAGES THAT MAY FAIL", intro: "Connect positive validation, even validation, and an enrichment step; success continues while failure short-circuits."})
+def u:validate_positive_payload(value) { "Double a positive input or return a contextual failure."; scalar = take(value, 0, 0); if equal(lt(0, scalar), 1) { u:context_success(scalar * 2) } else { u:context_failure("not positive") } }
+def u:require_even_payload(value) { "Halve an even input or return a contextual failure."; scalar = take(value, 0, 0); if equal(mod(scalar, 2), 0) { u:context_success(scalar / 2) } else { u:context_failure("not even") } }
+def u:add_ten_payload(value) { "Add ten to one successful pipeline payload."; scalar = take(value, 0, 0); u:context_success(scalar + 10) }
+success = u:kleisli_apply_three(:u:validate_positive_payload, :u:require_even_payload, :u:add_ten_payload, 4)
+failure = u:kleisli_apply_three(:u:validate_positive_payload, :u:require_even_payload, :u:add_ten_payload, -1)
+direct = call(:u:validate_positive_payload, [4])
+left_identity = u:context_bind(call(:u:context_return_called, [4]), :u:validate_positive_payload)
+right_identity = u:context_bind(direct, :u:context_return_called)
+left_grouped = u:context_bind(u:context_bind(direct, :u:require_even_payload), :u:add_ten_payload)
+right_grouped = u:kleisli_apply_three(:u:validate_positive_payload, :u:require_even_payload, :u:add_ten_payload, 4)
+witness = u:kleisli_law_witness(-1, u:context_failure("not positive"), u:context_success(9))
+disp([success.value, u:context_is_failure(failure), equal(left_identity, direct), equal(right_identity, direct), equal(left_grouped, right_grouped), witness.found])
+wrote = write_text("out/13-kleisli-pipeline.svg", u:kleisli_pipeline_diagram())
+u:epilog_open()
+u:explain("out/13-kleisli-pipeline.svg", "Input 4 crosses all three green stages and reaches 14. Input -1 turns red at positive validation, and the even/+10 stages never run.")
+u:takeaway("Kleisli composition is ordinary pipeline composition with context-aware handoff. Its identity and associativity laws make regrouping stages safe.")
+if equal(success, u:context_success(14)) * equal(failure, u:context_failure("not positive")) * equal(left_identity, direct) * equal(right_identity, direct) * equal(left_grouped, right_grouped) * witness.found * is_ok(wrote) { ok("Kleisli laws and short-circuit verified") } else { err("Kleisli pipeline invariant failed") }
+

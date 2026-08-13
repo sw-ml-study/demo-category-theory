@@ -148,6 +148,26 @@ but `3` when regrouped, showing why the law is operationally necessary.
 Sources: [CLI lesson](demos/11-lawful-reduction/regroup.mlpl),
 [web lesson](demos/web/lawful_reduction.mlpl).
 
+### 12. Mapping changes success, not failure
+
+![A green success track mapping 3 to 4 above a red failure track that remains unchanged](assets/previews/12-context-map.svg)
+
+What to notice: the successful payload crosses `increment`, while the failed
+context bypasses payload transformation and retains its diagnostic. Identity
+and composition are checked for this concrete context. Sources:
+[CLI lesson](demos/12-context-map/error_tracks.mlpl),
+[web lesson](demos/web/context_map.mlpl).
+
+### 13. Fallible stages compose with context-aware handoff
+
+![A successful three-stage pipeline reaching 14 above a failed pipeline that stops at positive validation](assets/previews/13-kleisli-pipeline.svg)
+
+What to notice: input `4` reaches `14` through all stages; input `-1` becomes
+`failure: not positive`, and later work is skipped. Left identity, right
+identity, and associativity are executable tests rather than assumed jargon.
+Sources: [CLI lesson](demos/13-kleisli-pipelines/fallible_stages.mlpl),
+[web lesson](demos/web/kleisli_pipeline.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 
