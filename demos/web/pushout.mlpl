@@ -1,0 +1,26 @@
+# Web Lesson 25 -- pushout merge.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Two tagged schemas merge by identifying their shared interface fields.
+# ***************************************************************************
+;
+left_interface = [0, 1]  # shared fields in left schema
+right_interface = [1, 2]  # shared fields in right schema
+left_classes = [0, 1, 2]  # shared, shared, left-private
+right_classes = [3, 0, 1]  # right-private, shared, shared
+left_route = [0, 1]  # interface through left
+right_route = [0, 1]  # interface through right
+broken_route = [0, 2]  # bad identification
+disp([equal(left_route, right_route), equal(left_route, broken_route)])  # 1 then 0
+# ***************************************************************************
+# * THE VISUAL
+# * Green identifies shared fields; private fields survive as separate classes.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 270\" width=\"800\" height=\"270\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translate(240px,100px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translate(240px,100px)}}</style><rect width=\"800\" height=\"270\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"60\" y=\"45\" width=\"170\" height=\"60\" rx=\"12\"/><rect class=\"obj\" x=\"570\" y=\"45\" width=\"170\" height=\"60\" rx=\"12\"/><rect class=\"obj\" x=\"60\" y=\"190\" width=\"170\" height=\"60\" rx=\"12\"/><rect class=\"obj\" x=\"570\" y=\"190\" width=\"170\" height=\"60\" rx=\"12\"/><line class=\"arrow\" x1=\"230\" y1=\"75\" x2=\"570\" y2=\"75\"/><line class=\"arrow\" x1=\"145\" y1=\"105\" x2=\"145\" y2=\"190\"/><line class=\"arrow\" x1=\"655\" y1=\"105\" x2=\"655\" y2=\"190\"/><text x=\"145\" y=\"82\" text-anchor=\"middle\">shared interface</text><text x=\"655\" y=\"82\" text-anchor=\"middle\">right schema</text><text x=\"145\" y=\"227\" text-anchor=\"middle\">left schema</text><text x=\"655\" y=\"227\" text-anchor=\"middle\">merged classes</text><circle class=\"token\" cx=\"125\" cy=\"95\" r=\"9\"/></svg>"  # pushout square
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Compatible schema maps factor uniquely through the merged four classes.
+# * THE POINT -- pushout is a universal interface-respecting merge.
+# ***************************************************************************

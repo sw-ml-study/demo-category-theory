@@ -49,6 +49,8 @@ limits/colimits, representables, and Yoneda.
 
 Lessons 22-23 form a dual pair around parallel arrows. The equalizer narrows
 the source to agreeing rows; the coequalizer merges target values forced equal.
+Lessons 24-25 continue the duality with a keyed join pullback and an
+interface-respecting schema pushout.
 
 ## Artifact map
 

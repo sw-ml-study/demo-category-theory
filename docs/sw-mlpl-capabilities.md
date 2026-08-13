@@ -198,6 +198,11 @@ sufficient for the teaching fixtures. A reusable quotient/union-find facility
 may matter for larger workloads, but this bounded example alone does not
 justify an upstream ask.
 
+Lessons 24-25 use only explicit index tables and records for pullback joins and
+pushout schema merges. Universal squares and mediators execute without new
+runtime support. Larger dynamic joins or quotient construction may motivate
+library work later, but current fixtures do not justify a language request.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

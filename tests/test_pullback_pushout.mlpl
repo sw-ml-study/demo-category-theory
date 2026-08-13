@@ -1,0 +1,28 @@
+# Tests for CT031 pullback and CT032 pushout fixtures.
+include "lib/pullback_pushout.mlpl";
+
+@test {name: "keyed join obeys the pullback universal property", tags: ["CT031", "pullback", "join"]}
+def u:test_pullback_join() { "The join pairs equal keys and every compatible pair of legs factors uniquely through it.";
+  left_keys = [10, 20]; right_keys = [20, 10]; join = u:pullback_join_fixture(left_keys, right_keys);
+  square = u:pullback_square(left_keys, right_keys, join);
+  u:assert_eq(square.commutes, 1, "join square")?;
+  factorization = u:pullback_factorization(join, [1, 0], [0, 1], [1, 0]);
+  u:assert_eq(factorization.commutes * factorization.unique, 1, "join factorization")?;
+  broken = u:universal_square_witness("pullback key", [10, 20], u:apply_two_indices(right_keys, [0, 1]));
+  u:assert_eq(broken.found, 1, "broken join witness")?;
+  ok({test: "pullback-join", cases: 3})
+}
+
+@test {name: "tagged merge obeys the pushout universal property", tags: ["CT032", "pushout", "merge"]}
+def u:test_pushout_merge() { "The merge identifies the shared interface and every compatible pair of maps factors uniquely.";
+  left_injection = [0, 1]; right_injection = [1, 2]; left_quotient = [0, 1, 2]; right_quotient = [3, 0, 1];
+  square = u:pushout_square(left_injection, right_injection, left_quotient, right_quotient);
+  u:assert_eq(square.commutes, 1, "merge square")?;
+  factorization = u:pushout_factorization(left_quotient, right_quotient, [7, 8, 9], [10, 7, 8], [7, 8, 9, 10]);
+  u:assert_eq(factorization.commutes * factorization.unique, 1, "merge factorization")?;
+  broken = u:universal_square_witness("pushout interface", square.left_route, u:apply_two_indices([3, 0, 2], right_injection));
+  u:assert_eq(broken.found, 1, "broken merge witness")?;
+  ok({test: "pushout-merge", cases: 3})
+}
+
+u:run_registered_tests()

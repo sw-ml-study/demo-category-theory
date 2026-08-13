@@ -1,0 +1,20 @@
+# Lesson 24 -- pullback as a keyed data join.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/pullback_pushout.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 24 -- A PULLBACK IS A JOIN WITH A UNIVERSAL MEDIATOR", intro: "Pair left and right rows exactly when their projected keys agree."})
+left_keys = [10, 20]
+right_keys = [20, 10]
+join = u:pullback_join_fixture(left_keys, right_keys)
+square = u:pullback_square(left_keys, right_keys, join)
+factorization = u:pullback_factorization(join, [1, 0], [0, 1], [1, 0])
+broken = u:universal_square_witness("pullback key", [10, 20], u:apply_two_indices(right_keys, [0, 1]))
+disp(join.left_indices)
+disp(join.right_indices)
+disp([square.commutes, factorization.commutes, factorization.unique, broken.found])
+wrote = write_text("out/24-pullback.svg", u:pullback_diagram())
+u:epilog_open()
+u:explain("out/24-pullback.svg", "The join pairs left rows [0,1] with right rows [1,0], so both routes expose keys [10,20]. An un-reordered pairing breaks the square.")
+u:takeaway("A pullback is the universal synchronized join: every compatible pair of row selections factors through it uniquely.")
+if square.commutes * factorization.commutes * factorization.unique * broken.found * is_ok(wrote) { ok("pullback join verified") } else { err("pullback invariant failed") }

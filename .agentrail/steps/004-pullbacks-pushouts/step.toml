@@ -1,6 +1,6 @@
 number = 4
 slug = "pullbacks-pushouts"
-status = "pending"
+status = "in-progress"
 description = "Implement CT031-CT032 using a practical database join/fiber-product and tagge..."
 role = "production"
 context_files = []

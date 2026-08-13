@@ -1,0 +1,21 @@
+# Lesson 25 -- pushout as a tagged schema merge.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/pullback_pushout.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 25 -- A PUSHOUT MERGES ALONG A SHARED INTERFACE", intro: "Identify two shared schema fields while retaining each side's private tagged field."})
+left_injection = [0, 1]
+right_injection = [1, 2]
+left_quotient = [0, 1, 2]
+right_quotient = [3, 0, 1]
+square = u:pushout_square(left_injection, right_injection, left_quotient, right_quotient)
+factorization = u:pushout_factorization(left_quotient, right_quotient, [7, 8, 9], [10, 7, 8], [7, 8, 9, 10])
+broken = u:universal_square_witness("pushout interface", square.left_route, u:apply_two_indices([3, 0, 2], right_injection))
+disp(left_quotient)
+disp(right_quotient)
+disp([square.commutes, factorization.commutes, factorization.unique, broken.found])
+wrote = write_text("out/25-pushout.svg", u:pushout_diagram())
+u:epilog_open()
+u:explain("out/25-pushout.svg", "The shared fields land in classes 0 and 1; left-private and right-private fields remain classes 2 and 3. A mismatched identification breaks the square.")
+u:takeaway("A pushout is the universal compatible merge: it identifies the interface and preserves each side's remaining information.")
+if square.commutes * factorization.commutes * factorization.unique * broken.found * is_ok(wrote) { ok("pushout merge verified") } else { err("pushout invariant failed") }

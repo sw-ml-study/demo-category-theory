@@ -1352,3 +1352,11 @@ universal property but not a generic equivalence-closure facility.
 
 CT031 pullbacks and CT032 pushouts are next. A keyed data join is the practical
 pullback fixture; a tagged merge with explicit identifications is the pushout.
+
+CT031-CT032 implementation evidence, 2026-08-12
+
+Lesson 24 treats a keyed database join as a pullback and verifies the shared-key
+square plus unique mediator. Lesson 25 treats schema integration as a pushout:
+shared fields are identified and private fields remain distinct, with unique
+factorization into a compatible target. Both are bounded finite fixtures; the
+pushout does not claim generic quotient construction.

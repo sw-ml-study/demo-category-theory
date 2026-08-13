@@ -1,0 +1,26 @@
+# Web Lesson 24 -- pullback join.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * A keyed join pairs rows so both projections expose the same key.
+# ***************************************************************************
+;
+left_keys = [10, 20]  # left table
+right_keys = [20, 10]  # right table
+left_indices = [0, 1]  # first projection
+right_indices = [1, 0]  # second projection
+left_route = [10, 20]  # keys through left
+right_route = [10, 20]  # keys through right
+broken_route = [20, 10]  # un-reordered join
+disp([equal(left_route, right_route), equal(left_route, broken_route)])  # 1 then 0
+# ***************************************************************************
+# * THE VISUAL
+# * Green routes meet on keys [10,20]; red warns the naive pairing splits.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 270\" width=\"800\" height=\"270\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translate(240px,100px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translate(240px,100px)}}</style><rect width=\"800\" height=\"270\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"60\" y=\"45\" width=\"170\" height=\"60\" rx=\"12\"/><rect class=\"obj\" x=\"570\" y=\"45\" width=\"170\" height=\"60\" rx=\"12\"/><rect class=\"obj\" x=\"60\" y=\"190\" width=\"170\" height=\"60\" rx=\"12\"/><rect class=\"obj\" x=\"570\" y=\"190\" width=\"170\" height=\"60\" rx=\"12\"/><line class=\"arrow\" x1=\"230\" y1=\"75\" x2=\"570\" y2=\"75\"/><line class=\"arrow\" x1=\"145\" y1=\"105\" x2=\"145\" y2=\"190\"/><line class=\"arrow\" x1=\"655\" y1=\"105\" x2=\"655\" y2=\"190\"/><text x=\"145\" y=\"82\" text-anchor=\"middle\">joined pairs</text><text x=\"655\" y=\"82\" text-anchor=\"middle\">right rows</text><text x=\"145\" y=\"227\" text-anchor=\"middle\">left rows</text><text x=\"655\" y=\"227\" text-anchor=\"middle\">keys [10,20]</text><circle class=\"token\" cx=\"125\" cy=\"95\" r=\"9\"/></svg>"  # pullback square
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Compatible row selections factor uniquely through the joined pairs.
+# * THE POINT -- pullback is a universal synchronized join.
+# ***************************************************************************

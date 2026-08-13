@@ -267,6 +267,24 @@ The map `[7,8,7]` fails because it separates a forced-equal pair. Sources:
 [CLI lesson](demos/23-coequalizers/forced_classes.mlpl),
 [web lesson](demos/web/coequalizer.mlpl).
 
+### 24. A pullback is a universal keyed join
+
+![A commuting keyed join square pairing rows by shared keys](assets/previews/24-pullback.svg)
+
+What to notice: left rows `[0,1]` pair with right rows `[1,0]`, so both
+projections expose keys `[10,20]`. Sources:
+[CLI lesson](demos/24-pullbacks/keyed_join.mlpl),
+[web lesson](demos/web/pullback.mlpl).
+
+### 25. A pushout is a universal tagged merge
+
+![Two schemas merging along a shared interface into four classes](assets/previews/25-pushout.svg)
+
+What to notice: two shared fields are identified while the left-private and
+right-private fields remain distinct. Sources:
+[CLI lesson](demos/25-pushouts/tagged_merge.mlpl),
+[web lesson](demos/web/pushout.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 
