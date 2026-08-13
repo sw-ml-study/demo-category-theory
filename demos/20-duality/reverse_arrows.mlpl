@@ -1,0 +1,21 @@
+# Lesson 20 -- opposite category and dual statements.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/universal_endpoints.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 20 -- REVERSE EVERY ARROW, REVERSE THE STATEMENT", intro: "Transpose a finite arrow relation and reverse a three-arrow path to make categorical duality executable."})
+relation = [[0, 1, 0], [0, 0, 1], [0, 0, 0]]
+opposite = u:opposite_relation(relation)
+restored = u:opposite_twice(relation)
+path = [10, 20, 30]
+dual_path = u:reverse_three_arrow_path(path)
+broken_witness = u:unique_arrow_witness("dual path order", 30, take(path, 0, 0))
+disp(relation)
+disp(opposite)
+disp(dual_path)
+disp([equal(restored, relation), broken_witness.found])
+wrote = write_text("out/20-opposite-duality.svg", u:opposite_duality_diagram())
+u:epilog_open()
+u:explain("out/20-opposite-duality.svg", "Every arrow in C reverses in C-op, so a composite path is read in reverse order. Transposing twice restores the original finite relation.")
+u:takeaway("Duality is a systematic arrow reversal: definitions and theorems travel with it, but composition order must reverse too.")
+if equal(restored, relation) * equal(dual_path, [30, 20, 10]) * broken_witness.found * is_ok(wrote) { ok("opposite and dual statement verified") } else { err("duality invariant failed") }

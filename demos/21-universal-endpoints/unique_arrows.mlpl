@@ -1,0 +1,20 @@
+# Lesson 21 -- initial, terminal, and zero objects.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/universal_endpoints.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 21 -- ENDPOINTS ARE FORCED BY UNIQUE ARROWS", intro: "Count maps from empty and into singleton finite sets, then distinguish a zero object in a pointed finite category."})
+empty_to_three = u:endpoint_function_count(0, 3)
+three_to_singleton = u:endpoint_function_count(3, 1)
+singleton_to_two = u:endpoint_function_count(1, 2)
+not_initial = u:unique_arrow_witness("singleton initial", 1, singleton_to_two)
+not_terminal = u:unique_arrow_witness("empty terminal", 1, 0)
+pointed_hom_counts = [[1, 1], [1, 2]]
+zero_object = u:is_zero_by_hom_counts(pointed_hom_counts, 0, 2)
+ordinary_object = u:is_zero_by_hom_counts(pointed_hom_counts, 1, 2)
+disp([empty_to_three, three_to_singleton, singleton_to_two, not_initial.found, not_terminal.found, zero_object, ordinary_object])
+wrote = write_text("out/21-universal-endpoints.svg", u:universal_endpoints_diagram())
+u:epilog_open()
+u:explain("out/21-universal-endpoints.svg", "Empty has one arrow to every finite set; every finite set has one arrow to singleton. In the pointed fixture, object 0 has one arrow both ways and is zero.")
+u:takeaway("Initial points outward uniquely, terminal receives uniquely, and zero does both. Zero is category-relative: ordinary FinSet has no such object.")
+if equal(empty_to_three, 1) * equal(three_to_singleton, 1) * not_initial.found * not_terminal.found * zero_object * equal(ordinary_object, 0) * is_ok(wrote) { ok("universal endpoints verified") } else { err("universal endpoint invariant failed") }

@@ -39,6 +39,14 @@ identities execute on finite records, and the bad counit makes the failure
 visible. Read `docs/adjunction-decision.md` for why this candidate shipped and
 why the context, fold/unfold, and lens candidates did not.
 
+## Universal constructions continuation: Lessons 20 onward
+
+Lesson 20 introduces categorical duality by reversing arrows and composition
+order. Lesson 21 uses unique-arrow counts to distinguish initial, terminal,
+and category-relative zero objects. Continue in numeric order as the
+CT020-CT044 saga adds equalizers, coequalizers, pullbacks, pushouts, finite
+limits/colimits, representables, and Yoneda.
+
 ## Artifact map
 
 - CLI sources and assertions: `demos/NN-topic/*.mlpl`

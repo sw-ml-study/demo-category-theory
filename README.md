@@ -229,6 +229,26 @@ instead produces `(3,3)`. Sources:
 [web lesson](demos/web/diagonal_product_adjunction.mlpl), and the
 [adjunction decision](docs/adjunction-decision.md).
 
+### 20. The opposite category reverses every arrow
+
+![A three-object category beside its arrow-reversed opposite](assets/previews/20-opposite-duality.svg)
+
+What to notice: transposing the finite arrow relation reverses every arrow,
+and applying opposite twice restores the original. A path labelled `[f,g,h]`
+must be read as `[h,g,f]` in the dual statement. Sources:
+[CLI lesson](demos/20-duality/reverse_arrows.mlpl),
+[web lesson](demos/web/opposite_duality.mlpl).
+
+### 21. Universal endpoints are determined by unique arrows
+
+![The empty initial object and singleton terminal object above a pointed-category zero object](assets/previews/21-universal-endpoints.svg)
+
+What to notice: empty sends exactly one function to each finite set, and
+singleton receives exactly one. A pointed-category object with one arrow both
+ways is zero; ordinary finite sets do not have a zero object. Sources:
+[CLI lesson](demos/21-universal-endpoints/unique_arrows.mlpl),
+[web lesson](demos/web/universal_endpoints.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

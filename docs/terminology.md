@@ -23,6 +23,11 @@ mathematical meaning and the executable approximation.
 | unfold | Generating finite structure from seed state | `seed + range(count) * step` | An unbounded stream or a generic recursion-scheme primitive |
 | lens | A getter and setter focused on one part of a larger value, obeying get-put, put-get, and put-put | Named learning-rate helpers that rebuild one nested model configuration | A camera lens or a generic optics DSL |
 | adjunction | A pair of functors linked by a natural hom-set correspondence, equivalently a unit/counit obeying triangle identities | Concrete diagonal duplication left adjoint to product, checked on finite records | Any two operations that appear to undo each other |
+| opposite category | The category with every arrow reversed and composition order reversed | Transposed finite adjacency relation | Merely drawing the same arrows right-to-left without reversing composition |
+| dual statement | A categorical statement obtained by consistently reversing arrows | Explicit original/arrow-reversed path fixtures | An unrelated analogous theorem |
+| initial object | An object with exactly one arrow to every object | Empty finite set in the concrete FinSet fixture | The first item in display order |
+| terminal object | An object receiving exactly one arrow from every object | Singleton finite set in the concrete FinSet fixture | The last item in display order |
+| zero object | An object that is both initial and terminal | Object `0` in a hand-authored pointed finite category | Numeric zero or the empty set in ordinary FinSet |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

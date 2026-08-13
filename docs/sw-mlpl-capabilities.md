@@ -186,6 +186,12 @@ also remains conditional until the finite Yoneda/category-of-elements work
 produces an honest reconstruction. See
 `docs/ct020-ct044-capability-matrix.md` for the per-ID decision.
 
+Lessons 20-21 confirm that transpose-based opposites, explicit reversed paths,
+bounded endpoint function counts, and finite hom-count matrices are sufficient
+for CT020-CT024. The zero-object example correctly requires a pointed finite
+category rather than pretending empty or singleton is zero in ordinary
+FinSet. No new capability ask arose.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

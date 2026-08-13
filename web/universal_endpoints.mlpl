@@ -1,0 +1,27 @@
+# Web Lesson 21 -- initial, terminal, and zero objects.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Initial sends one arrow, terminal receives one, and zero does both.
+# ***************************************************************************
+;
+def u:endpoint_count(source_size, target_size) { "Count the endpoint function fixtures."; if equal(source_size, 0) { 1 } else { if equal(target_size, 1) { 1 } else { target_size } } }  # bounded counts
+empty_to_three = u:endpoint_count(0, 3)  # unique initial arrow
+three_to_singleton = u:endpoint_count(3, 1)  # unique terminal arrow
+singleton_to_two = u:endpoint_count(1, 2)  # two arrows, so not initial
+pointed_hom_counts = [[1, 1], [1, 2]]  # zero row and column are unique
+zero_row = take(pointed_hom_counts, 0, 0)  # outgoing uniqueness
+zero_column = take(transpose(pointed_hom_counts), 0, 0)  # incoming uniqueness
+disp([empty_to_three, three_to_singleton, singleton_to_two])  # 1, 1, 2
+disp([equal(zero_row, [1, 1]), equal(zero_column, [1, 1])])  # zero object
+# ***************************************************************************
+# * THE VISUAL
+# * Green unique arrows define the endpoints; red warns that FinSet has no zero.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 840 290\" width=\"840\" height=\"290\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.bad{stroke:#f7768e}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(150px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(150px)}}</style><rect width=\"840\" height=\"290\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"25\" y=\"45\" width=\"145\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"330\" y=\"45\" width=\"145\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"670\" y=\"45\" width=\"145\" height=\"65\" rx=\"12\"/><line class=\"arrow\" x1=\"170\" y1=\"77\" x2=\"330\" y2=\"77\"/><line class=\"arrow\" x1=\"475\" y1=\"77\" x2=\"670\" y2=\"77\"/><text x=\"98\" y=\"84\" text-anchor=\"middle\">empty initial</text><text x=\"402\" y=\"84\" text-anchor=\"middle\">finite X</text><text x=\"742\" y=\"84\" text-anchor=\"middle\">one terminal</text><rect class=\"obj\" x=\"150\" y=\"185\" width=\"180\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"510\" y=\"185\" width=\"180\" height=\"65\" rx=\"12\"/><line class=\"arrow\" x1=\"330\" y1=\"205\" x2=\"510\" y2=\"205\"/><line class=\"arrow bad\" x1=\"510\" y1=\"235\" x2=\"330\" y2=\"235\"/><text x=\"240\" y=\"225\" text-anchor=\"middle\">pointed zero</text><text x=\"600\" y=\"225\" text-anchor=\"middle\">object A</text><circle class=\"token\" cx=\"150\" cy=\"97\" r=\"9\"/></svg>"  # endpoints and zero fixture
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Arrow counts, not names or sizes, determine universal endpoint status.
+# * THE POINT -- initial and terminal are dual; zero combines both roles.
+# ***************************************************************************

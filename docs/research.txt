@@ -1327,3 +1327,16 @@ limits/colimits, representables, hom-functors, and a bounded Yoneda lesson.
 The evidence does not establish completeness, cocompleteness, or the density
 theorem in general. Those remain clearly labelled boundaries. The next lesson
 step can therefore begin with CT020-CT024 without waiting for sw-MLPL changes.
+
+CT020-CT024 implementation evidence, 2026-08-12
+
+Lesson 20 makes opposite and duality executable by transposing a finite arrow
+relation, checking the involution, and reversing explicit composition order.
+Lesson 21 counts the endpoint function fixtures: empty is initial and singleton
+is terminal in finite sets. A two-object pointed category with hom-count matrix
+`[[1,1],[1,2]]` distinguishes a genuine zero object, while counterexamples
+show singleton is not initial and empty is not terminal in ordinary FinSet.
+
+The next supported concepts are CT029 equalizers and CT030 coequalizers. Their
+main boundary is bounded quotient construction for the coequalizer; no generic
+equivalence-closure engine is required for the planned finite fixture.

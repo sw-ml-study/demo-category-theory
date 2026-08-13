@@ -6,11 +6,11 @@ function-reference, and array probes remain prerequisites.
 
 | ID | Concept | Finite executable representation | Status / boundary |
 |---|---|---|---|
-| CT020 | opposite category | transpose a finite adjacency relation; reverse displayed arrows | runnable; category laws reuse Lessons 1-3 |
-| CT021 | dual statement | pair each construction with its arrow-reversed statement | runnable as explicit paired fixtures, not syntax generation |
-| CT022 | initial object | `range(0)` with the unique empty function table to each finite target | runnable; empty arrays have shape zero |
-| CT023 | terminal object | singleton `[0]` with the unique constant map from each finite source | runnable |
-| CT024 | zero object | object verified both initial and terminal in one finite category | runnable; not present in ordinary nonempty finite sets, so use a pointed/hand-authored finite category |
+| CT020 | opposite category | transpose a finite adjacency relation; reverse displayed arrows | implemented in Lesson 20; category laws reuse Lessons 1-3 |
+| CT021 | dual statement | pair each construction with its arrow-reversed statement | implemented in Lesson 20 as explicit paired fixtures, not syntax generation |
+| CT022 | initial object | `range(0)` with the unique empty function table to each finite target | implemented in Lesson 21; empty arrays have shape zero |
+| CT023 | terminal object | singleton `[0]` with the unique constant map from each finite source | implemented in Lesson 21 |
+| CT024 | zero object | object verified both initial and terminal in one finite category | implemented in Lesson 21 using a pointed hand-authored category; ordinary FinSet has none |
 | CT025 | universal arrow | record containing candidate arrow plus factorization checks | runnable for named finite functors only |
 | CT026 | universal element | distinguished finite element plus unique representing arrow | runnable after representable fixture |
 | CT027 | cone | record/arrays of legs whose composed function tables agree | runnable; probe verifies pointwise commuting routes |

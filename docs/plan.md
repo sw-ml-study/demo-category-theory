@@ -8,6 +8,9 @@ The broader program continues through the 245 tracked concepts in
 `docs/next-saga-plan.md`; completion of a bounded saga is never completion of
 the program-level inventory.
 
+Current continuation status: CT020-CT024 are implemented as Lessons 20-21.
+CT029-CT030 equalizers/coequalizers are next in capability-first order.
+
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the
 categorical reading of maps between structures. It does not repeat the sibling

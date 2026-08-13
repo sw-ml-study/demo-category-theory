@@ -1,6 +1,6 @@
 number = 2
 slug = "duality-universal-endpoints"
-status = "pending"
+status = "in-progress"
 description = "Implement visual lessons for CT020-CT024: opposite category, dual statements,..."
 role = "production"
 context_files = []
