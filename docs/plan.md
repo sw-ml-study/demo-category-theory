@@ -9,7 +9,8 @@ The broader program continues through the 245 tracked concepts in
 the program-level inventory.
 
 Current continuation status: CT020-CT024 are implemented as Lessons 20-21.
-CT029-CT030 equalizers/coequalizers are next in capability-first order.
+CT029-CT030 are implemented as Lessons 22-23. CT031-CT032 pullbacks and
+pushouts are next in capability-first order.
 
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the

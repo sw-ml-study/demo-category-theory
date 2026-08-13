@@ -1,0 +1,27 @@
+# Web Lesson 23 -- coequalizer.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * Parallel arrows force output labels into one universal quotient class.
+# ***************************************************************************
+;
+left_arrow = [0, 1]  # forces 0~1
+right_arrow = [1, 2]  # forces 1~2
+quotient = [0, 0, 0]  # transitive forced class
+left_route = [take(quotient, 0, 0), take(quotient, 0, 1)]  # q after f
+right_route = [take(quotient, 0, 1), take(quotient, 0, 2)]  # q after g
+lawful_map = [7, 7, 7]  # factors through singleton as [7]
+broken_map = [7, 8, 7]  # separates 0 from forced-equal 1
+disp(quotient)  # one equivalence class
+disp([equal(left_route, right_route), equal(broken_map, lawful_map)])  # 1 then 0
+# ***************************************************************************
+# * THE VISUAL
+# * Green merges 0,1,2. Red [7,8,7] separates a pair the arrows forced equal.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 820 280\" width=\"820\" height=\"280\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.bad{stroke:#f7768e}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(390px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(390px)}}</style><rect width=\"820\" height=\"280\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"30\" y=\"55\" width=\"140\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"310\" y=\"55\" width=\"180\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"650\" y=\"55\" width=\"140\" height=\"65\" rx=\"12\"/><line class=\"arrow\" x1=\"170\" y1=\"72\" x2=\"310\" y2=\"72\"/><line class=\"arrow\" x1=\"170\" y1=\"102\" x2=\"310\" y2=\"102\"/><line class=\"arrow\" x1=\"490\" y1=\"87\" x2=\"650\" y2=\"87\"/><text x=\"100\" y=\"94\" text-anchor=\"middle\">A=[0,1]</text><text x=\"400\" y=\"94\" text-anchor=\"middle\">B=[0,1,2]</text><text x=\"720\" y=\"94\" text-anchor=\"middle\">Q=one class</text><rect class=\"obj\" x=\"225\" y=\"185\" width=\"370\" height=\"60\" rx=\"12\"/><line class=\"arrow bad\" x1=\"410\" y1=\"165\" x2=\"410\" y2=\"185\"/><text x=\"410\" y=\"222\" text-anchor=\"middle\">bad map [7,8,7]</text><circle class=\"token\" cx=\"150\" cy=\"120\" r=\"9\"/></svg>"  # forced quotient and bad map
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Every map respecting the forced equalities factors through Q uniquely.
+# * THE POINT -- coequalizer is the universal quotient of parallel arrows.
+# ***************************************************************************

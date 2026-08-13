@@ -1,0 +1,21 @@
+# Lesson 22 -- equalizer as the universal agreeing subset.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/equalizer_coequalizer.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 22 -- KEEP EXACTLY THE ROWS WHERE TWO RULES AGREE", intro: "Compare two finite classifiers and include only source rows where their outputs match."})
+left_arrow = [0, 1, 1, 2]
+right_arrow = [0, 2, 1, 0]
+inclusion = u:equalizer_inclusion_fixture(left_arrow, right_arrow)
+routes = u:equalizer_routes(left_arrow, right_arrow, inclusion)
+factorization = u:equalizer_factorization(inclusion, [0, 2], [0, 1])
+broken_witness = u:parallel_arrow_witness("equalizer mediator", inclusion, [0, 1])
+disp(inclusion)
+disp(routes.left)
+disp(routes.right)
+disp([factorization.commutes, factorization.unique, broken_witness.found])
+wrote = write_text("out/22-equalizer.svg", u:equalizer_diagram())
+u:epilog_open()
+u:explain("out/22-equalizer.svg", "Rows 0 and 2 are the largest subset where classifiers f and g agree. Any lawful mediator into A must land there and factors through E.")
+u:takeaway("An equalizer is more than filtering: it is the universal subobject on which parallel arrows become equal.")
+if equal(inclusion, [0, 2]) * equal(routes.left, routes.right) * factorization.commutes * factorization.unique * broken_witness.found * is_ok(wrote) { ok("equalizer universal property verified") } else { err("equalizer invariant failed") }

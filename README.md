@@ -249,6 +249,24 @@ ways is zero; ordinary finite sets do not have a zero object. Sources:
 [CLI lesson](demos/21-universal-endpoints/unique_arrows.mlpl),
 [web lesson](demos/web/universal_endpoints.mlpl).
 
+### 22. An equalizer keeps the largest agreeing subset
+
+![Inputs 0 and 2 included where two parallel classifiers agree, with row 1 rejected](assets/previews/22-equalizer.svg)
+
+What to notice: classifiers `f` and `g` agree exactly on rows `0` and `2`.
+Every mediator on which they agree must land in that subset and factors through
+its inclusion. Sources: [CLI lesson](demos/22-equalizers/agreeing_rows.mlpl),
+[web lesson](demos/web/equalizer.mlpl).
+
+### 23. A coequalizer imposes the forced quotient
+
+![Parallel arrows forcing labels 0, 1, and 2 into one quotient class](assets/previews/23-coequalizer.svg)
+
+What to notice: the arrows force `0~1` and `1~2`, so all three labels merge.
+The map `[7,8,7]` fails because it separates a forced-equal pair. Sources:
+[CLI lesson](demos/23-coequalizers/forced_classes.mlpl),
+[web lesson](demos/web/coequalizer.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

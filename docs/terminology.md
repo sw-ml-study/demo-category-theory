@@ -28,6 +28,8 @@ mathematical meaning and the executable approximation.
 | initial object | An object with exactly one arrow to every object | Empty finite set in the concrete FinSet fixture | The first item in display order |
 | terminal object | An object receiving exactly one arrow from every object | Singleton finite set in the concrete FinSet fixture | The last item in display order |
 | zero object | An object that is both initial and terminal | Object `0` in a hand-authored pointed finite category | Numeric zero or the empty set in ordinary FinSet |
+| equalizer | Universal subobject on which two parallel arrows agree | Source indices `[0,2]` plus inclusion and factorization checks | Merely any filtered subset |
+| coequalizer | Universal quotient imposing equality of two parallel arrows | Explicit class labels `[0,0,0]` plus factorization checks | Arbitrarily collapsing values |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

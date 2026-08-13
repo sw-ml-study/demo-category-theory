@@ -12,6 +12,10 @@ opposite-duality	demos/20-duality/reverse_arrows.mlpl	20-duality	CT020-CT021-opp
 universal-endpoints	demos/21-universal-endpoints/unique_arrows.mlpl	21-universal-endpoints	CT022-CT024-initial-terminal-zero	0	0	ascii,svg	records,fill	runnable
 opposite-duality-web	demos/web/opposite_duality.mlpl	web	CT020-CT021-opposite-dual	0	0	svg	transpose	runnable
 universal-endpoints-web	demos/web/universal_endpoints.mlpl	web	CT022-CT024-initial-terminal-zero	0	0	svg	records	runnable
+equalizer	demos/22-equalizers/agreeing_rows.mlpl	22-equalizers	CT029-equalizer	0	0	ascii,svg	records,take	runnable
+coequalizer	demos/23-coequalizers/forced_classes.mlpl	23-coequalizers	CT030-coequalizer	0	0	ascii,svg	records,take	runnable
+equalizer-web	demos/web/equalizer.mlpl	web	CT029-equalizer	0	0	svg	records,take	runnable
+coequalizer-web	demos/web/coequalizer.mlpl	web	CT030-coequalizer	0	0	svg	records,take	runnable
 arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	runnable
 identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	runnable
 associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	runnable

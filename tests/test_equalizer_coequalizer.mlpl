@@ -1,0 +1,31 @@
+# Tests for CT029 equalizer and CT030 coequalizer fixtures.
+include "lib/equalizer_coequalizer.mlpl";
+
+@test {name: "equalizer is the universal agreeing subobject", tags: ["CT029", "equalizer", "universal"]}
+def u:test_equalizer_universal_property() { "The agreeing indices equalize both arrows and every lawful fixture mediator factors through them.";
+  left_arrow = [0, 1, 1, 2]; right_arrow = [0, 2, 1, 0];
+  inclusion = u:equalizer_inclusion_fixture(left_arrow, right_arrow);
+  u:assert_eq(equal(inclusion, [0, 2]), 1, "equalizer indices")?;
+  routes = u:equalizer_routes(left_arrow, right_arrow, inclusion);
+  u:assert_eq(equal(routes.left, routes.right), 1, "parallel routes agree")?;
+  factorization = u:equalizer_factorization(inclusion, [0, 2], [0, 1]);
+  u:assert_eq(factorization.commutes * factorization.unique, 1, "universal factorization")?;
+  broken = u:parallel_arrow_witness("equalizer mediator", [0, 2], [0, 1]);
+  u:assert_eq(broken.found, 1, "broken mediator witness")?;
+  ok({test: "equalizer-universal", cases: 4})
+}
+
+@test {name: "coequalizer is the universal forced quotient", tags: ["CT030", "coequalizer", "universal"]}
+def u:test_coequalizer_universal_property() { "The quotient merges parallel outputs and every constant coequalizing map factors through it.";
+  left_arrow = [0, 1]; right_arrow = [1, 2]; quotient = [0, 0, 0];
+  routes = u:coequalizer_routes(quotient, left_arrow, right_arrow);
+  u:assert_eq(equal(routes.left, routes.right), 1, "quotient coequalizes")?;
+  factorization = u:coequalizer_factorization(quotient, [7, 7, 7], [7]);
+  u:assert_eq(factorization.commutes * factorization.unique, 1, "quotient factorization")?;
+  broken_routes = u:coequalizer_routes([7, 8, 7], left_arrow, right_arrow);
+  witness = u:parallel_arrow_witness("coequalizer mediator", broken_routes.left, broken_routes.right);
+  u:assert_eq(witness.found, 1, "broken quotient witness")?;
+  ok({test: "coequalizer-universal", cases: 3})
+}
+
+u:run_registered_tests()

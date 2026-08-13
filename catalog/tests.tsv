@@ -5,3 +5,4 @@ finite-recursion-laws	tests/test_finite_recursion.mlpl	16-17	fold-fusion-unfold-
 model-config-lens-laws	tests/test_model_config_lens.mlpl	18-optics	get-put-put-get-put-put	0	0	none	records,nested-access	runnable
 diagonal-product-adjunction	tests/test_diagonal_product_adjunction.mlpl	19-adjunction	diagonal-product-triangles	0	0	none	records,nested-equality	runnable
 universal-endpoints	tests/test_universal_endpoints.mlpl	20-21	CT020-CT024-duality-endpoints	0	0	none	transpose,records	runnable
+equalizer-coequalizer	tests/test_equalizer_coequalizer.mlpl	22-23	CT029-CT030-parallel-arrow-universals	0	0	none	records,take	runnable

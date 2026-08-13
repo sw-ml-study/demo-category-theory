@@ -1,0 +1,22 @@
+# Lesson 23 -- coequalizer as the universal forced quotient.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/equalizer_coequalizer.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 23 -- MERGE EXACTLY THE OUTPUTS FORCED EQUAL", intro: "Let two parallel label assignments force 0~1 and 1~2, then quotient all three labels into one class."})
+left_arrow = [0, 1]
+right_arrow = [1, 2]
+quotient = [0, 0, 0]
+routes = u:coequalizer_routes(quotient, left_arrow, right_arrow)
+factorization = u:coequalizer_factorization(quotient, [7, 7, 7], [7])
+broken_routes = u:coequalizer_routes([7, 8, 7], left_arrow, right_arrow)
+broken_witness = u:parallel_arrow_witness("coequalizer mediator", broken_routes.left, broken_routes.right)
+disp(quotient)
+disp(routes.left)
+disp(routes.right)
+disp([factorization.commutes, factorization.unique, broken_witness.found])
+wrote = write_text("out/23-coequalizer.svg", u:coequalizer_diagram())
+u:epilog_open()
+u:explain("out/23-coequalizer.svg", "The parallel arrows force 0~1 and 1~2, so q maps all labels to one class. Every constant coequalizing map factors uniquely through q.")
+u:takeaway("A coequalizer is the universal quotient that imposes the equalities demanded by parallel arrows, no more and no less.")
+if equal(routes.left, routes.right) * factorization.commutes * factorization.unique * broken_witness.found * is_ok(wrote) { ok("coequalizer universal property verified") } else { err("coequalizer invariant failed") }

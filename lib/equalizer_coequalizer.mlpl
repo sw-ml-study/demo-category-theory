@@ -1,0 +1,10 @@
+# lib/equalizer_coequalizer.mlpl -- bounded parallel-arrow universal properties.
+# loops: 0
+
+def u:apply_binary_table(function_table, inputs) { "Apply one finite function table to a two-element input array."; [take(function_table, 0, take(inputs, 0, 0)), take(function_table, 0, take(inputs, 0, 1))] }
+def u:equalizer_inclusion_fixture(left_arrow, right_arrow) { "Return the agreeing source indices for the four-element equalizer fixture."; agreement = eq(left_arrow, right_arrow); [take(range(4), 0, take(grade_up(0 - agreement), 0, 0)), take(range(4), 0, take(grade_up(0 - agreement), 0, 1))] }
+def u:equalizer_routes(left_arrow, right_arrow, inclusion) { "Apply both parallel arrows after the two-element equalizer inclusion."; {left: u:apply_binary_table(left_arrow, inclusion), right: u:apply_binary_table(right_arrow, inclusion)} }
+def u:equalizer_factorization(inclusion, mediator, factor) { "Check that a two-element mediator factors uniquely through the equalizer inclusion."; reconstructed = u:apply_binary_table(inclusion, factor); {commutes: equal(reconstructed, mediator), unique: equal(factor, [0, 1]), reconstructed: reconstructed} }
+def u:coequalizer_routes(quotient, left_arrow, right_arrow) { "Apply the quotient after both parallel arrows in the two-element source fixture."; {left: u:apply_binary_table(quotient, left_arrow), right: u:apply_binary_table(quotient, right_arrow)} }
+def u:coequalizer_factorization(quotient, candidate_map, quotient_factor) { "Check that a three-element map factors through the singleton coequalizer quotient."; reconstructed = [take(quotient_factor, 0, take(quotient, 0, 0)), take(quotient_factor, 0, take(quotient, 0, 1)), take(quotient_factor, 0, take(quotient, 0, 2))]; {commutes: equal(reconstructed, candidate_map), unique: equal(quotient_factor, [take(candidate_map, 0, 0)]), reconstructed: reconstructed} }
+def u:parallel_arrow_witness(concept, expected, actual) { "Retain a named equalizer or coequalizer failure with expected and actual finite values."; {found: 1 - equal(expected, actual), concept: concept, expected: expected, actual: actual} }

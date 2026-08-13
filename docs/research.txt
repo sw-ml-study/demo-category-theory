@@ -1340,3 +1340,15 @@ show singleton is not initial and empty is not terminal in ordinary FinSet.
 The next supported concepts are CT029 equalizers and CT030 coequalizers. Their
 main boundary is bounded quotient construction for the coequalizer; no generic
 equivalence-closure engine is required for the planned finite fixture.
+
+CT029-CT030 implementation evidence, 2026-08-12
+
+Lesson 22 computes the maximal agreeing source indices `[0,2]` for two finite
+classifier tables and verifies the unique factorization of a lawful mediator.
+Lesson 23 uses the relations `0~1` and `1~2` to form one explicit quotient
+class, verifies constant maps factor through it, and exposes `[7,8,7]` as a
+non-coequalizing map. The bounded quotient is sufficient evidence for the
+universal property but not a generic equivalence-closure facility.
+
+CT031 pullbacks and CT032 pushouts are next. A keyed data join is the practical
+pullback fixture; a tagged merge with explicit identifications is the pushout.

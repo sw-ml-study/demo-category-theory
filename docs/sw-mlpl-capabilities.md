@@ -192,6 +192,12 @@ for CT020-CT024. The zero-object example correctly requires a pointed finite
 category rather than pretending empty or singleton is zero in ordinary
 FinSet. No new capability ask arose.
 
+Lessons 22-23 execute equalizer and coequalizer universal factorizations with
+finite function tables and explicit quotient labels. Fixed-size indexing is
+sufficient for the teaching fixtures. A reusable quotient/union-find facility
+may matter for larger workloads, but this bounded example alone does not
+justify an upstream ask.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

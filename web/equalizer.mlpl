@@ -1,0 +1,27 @@
+# Web Lesson 22 -- equalizer.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * The equalizer keeps exactly the inputs where two classifiers agree.
+# ***************************************************************************
+;
+left_classifier = [0, 1, 1, 2]  # first parallel arrow
+right_classifier = [0, 2, 1, 0]  # second parallel arrow
+equalizer = [0, 2]  # agreeing source indices
+left_route = [take(left_classifier, 0, 0), take(left_classifier, 0, 2)]  # through f
+right_route = [take(right_classifier, 0, 0), take(right_classifier, 0, 2)]  # through g
+lawful_factor = [0, 1]  # reconstructs inclusion [0,2]
+broken_mediator = [0, 1]  # includes a disagreeing source row
+disp(equalizer)  # largest agreeing subset
+disp([equal(left_route, right_route), equal(broken_mediator, equalizer)])  # 1 then 0
+# ***************************************************************************
+# * THE VISUAL
+# * Green E=[0,2] equalizes f and g; red row 1 makes their outputs split.
+# ***************************************************************************
+"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 820 280\" width=\"820\" height=\"280\" role=\"img\"><style>text{font-family:monospace;fill:#c0caf5}.obj{fill:#1f2335;stroke:#7aa2f7;stroke-width:3}.arrow{stroke:#9ece6a;stroke-width:4}.bad{stroke:#f7768e}.token{fill:#f7768e;animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(390px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(390px)}}</style><rect width=\"820\" height=\"280\" fill=\"#1a1b26\"/><rect class=\"obj\" x=\"30\" y=\"55\" width=\"150\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"315\" y=\"55\" width=\"180\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"650\" y=\"55\" width=\"140\" height=\"65\" rx=\"12\"/><line class=\"arrow\" x1=\"180\" y1=\"87\" x2=\"315\" y2=\"87\"/><line class=\"arrow\" x1=\"495\" y1=\"72\" x2=\"650\" y2=\"72\"/><line class=\"arrow\" x1=\"495\" y1=\"102\" x2=\"650\" y2=\"102\"/><text x=\"105\" y=\"94\" text-anchor=\"middle\">E=[0,2]</text><text x=\"405\" y=\"94\" text-anchor=\"middle\">A=[0,1,2,3]</text><text x=\"720\" y=\"94\" text-anchor=\"middle\">B</text><rect class=\"obj\" x=\"230\" y=\"185\" width=\"360\" height=\"60\" rx=\"12\"/><line class=\"arrow bad\" x1=\"410\" y1=\"165\" x2=\"410\" y2=\"185\"/><text x=\"410\" y=\"222\" text-anchor=\"middle\">row 1: f=1, g=2</text><circle class=\"token\" cx=\"160\" cy=\"107\" r=\"9\"/></svg>"  # agreeing subset and failure
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Every lawful mediator lands in E and therefore factors through inclusion.
+# * THE POINT -- equalizer is the universal agreeing subobject.
+# ***************************************************************************

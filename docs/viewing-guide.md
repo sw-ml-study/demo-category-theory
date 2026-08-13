@@ -47,6 +47,9 @@ and category-relative zero objects. Continue in numeric order as the
 CT020-CT044 saga adds equalizers, coequalizers, pullbacks, pushouts, finite
 limits/colimits, representables, and Yoneda.
 
+Lessons 22-23 form a dual pair around parallel arrows. The equalizer narrows
+the source to agreeing rows; the coequalizer merges target values forced equal.
+
 ## Artifact map
 
 - CLI sources and assertions: `demos/NN-topic/*.mlpl`

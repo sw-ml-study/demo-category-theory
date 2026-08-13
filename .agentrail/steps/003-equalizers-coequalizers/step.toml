@@ -1,6 +1,6 @@
 number = 3
 slug = "equalizers-coequalizers"
-status = "pending"
+status = "in-progress"
 description = "Implement CT029-CT030 as practical finite equalizer and coequalizer lessons. ..."
 role = "production"
 context_files = []
