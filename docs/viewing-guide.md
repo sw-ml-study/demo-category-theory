@@ -1,8 +1,14 @@
 # Viewing guide
 
-The curriculum currently contains twenty-eight self-checking CLI lessons,
-twenty-eight standalone web lessons, and twenty-eight generated SVG previews. Run `just check`
-for the authoritative executable audit, or follow one of these paths.
+The curriculum currently contains thirty-two self-checking CLI lessons,
+thirty-two standalone web lessons, and thirty-two generated SVG previews. Run
+`just check` for the authoritative executable audit. Use
+`docs/learning-spine.md` for prerequisite and audience paths; this guide groups
+the same executable leaves by topic.
+
+For the web editor specifically, open generated `web/START_HERE.md`. Its
+authored source is `docs/browser-learning-path.md`, and it names the exact
+`.mlpl` files in prerequisite order with their categorical boundaries.
 
 ## Foundations: Lessons 1-6
 

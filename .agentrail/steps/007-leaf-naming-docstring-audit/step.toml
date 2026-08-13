@@ -1,0 +1,9 @@
+number = 7
+slug = "leaf-naming-docstring-audit"
+status = "pending"
+description = "Audit every authored web/CLI MLPL leaf against research2 naming and docstring..."
+role = "production"
+context_files = []
+created_at = "2026-08-13T12:38:26"
+task_type = "curriculum"
+commits = []

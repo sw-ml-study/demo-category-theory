@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+for file in docs/learning-spine.md docs/browser-learning-path.md docs/executable-leaf-contract.md docs/lesson-scorecard.md docs/research2.txt; do
+  test -s "$repo_root/$file" || { echo "$file: missing curriculum standard" >&2; exit 1; }
+done
+grep -q "PREREQUISITES" "$repo_root/docs/executable-leaf-contract.md"
+grep -q "CATEGORICAL SETTING" "$repo_root/docs/executable-leaf-contract.md"
+grep -q "BOUNDARY" "$repo_root/docs/executable-leaf-contract.md"
+grep -q "sw-MLPL expression" "$repo_root/docs/lesson-scorecard.md"
+echo "curriculum docs: ok"

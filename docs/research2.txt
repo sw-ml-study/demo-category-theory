@@ -1,0 +1,676 @@
+can you look at the files in 
+https://github.com/sw-ml-study/demo-category-theory/tree/main/web and analyze how well they (comments, naming, doc strings) explain each concept?  I'm trying to dogfood sw-MLPL by using it to demonstrate Category Theory concepts.  It is hard to judge how useful these examples are to beginner, enthusiast, or expert.  The SVG diagrams need analysis and feedback for improvements, too.
+These could be leaf nodes in another demo/document that proceeds through a learning progression with context
+
+Yes. I think “learning spine + executable leaf nodes” is the right architecture for this repository. With that framing, I would not try to make every web/*.mlpl file a miniature Category Theory textbook chapter. The leaf should answer: “I have just learned concept X; now show me X executing in sw-MLPL.” The surrounding document supplies motivation, definitions, prerequisites, mathematical caveats, and links between concepts.
+
+That substantially improves my assessment of what you have—but it also exposes several places where the leaves themselves could be sharper.
+
+Recommended architecture
+
+I would separate four pedagogical layers:
+
+Learning progression / narrative
+        │
+        ├── What problem are we solving?
+        ├── Definition / terminology
+        ├── diagrammatic notation
+        ├── relationship to previous concepts
+        ├── categorical setting and caveats
+        │
+        ▼
+Executable sw-MLPL leaf
+        │
+        ├── concrete objects/values
+        ├── concrete morphisms
+        ├── execute both sides of a law
+        ├── display equality
+        ├── deliberately broken counterexample
+        └── SVG visualization
+        │
+        ▼
+Optional deeper material
+        ├── formal definition
+        ├── generality / limitations
+        ├── alternative categories
+        └── related concepts
+
+The repository is already implicitly organized this way. The viewing guide groups lessons into foundations, structure preservation, contextual pipelines, universal constructions, etc., and explicitly identifies the web/*.mlpl files as generated browser artifacts rather than the primary narrative.
+
+I would lean much harder into that distinction.
+
+How good are the leaves currently?
+
+As standalone Category Theory instruction, I would roughly rate them:
+
+Audience	Current effectiveness	With a narrative spine
+Beginner	C / C+	A- potential
+Interested programmer / enthusiast	B+	A
+Experienced FP programmer	A-	A
+Category theorist	B as pedagogy; interesting as executable examples	B+/A-
+
+The biggest problem for beginners isn't primarily lack of comments. It is that several examples silently cross between:
+
+category/object/morphism,
+ordinary program value/function,
+set/element/function,
+array/container/map,
+categorical universal property,
+a finite computational witness of that property.
+
+An enthusiast can infer those distinctions. A beginner often cannot.
+
+The solution isn't much more text in every .mlpl file. The parent lesson should establish the categorical setting before dropping into the executable witness.
+
+The existing leaf format is actually quite good
+
+There is a strong recurring structure:
+
+WHAT THIS SHOWS
+...
+THE VISUAL
+...
+HOW TO READ THE RESULT
+...
+THE POINT
+...
+
+For example, arrows.mlpl says that it demonstrates a concrete morphism, executes double, displays the source and result arrays, then explains how to read the animation.
+
+That's an excellent basic shape for a leaf.
+
+I would add three small pieces of metadata, though:
+
+# PREREQUISITES
+# Functions; objects and morphisms.
+
+
+# CATEGORICAL SETTING
+# In this example, objects are collections of numbers and morphisms
+# are ordinary sw-MLPL functions between them.
+
+
+# BOUNDARY
+# This demonstrates the law on a concrete finite fixture.
+# It is not a proof for arbitrary categories.
+
+Not every lesson needs all three paragraphs. But particularly from functors onward, “what category are we in?” becomes essential.
+
+Comments: generally stronger than docstrings
+
+Your explanatory comments are usually considerably better than the function docstrings.
+
+Consider:
+
+def u:increment(x) {
+  "Compute increment for this executable category-theory example.";
+  x + 1
+}
+
+from the functor example.
+
+The docstring is technically accurate but pedagogically almost empty. increment already tells me it increments.
+
+A better docstring would explain its categorical role, for example:
+
+"Scalar morphism f used to test preservation of composition under each."
+
+Likewise:
+
+def u:duplicate(value) {
+    "Duplicate one value into both diagonal components.";
+    ...
+}
+
+is substantially better because it says why the function exists.
+
+So I'd establish a rule:
+
+Names say what the computation does; docstrings say what role that computation plays in the concept being demonstrated.
+
+That makes dogfooding sw-MLPL itself more valuable.
+
+Naming: mostly readable, but categorical role should win over implementation role
+
+Names such as:
+
+increment_then_double
+matching_projections
+transformation_from_element
+element_from_transformation
+recovered_element
+
+are quite good. They're verbose in the right way for a teaching language.
+
+I'd be more suspicious of generic names such as:
+
+upper
+lower
+left
+right
+once
+twice
+lawful_factor
+broken_mediator
+
+They're compact, but a learner repeatedly has to reconstruct what they mean.
+
+Prefer names based on the equation being tested:
+
+map_then_transpose
+transpose_then_map
+
+
+map_composition
+composition_then_map
+
+
+via_f
+via_g
+
+
+candidate_mediator
+equalizer_inclusion
+
+There is a useful dogfooding principle here:
+
+If a Category Theory example becomes painfully verbose when every categorical role is named explicitly, that may reveal a missing sw-MLPL abstraction.
+
+That is precisely the kind of forcing function this repository can provide.
+
+A particularly important issue: arrows ≠ functions in general
+
+Lesson 1 currently says:
+
+“arrows are functions”
+
+and ends with:
+
+“an arrow is an executable function, not decorative notation.”
+
+As the first leaf, that's potentially too strong.
+
+For your pedagogical progression I'd make the parent say something like:
+
+We will begin in a concrete category where morphisms can be represented by sw-MLPL functions. Category Theory does not require every morphism in every category to literally be a function.
+
+Then the leaf can remain wonderfully concrete.
+
+I'd rename the heading to something like:
+
+“Our first arrows are executable functions.”
+
+That's simultaneously beginner-friendly and mathematically safer.
+
+Composition associativity needs substantive improvement
+
+This was the strongest problem I found.
+
+The code currently says:
+
+left =
+  each(:u:square_value,
+    each(:u:double_value,
+      each(:u:increment_value, xs)))
+
+
+right =
+  each(:u:square_value,
+    each(:u:double_value,
+      each(:u:increment_value, xs)))
+
+and comments one as (f ; g) ; h and the other as f ; (g ; h).
+
+But those are literally the same expression.
+
+So computationally this does not demonstrate associativity. It demonstrates that an expression equals itself while the comments assert two different parenthesizations.
+
+This is a very useful sw-MLPL forcing-function discovery.
+
+Ideally the language/library should let the demo construct compositions distinctly:
+
+fg = compose(f, g)
+left = compose(fg, h)
+
+
+gh = compose(g, h)
+right = compose(f, gh)
+
+then execute them.
+
+That would make the law visible in the program structure, rather than only in the prose.
+
+The SVG similarly shows one A→B→C→D route and prints:
+
+(f ; g) ; h = f ; (g ; h)
+
+but doesn't visually distinguish the two composition trees.
+
+A far better diagram would show:
+
+          compose
+         /       \
+     compose      h
+     /    \
+    f      g
+
+
+
+
+          compose
+         /       \
+        f      compose
+               /    \
+              g      h
+
+beside the common A→B→C→D path.
+
+That would make associativity itself visible.
+
+Array functor: good executable idea, wording needs precision
+
+This is one of the better sw-MLPL examples because array programming makes the concept genuinely relevant.
+
+The current lesson says:
+
+“arrays as a concrete functor”
+
+and:
+
+“arrays are a concrete functor.”
+
+That's a little loose. Arrays aren't themselves the functor. The array construction together with each is playing the functorial mapping role.
+
+The narrative spine can say:
+
+value            → array of values
+f : A → B        → each(f) : Array A → Array B
+identity         → mapped identity
+composition      → composition of mapped functions
+
+Then the leaf is excellent evidence, because it actually executes both functor laws.
+
+This should probably be one of your hero examples of why Category Theory is interesting in sw-MLPL.
+
+Natural transformation: good enthusiast leaf, difficult beginner leaf
+
+The transpose example is attractive:
+
+upper = transpose(each(:u:increment, m))
+lower = each(:u:increment, transpose(m))
+
+and the SVG displays a commuting square and a deliberately broken component.
+
+That's very good executable pedagogy.
+
+But a beginner encounters:
+
+“transpose as a natural transformation”
+
+without seeing clearly between which two functors.
+
+The leaf shouldn't have to teach all of that. The parent should introduce:
+
+F ───────────────▶ G
+│                  │
+F(f)             G(f)
+│                  │
+▼                  ▼
+F' ──────────────▶ G'
+
+and then say:
+
+Now instantiate that abstract square with arrays, cellwise mapping, and transpose.
+
+Then the leaf suddenly makes sense.
+
+I would also change:
+
+“Equal matrices prove one component”
+
+to:
+
+“Equal matrices verify this finite instance of one naturality square.”
+
+“Prove” is stronger than what the computation actually establishes.
+
+Equalizer: intuitive analogy is good, but don't let “largest subset” become the definition
+
+The equalizer lesson calls it:
+
+“the largest agreeing subset”
+
+and computes the rows on which two classifiers agree.
+
+For Set, that is excellent intuition.
+
+For Category Theory generally, the universal property is the important thing.
+
+This is exactly where your spine/leaf architecture works well:
+
+Parent
+
+In Set, the equalizer can be pictured as the subset of inputs on which two functions agree. Categorically, what characterizes it is the universal factorization property.
+
+Leaf
+
+Use your classifier example.
+
+After leaf
+
+Show:
+
+           h
+       X ─────▶ E
+        \       │
+         \      │ e
+          ▼     ▼
+            A ⇉ B
+             f g
+
+and ask:
+
+Why must every h satisfying f∘h = g∘h factor uniquely through E?
+
+That moves the learner from computational intuition to the categorical definition.
+
+Yoneda is doing too much in one visual
+
+The finite Yoneda example is actually quite careful. In particular, I like the final caveat:
+
+“that is density intuition, not a proof of the general density theorem.”
+
+That's exactly the kind of boundary statement I'd propagate throughout the repository.
+
+But the SVG simultaneously presents:
+
+element → natural transformation,
+evaluation at identity,
+naturality,
+category of elements,
+density intuition.
+
+That's too much visual payload for a learner encountering Yoneda.
+
+I'd make one executable leaf but multiple visual stages:
+
+28a: element → transformation
+28b: transformation → element
+28c: show the round trip
+28d: show naturality
+28e: optional category-of-elements extension
+
+Same .mlpl computations if you want; just progressive visualization.
+
+Yoneda should feel surprising, not overwhelming.
+
+The adjunction lesson has the same issue
+
+Your diagonal/product example computes concrete triangle identities and a broken projection.
+
+That's useful for someone who already knows what:
+
+diagonal functor,
+product functor,
+unit,
+counit,
+triangle identity,
+
+mean.
+
+It is almost opaque otherwise.
+
+So I wouldn't make the .mlpl dramatically longer.
+
+Instead, the parent node should construct the idea incrementally:
+
+duplicate
+   │
+   ▼
+(X,X)
+
+
+product
+   │
+   ▼
+A × B
+
+then introduce the hom-set correspondence, then unit/counit, and only then link to the executable triangle test.
+
+That's exactly a leaf.
+
+SVGs: strong consistency, but several systematic improvements would help
+
+There is a lot I like about them.
+
+Across the files I inspected you consistently have:
+
+common visual vocabulary,
+blue objects,
+green lawful arrows/results,
+red counterexamples,
+moving tokens,
+dark background,
+role="img",
+prefers-reduced-motion.
+
+The reduced-motion handling in particular is a nice detail.
+
+But I'd change the visual grammar in several ways.
+
+1. Distinguish objects from elements
+
+This is the most important visual change.
+
+The arrows demo puts:
+
+[ box containing 3 ] ──double──▶ [ box containing 6 ]
+
+which can accidentally teach that 3 and 6 are categorical objects.
+
+Instead show:
+
+┌──────── Numbers ────────┐       ┌──────── Numbers ────────┐
+│            ● 3           │ ──f──▶ │            ● 6           │
+└──────────────────────────┘       └──────────────────────────┘
+
+Objects are the containers; elements/tokens live inside.
+
+That one visual convention would pay dividends throughout the entire curriculum.
+
+2. Don't rely on red/green alone
+
+Add shape or text:
+
+✓ commutes
+✗ differs
+
+
+LAW
+COUNTEREXAMPLE
+
+or solid versus dashed paths.
+
+3. Label arrows more aggressively
+
+Many diagrams are much easier to understand if arrows say:
+
+f
+g
+F(f)
+G(f)
+η_A
+η_B
+π₁
+π₂
+ι₁
+ι₂
+
+once the parent has introduced that notation.
+
+You don't have to avoid mathematical notation in the diagrams just because sw-MLPL avoids glyph-heavy syntax. The diagram is documentation.
+
+4. Add SVG <title> and <desc>
+
+The README has useful alt text—for example it describes the naturality diagram and broken component explicitly.
+
+But the SVG fragments I've examined have role="img" without corresponding <title> / <desc> elements.
+
+I'd generate them.
+
+5. Animate paths, not merely values
+
+For commutative diagrams, one of the best opportunities is to animate two tokens simultaneously:
+
+A ──▶ B
+│     │
+▼     ▼
+C ──▶ D
+
+Send one token around the top-right path and another around the left-bottom path.
+
+Then:
+
+lawful: they overlap at D,
+broken: they visibly separate.
+
+That teaches commutativity without prose.
+
+6. Progressive diagrams will outperform denser static diagrams
+
+Especially:
+
+natural transformations,
+adjunction,
+limits/colimits,
+representables,
+Yoneda.
+
+Use stages:
+
+objects
+→ arrows
+→ second path
+→ universal mediator
+→ equality
+→ counterexample
+
+rather than showing the entire finished diagram at once.
+
+The 32 lessons actually form several excellent learning branches
+
+The README currently goes at least through Lesson 32, including representables, Yoneda, unique universal isomorphism, diagonal functors, indexed products, and generalized cones.
+
+Rather than one long sequence, I would represent it as a DAG of prerequisites.
+
+For example:
+
+Functions
+   │
+   ▼
+Morphisms ──▶ Identity ──▶ Composition ──▶ Associativity
+                                    │
+                                    ▼
+                           Commutative diagrams
+                              /             \
+                             /               \
+                         Products         Coproducts
+                            │                 │
+                         Equalizer        Coequalizer
+                            │                 │
+                         Pullback          Pushout
+                             \               /
+                              \             /
+                               Limits / Colimits
+
+
+
+
+Morphisms
+   │
+   ▼
+Mapping
+   │
+   ▼
+Array Functor
+   │
+   ▼
+Natural Transformation
+   │
+   ▼
+Representables
+   │
+   ▼
+Yoneda
+
+
+
+
+Composition
+   │
+   ├──▶ Context map ─▶ Kleisli composition
+   │
+   ├──▶ Fold / unfold
+   │
+   └──▶ Optics
+
+
+
+
+Products + Functors
+       │
+       ▼
+Diagonal/Product Adjunction
+
+That would let a beginner follow a guided path while an enthusiast can jump directly to “show me Yoneda in sw-MLPL.”
+
+And each terminal node opens exactly the sort of file you have now.
+
+I would therefore reduce, not increase, some leaf commentary
+
+Once the spine exists, a good executable leaf could have a strict contract:
+
+1. Name the concept.
+2. State the concrete categorical setting.
+3. Name the law being exercised.
+4. Execute it.
+5. Display a witness.
+6. Execute one counterexample where useful.
+7. Display the diagram.
+8. State exactly what was and wasn't demonstrated.
+
+No history lesson. No extended definition. No huge mathematical exposition.
+
+That keeps the code enjoyable to read as sw-MLPL code, rather than turning it into Markdown with occasional executable statements.
+
+One particularly valuable dogfooding criterion
+
+I'd add a second score to every lesson:
+
+How naturally can this Category Theory concept be expressed in sw-MLPL?
+
+Not merely “does the example run?”
+
+Something like:
+
+Concept	CT teaching	sw-MLPL expression	Language pressure
+Morphism/function	strong	strong	low
+Composition	moderate	currently weak	composition abstraction
+Associativity	concept good	currently artificial	first-class composition
+Array functor	strong	very strong	low
+Naturality	strong	strong	naming/abstraction
+Products	strong	strong	perhaps tuple/product helpers
+Equalizer	good	somewhat fixture-heavy	filtering/factorization vocabulary
+Kleisli	very relevant	likely strong	context combinators
+Adjunction	advanced	cumbersome	abstraction pressure
+Yoneda	advanced	fixture-specific	representation/generalization pressure
+
+That turns demo-category-theory into two projects simultaneously:
+
+a way to learn Category Theory through executable examples;
+a benchmark for whether sw-MLPL can express abstraction cleanly.
+
+That second purpose is especially important. The associativity example has already uncovered exactly such a problem: the prose claims two different compositions while the program represents them as the same nested evaluation.
+
+So I would not bulk-add explanatory comments to the current leaves yet. I would first build the contextual spine, establish a leaf contract, fix the object/element visual grammar, and then audit each leaf against two independent questions: “Does this accurately witness the CT concept?” and “Does sw-MLPL express the concept naturally?”. That gives you a much more meaningful dogfooding exercise than simply making every file understandable in isolation.
+

@@ -10,8 +10,13 @@ builds toward commutative diagrams, products, coproducts, array functors, and
 natural transformations; then applies the same law-first method to contexts,
 folds/unfolds, optics, and one concrete adjunction.
 
-All twenty-eight current lessons are implemented and checked. Start with the
-[viewing guide](docs/viewing-guide.md) for the recommended paths through them.
+All thirty-two current lessons are implemented and checked. Start with the
+[learning spine](docs/learning-spine.md) and
+[viewing guide](docs/viewing-guide.md) for prerequisite-aware paths. The
+[executable-leaf contract](docs/executable-leaf-contract.md) defines how every
+current migration and future concept must teach, execute, visualize, and bound
+its claim; the [lesson scorecard](docs/lesson-scorecard.md) separately judges
+Category Theory teaching and how naturally sw-MLPL expresses it.
 
 ## Run it
 

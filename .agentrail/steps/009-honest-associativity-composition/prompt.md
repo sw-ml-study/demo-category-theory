@@ -1,0 +1,1 @@
+Repair composition associativity per research2: construct and execute genuinely distinct left- and right-associated compositions rather than identical nested expressions, probe/document any sw-MLPL composition abstraction gap, visualize both composition trees beside the common path, update tests/docs/assets, full gate, commits, pushes.

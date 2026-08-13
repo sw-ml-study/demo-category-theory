@@ -1,0 +1,1 @@
+Audit every authored web/CLI MLPL leaf against research2 naming and docstring guidance. Names state what computation does; docstrings state the categorical role. Replace cryptic generic identifiers where they impair teaching, preserve readable docstring-first functions, update ledgers/checks, run full gate, detailed commit, completion commit, pushes.

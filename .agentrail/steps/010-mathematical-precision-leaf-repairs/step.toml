@@ -1,0 +1,9 @@
+number = 10
+slug = "mathematical-precision-leaf-repairs"
+status = "pending"
+description = "Apply research2 mathematical precision fixes to affected leaves: first arrows..."
+role = "production"
+context_files = []
+created_at = "2026-08-13T12:38:26"
+task_type = "curriculum"
+commits = []

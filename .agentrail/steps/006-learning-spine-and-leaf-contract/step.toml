@@ -1,0 +1,9 @@
+number = 6
+slug = "learning-spine-and-leaf-contract"
+status = "in-progress"
+description = "Implement research2's learning-spine architecture before further CT concepts:..."
+role = "production"
+context_files = []
+created_at = "2026-08-13T12:38:26"
+task_type = "curriculum"
+commits = []

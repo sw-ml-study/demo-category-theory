@@ -8,6 +8,12 @@ The broader program continues through the 245 tracked concepts in
 `docs/next-saga-plan.md`; completion of a bounded saga is never completion of
 the program-level inventory.
 
+Before further concepts, the research2 curriculum-quality sequence establishes
+`docs/learning-spine.md`, `docs/executable-leaf-contract.md`, the browser-facing
+`web/START_HERE.md`, and `docs/lesson-scorecard.md`; then it audits naming,
+docstrings, visuals, associativity, mathematical precision, and Yoneda. Every
+future concept inherits these standards.
+
 Current continuation status: CT020-CT043 are implemented as Lessons 20-28,
 except CT035-CT036 remain explicitly constrained. CT044 has an executable
 bounded reconstruction but the general density theorem remains constrained.

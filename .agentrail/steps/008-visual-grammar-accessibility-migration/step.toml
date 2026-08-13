@@ -1,0 +1,9 @@
+number = 8
+slug = "visual-grammar-accessibility-migration"
+status = "pending"
+description = "Apply research2 visual recommendations across existing authored SVG lessons: ..."
+role = "production"
+context_files = []
+created_at = "2026-08-13T12:38:26"
+task_type = "curriculum"
+commits = []

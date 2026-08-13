@@ -1,0 +1,9 @@
+number = 11
+slug = "curriculum-quality-integration-audit"
+status = "pending"
+description = "Audit all existing executable leaves against research2's eight-part contract,..."
+role = "validation"
+context_files = []
+created_at = "2026-08-13T12:38:26"
+task_type = "curriculum"
+commits = []

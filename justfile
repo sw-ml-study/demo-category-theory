@@ -27,5 +27,6 @@ audit:
     ./scripts/check-web-svg-convention
     ./scripts/check-generated
     ./scripts/check-visual-grammar
+    ./scripts/check-curriculum-docs
 
 check: probes demos tests audit

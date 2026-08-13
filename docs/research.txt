@@ -1506,3 +1506,20 @@ equations. Only after commutation do mediator counts `[1,1,1]` select the
 bounded limit cone and colimit cocone. Changing the final cone leg breaks
 commutation; `[1,2,1]` breaks uniqueness. Current fixed tables suffice, with no
 upstream ask. CT055-CT058 preservation, creation, and reflection are next.
+
+Research2 curriculum architecture decision, 2026-08-13
+
+The repository now treats `.mlpl` demos as executable leaves beneath a
+prerequisite-aware learning spine, not as isolated textbook chapters. The
+durable standard is `docs/executable-leaf-contract.md`: each leaf names its
+setting and law, executes a witness and useful counterexample, supplies an
+accessible directed visual, and states the exact evidence boundary. Names
+describe computation; docstrings describe categorical role.
+
+`docs/learning-spine.md` records the prerequisite DAG and audience paths.
+`docs/browser-learning-path.md` generates `web/START_HERE.md` beside the files
+used in the web UI. `docs/lesson-scorecard.md` separately rates Category Theory
+teaching and how naturally sw-MLPL expresses the concept. Queued Agentrail
+steps migrate all existing leaves, repair associativity and Yoneda, upgrade
+SVG accessibility, and audit integration before CT055 work resumes. All future
+concept sagas must apply these recommendations from their first plan/probe.
