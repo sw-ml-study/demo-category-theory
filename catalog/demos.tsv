@@ -20,6 +20,8 @@ pullback	demos/24-pullbacks/keyed_join.mlpl	24-pullbacks	CT031-pullback	0	0	asci
 pushout	demos/25-pushouts/tagged_merge.mlpl	25-pushouts	CT032-pushout	0	0	ascii,svg	records,take	runnable
 pullback-web	demos/web/pullback.mlpl	web	CT031-pullback	0	0	svg	records	runnable
 pushout-web	demos/web/pushout.mlpl	web	CT032-pushout	0	0	svg	records	runnable
+finite-limits-colimits	demos/26-finite-limits-colimits/universal_cones.mlpl	26-finite-limits-colimits	CT027-CT036-cones-cocones-finite-universals	0	0	ascii,svg	records,take,fill	runnable
+finite-limits-colimits-web	demos/web/finite_limits_colimits.mlpl	web	CT027-CT036-cones-cocones-finite-universals	0	0	svg	take	runnable
 arrows	demos/01-arrows/arrows.mlpl	01-arrows	objects-and-morphisms	0	0	ascii,svg	current	runnable
 identity-composition	demos/02-composition/identity.mlpl	02-composition	identity-and-composition	0	0	ascii,svg	current	runnable
 associativity	demos/03-associativity/bracketing.mlpl	03-associativity	composition-associativity	0	0	ascii,svg	current	runnable

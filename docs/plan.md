@@ -1,16 +1,17 @@
 # Implementation plan: category theory you can watch execute
 
-Status: **all nineteen capability-gated lessons implemented; advanced saga
-integration complete**.
+Status: **twenty-six capability-gated lessons implemented; the 245-concept
+program remains active**.
 
 The broader program continues through the 245 tracked concepts in
 `docs/concept-inventory.md`. The next implementation plan is
 `docs/next-saga-plan.md`; completion of a bounded saga is never completion of
 the program-level inventory.
 
-Current continuation status: CT020-CT024 are implemented as Lessons 20-21.
-CT029-CT032 are implemented as Lessons 22-25. Cones, cocones, and their finite
-limit/colimit unification are next.
+Current continuation status: CT020-CT024 and CT027-CT034 are implemented as
+Lessons 20-26; CT035-CT036 are explicitly constrained. Representables,
+corepresentables, hom-functors, universal arrows, and universal elements are
+next in Step 6.
 
 Derived from `docs/research.txt` and the ownership contract in
 `../demo-abstract-algebra/docs/scope-boundary.md`. This repository owns the

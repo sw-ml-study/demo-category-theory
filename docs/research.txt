@@ -1397,3 +1397,18 @@ but an undirected line does not communicate domain, codomain, or direction.
 Every web SVG now defines the same `arrowhead` marker and applies it to the
 semantic `.arrow`/`.a` style. A repository gate enforces emission, binding,
 single display, and directed-arrow conventions for future lessons.
+
+CT027-CT036 implementation evidence, 2026-08-12
+
+Lesson 26 evaluates a finite arrow table `[1,0,1]`. Cone legs `[0,2]` and
+`[1,1]` commute because both routes reach `[1,1]`; changing the target leg to
+`[1,0]` exposes failure. The dual cocone uses source leg `[0,1,0]` and target
+leg `[1,0]`, with a changed constant target leg as its counterexample.
+
+Within three explicitly bounded candidates, factor counts `[1,1,1]` select a
+terminal cone and an initial cocone; `[1,2,1]` and `[1,1,0]` demonstrate failed
+uniqueness or existence. This unifies product/equalizer/pullback as finite
+limit shapes and their duals as finite colimit shapes. It is evidence about
+these enumerated families only, not a proof of completeness or cocompleteness.
+CT037 representability remains next because it needs hom-functor tables rather
+than another cone fixture.

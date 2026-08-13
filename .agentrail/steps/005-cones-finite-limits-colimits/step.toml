@@ -1,6 +1,6 @@
 number = 5
 slug = "cones-finite-limits-colimits"
-status = "pending"
+status = "in-progress"
 description = "Implement CT027-CT035 and boundary material CT036-CT037 by unifying prior con..."
 role = "production"
 context_files = []

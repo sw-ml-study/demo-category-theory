@@ -32,6 +32,9 @@ mathematical meaning and the executable approximation.
 | coequalizer | Universal quotient imposing equality of two parallel arrows | Explicit class labels `[0,0,0]` plus factorization checks | Arbitrarily collapsing values |
 | pullback | Universal object synchronizing two maps into a shared target | Keyed row join with two projections | An arbitrary Cartesian product |
 | pushout | Universal object merging two maps from a shared source | Tagged schema merge with explicit shared classes | Concatenation without identification |
+| cone / cocone | Compatible arrows from one apex into a diagram, or dually from the diagram into one apex | Finite function-table legs with both routes compared | An arbitrary collection of arrows |
+| finite limit / finite colimit | Terminal cone or initial cocone for a finite diagram shape | Bounded candidates with exactly one factorization mediator | Merely the smallest or largest value |
+| complete / cocomplete | Having limits or colimits for every small diagram | Definition-only boundary; not established by finite fixtures | Passing every test in this repository |
 
 The product/coproduct lessons demonstrate value-level universal properties;
 they do not claim that sw-MLPL has parametric types, algebraic data types, or

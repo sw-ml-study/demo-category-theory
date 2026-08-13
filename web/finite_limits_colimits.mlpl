@@ -1,0 +1,37 @@
+# Web Lesson 26 -- cones, cocones, and bounded finite (co)limits.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * A cone points into a diagram; its dual cocone points out. Unique
+# * factorization selects a finite limit or colimit from bounded candidates.
+# ***************************************************************************
+;
+def u:apply_two_point_table(table, inputs) { "Apply one finite table to two inputs."; [take(table, 0, take(inputs, 0, 0)), take(table, 0, take(inputs, 0, 1))] }  # finite function action
+def u:apply_three_point_table(table, inputs) { "Apply one finite table to three inputs."; [take(table, 0, take(inputs, 0, 0)), take(table, 0, take(inputs, 0, 1)), take(table, 0, take(inputs, 0, 2))] }  # three-point action
+def u:cone_commutes(diagram_arrow, source_leg, target_leg) { "Check both cone routes into the target object."; equal(u:apply_two_point_table(diagram_arrow, source_leg), target_leg) }  # inward route equality
+def u:cocone_commutes(diagram_arrow, source_leg, target_leg) { "Check both cocone routes out of the source object."; equal(u:apply_three_point_table(target_leg, diagram_arrow), source_leg) }  # outward route equality
+diagram_arrow = [1, 0, 1]  # finite X to Y arrow
+lawful_cone = u:cone_commutes(diagram_arrow, [0, 2], [1, 1])  # inward legs commute
+broken_cone = u:cone_commutes(diagram_arrow, [0, 2], [1, 0])  # changed target leg
+lawful_cocone = u:cocone_commutes(diagram_arrow, [0, 1, 0], [1, 0])  # outward legs commute
+broken_cocone = u:cocone_commutes(diagram_arrow, [0, 1, 0], [0, 0])  # changed apex leg
+limit_factor_counts = [1, 1, 1]  # terminal among three cones
+non_limit_factor_counts = [1, 2, 1]  # mediator is not unique
+colimit_factor_counts = [1, 1, 1]  # initial among three cocones
+disp([lawful_cone, broken_cone, lawful_cocone, broken_cocone])  # 1,0,1,0
+disp([limit_factor_counts, non_limit_factor_counts, colimit_factor_counts])  # universality evidence
+# ***************************************************************************
+# * THE VISUAL
+# * Arrowheads distinguish inward cone legs from outward cocone legs.
+# ***************************************************************************
+def u:finite_limits_colimits_visual() { "Return the cone and cocone universal-factorization diagram."; "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 860 330\" width=\"860\" height=\"330\" role=\"img\"><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.bad{stroke:rgb(247,118,142)}.token{fill:rgb(247,118,142);animation:p 3s infinite alternate}@keyframes p{to{transform:translateY(85px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateY(85px)}}</style><rect width=\"860\" height=\"330\" fill=\"rgb(26,27,38)\"/><text x=\"215\" y=\"28\" text-anchor=\"middle\">CONE / TERMINAL CONE</text><text x=\"645\" y=\"28\" text-anchor=\"middle\">COCONE / INITIAL COCONE</text><g><rect class=\"obj\" x=\"155\" y=\"55\" width=\"120\" height=\"55\" rx=\"12\"/><rect class=\"obj\" x=\"45\" y=\"205\" width=\"120\" height=\"55\" rx=\"12\"/><rect class=\"obj\" x=\"265\" y=\"205\" width=\"120\" height=\"55\" rx=\"12\"/><line class=\"arrow\" x1=\"185\" y1=\"110\" x2=\"130\" y2=\"205\"/><line class=\"arrow\" x1=\"245\" y1=\"110\" x2=\"300\" y2=\"205\"/><line class=\"arrow\" x1=\"165\" y1=\"232\" x2=\"265\" y2=\"232\"/><text x=\"215\" y=\"88\" text-anchor=\"middle\">apex</text><text x=\"105\" y=\"238\" text-anchor=\"middle\">X</text><text x=\"325\" y=\"238\" text-anchor=\"middle\">Y</text><text x=\"215\" y=\"295\" text-anchor=\"middle\">unique mediators [1,1,1]</text></g><g transform=\"translate(430 0)\"><rect class=\"obj\" x=\"45\" y=\"55\" width=\"120\" height=\"55\" rx=\"12\"/><rect class=\"obj\" x=\"265\" y=\"55\" width=\"120\" height=\"55\" rx=\"12\"/><rect class=\"obj\" x=\"155\" y=\"205\" width=\"120\" height=\"55\" rx=\"12\"/><line class=\"arrow\" x1=\"165\" y1=\"82\" x2=\"265\" y2=\"82\"/><line class=\"arrow\" x1=\"130\" y1=\"110\" x2=\"185\" y2=\"205\"/><line class=\"arrow\" x1=\"300\" y1=\"110\" x2=\"245\" y2=\"205\"/><text x=\"105\" y=\"88\" text-anchor=\"middle\">X</text><text x=\"325\" y=\"88\" text-anchor=\"middle\">Y</text><text x=\"215\" y=\"238\" text-anchor=\"middle\">apex</text><text x=\"215\" y=\"295\" text-anchor=\"middle\">unique mediators [1,1,1]</text></g><circle class=\"token\" cx=\"215\" cy=\"105\" r=\"9\"/></svg>" }  # named custom visual
+finite_limits_colimits_visual = u:finite_limits_colimits_visual()  # bind visual constant
+finite_limits_colimits_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Green arrowheads show leg direction; [1,1,1] means one mediator per
+# * bounded candidate, while [1,2,1] visibly fails uniqueness.
+# * THE POINT -- products/equalizers/pullbacks are finite limits of different
+# * shapes; their duals are finite colimits. This does not prove completeness.
+# ***************************************************************************

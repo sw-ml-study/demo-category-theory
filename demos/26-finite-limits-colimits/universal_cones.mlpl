@@ -1,0 +1,21 @@
+# Lesson 26 -- cones, cocones, and bounded finite (co)limits.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_limits_colimits.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 26 -- UNIVERSAL CONES UNIFY FINITE CONSTRUCTIONS", intro: "Commute one cone and its dual cocone, then compare unique factorization counts for finite universal candidates."})
+diagram_arrow = [1, 0, 1]
+cone = u:cone_routes(diagram_arrow, [0, 2], [1, 1])
+broken_cone = u:cone_routes(diagram_arrow, [0, 2], [1, 0])
+cocone = u:cocone_routes(diagram_arrow, [0, 1, 0], [1, 0])
+broken_cocone = u:cocone_routes(diagram_arrow, [0, 1, 0], [0, 0])
+finite_limit = u:terminal_cone_from_factor_counts([10, 11, 12], [1, 1, 1])
+finite_colimit = u:initial_cocone_from_factor_counts([20, 21, 22], [1, 1, 1])
+non_limit = u:bounded_universality_witness("not terminal", [1, 2, 1])
+disp([cone.commutes, broken_cone.commutes, cocone.commutes, broken_cocone.commutes, finite_limit.universal, finite_colimit.universal, non_limit.found])
+disp([u:finite_limit_shape_codes(), u:finite_colimit_shape_codes()])
+wrote = write_text("out/26-finite-limits-colimits.svg", u:finite_limits_colimits_diagram())
+u:epilog_open()
+u:explain("out/26-finite-limits-colimits.svg", "A cone points into a diagram and a cocone points out. Requiring exactly one mediator selects the terminal cone or initial cocone in this bounded family.")
+u:takeaway("Products, equalizers, and pullbacks are finite limits of different shapes; their duals are finite colimits. These fixtures do not prove completeness or cocompleteness.")
+if cone.commutes * cocone.commutes * equal(broken_cone.commutes, 0) * equal(broken_cocone.commutes, 0) * finite_limit.universal * finite_colimit.universal * non_limit.found * is_ok(wrote) { ok("bounded universal cones verified") } else { err("finite cone invariant failed") }

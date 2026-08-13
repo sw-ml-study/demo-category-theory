@@ -204,6 +204,16 @@ pushout schema merges. Universal squares and mediators execute without new
 runtime support. Larger dynamic joins or quotient construction may motivate
 library work later, but current fixtures do not justify a language request.
 
+Lesson 26 executes cone/cocone route equality and bounded terminal/initial
+factorization counts with numeric function tables. A first draft attempted to
+store candidate and construction labels in string arrays; the interpreter
+rejected that representation, so the executable fixture uses documented
+numeric codes and keeps human-readable names in narration. This is sufficient
+for the lesson and does not yet justify an upstream string-array request.
+Finite candidate enumeration still cannot establish completeness or
+cocompleteness, which remains a mathematical evidence boundary rather than a
+missing runtime feature.
+
 ## Decision rule for upstream requests
 
 Before requesting a capability from sw-MLPL:

@@ -1,0 +1,12 @@
+# lib/finite_limits_colimits.mlpl -- cones, cocones, and bounded universality.
+# loops: 0
+
+def u:apply_two_point_table(table, inputs) { "Apply one finite function table to two explicit inputs."; [take(table, 0, take(inputs, 0, 0)), take(table, 0, take(inputs, 0, 1))] }
+def u:apply_three_point_table(table, inputs) { "Apply one finite function table to three explicit inputs."; [take(table, 0, take(inputs, 0, 0)), take(table, 0, take(inputs, 0, 1)), take(table, 0, take(inputs, 0, 2))] }
+def u:cone_routes(diagram_arrow, leg_to_source, leg_to_target) { "Compare the two routes from a cone apex into a one-arrow finite diagram."; through_source = u:apply_two_point_table(diagram_arrow, leg_to_source); {commutes: equal(through_source, leg_to_target), through_source: through_source, direct_target: leg_to_target} }
+def u:cocone_routes(diagram_arrow, leg_from_source, leg_from_target) { "Compare the two routes from a one-arrow finite diagram into a cocone apex."; through_target = u:apply_three_point_table(leg_from_target, diagram_arrow); {commutes: equal(through_target, leg_from_source), direct_source: leg_from_source, through_target: through_target} }
+def u:terminal_cone_from_factor_counts(candidate_codes, factor_counts) { "Select the coded terminal cone when every bounded candidate has one mediator into it."; {code: take(candidate_codes, 0, 0), universal: equal(factor_counts, fill([3], 1)), factor_counts: factor_counts} }
+def u:initial_cocone_from_factor_counts(candidate_codes, factor_counts) { "Select the coded initial cocone when it has one mediator into every bounded candidate."; {code: take(candidate_codes, 0, 0), universal: equal(factor_counts, fill([3], 1)), factor_counts: factor_counts} }
+def u:finite_limit_shape_codes() { "Code product, equalizer, and pullback as the three previously executed finite-limit shapes."; [1, 2, 3] }
+def u:finite_colimit_shape_codes() { "Code coproduct, coequalizer, and pushout as the three previously executed finite-colimit shapes."; [4, 5, 6] }
+def u:bounded_universality_witness(concept, factor_counts) { "Retain a counterexample when a bounded cone or cocone lacks unique factorization."; {found: 1 - equal(factor_counts, fill([3], 1)), concept: concept, factor_counts: factor_counts} }

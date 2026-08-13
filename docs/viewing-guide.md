@@ -1,7 +1,7 @@
 # Viewing guide
 
-The full curriculum contains nineteen self-checking CLI lessons, nineteen
-standalone web lessons, and nineteen generated SVG previews. Run `just check`
+The curriculum currently contains twenty-six self-checking CLI lessons,
+twenty-six standalone web lessons, and twenty-six generated SVG previews. Run `just check`
 for the authoritative executable audit, or follow one of these paths.
 
 ## Foundations: Lessons 1-6
@@ -23,6 +23,13 @@ the repository's categorical viewpoint.
 Use these together. Lesson 12 maps successful values while retaining failure;
 Lesson 13 composes fallible stages; Lesson 14 combines independent contextual
 work; Lesson 15 contrasts it with a later stage that needs an earlier result.
+
+## Universal constructions: Lessons 20-26
+
+Use these to move from arrow reversal and endpoint objects through equalizers,
+coequalizers, pullbacks, and pushouts. Lesson 26 then redraws the shared pattern:
+a finite limit is a terminal cone and a finite colimit is an initial cocone.
+Its bounded factor counts do not assert completeness or cocompleteness.
 The laws belong to one concrete success/failure record, not generic interfaces.
 
 ## Consumption, generation, and focus: Lessons 16-18

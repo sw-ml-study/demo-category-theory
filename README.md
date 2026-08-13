@@ -285,6 +285,18 @@ right-private fields remain distinct. Sources:
 [CLI lesson](demos/25-pushouts/tagged_merge.mlpl),
 [web lesson](demos/web/pushout.mlpl).
 
+### 26. Finite limits and colimits are universal cones
+
+![A cone pointing into a finite diagram beside a cocone pointing out](assets/previews/26-finite-limits-colimits.svg)
+
+What to notice: arrowheads reverse between the cone and cocone. Factor counts
+`[1,1,1]` select a terminal cone or initial cocone from bounded candidates;
+`[1,2,1]` fails uniqueness. Products, equalizers, and pullbacks instantiate
+finite-limit shapes, while coproducts, coequalizers, and pushouts are dual
+finite-colimit shapes. Sources:
+[CLI lesson](demos/26-finite-limits-colimits/universal_cones.mlpl),
+[web lesson](demos/web/finite_limits_colimits.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 
