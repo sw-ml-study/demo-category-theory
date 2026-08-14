@@ -1,9 +1,10 @@
 number = 1
 slug = "capability-matrix-probes"
-status = "in-progress"
+status = "completed"
 description = "Map CT065-CT084 to executable representations and prerequisites. Probe finite..."
 role = "meta"
 context_files = []
 created_at = "2026-08-14T15:30:55"
+completed_at = "2026-08-14T15:34:23"
 task_type = "research"
-commits = []
+commits = ["67a915c75d51d06a008446bdfe8edcd41af34ee2"]
