@@ -1,31 +1,31 @@
-# Saga plan: indexed limits and preservation
+# Saga plan: exponentials and cartesian closure
 
-This next saga covers CT045-CT064. It is ordered by current sw-MLPL
-capabilities first: finite diagram records, explicit candidate tables, and
-pointwise equality precede wide/indexed constructions and filtered systems.
+This queued saga covers CT065-CT084. It begins with finite function tables and
+equations that current sw-MLPL can execute. Structural and dependent concepts
+follow only after probes establish an honest representation.
 
 ## Steps
 
-1. **Capability matrix and probes** — map CT045-CT064 to representations;
-   probe nested diagram records, bounded families, mediator enumeration, and
-   composition of diagram maps. Record measured blockers in all ledgers.
-2. **Uniqueness up to unique isomorphism** — implement CT054 using two finite
-   universal candidates and forced mutually inverse comparison arrows.
-3. **Diagram, constant, and diagonal functors** — implement CT049-CT051 with
-   named finite object/arrow tables and identity/composition checks.
-4. **Wide and indexed finite products/coproducts** — attempt CT045-CT048 over
-   bounded arrays; keep genuinely unbounded families deferred and explicit.
-5. **Limit and colimit cones** — implement CT052-CT053 by generalizing the
-   bounded cone representation only as far as probes support.
-6. **Preservation, creation, and reflection** — implement CT055-CT058 with
-   small functors and before/after universal-property checks; distinguish the
-   four terms with counterexamples.
-7. **Filtered, directed, inverse, and direct systems** — attempt CT059-CT063
-   using bounded chains and finite stabilization; do not equate a finite prefix
-   with an infinite (co)limit.
-8. **Final and initial functors plus integration** — implement or constrain
-   CT064, audit all twenty IDs, rebuild artifacts, archive the saga, and queue
-   CT065-CT084.
+1. **Capability matrix and probes** — map CT065-CT084 to finite representations;
+   probe tables of functions, application/evaluation, currying ergonomics,
+   enumeration of subobjects, and nested slice/coslice records.
+2. **Finite exponentials and evaluation** — implement CT065-CT066 for small
+   finite sets using explicit function tables and an evaluation arrow.
+3. **Currying, uncurrying, beta, and eta** — implement CT067-CT070 as two-way
+   table transformations with executable round trips and failure witnesses.
+4. **Cartesian-closed boundary** — attempt CT071-CT073 only for the finite
+   fixture; distinguish exponential evidence, internal hom, and global elements
+   from a claim that an arbitrary category is cartesian closed.
+5. **Subobjects and classification** — attempt CT074-CT077 with bounded
+   monomorphism candidates, truth values, characteristic maps, and partial-map
+   examples; record any enumeration or typing limitations.
+6. **Slices and coslices** — implement CT078-CT079 using explicit objects over
+   or under a fixed base and commuting-triangle checks.
+7. **Dependent constructions** — attempt CT080-CT082 only after slice probes;
+   use finite dependent product/sum tables and constrain local cartesian closure
+   if the evidence does not support the general property.
+8. **Polynomial/container integration** — implement CT083-CT084 for one useful
+   finite data shape, audit all twenty IDs and artifacts, then queue CT085-CT109.
 
 Every step retains pre-commit checks, a detailed work commit, Agentrail
 completion metadata, and a push. Every MLPL function is docstring-first and

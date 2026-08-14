@@ -1,0 +1,34 @@
+# Web Lesson 35 -- bounded final and initial functors.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- functors, comma categories, limits, and colimits.
+# * CATEGORICAL SETTING -- explicit finite comma-category witness vectors.
+# * LAW / UNIVERSAL PROPERTY -- nonempty and connected in the correct direction.
+# * BOUNDARY -- finite witnesses do not prove general cofinality theorems.
+# * WHAT THIS SHOWS
+# * Final preserves the displayed colimit; initial preserves the displayed limit.
+# ***************************************************************************
+;
+include "lib/final_initial_functors.mlpl"  # reuse bounded comma predicates and visual
+final_witness = u:bounded_functor_is_final([1, 1, 1], [1, 1, 1])  # c down u is nonempty and connected
+initial_witness = u:bounded_functor_is_initial([1, 1, 1], [1, 1, 1])  # u down c is nonempty and connected
+same_colimit = u:bounded_final_functor_preserves_colimit_value(9, 9)  # finite final comparison
+same_limit = u:bounded_initial_functor_preserves_limit_value(4, 4)  # finite initial comparison
+empty_final_comma = 1 - u:bounded_functor_is_final([1, 0, 1], [1, 1, 1])  # COUNTEREXAMPLE
+disconnected_initial_comma = 1 - u:bounded_functor_is_initial([1, 1, 1], [1, 0, 1])  # COUNTEREXAMPLE
+disp([final_witness, same_colimit, initial_witness, same_limit])
+disp([empty_final_comma, disconnected_initial_comma])
+# ***************************************************************************
+# * THE VISUAL
+# * Read c-down-u on the left and u-down-c on the right; do not swap them.
+# ***************************************************************************
+def u:final_initial_functors_web_visual() { "Render opposite comma orientations and their finite extremum comparisons."; u:final_initial_functors_visual() }  # narrated shared visual entry point
+final_initial_functors_visual = u:final_initial_functors_web_visual()  # bind visual constant
+final_initial_functors_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Left: c points to u(d), supporting colimits. Right: u(d) points to c for limits.
+# * The crossed dashed arrow is the wrong-orientation counterexample.
+# * THE POINT -- comma direction distinguishes final from initial functors.
+# ***************************************************************************

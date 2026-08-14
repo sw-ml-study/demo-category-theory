@@ -16,7 +16,7 @@ commit yet; **research** needs a concrete ML/data workload or upstream support.
 |---|---|---:|---|---|
 | CT001-CT019 | Executable foundations | 19 | done | objects; morphisms; identity; composition; associativity; commutative diagrams; products; coproducts; functors; functor identity; functor composition; natural transformations; homomorphism categories; lawful reductions; applicative-style combination; monadic bind; Kleisli composition; finite folds/unfolds; lenses and diagonal-product adjunction |
 | CT020-CT044 | Duality, universal constructions, and Yoneda | 25 | done: implemented through CT043; CT035-CT036 and general CT044 constrained | opposite category; dual statement; initial object; terminal object; zero object; universal arrow; universal element; cones; cocones; equalizer; coequalizer; pullback; pushout; finite limit; finite colimit; completeness; cocompleteness; representable functor; corepresentable functor; covariant hom-functor; contravariant hom-functor; Yoneda embedding; Yoneda lemma; category of elements; density intuition |
-| CT045-CT064 | Limits beyond the finite fixture | 20 | in progress: CT045-CT063 implemented or explicitly bounded; CT064 next | wide product; wide coproduct; indexed limit; indexed colimit; diagram category; constant diagram functor; diagonal functor; limit cone; colimit cocone; uniqueness up to unique isomorphism; preservation of limits; preservation of colimits; creation of limits; reflection of limits; filtered category; filtered colimit; directed colimit; inverse limit; direct limit; final and initial functors |
+| CT045-CT064 | Limits beyond the finite fixture | 20 | done: all implemented as finite fixtures or explicitly constrained at infinite boundaries | wide product; wide coproduct; indexed limit; indexed colimit; diagram category; constant diagram functor; diagonal functor; limit cone; colimit cocone; uniqueness up to unique isomorphism; preservation of limits; preservation of colimits; creation of limits; reflection of limits; filtered category; filtered colimit; directed colimit; inverse limit; direct limit; final and initial functors |
 | CT065-CT084 | Exponentials and cartesian closure | 20 | queued | exponential object; evaluation morphism; currying; uncurrying; beta law; eta law; cartesian closed category; internal hom; global element; subobject; subobject classifier; characteristic morphism; partial map; slice category; coslice category; locally cartesian closed category; dependent product; dependent sum; polynomial functor; container interpretation |
 | CT085-CT109 | Monoidal categories and algebraic objects | 25 | queued | monoidal category; tensor product; monoidal unit; associator; left unitor; right unitor; pentagon identity; triangle identity; strict monoidal category; braided monoidal category; braiding; hexagon identities; symmetric monoidal category; monoid object; comonoid object; group object; module object; monoidal functor; lax monoidal functor; oplax monoidal functor; strong monoidal functor; monoidal natural transformation; closed monoidal category; dual object; compact closed category |
 | CT110-CT129 | String diagrams, traces, and processes | 20 | queued | string diagram; planar isotopy; interchange law; cups; caps; snake identities; trace; traced monoidal category; feedback; dagger category; dagger compact category; Frobenius algebra; special Frobenius algebra; spider theorem; process theory; state; effect; channel; classical structure; categorical quantum-mechanics boundary |
@@ -40,8 +40,9 @@ definition remains docstring-first with a readable, relatable name.
 
 ## Immediate next saga
 
-`indexed-limits-and-preservation` covers CT045-CT064. It begins with finite
-diagram records and uniqueness up to unique isomorphism, then attempts bounded
-wide/indexed (co)limits and preservation properties before filtered/directed
-systems. Infinite claims remain deferred unless a finite stabilization result
-is stated precisely. See `docs/next-saga-plan.md`.
+`indexed-limits-and-preservation` delivered CT045-CT064 as finite executable
+fixtures with explicit infinite boundaries. The next saga is CT065-CT084,
+exponentials and cartesian closure: begin with finite function tables,
+evaluation, currying/uncurrying, and beta/eta laws before attempting structural
+claims such as cartesian closure, slices, or dependent products. See
+`docs/next-saga-plan.md`.

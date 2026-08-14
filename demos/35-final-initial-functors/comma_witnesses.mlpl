@@ -1,0 +1,19 @@
+# Lesson 35 -- bounded final and initial functors.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/final_initial_functors.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 35 -- COMMA DIRECTION DISTINGUISHES FINAL FROM INITIAL", intro: "Check nonempty connected finite comma-category fixtures, then compare one colimit and one limit after restriction."})
+final_witness = u:bounded_functor_is_final([1, 1, 1], [1, 1, 1])
+initial_witness = u:bounded_functor_is_initial([1, 1, 1], [1, 1, 1])
+same_colimit = u:bounded_final_functor_preserves_colimit_value(9, 9)
+same_limit = u:bounded_initial_functor_preserves_limit_value(4, 4)
+empty_final_comma = 1 - u:bounded_functor_is_final([1, 0, 1], [1, 1, 1])
+disconnected_initial_comma = 1 - u:bounded_functor_is_initial([1, 1, 1], [1, 0, 1])
+disp([final_witness, same_colimit, initial_witness, same_limit])
+disp([empty_final_comma, disconnected_initial_comma])
+wrote = write_text("out/35-final-initial-functors.svg", u:final_initial_functors_visual())
+u:epilog_open()
+u:explain("out/35-final-initial-functors.svg", "Finality uses arrows c to u(d) in c-down-u and supports the displayed colimit comparison. Initiality reverses the comma orientation and supports the displayed limit comparison.")
+u:takeaway("Comma-category orientation matters. These finite nonempty/connected checks illustrate final and initial functors but do not prove the general cofinality theorems.")
+if final_witness * initial_witness * same_colimit * same_limit * empty_final_comma * disconnected_initial_comma * is_ok(wrote) { ok("bounded final and initial functors distinguished") } else { err("bounded comma witness failed") }

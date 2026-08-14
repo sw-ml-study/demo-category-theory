@@ -437,3 +437,22 @@ the inference from a stable prefix to an arbitrary infinite (co)limit.
 Next: CT064 final and initial functors plus the CT045-CT064 integration audit.
 No implementation blocker is known; finite comma-category connectivity must
 remain distinct from the unrestricted theorem.
+
+### CT064 and CT045-CT064 integration (2026-08-14)
+
+Lesson 35 distinguishes final from initial functors through the orientation of
+finite comma-category witnesses: `c down u` for finality and colimit comparison,
+`u down c` for initiality and limit comparison. All twenty saga IDs now have a
+finite executable fixture or an explicit arbitrary/infinite boundary.
+
+Next saga: CT065-CT084 exponentials and cartesian closure. Start with finite
+function tables, evaluation, curry/uncurry, and beta/eta laws supported by
+current sw-MLPL. Defer general cartesian closure, classifiers, slices, and
+dependent constructions until their representation probes succeed.
+
+Agentrail integration audit: every active-saga step has a matched work commit
+and there are no orphan steps. The audit also lists metadata-only completion
+commits as orphan commits because this repository intentionally commits and
+pushes Agentrail state after each work commit. Those entries are durable saga
+bookkeeping, not untracked concept work; rewriting append-only history is not
+appropriate.

@@ -78,3 +78,5 @@ preservation-creation-reflection	demos/33-preservation-creation-reflection/befor
 preservation-creation-reflection-web	demos/web/preservation_creation_reflection.mlpl	web	CT055-CT058-functor-universal-properties	0	0	svg	eq	runnable
 filtered-directed-systems	demos/34-filtered-directed-systems/finite_prefix.mlpl	34-filtered-directed-systems	CT059-CT063-bounded-systems	0	0	ascii,svg	arrays,reduce_mul,eq	runnable
 filtered-directed-systems-web	demos/web/filtered_directed_systems.mlpl	web	CT059-CT063-bounded-systems	0	0	svg	arrays,reduce_mul,eq	runnable
+final-initial-functors	demos/35-final-initial-functors/comma_witnesses.mlpl	35-final-initial-functors	CT064-bounded-final-initial-functors	0	0	ascii,svg	arrays,reduce_mul,eq	runnable
+final-initial-functors-web	demos/web/final_initial_functors.mlpl	web	CT064-bounded-final-initial-functors	0	0	svg	arrays,reduce_mul,eq	runnable

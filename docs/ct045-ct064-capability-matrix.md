@@ -25,7 +25,7 @@ finite unless a later lesson proves a stronger statement.
 | CT061 | directed colimit | directed preorder witnesses and compatible forward labels | implemented for a three-stage system; stabilization is observed only |
 | CT062 | inverse limit | compatible tuples over a finite reversed chain | implemented for three fixed stages; infinite inverse limit unproven |
 | CT063 | direct limit | compatible quotient labels over a finite forward chain | implemented for three fixed stages; infinite direct limit unproven |
-| CT064 | final and initial functors | finite comma-category connectivity/nonemptiness counts | candidate; probe in integration step |
+| CT064 | final and initial functors | finite comma-category nonemptiness/connectivity vectors in opposite orientations | implemented as bounded witnesses; general cofinality constrained |
 
 ## Probe findings
 
@@ -79,3 +79,18 @@ The probe found that array `eq` is elementwise and sw-MLPL has no named `all`
 predicate, so the implementation spells bounded universal checks as
 `reduce_mul(eq(...))`. A readable `all` would improve lesson expression but is
 not a blocker and would not supply the missing infinite mathematics.
+
+Lesson 35 implements CT064 with the finite criterion visible in both
+directions. Finality checks every displayed `c down u`; initiality checks every
+displayed `u down c`. Nonemptiness and connectedness vectors are reduced
+separately, and one finite colimit/limit value is compared after restriction.
+Empty and disconnected comma fixtures fail. No new sw-MLPL feature is needed;
+the result does not prove general cofinality or quantify over all objects.
+
+## Integration result
+
+All CT045-CT064 IDs now have executable finite evidence or an explicit
+constraint where arbitrary/infinite scope exceeds that evidence. Lessons
+29-35, their tests, browser leaves, previews, catalogs, curricula, quality
+rows, and research ledgers form the maintained artifact set. No ID is silently
+treated as general merely because its bounded fixture passes.

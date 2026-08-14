@@ -1,6 +1,6 @@
 number = 15
 slug = "final-initial-functors-integration"
-status = "pending"
+status = "in-progress"
 description = "Implement or constrain CT064 final and initial functors, audit CT045-CT064 st..."
 role = "validation"
 context_files = []

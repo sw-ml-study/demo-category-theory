@@ -721,3 +721,8 @@ use and explain `reduce_mul(eq(...))` until sw-MLPL gains a readable `all`.
 The SVG convention audit now follows an explicit included `lib/*.mlpl` visual
 source, allowing CLI and browser lessons to share one checked diagram without
 duplicating a large literal or weakening the bind/display-once convention.
+Implementation note (2026-08-14, Step 015): CT064 completes the saga using the
+same progressive contract. The visual teaches comma orientation before the
+finite colimit/limit consequence, includes empty/disconnected failures, and
+states the cofinality boundary in prolog, diagram, epilog, README, curriculum,
+and research ledgers. Future CT065-CT084 leaves retain this layered approach.

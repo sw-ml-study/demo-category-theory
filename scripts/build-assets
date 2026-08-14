@@ -38,4 +38,5 @@ cp "$repo_root/out/31-bounded-indexed-products.svg" "$dest/31-bounded-indexed-pr
 cp "$repo_root/out/32-generalized-bounded-cones.svg" "$dest/32-generalized-bounded-cones.svg"
 cp "$repo_root/out/33-preservation-creation-reflection.svg" "$dest/33-preservation-creation-reflection.svg"
 cp "$repo_root/out/34-filtered-directed-systems.svg" "$dest/34-filtered-directed-systems.svg"
+cp "$repo_root/out/35-final-initial-functors.svg" "$dest/35-final-initial-functors.svg"
 echo "README previews written"

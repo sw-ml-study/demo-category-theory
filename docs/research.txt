@@ -1628,3 +1628,25 @@ colimits would need representations for arbitrary diagrams and quotienting;
 general inverse limits would need potentially infinite compatible families.
 Those are mathematical scope extensions, not facts the finite program proves.
 Next is CT064 and integration; no blocker is known.
+
+## CT064 final/initial functors and saga audit, 2026-08-14
+
+Finite arrays suffice to encode nonempty and connected witness vectors for
+each displayed comma category. The orientation is the essential data: final
+uses `c down u` and supports the displayed colimit comparison; initial uses
+`u down c` and supports the displayed limit comparison. Empty and disconnected
+fixtures provide separate failures. No new sw-MLPL capability is required.
+
+The CT045-CT064 audit finds all twenty IDs represented by executable finite
+evidence or explicitly constrained where arbitrary/infinite scope is not
+proved. The next research queue is CT065-CT084. Evaluation and finite
+curry/uncurry tables should come first; generic exponentials, cartesian
+closure, subobject classifiers, slices, and dependent products require fresh
+capability probes. There is no blocker to beginning those finite probes.
+
+The closing Agentrail audit reports zero orphan steps. Its orphan-commit list
+includes the separately required metadata commits created after `agentrail
+complete`; the audit associates each step with its work commit and does not
+classify the subsequent bookkeeping commit as another step. This is an
+expected tooling/workflow mismatch, documented rather than repaired by
+rewriting append-only saga state.

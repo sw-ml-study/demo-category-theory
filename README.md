@@ -404,6 +404,18 @@ dashed warning forbids concluding that every future stage stabilizes. Sources:
 [CLI lesson](demos/34-filtered-directed-systems/finite_prefix.mlpl),
 [web lesson](demos/web/filtered_directed_systems.mlpl).
 
+### 35. Comma direction distinguishes final from initial functors
+
+![Final functors use c down u for colimits while initial functors use u down c for limits](assets/previews/35-final-initial-functors.svg)
+
+What to notice: finality asks whether each displayed `c ↓ u` is nonempty and
+connected, then compares the finite colimit after restriction. Initiality uses
+the opposite `u ↓ c` orientation and compares the finite limit. The crossed
+dashed arrow warns that these comma directions are not interchangeable. This
+is bounded evidence, not a proof of the general cofinality theorems. Sources:
+[CLI lesson](demos/35-final-initial-functors/comma_witnesses.mlpl),
+[web lesson](demos/web/final_initial_functors.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

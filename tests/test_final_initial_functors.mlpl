@@ -1,0 +1,18 @@
+# Tests for CT064 bounded final and initial functors.
+include "lib/final_initial_functors.mlpl";
+@test {name: "bounded final and initial comma witnesses", tags: ["CT064", "final-functor", "initial-functor"]}
+def u:test_bounded_final_initial_witnesses() { "Accept connected nonempty comma fixtures and reject an empty or disconnected fixture.";
+  u:assert_eq(u:bounded_functor_is_final([1, 1, 1], [1, 1, 1]), 1, "final witnesses")?;
+  u:assert_eq(u:bounded_functor_is_initial([1, 1, 1], [1, 1, 1]), 1, "initial witnesses")?;
+  u:assert_eq(u:bounded_functor_is_final([1, 0, 1], [1, 1, 1]), 0, "empty comma category")?;
+  u:assert_eq(u:bounded_functor_is_initial([1, 1, 1], [1, 0, 1]), 0, "disconnected comma category")?;
+  ok({test: "bounded-final-initial", cases: 4})
+}
+@test {name: "bounded finality and initiality preserve displayed extrema", tags: ["CT064", "cofinality"]}
+def u:test_bounded_extrema_comparison() { "Compare one displayed colimit along a final functor and one limit along an initial functor.";
+  u:assert_eq(u:bounded_final_functor_preserves_colimit_value(9, 9), 1, "same colimit")?;
+  u:assert_eq(u:bounded_initial_functor_preserves_limit_value(4, 4), 1, "same limit")?;
+  u:assert_eq(u:bounded_final_functor_preserves_colimit_value(9, 8), 0, "changed colimit")?;
+  ok({test: "bounded-extrema-comparison", cases: 3})
+}
+u:run_registered_tests()
