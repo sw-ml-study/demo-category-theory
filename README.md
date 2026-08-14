@@ -391,6 +391,19 @@ finite fixtures. Sources:
 [CLI lesson](demos/33-preservation-creation-reflection/before_after.mlpl),
 [web lesson](demos/web/preservation_creation_reflection.mlpl).
 
+### 34. Filtered and directed systems reveal direction—and a boundary
+
+![A finite filtered witness beside forward direct and reverse inverse systems, with a warning against infinite extrapolation](assets/previews/34-filtered-directed-systems.svg)
+
+What to notice: the finite filtered fixture gives every displayed pair a
+common successor and coequalizes its displayed parallel arrows. A directed
+preorder is the corresponding order-shaped special case. Green arrows carry
+compatible labels forward for direct systems; blue arrows restrict compatible
+tuples backward for inverse systems. Even when the last two stages match, the
+dashed warning forbids concluding that every future stage stabilizes. Sources:
+[CLI lesson](demos/34-filtered-directed-systems/finite_prefix.mlpl),
+[web lesson](demos/web/filtered_directed_systems.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

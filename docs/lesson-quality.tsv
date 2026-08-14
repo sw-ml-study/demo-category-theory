@@ -32,3 +32,4 @@ diagram_constant_diagonal.mlpl	functors and natural transformations	finite chain
 bounded_indexed_products.mlpl	products and coproducts	three-object discrete diagram	bounded indexed limit and colimit	yes	no arbitrary or infinite family	strong	moderate	none
 generalized_bounded_cones.mlpl	finite limits and colimits	two-arrow chain	cone compatibility and bounded universality	yes	bounded mediators only	strong	moderate	none
 preservation_creation_reflection.mlpl	functors and finite limits	bounded source and target cone certificates	preservation creation and reflection	yes	finite Boolean universality certificates	strong	moderate	none
+filtered_directed_systems.mlpl	filtered categories and finite chains	bounded category and three-stage systems	filtered witnesses and forward/reverse compatibility	yes	finite prefix does not prove an infinite (co)limit	strong	moderate	none

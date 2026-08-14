@@ -20,11 +20,11 @@ finite unless a later lesson proves a stronger statement.
 | CT056 | preservation of colimits | dual before/after universal checks | implemented as bounded dual certificates |
 | CT057 | creation of limits | target cone with unique lifted source cone | implemented with explicit lift count and source universality |
 | CT058 | reflection of limits | target universality implies source universality in bounded candidates | implemented separately from preservation and creation |
-| CT059 | filtered category | finite preorder table with bounded common-successor witnesses | runnable only as finite filtered fixture |
-| CT060 | filtered colimit | bounded compatible chain and quotient labels | constrained: finite prefix is not an infinite colimit |
-| CT061 | directed colimit | bounded increasing chain with stabilization evidence | constrained to finite/stabilized chain |
-| CT062 | inverse limit | compatible tuples over a finite reversed chain | runnable for fixed stages; infinite inverse limit unproven |
-| CT063 | direct limit | compatible quotient over a finite forward chain | runnable for fixed stages; infinite direct limit unproven |
+| CT059 | filtered category | finite category with common-successor and parallel-arrow witness vectors | implemented as a bounded filtered fixture |
+| CT060 | filtered colimit | compatible cocone routes over a finite filtered diagram | implemented only for the displayed prefix; infinite colimit unproven |
+| CT061 | directed colimit | directed preorder witnesses and compatible forward labels | implemented for a three-stage system; stabilization is observed only |
+| CT062 | inverse limit | compatible tuples over a finite reversed chain | implemented for three fixed stages; infinite inverse limit unproven |
+| CT063 | direct limit | compatible quotient labels over a finite forward chain | implemented for three fixed stages; infinite direct limit unproven |
 | CT064 | final and initial functors | finite comma-category connectivity/nonemptiness counts | candidate; probe in integration step |
 
 ## Probe findings
@@ -66,3 +66,16 @@ Lesson 32 adds actual diagram compatibility to the bounded representation.
 For `A -> B -> C`, cone and cocone legs must satisfy two equations before
 mediator counts `[1,1,1]` establish universality. A changed final cone leg and
 counts `[1,2,1]` separately expose compatibility and uniqueness failures.
+
+Lesson 34 separates five related notions in one bounded laboratory. A filtered
+category fixture supplies common successors and parallel-arrow coequalizers; a
+directed preorder retains the first condition as its special case. Forward
+labels witness finite direct/filtered cocones, while reverse restrictions
+witness a finite inverse-system tuple. Equality of the last two displayed
+stages records observed stabilization only. Arrays and `all` suffice, so no
+new sw-MLPL capability is required; arbitrary infinite diagrams, quotient
+completion, and infinite compatible tuples remain outside the result.
+The probe found that array `eq` is elementwise and sw-MLPL has no named `all`
+predicate, so the implementation spells bounded universal checks as
+`reduce_mul(eq(...))`. A readable `all` would improve lesson expression but is
+not a blocker and would not supply the missing infinite mathematics.

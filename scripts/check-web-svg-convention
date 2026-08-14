@@ -18,11 +18,20 @@ for file in "$repo_root"/demos/web/*.mlpl; do
     echo "$rel: missing single bound-visual display" >&2
     bad=1
   }
-  grep -q '<marker id=\\"arrowhead\\"' "$file" || {
+  included_svg_source=$(sed -n 's/^include "\(lib\/[^";]*\.mlpl\)".*/\1/p' "$file" | head -n 1)
+  marker_found=0
+  arrow_style_found=0
+  grep -q '<marker id=\\"arrowhead\\"' "$file" && marker_found=1
+  grep -Eq '\.(arrow|a)\{marker-end:url\(\\\\23 arrowhead\);' "$file" && arrow_style_found=1
+  if [ -n "$included_svg_source" ] && [ -f "$repo_root/$included_svg_source" ]; then
+    grep -q '<marker id=\\"arrowhead\\"' "$repo_root/$included_svg_source" && marker_found=1
+    grep -Eq '\.(arrow|a)\{marker-end:url\(\\\\23 arrowhead\);' "$repo_root/$included_svg_source" && arrow_style_found=1
+  fi
+  [ "$marker_found" -eq 1 ] || {
     echo "$rel: missing shared arrowhead marker" >&2
     bad=1
   }
-  grep -Eq '\.(arrow|a)\{marker-end:url\(\\\\23 arrowhead\);' "$file" || {
+  [ "$arrow_style_found" -eq 1 ] || {
     echo "$rel: semantic arrow style does not use the arrowhead marker" >&2
     bad=1
   }

@@ -1,0 +1,21 @@
+# Lesson 34 -- bounded filtered and directed systems.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/filtered_directed_systems.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 34 -- FINITE PREFIXES MODEL SYSTEMS, NOT THEIR INFINITE FUTURE", intro: "Verify bounded filtered witnesses, forward cocones, reverse compatible tuples, and an observed stabilization without claiming an infinite result."})
+filtered_fixture = u:finite_category_is_filtered([1, 1, 1], [1, 1])
+directed_preorder = u:finite_preorder_is_directed([1, 1, 1])
+filtered_cocone = u:bounded_filtered_cocone_is_compatible([7, 9], [7, 9])
+direct_labels = u:bounded_direct_system_labels_are_compatible([4, 8], [4, 8])
+inverse_tuple = u:bounded_inverse_system_tuple_is_compatible([2, 5], [2, 5])
+observed_stability = u:observed_prefix_stabilizes([0, 1, 2], [0, 1, 2])
+missing_successor = 1 - u:finite_category_is_filtered([1, 0, 1], [1, 1])
+broken_label = 1 - u:bounded_direct_system_labels_are_compatible([4, 8], [4, 9])
+disp([filtered_fixture, directed_preorder, filtered_cocone, direct_labels, inverse_tuple, observed_stability])
+disp([missing_successor, broken_label])
+wrote = write_text("out/34-filtered-directed-systems.svg", u:filtered_directed_systems_visual())
+u:epilog_open()
+u:explain("out/34-filtered-directed-systems.svg", "The finite filtered fixture supplies common successors and coequalizers. Green arrows form a forward direct system; blue arrows form a reverse inverse system. Compatibility is checked only across the displayed stages.")
+u:takeaway("A directed preorder is a special filtered index, but a stable finite prefix is evidence about that prefix—not a proof of an infinite direct or inverse limit.")
+if filtered_fixture * directed_preorder * filtered_cocone * direct_labels * inverse_tuple * observed_stability * missing_successor * broken_label * is_ok(wrote) { ok("bounded filtered and directed systems verified") } else { err("bounded system invariant failed") }

@@ -15,3 +15,4 @@ finite-diagram-functors	tests/test_finite_diagram_functors.mlpl	30	CT049-CT051-d
 bounded-indexed-products	tests/test_bounded_indexed_products.mlpl	31	CT045-CT048-bounded-discrete-limit-colimit	0	0	none	records,take	runnable
 generalized-bounded-cones	tests/test_generalized_bounded_cones.mlpl	32	CT052-CT053-bounded-chain-cones	0	0	none	records,take,fill	runnable
 preservation-creation-reflection-tests	tests/test_preservation_creation_reflection.mlpl	33	CT055-CT058-preservation-creation-reflection	0	0	none	current	runnable
+filtered-directed-systems-tests	tests/test_filtered_directed_systems.mlpl	34	CT059-CT063-bounded-systems	0	0	none	arrays,reduce_mul,eq	runnable

@@ -76,3 +76,5 @@ diagonal-product-adjunction	demos/19-adjunction/duplicate_and_pair.mlpl	19-adjun
 diagonal-product-adjunction-web	demos/web/diagonal_product_adjunction.mlpl	web	diagonal-left-adjoint-product	0	0	svg	records,nested-equality	runnable
 preservation-creation-reflection	demos/33-preservation-creation-reflection/before_after.mlpl	33-preservation-creation-reflection	CT055-CT058-functor-universal-properties	0	0	ascii,svg	records,eq	runnable
 preservation-creation-reflection-web	demos/web/preservation_creation_reflection.mlpl	web	CT055-CT058-functor-universal-properties	0	0	svg	eq	runnable
+filtered-directed-systems	demos/34-filtered-directed-systems/finite_prefix.mlpl	34-filtered-directed-systems	CT059-CT063-bounded-systems	0	0	ascii,svg	arrays,reduce_mul,eq	runnable
+filtered-directed-systems-web	demos/web/filtered_directed_systems.mlpl	web	CT059-CT063-bounded-systems	0	0	svg	arrays,reduce_mul,eq	runnable

@@ -425,3 +425,15 @@ prevent the terms from collapsing into one Boolean check.
 Next: CT059-CT063 filtered/directed systems and finite stabilization. The known
 boundary is conceptual rather than blocking: a finite prefix must never be
 presented as an arbitrary infinite (co)limit.
+
+### CT059-CT063 bounded filtered and directed systems (2026-08-14)
+
+Lesson 34 implements the finite evidence current sw-MLPL can express: bounded
+common-successor and parallel-arrow witnesses, compatible filtered cocone
+routes, forward direct-system quotient labels, reverse inverse-system tuples,
+and equality of the last two observed stages. The lesson explicitly rejects
+the inference from a stable prefix to an arbitrary infinite (co)limit.
+
+Next: CT064 final and initial functors plus the CT045-CT064 integration audit.
+No implementation blocker is known; finite comma-category connectivity must
+remain distinct from the unrestricted theorem.

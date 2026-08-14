@@ -1,0 +1,36 @@
+# Web Lesson 34 -- bounded filtered and directed systems.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- categories, functors, cocones, limits, and colimits.
+# * CATEGORICAL SETTING -- a displayed finite category and three-stage chains.
+# * LAW / UNIVERSAL PROPERTY -- bounded witnesses and compatibility equations.
+# * BOUNDARY -- a finite stable prefix does not determine an infinite (co)limit.
+# * WHAT THIS SHOWS
+# * Directed preorders are special filtered indices; systems point two ways.
+# ***************************************************************************
+;
+include "lib/filtered_directed_systems.mlpl"  # reuse the bounded system predicates and visual
+filtered_fixture = u:finite_category_is_filtered([1, 1, 1], [1, 1])  # CT059
+directed_preorder = u:finite_preorder_is_directed([1, 1, 1])  # CT061 index
+filtered_cocone = u:bounded_filtered_cocone_is_compatible([7, 9], [7, 9])  # CT060
+direct_system = u:bounded_direct_system_labels_are_compatible([4, 8], [4, 8])  # CT061 and CT063
+inverse_system = u:bounded_inverse_system_tuple_is_compatible([2, 5], [2, 5])  # CT062
+observed_stability = u:observed_prefix_stabilizes([0, 1, 2], [0, 1, 2])  # finite observation only
+missing_successor = 1 - u:finite_category_is_filtered([1, 0, 1], [1, 1])  # COUNTEREXAMPLE
+broken_direct_label = 1 - u:bounded_direct_system_labels_are_compatible([4, 8], [4, 9])  # COUNTEREXAMPLE
+disp([filtered_fixture, directed_preorder, filtered_cocone, direct_system, inverse_system, observed_stability])
+disp([missing_successor, broken_direct_label])
+# ***************************************************************************
+# * THE VISUAL
+# * Read the filtered witness, then forward and reverse systems, then boundary.
+# ***************************************************************************
+def u:filtered_directed_systems_web_visual() { "Render bounded filtered and directed systems with an explicit infinite-claim warning."; u:filtered_directed_systems_visual() }  # give the web leaf a narrated visual entry point
+filtered_directed_systems_visual = u:filtered_directed_systems_web_visual()  # bind visual constant
+filtered_directed_systems_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Green arrows point forward for direct systems; blue arrows point backward.
+# * The dashed warning blocks extrapolation beyond the three displayed stages.
+# * THE POINT -- finite compatibility is executable; infinite existence is not shown.
+# ***************************************************************************

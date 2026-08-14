@@ -710,3 +710,14 @@ Implementation note (2026-08-14, Step 013): CT055-CT058 now use the same
 research2 lesson discipline—explicit setting, before/after law, witnesses,
 three noninterchangeable counterexamples, accessible directed visual, and a
 bounded-fixture boundary. No new sw-MLPL capability was required.
+Implementation note (2026-08-14, Step 014): CT059-CT063 follow the maintained
+progressive pattern: filtered witnesses first, then forward direct and reverse
+inverse systems, then an explicit dashed boundary against infinite
+extrapolation. The code names every check `finite`, `bounded`, or `observed`;
+future system lessons must preserve that claim-sized naming discipline.
+The implementation probe also established that equality over arrays returns a
+Boolean array and that no `all` function is available. Lessons should therefore
+use and explain `reduce_mul(eq(...))` until sw-MLPL gains a readable `all`.
+The SVG convention audit now follows an explicit included `lib/*.mlpl` visual
+source, allowing CLI and browser lessons to share one checked diagram without
+duplicating a large literal or weakening the bind/display-once convention.

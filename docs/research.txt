@@ -1610,3 +1610,21 @@ The representation is deliberately finite and does not establish a theorem
 about arbitrary functors. Next is CT059-CT063 finite filtered/directed-system
 work; the infinite-prefix boundary is explicit and no implementation blocker
 is currently known.
+
+## CT059-CT063 bounded systems, 2026-08-14
+
+Current sw-MLPL arrays can directly encode all evidence needed for a finite
+teaching fixture: common-successor checks, coequalization checks for displayed
+parallel arrows, compatible cocone routes, forward quotient labels, and
+reverse compatible tuples. Array equality is elementwise and there is no
+`all`; reducing the Boolean equality vector with `reduce_mul` makes each
+bounded universal quantification explicit. This is adequate, though a named
+`all` predicate would improve readability in sw-MLPL.
+Observed equality of the final two stages is intentionally a separate check;
+it provides no quantification over later stages.
+
+No upstream feature is required for this bounded lesson. General filtered
+colimits would need representations for arbitrary diagrams and quotienting;
+general inverse limits would need potentially infinite compatible families.
+Those are mathematical scope extensions, not facts the finite program proves.
+Next is CT064 and integration; no blocker is known.
