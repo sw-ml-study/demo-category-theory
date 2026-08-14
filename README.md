@@ -439,6 +439,17 @@ the correspondence. This is explicit 2×2 table reshaping, not generic callable
 currying. Sources: [CLI lesson](demos/37-finite-currying/round_trips.mlpl),
 [web lesson](demos/web/finite_currying.mlpl).
 
+### 38. One internal hom does not make a cartesian closed category
+
+![One object pair has an internal hom and global function element while another pair remains unverified](assets/previews/38-cartesian-closed-boundary.svg)
+
+What to notice: the displayed pair has product/exponential evidence, and a map
+from singleton selects negation as a global element of the internal hom. But
+cartesian closure quantifies over every object pair. The dashed missing pair
+makes that unproved coverage visible rather than silently generalizing it.
+Sources: [CLI lesson](demos/38-cartesian-closed-boundary/pair_evidence.mlpl),
+[web lesson](demos/web/cartesian_closed_boundary.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

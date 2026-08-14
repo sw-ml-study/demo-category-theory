@@ -1692,6 +1692,15 @@ those starts separate avoids presenting two identical Boolean assertions as
 two concepts. A changed entry fails extensional equality. No new upstream
 feature is required, though general arity and callable-returning curry remain
 useful sw-MLPL requests. Next is the CT071-CT073 structural boundary.
+
+## CT071-CT073 internal hom and cartesian-closed boundary, 2026-08-14
+
+The finite function rows already support a pair-level internal-hom certificate,
+and a singleton-indexed row selection is a concrete global element. The
+category-wide property needs evidence for every object pair, so `[1,0]` is an
+honest missing-coverage witness. No language feature can replace that
+mathematical quantifier. Next is bounded subobject classification; no blocker
+is known.
 The CLI probe also confirmed that a display array cannot mix a length-four row
 with scalar law flags; lessons must display differently shaped values
 separately because array literals remain rectangular.

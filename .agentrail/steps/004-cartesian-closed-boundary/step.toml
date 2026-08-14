@@ -1,6 +1,6 @@
 number = 4
 slug = "cartesian-closed-boundary"
-status = "pending"
+status = "in-progress"
 description = "Attempt CT071-CT073 cartesian closed category, internal hom, and global eleme..."
 role = "production"
 context_files = []

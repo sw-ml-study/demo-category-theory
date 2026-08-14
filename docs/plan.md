@@ -482,3 +482,10 @@ Lesson 37 implements the two opposite round trips and labels their different
 starting objects. Fixed table shape keeps the law executable and a changed
 entry supplies the counterexample. Next: CT071-CT073 internal hom, global
 elements, and the cartesian-closed boundary. No blocker is known.
+
+### CT071-CT073 internal hom and closure boundary (2026-08-14)
+
+Lesson 38 certifies one internal hom, selects a global function element via the
+singleton, and rejects a category-wide closure claim with coverage `[1,0]`.
+Next: CT074-CT077 subobjects, classification, characteristic maps, and partial
+maps. No blocker is known for the bounded two-point fixture.

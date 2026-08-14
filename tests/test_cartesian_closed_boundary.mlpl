@@ -1,0 +1,16 @@
+# Tests for CT071-CT073 bounded internal hom and global elements.
+include "lib/finite_exponentials.mlpl";
+@test {name: "one finite pair has internal hom evidence", tags: ["CT071", "CT072"]}
+def u:test_bounded_internal_hom_pair() { "Accept complete pair evidence without promoting it to a category-wide certificate.";
+  u:assert_eq(u:bounded_pair_has_internal_hom(1, 1, 1, 1), 1, "pair certificate")?;
+  u:assert_eq(u:displayed_pairs_support_cartesian_closure([1, 0]), 0, "missing pair blocks closure")?;
+  ok({test: "bounded-internal-hom", cases: 2})
+}
+@test {name: "singleton maps select global elements", tags: ["CT073", "global-element"]}
+def u:test_global_element_selection() { "Select two distinct function rows through singleton-indexed global elements.";
+  rows = [[0, 0], [0, 1], [1, 0], [1, 1]];
+  u:assert_eq(u:global_element_selects_internal_hom_row(rows, 2), [1, 0], "negation element")?;
+  u:assert_eq(equal(u:global_element_selects_internal_hom_row(rows, 1), [1, 0]), 0, "identity differs")?;
+  ok({test: "global-element", cases: 2})
+}
+u:run_registered_tests()

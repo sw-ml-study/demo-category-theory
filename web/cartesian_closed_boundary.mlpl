@@ -1,0 +1,33 @@
+# Web Lesson 38 -- internal hom and cartesian-closed boundary.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- products, exponentials, evaluation, beta, and eta.
+# * CATEGORICAL SETTING -- one displayed two-point object pair in finite Set.
+# * LAW / UNIVERSAL PROPERTY -- internal hom for one pair; global element from 1.
+# * BOUNDARY -- cartesian closure requires products/exponentials for every pair.
+# * WHAT THIS SHOWS
+# * Local evidence passes while a missing pair blocks the category-wide claim.
+# ***************************************************************************
+;
+include "lib/finite_exponentials.mlpl"  # reuse pair-level exponential evidence
+function_rows = [[0, 0], [0, 1], [1, 0], [1, 1]]  # finite internal hom object
+pair_certificate = u:bounded_pair_has_internal_hom(1, u:two_point_exponential_is_complete(function_rows), 1, 1)  # CT072
+selected_global_element = u:global_element_selects_internal_hom_row(function_rows, 2)  # CT073 singleton map
+category_wide_certificate = u:displayed_pairs_support_cartesian_closure([1, 0])  # CT071 coverage fails
+missing_pair_witness = 1 - category_wide_certificate  # COUNTEREXAMPLE to overgeneralization
+disp(selected_global_element)
+disp([pair_certificate, category_wide_certificate, missing_pair_witness])
+# ***************************************************************************
+# * THE VISUAL
+# * Read local internal hom, singleton selection, then the missing every-pair box.
+# ***************************************************************************
+def u:cartesian_closed_boundary_web_visual() { "Render local internal-hom evidence and the missing category-wide coverage witness."; u:cartesian_closed_boundary_visual() }  # narrated shared visual entry point
+cartesian_closed_boundary_visual = u:cartesian_closed_boundary_web_visual()  # bind visual constant
+cartesian_closed_boundary_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Top passes for one pair; the singleton chooses f2; bottom leaves one pair open.
+# * The dashed path is not a failed exponential—it is missing universal coverage.
+# * THE POINT -- cartesian closure quantifies over every object pair.
+# ***************************************************************************

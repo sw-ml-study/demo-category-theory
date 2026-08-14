@@ -12,9 +12,9 @@ finite and explicitly enumerated unless a later lesson establishes more.
 | CT068 | uncurrying | flatten two function rows back into product order | implemented at fixed 2-by-2 arity in Lesson 37 |
 | CT069 | beta law | uncurry after curry restores the product-domain map | implemented as the flat-table round trip |
 | CT070 | eta law | curry after uncurry restores the function rows | implemented as the row-table round trip |
-| CT071 | cartesian closed category | products plus exponentials for every object pair | constrained: one finite fixture cannot prove a category-wide property |
-| CT072 | internal hom | finite function-table object with explicit action candidates | runnable only for enumerated finite sets |
-| CT073 | global element | one-entry table from the singleton object | runnable finite fixture |
+| CT071 | cartesian closed category | products plus exponentials for every object pair | explicitly constrained by a missing-pair coverage witness in Lesson 38 |
+| CT072 | internal hom | finite function-table object with evaluation/curry certificate | implemented for one enumerated finite pair |
+| CT073 | global element | singleton-indexed selection of one internal-hom row | implemented as a finite function element |
 | CT074 | subobject | Boolean membership row / bounded monomorphism candidate | runnable for a two-point set |
 | CT075 | subobject classifier | two truth values with enumerated membership rows | candidate finite-Set fixture |
 | CT076 | characteristic morphism | the membership row into the two-point truth object | runnable finite fixture |
@@ -63,3 +63,8 @@ Beta starts with `h : X×A → B`, curries, and uncurries back to the flat table
 Eta starts with `k : X → B^A`, uncurries, and curries back to the row table. A
 changed row fails extensional equality. Fixed nested `take` calls remain the
 implementation boundary; generic callable-returning curry is still deferred.
+
+Lesson 38 separates local structure from universal coverage. One pair passes
+product, exponential, evaluation, and curry checks; a singleton map selects the
+negation row as a global element. Coverage `[1,0]` then blocks the stronger
+cartesian-closed claim. This is an intentional constraint, not a failed lesson.

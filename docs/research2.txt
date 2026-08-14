@@ -740,3 +740,8 @@ Implementation note (2026-08-14, exponentials Step 003): beta and eta are
 presented as opposite journeys, not duplicate pass flags. The SVG labels the
 starting representation for each law and the program constructs both actual
 round trips. Future paired laws should likewise expose their directional data.
+Implementation note (2026-08-14, exponentials Step 004): Lesson 38 turns its
+scope boundary into visual data. A passing local certificate appears above a
+failed coverage vector, so learners can see why internal-hom evidence is not a
+cartesian-closed theorem. Future structural-property lessons should visualize
+the missing quantifier rather than relying only on a prose disclaimer.

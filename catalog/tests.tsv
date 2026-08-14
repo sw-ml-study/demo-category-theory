@@ -19,3 +19,4 @@ filtered-directed-systems-tests	tests/test_filtered_directed_systems.mlpl	34	CT0
 final-initial-functors-tests	tests/test_final_initial_functors.mlpl	35	CT064-bounded-final-initial-functors	0	0	none	arrays,reduce_mul,eq	runnable
 finite-exponentials-tests	tests/test_finite_exponentials.mlpl	36	CT065-CT066-exponential-evaluation	0	0	none	arrays,take,equal	runnable
 finite-currying-tests	tests/test_finite_currying.mlpl	37	CT067-CT070-curry-beta-eta	0	0	none	arrays,take,equal	runnable
+cartesian-closed-boundary-tests	tests/test_cartesian_closed_boundary.mlpl	38	CT071-CT073-internal-hom-boundary	0	0	none	arrays,take,reduce_mul	runnable

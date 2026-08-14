@@ -1,0 +1,18 @@
+# Lesson 38 -- internal hom, global elements, and cartesian-closed boundary.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_exponentials.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 38 -- ONE INTERNAL HOM IS NOT A CARTESIAN CLOSED CATEGORY", intro: "Certify one finite product/exponential pair, select a global function element, then expose the missing every-pair obligation."})
+function_rows = [[0, 0], [0, 1], [1, 0], [1, 1]]
+pair_certificate = u:bounded_pair_has_internal_hom(1, u:two_point_exponential_is_complete(function_rows), 1, 1)
+selected_global_element = u:global_element_selects_internal_hom_row(function_rows, 2)
+category_wide_certificate = u:displayed_pairs_support_cartesian_closure([1, 0])
+missing_pair_witness = 1 - category_wide_certificate
+disp(selected_global_element)
+disp([pair_certificate, category_wide_certificate, missing_pair_witness])
+wrote = write_text("out/38-cartesian-closed-boundary.svg", u:cartesian_closed_boundary_visual())
+u:epilog_open()
+u:explain("out/38-cartesian-closed-boundary.svg", "The left panel certifies one internal hom. The singleton arrow selects negation as a global element. The lower missing pair blocks the every-pair claim required for cartesian closure.")
+u:takeaway("Internal hom and global elements are local data. Cartesian closed is a property of a category with products and exponentials for every object pair.")
+if pair_certificate * missing_pair_witness * equal(selected_global_element, [1, 0]) * is_ok(wrote) { ok("internal hom boundary verified") } else { err("cartesian closed boundary failed") }

@@ -85,3 +85,5 @@ finite-exponentials	demos/36-finite-exponentials/evaluate_rows.mlpl	36-finite-ex
 finite-exponentials-web	demos/web/finite_exponentials.mlpl	web	CT065-CT066-exponential-evaluation	0	0	svg	arrays,take,equal	runnable
 finite-currying	demos/37-finite-currying/round_trips.mlpl	37-finite-currying	CT067-CT070-curry-beta-eta	0	0	ascii,svg	arrays,take,equal	runnable
 finite-currying-web	demos/web/finite_currying.mlpl	web	CT067-CT070-curry-beta-eta	0	0	svg	arrays,take,equal	runnable
+cartesian-closed-boundary	demos/38-cartesian-closed-boundary/pair_evidence.mlpl	38-cartesian-closed-boundary	CT071-CT073-internal-hom-boundary	0	0	ascii,svg	arrays,take,reduce_mul	runnable
+cartesian-closed-boundary-web	demos/web/cartesian_closed_boundary.mlpl	web	CT071-CT073-internal-hom-boundary	0	0	svg	arrays,take,reduce_mul	runnable
