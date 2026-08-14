@@ -1,0 +1,1 @@
+Implement CT083-CT084 polynomial functors and container interpretation for one useful finite data shape. Audit CT065-CT084, rebuild all artifacts, run full and Agentrail gates, update every doc including research, queue CT085-CT109, complete/archive saga, commit metadata, and push.

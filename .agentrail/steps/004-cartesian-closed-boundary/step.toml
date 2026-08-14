@@ -1,0 +1,9 @@
+number = 4
+slug = "cartesian-closed-boundary"
+status = "pending"
+description = "Attempt CT071-CT073 cartesian closed category, internal hom, and global eleme..."
+role = "production"
+context_files = []
+created_at = "2026-08-14T15:30:55"
+task_type = "lesson"
+commits = []

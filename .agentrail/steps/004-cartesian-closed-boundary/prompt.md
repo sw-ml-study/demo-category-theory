@@ -1,0 +1,1 @@
+Attempt CT071-CT073 cartesian closed category, internal hom, and global elements for the finite fixture. Distinguish local evidence from a general structural claim; update all artifacts/docs, gate, commit, and push.

@@ -1,1 +1,1 @@
-Map CT045-CT064 to executable representations and prerequisites. Probe nested diagram records, bounded families, mediator enumeration, and composition of diagram maps. Update every documentation ledger; record only measured sw-MLPL blockers. Run full gate, detailed commit, complete metadata, and push.
+Map CT065-CT084 to executable representations and prerequisites. Probe finite function tables, evaluation, currying ergonomics, subobject enumeration, and nested slice/coslice records. Update every capability, plan, and research ledger; gate, commit, and push.

@@ -1,0 +1,10 @@
+number = 1
+slug = "capability-matrix-probes"
+status = "completed"
+description = "Map CT045-CT064 to executable representations and prerequisites. Probe nested..."
+role = "meta"
+context_files = []
+created_at = "2026-08-13T11:16:17"
+completed_at = "2026-08-13T11:25:44"
+task_type = "research"
+commits = ["b1b2b78655e9eeb0fc4b40c57a4955b3677258d6"]

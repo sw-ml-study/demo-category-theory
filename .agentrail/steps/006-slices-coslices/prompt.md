@@ -1,0 +1,1 @@
+Implement CT078-CT079 slice and coslice categories using explicit objects over/under a base and commuting-triangle checks. Add visuals, failures, tests, every artifact/doc, gate, commit, and push.

@@ -1,0 +1,1 @@
+Attempt CT074-CT077 subobjects, subobject classifier, characteristic morphisms, and partial maps with bounded candidates. Probe enumeration/typing limits, implement or constrain honestly, update all artifacts/docs, gate, commit, and push.

@@ -1,0 +1,1 @@
+Implement CT065-CT066 finite exponential objects and evaluation using explicit small function tables. Include laws, counterexamples, accessible CLI/browser visuals, all artifacts and docs, gate, commit, and push.

@@ -1,0 +1,1 @@
+Map CT045-CT064 to executable representations and prerequisites. Probe nested diagram records, bounded families, mediator enumeration, and composition of diagram maps. Update every documentation ledger; record only measured sw-MLPL blockers. Run full gate, detailed commit, complete metadata, and push.

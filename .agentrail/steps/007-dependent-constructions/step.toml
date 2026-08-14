@@ -1,0 +1,9 @@
+number = 7
+slug = "dependent-constructions"
+status = "pending"
+description = "Attempt CT080-CT082 locally cartesian closed categories, dependent products, ..."
+role = "production"
+context_files = []
+created_at = "2026-08-14T15:30:55"
+task_type = "lesson"
+commits = []

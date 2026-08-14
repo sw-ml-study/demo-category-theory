@@ -1,0 +1,9 @@
+number = 3
+slug = "currying-beta-eta"
+status = "pending"
+description = "Implement CT067-CT070 currying, uncurrying, beta law, and eta law as finite t..."
+role = "production"
+context_files = []
+created_at = "2026-08-14T15:30:55"
+task_type = "lesson"
+commits = []

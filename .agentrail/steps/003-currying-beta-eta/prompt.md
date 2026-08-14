@@ -1,0 +1,1 @@
+Implement CT067-CT070 currying, uncurrying, beta law, and eta law as finite table transformations and executable round trips. Document boundaries and capability asks; ship all artifacts, gate, commit, and push.

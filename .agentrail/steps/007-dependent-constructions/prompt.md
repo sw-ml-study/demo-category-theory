@@ -1,0 +1,1 @@
+Attempt CT080-CT082 locally cartesian closed categories, dependent products, and dependent sums after slice probes. Implement finite tables or constrain unsupported general claims; update all artifacts/docs, gate, commit, and push.
