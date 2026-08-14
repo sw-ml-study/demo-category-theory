@@ -1,0 +1,11 @@
+{
+  "task_type": "lesson",
+  "state": {
+    "number": 14,
+    "step": "filtered-directed-systems"
+  },
+  "action": "Probed bounded Boolean aggregation; implemented CT059-CT063 helpers, counterexamples, CLI/browser lesson and shared accessible SVG; regenerated preview and browser tree; updated every planning, research, curriculum, capability, quality, catalog, README, test-runner, and audit artifact; ran the full gate; committed and pushed 13db82e.",
+  "result": "success",
+  "reward": 1,
+  "timestamp": "2026-08-14T09:02:59"
+}
