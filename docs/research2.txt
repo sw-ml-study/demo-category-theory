@@ -701,3 +701,8 @@ checked quality-manifest row covering the eight-part contract and independent
 CT-teaching/sw-MLPL-expression ratings. The only weak teaching rating is the
 known finite Yoneda leaf, linked to Step 012. A canonical future-leaf template
 and `scripts/check-lesson-quality` enforce the approach going forward.
+Implementation note (2026-08-13, Step 012): finite Yoneda is now a progressive
+three-stage lesson with an explicit `Hom(A,-) -> F` naturality square and
+identity-evaluation recovery. Category-of-elements/density is a separately
+labeled optional CLI/test extension, not part of the introductory SVG. The
+quality manifest rating is upgraded from weak to strong for CT teaching.

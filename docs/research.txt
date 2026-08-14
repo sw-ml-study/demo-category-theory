@@ -1584,3 +1584,15 @@ with its upstream ask recorded.
 
 A canonical web-leaf template and quality gate make this the default for all
 future concepts. Next is Step 012's Yoneda repair; no blocker is present.
+## Progressive finite Yoneda repair, 2026-08-13
+
+The confusing combined Yoneda/density diagram has been replaced. The browser
+leaf and README preview now show only three numbered ideas: choose `x` in
+`F(A)`, generate `eta` while checking an explicit four-corner naturality
+square, and recover `x` by evaluating at `id_A`. Every `10` and `20` is labeled
+by its categorical role, while a dashed `21` gives the counterexample.
+
+Category-of-elements reconstruction remains executable in the CLI and its own
+test, but is explicitly optional and absent from the introductory visual. The
+32-leaf quality manifest now has no weak CT-teaching rating. Next is
+preservation/creation/reflection; there is no blocker.

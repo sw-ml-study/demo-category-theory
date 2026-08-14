@@ -1,9 +1,9 @@
-# Lesson 28 -- finite Yoneda and category of elements.
+# Lesson 28 -- finite Yoneda correspondence, with optional elements extension.
 # visual: ascii, svg
 # loops: 0
 include "../../lib/finite_yoneda.mlpl"
 include "../../lib/render.mlpl"
-u:prolog({title: "LESSON 28 -- YONEDA RECOVERS A TRANSFORMATION FROM ONE ELEMENT", intro: "Select 10 in F(A), generate both natural-transformation components, recover 10 at identity A, and rebuild F from its two element objects."})
+u:prolog({title: "LESSON 28 -- ONE ELEMENT DETERMINES A NATURAL TRANSFORMATION", intro: "Stage 1 chooses x=10 in F(A). Stage 2 generates eta and checks its walking-arrow naturality square. Stage 3 recovers x as eta_A(id_A)."})
 transformation = u:transformation_from_selected_element(10)
 element_round_trip = u:yoneda_round_trip_from_element(10)
 transformation_round_trip = u:yoneda_round_trip_from_transformation(transformation)
@@ -13,12 +13,15 @@ failure = u:yoneda_failure_witness(20, broken.at_b)
 element_nodes = u:category_of_elements_nodes()
 element_edge = u:category_of_elements_edge()
 reconstructed = u:reconstruct_functor_from_elements(element_nodes)
-disp([transformation.at_a, transformation.at_b, element_round_trip, naturality, failure.found])
+disp([10])
+disp([transformation.at_a, transformation.at_b, naturality, failure.found])
+disp([element_round_trip, equal(transformation_round_trip, transformation)])
+# Optional extension: category of elements and bounded density intuition.
 disp(element_nodes)
 disp(element_edge)
 disp(reconstructed)
-wrote = write_text("out/28-finite-yoneda.svg", u:finite_yoneda_diagram())
+wrote = write_text("out/28-finite-yoneda.svg", u:finite_yoneda_stages_diagram())
 u:epilog_open()
-u:explain("out/28-finite-yoneda.svg", "The selected element 10 generates components 10 and 20; evaluation at idA returns 10. The element objects carry one induced arrow mirroring f.")
-u:takeaway("Yoneda turns natural transformations from Hom(A,-) into elements of F(A). The displayed reconstruction is bounded intuition, not the general density theorem.")
+u:explain("out/28-finite-yoneda.svg", "Read left to right: choose 10; eta_A sends idA to 10 while eta_B sends f to 20 and the square commutes; evaluating eta_A at idA recovers 10. The dashed 21 is the broken square.")
+u:takeaway("For this walking-arrow fixture, elements of F(A) correspond to natural transformations Hom(A,-) to F. Category-of-elements reconstruction is a separate bounded extension, not the Yoneda correspondence itself.")
 if equal(element_round_trip, 10) * equal(transformation_round_trip, transformation) * naturality * failure.found * equal(element_edge, [0, 1]) * equal(reconstructed, [10, 20]) * is_ok(wrote) { ok("finite Yoneda correspondence verified") } else { err("finite Yoneda invariant failed") }

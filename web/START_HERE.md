@@ -40,9 +40,10 @@ Start after array functors and natural transformations:
 
 `homomorphisms.mlpl` → `representable_hom.mlpl` → `finite_yoneda.mlpl`.
 
-The current Yoneda leaf is queued for progressive stages: choose an element,
-generate a transformation and its naturality square, recover the element at
-identity, then treat category-of-elements/density separately.
+The Yoneda leaf now has three numbered stages: choose an element, generate a
+transformation and verify its fully labeled naturality square, then recover the
+element at identity. Category-of-elements/density is deliberately outside the
+introductory browser visual.
 
 ## Programming-abstraction path
 

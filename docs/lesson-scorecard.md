@@ -20,7 +20,7 @@ expression.
 | equalizer/coequalizer | strong | moderate | Set intuition is subordinate to unique factorization |
 | contextual/Kleisli pipeline | strong | strong | Keep concrete-context boundary |
 | adjunction | moderate | moderate | Incremental context precedes the triangle-law leaf |
-| representables/Yoneda | weak for beginners | moderate | Progressive Yoneda stages; separate density extension |
+| representables/Yoneda | strong | moderate | Three progressive stages; density is a separate optional extension |
 | bounded indexed (co)limits | moderate | moderate | Preserve finite-width and candidate-enumeration boundaries |
 
 The integration audit updates this table after migrations. Any `weak`

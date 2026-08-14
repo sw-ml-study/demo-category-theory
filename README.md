@@ -325,11 +325,14 @@ recovers the selected arrow uniquely. Sources:
 
 ### 28. Yoneda turns transformations into elements
 
-![An element generating and recovering a natural transformation above its category of elements](assets/previews/28-finite-yoneda.svg)
+![Three stages choose element 10, verify an explicit Yoneda naturality square, and recover 10 at identity A](assets/previews/28-finite-yoneda.svg)
 
-What to notice: selecting `10` generates components `10` and `20`; evaluation
-at `idA` recovers `10`. Below, `(A,10) → (B,20)` reconstructs this fixture's
-two functor values. Sources:
+What to notice: read the numbered stages. Choose `x=10` in `F(A)`. It generates
+`eta_A(idA)=10` and `eta_B(f)=20`; the displayed square says both routes reach
+`20`. Finally, evaluating `eta_A` at `idA` recovers the original `10`. The
+dashed `21` shows exactly how naturality can fail. Category-of-elements and
+density intuition remain an optional CLI/test extension, outside this visual.
+Sources:
 [CLI lesson](demos/28-yoneda-elements/correspondence.mlpl),
 [web lesson](demos/web/finite_yoneda.mlpl).
 

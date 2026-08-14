@@ -403,3 +403,14 @@ progressive redesign is already Step 012. No weak expression rating remains.
 Future concepts must start from `docs/web-leaf-template.mlpl`, add a manifest
 row, and pass `scripts/check-lesson-quality`. Next is the already queued Yoneda
 repair. There is no blocker.
+### Progressive finite Yoneda repair (2026-08-13)
+
+Lesson 28 now isolates the Yoneda correspondence in three numbered stages:
+choose `x=10` in `F(A)`; generate `eta` and check the fully labeled
+`Hom(A,-) -> F` naturality square; recover `x` as `eta_A(id_A)`. A dashed `21`
+is the broken square. Category-of-elements reconstruction remains a separately
+labeled optional CLI/test extension and no longer competes for visual attention.
+
+The quality manifest now rates all 32 current leaves strong or moderate for CT
+teaching. Next: CT055-CT058 preservation, creation, and reflection. No blocker
+is known; bounded finite functor fixtures remain the intended representation.

@@ -1,6 +1,6 @@
 number = 12
 slug = "clarify-yoneda-web-lesson"
-status = "pending"
+status = "in-progress"
 description = "Repair Lesson 28's web/CLI pedagogy after user feedback that the Yoneda diagr..."
 role = "production"
 context_files = []

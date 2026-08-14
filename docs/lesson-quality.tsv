@@ -26,7 +26,7 @@ pullback.mlpl	products and equalizers	finite keyed records	pullback universal pr
 pushout.mlpl	coproducts and coequalizers	finite tagged schemas	pushout universal property	yes	tagged merge is Set intuition	strong	moderate	none
 finite_limits_colimits.mlpl	cones and universal properties	finite arrow diagram	finite limit and colimit universality	yes	bounded candidates only	moderate	moderate	none
 representable_hom.mlpl	hom functors	walking-arrow category	representable hom actions and universal element	yes	finite category fixture	moderate	moderate	none
-finite_yoneda.mlpl	representables and naturality	walking-arrow category	finite Yoneda round trip	yes	density panel is intuition only	weak	moderate	Step 012 progressive redesign
+finite_yoneda.mlpl	representables and naturality	walking-arrow category	finite Yoneda round trip	yes	finite correspondence instance; density separated	strong	moderate	none
 unique_universal_isomorphism.mlpl	universal properties	finite product candidates	uniqueness up to unique isomorphism	yes	bounded candidates	strong	moderate	none
 diagram_constant_diagonal.mlpl	functors and natural transformations	finite chain diagrams	diagonal functor and pointwise composition	yes	finite diagram category	moderate	moderate	none
 bounded_indexed_products.mlpl	products and coproducts	three-object discrete diagram	bounded indexed limit and colimit	yes	no arbitrary or infinite family	strong	moderate	none
