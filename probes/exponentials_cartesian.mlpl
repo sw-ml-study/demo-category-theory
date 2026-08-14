@@ -1,0 +1,20 @@
+# Probe: finite representations for CT065-CT084.
+# visual: ascii
+# loops: 0
+def u:evaluate_binary_function_table(function_tables, function_code, input_value) { "Evaluate one enumerated binary function at one binary input."; take(take(function_tables, 0, function_code), 0, input_value) }
+def u:curry_two_by_two_table(product_function_table) { "Reshape a four-entry X-times-A function table into two A-to-B function rows indexed by X."; [[take(product_function_table, 0, 0), take(product_function_table, 0, 1)], [take(product_function_table, 0, 2), take(product_function_table, 0, 3)]] }
+def u:uncurry_two_by_two_table(curried_function_rows) { "Flatten two A-to-B function rows back into the X-times-A product order."; [take(take(curried_function_rows, 0, 0), 0, 0), take(take(curried_function_rows, 0, 0), 0, 1), take(take(curried_function_rows, 0, 1), 0, 0), take(take(curried_function_rows, 0, 1), 0, 1)] }
+def u:bounded_slice_triangle_commutes(first_route, second_route) { "Check one finite commuting triangle between objects over a fixed slice base."; equal(first_route, second_route) }
+binary_endofunctions = [[0, 0], [0, 1], [1, 0], [1, 1]]
+evaluation_samples = [u:evaluate_binary_function_table(binary_endofunctions, 0, 1), u:evaluate_binary_function_table(binary_endofunctions, 1, 1), u:evaluate_binary_function_table(binary_endofunctions, 2, 0), u:evaluate_binary_function_table(binary_endofunctions, 3, 0)]
+product_function_table = [0, 1, 1, 0]
+curried_rows = u:curry_two_by_two_table(product_function_table)
+uncurried_table = u:uncurry_two_by_two_table(curried_rows)
+subobject_membership_rows = [[0, 0], [1, 0], [0, 1], [1, 1]]
+characteristic_map = take(subobject_membership_rows, 0, 1)
+slice_object = {domain: [0, 1], base: [0, 1], structure_map: [0, 1]}
+coslice_object = {base: [0], codomain: [0, 1], structure_map: [1]}
+slice_triangle = u:bounded_slice_triangle_commutes([0, 1], [0, 1])
+dependent_family = {base: [0, 1], flat_fiber_values: [10, 11, 20], fiber_offsets: [0, 2], fiber_sizes: [2, 1], dependent_sum: [10, 11, 20], dependent_product_candidates: [[10, 20], [11, 20]]}
+polynomial_container = {shapes: [0, 1], positions_per_shape: [0, 2], payloads: [7, 9]}
+ok({probe: "exponentials-cartesian", function_count: take(shape(binary_endofunctions), 0, 0), evaluation_samples: evaluation_samples, curry_round_trip: equal(uncurried_table, product_function_table), subobject_count: take(shape(subobject_membership_rows), 0, 0), characteristic_map: characteristic_map, slice_triangle: slice_triangle, slice_object: slice_object, coslice_object: coslice_object, dependent_family: dependent_family, polynomial_container: polynomial_container})

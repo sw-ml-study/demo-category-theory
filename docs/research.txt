@@ -1650,3 +1650,27 @@ complete`; the audit associates each step with its work commit and does not
 classify the subsequent bookkeeping commit as another step. This is an
 expected tooling/workflow mismatch, documented rather than repaired by
 rewriting append-only saga state.
+
+## CT065-CT084 capability survey, 2026-08-14
+
+The two-point exponential fixture is immediately expressible: enumerate its
+four endofunctions as rows and evaluate through nested `take`. A four-entry
+table on a binary product curries into two rows and round-trips through a fixed
+flattening operation. This supports CT065-CT070 lessons without a new runtime
+feature, while generic arity and callable-returning curry remain documented
+ergonomic gaps.
+The probe also rejected a four-argument multi-axis `take`; matrix cells require
+two nested three-argument calls. That is workable but makes generic table
+transformations more verbose.
+
+The four subsets of a two-point set are Boolean rows and double as
+characteristic maps into a two-valued truth object. Nested records successfully
+hold objects over/under a base, finite fibers, and polynomial shape/position
+data. These probes support later bounded lessons but do not supply static
+monomorphism, partial-map, dependent-family, cartesian-closure, or
+local-cartesian-closure guarantees. Next is finite exponentials and evaluation;
+there is no blocker.
+The interpreter rejected a ragged nested fiber array whose rows had sizes two
+and one. The successful representation uses flat fiber values with offset and
+size vectors. Dependent and container lessons must expose that encoding or ask
+sw-MLPL for a first-class ragged/tagged collection facility.

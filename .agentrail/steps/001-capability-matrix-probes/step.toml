@@ -1,6 +1,6 @@
 number = 1
 slug = "capability-matrix-probes"
-status = "pending"
+status = "in-progress"
 description = "Map CT065-CT084 to executable representations and prerequisites. Probe finite..."
 role = "meta"
 context_files = []

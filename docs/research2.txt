@@ -726,3 +726,8 @@ same progressive contract. The visual teaches comma orientation before the
 finite colimit/limit consequence, includes empty/disconnected failures, and
 states the cofinality boundary in prolog, diagram, epilog, README, curriculum,
 and research ledgers. Future CT065-CT084 leaves retain this layered approach.
+Implementation note (2026-08-14, exponentials Step 001): future CT065-CT084
+leaves begin from the measured finite representation, then teach one law,
+counterexample, and structural boundary at a time. Function rows are objects
+in the fixture rather than opaque callable magic; slice and dependent claims
+remain visibly bounded until multiple fixtures justify broader language.

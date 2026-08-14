@@ -456,3 +456,15 @@ commits as orphan commits because this repository intentionally commits and
 pushes Agentrail state after each work commit. Those entries are durable saga
 bookkeeping, not untracked concept work; rewriting append-only history is not
 appropriate.
+
+### CT065-CT084 capability survey (2026-08-14)
+
+The new saga begins with representations that current sw-MLPL executes
+directly: finite functions as rows, evaluation as nested selection, fixed-arity
+curry/uncurry as reshape/flatten, subobjects as membership rows, slices as
+nested records with commuting triangles, and dependent/container data as
+bounded arrays. Generic categorical structure remains a stated boundary.
+
+Next: CT065-CT066 finite exponential objects and evaluation. No blocker exists
+for the two-point fixture. Generic function-table enumeration, reshape, and
+callable-returning curry are ergonomic capability asks, not prerequisites.

@@ -3,6 +3,7 @@ function-values	probes/function_values.mlpl	probes	first-class-functions	0	0	asc
 nested-equality	probes/nested_equality.mlpl	probes	structured-equality	0	0	ascii	current	runnable
 tagged-values	probes/tagged_values.mlpl	probes	coproduct-encoding	0	0	ascii	current	runnable
 text-svg	probes/text_svg.mlpl	probes	text-construction	0	0	svg	byte-bridge	constrained
+exponentials-cartesian-probe	probes/exponentials_cartesian.mlpl	probes	CT065-CT084-capabilities	0	0	ascii	arrays,records,take,equal	runnable
 array-mapping	probes/array_mapping.mlpl	probes	concrete-array-functor	0	0	ascii	each	runnable
 context-values	probes/context_values.mlpl	probes	contextual-records-map-bind	0	0	ascii	records,call	runnable
 finite-folds-unfolds	probes/finite_folds_unfolds.mlpl	probes	finite-consumption-generation	0	0	ascii	range,reduce_add	runnable
