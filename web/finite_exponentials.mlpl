@@ -1,0 +1,34 @@
+# Web Lesson 36 -- finite exponential object and evaluation.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- finite sets, products, functions, and universal objects.
+# * CATEGORICAL SETTING -- the two-point finite-set fixture A=B={0,1}.
+# * LAW / UNIVERSAL PROPERTY -- B^A contains every A-to-B map; evaluation applies it.
+# * BOUNDARY -- one finite exponential does not make every category cartesian closed.
+# * WHAT THIS SHOWS
+# * Four function rows are elements of B^A; ev sends (function,input) to output.
+# ***************************************************************************
+;
+include "lib/finite_exponentials.mlpl"  # reuse bounded exponential predicates and visual
+function_rows = [[0, 0], [0, 1], [1, 0], [1, 1]]  # all four A-to-B functions
+complete_exponential = u:two_point_exponential_is_complete(function_rows)  # CT065 completeness
+evaluation_outputs = [0, 0, 0, 1, 1, 0, 1, 1]  # canonical pair order
+correct_evaluation = u:evaluation_table_is_correct(function_rows, evaluation_outputs)  # CT066
+selected_output = u:evaluate_two_point_function(function_rows, 2, 0)  # ev(f2,0)=1
+wrong_row_output = u:evaluate_two_point_function(function_rows, 1, 0)  # COUNTEREXAMPLE gives 0
+disp(function_rows)
+disp([complete_exponential, correct_evaluation, selected_output, wrong_row_output])
+# ***************************************************************************
+# * THE VISUAL
+# * First inventory all functions, then follow one function-input pair through ev.
+# ***************************************************************************
+def u:finite_exponentials_web_visual() { "Render the complete two-point function object and one evaluation with a wrong-row failure."; u:finite_exponentials_visual() }  # narrated shared visual entry point
+finite_exponentials_visual = u:finite_exponentials_web_visual()  # bind visual constant
+finite_exponentials_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * The four left rows are functions-as-elements; the green arrow performs application.
+# * The dashed path selects identity instead of negation and reaches the wrong output.
+# * THE POINT -- evaluation turns an exponential element plus input into an output.
+# ***************************************************************************

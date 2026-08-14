@@ -39,4 +39,5 @@ cp "$repo_root/out/32-generalized-bounded-cones.svg" "$dest/32-generalized-bound
 cp "$repo_root/out/33-preservation-creation-reflection.svg" "$dest/33-preservation-creation-reflection.svg"
 cp "$repo_root/out/34-filtered-directed-systems.svg" "$dest/34-filtered-directed-systems.svg"
 cp "$repo_root/out/35-final-initial-functors.svg" "$dest/35-final-initial-functors.svg"
+cp "$repo_root/out/36-finite-exponentials.svg" "$dest/36-finite-exponentials.svg"
 echo "README previews written"

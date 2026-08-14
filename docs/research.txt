@@ -1674,3 +1674,12 @@ The interpreter rejected a ragged nested fiber array whose rows had sizes two
 and one. The successful representation uses flat fiber values with offset and
 size vectors. Dependent and container lessons must expose that encoding or ask
 sw-MLPL for a first-class ragged/tagged collection facility.
+
+## CT065-CT066 finite exponentials and evaluation, 2026-08-14
+
+The complete two-point exponential is compact enough to inventory visually:
+four rows contain all `2^2` maps. Evaluation is nested selection and its full
+eight-entry table is law-tested. Selecting identity instead of negation at
+input zero supplies a specific counterexample. No upstream feature is needed.
+Next is fixed-arity curry/uncurry and beta/eta; callable-returning curry remains
+an ergonomic ask rather than a blocker.

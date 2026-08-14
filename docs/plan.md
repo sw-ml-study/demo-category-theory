@@ -468,3 +468,10 @@ bounded arrays. Generic categorical structure remains a stated boundary.
 Next: CT065-CT066 finite exponential objects and evaluation. No blocker exists
 for the two-point fixture. Generic function-table enumeration, reshape, and
 callable-returning curry are ergonomic capability asks, not prerequisites.
+
+### CT065-CT066 finite exponentials and evaluation (2026-08-14)
+
+Lesson 36 inventories every map between two two-point sets as an element of
+`B^A`, then checks evaluation on all eight function/input pairs. A wrong-row
+selection makes the failure concrete. Next: CT067-CT070 curry, uncurry, beta,
+and eta over the same finite tables. No blocker is known.

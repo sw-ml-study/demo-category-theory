@@ -1,6 +1,6 @@
 number = 2
 slug = "finite-exponentials-evaluation"
-status = "pending"
+status = "in-progress"
 description = "Implement CT065-CT066 finite exponential objects and evaluation using explici..."
 role = "production"
 context_files = []

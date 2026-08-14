@@ -1,0 +1,20 @@
+# Lesson 36 -- finite exponential object and evaluation.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_exponentials.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 36 -- AN EXPONENTIAL OBJECT STORES EVERY FUNCTION", intro: "Enumerate all four maps between two-point sets, then evaluate a selected function-input pair."})
+function_rows = [[0, 0], [0, 1], [1, 0], [1, 1]]
+complete_exponential = u:two_point_exponential_is_complete(function_rows)
+evaluation_outputs = [0, 0, 0, 1, 1, 0, 1, 1]
+correct_evaluation = u:evaluation_table_is_correct(function_rows, evaluation_outputs)
+selected_output = u:evaluate_two_point_function(function_rows, 2, 0)
+wrong_row_output = u:evaluate_two_point_function(function_rows, 1, 0)
+counterexample_visible = 1 - eq(selected_output, wrong_row_output)
+disp(function_rows)
+disp([selected_output, wrong_row_output, counterexample_visible])
+wrote = write_text("out/36-finite-exponentials.svg", u:finite_exponentials_visual())
+u:epilog_open()
+u:explain("out/36-finite-exponentials.svg", "The left object contains all four functions A to B as rows. Evaluation receives one row together with an input and returns that row's selected output.")
+u:takeaway("For two-point finite sets, B^A has 2^2 function elements and evaluation is ordinary application. This one object does not prove exponentials exist in every category.")
+if complete_exponential * correct_evaluation * counterexample_visible * is_ok(wrote) { ok("finite exponential and evaluation verified") } else { err("finite exponential invariant failed") }

@@ -1,0 +1,17 @@
+# Tests for CT065-CT066 finite exponentials and evaluation.
+include "lib/finite_exponentials.mlpl";
+@test {name: "two-point exponential enumerates every function", tags: ["CT065", "exponential-object"]}
+def u:test_two_point_exponential_complete() { "Accept exactly the four canonical binary function rows and reject an omitted row.";
+  u:assert_eq(u:two_point_exponential_is_complete([[0, 0], [0, 1], [1, 0], [1, 1]]), 1, "complete exponential")?;
+  u:assert_eq(u:two_point_exponential_is_complete([[0, 0], [0, 1], [1, 0], [1, 0]]), 0, "duplicate omits constant one")?;
+  ok({test: "finite-exponential", cases: 2})
+}
+@test {name: "evaluation applies selected finite function", tags: ["CT066", "evaluation"]}
+def u:test_finite_evaluation() { "Check all eight evaluations and expose selection of the wrong function row.";
+  rows = [[0, 0], [0, 1], [1, 0], [1, 1]];
+  u:assert_eq(u:evaluation_table_is_correct(rows, [0, 0, 0, 1, 1, 0, 1, 1]), 1, "evaluation table")?;
+  u:assert_eq(u:evaluate_two_point_function(rows, 2, 0), 1, "negation at zero")?;
+  u:assert_eq(u:evaluate_two_point_function(rows, 1, 0), 0, "wrong row differs")?;
+  ok({test: "finite-evaluation", cases: 3})
+}
+u:run_registered_tests()

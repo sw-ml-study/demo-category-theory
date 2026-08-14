@@ -32,6 +32,9 @@ Start after products, coproducts, and commutative squares:
 `diagram_constant_diagonal.mlpl` → `preservation_creation_reflection.mlpl` →
 `filtered_directed_systems.mlpl` → `final_initial_functors.mlpl`.
 
+Continue into exponentials with `finite_exponentials.mlpl`: first inventory
+every function in the two-point function object, then follow evaluation.
+
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.
 

@@ -416,6 +416,18 @@ is bounded evidence, not a proof of the general cofinality theorems. Sources:
 [CLI lesson](demos/35-final-initial-functors/comma_witnesses.mlpl),
 [web lesson](demos/web/final_initial_functors.mlpl).
 
+### 36. An exponential object stores functions as elements
+
+![All four functions between two-point sets form an exponential object, and evaluation applies one selected row](assets/previews/36-finite-exponentials.svg)
+
+What to notice: `B^A` contains all four function rows from `{0,1}` to
+`{0,1}`—not merely a few examples. Evaluation takes a chosen row together with
+an input and returns the selected table entry. The dashed counterexample picks
+identity instead of negation and reaches `0` rather than `1`. This verifies one
+finite exponential object, not cartesian closure of an arbitrary category.
+Sources: [CLI lesson](demos/36-finite-exponentials/evaluate_rows.mlpl),
+[web lesson](demos/web/finite_exponentials.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

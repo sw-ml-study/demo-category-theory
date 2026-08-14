@@ -17,3 +17,4 @@ generalized-bounded-cones	tests/test_generalized_bounded_cones.mlpl	32	CT052-CT0
 preservation-creation-reflection-tests	tests/test_preservation_creation_reflection.mlpl	33	CT055-CT058-preservation-creation-reflection	0	0	none	current	runnable
 filtered-directed-systems-tests	tests/test_filtered_directed_systems.mlpl	34	CT059-CT063-bounded-systems	0	0	none	arrays,reduce_mul,eq	runnable
 final-initial-functors-tests	tests/test_final_initial_functors.mlpl	35	CT064-bounded-final-initial-functors	0	0	none	arrays,reduce_mul,eq	runnable
+finite-exponentials-tests	tests/test_finite_exponentials.mlpl	36	CT065-CT066-exponential-evaluation	0	0	none	arrays,take,equal	runnable

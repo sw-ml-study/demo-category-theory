@@ -81,3 +81,5 @@ filtered-directed-systems	demos/34-filtered-directed-systems/finite_prefix.mlpl	
 filtered-directed-systems-web	demos/web/filtered_directed_systems.mlpl	web	CT059-CT063-bounded-systems	0	0	svg	arrays,reduce_mul,eq	runnable
 final-initial-functors	demos/35-final-initial-functors/comma_witnesses.mlpl	35-final-initial-functors	CT064-bounded-final-initial-functors	0	0	ascii,svg	arrays,reduce_mul,eq	runnable
 final-initial-functors-web	demos/web/final_initial_functors.mlpl	web	CT064-bounded-final-initial-functors	0	0	svg	arrays,reduce_mul,eq	runnable
+finite-exponentials	demos/36-finite-exponentials/evaluate_rows.mlpl	36-finite-exponentials	CT065-CT066-exponential-evaluation	0	0	ascii,svg	arrays,take,equal	runnable
+finite-exponentials-web	demos/web/finite_exponentials.mlpl	web	CT065-CT066-exponential-evaluation	0	0	svg	arrays,take,equal	runnable

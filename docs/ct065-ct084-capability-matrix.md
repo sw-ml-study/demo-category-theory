@@ -6,8 +6,8 @@ finite and explicitly enumerated unless a later lesson establishes more.
 
 | ID | Concept | Executable representation | Status / boundary |
 |---|---|---|---|
-| CT065 | exponential object | rows enumerating every function between two finite sets | runnable for the two-point fixture |
-| CT066 | evaluation morphism | select a function row, then select its input column | runnable with nested `take` |
+| CT065 | exponential object | rows enumerating every function between two finite sets | implemented as Lesson 36 for the two-point fixture |
+| CT066 | evaluation morphism | select a function row, then select its input column | implemented over all eight input pairs in Lesson 36 |
 | CT067 | currying | reshape a four-entry product-domain table into two function rows | runnable at fixed 2-by-2 arity |
 | CT068 | uncurrying | flatten two function rows back into product order | runnable at fixed 2-by-2 arity |
 | CT069 | beta law | evaluate the curried row and compare with the original product table | candidate for Lesson 37 |
@@ -51,3 +51,9 @@ No new upstream feature blocks the first finite lessons. Generic reshape,
 function-table enumeration, a readable Boolean `all`, and callable-returning
 curry would improve expression. None would by itself prove category-wide
 cartesian closure or local cartesian closure.
+
+Lesson 36 turns the probe into a complete bounded object: the four rows
+`[0,0]`, `[0,1]`, `[1,0]`, and `[1,1]` are all maps from the two-point `A` to
+the two-point `B`. Evaluation checks all eight `(function,input)` pairs. Picking
+identity where negation was requested gives the visible wrong output. No new
+sw-MLPL capability is needed.

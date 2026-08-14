@@ -731,3 +731,8 @@ leaves begin from the measured finite representation, then teach one law,
 counterexample, and structural boundary at a time. Function rows are objects
 in the fixture rather than opaque callable magic; slice and dependent claims
 remain visibly bounded until multiple fixtures justify broader language.
+Implementation note (2026-08-14, exponentials Step 002): Lesson 36 separates
+object inventory from evaluation. The visual first establishes that all four
+function-elements are present, then animates one `(function,input)` pair, and
+uses a wrong-row path as the counterexample. Future exponential leaves should
+retain that inventory-before-law ordering.
