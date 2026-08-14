@@ -428,6 +428,17 @@ finite exponential object, not cartesian closure of an arbitrary category.
 Sources: [CLI lesson](demos/36-finite-exponentials/evaluate_rows.mlpl),
 [web lesson](demos/web/finite_exponentials.mlpl).
 
+### 37. Currying changes function shape without changing behavior
+
+![A flat product-domain function table curries into two function rows, with beta and eta round trips](assets/previews/37-finite-currying.svg)
+
+What to notice: curry changes `[0,1,1,0]` on `X×A` into rows
+`[[0,1],[1,0]]` indexed by `X`; uncurry reverses that grouping. Beta starts at
+the flat map, while eta starts at the row-shaped map. A changed entry breaks
+the correspondence. This is explicit 2×2 table reshaping, not generic callable
+currying. Sources: [CLI lesson](demos/37-finite-currying/round_trips.mlpl),
+[web lesson](demos/web/finite_currying.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

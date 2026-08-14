@@ -1,0 +1,36 @@
+# Web Lesson 37 -- finite currying laws.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- products, finite exponentials, and evaluation.
+# * CATEGORICAL SETTING -- fixed binary sets X, A, and B in finite Set.
+# * LAW / UNIVERSAL PROPERTY -- curry and uncurry are inverse correspondences.
+# * BOUNDARY -- explicit 2-by-2 table reshaping, not generic callable curry.
+# * WHAT THIS SHOWS
+# * Beta starts flat; eta starts row-shaped; both restore their starting map.
+# ***************************************************************************
+;
+include "lib/finite_exponentials.mlpl"  # reuse finite curry laws and visual
+product_function_table = [0, 1, 1, 0]  # h on canonical X-times-A order
+curried_function_rows = u:curry_binary_product_table(product_function_table)  # CT067
+uncurried_function_table = u:uncurry_binary_function_rows(curried_function_rows)  # CT068
+beta_law = u:finite_beta_law_holds(product_function_table)  # CT069
+eta_law = u:finite_eta_law_holds(curried_function_rows)  # CT070
+swapped_entry_failure = 1 - equal(u:uncurry_binary_function_rows([[0, 1], [0, 1]]), product_function_table)  # COUNTEREXAMPLE
+disp(product_function_table)
+disp(curried_function_rows)
+disp(uncurried_function_table)
+disp([beta_law, eta_law, swapped_entry_failure])
+# ***************************************************************************
+# * THE VISUAL
+# * Follow curry right and uncurry left; beta and eta choose opposite starts.
+# ***************************************************************************
+def u:finite_currying_web_visual() { "Render opposite finite beta and eta round trips with a swapped-entry failure."; u:finite_currying_visual() }  # narrated shared visual entry point
+finite_currying_visual = u:finite_currying_web_visual()  # bind visual constant
+finite_currying_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Beta returns to flat h; eta returns to row-shaped k; neither changes outputs.
+# * The dashed path changes an entry, so it is not curry or uncurry of the map.
+# * THE POINT -- currying is a reversible change in function shape.
+# ***************************************************************************

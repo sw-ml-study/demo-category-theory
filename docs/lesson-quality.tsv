@@ -35,3 +35,4 @@ preservation_creation_reflection.mlpl	functors and finite limits	bounded source 
 filtered_directed_systems.mlpl	filtered categories and finite chains	bounded category and three-stage systems	filtered witnesses and forward/reverse compatibility	yes	finite prefix does not prove an infinite (co)limit	strong	moderate	none
 final_initial_functors.mlpl	comma categories and finite limits	bounded comma-category witness vectors	final and initial functor criteria	yes	finite fixtures do not prove general cofinality	strong	moderate	none
 finite_exponentials.mlpl	finite functions and products	two-point finite sets	exponential object and evaluation	yes	one finite exponential does not prove cartesian closure	strong	moderate	none
+finite_currying.mlpl	finite exponentials and evaluation	binary product-domain function tables	curry uncurry beta and eta	yes	fixed table reshaping not generic callable curry	strong	moderate	none

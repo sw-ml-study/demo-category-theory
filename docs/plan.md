@@ -475,3 +475,10 @@ Lesson 36 inventories every map between two two-point sets as an element of
 `B^A`, then checks evaluation on all eight function/input pairs. A wrong-row
 selection makes the failure concrete. Next: CT067-CT070 curry, uncurry, beta,
 and eta over the same finite tables. No blocker is known.
+
+### CT067-CT070 finite curry, uncurry, beta, and eta (2026-08-14)
+
+Lesson 37 implements the two opposite round trips and labels their different
+starting objects. Fixed table shape keeps the law executable and a changed
+entry supplies the counterexample. Next: CT071-CT073 internal hom, global
+elements, and the cartesian-closed boundary. No blocker is known.

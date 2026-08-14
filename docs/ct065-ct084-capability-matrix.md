@@ -8,10 +8,10 @@ finite and explicitly enumerated unless a later lesson establishes more.
 |---|---|---|---|
 | CT065 | exponential object | rows enumerating every function between two finite sets | implemented as Lesson 36 for the two-point fixture |
 | CT066 | evaluation morphism | select a function row, then select its input column | implemented over all eight input pairs in Lesson 36 |
-| CT067 | currying | reshape a four-entry product-domain table into two function rows | runnable at fixed 2-by-2 arity |
-| CT068 | uncurrying | flatten two function rows back into product order | runnable at fixed 2-by-2 arity |
-| CT069 | beta law | evaluate the curried row and compare with the original product table | candidate for Lesson 37 |
-| CT070 | eta law | curry after uncurrying and compare all rows | candidate for Lesson 37 |
+| CT067 | currying | reshape a four-entry product-domain table into two function rows | implemented at fixed 2-by-2 arity in Lesson 37 |
+| CT068 | uncurrying | flatten two function rows back into product order | implemented at fixed 2-by-2 arity in Lesson 37 |
+| CT069 | beta law | uncurry after curry restores the product-domain map | implemented as the flat-table round trip |
+| CT070 | eta law | curry after uncurry restores the function rows | implemented as the row-table round trip |
 | CT071 | cartesian closed category | products plus exponentials for every object pair | constrained: one finite fixture cannot prove a category-wide property |
 | CT072 | internal hom | finite function-table object with explicit action candidates | runnable only for enumerated finite sets |
 | CT073 | global element | one-entry table from the singleton object | runnable finite fixture |
@@ -57,3 +57,9 @@ Lesson 36 turns the probe into a complete bounded object: the four rows
 the two-point `B`. Evaluation checks all eight `(function,input)` pairs. Picking
 identity where negation was requested gives the visible wrong output. No new
 sw-MLPL capability is needed.
+
+Lesson 37 keeps the two inverse laws distinct by their starting representation.
+Beta starts with `h : X×A → B`, curries, and uncurries back to the flat table.
+Eta starts with `k : X → B^A`, uncurries, and curries back to the row table. A
+changed row fails extensional equality. Fixed nested `take` calls remain the
+implementation boundary; generic callable-returning curry is still deferred.

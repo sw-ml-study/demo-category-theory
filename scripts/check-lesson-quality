@@ -3,7 +3,7 @@ set -eu
 repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 manifest="$repo_root/docs/lesson-quality.tsv"
 
-awk -F '\t' 'NR == 1 { if (NF != 9) exit 1; next } NF != 9 { exit 1 } END { if (NR != 37) exit 1 }' "$manifest"
+awk -F '\t' 'NR == 1 { if (NF != 9) exit 1; next } NF != 9 { exit 1 } END { if (NR != 38) exit 1 }' "$manifest"
 
 for leaf in "$repo_root"/demos/web/*.mlpl; do
   name=$(basename "$leaf")
@@ -15,4 +15,4 @@ for leaf in "$repo_root"/demos/web/*.mlpl; do
 done
 
 awk -F '\t' 'NR > 1 && $7 == "weak" && $9 == "none" { print $1 ": weak CT rating lacks follow-up"; bad=1 } NR > 1 && $8 == "weak" && $9 == "none" { print $1 ": weak expression rating lacks follow-up"; bad=1 } END { exit bad }' "$manifest"
-echo "lesson quality: ok (36 leaves)"
+echo "lesson quality: ok (37 leaves)"

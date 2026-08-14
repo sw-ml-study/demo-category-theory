@@ -1683,3 +1683,15 @@ eight-entry table is law-tested. Selecting identity instead of negation at
 input zero supplies a specific counterexample. No upstream feature is needed.
 Next is fixed-arity curry/uncurry and beta/eta; callable-returning curry remains
 an ergonomic ask rather than a blocker.
+
+## CT067-CT070 finite currying laws, 2026-08-14
+
+Fixed binary tables make curry and uncurry exact inverse reshapes. Beta begins
+with a product-domain map; eta begins with exponential-valued rows. Keeping
+those starts separate avoids presenting two identical Boolean assertions as
+two concepts. A changed entry fails extensional equality. No new upstream
+feature is required, though general arity and callable-returning curry remain
+useful sw-MLPL requests. Next is the CT071-CT073 structural boundary.
+The CLI probe also confirmed that a display array cannot mix a length-four row
+with scalar law flags; lessons must display differently shaped values
+separately because array literals remain rectangular.

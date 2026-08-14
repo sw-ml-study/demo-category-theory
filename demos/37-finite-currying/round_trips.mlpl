@@ -1,0 +1,21 @@
+# Lesson 37 -- finite currying, uncurrying, beta, and eta.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_exponentials.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 37 -- CURRY CHANGES FUNCTION SHAPE, NOT BEHAVIOR", intro: "Reshape a function on X-times-A into X-indexed functions A-to-B, then execute the beta and eta round trips from opposite sides."})
+product_function_table = [0, 1, 1, 0]
+curried_function_rows = u:curry_binary_product_table(product_function_table)
+uncurried_function_table = u:uncurry_binary_function_rows(curried_function_rows)
+beta_law = u:finite_beta_law_holds(product_function_table)
+eta_law = u:finite_eta_law_holds(curried_function_rows)
+swapped_entry_failure = 1 - equal(u:uncurry_binary_function_rows([[0, 1], [0, 1]]), product_function_table)
+disp(product_function_table)
+disp(curried_function_rows)
+disp(uncurried_function_table)
+disp([beta_law, eta_law, swapped_entry_failure])
+wrote = write_text("out/37-finite-currying.svg", u:finite_currying_visual())
+u:epilog_open()
+u:explain("out/37-finite-currying.svg", "Curry groups the four product-input outputs into one A-to-B row for each X. Beta starts with the flat h table; eta starts with the row-shaped k table.")
+u:takeaway("Beta and eta say the two finite representations lose no behavior. This is fixed table reshaping, not a generic callable-returning curry operator.")
+if beta_law * eta_law * swapped_entry_failure * is_ok(wrote) { ok("finite curry beta and eta verified") } else { err("finite curry invariant failed") }

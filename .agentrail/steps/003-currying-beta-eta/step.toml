@@ -1,6 +1,6 @@
 number = 3
 slug = "currying-beta-eta"
-status = "pending"
+status = "in-progress"
 description = "Implement CT067-CT070 currying, uncurrying, beta law, and eta law as finite t..."
 role = "production"
 context_files = []

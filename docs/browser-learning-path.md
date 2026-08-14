@@ -34,6 +34,8 @@ Start after products, coproducts, and commutative squares:
 
 Continue into exponentials with `finite_exponentials.mlpl`: first inventory
 every function in the two-point function object, then follow evaluation.
+Then load `finite_currying.mlpl` to reshape a product-domain map and compare
+the beta and eta round trips from opposite starting representations.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

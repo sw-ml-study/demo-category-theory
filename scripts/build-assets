@@ -40,4 +40,5 @@ cp "$repo_root/out/33-preservation-creation-reflection.svg" "$dest/33-preservati
 cp "$repo_root/out/34-filtered-directed-systems.svg" "$dest/34-filtered-directed-systems.svg"
 cp "$repo_root/out/35-final-initial-functors.svg" "$dest/35-final-initial-functors.svg"
 cp "$repo_root/out/36-finite-exponentials.svg" "$dest/36-finite-exponentials.svg"
+cp "$repo_root/out/37-finite-currying.svg" "$dest/37-finite-currying.svg"
 echo "README previews written"

@@ -736,3 +736,7 @@ object inventory from evaluation. The visual first establishes that all four
 function-elements are present, then animates one `(function,input)` pair, and
 uses a wrong-row path as the counterexample. Future exponential leaves should
 retain that inventory-before-law ordering.
+Implementation note (2026-08-14, exponentials Step 003): beta and eta are
+presented as opposite journeys, not duplicate pass flags. The SVG labels the
+starting representation for each law and the program constructs both actual
+round trips. Future paired laws should likewise expose their directional data.
