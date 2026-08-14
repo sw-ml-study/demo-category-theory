@@ -1,9 +1,10 @@
 number = 12
 slug = "clarify-yoneda-web-lesson"
-status = "in-progress"
+status = "completed"
 description = "Repair Lesson 28's web/CLI pedagogy after user feedback that the Yoneda diagr..."
 role = "production"
 context_files = []
 created_at = "2026-08-13T12:12:38"
+completed_at = "2026-08-13T20:52:53"
 task_type = "lesson"
-commits = []
+commits = ["3175997405085582178ffdfc82fb485ffbd31736"]

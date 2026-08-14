@@ -1,0 +1,11 @@
+{
+  "task_type": "lesson",
+  "state": {
+    "number": 12,
+    "step": "clarify-yoneda-web-lesson"
+  },
+  "action": "Separated Yoneda from density; built three-stage naturality/recovery visual; added broken 21 witness; strengthened tests; regenerated README/browser assets; updated quality and research docs; ran full gate; committed 3175997; pushed main.",
+  "result": "success",
+  "reward": 1,
+  "timestamp": "2026-08-13T20:52:53"
+}
