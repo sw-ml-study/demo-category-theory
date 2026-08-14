@@ -1,0 +1,11 @@
+{
+  "task_type": "lesson",
+  "state": {
+    "number": 2,
+    "step": "finite-exponentials-evaluation"
+  },
+  "action": "Implemented finite exponential inventory and full evaluation table; added wrong-row witness, tests, CLI/browser visual lesson and every maintained artifact/doc; regenerated web and previews; ran the full gate; committed and pushed 9c7f820.",
+  "result": "success",
+  "reward": 1,
+  "timestamp": "2026-08-14T15:37:34"
+}

@@ -1,9 +1,10 @@
 number = 2
 slug = "finite-exponentials-evaluation"
-status = "in-progress"
+status = "completed"
 description = "Implement CT065-CT066 finite exponential objects and evaluation using explici..."
 role = "production"
 context_files = []
 created_at = "2026-08-14T15:30:55"
+completed_at = "2026-08-14T15:37:34"
 task_type = "lesson"
-commits = []
+commits = ["9c7f820de07c8ddf1b09e810f30c81204abd87cf"]
