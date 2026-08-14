@@ -1,0 +1,11 @@
+{
+  "task_type": "lesson",
+  "state": {
+    "number": 3,
+    "step": "currying-beta-eta"
+  },
+  "action": "Implemented curry/uncurry and directional beta/eta round trips; added changed-entry witness, tests, CLI/browser visual lesson and all maintained artifacts/docs; fixed rectangular display handling; regenerated outputs; ran the full gate; committed and pushed 1754967.",
+  "result": "success",
+  "reward": 1,
+  "timestamp": "2026-08-14T15:41:12"
+}
