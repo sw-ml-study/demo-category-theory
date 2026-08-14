@@ -1,6 +1,6 @@
 number = 13
 slug = "preservation-creation-reflection"
-status = "pending"
+status = "in-progress"
 description = "Implement CT055-CT058 preservation of limits/colimits, creation of limits, an..."
 role = "production"
 context_files = []

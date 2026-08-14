@@ -1,0 +1,20 @@
+# Lesson 33 -- preservation, creation, and reflection of bounded limits.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/preservation_creation_reflection.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 33 -- FUNCTORS CAN PRESERVE, REFLECT, OR CREATE LIMITS", intro: "Compare bounded universality before and after a functor, then require a unique lifted cone only for creation."})
+preserved_limit = u:functor_preserves_limit(1, 1)
+preserved_colimit = u:functor_preserves_colimit(1, 1)
+reflected_limit = u:functor_reflects_limit(1, 1)
+created_limit = u:functor_creates_limit(1, 1, 1)
+lost_by_functor = u:preservation_failure_witness(1, 0)
+false_reflection = u:reflection_failure_witness(1, 0)
+nonunique_lift = u:creation_failure_witness(1, 2)
+disp([preserved_limit, preserved_colimit, reflected_limit, created_limit])
+disp([lost_by_functor.found, false_reflection.found, nonunique_lift.found, nonunique_lift.lift_count])
+wrote = write_text("out/33-preservation-creation-reflection.svg", u:preservation_creation_reflection_visual())
+u:epilog_open()
+u:explain("out/33-preservation-creation-reflection.svg", "Preservation follows a known universal forward. Reflection infers universality backward. Creation goes backward and additionally selects exactly one universal lift. Colimit preservation is the arrow-dual check.")
+u:takeaway("These are different properties of a functor. The displayed 0 image, nonuniversal source, and two-lift target separately break preservation, reflection, and creation in this bounded fixture.")
+if preserved_limit * preserved_colimit * reflected_limit * created_limit * lost_by_functor.found * false_reflection.found * nonunique_lift.found * is_ok(wrote) { ok("bounded functor universal properties distinguished") } else { err("preservation creation reflection invariant failed") }

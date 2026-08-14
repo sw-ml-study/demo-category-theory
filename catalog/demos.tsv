@@ -74,3 +74,5 @@ model-config-lens	demos/18-optics/model_learning_rate.mlpl	18-optics	concrete-la
 model-config-lens-web	demos/web/model_config_lens.mlpl	web	concrete-lawful-lens	0	0	svg	records,nested-access	runnable
 diagonal-product-adjunction	demos/19-adjunction/duplicate_and_pair.mlpl	19-adjunction	diagonal-left-adjoint-product	0	0	ascii,svg	records,nested-equality	runnable
 diagonal-product-adjunction-web	demos/web/diagonal_product_adjunction.mlpl	web	diagonal-left-adjoint-product	0	0	svg	records,nested-equality	runnable
+preservation-creation-reflection	demos/33-preservation-creation-reflection/before_after.mlpl	33-preservation-creation-reflection	CT055-CT058-functor-universal-properties	0	0	ascii,svg	records,eq	runnable
+preservation-creation-reflection-web	demos/web/preservation_creation_reflection.mlpl	web	CT055-CT058-functor-universal-properties	0	0	svg	eq	runnable

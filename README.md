@@ -378,6 +378,19 @@ commute; mediator counts `[1,1,1]` then establish bounded universality. Sources:
 [CLI lesson](demos/32-generalized-cones/chain_cones.mlpl),
 [web lesson](demos/web/generalized_bounded_cones.mlpl).
 
+### 33. Functors preserve, reflect, or create universality differently
+
+![Four panels compare preservation of limits and colimits, reflection of limits, and unique creation of limits](assets/previews/33-preservation-creation-reflection.svg)
+
+What to notice: preservation sends a known universal cone forward. Reflection
+uses an image limit to detect that the source cone was already universal.
+Creation additionally requires exactly one universal source lift of the target
+limit. The three dashed failures—lost universality, a nonuniversal source, and
+two competing lifts—keep the terms distinct. All certificates are bounded
+finite fixtures. Sources:
+[CLI lesson](demos/33-preservation-creation-reflection/before_after.mlpl),
+[web lesson](demos/web/preservation_creation_reflection.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

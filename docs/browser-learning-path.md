@@ -29,7 +29,7 @@ Start after products, coproducts, and commutative squares:
 `equalizer.mlpl` / `coequalizer.mlpl` → `pullback.mlpl` / `pushout.mlpl` →
 `finite_limits_colimits.mlpl` → `bounded_indexed_products.mlpl` →
 `generalized_bounded_cones.mlpl` → `unique_universal_isomorphism.mlpl` →
-`diagram_constant_diagonal.mlpl`.
+`diagram_constant_diagonal.mlpl` → `preservation_creation_reflection.mlpl`.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

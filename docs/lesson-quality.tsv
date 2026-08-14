@@ -31,3 +31,4 @@ unique_universal_isomorphism.mlpl	universal properties	finite product candidates
 diagram_constant_diagonal.mlpl	functors and natural transformations	finite chain diagrams	diagonal functor and pointwise composition	yes	finite diagram category	moderate	moderate	none
 bounded_indexed_products.mlpl	products and coproducts	three-object discrete diagram	bounded indexed limit and colimit	yes	no arbitrary or infinite family	strong	moderate	none
 generalized_bounded_cones.mlpl	finite limits and colimits	two-arrow chain	cone compatibility and bounded universality	yes	bounded mediators only	strong	moderate	none
+preservation_creation_reflection.mlpl	functors and finite limits	bounded source and target cone certificates	preservation creation and reflection	yes	finite Boolean universality certificates	strong	moderate	none

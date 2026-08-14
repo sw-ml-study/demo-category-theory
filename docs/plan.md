@@ -414,3 +414,14 @@ labeled optional CLI/test extension and no longer competes for visual attention.
 The quality manifest now rates all 32 current leaves strong or moderate for CT
 teaching. Next: CT055-CT058 preservation, creation, and reflection. No blocker
 is known; bounded finite functor fixtures remain the intended representation.
+### CT055-CT058 preservation, creation, and reflection (2026-08-14)
+
+Lesson 33 compares bounded universal certificates before and after an explicit
+functor. Preservation sends a known limit or colimit forward; reflection uses
+image universality to detect source universality; creation additionally
+requires exactly one universal source lift. Three separate counterexamples
+prevent the terms from collapsing into one Boolean check.
+
+Next: CT059-CT063 filtered/directed systems and finite stabilization. The known
+boundary is conceptual rather than blocking: a finite prefix must never be
+presented as an arbitrary infinite (co)limit.

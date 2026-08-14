@@ -1596,3 +1596,17 @@ Category-of-elements reconstruction remains executable in the CLI and its own
 test, but is explicitly optional and absent from the introductory visual. The
 32-leaf quality manifest now has no weak CT-teaching rating. Next is
 preservation/creation/reflection; there is no blocker.
+## CT055-CT058 preservation, creation, and reflection, 2026-08-14
+
+Bounded before/after universality certificates are sufficient to distinguish
+all four concepts without new sw-MLPL support. Preservation of a limit or
+colimit starts with a known source universal and checks its image. Reflection
+starts with image universality and checks the source was universal. Creation
+requires target universality, a universal source lift, and lift count exactly
+one. Lost image universality, a nonuniversal source, and two lifts are separate
+counterexamples.
+
+The representation is deliberately finite and does not establish a theorem
+about arbitrary functors. Next is CT059-CT063 finite filtered/directed-system
+work; the infinite-prefix boundary is explicit and no implementation blocker
+is currently known.

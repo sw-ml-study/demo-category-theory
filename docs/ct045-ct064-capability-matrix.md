@@ -16,10 +16,10 @@ finite unless a later lesson proves a stronger statement.
 | CT052 | limit cone | array/record legs plus unique mediator-count vector | implemented as Lesson 32 for a two-arrow chain |
 | CT053 | colimit cocone | dual legs plus unique mediator-count vector | implemented as Lesson 32 for a two-arrow chain |
 | CT054 | uniqueness up to unique isomorphism | two universal candidates and mutually inverse forced maps | implemented as Lesson 29 |
-| CT055 | preservation of limits | compare source universal cone with its image under named functor | runnable for finite fixtures |
-| CT056 | preservation of colimits | dual before/after universal checks | runnable for finite fixtures |
-| CT057 | creation of limits | target cone with unique lifted source cone | candidate; requires explicit lifting tables |
-| CT058 | reflection of limits | target universality implies source universality in bounded candidates | candidate; must distinguish from preservation |
+| CT055 | preservation of limits | compare source universal cone with its image under named functor | implemented as bounded before/after certificates |
+| CT056 | preservation of colimits | dual before/after universal checks | implemented as bounded dual certificates |
+| CT057 | creation of limits | target cone with unique lifted source cone | implemented with explicit lift count and source universality |
+| CT058 | reflection of limits | target universality implies source universality in bounded candidates | implemented separately from preservation and creation |
 | CT059 | filtered category | finite preorder table with bounded common-successor witnesses | runnable only as finite filtered fixture |
 | CT060 | filtered colimit | bounded compatible chain and quotient labels | constrained: finite prefix is not an infinite colimit |
 | CT061 | directed colimit | bounded increasing chain with stabilization evidence | constrained to finite/stabilized chain |

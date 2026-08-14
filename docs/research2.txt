@@ -706,3 +706,7 @@ three-stage lesson with an explicit `Hom(A,-) -> F` naturality square and
 identity-evaluation recovery. Category-of-elements/density is a separately
 labeled optional CLI/test extension, not part of the introductory SVG. The
 quality manifest rating is upgraded from weak to strong for CT teaching.
+Implementation note (2026-08-14, Step 013): CT055-CT058 now use the same
+research2 lesson discipline—explicit setting, before/after law, witnesses,
+three noninterchangeable counterexamples, accessible directed visual, and a
+bounded-fixture boundary. No new sw-MLPL capability was required.
