@@ -19,8 +19,8 @@ finite and explicitly enumerated unless a later lesson establishes more.
 | CT075 | subobject classifier | two truth values with enumerated membership rows | implemented as bounded finite-Set truth classification |
 | CT076 | characteristic morphism | membership row into the two-point truth object | implemented with wrong-subset failure |
 | CT077 | partial map | domain subobject plus total table on that domain | implemented as a checked runtime encoding; no static partial-function type |
-| CT078 | slice category | nested records for objects over a fixed base plus triangle equality | runnable finite fixture |
-| CT079 | coslice category | nested records for objects under a fixed base plus triangle equality | runnable finite fixture |
+| CT078 | slice category | nested records for objects over a fixed base plus triangle equality | implemented with identity/composite checks in Lesson 40 |
+| CT079 | coslice category | nested records for objects under a fixed base plus triangle equality | implemented with opposite triangle orientation in Lesson 40 |
 | CT080 | locally cartesian closed category | exponentials in every slice | constrained pending multiple-slice evidence |
 | CT081 | dependent product | enumerated choices selecting one value from every finite fiber | runnable for bounded fibers |
 | CT082 | dependent sum | concatenate tagged or position-known finite fibers | runnable for bounded fibers |
@@ -74,3 +74,8 @@ rows as characteristic maps into `Ω`. Equality with the chosen membership row
 is the bounded truth-pullback witness; `[0,1]` fails to classify `{0}`. A partial
 map stores one output per true domain position. No static mono or partial-map
 type is claimed.
+
+Lesson 40 builds explicit objects over and under a base. Slice structure arrows
+end at the base; coslice structure arrows begin there. Equal finite route tables
+certify morphism triangles, identities, and a displayed composite; changed
+routes fail. Records express the fixture without claiming generic slice types.

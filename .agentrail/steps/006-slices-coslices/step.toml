@@ -1,6 +1,6 @@
 number = 6
 slug = "slices-coslices"
-status = "pending"
+status = "in-progress"
 description = "Implement CT078-CT079 slice and coslice categories using explicit objects ove..."
 role = "production"
 context_files = []

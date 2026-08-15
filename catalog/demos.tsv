@@ -89,3 +89,5 @@ cartesian-closed-boundary	demos/38-cartesian-closed-boundary/pair_evidence.mlpl	
 cartesian-closed-boundary-web	demos/web/cartesian_closed_boundary.mlpl	web	CT071-CT073-internal-hom-boundary	0	0	svg	arrays,take,reduce_mul	runnable
 finite-subobjects	demos/39-finite-subobjects/classify_domain.mlpl	39-finite-subobjects	CT074-CT077-subobject-classification	0	0	ascii,svg	arrays,reduce_add,shape	runnable
 finite-subobjects-web	demos/web/finite_subobjects.mlpl	web	CT074-CT077-subobject-classification	0	0	svg	arrays,reduce_add,shape	runnable
+finite-slices-coslices	demos/40-slices-coslices/commuting_triangles.mlpl	40-slices-coslices	CT078-CT079-slice-coslice	0	0	ascii,svg	records,equal,reduce_mul	runnable
+finite-slices-coslices-web	demos/web/finite_slices_coslices.mlpl	web	CT078-CT079-slice-coslice	0	0	svg	records,equal,reduce_mul	runnable

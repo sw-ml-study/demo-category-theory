@@ -461,6 +461,17 @@ subobject; `[0,1]` classifies the wrong subset. The partial map stores output
 [CLI lesson](demos/39-finite-subobjects/classify_domain.mlpl),
 [web lesson](demos/web/finite_subobjects.mlpl).
 
+### 40. Slice and coslice categories fix opposite arrow endpoints
+
+![Slice triangles point into a fixed base while coslice triangles point outward from it](assets/previews/40-slices-coslices.svg)
+
+What to notice: every slice object carries a map to `B`; every coslice object
+carries a map from `B`. The top morphism belongs to the new category only when
+its triangle commutes. Identity and composition preserve the triangle, while a
+changed base route fails. Sources:
+[CLI lesson](demos/40-slices-coslices/commuting_triangles.mlpl),
+[web lesson](demos/web/finite_slices_coslices.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

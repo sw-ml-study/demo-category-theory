@@ -496,3 +496,11 @@ Lesson 39 enumerates all subobjects of a two-point set, classifies `{0}` through
 truth, rejects the characteristic map for `{1}`, and checks an explicitly
 domain-restricted partial map. Next: CT078-CT079 slice and coslice categories.
 No blocker is known for finite commuting triangles.
+
+### CT078-CT079 finite slices and coslices (2026-08-14)
+
+Lesson 40 represents objects over/under a fixed base as records and accepts
+morphisms only when finite route tables make the triangle commute. Identity and
+one composite check establish the bounded category laws. Next: CT080-CT082
+dependent sums/products and the locally-cartesian-closed boundary. Ragged
+fibers require the already measured flat-values/offsets encoding.

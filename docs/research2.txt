@@ -750,3 +750,8 @@ from complete inventory to one classification pullback and only then to a
 partial-map application. The wrong characteristic row names the different
 subset it actually classifies, keeping the failure semantic rather than merely
 red. Future classifier lessons should preserve that sequence.
+Implementation note (2026-08-14, exponentials Step 006): Lesson 40 relies on
+arrowheads rather than labels alone to teach the over/under distinction. It
+then earns the word category by checking identity and composition triangles,
+not merely constructing two records. Future structured-category leaves should
+include those closure checks.

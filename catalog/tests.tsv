@@ -21,3 +21,4 @@ finite-exponentials-tests	tests/test_finite_exponentials.mlpl	36	CT065-CT066-exp
 finite-currying-tests	tests/test_finite_currying.mlpl	37	CT067-CT070-curry-beta-eta	0	0	none	arrays,take,equal	runnable
 cartesian-closed-boundary-tests	tests/test_cartesian_closed_boundary.mlpl	38	CT071-CT073-internal-hom-boundary	0	0	none	arrays,take,reduce_mul	runnable
 finite-subobjects-tests	tests/test_finite_subobjects.mlpl	39	CT074-CT077-subobject-classification	0	0	none	arrays,reduce_add,shape	runnable
+finite-slices-coslices-tests	tests/test_finite_slices.mlpl	40	CT078-CT079-slice-coslice	0	0	none	records,equal,reduce_mul	runnable

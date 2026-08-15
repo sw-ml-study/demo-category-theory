@@ -1,0 +1,20 @@
+# Tests for CT078-CT079 finite slice and coslice categories.
+include "lib/finite_slices.mlpl";
+@test {name: "slice objects and morphisms live over one base", tags: ["CT078", "slice-category"]}
+def u:test_finite_slice_category() { "Build a slice object and check identity, composition, and a broken triangle.";
+  object_over_base = u:make_slice_object([0, 1], [0, 1], [0, 1]);
+  u:assert_eq(object_over_base.map_to_base, [0, 1], "slice object")?;
+  u:assert_eq(u:slice_morphism_triangle_commutes([0, 1], [0, 1]), 1, "commuting triangle")?;
+  u:assert_eq(u:bounded_triangle_category_laws_hold([1, 1], 1), 1, "identity and composition")?;
+  u:assert_eq(u:slice_morphism_triangle_commutes([1, 0], [0, 1]), 0, "broken triangle")?;
+  ok({test: "finite-slice", cases: 4})
+}
+@test {name: "coslice objects and morphisms live under one base", tags: ["CT079", "coslice-category"]}
+def u:test_finite_coslice_category() { "Build a coslice object and check the opposite commuting triangle direction.";
+  object_under_base = u:make_coslice_object([0], [0, 1], [1]);
+  u:assert_eq(object_under_base.map_from_base, [1], "coslice object")?;
+  u:assert_eq(u:coslice_morphism_triangle_commutes([1], [1]), 1, "commuting triangle")?;
+  u:assert_eq(u:coslice_morphism_triangle_commutes([0], [1]), 0, "broken triangle")?;
+  ok({test: "finite-coslice", cases: 3})
+}
+u:run_registered_tests()

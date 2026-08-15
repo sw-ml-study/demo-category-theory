@@ -38,3 +38,4 @@ finite_exponentials.mlpl	finite functions and products	two-point finite sets	exp
 finite_currying.mlpl	finite exponentials and evaluation	binary product-domain function tables	curry uncurry beta and eta	yes	fixed table reshaping not generic callable curry	strong	moderate	none
 cartesian_closed_boundary.mlpl	products and finite exponentials	one two-point object pair	internal hom global element and coverage boundary	yes	one pair does not prove cartesian closure	strong	moderate	none
 finite_subobjects.mlpl	pullbacks and terminal objects	two-point finite set	subobject classifier characteristic maps and partial domain	yes	membership and partiality are runtime encodings	strong	moderate	none
+finite_slices_coslices.mlpl	categories and commutative diagrams	finite objects over or under one base	slice and coslice triangle laws	yes	explicit records not generic slice types	strong	moderate	none

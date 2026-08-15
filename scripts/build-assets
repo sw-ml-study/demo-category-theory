@@ -43,4 +43,5 @@ cp "$repo_root/out/36-finite-exponentials.svg" "$dest/36-finite-exponentials.svg
 cp "$repo_root/out/37-finite-currying.svg" "$dest/37-finite-currying.svg"
 cp "$repo_root/out/38-cartesian-closed-boundary.svg" "$dest/38-cartesian-closed-boundary.svg"
 cp "$repo_root/out/39-finite-subobjects.svg" "$dest/39-finite-subobjects.svg"
+cp "$repo_root/out/40-slices-coslices.svg" "$dest/40-slices-coslices.svg"
 echo "README previews written"

@@ -1,0 +1,36 @@
+# Web Lesson 40 -- finite slice and coslice categories.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- categories, composition, identity, and commutative diagrams.
+# * CATEGORICAL SETTING -- finite objects over or under one fixed base B.
+# * LAW / UNIVERSAL PROPERTY -- morphisms preserve structure maps by triangles.
+# * BOUNDARY -- explicit records and route tables, not generic slice types.
+# * WHAT THIS SHOWS
+# * Slice fixes targets at B; coslice fixes sources at B; both remain categories.
+# ***************************************************************************
+;
+include "lib/finite_slices.mlpl"  # reuse finite triangle predicates and visual
+object_over_base = u:make_slice_object([0, 1], [0, 1], [0, 1])  # CT078 object
+object_under_base = u:make_coslice_object([0], [0, 1], [1])  # CT079 object
+slice_triangle = u:slice_morphism_triangle_commutes([0, 1], [0, 1])  # target fixed
+coslice_triangle = u:coslice_morphism_triangle_commutes([1], [1])  # source fixed
+category_laws = u:bounded_triangle_category_laws_hold([1, 1], 1)  # identities/composite
+broken_slice = 1 - u:slice_morphism_triangle_commutes([1, 0], [0, 1])  # COUNTEREXAMPLE
+broken_coslice = 1 - u:coslice_morphism_triangle_commutes([0], [1])  # COUNTEREXAMPLE
+disp(object_over_base)
+disp(object_under_base)
+disp([slice_triangle, coslice_triangle, category_laws, broken_slice, broken_coslice])
+# ***************************************************************************
+# * THE VISUAL
+# * Arrowheads reveal whether structure points into or out of the fixed base.
+# ***************************************************************************
+def u:finite_slices_coslices_web_visual() { "Render opposite base orientations and commuting-triangle failures."; u:finite_slices_visual() }  # narrated shared visual entry point
+finite_slices_coslices_visual = u:finite_slices_coslices_web_visual()  # bind visual constant
+finite_slices_coslices_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Left arrows end at B; right arrows begin at B; top arrows are morphisms.
+# * A changed base route breaks the triangle and is not a slice/coslice morphism.
+# * THE POINT -- fixing one endpoint creates a new category of structured arrows.
+# ***************************************************************************

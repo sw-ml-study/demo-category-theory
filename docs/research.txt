@@ -1710,6 +1710,15 @@ serves as the bounded truth-pullback check. Partiality remains explicit data:
 the number of true domain positions must equal the stored output count. This
 does not add static mono or partial-function types, but no upstream feature
 blocks the lesson. Next is finite slices and coslices.
+
+## CT078-CT079 finite slices and coslices, 2026-08-14
+
+Nested records naturally retain the fixed base and structure map. Slice and
+coslice morphisms differ only in which endpoint is fixed, but directed visuals
+are essential: slice arrows end at the base and coslice arrows begin there.
+Finite route equality checks identities, one composite, and broken triangles.
+No new sw-MLPL capability is required. Next is dependent construction over
+flat encoded fibers.
 The CLI probe also confirmed that a display array cannot mix a length-four row
 with scalar law flags; lessons must display differently shaped values
 separately because array literals remain rectangular.

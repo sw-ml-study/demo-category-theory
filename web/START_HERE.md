@@ -40,6 +40,8 @@ Follow with `cartesian_closed_boundary.mlpl` to separate internal hom and global
 elements from the every-object-pair claim of cartesian closure.
 Then `finite_subobjects.mlpl` inventories subsets, classifies one through truth,
 and uses it as the explicit domain of a partial map.
+Continue with `finite_slices_coslices.mlpl`, reading arrowheads carefully to
+distinguish objects over a base from objects under it.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

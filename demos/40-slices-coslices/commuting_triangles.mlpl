@@ -1,0 +1,21 @@
+# Lesson 40 -- finite slice and coslice categories.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_slices.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 40 -- SLICE AND COSLICE FIX OPPOSITE ENDS", intro: "Build objects over and under a fixed base, then require identity and composite morphism triangles to commute."})
+object_over_base = u:make_slice_object([0, 1], [0, 1], [0, 1])
+object_under_base = u:make_coslice_object([0], [0, 1], [1])
+slice_triangle = u:slice_morphism_triangle_commutes([0, 1], [0, 1])
+coslice_triangle = u:coslice_morphism_triangle_commutes([1], [1])
+category_laws = u:bounded_triangle_category_laws_hold([1, 1], 1)
+broken_slice = 1 - u:slice_morphism_triangle_commutes([1, 0], [0, 1])
+broken_coslice = 1 - u:coslice_morphism_triangle_commutes([0], [1])
+disp(object_over_base)
+disp(object_under_base)
+disp([slice_triangle, coslice_triangle, category_laws, broken_slice, broken_coslice])
+wrote = write_text("out/40-slices-coslices.svg", u:finite_slices_visual())
+u:epilog_open()
+u:explain("out/40-slices-coslices.svg", "Slice structure maps point from each object to the fixed base. Coslice structure maps point from the base to each object. Morphisms must preserve those maps by commuting triangles.")
+u:takeaway("A slice fixes the target; a coslice fixes the source. Their identities and composites remain ordinary arrows constrained by the base triangle.")
+if slice_triangle * coslice_triangle * category_laws * broken_slice * broken_coslice * is_ok(wrote) { ok("finite slice and coslice categories verified") } else { err("finite triangle invariant failed") }
