@@ -1,0 +1,8 @@
+number = 3
+slug = "strictness-boundary"
+status = "pending"
+description = "Implement or constrain CT091 by distinguishing literal equality from coherent..."
+role = "legacy"
+context_files = []
+created_at = "2026-08-14T17:52:15"
+commits = []
