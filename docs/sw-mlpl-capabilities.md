@@ -354,6 +354,11 @@ coverage vector. Generic functor declarations would reduce repetition but are
 not required for this bounded lesson; a future full functor facility should
 represent lax and oplax comparison direction, invertible strong comparisons,
 and tensor/unit coherence without collapsing those obligations.
+Lesson 49 confirms fixed evaluation/coevaluation tables and typed route arrays
+are enough for one dual object and a compact-coverage boundary. The next saga
+must probe a different capability: executable graph connectivity or topology
+for string diagrams. SVG rendering exists, but visual curve placement alone
+cannot validate planar isotopy, interchange, trace, or spider rewrites.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

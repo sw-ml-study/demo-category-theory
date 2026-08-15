@@ -62,6 +62,9 @@ attributed Z2 inverse diagram, then the explicit missing-module checklist.
 Then load `finite_monoidal_functors.mlpl`: compare the opposite lax and oplax
 arrowheads, require both inverse composites for strong structure, follow the
 transformation square, and stop at the missing closedness pair.
+Finish this path with `finite_dual_compact_boundary.mlpl`: evaluation removes a
+dual pair, coevaluation creates one, and the two differently typed snake routes
+return `A` and `A*`. The dashed object prevents a compact-closed claim.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

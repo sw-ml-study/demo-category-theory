@@ -28,9 +28,9 @@ explicit fixtures; none infers generic monoidal structure or coherence.
 | CT104 | strong monoidal functor | invertible comparison tables in both directions | implemented with two explicit inverse composites |
 | CT105 | monoidal natural transformation | finite naturality plus tensor/unit compatibility squares | implemented as a finite compatibility fixture with a broken witness |
 | CT106 | closed monoidal category | tensor/internal-hom adjunction for every object pair | constrained by explicit incomplete pair coverage `[1,0]` |
-| CT107 | dual object | evaluation/coevaluation tables with snake paths | runnable for one finite fixture |
-| CT108 | compact closed category | every-object dual coverage | constrained pending more than one dual fixture |
-| CT109 | compact closure boundary | explicit missing-coverage witness | runnable as a structural boundary |
+| CT107 | dual object | evaluation/coevaluation tables with snake paths | implemented with two typed snake identities in Lesson 49 |
+| CT108 | compact closed category | every-object dual coverage | constrained by explicit incomplete object coverage `[1,0]` |
+| CT109 | compact closure boundary | explicit missing-coverage witness | implemented as the dashed missing object-dual obligation |
 
 ## Probe findings
 
@@ -50,6 +50,7 @@ explicit fixtures; none infers generic monoidal structure or coherence.
   owns internal categorical diagrams, while `demo-abstract-algebra` owns the
   operation-law ladder and classification.
 
-No new sw-MLPL feature blocks Steps 2-5. Step 6 depends on a stable copied
-module/group fixture. Steps 7-8 are representable but require fresh law-sized
-fixtures and explicit coverage failures before stronger claims.
+The completed saga needed no new sw-MLPL feature. Fixed records, arrays,
+equality, and coverage vectors implement or honestly constrain all 25 IDs.
+Generic tensor traversal, functor declarations, and string-diagram topology
+remain separate ergonomics or curriculum work rather than hidden prerequisites.

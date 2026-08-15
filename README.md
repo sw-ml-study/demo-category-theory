@@ -557,6 +557,17 @@ and the dashed object pair prevents a closed-monoidal claim. Sources:
 [CLI lesson](demos/48-monoidal-functors/comparison_maps.mlpl),
 [web lesson](demos/web/finite_monoidal_functors.mlpl).
 
+### 49. Verify both dual snakes; audit compact coverage
+
+![Directed evaluation and coevaluation maps, two typed snake routes, and one missing object dual](assets/previews/49-dual-compact-boundary.svg)
+
+What to notice: evaluation removes a dual pair and coevaluation creates one.
+The green route returns `A`, the blue route returns `A*`, and each is checked
+against its own identity. The dashed object blocks the stronger compact-closed
+claim. Sources:
+[CLI lesson](demos/49-dual-compact-boundary/snake_routes.mlpl),
+[web lesson](demos/web/finite_dual_compact_boundary.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

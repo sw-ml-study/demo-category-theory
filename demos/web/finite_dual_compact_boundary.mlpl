@@ -1,0 +1,32 @@
+# Web Lesson 49 -- dual-object snake identities and compact-closed boundary.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- tensor, unit, evaluation, coevaluation, identity arrows.
+# * CATEGORICAL SETTING -- one finite self-dual pairing fixture for object A.
+# * LAW -- separate left snake on A and right snake on A-star are identities.
+# * BOUNDARY -- object B lacks a verified dual, so compact closure is not claimed.
+# * WHAT THIS SHOWS
+# * Read evaluation and coevaluation directions, then follow both typed routes.
+# ***************************************************************************
+;
+include "lib/finite_dual_compact_boundary.mlpl"  # reuse dual and coverage checks
+pairing_tables = u:evaluation_coevaluation_tables_match([1, 0, 0, 1], [1, 0, 0, 1])  # CT107
+snake_identities = u:dual_object_snake_identities_hold(["A", "A*", "A"], ["A*", "A", "A*"], ["A"], ["A"], ["A*"], ["A*"])  # CT107
+broken_left_snake = 1 - u:dual_object_snake_identities_hold(["A", "A*", "A"], ["A*", "A", "A*"], ["changed-A"], ["A"], ["A*"], ["A*"])  # COUNTEREXAMPLE
+broken_right_snake = 1 - u:dual_object_snake_identities_hold(["A", "A*", "A"], ["A*", "A", "A*"], ["A"], ["A"], ["changed-dual"], ["A*"])  # COUNTEREXAMPLE
+compact_coverage_missing = 1 - u:compact_closed_object_coverage_is_complete([1, 0])  # CT108-CT109 boundary
+disp([pairing_tables, snake_identities, broken_left_snake, broken_right_snake, compact_coverage_missing])
+# ***************************************************************************
+# * THE VISUAL
+# * Evaluation and coevaluation point oppositely; typed snake routes stay distinct.
+# ***************************************************************************
+def u:finite_dual_compact_boundary_web_visual() { "Render the shared dual-object and compact-coverage lesson visual."; u:finite_dual_compact_boundary_visual() }  # narrated visual entry point
+finite_dual_compact_boundary_visual = u:finite_dual_compact_boundary_web_visual()  # bind visual constant
+finite_dual_compact_boundary_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Green returns A; blue returns A-star. Each must equal its own identity.
+# * Coverage [1,0] leaves object B dashed and blocks compact closure.
+# * THE POINT -- one verified dual object is local data, not category-wide coverage.
+# ***************************************************************************

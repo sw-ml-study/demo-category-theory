@@ -1,7 +1,7 @@
-# Active saga plan: monoidal categories and algebraic objects
+# Completed saga and next capability survey
 
-This active saga covers CT085-CT109. Its capability survey established
-finite tensor tables and coherence paths, then develops only structures whose
+The completed monoidal saga covers CT085-CT109. Its capability survey established
+finite tensor tables and coherence paths, then developed only structures whose
 laws current sw-MLPL can execute honestly. String diagrams belong to the later
 CT110-CT129 saga; this saga may establish their algebraic prerequisites but
 must not silently consume that visual curriculum.
@@ -25,9 +25,18 @@ must not silently consume that visual curriculum.
    sibling; retain the repository scope boundary.
 7. **Monoidal functor variants** — completed in Lesson 48 with separately
    directed comparisons, inverse checks, compatibility, and closedness coverage.
-8. **Closedness, duals, and integration** — attempt CT107-CT109 with explicit
-   evaluation/coevaluation and triangle witnesses, audit all 25 IDs, and queue
+8. **Closedness, duals, and integration** — completed CT107-CT109 with explicit
+   evaluation/coevaluation and snake witnesses, audited all 25 IDs, and queued
    CT110-CT129.
+
+## Next: CT110-CT129
+
+Begin string diagrams, traces, and processes with capability evidence. Measure
+whether diagram connectivity and topology can be represented executably rather
+than inferred from SVG geometry. Order planar isotopy/interchange, cups/caps,
+traces/feedback, dagger structure, Frobenius/spider laws, and process examples
+by current support. Keep categorical quantum mechanics as an explicit boundary
+unless finite fixtures substantiate the stronger vocabulary.
 
 Every step follows the established pre-commit, detailed commit, Agentrail
 completion, metadata commit, and push protocol. Functions remain docstring-first

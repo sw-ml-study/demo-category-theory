@@ -591,3 +591,14 @@ bounded by explicit every-pair evidence `[1,0]`, so the missing pair remains
 visible rather than becoming a general claim. Next: CT107-CT109 dual-object,
 compact-closed coverage, and saga integration; no runtime blocker is known for
 one snake-identity fixture.
+
+### CT107-CT109 dual object and compact-closed boundary (2026-08-15)
+
+Lesson 49 directs evaluation from `A* tensor A` to the unit and coevaluation
+from the unit to `A tensor A*`. Its left snake travels through an `A`-typed
+intermediate and returns `A`; its distinct right snake returns `A*`. Separate
+changed endpoints fail the two identities. Object-dual coverage `[1,0]` blocks
+the category-wide compact-closed claim. The CT085-CT109 matrix now audits all
+25 stable IDs as implemented or explicitly constrained. Next: CT110-CT129
+string diagrams, traces, and processes, beginning with a capability survey;
+executable topology is the principal unknown.

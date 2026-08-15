@@ -1854,3 +1854,19 @@ one enumerated internal-hom pair is known and one is absent, so the lesson does
 not claim a closed monoidal category. No additional sw-MLPL capability is
 needed for these finite witnesses. Next is CT107-CT109: a dual-object snake
 fixture followed by an explicit compact-closed coverage boundary.
+
+## CT107-CT109 dual object and compact-closed integration, 2026-08-15
+
+The finite pairing table `[1,0,0,1]` supports directed evaluation and
+coevaluation maps for one self-dual fixture. Lesson 49 does not copy one result
+twice: the left snake has an `A`-typed intermediate and endpoint, while the
+right snake has an `A*`-typed intermediate and endpoint. Both identities must
+pass, and changing either endpoint supplies its own counterexample.
+
+Compact closure is a category-wide coverage claim. The enumerated evidence
+`[1,0]` verifies a dual for object A while leaving object B absent, so CT108 is
+constrained and CT109 makes that boundary executable and visual. The final
+CT085-CT109 audit accounts for all 25 IDs in the capability matrix. No new
+sw-MLPL feature was necessary. CT110-CT129 comes next; its first task must
+measure executable connectivity/topology rather than treating drawn SVG curves
+as proofs of planar isotopy or string-diagram equality.
