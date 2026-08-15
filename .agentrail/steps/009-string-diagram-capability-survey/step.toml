@@ -1,0 +1,8 @@
+number = 9
+slug = "string-diagram-capability-survey"
+status = "pending"
+description = "Begin the CT110-CT129 string diagrams, traces, and processes saga with a read..."
+role = "legacy"
+context_files = []
+created_at = "2026-08-15T14:15:09"
+commits = []
