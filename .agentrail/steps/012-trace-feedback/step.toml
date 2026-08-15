@@ -1,0 +1,8 @@
+number = 12
+slug = "trace-feedback"
+status = "pending"
+description = "Implement CT116-CT118 as Lesson 52 using one finite deterministic typed proce..."
+role = "legacy"
+context_files = []
+created_at = "2026-08-15T14:45:17"
+commits = []
