@@ -450,6 +450,17 @@ makes that unproved coverage visible rather than silently generalizing it.
 Sources: [CLI lesson](demos/38-cartesian-closed-boundary/pair_evidence.mlpl),
 [web lesson](demos/web/cartesian_closed_boundary.mlpl).
 
+### 39. Truth maps classify finite subobjects
+
+![Four subobjects of a two-point set, a characteristic map into truth, and a partial map restricted to one subset](assets/previews/39-finite-subobjects.svg)
+
+What to notice: the four Boolean rows inventory every subset of `{0,1}`. The
+map `χ=[1,0]` sends exactly `{0}` to true, so pulling back truth recovers that
+subobject; `[0,1]` classifies the wrong subset. The partial map stores output
+`9` only on its explicit domain `{0}`. Sources:
+[CLI lesson](demos/39-finite-subobjects/classify_domain.mlpl),
+[web lesson](demos/web/finite_subobjects.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

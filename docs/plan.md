@@ -489,3 +489,10 @@ Lesson 38 certifies one internal hom, selects a global function element via the
 singleton, and rejects a category-wide closure claim with coverage `[1,0]`.
 Next: CT074-CT077 subobjects, classification, characteristic maps, and partial
 maps. No blocker is known for the bounded two-point fixture.
+
+### CT074-CT077 finite subobject classification (2026-08-14)
+
+Lesson 39 enumerates all subobjects of a two-point set, classifies `{0}` through
+truth, rejects the characteristic map for `{1}`, and checks an explicitly
+domain-restricted partial map. Next: CT078-CT079 slice and coslice categories.
+No blocker is known for finite commuting triangles.

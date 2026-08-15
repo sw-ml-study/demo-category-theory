@@ -38,6 +38,8 @@ Then load `finite_currying.mlpl` to reshape a product-domain map and compare
 the beta and eta round trips from opposite starting representations.
 Follow with `cartesian_closed_boundary.mlpl` to separate internal hom and global
 elements from the every-object-pair claim of cartesian closure.
+Then `finite_subobjects.mlpl` inventories subsets, classifies one through truth,
+and uses it as the explicit domain of a partial map.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

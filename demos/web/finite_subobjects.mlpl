@@ -1,0 +1,33 @@
+# Web Lesson 39 -- finite subobject classification.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- finite sets, monomorphisms, pullbacks, and terminal object.
+# * CATEGORICAL SETTING -- subsets of the two-point set in finite Set.
+# * LAW / UNIVERSAL PROPERTY -- truth pullback classifies the chosen subobject.
+# * BOUNDARY -- membership/partiality are encoded, not statically typed.
+# * WHAT THIS SHOWS
+# * Four membership rows, one characteristic map, and one restricted partial map.
+# ***************************************************************************
+;
+include "lib/finite_subobjects.mlpl"  # reuse finite classification predicates and visual
+membership_rows = [[0, 0], [1, 0], [0, 1], [1, 1]]  # all subobjects of X
+complete_inventory = u:two_point_subobject_inventory_is_complete(membership_rows)  # CT074
+classified_subobject = u:characteristic_map_classifies_subobject([1, 0], [1, 0])  # CT075-CT076
+wrong_characteristic_map = 1 - u:characteristic_map_classifies_subobject([1, 0], [0, 1])  # COUNTEREXAMPLE
+partial_map_is_well_formed = u:bounded_partial_map_is_well_formed([1, 0], [9])  # CT077
+extra_output_rejected = 1 - u:bounded_partial_map_is_well_formed([1, 0], [9, 8])  # COUNTEREXAMPLE
+disp(membership_rows)
+disp([complete_inventory, classified_subobject, wrong_characteristic_map, partial_map_is_well_formed, extra_output_rejected])
+# ***************************************************************************
+# * THE VISUAL
+# * Inventory subsets, follow χ into truth, then read the restricted partial map.
+# ***************************************************************************
+def u:finite_subobjects_web_visual() { "Render finite truth classification and a bounded domain-restricted partial map."; u:finite_subobjects_visual() }  # narrated shared visual entry point
+finite_subobjects_visual = u:finite_subobjects_web_visual()  # bind visual constant
+finite_subobjects_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * χ=[1,0] marks exactly {0}; the wrong χ marks {1}; output 9 exists only on {0}.
+# * THE POINT -- characteristic maps turn subobject membership into an arrow to truth.
+# ***************************************************************************

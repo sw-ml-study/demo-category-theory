@@ -1701,6 +1701,15 @@ category-wide property needs evidence for every object pair, so `[1,0]` is an
 honest missing-coverage witness. No language feature can replace that
 mathematical quantifier. Next is bounded subobject classification; no blocker
 is known.
+
+## CT074-CT077 finite subobject classification, 2026-08-14
+
+Boolean membership rows make the complete two-point subobject inventory and
+its characteristic maps executable. Equality with the intended membership row
+serves as the bounded truth-pullback check. Partiality remains explicit data:
+the number of true domain positions must equal the stored output count. This
+does not add static mono or partial-function types, but no upstream feature
+blocks the lesson. Next is finite slices and coslices.
 The CLI probe also confirmed that a display array cannot mix a length-four row
 with scalar law flags; lessons must display differently shaped values
 separately because array literals remain rectangular.

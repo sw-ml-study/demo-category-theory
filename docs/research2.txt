@@ -745,3 +745,8 @@ scope boundary into visual data. A passing local certificate appears above a
 failed coverage vector, so learners can see why internal-hom evidence is not a
 cartesian-closed theorem. Future structural-property lessons should visualize
 the missing quantifier rather than relying only on a prose disclaimer.
+Implementation note (2026-08-14, exponentials Step 005): Lesson 39 progresses
+from complete inventory to one classification pullback and only then to a
+partial-map application. The wrong characteristic row names the different
+subset it actually classifies, keeping the failure semantic rather than merely
+red. Future classifier lessons should preserve that sequence.

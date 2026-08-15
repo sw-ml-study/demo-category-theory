@@ -87,3 +87,5 @@ finite-currying	demos/37-finite-currying/round_trips.mlpl	37-finite-currying	CT0
 finite-currying-web	demos/web/finite_currying.mlpl	web	CT067-CT070-curry-beta-eta	0	0	svg	arrays,take,equal	runnable
 cartesian-closed-boundary	demos/38-cartesian-closed-boundary/pair_evidence.mlpl	38-cartesian-closed-boundary	CT071-CT073-internal-hom-boundary	0	0	ascii,svg	arrays,take,reduce_mul	runnable
 cartesian-closed-boundary-web	demos/web/cartesian_closed_boundary.mlpl	web	CT071-CT073-internal-hom-boundary	0	0	svg	arrays,take,reduce_mul	runnable
+finite-subobjects	demos/39-finite-subobjects/classify_domain.mlpl	39-finite-subobjects	CT074-CT077-subobject-classification	0	0	ascii,svg	arrays,reduce_add,shape	runnable
+finite-subobjects-web	demos/web/finite_subobjects.mlpl	web	CT074-CT077-subobject-classification	0	0	svg	arrays,reduce_add,shape	runnable

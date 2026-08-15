@@ -1,6 +1,6 @@
 number = 5
 slug = "subobjects-classification"
-status = "pending"
+status = "in-progress"
 description = "Attempt CT074-CT077 subobjects, subobject classifier, characteristic morphism..."
 role = "production"
 context_files = []
