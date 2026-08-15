@@ -25,6 +25,7 @@ finite-limits-colimits	demos/26-finite-limits-colimits/universal_cones.mlpl	26-f
 finite-limits-colimits-web	demos/web/finite_limits_colimits.mlpl	web	CT027-CT036-cones-cocones-finite-universals	0	0	svg	take	runnable
 hom-functor-actions	probes/hom_functor_actions.mlpl	probes	CT039-CT040-hom-actions	0	0	ascii	each,take	runnable
 indexed-limits	probes/indexed_limits.mlpl	probes	CT045-CT064-finite-representations	0	0	ascii	records,take,fill	runnable
+monoidal-structures	probes/monoidal_structures.mlpl	probes	CT085-CT109-finite-representations	0	0	ascii	records,take,equal	runnable
 representable-hom	demos/27-representable-hom/hom_tables.mlpl	27-representable-hom	CT025-CT026-CT037-CT041-representables	0	0	ascii,svg	records,each,take	runnable
 representable-hom-web	demos/web/representable_hom.mlpl	web	CT025-CT026-CT037-CT041-representables	0	0	svg	each,take	runnable
 finite-yoneda	demos/28-yoneda-elements/correspondence.mlpl	28-yoneda-elements	CT042-CT044-Yoneda-elements-density	0	0	ascii,svg	records,take	runnable

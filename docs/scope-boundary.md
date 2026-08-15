@@ -23,6 +23,8 @@ obeys**.
 - cones, cocones, and finite (co)limit unification;
 - walking-arrow representable/corepresentable hom-functors; and
 - a finite Yoneda correspondence and category of elements.
+- internal monoid/comonoid/group/module diagrams as categorical packaging,
+  while operation-law classification remains owned by the sibling repository.
 
 ## Owned by demo-abstract-algebra
 

@@ -1,0 +1,28 @@
+# Probe: finite representations for CT085-CT109.
+# visual: ascii
+# loops: 0
+def u:reassociate_three_values(left_nested_tensor) { "Move parentheses from (A tensor B) tensor C to A tensor (B tensor C) for one nested record."; {left: left_nested_tensor.left.left, right: {left: left_nested_tensor.left.right, right: left_nested_tensor.right}} }
+def u:remove_left_unit(left_unit_tensor) { "Remove a displayed singleton unit from the left side of one tensor record."; left_unit_tensor.right }
+def u:remove_right_unit(right_unit_tensor) { "Remove a displayed singleton unit from the right side of one tensor record."; right_unit_tensor.left }
+def u:braid_two_values(tensor_pair) { "Swap the two positions of one finite tensor pair."; {left: tensor_pair.right, right: tensor_pair.left} }
+def u:coherence_routes_agree(first_route, second_route) { "Compare two explicitly constructed finite coherence routes extensionally."; equal(first_route, second_route) }
+def u:finite_operation_law_holds(first_results, second_results) { "Compare two finite operation-table law result arrays."; equal(first_results, second_results) }
+left_nested_tensor = {left: {left: 2, right: 3}, right: 5}
+right_nested_tensor = u:reassociate_three_values(left_nested_tensor)
+left_unit_removed = u:remove_left_unit({left: 0, right: 7})
+right_unit_removed = u:remove_right_unit({left: 7, right: 0})
+braided_pair = u:braid_two_values({left: 2, right: 3})
+braided_twice = u:braid_two_values(braided_pair)
+pentagon_upper_route = [2, 3, 5, 7]
+pentagon_lower_route = [2, 3, 5, 7]
+triangle_associator_route = [2, 3]
+triangle_unitor_route = [2, 3]
+hexagon_upper_route = [3, 5, 2]
+hexagon_lower_route = [3, 5, 2]
+mod_two_multiplication_table = [[0, 1], [1, 0]]
+diagonal_comultiplication = [[0, 0], [1, 1]]
+associative_results_left = [0, 1, 1, 0, 1, 0, 0, 1]
+associative_results_right = [0, 1, 1, 0, 1, 0, 0, 1]
+comparison_maps = {lax_direction: "F(A) tensor F(B) to F(A tensor B)", oplax_direction: "F(A tensor B) to F(A) tensor F(B)"}
+dual_fixture = {evaluation: [1, 0, 0, 1], coevaluation: [1, 0, 0, 1]}
+ok({probe: "monoidal-structures", reassociated: right_nested_tensor, left_unit_removed: left_unit_removed, right_unit_removed: right_unit_removed, braiding_involutive: equal(braided_twice, {left: 2, right: 3}), pentagon_paths: u:coherence_routes_agree(pentagon_upper_route, pentagon_lower_route), triangle_paths: u:coherence_routes_agree(triangle_associator_route, triangle_unitor_route), hexagon_paths: u:coherence_routes_agree(hexagon_upper_route, hexagon_lower_route), multiplication_associative: u:finite_operation_law_holds(associative_results_left, associative_results_right), multiplication_table: mod_two_multiplication_table, comultiplication_table: diagonal_comultiplication, comparison_maps: comparison_maps, dual_fixture: dual_fixture})

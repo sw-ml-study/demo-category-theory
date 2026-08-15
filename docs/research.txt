@@ -1756,3 +1756,25 @@ represented by executable bounded evidence or explicit missing-coverage
 witnesses. Next is CT085-CT109: begin with tensor/coherence probes. Whether
 pentagon, hexagon, and monoidal-functor comparisons remain readable in current
 sw-MLPL is not yet known and is the next saga's first measured risk.
+
+## CT085-CT109 monoidal capability survey, 2026-08-14
+
+Nested `{left,right}` records retain literal parenthesization, so an associator
+can convert `(A tensor B) tensor C` into `A tensor (B tensor C)` without erasing
+the strictness question. Singleton-coded unit endpoints remove cleanly from
+either side. Swapping a pair twice returns the original pair. Explicit arrays
+can retain fixed pentagon, triangle, and hexagon route endpoints, while records
+can preserve different intermediate path trees for the later lessons.
+
+Finite multiplication and diagonal-comultiplication tables execute, as do
+records naming the opposite lax and oplax comparison directions. One finite
+evaluation/coevaluation table supports a future dual-object attempt, but it
+does not prove every object has a dual. The capability matrix therefore makes
+Steps 2-5 runnable now, gates group/module packaging on the sibling scope
+boundary, and keeps closed/compact claims coverage-constrained.
+
+No new sw-MLPL request follows from this survey. General variable-length
+tensor paths would encounter the already recorded callable composition and
+homogeneous function-container gaps; fixed law-sized coherence diagrams are
+readable without them. Next is CT085-CT090 with genuinely distinct pentagon
+and triangle constructions. No blocker is known.

@@ -1,6 +1,6 @@
 number = 1
 slug = "capability-matrix-probes"
-status = "pending"
+status = "in-progress"
 description = "Map CT085-CT109 to finite executable representations. Probe tensor objects an..."
 role = "legacy"
 context_files = []

@@ -525,3 +525,17 @@ shape and checks identity/composition; a one-payload pair is the arity witness.
 The CT065-CT084 audit is complete. Next is the queued CT085-CT109 monoidal
 capability survey; tensor and coherence representations are potential blockers
 until measured.
+
+### CT085-CT109 monoidal capability survey (2026-08-14)
+
+`probes/monoidal_structures.mlpl` confirms that nested records preserve tensor
+parenthesization; readable transforms implement reassociation, unit removal,
+and braiding; and fixed route arrays compare pentagon, triangle, and hexagon
+endpoints. Finite multiplication/comultiplication tables, opposite lax/oplax
+comparison directions, and one evaluation/coevaluation fixture also fit.
+
+Next: CT085-CT090 monoidal foundation with genuinely distinct coherence paths
+and visible intermediate objects. No new runtime feature blocks that bounded
+lesson. Generic variable-length tensor traversal remains existing composition
+friction, and group/module objects must preserve the abstract-algebra sibling
+boundary.

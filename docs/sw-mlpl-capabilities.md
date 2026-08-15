@@ -317,6 +317,20 @@ polynomial syntax is unnecessary for this lesson and remains unrequested. The
 next unknown is whether tensor reassociation and coherence paths can be
 represented readably for CT085-CT109; that requires new probes before any
 upstream proposal.
+
+## CT085-CT109 monoidal representation surface
+
+The monoidal probe verifies nested tensor records, associator/unit removal,
+pair swapping, fixed coherence endpoints, finite operation tables, directed
+lax/oplax comparison metadata, and one dual table. These are sufficient for
+bounded monoidal, braided, symmetric, monoid/comonoid, and dual-object lessons.
+
+The probe does not supply generic tensor traversal, arbitrary coherence, static
+invertibility, or every-object dual coverage. Fixed diagrams can use explicit
+records, so there is no new blocker or upstream ask. Variable-length coherence
+would reuse the already documented first-class composition/function-container
+requests. Closed and compact structure remain mathematical coverage
+obligations, not missing syntax.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

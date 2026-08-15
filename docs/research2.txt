@@ -767,3 +767,9 @@ laws. The malformed pair fails because its position count is wrong, so the
 counterexample attacks the container invariant rather than an arbitrary value.
 Future shape-indexed lessons should retain this order: shapes, positions,
 inhabitants, action, law, then structural boundary.
+Implementation note (2026-08-14, monoidal Step 001): coherence leaves must not
+compare two copied endpoint arrays and call that a pentagon, triangle, or
+hexagon. The probe establishes endpoint representability only. Each lesson
+must construct different intermediate nesting/permutation paths, display
+those paths, and compare their final morphisms. Strict equality and coherent
+isomorphism must remain visually and executably distinct.

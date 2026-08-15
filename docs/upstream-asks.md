@@ -113,3 +113,11 @@ record returns remain records. Exact API remains an upstream design decision.
 - Acceptance case: construct fibers `[10,11]` and `[20]`, select each fiber,
   flatten them while retaining tags, and distinguish malformed offsets without
   maintaining parallel arrays manually.
+
+## Monoidal survey outcome
+
+The CT085-CT109 probe adds no new upstream request. Fixed associator, unitor,
+pentagon, triangle, braiding, and hexagon fixtures fit current nested records
+and arrays. A future request for arbitrary-length coherence traversal would be
+the existing callable-composition/function-container gap in another guise and
+must demonstrate broader practical value before being duplicated here.

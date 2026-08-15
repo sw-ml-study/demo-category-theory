@@ -1,6 +1,6 @@
-# Queued saga plan: monoidal categories and algebraic objects
+# Active saga plan: monoidal categories and algebraic objects
 
-This next saga covers CT085-CT109. It begins with capability evidence for
+This active saga covers CT085-CT109. Its capability survey established
 finite tensor tables and coherence paths, then develops only structures whose
 laws current sw-MLPL can execute honestly. String diagrams belong to the later
 CT110-CT129 saga; this saga may establish their algebraic prerequisites but
