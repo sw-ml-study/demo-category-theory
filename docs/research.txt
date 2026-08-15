@@ -1923,3 +1923,17 @@ appropriate identity wires. Independent changed endpoints prevent the two laws
 from collapsing into one Boolean. No new sw-MLPL capability is required. Next
 is CT116-CT118: one explicit feedback connection and trace, plus a coverage
 boundary before claiming a traced monoidal category.
+
+## CT116-CT118 finite trace and feedback, 2026-08-15
+
+Lesson 52 represents the open process with two interfaces: external `A → B`
+and feedback `U → U`. Trace closes only the designated feedback edge, leaving
+the external boundary unchanged. The explicit feedback route and closed trace
+are independently supplied endpoint arrays equal to `[8]`; `[9]` breaks the
+comparison, and `U/V` breaks port compatibility.
+
+The lesson checks representative naturality and vanishing fixtures but records
+sliding as missing through coverage `[1,1,0]`. It therefore demonstrates one
+trace and one feedback graph without claiming the chosen category is traced
+monoidal. No new language feature is needed. Next is CT119-CT120 finite dagger
+reversal and the stronger dagger-compact coverage boundary.

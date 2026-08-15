@@ -13,8 +13,8 @@ animation only; semantic edge tables supply the evidence.
    typed ports, changed embeddings over invariant edges, and interchange.
 3. **Cups, caps, and snake connectivity** — completed in Lesson 51 as typed
    graph connectivity over the existing dual fixture without duplicating it.
-4. **Trace and feedback** — implement CT116-CT118 for one deterministic finite
-   process; constrain traced-monoidal coverage to the enumerated family.
+4. **Trace and feedback** — completed in Lesson 52 for one deterministic finite
+   process with explicit incomplete traced-law coverage.
 5. **Dagger structure** — implement CT119 and attempt CT120 with explicit
    reversal, involution, composition compatibility, and compact coverage.
 6. **Frobenius and spiders** — implement CT121-CT123 with attributed finite

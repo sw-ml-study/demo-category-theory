@@ -634,3 +634,12 @@ path records normalize to identity wires on `A` and `A*`; changing either
 endpoint breaks only its snake. Lesson 49 retains the pairing-table algebra,
 while Lesson 51 owns the semantic graph reading. Next: CT116-CT118 finite trace,
 traced-coverage boundary, and feedback; no blocker is known for one fixture.
+
+### CT116-CT118 finite trace and feedback (2026-08-15)
+
+Lesson 52 starts from `p: A tensor U → B tensor U`, labels all four ports, and
+closes only the compatible `U` output/input pair. The external `A → B` boundary
+remains visible. Explicit feedback execution and the traced endpoint both reach
+`8`; type `U/V` and endpoint `8/9` fail separately. Representative trace-law
+coverage `[1,1,0]` leaves sliding absent, so CT117 remains constrained. Next:
+CT119-CT120 dagger and dagger-compact coverage; fixed reversal is runnable.

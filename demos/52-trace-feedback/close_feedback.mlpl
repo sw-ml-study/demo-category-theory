@@ -1,0 +1,17 @@
+# Lesson 52 -- finite trace, feedback, and traced-coverage boundary.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_trace_feedback.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 52 -- CLOSE ONE WIRE, KEEP THE BOUNDARY", intro: "Designate the U feedback ports, close them semantically, and compare explicit feedback with the traced A-to-B endpoint."})
+feedback_typed = u:feedback_ports_are_compatible(["U"], ["U"])
+feedback_mismatch = 1 - u:feedback_ports_are_compatible(["U"], ["V"])
+trace_endpoint = u:trace_matches_explicit_feedback([8], [8])
+changed_trace_endpoint = 1 - u:trace_matches_explicit_feedback([8], [9])
+missing_law_coverage = 1 - u:traced_law_coverage_is_complete([1, 1, 0])
+disp([feedback_typed, feedback_mismatch, trace_endpoint, changed_trace_endpoint, missing_law_coverage])
+wrote = write_text("out/52-trace-feedback.svg", u:finite_trace_feedback_visual())
+u:epilog_open()
+u:explain("out/52-trace-feedback.svg", "The blue U-output-to-U-input edge is internalized by trace. A input and B output stay external, and explicit feedback agrees with the traced endpoint 8.")
+u:takeaway("Trace closes a designated compatible feedback wire. One example and two laws do not establish a traced monoidal category.")
+if feedback_typed * feedback_mismatch * trace_endpoint * changed_trace_endpoint * missing_law_coverage * is_ok(wrote) { ok("trace and feedback verified") } else { err("trace feedback failed") }

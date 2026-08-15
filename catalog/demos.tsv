@@ -115,3 +115,5 @@ finite-string-graphs	demos/50-semantic-string-graphs/typed_interchange.mlpl	50-s
 finite-string-graphs-web	demos/web/finite_string_graphs.mlpl	web	CT110-CT112-string-graphs-interchange	0	0	svg	arrays,records,equal	runnable
 finite-cup-cap-connectivity	demos/51-cup-cap-connectivity/typed_snakes.mlpl	51-cup-cap-connectivity	CT113-CT115-cup-cap-snakes	0	0	ascii,svg	arrays,records,equal	runnable
 finite-cup-cap-connectivity-web	demos/web/finite_cup_cap_connectivity.mlpl	web	CT113-CT115-cup-cap-snakes	0	0	svg	arrays,records,equal	runnable
+finite-trace-feedback	demos/52-trace-feedback/close_feedback.mlpl	52-trace-feedback	CT116-CT118-trace-feedback	0	0	ascii,svg	arrays,equal,reduce_mul	runnable
+finite-trace-feedback-web	demos/web/finite_trace_feedback.mlpl	web	CT116-CT118-trace-feedback	0	0	svg	arrays,equal,reduce_mul	runnable

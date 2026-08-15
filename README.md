@@ -587,6 +587,16 @@ What to notice: the cup points from `I` to `A ⊗ A*`; the cap points from
 `A*`. Sources: [CLI lesson](demos/51-cup-cap-connectivity/typed_snakes.mlpl),
 [web lesson](demos/web/finite_cup_cap_connectivity.mlpl).
 
+### 52. Close one feedback wire; keep the external boundary
+
+![An open A-U to B-U process, a closed U feedback loop, and incomplete trace-law coverage](assets/previews/52-trace-feedback.svg)
+
+What to notice: the blue edge closes `U out → U in`; `A in → B out` remains
+external. Explicit feedback and trace both reach `8`, while coverage `[1,1,0]`
+blocks a traced-category claim. Sources:
+[CLI lesson](demos/52-trace-feedback/close_feedback.mlpl),
+[web lesson](demos/web/finite_trace_feedback.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

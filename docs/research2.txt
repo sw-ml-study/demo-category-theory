@@ -817,3 +817,7 @@ Implementation note (2026-08-15, string-diagram Step 003): Lesson 51 labels
 every cup/cap boundary and keeps the two snake path records typed and unequal.
 Future curved-wire visuals must expose source, target, and boundary ordering in
 semantic data, and must identify which earlier lesson supplies algebraic laws.
+Implementation note (2026-08-15, string-diagram Step 004): Lesson 52 names the
+feedback interface separately from the external boundary and closes only a
+type-compatible port pair. Future trace visuals must state what becomes internal,
+what remains external, and which trace laws or coverage obligations are absent.

@@ -14,9 +14,9 @@ of coordinates is never used as evidence for diagram equality.
 | CT113 | cups | directed unit-to-dual-pair connection | implemented as typed boundary connectivity in Lesson 51 |
 | CT114 | caps | directed dual-pair-to-unit connection | implemented with ordered typed inputs in Lesson 51 |
 | CT115 | snake identities | two typed cup-cap composite routes | implemented as distinct semantic paths normalizing to `A` and `A*` |
-| CT116 | trace | finite feedback port closure and output table | runnable for a bounded deterministic fixture |
-| CT117 | traced monoidal category | trace laws across every enumerated applicable map | constrained until an explicit finite coverage family is built |
-| CT118 | feedback | explicit edge from selected output port to selected input port | runnable for a finite process graph |
+| CT116 | trace | finite feedback port closure and output table | implemented for one deterministic fixture in Lesson 52 |
+| CT117 | traced monoidal category | trace laws across every enumerated applicable map | constrained by explicit law coverage `[1,1,0]` |
+| CT118 | feedback | explicit edge from selected output port to selected input port | implemented as typed `U` output-to-input closure in Lesson 52 |
 | CT119 | dagger category | path reversal with arrow labels mapped to adjoints | runnable for a finite involutive path table |
 | CT120 | dagger compact category | dagger, compact duals, and category-wide coverage | constrained by compact coverage and dagger compatibility evidence |
 | CT121 | Frobenius algebra | finite multiplication/comultiplication compatibility tables | runnable using attributed internal-algebra fixtures |

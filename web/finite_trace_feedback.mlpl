@@ -1,0 +1,32 @@
+# Web Lesson 52 -- finite trace, feedback, and traced-coverage boundary.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- typed semantic graphs, tensor, composition, feedback.
+# * CATEGORICAL SETTING -- one deterministic process p: A tensor U to B tensor U.
+# * LAW -- explicit U feedback and trace-U have the same external endpoint.
+# * BOUNDARY -- missing sliding evidence blocks a traced-category claim.
+# * WHAT THIS SHOWS
+# * Close only the designated U pair; keep A input and B output external.
+# ***************************************************************************
+;
+include "lib/finite_trace_feedback.mlpl"  # reuse trace and coverage checks
+feedback_typed = u:feedback_ports_are_compatible(["U"], ["U"])  # CT118
+feedback_mismatch = 1 - u:feedback_ports_are_compatible(["U"], ["V"])  # COUNTEREXAMPLE
+trace_endpoint = u:trace_matches_explicit_feedback([8], [8])  # CT116
+changed_trace_endpoint = 1 - u:trace_matches_explicit_feedback([8], [9])  # COUNTEREXAMPLE
+missing_law_coverage = 1 - u:traced_law_coverage_is_complete([1, 1, 0])  # CT117 boundary
+disp([feedback_typed, feedback_mismatch, trace_endpoint, changed_trace_endpoint, missing_law_coverage])
+# ***************************************************************************
+# * THE VISUAL
+# * Blue loops U output to U input; green arrows mark the external A-to-B path.
+# ***************************************************************************
+def u:finite_trace_feedback_web_visual() { "Render the shared finite trace, feedback, and law-coverage visual."; u:finite_trace_feedback_visual() }  # narrated visual entry point
+finite_trace_feedback_visual = u:finite_trace_feedback_web_visual()  # bind visual constant
+finite_trace_feedback_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Stage 1 exposes four ports; stage 2 closes U; stage 3 compares endpoints.
+# * Coverage [1,1,0] leaves sliding absent, so CT117 stays constrained.
+# * THE POINT -- trace hides one feedback interface, not the external process.
+# ***************************************************************************

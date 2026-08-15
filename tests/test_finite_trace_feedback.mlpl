@@ -1,0 +1,17 @@
+# Tests for CT116-CT118 finite trace, coverage, and feedback.
+include "lib/finite_trace_feedback.mlpl";
+@test {name: "typed feedback closes to the traced endpoint", tags: ["CT116", "CT118", "feedback"]}
+def u:test_finite_trace_feedback_endpoint() { "Accept compatible feedback and equal execution endpoints while rejecting type and endpoint changes.";
+  u:assert_eq(u:feedback_ports_are_compatible(["U"], ["U"]), 1, "compatible feedback")?;
+  u:assert_eq(u:feedback_ports_are_compatible(["U"], ["V"]), 0, "feedback mismatch")?;
+  u:assert_eq(u:trace_matches_explicit_feedback([8], [8]), 1, "trace endpoint")?;
+  u:assert_eq(u:trace_matches_explicit_feedback([8], [9]), 0, "changed endpoint")?;
+  ok({test: "trace-feedback", cases: 4})
+}
+@test {name: "traced category claim needs enumerated law coverage", tags: ["CT117", "coverage-boundary"]}
+def u:test_traced_law_coverage_boundary() { "Reject missing sliding evidence and accept only a hypothetical complete coverage vector.";
+  u:assert_eq(u:traced_law_coverage_is_complete([1, 1, 0]), 0, "missing law")?;
+  u:assert_eq(u:traced_law_coverage_is_complete([1, 1, 1]), 1, "complete enumerated family")?;
+  ok({test: "traced-coverage", cases: 2})
+}
+u:run_registered_tests()

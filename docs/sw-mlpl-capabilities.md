@@ -383,6 +383,9 @@ Lesson 51 confirms fixed branching and merging boundaries can be validated with
 named parameters and typed path records. A generic port graph would reduce the
 manual ordering checks, but no additional feature beyond the existing request
 is needed for bounded cup, cap, and snake connectivity.
+Lesson 52 confirms a fixed feedback edge and trace endpoint need only typed
+arrays and equality. Enumerating a full trace-law family remains manual, which
+is covered by the existing typed-graph/rewrite request rather than a new ask.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

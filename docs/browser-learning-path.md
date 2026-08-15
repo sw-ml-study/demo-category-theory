@@ -72,6 +72,9 @@ Then compare the two independently grouped interchange constructions below.
 Continue with `finite_cup_cap_connectivity.mlpl`: read the cup outward from the
 unit boundary and the cap inward to it, then follow the separate `A` and `A*`
 snake graphs. This leaf checks connectivity; Lesson 49 checks pairing algebra.
+Then load `finite_trace_feedback.mlpl`: identify the external `A → B` boundary,
+follow the blue `U` output-to-input loop, and compare explicit feedback with the
+trace endpoint before inspecting the incomplete trace-law checklist.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.
