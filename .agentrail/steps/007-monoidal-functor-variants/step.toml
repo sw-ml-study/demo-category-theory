@@ -1,0 +1,8 @@
+number = 7
+slug = "monoidal-functor-variants"
+status = "pending"
+description = "Implement CT101-CT106 with one concrete monoidal functor fixture. Keep lax co..."
+role = "legacy"
+context_files = []
+created_at = "2026-08-15T13:28:57"
+commits = []
