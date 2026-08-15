@@ -1,8 +1,9 @@
 number = 7
 slug = "monoidal-functor-variants"
-status = "pending"
+status = "completed"
 description = "Implement CT101-CT106 with one concrete monoidal functor fixture. Keep lax co..."
 role = "legacy"
 context_files = []
 created_at = "2026-08-15T13:28:57"
-commits = []
+completed_at = "2026-08-15T13:54:56"
+commits = ["da70188e472321c648d0d6c724a88b12e648c352"]
