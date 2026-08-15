@@ -1,0 +1,7 @@
+# Tests for CT097-CT098 internal monoid and comonoid objects.
+include "lib/finite_monoid_comonoid.mlpl";
+@test {name: "internal monoid diagrams commute", tags: ["CT097", "monoid-object"]}
+def u:test_internal_monoid_object() { "Check multiplication/unit diagrams and reject changed associativity output."; u:assert_eq(u:internal_monoid_diagrams_hold([0,1,1,0], [0,1,1,0], [0,1], [0,1], [0,1]), 1, "monoid diagrams")?; u:assert_eq(u:internal_monoid_diagrams_hold([0,1], [0,0], [0,1], [0,1], [0,1]), 0, "broken multiplication")?; ok({test:"monoid-object",cases:2}) }
+@test {name: "internal comonoid diagrams commute", tags: ["CT098", "comonoid-object"]}
+def u:test_internal_comonoid_object() { "Check comultiplication/counit diagrams and reject changed coassociativity output."; u:assert_eq(u:internal_comonoid_diagrams_hold([0,0,0,1,1,1], [0,0,0,1,1,1], [0,1], [0,1], [0,1]), 1, "comonoid diagrams")?; u:assert_eq(u:internal_comonoid_diagrams_hold([0,0,0], [0,0,1], [0,1], [0,1], [0,1]), 0, "broken comultiplication")?; ok({test:"comonoid-object",cases:2}) }
+u:run_registered_tests()

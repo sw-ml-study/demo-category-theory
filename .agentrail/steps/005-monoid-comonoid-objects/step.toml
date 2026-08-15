@@ -1,6 +1,6 @@
 number = 5
 slug = "monoid-comonoid-objects"
-status = "pending"
+status = "in-progress"
 description = "Implement CT097-CT098 with one finite monoid object and its comonoid dual ins..."
 role = "legacy"
 context_files = []

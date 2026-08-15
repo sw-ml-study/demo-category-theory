@@ -787,3 +787,7 @@ Implementation note (2026-08-15, monoidal Step 004): Lesson 45 applies the
 coherence-path discipline to crossings: whole-block and componentwise braids
 retain distinct intermediates, then meet. Future braided lessons must separate
 hexagon coherence, naturality, and the stronger involutive symmetry law.
+Implementation note (2026-08-15, monoidal Step 005): Lesson 46 presents the
+monoid and comonoid as arrow-dual diagrams and keeps their failures separate.
+Future internal-algebra leaves must attribute fixtures and avoid rebuilding
+the sibling repository's classification ladder.

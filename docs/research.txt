@@ -1815,3 +1815,13 @@ identity, which upgrades this displayed braided fixture to symmetric. Changing
 `C` gives the failed endpoint. No new capability is required. Next is internal
 monoid/comonoid structure, with algebra classification still owned by the
 sibling repository.
+
+## CT097-CT098 internal monoid and comonoid objects, 2026-08-15
+
+Finite route tables express multiplication associativity and both unit
+diagrams as morphism equalities. Reversing the arrows gives comultiplication
+coassociativity and both counit diagrams. Separate changed routes prevent the
+dual notions from collapsing into one Boolean. The XOR-like table is only a
+stable fixture: algebra-law classification remains owned by
+`demo-abstract-algebra`. No new sw-MLPL capability is required. Next is the
+CT099-CT100 group/module scope decision.

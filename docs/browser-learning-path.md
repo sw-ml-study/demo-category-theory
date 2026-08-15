@@ -55,6 +55,8 @@ Then load `finite_monoidal_strictness.mlpl` to keep the two parenthesizations
 unequal while the associator and its inverse connect them coherently.
 Continue with `finite_braided_symmetric.mlpl`: compare whole-block and
 componentwise crossings around the hexagon, then watch a double swap undo itself.
+Then load `finite_monoid_comonoid.mlpl` to compare internal merge/unit arrows
+with their split/counit duals.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

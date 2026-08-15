@@ -49,4 +49,5 @@ cp "$repo_root/out/42-polynomial-containers.svg" "$dest/42-polynomial-containers
 cp "$repo_root/out/43-monoidal-foundation.svg" "$dest/43-monoidal-foundation.svg"
 cp "$repo_root/out/44-monoidal-strictness.svg" "$dest/44-monoidal-strictness.svg"
 cp "$repo_root/out/45-braided-symmetric.svg" "$dest/45-braided-symmetric.svg"
+cp "$repo_root/out/46-monoid-comonoid.svg" "$dest/46-monoid-comonoid.svg"
 echo "README previews written"

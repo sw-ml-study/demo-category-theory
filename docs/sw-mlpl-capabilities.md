@@ -343,6 +343,9 @@ isomorphism type is needed for the bounded two-sided check.
 Lesson 45 confirms fixed permutation paths remain readable as nested records.
 The implementation needs no generic permutation or braid abstraction for a
 three-value hexagon; arbitrary braid words remain outside this bounded claim.
+Lesson 46 confirms fixed internal algebra diagrams need only finite arrays and
+equality. The remaining constraint is repository ownership, not language
+support.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

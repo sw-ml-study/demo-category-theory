@@ -564,3 +564,11 @@ The component route retains different intermediate permutations but reaches
 the same endpoint. One finite naturality square commutes, and swapping twice
 restores the pair. A changed `C` breaks the endpoint. Next: CT097-CT098 monoid
 and comonoid objects; no runtime blocker is known.
+
+### CT097-CT098 internal monoid and comonoid objects (2026-08-15)
+
+Lesson 46 packages multiplication/unit and comultiplication/counit as arrows
+inside the finite monoidal fixture, checks their associative/coassociative and
+unit/counit diagrams, and gives separate failures. It does not reclassify the
+operation table. Next: CT099-CT100 group/module packaging, gated by the sibling
+scope boundary rather than runtime support.

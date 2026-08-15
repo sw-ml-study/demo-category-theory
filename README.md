@@ -527,6 +527,16 @@ reach `(B⊗C)⊗A`. Below, swapping `(2,3)` twice restores it. Sources:
 [CLI lesson](demos/45-braided-symmetric/hexagon.mlpl),
 [web lesson](demos/web/finite_braided_symmetric.mlpl).
 
+### 46. Monoid objects merge; comonoid objects split
+
+![Internal multiplication and unit arrows beside their comultiplication and counit duals](assets/previews/46-monoid-comonoid.svg)
+
+What to notice: multiplication and unit point into the monoid object;
+comultiplication and counit reverse the construction. Each side has its own
+commuting laws and broken route. Sources:
+[CLI lesson](demos/46-monoid-comonoid/internal_diagrams.mlpl),
+[web lesson](demos/web/finite_monoid_comonoid.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

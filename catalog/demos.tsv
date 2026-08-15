@@ -102,3 +102,5 @@ finite-monoidal-strictness	demos/44-monoidal-strictness/parentheses.mlpl	44-mono
 finite-monoidal-strictness-web	demos/web/finite_monoidal_strictness.mlpl	web	CT091-strictness-boundary	0	0	svg	records,equal	runnable
 finite-braided-symmetric	demos/45-braided-symmetric/hexagon.mlpl	45-braided-symmetric	CT092-CT096-braiding-hexagon-symmetry	0	0	ascii,svg	records,equal	runnable
 finite-braided-symmetric-web	demos/web/finite_braided_symmetric.mlpl	web	CT092-CT096-braiding-hexagon-symmetry	0	0	svg	records,equal	runnable
+finite-monoid-comonoid	demos/46-monoid-comonoid/internal_diagrams.mlpl	46-monoid-comonoid	CT097-CT098-internal-objects	0	0	ascii,svg	arrays,equal	runnable
+finite-monoid-comonoid-web	demos/web/finite_monoid_comonoid.mlpl	web	CT097-CT098-internal-objects	0	0	svg	arrays,equal	runnable

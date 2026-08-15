@@ -27,3 +27,4 @@ finite-polynomial-containers-tests	tests/test_finite_polynomial_containers.mlpl	
 finite-monoidal-foundation-tests	tests/test_finite_monoidal_foundation.mlpl	43	CT085-CT090-monoidal-coherence	0	0	none	records,equal	runnable
 finite-monoidal-strictness-tests	tests/test_finite_monoidal_strictness.mlpl	44	CT091-strictness-boundary	0	0	none	records,equal	runnable
 finite-braided-symmetric-tests	tests/test_finite_braided_symmetric.mlpl	45	CT092-CT096-braiding-hexagon-symmetry	0	0	none	records,equal	runnable
+finite-monoid-comonoid-tests	tests/test_finite_monoid_comonoid.mlpl	46	CT097-CT098-internal-objects	0	0	none	arrays,equal	runnable
