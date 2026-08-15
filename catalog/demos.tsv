@@ -93,3 +93,5 @@ finite-slices-coslices	demos/40-slices-coslices/commuting_triangles.mlpl	40-slic
 finite-slices-coslices-web	demos/web/finite_slices_coslices.mlpl	web	CT078-CT079-slice-coslice	0	0	svg	records,equal,reduce_mul	runnable
 finite-dependent-constructions	demos/41-dependent-constructions/fiber_tables.mlpl	41-dependent-constructions	CT080-CT082-dependent-sum-product-local-closure	0	0	ascii,svg	records,equal,reduce_mul	runnable
 finite-dependent-constructions-web	demos/web/finite_dependent_constructions.mlpl	web	CT080-CT082-dependent-sum-product-local-closure	0	0	svg	records,equal,reduce_mul	runnable
+finite-polynomial-containers	demos/42-polynomial-containers/optional_pair.mlpl	42-polynomial-containers	CT083-CT084-polynomial-container	0	0	ascii,svg	records,shape,take,equal	runnable
+finite-polynomial-containers-web	demos/web/finite_polynomial_containers.mlpl	web	CT083-CT084-polynomial-container	0	0	svg	records,shape,take,equal	runnable

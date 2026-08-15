@@ -761,3 +761,9 @@ collection of every tagged value from enumeration of simultaneous choices.
 Its dashed coverage witness keeps local cartesian closure visibly separate
 from one successful family. Future dependent lessons must expose storage
 encodings and the quantified structural boundary in both code and diagram.
+Implementation note (2026-08-14, exponentials Step 008): Lesson 42 teaches the
+polynomial formula through two visible shapes before executing payload map
+laws. The malformed pair fails because its position count is wrong, so the
+counterexample attacks the container invariant rather than an arbitrary value.
+Future shape-indexed lessons should retain this order: shapes, positions,
+inhabitants, action, law, then structural boundary.

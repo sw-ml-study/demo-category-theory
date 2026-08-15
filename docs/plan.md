@@ -1,6 +1,6 @@
 # Implementation plan: category theory you can watch execute
 
-Status: **forty-one capability-gated lessons implemented; the 245-concept
+Status: **forty-two capability-gated lessons implemented; the 245-concept
 program remains active**.
 
 The broader program continues through the 245 tracked concepts in
@@ -515,3 +515,13 @@ closed claim remains constrained because coverage `[1,0]` deliberately shows
 an unchecked slice. Next: CT083-CT084 polynomial functors and containers. The
 same flat representation is available; no blocker is known for one finite
 shape fixture.
+
+### CT083-CT084 polynomial/container integration (2026-08-14)
+
+Lesson 42 interprets shapes `[empty,pair]` with arities `[0,2]` as the
+polynomial `P(X)=1+X²`. Container values pair one chosen shape with exactly one
+payload per position. The displayed map changes payloads without changing
+shape and checks identity/composition; a one-payload pair is the arity witness.
+The CT065-CT084 audit is complete. Next is the queued CT085-CT109 monoidal
+capability survey; tensor and coherence representations are potential blockers
+until measured.

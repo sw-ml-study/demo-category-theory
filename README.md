@@ -484,6 +484,17 @@ exponentials in every slice, so local cartesian closure remains constrained.
 Sources: [CLI lesson](demos/41-dependent-constructions/fiber_tables.mlpl),
 [web lesson](demos/web/finite_dependent_constructions.mlpl).
 
+### 42. A polynomial container separates shapes from positions
+
+![The polynomial one plus X squared shown as empty and pair shapes with a payload mapping arrow](assets/previews/42-polynomial-containers.svg)
+
+What to notice: `P(X)=1+X²` has an empty shape with zero positions and a pair
+shape with two. Mapping changes `(7,9)` to `(8,10)` without changing the pair
+shape. The dashed one-payload pair fails because its selected shape demands two
+positions. Sources:
+[CLI lesson](demos/42-polynomial-containers/optional_pair.mlpl),
+[web lesson](demos/web/finite_polynomial_containers.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

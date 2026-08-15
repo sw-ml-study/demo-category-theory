@@ -45,6 +45,9 @@ distinguish objects over a base from objects under it.
 Then load `finite_dependent_constructions.mlpl`: first read the flat family,
 then compare Sigma's tagged total space with Pi's one-choice-per-fiber rows,
 and finally inspect the missing-slice witness against local cartesian closure.
+Finish this path with `finite_polynomial_containers.mlpl`, which turns the
+shape/position family into `P(X)=1+X^2`, maps its payload slots, and rejects a
+pair shape whose payload count does not match its two positions.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

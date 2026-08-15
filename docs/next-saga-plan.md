@@ -1,33 +1,34 @@
-# Saga plan: exponentials and cartesian closure
+# Queued saga plan: monoidal categories and algebraic objects
 
-This queued saga covers CT065-CT084. It begins with finite function tables and
-equations that current sw-MLPL can execute. Structural and dependent concepts
-follow only after probes establish an honest representation.
+This next saga covers CT085-CT109. It begins with capability evidence for
+finite tensor tables and coherence paths, then develops only structures whose
+laws current sw-MLPL can execute honestly. String diagrams belong to the later
+CT110-CT129 saga; this saga may establish their algebraic prerequisites but
+must not silently consume that visual curriculum.
 
 ## Steps
 
-1. **Capability matrix and probes** — map CT065-CT084 to finite representations;
-   probe tables of functions, application/evaluation, currying ergonomics,
-   enumeration of subobjects, and nested slice/coslice records.
-2. **Finite exponentials and evaluation** — implement CT065-CT066 for small
-   finite sets using explicit function tables and an evaluation arrow.
-3. **Currying, uncurrying, beta, and eta** — implement CT067-CT070 as two-way
-   table transformations with executable round trips and failure witnesses.
-4. **Cartesian-closed boundary** — attempt CT071-CT073 only for the finite
-   fixture; distinguish exponential evidence, internal hom, and global elements
-   from a claim that an arbitrary category is cartesian closed.
-5. **Subobjects and classification** — attempt CT074-CT077 with bounded
-   monomorphism candidates, truth values, characteristic maps, and partial-map
-   examples; record any enumeration or typing limitations.
-6. **Slices and coslices** — implement CT078-CT079 using explicit objects over
-   or under a fixed base and commuting-triangle checks.
-7. **Dependent constructions** — attempt CT080-CT082 only after slice probes;
-   use finite dependent product/sum tables and constrain local cartesian closure
-   if the evidence does not support the general property.
-8. **Polynomial/container integration** — implement CT083-CT084 for one useful
-   finite data shape, audit all twenty IDs and artifacts, then queue CT085-CT109.
+1. **Capability matrix and probes** — map CT085-CT109 to finite executable
+   representations; probe tensor objects/arrows, reassociation, unit insertion,
+   permutations, coherence-path tables, and algebraic-object operations.
+2. **Monoidal foundation** — implement CT085-CT090 using one concrete tensor,
+   unit, associator, and unitors; execute the pentagon and triangle paths before
+   claiming a monoidal category.
+3. **Strictness boundary** — implement or constrain CT091 by distinguishing
+   literal equality from coherent isomorphism in the chosen fixture.
+4. **Braided and symmetric structure** — attempt CT092-CT096 with explicit
+   swaps, both hexagon paths, and the involutive symmetry witness.
+5. **Monoid and comonoid objects** — implement CT097-CT098 with multiplication,
+   unit, comultiplication, counit, and their internal diagrams.
+6. **Group and module objects** — attempt CT099-CT100 only where finite
+   operations and preservation laws avoid duplicating the abstract-algebra
+   sibling; retain the repository scope boundary.
+7. **Monoidal functor variants** — implement CT101-CT106 as separately directed
+   comparison maps with law checks; do not collapse lax, oplax, and strong.
+8. **Closedness, duals, and integration** — attempt CT107-CT109 with explicit
+   evaluation/coevaluation and triangle witnesses, audit all 25 IDs, and queue
+   CT110-CT129.
 
-Every step retains pre-commit checks, a detailed work commit, Agentrail
-completion metadata, and a push. Every MLPL function is docstring-first and
-readably named; every custom web SVG uses the checked bind/display convention
-and directed semantic arrows.
+Every step follows the established pre-commit, detailed commit, Agentrail
+completion, metadata commit, and push protocol. Functions remain docstring-first
+and readable; browser SVGs bind and display once with directed semantic arrows.

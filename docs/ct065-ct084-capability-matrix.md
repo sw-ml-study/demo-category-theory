@@ -24,8 +24,8 @@ finite and explicitly enumerated unless a later lesson establishes more.
 | CT080 | locally cartesian closed category | exponentials in every slice | constrained: Lesson 41 displays incomplete coverage `[1,0]` |
 | CT081 | dependent product | enumerated choices selecting one value from every finite fiber | runnable for bounded fibers in Lesson 41 |
 | CT082 | dependent sum | concatenate tagged or position-known finite fibers | runnable for bounded fibers in Lesson 41 |
-| CT083 | polynomial functor | finite shape codes and positions-per-shape arrays | candidate bounded container |
-| CT084 | container interpretation | shape choice paired with payloads at its finite positions | candidate bounded container |
+| CT083 | polynomial functor | finite shape codes and positions-per-shape arrays | implemented as `P(X)=1+X²` with payload map laws in Lesson 42 |
+| CT084 | container interpretation | shape choice paired with payloads at its finite positions | implemented with arity checks and malformed witness in Lesson 42 |
 
 ## Probe findings
 
@@ -79,3 +79,10 @@ Lesson 40 builds explicit objects over and under a base. Slice structure arrows
 end at the base; coslice structure arrows begin there. Equal finite route tables
 certify morphism triangles, identities, and a displayed composite; changed
 routes fail. Records express the fixture without claiming generic slice types.
+
+Lesson 41 turns the flat fiber probe into dependent sums and products while a
+missing slice certificate constrains local cartesian closure. Lesson 42 then
+uses shape arities `[0,2]` to interpret `P(X)=1+X²`: empty has no payload
+positions, pair has two, and mapping preserves shape while satisfying the
+displayed identity/composition checks. This completes bounded evidence for all
+twenty IDs; generic categorical structures remain outside the claim.

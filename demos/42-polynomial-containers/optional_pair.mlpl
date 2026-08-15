@@ -1,0 +1,26 @@
+# Lesson 42 -- a finite polynomial functor as a container.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_polynomial_containers.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 42 -- SHAPES SAY HOW MANY PAYLOADS FIT", intro: "Interpret P(X)=1+X^2 as an empty-or-pair container, then map only its payload positions."})
+optional_pair_container = u:make_finite_container([0, 1], [0, 2])
+empty_value = u:interpret_container_value(optional_pair_container, 0, [])
+pair_value = u:interpret_container_value(optional_pair_container, 1, [7, 9])
+mapped_pair_value = u:interpret_container_value(optional_pair_container, 1, [8, 10])
+malformed_pair_value = u:interpret_container_value(optional_pair_container, 1, [7])
+empty_arity = u:container_payload_arity_holds(empty_value)
+pair_arity = u:container_payload_arity_holds(pair_value)
+malformed_witness = 1 - u:container_payload_arity_holds(malformed_pair_value)
+functor_laws = u:polynomial_payload_map_laws_hold([7, 9], [7, 9], [16, 20], [16, 20])
+broken_composition = 1 - u:polynomial_payload_map_laws_hold([7, 9], [7, 9], [16, 20], [16, 21])
+disp(optional_pair_container)
+disp(empty_value)
+disp(pair_value)
+disp(mapped_pair_value)
+disp([empty_arity, pair_arity, malformed_witness, functor_laws, broken_composition])
+wrote = write_text("out/42-polynomial-containers.svg", u:finite_polynomial_container_visual())
+u:epilog_open()
+u:explain("out/42-polynomial-containers.svg", "The shape selects zero or two positions. Mapping changes payloads in those positions while retaining the selected shape.")
+u:takeaway("The finite container presents P(X)=1+X^2 as shapes and positions; identity and composition hold on its displayed payload action.")
+if empty_arity * pair_arity * malformed_witness * functor_laws * broken_composition * is_ok(wrote) { ok("finite polynomial container verified") } else { err("polynomial container invariant failed") }

@@ -1,6 +1,6 @@
 number = 8
 slug = "polynomial-container-integration"
-status = "pending"
+status = "in-progress"
 description = "Implement CT083-CT084 polynomial functors and container interpretation for on..."
 role = "validation"
 context_files = []

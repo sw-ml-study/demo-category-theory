@@ -1739,3 +1739,20 @@ missing certificate. No new upstream feature is required for the bounded
 lesson. First-class ragged/tagged collections would improve ordinary grouped
 data as well as these families, but remain an ergonomic capability direction,
 not a blocker. Next is CT083-CT084 polynomial/container integration.
+
+## CT083-CT084 polynomial containers and integration, 2026-08-14
+
+The probe's shape codes and arities naturally present the polynomial
+`P(X)=1+X²`: one shape has no positions and contributes the constant branch;
+the other has two positions and carries a payload pair. Mapping acts only on
+payloads, preserves the chosen shape, and satisfies the displayed identity and
+composition equations. Supplying one payload to the pair shape fails its arity
+check and makes the container invariant concrete.
+
+This needs no generic polynomial-functor syntax. It is one finite functor
+action and one container interpretation, not a claim about arbitrary
+polynomials or categories. The integration audit finds CT065-CT084 completely
+represented by executable bounded evidence or explicit missing-coverage
+witnesses. Next is CT085-CT109: begin with tensor/coherence probes. Whether
+pentagon, hexagon, and monoidal-functor comparisons remain readable in current
+sw-MLPL is not yet known and is the next saga's first measured risk.

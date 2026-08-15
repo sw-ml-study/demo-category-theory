@@ -1,0 +1,41 @@
+# Web Lesson 42 -- finite polynomial functor and container.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- functors, coproducts, products, and dependent families.
+# * CATEGORICAL SETTING -- finite sets and P(X)=1+X^2.
+# * LAW / UNIVERSAL PROPERTY -- payload mapping preserves identity/composition.
+# * BOUNDARY -- one explicit shape/position table, not generic polynomial syntax.
+# * WHAT THIS SHOWS
+# * A container chooses a shape, then stores one payload at every position.
+# ***************************************************************************
+;
+include "lib/finite_polynomial_containers.mlpl"  # reuse bounded container laws and visual
+optional_pair_container = u:make_finite_container([0, 1], [0, 2])  # empty or pair shapes
+empty_value = u:interpret_container_value(optional_pair_container, 0, [])  # constant 1 branch
+pair_value = u:interpret_container_value(optional_pair_container, 1, [7, 9])  # X squared branch
+mapped_pair_value = u:interpret_container_value(optional_pair_container, 1, [8, 10])  # map +1
+malformed_pair_value = u:interpret_container_value(optional_pair_container, 1, [7])  # COUNTEREXAMPLE
+empty_arity = u:container_payload_arity_holds(empty_value)  # zero positions need zero payloads
+pair_arity = u:container_payload_arity_holds(pair_value)  # two positions need two payloads
+malformed_witness = 1 - u:container_payload_arity_holds(malformed_pair_value)  # missing position
+functor_laws = u:polynomial_payload_map_laws_hold([7, 9], [7, 9], [16, 20], [16, 20])  # CT083 laws
+broken_composition = 1 - u:polynomial_payload_map_laws_hold([7, 9], [7, 9], [16, 20], [16, 21])  # COUNTEREXAMPLE
+disp(optional_pair_container)
+disp(empty_value)
+disp(pair_value)
+disp(mapped_pair_value)
+disp([empty_arity, pair_arity, malformed_witness, functor_laws, broken_composition])
+# ***************************************************************************
+# * THE VISUAL
+# * Boxes are shapes; slots are positions; the green arrow maps payloads only.
+# ***************************************************************************
+def u:finite_polynomial_containers_web_visual() { "Render P(X)=1+X squared as shapes, positions, mapped payloads, and a bad arity."; u:finite_polynomial_container_visual() }  # narrated shared visual entry point
+finite_polynomial_containers_visual = u:finite_polynomial_containers_web_visual()  # bind visual constant
+finite_polynomial_containers_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Empty contributes one value with no payload; pair contributes two slots.
+# * Mapping changes 7,9 to 8,10 without changing pair; pair(7) is malformed.
+# * THE POINT -- this container realizes 1+X^2 and its finite functor action.
+# ***************************************************************************

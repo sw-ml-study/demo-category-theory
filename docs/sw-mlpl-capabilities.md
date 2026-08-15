@@ -307,6 +307,16 @@ manual and the visual must explain the encoding. Native ragged/tagged
 collections would improve ergonomics; they are not required for the bounded
 fixture. Local cartesian closure is a mathematical every-slice obligation, not
 a language capability inferred from one executable family.
+
+## CT083-CT084 polynomial/container surface
+
+Finite records, `shape`, and indexed `take` are sufficient for one container
+with shape arities `[0,2]`. Payload arrays support a concrete identity and
+composition check while records retain the shape. Generic shape-indexed map or
+polynomial syntax is unnecessary for this lesson and remains unrequested. The
+next unknown is whether tensor reassociation and coherence paths can be
+represented readably for CT085-CT109; that requires new probes before any
+upstream proposal.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

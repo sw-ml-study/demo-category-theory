@@ -29,6 +29,7 @@ products + functors -> diagonal/product adjunction
 products + coproducts + exponentials -> slices
                                    -> dependent sums / products
                                    -> local-cartesian-closure boundary
+                                   -> polynomial/container interpretation
 ```
 
 ## Guided paths
