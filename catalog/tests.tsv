@@ -32,3 +32,4 @@ finite-group-module-boundary-tests	tests/test_finite_group_module_boundary.mlpl	
 finite-monoidal-functors-tests	tests/test_finite_monoidal_functors.mlpl	48	CT101-CT106-monoidal-functor-closed-boundary	0	0	none	arrays,equal,reduce_mul	runnable
 finite-dual-compact-boundary-tests	tests/test_finite_dual_compact_boundary.mlpl	49	CT107-CT109-dual-compact-boundary	0	0	none	arrays,equal,reduce_mul	runnable
 finite-string-graphs-tests	tests/test_finite_string_graphs.mlpl	50	CT110-CT112-string-graphs-interchange	0	0	none	arrays,records,equal	runnable
+finite-cup-cap-connectivity-tests	tests/test_finite_cup_cap_connectivity.mlpl	51	CT113-CT115-cup-cap-snakes	0	0	none	arrays,records,equal	runnable

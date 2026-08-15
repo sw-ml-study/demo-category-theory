@@ -11,9 +11,9 @@ of coordinates is never used as evidence for diagram equality.
 | CT110 | string diagram | typed boxes, ports, and directed edge table | implemented as a finite semantic graph in Lesson 50 |
 | CT111 | planar isotopy | unchanged connectivity with changed coordinate metadata | implemented as one bounded movement witness; general isotopy constrained |
 | CT112 | interchange law | independently assembled sequential-tensor endpoint tables | implemented for a fixed four-box fixture in Lesson 50 |
-| CT113 | cups | directed unit-to-dual-pair connection | runnable from the Lesson 49 coevaluation fixture |
-| CT114 | caps | directed dual-pair-to-unit connection | runnable from the Lesson 49 evaluation fixture |
-| CT115 | snake identities | two typed cup-cap composite routes | runnable; Lesson 49 already supplies algebraic prerequisites |
+| CT113 | cups | directed unit-to-dual-pair connection | implemented as typed boundary connectivity in Lesson 51 |
+| CT114 | caps | directed dual-pair-to-unit connection | implemented with ordered typed inputs in Lesson 51 |
+| CT115 | snake identities | two typed cup-cap composite routes | implemented as distinct semantic paths normalizing to `A` and `A*` |
 | CT116 | trace | finite feedback port closure and output table | runnable for a bounded deterministic fixture |
 | CT117 | traced monoidal category | trace laws across every enumerated applicable map | constrained until an explicit finite coverage family is built |
 | CT118 | feedback | explicit edge from selected output port to selected input port | runnable for a finite process graph |

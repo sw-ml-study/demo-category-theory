@@ -624,3 +624,13 @@ fail separately. Interchange compares distinct sequential-then-tensor and
 tensor-then-sequential grouping records whose endpoint outputs agree; changing
 one output breaks the law. Next: CT113-CT115 cup, cap, and snake connectivity;
 the dual fixture exists, so no runtime blocker is known.
+
+### CT113-CT115 cup, cap, and snake connectivity (2026-08-15)
+
+Lesson 51 treats coevaluation as directed connectivity from boundary `I` to
+ordered outputs `A, A*`, and evaluation as ordered inputs `A*, A` directed to
+`I`. Direction and port-order failures are separate. Distinct left and right
+path records normalize to identity wires on `A` and `A*`; changing either
+endpoint breaks only its snake. Lesson 49 retains the pairing-table algebra,
+while Lesson 51 owns the semantic graph reading. Next: CT116-CT118 finite trace,
+traced-coverage boundary, and feedback; no blocker is known for one fixture.

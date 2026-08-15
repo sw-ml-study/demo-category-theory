@@ -578,6 +578,15 @@ tensor-then-sequential use different grouping records and reach `[4,8]`.
 Sources: [CLI lesson](demos/50-semantic-string-graphs/typed_interchange.mlpl),
 [web lesson](demos/web/finite_string_graphs.mlpl).
 
+### 51. Connect cups and caps by typed boundaries
+
+![A directed cup, directed cap, and separate typed snake paths](assets/previews/51-cup-cap-connectivity.svg)
+
+What to notice: the cup points from `I` to `A ⊗ A*`; the cap points from
+`A* ⊗ A` to `I`. The green snake returns `A`, while the blue snake returns
+`A*`. Sources: [CLI lesson](demos/51-cup-cap-connectivity/typed_snakes.mlpl),
+[web lesson](demos/web/finite_cup_cap_connectivity.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

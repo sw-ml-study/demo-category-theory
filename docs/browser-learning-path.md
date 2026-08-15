@@ -69,6 +69,9 @@ return `A` and `A*`. The dashed object prevents a compact-closed claim.
 Begin the string-diagram path with `finite_string_graphs.mlpl`. Compare the two
 top drawings: their boxes move, but the checked typed edge stays `0 → 1 : B`.
 Then compare the two independently grouped interchange constructions below.
+Continue with `finite_cup_cap_connectivity.mlpl`: read the cup outward from the
+unit boundary and the cap inward to it, then follow the separate `A` and `A*`
+snake graphs. This leaf checks connectivity; Lesson 49 checks pairing algebra.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

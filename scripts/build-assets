@@ -54,4 +54,5 @@ cp "$repo_root/out/47-group-module-boundary.svg" "$dest/47-group-module-boundary
 cp "$repo_root/out/48-monoidal-functors.svg" "$dest/48-monoidal-functors.svg"
 cp "$repo_root/out/49-dual-compact-boundary.svg" "$dest/49-dual-compact-boundary.svg"
 cp "$repo_root/out/50-semantic-string-graphs.svg" "$dest/50-semantic-string-graphs.svg"
+cp "$repo_root/out/51-cup-cap-connectivity.svg" "$dest/51-cup-cap-connectivity.svg"
 echo "README previews written"

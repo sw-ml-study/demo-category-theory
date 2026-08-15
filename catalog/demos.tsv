@@ -113,3 +113,5 @@ finite-dual-compact-boundary-web	demos/web/finite_dual_compact_boundary.mlpl	web
 string-diagram-processes-probe	probes/string_diagram_processes.mlpl	probes	CT110-CT129-capability-survey	0	0	ascii	arrays,records,equal,reduce_mul	runnable
 finite-string-graphs	demos/50-semantic-string-graphs/typed_interchange.mlpl	50-semantic-string-graphs	CT110-CT112-string-graphs-interchange	0	0	ascii,svg	arrays,records,equal	runnable
 finite-string-graphs-web	demos/web/finite_string_graphs.mlpl	web	CT110-CT112-string-graphs-interchange	0	0	svg	arrays,records,equal	runnable
+finite-cup-cap-connectivity	demos/51-cup-cap-connectivity/typed_snakes.mlpl	51-cup-cap-connectivity	CT113-CT115-cup-cap-snakes	0	0	ascii,svg	arrays,records,equal	runnable
+finite-cup-cap-connectivity-web	demos/web/finite_cup_cap_connectivity.mlpl	web	CT113-CT115-cup-cap-snakes	0	0	svg	arrays,records,equal	runnable

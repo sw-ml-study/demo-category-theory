@@ -1,0 +1,34 @@
+# Web Lesson 51 -- cup, cap, and snake semantic connectivity.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- dual objects, unit, typed semantic string graphs.
+# * CATEGORICAL SETTING -- semantic port graph over the Lesson 49 dual fixture.
+# * LAW -- cup/cap boundaries type-check; two snake graphs become identities.
+# * BOUNDARY -- this checks connectivity, while Lesson 49 owns pairing algebra.
+# * WHAT THIS SHOWS
+# * Read every arrowhead and boundary label before following the snake paths.
+# ***************************************************************************
+;
+include "lib/finite_cup_cap_connectivity.mlpl"  # reuse semantic connectivity
+cup_typed = u:cup_connectivity_is_typed(["I"], ["A"], ["A*"])  # CT113
+cup_direction_mismatch = 1 - u:cup_connectivity_is_typed(["A"], ["I"], ["A*"])  # COUNTEREXAMPLE
+cap_typed = u:cap_connectivity_is_typed(["A*"], ["A"], ["I"])  # CT114
+cap_order_mismatch = 1 - u:cap_connectivity_is_typed(["A"], ["A*"], ["I"])  # COUNTEREXAMPLE
+snake_connectivity = u:snake_connectivity_normalizes({boundary: "A", path: [0, 1, 2]}, {boundary: "A*", path: [3, 4, 5]}, ["A"], ["A"], ["A*"], ["A*"])  # CT115
+broken_left_snake = 1 - u:snake_connectivity_normalizes({boundary: "A", path: [0, 1, 2]}, {boundary: "A*", path: [3, 4, 5]}, ["B"], ["A"], ["A*"], ["A*"])  # COUNTEREXAMPLE
+broken_right_snake = 1 - u:snake_connectivity_normalizes({boundary: "A", path: [0, 1, 2]}, {boundary: "A*", path: [3, 4, 5]}, ["A"], ["A"], ["B*"], ["A*"])  # COUNTEREXAMPLE
+disp([cup_typed, cup_direction_mismatch, cap_typed, cap_order_mismatch, snake_connectivity, broken_left_snake, broken_right_snake])
+# ***************************************************************************
+# * THE VISUAL
+# * Boundary ports label I, A, and A-star; arrowheads encode creation/removal.
+# ***************************************************************************
+def u:finite_cup_cap_connectivity_web_visual() { "Render the shared typed cup, cap, and snake-connectivity visual."; u:finite_cup_cap_connectivity_visual() }  # narrated visual entry point
+finite_cup_cap_connectivity_visual = u:finite_cup_cap_connectivity_web_visual()  # bind visual constant
+finite_cup_cap_connectivity_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Cup points out of I; cap points into I. Swapping direction/order fails.
+# * Green returns A; blue returns A-star; changed endpoints fail separately.
+# * THE POINT -- diagram curves denote typed connections, not decoration.
+# ***************************************************************************

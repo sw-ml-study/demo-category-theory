@@ -1,0 +1,19 @@
+# Lesson 51 -- cup, cap, and snake semantic connectivity.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_cup_cap_connectivity.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 51 -- CONNECT THE CUP AND CAP BY TYPE", intro: "Read boundary direction and port types, then normalize two structurally different snake graphs to their own identity wires."})
+cup_typed = u:cup_connectivity_is_typed(["I"], ["A"], ["A*"])
+cup_direction_mismatch = 1 - u:cup_connectivity_is_typed(["A"], ["I"], ["A*"])
+cap_typed = u:cap_connectivity_is_typed(["A*"], ["A"], ["I"])
+cap_order_mismatch = 1 - u:cap_connectivity_is_typed(["A"], ["A*"], ["I"])
+snake_connectivity = u:snake_connectivity_normalizes({boundary: "A", path: [0, 1, 2]}, {boundary: "A*", path: [3, 4, 5]}, ["A"], ["A"], ["A*"], ["A*"])
+broken_left_snake = 1 - u:snake_connectivity_normalizes({boundary: "A", path: [0, 1, 2]}, {boundary: "A*", path: [3, 4, 5]}, ["B"], ["A"], ["A*"], ["A*"])
+broken_right_snake = 1 - u:snake_connectivity_normalizes({boundary: "A", path: [0, 1, 2]}, {boundary: "A*", path: [3, 4, 5]}, ["A"], ["A"], ["B*"], ["A*"])
+disp([cup_typed, cup_direction_mismatch, cap_typed, cap_order_mismatch, snake_connectivity, broken_left_snake, broken_right_snake])
+wrote = write_text("out/51-cup-cap-connectivity.svg", u:finite_cup_cap_connectivity_visual())
+u:epilog_open()
+u:explain("out/51-cup-cap-connectivity.svg", "The cup directs I into A and A-star; the cap directs A-star and A into I. Green and blue snake graphs retain different typed boundaries and normalize separately.")
+u:takeaway("Cup and cap drawings carry semantic port direction. Their two typed composites straighten to different identity wires.")
+if cup_typed * cup_direction_mismatch * cap_typed * cap_order_mismatch * snake_connectivity * broken_left_snake * broken_right_snake * is_ok(wrote) { ok("cup cap and snake connectivity verified") } else { err("cup cap connectivity failed") }

@@ -1909,3 +1909,17 @@ their `[4,8]` endpoint table. A changed `[4,9]` endpoint fails. This demonstrate
 one finite interchange law, not arbitrary planar isotopy. No new sw-MLPL
 capability was required. Next is CT113-CT115, reusing dual data while adding
 semantic cup/cap connectivity rather than repeating the algebraic lesson.
+
+## CT113-CT115 cup, cap, and snake connectivity, 2026-08-15
+
+Lesson 51 adds the semantic graph layer over Lesson 49's dual fixture. The cup
+has source boundary `I` and ordered outputs `A, A*`; the cap has ordered inputs
+`A*, A` and target `I`. Swapping a boundary direction or the cap input order
+fails before any curve is interpreted visually.
+
+The left snake stores an `A` boundary path and the right snake an `A*` boundary
+path. Their records are unequal, while their endpoints separately equal the
+appropriate identity wires. Independent changed endpoints prevent the two laws
+from collapsing into one Boolean. No new sw-MLPL capability is required. Next
+is CT116-CT118: one explicit feedback connection and trace, plus a coverage
+boundary before claiming a traced monoidal category.

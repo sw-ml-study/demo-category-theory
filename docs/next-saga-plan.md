@@ -11,8 +11,8 @@ animation only; semantic edge tables supply the evidence.
    connectivity from embedding coordinates; measure rewrites and coverage.
 2. **Semantic string graphs and interchange** — completed in Lesson 50 with
    typed ports, changed embeddings over invariant edges, and interchange.
-3. **Cups, caps, and snake connectivity** — implement CT113-CT115 as graph
-   connectivity over the existing dual fixture without duplicating Lesson 49.
+3. **Cups, caps, and snake connectivity** — completed in Lesson 51 as typed
+   graph connectivity over the existing dual fixture without duplicating it.
 4. **Trace and feedback** — implement CT116-CT118 for one deterministic finite
    process; constrain traced-monoidal coverage to the enumerated family.
 5. **Dagger structure** — implement CT119 and attempt CT120 with explicit

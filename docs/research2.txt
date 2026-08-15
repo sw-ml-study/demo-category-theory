@@ -813,3 +813,7 @@ Implementation note (2026-08-15, string-diagram Step 002): Lesson 50 checks
 type, edge identity, coordinate change, grouping distinction, and endpoint
 equality as separate facts. Future diagram leaves must preserve this separation
 and provide failures that alter semantic data rather than merely SVG styling.
+Implementation note (2026-08-15, string-diagram Step 003): Lesson 51 labels
+every cup/cap boundary and keeps the two snake path records typed and unequal.
+Future curved-wire visuals must expose source, target, and boundary ordering in
+semantic data, and must identify which earlier lesson supplies algebraic laws.
