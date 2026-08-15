@@ -96,3 +96,5 @@ finite-dependent-constructions	demos/41-dependent-constructions/fiber_tables.mlp
 finite-dependent-constructions-web	demos/web/finite_dependent_constructions.mlpl	web	CT080-CT082-dependent-sum-product-local-closure	0	0	svg	records,equal,reduce_mul	runnable
 finite-polynomial-containers	demos/42-polynomial-containers/optional_pair.mlpl	42-polynomial-containers	CT083-CT084-polynomial-container	0	0	ascii,svg	records,shape,take,equal	runnable
 finite-polynomial-containers-web	demos/web/finite_polynomial_containers.mlpl	web	CT083-CT084-polynomial-container	0	0	svg	records,shape,take,equal	runnable
+finite-monoidal-foundation	demos/43-monoidal-foundation/coherence_paths.mlpl	43-monoidal-foundation	CT085-CT090-monoidal-coherence	0	0	ascii,svg	records,equal	runnable
+finite-monoidal-foundation-web	demos/web/finite_monoidal_foundation.mlpl	web	CT085-CT090-monoidal-coherence	0	0	svg	records,equal	runnable

@@ -1,0 +1,26 @@
+# Lesson 43 -- finite monoidal structure and coherence.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_monoidal_foundation.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 43 -- COHERENCE MAKES REBRACKETING UNAMBIGUOUS", intro: "Build tensor, unit, associator, and unitors, then follow both pentagon and triangle routes."})
+pentagon_start = {left: {left: {left: 2, right: 3}, right: 5}, right: 7}
+pentagon_short = u:pentagon_short_coherence_path(pentagon_start)
+pentagon_long = u:pentagon_long_coherence_path(pentagon_start)
+pentagon_distinct = 1 - equal(pentagon_short.first, pentagon_long.first)
+pentagon_agrees = u:finite_coherence_endpoints_agree(pentagon_short.endpoint, pentagon_long.endpoint)
+pentagon_changed = 1 - u:finite_coherence_endpoints_agree(pentagon_short.endpoint, {left: 2, right: {left: 3, right: {left: 5, right: 8}}})
+triangle_start = {left: {left: 2, right: 0}, right: 3}
+triangle_associator = u:triangle_associator_then_left_unitor(triangle_start)
+triangle_unitor = u:triangle_right_unitor_then_identity(triangle_start)
+triangle_agrees = u:finite_coherence_endpoints_agree(triangle_associator.endpoint, triangle_unitor.endpoint)
+disp(pentagon_short)
+disp(pentagon_long)
+disp(triangle_associator)
+disp(triangle_unitor)
+disp([pentagon_distinct, pentagon_agrees, pentagon_changed, triangle_agrees])
+wrote = write_text("out/43-monoidal-foundation.svg", u:finite_monoidal_foundation_visual())
+u:epilog_open()
+u:explain("out/43-monoidal-foundation.svg", "Green takes two associators across the pentagon; blue takes three around it. The triangle compares associator-then-left-unitor with right-unitor tensor identity.")
+u:takeaway("A monoidal category permits nonliteral rebracketing, but the pentagon and triangle force every displayed coherent route to agree.")
+if pentagon_distinct * pentagon_agrees * pentagon_changed * triangle_agrees * is_ok(wrote) { ok("finite monoidal coherence verified") } else { err("monoidal coherence failed") }

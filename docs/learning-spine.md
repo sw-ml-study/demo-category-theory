@@ -30,6 +30,9 @@ products + coproducts + exponentials -> slices
                                    -> dependent sums / products
                                    -> local-cartesian-closure boundary
                                    -> polynomial/container interpretation
+
+composition + products -> tensor + unit -> associator / unitors
+                                      -> pentagon / triangle coherence
 ```
 
 ## Guided paths

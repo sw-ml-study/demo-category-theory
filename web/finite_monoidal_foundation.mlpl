@@ -1,0 +1,41 @@
+# Web Lesson 43 -- finite monoidal foundation.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- products, composition, and commutative diagrams.
+# * CATEGORICAL SETTING -- nested finite tensor records with singleton unit I.
+# * LAW / UNIVERSAL PROPERTY -- pentagon and triangle coherence identities.
+# * BOUNDARY -- one explicit tensor fixture, not arbitrary monoidal categories.
+# * WHAT THIS SHOWS
+# * Different reassociation and unit-removal routes must reach one tensor value.
+# ***************************************************************************
+;
+include "lib/finite_monoidal_foundation.mlpl"  # reuse coherence paths and visual
+pentagon_start = {left: {left: {left: 2, right: 3}, right: 5}, right: 7}  # (((A⊗B)⊗C)⊗D)
+pentagon_short = u:pentagon_short_coherence_path(pentagon_start)  # two associators
+pentagon_long = u:pentagon_long_coherence_path(pentagon_start)  # three associators
+pentagon_distinct = 1 - equal(pentagon_short.first, pentagon_long.first)  # different paths
+pentagon_agrees = u:finite_coherence_endpoints_agree(pentagon_short.endpoint, pentagon_long.endpoint)  # CT085
+pentagon_changed = 1 - u:finite_coherence_endpoints_agree(pentagon_short.endpoint, {left: 2, right: {left: 3, right: {left: 5, right: 8}}})  # COUNTEREXAMPLE
+triangle_start = {left: {left: 2, right: 0}, right: 3}  # ((A⊗I)⊗B)
+triangle_associator = u:triangle_associator_then_left_unitor(triangle_start)  # alpha then lambda
+triangle_unitor = u:triangle_right_unitor_then_identity(triangle_start)  # rho tensor identity
+triangle_agrees = u:finite_coherence_endpoints_agree(triangle_associator.endpoint, triangle_unitor.endpoint)  # CT089-090
+disp(pentagon_short)
+disp(pentagon_long)
+disp(triangle_associator)
+disp(triangle_unitor)
+disp([pentagon_distinct, pentagon_agrees, pentagon_changed, triangle_agrees])
+# ***************************************************************************
+# * THE VISUAL
+# * Green and blue arrows visit different nestings; arrowheads show direction.
+# ***************************************************************************
+def u:finite_monoidal_foundation_web_visual() { "Render distinct pentagon and triangle coherence routes plus a changed endpoint."; u:finite_monoidal_foundation_visual() }  # narrated shared visual entry point
+finite_monoidal_foundation_visual = u:finite_monoidal_foundation_web_visual()  # bind visual constant
+finite_monoidal_foundation_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * The pentagon paths differ internally but end at A⊗(B⊗(C⊗D)).
+# * The triangle removes I by two routes; changing D from 7 to 8 breaks equality.
+# * THE POINT -- associator and unitors are coherent, not invisible equality.
+# ***************************************************************************

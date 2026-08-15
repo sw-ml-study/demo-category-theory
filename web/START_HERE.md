@@ -48,6 +48,9 @@ and finally inspect the missing-slice witness against local cartesian closure.
 Finish this path with `finite_polynomial_containers.mlpl`, which turns the
 shape/position family into `P(X)=1+X^2`, maps its payload slots, and rejects a
 pair shape whose payload count does not match its two positions.
+Begin the monoidal path with `finite_monoidal_foundation.mlpl`. Follow both
+pentagon routes through their different nested records, then compare the two
+triangle routes that remove the unit object.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

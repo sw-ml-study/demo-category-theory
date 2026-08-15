@@ -331,6 +331,12 @@ records, so there is no new blocker or upstream ask. Variable-length coherence
 would reuse the already documented first-class composition/function-container
 requests. Closed and compact structure remain mathematical coverage
 obligations, not missing syntax.
+
+Lesson 43 confirms that explicit nested-record paths remain readable at four
+tensor factors. Two and three reassociation paths can retain distinct
+intermediates and compare endpoints without generic traversal. This is an
+elegant fixed-law idiom, not evidence that arbitrary coherence graphs are
+convenient.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

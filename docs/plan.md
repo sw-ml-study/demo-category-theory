@@ -539,3 +539,12 @@ and visible intermediate objects. No new runtime feature blocks that bounded
 lesson. Generic variable-length tensor traversal remains existing composition
 friction, and group/module objects must preserve the abstract-algebra sibling
 boundary.
+
+### CT085-CT090 finite monoidal foundation (2026-08-14)
+
+Lesson 43 represents tensor parenthesization with nested records and the unit
+with an explicit singleton-coded endpoint. The pentagon's two-associator route
+and three-associator route contain unequal first intermediates but arrive at
+the same fully right-associated tensor. The triangle compares associator then
+left unitor with right unitor tensor identity. A changed final payload breaks
+coherence. Next: CT091 strictness boundary; no blocker is known.

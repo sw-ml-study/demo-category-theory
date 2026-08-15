@@ -773,3 +773,8 @@ hexagon. The probe establishes endpoint representability only. Each lesson
 must construct different intermediate nesting/permutation paths, display
 those paths, and compare their final morphisms. Strict equality and coherent
 isomorphism must remain visually and executably distinct.
+Implementation note (2026-08-14, monoidal Step 002): Lesson 43 satisfies the
+coherence-path rule with unequal first intermediates and independently built
+two-step/three-step endpoints. Future coherence lessons must retain an
+executable path-distinctness check alongside endpoint equality and a changed
+endpoint witness.

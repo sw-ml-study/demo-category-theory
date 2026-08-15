@@ -1,0 +1,28 @@
+# Tests for CT085-CT090 finite monoidal foundation.
+include "lib/finite_monoidal_foundation.mlpl";
+@test {name: "tensor associator and unitors preserve values", tags: ["CT086", "CT087", "CT088", "CT089", "CT090"]}
+def u:test_finite_tensor_structure_maps() { "Check the displayed associator and both unitors on concrete values.";
+  u:assert_eq(u:associate_tensor_left_to_right({left: {left: 2, right: 3}, right: 5}), {left: 2, right: {left: 3, right: 5}}, "associator")?;
+  u:assert_eq(u:remove_left_tensor_unit({left: 0, right: 7}), 7, "left unitor")?;
+  u:assert_eq(u:remove_right_tensor_unit({left: 7, right: 0}), 7, "right unitor")?;
+  ok({test: "finite-tensor-structure", cases: 3})
+}
+@test {name: "pentagon routes have distinct intermediates and one endpoint", tags: ["CT085", "pentagon"]}
+def u:test_finite_pentagon_coherence() { "Build two- and three-associator pentagon paths, compare endpoints, and reject a changed value.";
+  start_tensor = {left: {left: {left: 2, right: 3}, right: 5}, right: 7};
+  short_path = u:pentagon_short_coherence_path(start_tensor);
+  long_path = u:pentagon_long_coherence_path(start_tensor);
+  u:assert_eq(equal(short_path.first, long_path.first), 0, "distinct intermediates")?;
+  u:assert_eq(u:finite_coherence_endpoints_agree(short_path.endpoint, long_path.endpoint), 1, "pentagon endpoint")?;
+  u:assert_eq(u:finite_coherence_endpoints_agree(short_path.endpoint, {left: 2, right: {left: 3, right: {left: 5, right: 8}}}), 0, "changed endpoint")?;
+  ok({test: "finite-pentagon", cases: 3})
+}
+@test {name: "triangle routes use associator and opposite unitors", tags: ["CT085", "triangle"]}
+def u:test_finite_triangle_coherence() { "Build both triangle routes and check their common tensor endpoint.";
+  start_tensor = {left: {left: 2, right: 0}, right: 3};
+  associator_route = u:triangle_associator_then_left_unitor(start_tensor);
+  right_unitor_route = u:triangle_right_unitor_then_identity(start_tensor);
+  u:assert_eq(u:finite_coherence_endpoints_agree(associator_route.endpoint, right_unitor_route.endpoint), 1, "triangle endpoint")?;
+  ok({test: "finite-triangle", cases: 1})
+}
+u:run_registered_tests()

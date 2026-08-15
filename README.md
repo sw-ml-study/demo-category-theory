@@ -495,6 +495,17 @@ positions. Sources:
 [CLI lesson](demos/42-polynomial-containers/optional_pair.mlpl),
 [web lesson](demos/web/finite_polynomial_containers.mlpl).
 
+### 43. Monoidal coherence compares different rebracketing paths
+
+![Two directed routes around a tensor pentagon and two unit-removal routes through a triangle](assets/previews/43-monoidal-foundation.svg)
+
+What to notice: green uses two associators across the pentagon; blue uses
+three around it. Their intermediate tensor nestings differ, but both end at
+`A⊗(B⊗(C⊗D))`. The triangle separately compares associator-then-left-unitor
+with right-unitor tensor identity. Changing the final payload breaks equality.
+Sources: [CLI lesson](demos/43-monoidal-foundation/coherence_paths.mlpl),
+[web lesson](demos/web/finite_monoidal_foundation.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

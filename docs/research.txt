@@ -1778,3 +1778,17 @@ tensor paths would encounter the already recorded callable composition and
 homogeneous function-container gaps; fixed law-sized coherence diagrams are
 readable without them. Next is CT085-CT090 with genuinely distinct pentagon
 and triangle constructions. No blocker is known.
+
+## CT085-CT090 finite monoidal foundation, 2026-08-14
+
+Lesson 43 converts the survey into genuine paths. Starting at
+`(((A tensor B) tensor C) tensor D)`, the short pentagon path uses two
+associators while the long path uses three and retains different intermediate
+records. Both end at `A tensor (B tensor (C tensor D))`. The triangle likewise
+builds associator-then-left-unitor separately from right-unitor-tensor-identity.
+A changed final payload is a concrete failed endpoint.
+
+This earns the bounded monoidal vocabulary without treating parentheses as
+literal equality or copied route arrays as coherence. No upstream feature was
+needed. Next is CT091, which will make the strict-versus-coherent distinction
+itself executable and visual; no blocker is known.

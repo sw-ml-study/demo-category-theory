@@ -6,12 +6,12 @@ explicit fixtures; none infers generic monoidal structure or coherence.
 
 | ID | Concept | Executable representation | Status / boundary |
 |---|---|---|---|
-| CT085 | monoidal category | tensor/unit data plus pentagon and triangle route checks | runnable for one finite concrete tensor after full laws are implemented |
-| CT086 | tensor product | nested `{left,right}` records and pointwise arrow tables | runnable now |
-| CT087 | monoidal unit | explicit singleton-coded record endpoint | runnable now |
-| CT088 | associator | readable three-value nested-record reassociation | runnable now |
-| CT089 | left unitor | remove explicit unit from `{unit,value}` | runnable now |
-| CT090 | right unitor | remove explicit unit from `{value,unit}` | runnable now |
+| CT085 | monoidal category | tensor/unit data plus pentagon and triangle route checks | implemented for one finite concrete tensor in Lesson 43 |
+| CT086 | tensor product | nested `{left,right}` records and pointwise arrow tables | implemented in Lesson 43 |
+| CT087 | monoidal unit | explicit singleton-coded record endpoint | implemented in Lesson 43 |
+| CT088 | associator | readable three-value nested-record reassociation | implemented along both pentagon routes |
+| CT089 | left unitor | remove explicit unit from `{unit,value}` | implemented in the triangle route |
+| CT090 | right unitor | remove explicit unit from `{value,unit}` | implemented with CT086-CT089 in Lesson 43 |
 | CT091 | strict monoidal category | literal nested equality versus reassociation isomorphism | runnable as a boundary lesson; chosen records are not strictly equal |
 | CT092 | braided monoidal category | swap table plus hexagon route checks | runnable for a bounded fixture |
 | CT093 | braiding | swap `{left,right}` values | runnable now |
