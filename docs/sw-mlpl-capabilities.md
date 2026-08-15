@@ -337,6 +337,9 @@ tensor factors. Two and three reassociation paths can retain distinct
 intermediates and compare endpoints without generic traversal. This is an
 elegant fixed-law idiom, not evidence that arbitrary coherence graphs are
 convenient.
+Lesson 44 shows nested-record equality is a strong teaching asset for CT091:
+strict equality fails visibly while explicit inverse maps succeed. No generic
+isomorphism type is needed for the bounded two-sided check.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

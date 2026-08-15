@@ -506,6 +506,17 @@ with right-unitor tensor identity. Changing the final payload breaks equality.
 Sources: [CLI lesson](demos/43-monoidal-foundation/coherence_paths.mlpl),
 [web lesson](demos/web/finite_monoidal_foundation.mlpl).
 
+### 44. Coherent isomorphism is not literal strictness
+
+![Unequal tensor parenthesizations connected by inverse associator arrows, with a bad reverse map](assets/previews/44-monoidal-strictness.svg)
+
+What to notice: the two boxes retain different nested-record shapes, so they
+are not equal. The green associator arrows preserve payload order and compose
+to identities in both directions. The dashed reverse swaps two payloads and is
+not an inverse. Sources:
+[CLI lesson](demos/44-monoidal-strictness/parentheses.mlpl),
+[web lesson](demos/web/finite_monoidal_strictness.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

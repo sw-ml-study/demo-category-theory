@@ -1,0 +1,38 @@
+# Web Lesson 44 -- strictness boundary.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- tensor, associator, monoidal coherence, and isomorphism.
+# * CATEGORICAL SETTING -- nested finite tensor records.
+# * LAW / UNIVERSAL PROPERTY -- associator and inverse compose to identities.
+# * BOUNDARY -- this fixture is monoidal but not literally strict.
+# * WHAT THIS SHOWS
+# * Different parentheses are unequal objects connected by coherent isomorphism.
+# ***************************************************************************
+;
+include "lib/finite_monoidal_strictness.mlpl"  # reuse strictness checks and visual
+left_nested = {left: {left: 2, right: 3}, right: 5}  # ((2 tensor 3) tensor 5)
+right_nested = {left: 2, right: {left: 3, right: 5}}  # (2 tensor (3 tensor 5))
+literal_difference = 1 - equal(left_nested, right_nested)  # CT091 not strict
+associated = u:associate_left_nested_tensor(left_nested)  # forward isomorphism
+unassociated = u:unassociate_right_nested_tensor(right_nested)  # inverse isomorphism
+inverse_laws = u:inverse_associator_laws_hold(left_nested, right_nested)  # both composites
+bad_inverse = 1 - equal(u:incorrect_unassociator(right_nested), left_nested)  # COUNTEREXAMPLE
+disp(left_nested)
+disp(right_nested)
+disp(associated)
+disp(unassociated)
+disp([literal_difference, inverse_laws, bad_inverse])
+# ***************************************************************************
+# * THE VISUAL
+# * Separate boxes retain parentheses; directed green arrows are inverse maps.
+# ***************************************************************************
+def u:finite_monoidal_strictness_web_visual() { "Render unequal tensor nestings, inverse associators, and a wrong reverse map."; u:finite_monoidal_strictness_visual() }  # narrated shared visual entry point
+finite_monoidal_strictness_visual = u:finite_monoidal_strictness_web_visual()  # bind visual constant
+finite_monoidal_strictness_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * The record shapes differ; α and α inverse restore both starting objects.
+# * The dashed map swaps payloads, so it cannot witness the isomorphism.
+# * THE POINT -- strict means equality; ordinary monoidal coherence gives iso.
+# ***************************************************************************

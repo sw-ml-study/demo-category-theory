@@ -1792,3 +1792,15 @@ This earns the bounded monoidal vocabulary without treating parentheses as
 literal equality or copied route arrays as coherence. No upstream feature was
 needed. Next is CT091, which will make the strict-versus-coherent distinction
 itself executable and visual; no blocker is known.
+
+## CT091 strictness boundary, 2026-08-14
+
+Literal nested-record equality makes the distinction unusually clear:
+`((2 tensor 3) tensor 5)` is not `2 tensor (3 tensor 5)`. The associator and
+inverse associator preserve the ordered payloads and compose to identity in
+both directions. A reverse map exchanging 3 and 5 is not an inverse.
+
+Thus the finite fixture is monoidal through coherent isomorphisms but is not
+strict under its chosen representation. No sw-MLPL capability is missing.
+Next is CT092-CT096 with two independently constructed hexagon paths and an
+involutive symmetry check; no blocker is known.

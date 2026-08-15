@@ -98,3 +98,5 @@ finite-polynomial-containers	demos/42-polynomial-containers/optional_pair.mlpl	4
 finite-polynomial-containers-web	demos/web/finite_polynomial_containers.mlpl	web	CT083-CT084-polynomial-container	0	0	svg	records,shape,take,equal	runnable
 finite-monoidal-foundation	demos/43-monoidal-foundation/coherence_paths.mlpl	43-monoidal-foundation	CT085-CT090-monoidal-coherence	0	0	ascii,svg	records,equal	runnable
 finite-monoidal-foundation-web	demos/web/finite_monoidal_foundation.mlpl	web	CT085-CT090-monoidal-coherence	0	0	svg	records,equal	runnable
+finite-monoidal-strictness	demos/44-monoidal-strictness/parentheses.mlpl	44-monoidal-strictness	CT091-strictness-boundary	0	0	ascii,svg	records,equal	runnable
+finite-monoidal-strictness-web	demos/web/finite_monoidal_strictness.mlpl	web	CT091-strictness-boundary	0	0	svg	records,equal	runnable

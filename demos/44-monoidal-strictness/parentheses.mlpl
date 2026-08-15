@@ -1,0 +1,23 @@
+# Lesson 44 -- strict equality versus coherent tensor isomorphism.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_monoidal_strictness.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 44 -- COHERENT IS NOT LITERALLY EQUAL", intro: "Keep both tensor parenthesizations as different records, then connect them with inverse associators."})
+left_nested = {left: {left: 2, right: 3}, right: 5}
+right_nested = {left: 2, right: {left: 3, right: 5}}
+literal_difference = 1 - equal(left_nested, right_nested)
+associated = u:associate_left_nested_tensor(left_nested)
+unassociated = u:unassociate_right_nested_tensor(right_nested)
+inverse_laws = u:inverse_associator_laws_hold(left_nested, right_nested)
+bad_inverse = 1 - equal(u:incorrect_unassociator(right_nested), left_nested)
+disp(left_nested)
+disp(right_nested)
+disp(associated)
+disp(unassociated)
+disp([literal_difference, inverse_laws, bad_inverse])
+wrote = write_text("out/44-monoidal-strictness.svg", u:finite_monoidal_strictness_visual())
+u:epilog_open()
+u:explain("out/44-monoidal-strictness.svg", "The boxes retain different record shapes. Associator arrows preserve payload order and invert each other; the dashed reverse swaps 3 and 5.")
+u:takeaway("This fixture is monoidal but not strict: parentheses are connected coherently by isomorphism rather than erased by equality.")
+if literal_difference * inverse_laws * bad_inverse * is_ok(wrote) { ok("finite monoidal strictness boundary verified") } else { err("strictness boundary failed") }

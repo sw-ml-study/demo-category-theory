@@ -1,6 +1,6 @@
 number = 3
 slug = "strictness-boundary"
-status = "pending"
+status = "in-progress"
 description = "Implement or constrain CT091 by distinguishing literal equality from coherent..."
 role = "legacy"
 context_files = []

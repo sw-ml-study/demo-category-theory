@@ -51,6 +51,8 @@ pair shape whose payload count does not match its two positions.
 Begin the monoidal path with `finite_monoidal_foundation.mlpl`. Follow both
 pentagon routes through their different nested records, then compare the two
 triangle routes that remove the unit object.
+Then load `finite_monoidal_strictness.mlpl` to keep the two parenthesizations
+unequal while the associator and its inverse connect them coherently.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

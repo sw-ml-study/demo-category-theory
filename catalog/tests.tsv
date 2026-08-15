@@ -25,3 +25,4 @@ finite-slices-coslices-tests	tests/test_finite_slices.mlpl	40	CT078-CT079-slice-
 finite-dependent-constructions-tests	tests/test_finite_dependent_constructions.mlpl	41	CT080-CT082-dependent-sum-product-local-closure	0	0	none	records,equal,reduce_mul	runnable
 finite-polynomial-containers-tests	tests/test_finite_polynomial_containers.mlpl	42	CT083-CT084-polynomial-container	0	0	none	records,shape,take,equal	runnable
 finite-monoidal-foundation-tests	tests/test_finite_monoidal_foundation.mlpl	43	CT085-CT090-monoidal-coherence	0	0	none	records,equal	runnable
+finite-monoidal-strictness-tests	tests/test_finite_monoidal_strictness.mlpl	44	CT091-strictness-boundary	0	0	none	records,equal	runnable

@@ -12,7 +12,7 @@ explicit fixtures; none infers generic monoidal structure or coherence.
 | CT088 | associator | readable three-value nested-record reassociation | implemented along both pentagon routes |
 | CT089 | left unitor | remove explicit unit from `{unit,value}` | implemented in the triangle route |
 | CT090 | right unitor | remove explicit unit from `{value,unit}` | implemented with CT086-CT089 in Lesson 43 |
-| CT091 | strict monoidal category | literal nested equality versus reassociation isomorphism | runnable as a boundary lesson; chosen records are not strictly equal |
+| CT091 | strict monoidal category | literal nested equality versus reassociation isomorphism | implemented as a non-strict boundary in Lesson 44 |
 | CT092 | braided monoidal category | swap table plus hexagon route checks | runnable for a bounded fixture |
 | CT093 | braiding | swap `{left,right}` values | runnable now |
 | CT094 | hexagon identities | two explicit three-value permutation routes | runnable after route constructors are implemented |

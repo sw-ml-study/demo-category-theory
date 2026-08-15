@@ -548,3 +548,11 @@ and three-associator route contain unequal first intermediates but arrive at
 the same fully right-associated tensor. The triangle compares associator then
 left unitor with right unitor tensor identity. A changed final payload breaks
 coherence. Next: CT091 strictness boundary; no blocker is known.
+
+### CT091 strictness boundary (2026-08-14)
+
+Lesson 44 keeps `(A⊗B)⊗C` and `A⊗(B⊗C)` as unequal nested records, then
+executes associator and inverse associator and checks both identity composites.
+A reverse map that swaps the final payloads fails. This fixture is coherently
+monoidal but not strict. Next: CT092-CT096 braiding, hexagons, and symmetry; no
+blocker is known.

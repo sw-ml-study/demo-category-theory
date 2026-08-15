@@ -778,3 +778,8 @@ coherence-path rule with unequal first intermediates and independently built
 two-step/three-step endpoints. Future coherence lessons must retain an
 executable path-distinctness check alongside endpoint equality and a changed
 endpoint witness.
+Implementation note (2026-08-14, monoidal Step 003): Lesson 44 never flattens
+away parentheses. It separately checks literal inequality, forward and reverse
+maps, and both identity composites. Future strictification discussions must
+preserve the difference between choosing an equivalent strict presentation
+and claiming the original objects were equal.
