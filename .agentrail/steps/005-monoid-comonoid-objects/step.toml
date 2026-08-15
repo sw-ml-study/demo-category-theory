@@ -1,8 +1,9 @@
 number = 5
 slug = "monoid-comonoid-objects"
-status = "in-progress"
+status = "completed"
 description = "Implement CT097-CT098 with one finite monoid object and its comonoid dual ins..."
 role = "legacy"
 context_files = []
 created_at = "2026-08-15T09:51:02"
-commits = []
+completed_at = "2026-08-15T11:32:57"
+commits = ["5c3f870be75eea5ec57ff87f132d79a8cea1ef94"]
