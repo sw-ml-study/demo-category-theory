@@ -1,0 +1,8 @@
+number = 4
+slug = "braided-symmetric-structure"
+status = "pending"
+description = "Implement CT092-CT096 with an explicit braiding swap, two genuinely different..."
+role = "legacy"
+context_files = []
+created_at = "2026-08-14T18:57:04"
+commits = []

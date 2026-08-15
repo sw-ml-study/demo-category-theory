@@ -1,8 +1,9 @@
 number = 3
 slug = "strictness-boundary"
-status = "in-progress"
+status = "completed"
 description = "Implement or constrain CT091 by distinguishing literal equality from coherent..."
 role = "legacy"
 context_files = []
 created_at = "2026-08-14T17:52:15"
-commits = []
+completed_at = "2026-08-14T18:57:04"
+commits = ["3d194ff6905e2415a6d93d028a882c9f2b3529dc"]
