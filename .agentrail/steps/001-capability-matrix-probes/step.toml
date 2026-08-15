@@ -1,8 +1,9 @@
 number = 1
 slug = "capability-matrix-probes"
-status = "in-progress"
+status = "completed"
 description = "Map CT085-CT109 to finite executable representations. Probe tensor objects an..."
 role = "legacy"
 context_files = []
 created_at = "2026-08-14T17:40:26"
-commits = []
+completed_at = "2026-08-14T17:43:47"
+commits = ["bc08e6122a0c351ba8e0f7472948e0a3a3260c18"]
