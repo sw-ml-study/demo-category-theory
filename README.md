@@ -547,6 +547,16 @@ scalar-action fixture exists locally. Sources:
 [CLI lesson](demos/47-group-module-boundary/inverse_and_missing_action.mlpl),
 [web lesson](demos/web/finite_group_module_boundary.mlpl).
 
+### 48. Follow the monoidal comparison arrows
+
+![Opposite lax and oplax arrows, invertible strong comparisons, a commuting transformation square, and incomplete closedness coverage](assets/previews/48-monoidal-functors.svg)
+
+What to notice: lax points from `F(A) tensor F(B)` into `F(A tensor B)`;
+oplax points the other way. Strong structure needs both inverse composites,
+and the dashed object pair prevents a closed-monoidal claim. Sources:
+[CLI lesson](demos/48-monoidal-functors/comparison_maps.mlpl),
+[web lesson](demos/web/finite_monoidal_functors.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

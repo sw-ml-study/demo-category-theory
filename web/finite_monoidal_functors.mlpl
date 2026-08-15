@@ -1,0 +1,32 @@
+# Web Lesson 48 -- directed monoidal functor comparison maps.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- monoidal coherence, functors, natural transformations.
+# * CATEGORICAL SETTING -- one finite identity-like functor between presentations.
+# * LAW -- tensor/unit coherence; strong inverses; transformation compatibility.
+# * BOUNDARY -- one missing object pair prevents a closed-monoidal claim.
+# * WHAT THIS SHOWS
+# * Read arrow direction first, then check coherence and coverage separately.
+# ***************************************************************************
+;
+include "lib/finite_monoidal_functors.mlpl"  # reuse directed comparisons
+coherence = u:monoidal_functor_coherence_holds(["A", "B"], ["A", "B"], ["I"], ["I"])  # CT101-CT103
+broken_coherence = 1 - u:monoidal_functor_coherence_holds(["A", "B"], ["B", "A"], ["I"], ["I"])  # COUNTEREXAMPLE
+strong_inverse = u:strong_monoidal_comparisons_are_inverse(["A", "B"], ["A", "B"], ["A", "B"], ["A", "B"])  # CT104
+transformation = u:monoidal_natural_transformation_is_compatible([2, 4], [2, 4], ["A", "B"], ["A", "B"], ["I"], ["I"])  # CT105
+closedness_missing = 1 - u:closed_monoidal_pair_coverage_is_complete([1, 0])  # CT106 boundary
+disp([coherence, broken_coherence, strong_inverse, transformation, closedness_missing])
+# ***************************************************************************
+# * THE VISUAL
+# * Arrowheads encode comparison direction; the square encodes compatibility.
+# ***************************************************************************
+def u:finite_monoidal_functors_web_visual() { "Render the shared directed comparison-map lesson visual."; u:finite_monoidal_functors_visual() }  # narrated visual entry point
+finite_monoidal_functors_visual = u:finite_monoidal_functors_web_visual()  # bind visual constant
+finite_monoidal_functors_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Lax points into F(A tensor B); oplax points out; strong supplies both.
+# * The commuting square is finite evidence, while [1,0] exposes missing scope.
+# * THE POINT -- comparison direction, invertibility, and coverage are distinct.
+# ***************************************************************************

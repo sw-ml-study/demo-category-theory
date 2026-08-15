@@ -22,12 +22,12 @@ explicit fixtures; none infers generic monoidal structure or coherence.
 | CT098 | comonoid object | diagonal/counit tables and coassociativity routes | implemented as the arrow-dual in Lesson 46 |
 | CT099 | group object | monoid-object maps plus inverse diagram | implemented as attributed Z2 categorical packaging in Lesson 47 |
 | CT100 | module object | finite scalar-action table and compatibility diagrams | constrained: no stable attributed module fixture exists locally |
-| CT101 | monoidal functor | object/arrow action plus directed tensor/unit comparisons | runnable for one concrete pair of monoidal fixtures |
-| CT102 | lax monoidal functor | comparison `F(A)⊗F(B) → F(A⊗B)` | representable; laws need a dedicated bounded fixture |
-| CT103 | oplax monoidal functor | comparison `F(A⊗B) → F(A)⊗F(B)` | representable; must remain visibly opposite to lax |
-| CT104 | strong monoidal functor | invertible comparison tables in both directions | runnable with explicit inverse checks |
-| CT105 | monoidal natural transformation | finite naturality plus tensor/unit compatibility squares | runnable but verbose without reusable path composition |
-| CT106 | closed monoidal category | tensor/internal-hom adjunction for every object pair | constrained by the same every-pair coverage boundary as cartesian closure |
+| CT101 | monoidal functor | object/arrow action plus directed tensor/unit comparisons | implemented for one concrete finite fixture in Lesson 48 |
+| CT102 | lax monoidal functor | comparison `F(A)⊗F(B) → F(A⊗B)` | implemented with the comparison visibly pointing into `F(A⊗B)` |
+| CT103 | oplax monoidal functor | comparison `F(A⊗B) → F(A)⊗F(B)` | implemented with direction visibly opposite to lax |
+| CT104 | strong monoidal functor | invertible comparison tables in both directions | implemented with two explicit inverse composites |
+| CT105 | monoidal natural transformation | finite naturality plus tensor/unit compatibility squares | implemented as a finite compatibility fixture with a broken witness |
+| CT106 | closed monoidal category | tensor/internal-hom adjunction for every object pair | constrained by explicit incomplete pair coverage `[1,0]` |
 | CT107 | dual object | evaluation/coevaluation tables with snake paths | runnable for one finite fixture |
 | CT108 | compact closed category | every-object dual coverage | constrained pending more than one dual fixture |
 | CT109 | compact closure boundary | explicit missing-coverage witness | runnable as a structural boundary |

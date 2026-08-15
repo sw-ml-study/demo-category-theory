@@ -580,3 +580,14 @@ object and checks both inverse routes to the unit. No scalar-action/module
 fixture exists locally, so CT100 remains constrained by four named missing
 obligations. Next: CT101-CT106 monoidal functor variants; no runtime blocker is
 known for fixed directed comparison maps.
+
+### CT101-CT106 monoidal functor variants (2026-08-15)
+
+Lesson 48 puts lax and oplax tensor comparisons side by side with opposite
+arrowheads, checks tensor and unit coherence, and upgrades the comparison to
+strong only after both inverse composites pass. A finite monoidal natural
+transformation checks naturality plus tensor/unit compatibility. Closedness is
+bounded by explicit every-pair evidence `[1,0]`, so the missing pair remains
+visible rather than becoming a general claim. Next: CT107-CT109 dual-object,
+compact-closed coverage, and saga integration; no runtime blocker is known for
+one snake-identity fixture.

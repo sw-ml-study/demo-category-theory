@@ -57,8 +57,11 @@ Continue with `finite_braided_symmetric.mlpl`: compare whole-block and
 componentwise crossings around the hexagon, then watch a double swap undo itself.
 Then load `finite_monoid_comonoid.mlpl` to compare internal merge/unit arrows
 with their split/counit duals.
-Finish this section with `finite_group_module_boundary.mlpl`: read the
+Continue with `finite_group_module_boundary.mlpl`: read the
 attributed Z2 inverse diagram, then the explicit missing-module checklist.
+Then load `finite_monoidal_functors.mlpl`: compare the opposite lax and oplax
+arrowheads, require both inverse composites for strong structure, follow the
+transformation square, and stop at the missing closedness pair.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

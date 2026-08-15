@@ -1,0 +1,19 @@
+# Lesson 48 -- directed monoidal functor comparison maps.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_monoidal_functors.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 48 -- FOLLOW THE COMPARISON ARROWS", intro: "Keep lax and oplax directions opposite; call the fixture strong only after checking both inverse composites."})
+coherence = u:monoidal_functor_coherence_holds(["A", "B"], ["A", "B"], ["I"], ["I"])
+broken_coherence = 1 - u:monoidal_functor_coherence_holds(["A", "B"], ["B", "A"], ["I"], ["I"])
+strong_inverse = u:strong_monoidal_comparisons_are_inverse(["A", "B"], ["A", "B"], ["A", "B"], ["A", "B"])
+broken_inverse = 1 - u:strong_monoidal_comparisons_are_inverse(["A", "B"], ["A", "B"], ["B", "A"], ["A", "B"])
+transformation = u:monoidal_natural_transformation_is_compatible([2, 4], [2, 4], ["A", "B"], ["A", "B"], ["I"], ["I"])
+broken_transformation = 1 - u:monoidal_natural_transformation_is_compatible([2, 4], [2, 5], ["A", "B"], ["A", "B"], ["I"], ["I"])
+closedness_missing = 1 - u:closed_monoidal_pair_coverage_is_complete([1, 0])
+disp([coherence, broken_coherence, strong_inverse, broken_inverse, transformation, broken_transformation, closedness_missing])
+wrote = write_text("out/48-monoidal-functors.svg", u:finite_monoidal_functors_visual())
+u:epilog_open()
+u:explain("out/48-monoidal-functors.svg", "Arrowheads distinguish lax F(A) tensor F(B) to F(A tensor B) from oplax in the reverse direction. The square is tensor compatibility, while the dashed pair is missing closedness evidence.")
+u:takeaway("Direction defines lax versus oplax; invertibility defines strong; one internal-hom pair cannot establish closed monoidal structure.")
+if coherence * broken_coherence * strong_inverse * broken_inverse * transformation * broken_transformation * closedness_missing * is_ok(wrote) { ok("monoidal functor variants verified") } else { err("monoidal functor variant failed") }

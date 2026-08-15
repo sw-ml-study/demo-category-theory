@@ -51,4 +51,5 @@ cp "$repo_root/out/44-monoidal-strictness.svg" "$dest/44-monoidal-strictness.svg
 cp "$repo_root/out/45-braided-symmetric.svg" "$dest/45-braided-symmetric.svg"
 cp "$repo_root/out/46-monoid-comonoid.svg" "$dest/46-monoid-comonoid.svg"
 cp "$repo_root/out/47-group-module-boundary.svg" "$dest/47-group-module-boundary.svg"
+cp "$repo_root/out/48-monoidal-functors.svg" "$dest/48-monoidal-functors.svg"
 echo "README previews written"

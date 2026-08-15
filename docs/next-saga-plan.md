@@ -23,8 +23,8 @@ must not silently consume that visual curriculum.
 6. **Group and module objects** — attempt CT099-CT100 only where finite
    operations and preservation laws avoid duplicating the abstract-algebra
    sibling; retain the repository scope boundary.
-7. **Monoidal functor variants** — implement CT101-CT106 as separately directed
-   comparison maps with law checks; do not collapse lax, oplax, and strong.
+7. **Monoidal functor variants** — completed in Lesson 48 with separately
+   directed comparisons, inverse checks, compatibility, and closedness coverage.
 8. **Closedness, duals, and integration** — attempt CT107-CT109 with explicit
    evaluation/coevaluation and triangle witnesses, audit all 25 IDs, and queue
    CT110-CT129.

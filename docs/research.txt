@@ -1838,3 +1838,19 @@ fixture must supply a scalar action, scalar associativity, scalar unit, and
 additive compatibility before this repository can package it categorically.
 Inventing those tables here would cross the sibling ownership boundary. Next
 is CT101-CT106 monoidal functor variants; no runtime blocker is known.
+
+## CT101-CT106 monoidal functor variants, 2026-08-15
+
+Lesson 48 confirms that fixed arrays and equality checks are sufficient for a
+bounded monoidal-functor fixture. The visual makes the defining distinction
+first: lax comparison points from `F(A) tensor F(B)` into `F(A tensor B)`, while
+oplax points back out. Strong structure is not inferred from matching labels;
+both comparison composites are checked against their identities. The monoidal
+natural transformation has a finite naturality/tensor/unit compatibility
+witness and an independently broken naturality route.
+
+CT106 retains the established every-pair discipline. Evidence `[1,0]` means
+one enumerated internal-hom pair is known and one is absent, so the lesson does
+not claim a closed monoidal category. No additional sw-MLPL capability is
+needed for these finite witnesses. Next is CT107-CT109: a dual-object snake
+fixture followed by an explicit compact-closed coverage boundary.

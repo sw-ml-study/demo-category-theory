@@ -106,3 +106,5 @@ finite-monoid-comonoid	demos/46-monoid-comonoid/internal_diagrams.mlpl	46-monoid
 finite-monoid-comonoid-web	demos/web/finite_monoid_comonoid.mlpl	web	CT097-CT098-internal-objects	0	0	svg	arrays,equal	runnable
 finite-group-module-boundary	demos/47-group-module-boundary/inverse_and_missing_action.mlpl	47-group-module-boundary	CT099-CT100-group-module-boundary	0	0	ascii,svg	arrays,equal	runnable
 finite-group-module-boundary-web	demos/web/finite_group_module_boundary.mlpl	web	CT099-CT100-group-module-boundary	0	0	svg	arrays,equal	runnable
+finite-monoidal-functors	demos/48-monoidal-functors/comparison_maps.mlpl	48-monoidal-functors	CT101-CT106-monoidal-functor-closed-boundary	0	0	ascii,svg	arrays,equal,reduce_mul	runnable
+finite-monoidal-functors-web	demos/web/finite_monoidal_functors.mlpl	web	CT101-CT106-monoidal-functor-closed-boundary	0	0	svg	arrays,equal,reduce_mul	runnable
