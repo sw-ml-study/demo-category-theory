@@ -340,6 +340,9 @@ convenient.
 Lesson 44 shows nested-record equality is a strong teaching asset for CT091:
 strict equality fails visibly while explicit inverse maps succeed. No generic
 isomorphism type is needed for the bounded two-sided check.
+Lesson 45 confirms fixed permutation paths remain readable as nested records.
+The implementation needs no generic permutation or braid abstraction for a
+three-value hexagon; arbitrary braid words remain outside this bounded claim.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

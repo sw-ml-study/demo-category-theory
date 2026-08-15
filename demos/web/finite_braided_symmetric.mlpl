@@ -1,0 +1,37 @@
+# Web Lesson 45 -- finite braided and symmetric structure.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- monoidal coherence, associators, and naturality.
+# * CATEGORICAL SETTING -- nested finite tensor records with swap braiding.
+# * LAW / UNIVERSAL PROPERTY -- hexagon coherence and involutive symmetry.
+# * BOUNDARY -- one symmetric finite fixture, not every braided category.
+# * WHAT THIS SHOWS
+# * Braid A past B tensor C at once or braid past each component coherently.
+# ***************************************************************************
+;
+include "lib/finite_braided_symmetric.mlpl"  # reuse braiding paths and visual
+start_tensor = {left: 2, right: {left: 3, right: 5}}  # A tensor (B tensor C)
+direct_path = u:hexagon_direct_braiding_path(start_tensor)  # whole-block braid
+component_path = u:hexagon_component_braiding_path(start_tensor)  # component braids
+distinct_path = 1 - equal(component_path.first, direct_path.endpoint)  # different route
+hexagon_agrees = equal(component_path.endpoint, direct_path.endpoint)  # CT094
+changed_endpoint = 1 - equal(component_path.endpoint, {left: {left: 3, right: 6}, right: 2})  # COUNTEREXAMPLE
+naturality = u:braiding_naturality_square_commutes({left: 8, right: 3}, {left: 8, right: 3})  # finite square
+symmetry = u:symmetry_law_holds({left: 2, right: 3})  # CT095-CT096 double braid
+disp(direct_path)
+disp(component_path)
+disp([distinct_path, hexagon_agrees, changed_endpoint, naturality, symmetry])
+# ***************************************************************************
+# * THE VISUAL
+# * Green crosses a block; blue crosses components; all arrows are directed.
+# ***************************************************************************
+def u:finite_braided_symmetric_web_visual() { "Render two hexagon routes, double-swap symmetry, and a changed endpoint."; u:finite_braided_symmetric_visual() }  # narrated shared visual entry point
+finite_braided_symmetric_visual = u:finite_braided_symmetric_web_visual()  # bind visual constant
+finite_braided_symmetric_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * The routes have different intermediates but both reach (B tensor C) tensor A.
+# * Swapping (2,3) twice restores it; changing C breaks the hexagon endpoint.
+# * THE POINT -- braided coherence controls crossings; symmetry makes them undo.
+# ***************************************************************************

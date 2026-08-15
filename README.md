@@ -517,6 +517,16 @@ not an inverse. Sources:
 [CLI lesson](demos/44-monoidal-strictness/parentheses.mlpl),
 [web lesson](demos/web/finite_monoidal_strictness.mlpl).
 
+### 45. Braiding a block agrees with crossing its components
+
+![Direct and componentwise routes through a braiding hexagon above a double-swap symmetry check](assets/previews/45-braided-symmetric.svg)
+
+What to notice: green moves `A` past `B⊗C` in one crossing; blue crosses `A`
+past `B` and `C` separately through different intermediate nestings. Both
+reach `(B⊗C)⊗A`. Below, swapping `(2,3)` twice restores it. Sources:
+[CLI lesson](demos/45-braided-symmetric/hexagon.mlpl),
+[web lesson](demos/web/finite_braided_symmetric.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

@@ -1804,3 +1804,14 @@ Thus the finite fixture is monoidal through coherent isomorphisms but is not
 strict under its chosen representation. No sw-MLPL capability is missing.
 Next is CT092-CT096 with two independently constructed hexagon paths and an
 involutive symmetry check; no blocker is known.
+
+## CT092-CT096 finite braided and symmetric structure, 2026-08-15
+
+The direct hexagon route swaps `A` with the composite `B tensor C`; the longer
+route reassociates and swaps past `B` and `C` separately. Their intermediate
+records differ and their endpoints agree. A finite naturality square verifies
+that mapping the payloads commutes with swapping. Applying the swap twice is
+identity, which upgrades this displayed braided fixture to symmetric. Changing
+`C` gives the failed endpoint. No new capability is required. Next is internal
+monoid/comonoid structure, with algebra classification still owned by the
+sibling repository.

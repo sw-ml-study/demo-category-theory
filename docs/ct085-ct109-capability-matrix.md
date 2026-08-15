@@ -13,11 +13,11 @@ explicit fixtures; none infers generic monoidal structure or coherence.
 | CT089 | left unitor | remove explicit unit from `{unit,value}` | implemented in the triangle route |
 | CT090 | right unitor | remove explicit unit from `{value,unit}` | implemented with CT086-CT089 in Lesson 43 |
 | CT091 | strict monoidal category | literal nested equality versus reassociation isomorphism | implemented as a non-strict boundary in Lesson 44 |
-| CT092 | braided monoidal category | swap table plus hexagon route checks | runnable for a bounded fixture |
-| CT093 | braiding | swap `{left,right}` values | runnable now |
-| CT094 | hexagon identities | two explicit three-value permutation routes | runnable after route constructors are implemented |
-| CT095 | symmetric monoidal category | braiding followed twice equals identity | runnable for the pair fixture |
-| CT096 | symmetry | involutive swap witness | runnable now |
+| CT092 | braided monoidal category | swap table plus hexagon route checks | implemented for a bounded fixture in Lesson 45 |
+| CT093 | braiding | swap `{left,right}` values | implemented in Lesson 45 |
+| CT094 | hexagon identities | two explicit three-value permutation routes | implemented with distinct intermediates in Lesson 45 |
+| CT095 | symmetric monoidal category | braiding followed twice equals identity | implemented for the pair fixture |
+| CT096 | symmetry | involutive swap witness | implemented in Lesson 45 |
 | CT097 | monoid object | finite multiplication/unit tables checked inside the chosen tensor category | runnable, but algebra-law ownership remains with sibling repo |
 | CT098 | comonoid object | diagonal/counit tables and coassociativity routes | runnable for finite sets |
 | CT099 | group object | monoid-object maps plus inverse diagram | constrained to categorical packaging; do not duplicate group classification |

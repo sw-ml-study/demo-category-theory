@@ -1,0 +1,22 @@
+# Lesson 45 -- finite braided and symmetric coherence.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_braided_symmetric.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 45 -- BRAID ONCE OR ONE NEIGHBOR AT A TIME", intro: "Move A past B tensor C directly or through component swaps, then test symmetry."})
+start_tensor = {left: 2, right: {left: 3, right: 5}}
+direct_path = u:hexagon_direct_braiding_path(start_tensor)
+component_path = u:hexagon_component_braiding_path(start_tensor)
+distinct_path = 1 - equal(component_path.first, direct_path.endpoint)
+hexagon_agrees = equal(component_path.endpoint, direct_path.endpoint)
+changed_endpoint = 1 - equal(component_path.endpoint, {left: {left: 3, right: 6}, right: 2})
+naturality = u:braiding_naturality_square_commutes({left: 8, right: 3}, {left: 8, right: 3})
+symmetry = u:symmetry_law_holds({left: 2, right: 3})
+disp(direct_path)
+disp(component_path)
+disp([distinct_path, hexagon_agrees, changed_endpoint, naturality, symmetry])
+wrote = write_text("out/45-braided-symmetric.svg", u:finite_braided_symmetric_visual())
+u:epilog_open()
+u:explain("out/45-braided-symmetric.svg", "Green braids A past the composite B tensor C. Blue braids past B and C separately through other nestings. The lower arrows swap a pair twice.")
+u:takeaway("The hexagon makes whole-block and componentwise braiding coherent; symmetry adds that the reverse braid undoes the first.")
+if distinct_path * hexagon_agrees * changed_endpoint * naturality * symmetry * is_ok(wrote) { ok("finite braided symmetric coherence verified") } else { err("braided coherence failed") }

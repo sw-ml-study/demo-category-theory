@@ -556,3 +556,11 @@ executes associator and inverse associator and checks both identity composites.
 A reverse map that swaps the final payloads fails. This fixture is coherently
 monoidal but not strict. Next: CT092-CT096 braiding, hexagons, and symmetry; no
 blocker is known.
+
+### CT092-CT096 braided and symmetric structure (2026-08-15)
+
+Lesson 45 braids `A` past `B⊗C` directly and by separate component crossings.
+The component route retains different intermediate permutations but reaches
+the same endpoint. One finite naturality square commutes, and swapping twice
+restores the pair. A changed `C` breaks the endpoint. Next: CT097-CT098 monoid
+and comonoid objects; no runtime blocker is known.

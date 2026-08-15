@@ -26,3 +26,4 @@ finite-dependent-constructions-tests	tests/test_finite_dependent_constructions.m
 finite-polynomial-containers-tests	tests/test_finite_polynomial_containers.mlpl	42	CT083-CT084-polynomial-container	0	0	none	records,shape,take,equal	runnable
 finite-monoidal-foundation-tests	tests/test_finite_monoidal_foundation.mlpl	43	CT085-CT090-monoidal-coherence	0	0	none	records,equal	runnable
 finite-monoidal-strictness-tests	tests/test_finite_monoidal_strictness.mlpl	44	CT091-strictness-boundary	0	0	none	records,equal	runnable
+finite-braided-symmetric-tests	tests/test_finite_braided_symmetric.mlpl	45	CT092-CT096-braiding-hexagon-symmetry	0	0	none	records,equal	runnable
