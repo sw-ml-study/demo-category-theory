@@ -1,0 +1,8 @@
+number = 13
+slug = "dagger-structure"
+status = "pending"
+description = "Implement CT119-CT120 as Lesson 53 using a finite typed process path and the ..."
+role = "legacy"
+context_files = []
+created_at = "2026-08-15T16:03:30"
+commits = []
