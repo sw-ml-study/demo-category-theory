@@ -1,0 +1,8 @@
+number = 1
+slug = "capability-matrix-probes"
+status = "pending"
+description = "Map CT085-CT109 to finite executable representations. Probe tensor objects an..."
+role = "legacy"
+context_files = []
+created_at = "2026-08-14T17:40:26"
+commits = []
