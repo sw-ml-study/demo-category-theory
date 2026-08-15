@@ -1,0 +1,8 @@
+number = 11
+slug = "cups-caps-snake-connectivity"
+status = "pending"
+description = "Implement CT113-CT115 as Lesson 51 using semantic port-graph connectivity ove..."
+role = "legacy"
+context_files = []
+created_at = "2026-08-15T14:34:42"
+commits = []
