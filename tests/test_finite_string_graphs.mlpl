@@ -1,0 +1,17 @@
+# Tests for CT110-CT112 semantic string graphs, bounded movement, and interchange.
+include "lib/finite_string_graphs.mlpl";
+@test {name: "typed semantic edges survive a changed embedding", tags: ["CT110", "CT111", "semantic-graph"]}
+def u:test_typed_semantic_graph_embedding() { "Accept matching port types and invariant edges while rejecting type and connectivity changes.";
+  u:assert_eq(u:typed_port_connection_holds(["B"], ["B"]), 1, "typed connection")?;
+  u:assert_eq(u:typed_port_connection_holds(["B"], ["C"]), 0, "type mismatch")?;
+  u:assert_eq(u:embedding_move_preserves_semantic_graph({source: 0, target: 1, port_type: "B"}, {source: 0, target: 1, port_type: "B"}, [[55, 105], [390, 105]], [[625, 75], [960, 175]]), 1, "same graph moved")?;
+  u:assert_eq(u:embedding_move_preserves_semantic_graph({source: 0, target: 1, port_type: "B"}, {source: 0, target: 2, port_type: "B"}, [[55, 105], [390, 105]], [[625, 75], [960, 175]]), 0, "changed connectivity")?;
+  ok({test: "semantic-embedding", cases: 4})
+}
+@test {name: "interchange equates independent construction orders", tags: ["CT112", "interchange"]}
+def u:test_finite_interchange_routes() { "Accept distinct grouping records with equal endpoints and reject a changed endpoint.";
+  u:assert_eq(u:interchange_routes_agree({order: "sequential-then-tensor", stages: [2, 2]}, {order: "tensor-then-sequential", stages: [2, 2]}, [4, 8], [4, 8]), 1, "interchange endpoint")?;
+  u:assert_eq(u:interchange_routes_agree({order: "sequential-then-tensor", stages: [2, 2]}, {order: "tensor-then-sequential", stages: [2, 2]}, [4, 8], [4, 9]), 0, "broken interchange")?;
+  ok({test: "finite-interchange", cases: 2})
+}
+u:run_registered_tests()

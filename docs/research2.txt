@@ -809,3 +809,7 @@ diagram leaf must store and check typed semantic connectivity independently of
 SVG coordinates. A changed embedding with unchanged edges may illustrate a
 bounded isotopy; a rewrite needs independently constructed semantic endpoints;
 and general topology claims remain explicit coverage or capability boundaries.
+Implementation note (2026-08-15, string-diagram Step 002): Lesson 50 checks
+type, edge identity, coordinate change, grouping distinction, and endpoint
+equality as separate facts. Future diagram leaves must preserve this separation
+and provide failures that alter semantic data rather than merely SVG styling.

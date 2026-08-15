@@ -1,0 +1,33 @@
+# Web Lesson 50 -- semantic string graphs and interchange.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- monoidal tensor, composition, typed arrows, diagrams.
+# * CATEGORICAL SETTING -- one finite directed graph with explicit typed ports.
+# * LAW -- movement preserves semantic edges; interchange preserves endpoints.
+# * BOUNDARY -- changed coordinates witness only this bounded planar movement.
+# * WHAT THIS SHOWS
+# * Separate what the graph means from where its SVG boxes happen to sit.
+# ***************************************************************************
+;
+include "lib/finite_string_graphs.mlpl"  # reuse semantic graph checks
+typed_connection = u:typed_port_connection_holds(["B"], ["B"])  # CT110
+type_mismatch = 1 - u:typed_port_connection_holds(["B"], ["C"])  # COUNTEREXAMPLE
+bounded_movement = u:embedding_move_preserves_semantic_graph({source: 0, target: 1, port_type: "B"}, {source: 0, target: 1, port_type: "B"}, [[55, 105], [390, 105]], [[625, 75], [960, 175]])  # CT111
+changed_connectivity = 1 - u:embedding_move_preserves_semantic_graph({source: 0, target: 1, port_type: "B"}, {source: 0, target: 2, port_type: "B"}, [[55, 105], [390, 105]], [[625, 75], [960, 175]])  # COUNTEREXAMPLE
+interchange = u:interchange_routes_agree({order: "sequential-then-tensor", stages: [2, 2]}, {order: "tensor-then-sequential", stages: [2, 2]}, [4, 8], [4, 8])  # CT112
+broken_interchange = 1 - u:interchange_routes_agree({order: "sequential-then-tensor", stages: [2, 2]}, {order: "tensor-then-sequential", stages: [2, 2]}, [4, 8], [4, 9])  # COUNTEREXAMPLE
+disp([typed_connection, type_mismatch, bounded_movement, changed_connectivity, interchange, broken_interchange])
+# ***************************************************************************
+# * THE VISUAL
+# * Labeled port circles and arrowheads expose connectivity and direction.
+# ***************************************************************************
+def u:finite_string_graphs_web_visual() { "Render the shared semantic string-graph and interchange visual."; u:finite_string_graphs_visual() }  # narrated visual entry point
+finite_string_graphs_visual = u:finite_string_graphs_web_visual()  # bind visual constant
+finite_string_graphs_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Top: different coordinates, identical typed edge. Bottom: distinct grouping.
+# * A type mismatch, changed edge, and changed endpoint each fail separately.
+# * THE POINT -- checked connectivity is semantic; SVG placement is narration.
+# ***************************************************************************

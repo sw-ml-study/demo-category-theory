@@ -614,3 +614,13 @@ for fixed witnesses. It lacks a general graph-rewrite matcher or planar-isotopy
 decision procedure, so unrestricted topology and spider claims remain bounded.
 Next: CT110-CT112 semantic string graphs, planar movement with invariant edges,
 and interchange; no runtime blocker is known for the fixed fixture.
+
+### CT110-CT112 semantic string graphs and interchange (2026-08-15)
+
+Lesson 50 makes the semantic graph executable: output type `B` must match input
+type `B`, and the edge record `0 → 1 : B` remains identical while two SVG
+embeddings use different coordinates. A mismatched type and changed target edge
+fail separately. Interchange compares distinct sequential-then-tensor and
+tensor-then-sequential grouping records whose endpoint outputs agree; changing
+one output breaks the law. Next: CT113-CT115 cup, cap, and snake connectivity;
+the dual fixture exists, so no runtime blocker is known.

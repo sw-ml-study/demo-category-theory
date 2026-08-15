@@ -568,6 +568,16 @@ claim. Sources:
 [CLI lesson](demos/49-dual-compact-boundary/snake_routes.mlpl),
 [web lesson](demos/web/finite_dual_compact_boundary.mlpl).
 
+### 50. Check semantic wires before moving the drawing
+
+![Two embeddings with one typed semantic edge and two constructions of interchange](assets/previews/50-semantic-string-graphs.svg)
+
+What to notice: the upper boxes move and the wire bends, but both drawings
+retain semantic edge `0 → 1 : B`. Below, sequential-then-tensor and
+tensor-then-sequential use different grouping records and reach `[4,8]`.
+Sources: [CLI lesson](demos/50-semantic-string-graphs/typed_interchange.mlpl),
+[web lesson](demos/web/finite_string_graphs.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

@@ -8,9 +8,9 @@ of coordinates is never used as evidence for diagram equality.
 
 | ID | concept | finite representation | survey result |
 |---|---|---|---|
-| CT110 | string diagram | typed boxes, ports, and directed edge table | runnable as a finite semantic graph plus a separately rendered embedding |
-| CT111 | planar isotopy | unchanged connectivity with changed coordinate metadata | bounded semantic witness runnable; general topological isotopy constrained |
-| CT112 | interchange law | independently assembled sequential-tensor endpoint tables | runnable for a fixed four-box fixture |
+| CT110 | string diagram | typed boxes, ports, and directed edge table | implemented as a finite semantic graph in Lesson 50 |
+| CT111 | planar isotopy | unchanged connectivity with changed coordinate metadata | implemented as one bounded movement witness; general isotopy constrained |
+| CT112 | interchange law | independently assembled sequential-tensor endpoint tables | implemented for a fixed four-box fixture in Lesson 50 |
 | CT113 | cups | directed unit-to-dual-pair connection | runnable from the Lesson 49 coevaluation fixture |
 | CT114 | caps | directed dual-pair-to-unit connection | runnable from the Lesson 49 evaluation fixture |
 | CT115 | snake identities | two typed cup-cap composite routes | runnable; Lesson 49 already supplies algebraic prerequisites |

@@ -9,9 +9,8 @@ animation only; semantic edge tables supply the evidence.
 
 1. **Capability matrix and probes** — map all 20 IDs; separate semantic graph
    connectivity from embedding coordinates; measure rewrites and coverage.
-2. **Semantic string graphs and interchange** — implement CT110-CT112 with
-   typed ports, sequential/tensor composition, changed embeddings, and an
-   independently assembled interchange equality.
+2. **Semantic string graphs and interchange** — completed in Lesson 50 with
+   typed ports, changed embeddings over invariant edges, and interchange.
 3. **Cups, caps, and snake connectivity** — implement CT113-CT115 as graph
    connectivity over the existing dual fixture without duplicating Lesson 49.
 4. **Trace and feedback** — implement CT116-CT118 for one deterministic finite

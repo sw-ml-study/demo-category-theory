@@ -1,0 +1,18 @@
+# Lesson 50 -- semantic string graphs and interchange.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_string_graphs.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 50 -- CHECK THE GRAPH, THEN MOVE THE DRAWING", intro: "Connect typed ports semantically, move the boxes without changing edges, and compare two construction orders for interchange."})
+typed_connection = u:typed_port_connection_holds(["B"], ["B"])
+type_mismatch = 1 - u:typed_port_connection_holds(["B"], ["C"])
+bounded_movement = u:embedding_move_preserves_semantic_graph({source: 0, target: 1, port_type: "B"}, {source: 0, target: 1, port_type: "B"}, [[55, 105], [390, 105]], [[625, 75], [960, 175]])
+changed_connectivity = 1 - u:embedding_move_preserves_semantic_graph({source: 0, target: 1, port_type: "B"}, {source: 0, target: 2, port_type: "B"}, [[55, 105], [390, 105]], [[625, 75], [960, 175]])
+interchange = u:interchange_routes_agree({order: "sequential-then-tensor", stages: [2, 2]}, {order: "tensor-then-sequential", stages: [2, 2]}, [4, 8], [4, 8])
+broken_interchange = 1 - u:interchange_routes_agree({order: "sequential-then-tensor", stages: [2, 2]}, {order: "tensor-then-sequential", stages: [2, 2]}, [4, 8], [4, 9])
+disp([typed_connection, type_mismatch, bounded_movement, changed_connectivity, interchange, broken_interchange])
+wrote = write_text("out/50-semantic-string-graphs.svg", u:finite_string_graphs_visual())
+u:epilog_open()
+u:explain("out/50-semantic-string-graphs.svg", "The top drawings move f and g but retain semantic edge 0-to-1 with type B. Below, the green and blue constructions group four boxes differently and reach outputs [4,8].")
+u:takeaway("A string diagram denotes typed connectivity and composition. Coordinates narrate one bounded movement; semantic edges and route endpoints carry the evidence.")
+if typed_connection * type_mismatch * bounded_movement * changed_connectivity * interchange * broken_interchange * is_ok(wrote) { ok("semantic string graphs and interchange verified") } else { err("semantic string graph failed") }

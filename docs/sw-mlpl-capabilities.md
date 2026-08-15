@@ -373,6 +373,12 @@ parallel arrays and hand-enumerated matches. That gap affects workflow DAGs,
 dataflow optimization, circuit rewriting, compiler IRs, and model graphs as
 well as Category Theory. The curriculum does not block on it; it constrains
 general isotopy and spider claims and uses explicit finite graphs first.
+Lesson 50 confirms that one typed edge and a four-box interchange remain clear
+with ordinary arrays and records. Mixed numeric/string edge arrays are rejected,
+so named edge records improve both validity and readability. The lesson also
+demonstrates the manual-rewrite cost:
+both grouping records and both endpoints must be enumerated. This strengthens
+the existing typed-port-graph request but introduces no new capability request.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

@@ -1893,3 +1893,19 @@ and dagger-compact coverage must remain constrained unless broader support or
 complete finite families are supplied. CT129 additionally needs physical or
 linear semantics; process-shaped graphs alone do not establish quantum theory.
 Next is CT110-CT112; no blocker exists for one fixed semantic graph fixture.
+
+## CT110-CT112 semantic string graphs and interchange, 2026-08-15
+
+Lesson 50 implements the probe's two-layer discipline. A named record stores
+the edge `0 → 1` and its port type `B`; two coordinate arrays place the same
+boxes on a straight line and a curve. Equality of edges plus inequality of
+coordinates is the bounded movement witness. Type `B → C` and target edge
+`0 → 2` provide independent failures, so appearance cannot rescue invalid
+semantics.
+
+The interchange fixture constructs `(g after f) tensor (k after h)` and
+`(g tensor k) after (f tensor h)` with distinct grouping records and compares
+their `[4,8]` endpoint table. A changed `[4,9]` endpoint fails. This demonstrates
+one finite interchange law, not arbitrary planar isotopy. No new sw-MLPL
+capability was required. Next is CT113-CT115, reusing dual data while adding
+semantic cup/cap connectivity rather than repeating the algebraic lesson.
