@@ -1,0 +1,1 @@
+CT065-CT084 completed with bounded executable evidence or explicit structural constraints; CT085-CT109 is queued in docs/next-saga-plan.md.
