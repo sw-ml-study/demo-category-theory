@@ -21,9 +21,9 @@ finite and explicitly enumerated unless a later lesson establishes more.
 | CT077 | partial map | domain subobject plus total table on that domain | implemented as a checked runtime encoding; no static partial-function type |
 | CT078 | slice category | nested records for objects over a fixed base plus triangle equality | implemented with identity/composite checks in Lesson 40 |
 | CT079 | coslice category | nested records for objects under a fixed base plus triangle equality | implemented with opposite triangle orientation in Lesson 40 |
-| CT080 | locally cartesian closed category | exponentials in every slice | constrained pending multiple-slice evidence |
-| CT081 | dependent product | enumerated choices selecting one value from every finite fiber | runnable for bounded fibers |
-| CT082 | dependent sum | concatenate tagged or position-known finite fibers | runnable for bounded fibers |
+| CT080 | locally cartesian closed category | exponentials in every slice | constrained: Lesson 41 displays incomplete coverage `[1,0]` |
+| CT081 | dependent product | enumerated choices selecting one value from every finite fiber | runnable for bounded fibers in Lesson 41 |
+| CT082 | dependent sum | concatenate tagged or position-known finite fibers | runnable for bounded fibers in Lesson 41 |
 | CT083 | polynomial functor | finite shape codes and positions-per-shape arrays | candidate bounded container |
 | CT084 | container interpretation | shape choice paired with payloads at its finite positions | candidate bounded container |
 

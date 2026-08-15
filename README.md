@@ -472,6 +472,18 @@ changed base route fails. Sources:
 [CLI lesson](demos/40-slices-coslices/commuting_triangles.mlpl),
 [web lesson](demos/web/finite_slices_coslices.mlpl).
 
+### 41. Dependent sums gather; dependent products choose
+
+![Uneven finite fibers collected into a tagged dependent sum and combined into dependent-product choice rows](assets/previews/41-dependent-constructions.svg)
+
+What to notice: the family is stored as flat values plus offsets and sizes.
+Its dependent sum contains every value tagged by its source fiber; its
+dependent product contains every row choosing one value from each fiber. The
+dashed coverage line shows why one successful family does not establish
+exponentials in every slice, so local cartesian closure remains constrained.
+Sources: [CLI lesson](demos/41-dependent-constructions/fiber_tables.mlpl),
+[web lesson](demos/web/finite_dependent_constructions.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

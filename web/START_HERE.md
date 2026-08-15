@@ -42,6 +42,9 @@ Then `finite_subobjects.mlpl` inventories subsets, classifies one through truth,
 and uses it as the explicit domain of a partial map.
 Continue with `finite_slices_coslices.mlpl`, reading arrowheads carefully to
 distinguish objects over a base from objects under it.
+Then load `finite_dependent_constructions.mlpl`: first read the flat family,
+then compare Sigma's tagged total space with Pi's one-choice-per-fiber rows,
+and finally inspect the missing-slice witness against local cartesian closure.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

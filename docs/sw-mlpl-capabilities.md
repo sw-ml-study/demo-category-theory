@@ -297,6 +297,16 @@ The strongest candidates are deliberately broader than category theory:
 
 If a proposal cannot demonstrate such a payoff, the demo should work around it
 locally or leave the concept explanatory rather than reshape the language.
+
+## CT080-CT082 dependent-family surface
+
+Lesson 41 confirms that flat values with offset and size vectors support
+bounded dependent sums and explicitly enumerated dependent products. This is
+usable for grouped observations and variable-size batches, but access remains
+manual and the visual must explain the encoding. Native ragged/tagged
+collections would improve ergonomics; they are not required for the bounded
+fixture. Local cartesian closure is a mathematical every-slice obligation, not
+a language capability inferred from one executable family.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

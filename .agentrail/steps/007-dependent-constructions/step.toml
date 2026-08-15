@@ -1,6 +1,6 @@
 number = 7
 slug = "dependent-constructions"
-status = "pending"
+status = "in-progress"
 description = "Attempt CT080-CT082 locally cartesian closed categories, dependent products, ..."
 role = "production"
 context_files = []

@@ -1,0 +1,39 @@
+# Web Lesson 41 -- finite dependent constructions.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- products, coproducts, exponentials, and slice categories.
+# * CATEGORICAL SETTING -- one finite set-indexed family with explicit fibers.
+# * LAW / UNIVERSAL PROPERTY -- sum keeps every tagged value; product chooses
+# * exactly one value from every fiber.
+# * BOUNDARY -- one family and partial slice coverage, not general local closure.
+# * WHAT THIS SHOWS
+# * Sigma gathers all fibers; Pi forms every simultaneous fiberwise choice.
+# ***************************************************************************
+;
+include "lib/finite_dependent_constructions.mlpl"  # reuse bounded predicates and visual
+family = u:make_flat_finite_family([0, 1], [10, 11, 20], [0, 2], [2, 1])  # uneven flat fibers
+dependent_sum = u:dependent_sum_table(family, [0, 0, 1])  # CT082 tagged total space
+dependent_product = u:dependent_product_choices([[10, 20], [11, 20]])  # CT081 sections
+sum_complete = u:finite_dependent_sum_is_complete(dependent_sum, [0, 0, 1], [10, 11, 20])  # every tagged value retained
+product_complete = u:finite_dependent_product_is_complete(dependent_product, [[10, 20], [11, 20]])  # every section retained
+wrong_provenance = 1 - u:finite_dependent_sum_is_complete(dependent_sum, [0, 1, 1], [10, 11, 20])  # COUNTEREXAMPLE
+missing_choice = 1 - u:finite_dependent_product_is_complete([[10, 20]], dependent_product)  # COUNTEREXAMPLE
+missing_slice = 1 - u:local_cartesian_closure_coverage_holds([1, 0])  # CT080 boundary
+disp(family)
+disp(dependent_sum)
+disp(dependent_product)
+disp([sum_complete, product_complete, wrong_provenance, missing_choice, missing_slice])
+# ***************************************************************************
+# * THE VISUAL
+# * Green collection arrows retain tags; blue choice arrows form sections.
+# ***************************************************************************
+def u:finite_dependent_constructions_web_visual() { "Render fiberwise sums, products, and the missing local-closure quantifier."; u:finite_dependent_constructions_visual() }  # narrated shared visual entry point
+finite_dependent_constructions_visual = u:finite_dependent_constructions_web_visual()  # bind visual constant
+finite_dependent_constructions_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Sigma contains three tagged values; Pi contains two two-entry choice rows.
+# * The red dashed coverage line says a second slice still lacks evidence.
+# * THE POINT -- dependent tables run finitely; local closure means every slice.
+# ***************************************************************************

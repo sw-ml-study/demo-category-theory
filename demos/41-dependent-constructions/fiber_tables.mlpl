@@ -1,0 +1,23 @@
+# Lesson 41 -- finite dependent sums, products, and the local-closure boundary.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_dependent_constructions.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 41 -- SUM ALL FIBERS OR CHOOSE FROM EACH", intro: "Store an uneven-capable finite family flat, then compare its dependent sum and dependent product."})
+family = u:make_flat_finite_family([0, 1], [10, 11, 20], [0, 2], [2, 1])
+dependent_sum = u:dependent_sum_table(family, [0, 0, 1])
+dependent_product = u:dependent_product_choices([[10, 20], [11, 20]])
+sum_complete = u:finite_dependent_sum_is_complete(dependent_sum, [0, 0, 1], [10, 11, 20])
+product_complete = u:finite_dependent_product_is_complete(dependent_product, [[10, 20], [11, 20]])
+wrong_provenance = 1 - u:finite_dependent_sum_is_complete(dependent_sum, [0, 1, 1], [10, 11, 20])
+missing_choice = 1 - u:finite_dependent_product_is_complete([[10, 20]], dependent_product)
+missing_slice = 1 - u:local_cartesian_closure_coverage_holds([1, 0])
+disp(family)
+disp(dependent_sum)
+disp(dependent_product)
+disp([sum_complete, product_complete, wrong_provenance, missing_choice, missing_slice])
+wrote = write_text("out/41-dependent-constructions.svg", u:finite_dependent_constructions_visual())
+u:epilog_open()
+u:explain("out/41-dependent-constructions.svg", "The dependent sum keeps every value and tags its source fiber. The dependent product lists every row that chooses one value from each fiber.")
+u:takeaway("Finite fiber tables execute both constructions, but one checked slice cannot prove that every slice has exponentials.")
+if sum_complete * product_complete * wrong_provenance * missing_choice * missing_slice * is_ok(wrote) { ok("finite dependent constructions verified") } else { err("dependent construction invariant failed") }

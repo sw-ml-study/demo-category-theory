@@ -1,6 +1,6 @@
 # Implementation plan: category theory you can watch execute
 
-Status: **thirty-two capability-gated lessons implemented; the 245-concept
+Status: **forty-one capability-gated lessons implemented; the 245-concept
 program remains active**.
 
 The broader program continues through the 245 tracked concepts in
@@ -504,3 +504,14 @@ morphisms only when finite route tables make the triangle commute. Identity and
 one composite check establish the bounded category laws. Next: CT080-CT082
 dependent sums/products and the locally-cartesian-closed boundary. Ragged
 fibers require the already measured flat-values/offsets encoding.
+
+### CT080-CT082 finite dependent constructions (2026-08-14)
+
+Lesson 41 stores a finite family using flat values, offsets, and sizes. Its
+dependent sum retains a base-position tag for every value; its dependent
+product enumerates every row choosing one value from each displayed fiber.
+Wrong tags and missing choices are concrete failures. The locally cartesian
+closed claim remains constrained because coverage `[1,0]` deliberately shows
+an unchecked slice. Next: CT083-CT084 polynomial functors and containers. The
+same flat representation is available; no blocker is known for one finite
+shape fixture.

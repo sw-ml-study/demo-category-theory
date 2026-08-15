@@ -1722,3 +1722,20 @@ flat encoded fibers.
 The CLI probe also confirmed that a display array cannot mix a length-four row
 with scalar law flags; lessons must display differently shaped values
 separately because array literals remain rectangular.
+
+## CT080-CT082 finite dependent constructions, 2026-08-14
+
+The measured flat representation is sufficient for a bounded family: base
+values identify fibers, offsets and sizes delimit them, and one values array
+stores their contents. A dependent sum pairs each stored value with its base
+position. A dependent product is the complete finite table of rows selecting
+one value from each fiber. Incorrect provenance and an incomplete choice table
+give distinct counterexamples.
+
+This executes CT081-CT082 for one family without pretending that rectangular
+arrays natively model ragged fibers. CT080 remains a visible boundary:
+exponentials must exist in every slice, while coverage `[1,0]` includes one
+missing certificate. No new upstream feature is required for the bounded
+lesson. First-class ragged/tagged collections would improve ordinary grouped
+data as well as these families, but remain an ergonomic capability direction,
+not a blocker. Next is CT083-CT084 polynomial/container integration.

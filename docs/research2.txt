@@ -755,3 +755,9 @@ arrowheads rather than labels alone to teach the over/under distinction. It
 then earns the word category by checking identity and composition triangles,
 not merely constructing two records. Future structured-category leaves should
 include those closure checks.
+Implementation note (2026-08-14, exponentials Step 007): Lesson 41 introduces
+the family representation before naming Sigma and Pi, then distinguishes
+collection of every tagged value from enumeration of simultaneous choices.
+Its dashed coverage witness keeps local cartesian closure visibly separate
+from one successful family. Future dependent lessons must expose storage
+encodings and the quantified structural boundary in both code and diagram.

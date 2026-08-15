@@ -95,3 +95,21 @@ record returns remain records. Exact API remains an upstream design decision.
   value that applies `f` and then `g`.
 - General value: readable preprocessing, model, validation, and data-pipeline
   assembly; this is not Category-Theory-specific syntax.
+
+# Ragged or tagged collections
+
+- Evidence: the CT065-CT084 capability probe rejects nested fiber rows of
+  different lengths; Lesson 41 therefore stores values, offsets, and sizes in
+  parallel arrays.
+- Current workaround: explicit flat storage plus base-position tags for the
+  dependent sum and a hand-enumerated rectangular choice table for the
+  dependent product.
+- Requested capability direction: a first-class ragged or tagged collection
+  with safe fiber selection and preservation of group provenance. Exact syntax
+  remains an upstream design decision.
+- General value: variable-length batches, grouped observations, token
+  sequences, sparse rows, and segmented array processing—not only dependent
+  families in Category Theory.
+- Acceptance case: construct fibers `[10,11]` and `[20]`, select each fiber,
+  flatten them while retaining tags, and distinguish malformed offsets without
+  maintaining parallel arrays manually.

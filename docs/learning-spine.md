@@ -25,6 +25,10 @@ composition -> context map -> Kleisli composition
             -> optics
 
 products + functors -> diagonal/product adjunction
+
+products + coproducts + exponentials -> slices
+                                   -> dependent sums / products
+                                   -> local-cartesian-closure boundary
 ```
 
 ## Guided paths

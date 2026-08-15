@@ -91,3 +91,5 @@ finite-subobjects	demos/39-finite-subobjects/classify_domain.mlpl	39-finite-subo
 finite-subobjects-web	demos/web/finite_subobjects.mlpl	web	CT074-CT077-subobject-classification	0	0	svg	arrays,reduce_add,shape	runnable
 finite-slices-coslices	demos/40-slices-coslices/commuting_triangles.mlpl	40-slices-coslices	CT078-CT079-slice-coslice	0	0	ascii,svg	records,equal,reduce_mul	runnable
 finite-slices-coslices-web	demos/web/finite_slices_coslices.mlpl	web	CT078-CT079-slice-coslice	0	0	svg	records,equal,reduce_mul	runnable
+finite-dependent-constructions	demos/41-dependent-constructions/fiber_tables.mlpl	41-dependent-constructions	CT080-CT082-dependent-sum-product-local-closure	0	0	ascii,svg	records,equal,reduce_mul	runnable
+finite-dependent-constructions-web	demos/web/finite_dependent_constructions.mlpl	web	CT080-CT082-dependent-sum-product-local-closure	0	0	svg	records,equal,reduce_mul	runnable
