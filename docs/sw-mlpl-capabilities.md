@@ -359,6 +359,20 @@ are enough for one dual object and a compact-coverage boundary. The next saga
 must probe a different capability: executable graph connectivity or topology
 for string diagrams. SVG rendering exists, but visual curve placement alone
 cannot validate planar isotopy, interchange, trace, or spider rewrites.
+
+## CT110-CT129 semantic graph surface
+
+The capability probe confirms fixed typed ports, directed edge arrays,
+embedding metadata, rewrite endpoints, feedback routes, and dagger paths are
+all representable now. This is sufficient for law-sized executable lessons.
+
+What is absent is a generic typed port-graph and rewrite facility: validation
+of arbitrary port incidence, reusable subgraph matching, boundary-preserving
+replacement, and topology-aware normalization would otherwise require repeated
+parallel arrays and hand-enumerated matches. That gap affects workflow DAGs,
+dataflow optimization, circuit rewriting, compiler IRs, and model graphs as
+well as Category Theory. The curriculum does not block on it; it constrains
+general isotopy and spider claims and uses explicit finite graphs first.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

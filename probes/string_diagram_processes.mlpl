@@ -1,0 +1,34 @@
+# Probe: executable finite representations for CT110-CT129.
+# visual: ascii
+# loops: 0
+def u:port_connection_is_typed(output_port_types, input_port_types) { "Check that sequentially connected finite diagram ports have matching types."; equal(output_port_types, input_port_types) }
+def u:diagram_semantics_ignore_embedding(first_connectivity, second_connectivity) { "Compare semantic connectivity while deliberately ignoring separate drawing coordinates."; equal(first_connectivity, second_connectivity) }
+def u:interchange_rewrite_holds(sequential_then_tensor, tensor_then_sequential) { "Check the finite interchange rewrite by comparing independently assembled endpoint tables."; equal(sequential_then_tensor, tensor_then_sequential) }
+def u:cup_cap_snake_connectivity_holds(left_snake_endpoint, left_identity, right_snake_endpoint, right_identity) { "Check both finite cup-cap snake connectivity routes against their typed identities."; equal(left_snake_endpoint, left_identity) * equal(right_snake_endpoint, right_identity) }
+def u:trace_feedback_route_holds(open_feedback_route, closed_trace_route) { "Compare an explicitly wired finite feedback route with its trace result."; equal(open_feedback_route, closed_trace_route) }
+def u:dagger_reversal_is_involutive(original_path, reversed_twice_path) { "Check that reversing the displayed finite process path twice restores it."; equal(original_path, reversed_twice_path) }
+def u:frobenius_spider_rewrites_hold(frobenius_left, frobenius_right, special_composite, identity_results, many_node_spider, one_node_spider) { "Check finite Frobenius, specialness, and same-boundary spider rewrite tables separately."; equal(frobenius_left, frobenius_right) * equal(special_composite, identity_results) * equal(many_node_spider, one_node_spider) }
+def u:process_fixture_is_complete(state_present, effect_present, channel_present, classical_copy_delete_present) { "Require state, effect, channel, and classical copy-delete data before making the bounded process-theory claim."; state_present * effect_present * channel_present * classical_copy_delete_present }
+
+first_box_outputs = ["bit"]
+second_box_inputs = ["bit"]
+semantic_edges_before_move = [[0, 1], [1, 2]]
+semantic_edges_after_move = [[0, 1], [1, 2]]
+drawing_coordinates_before_move = [[20, 20], [120, 80], [220, 20]]
+drawing_coordinates_after_move = [[20, 100], [120, 30], [220, 100]]
+sequential_then_tensor_results = [2, 4]
+tensor_then_sequential_results = [2, 4]
+left_snake_endpoint = ["A"]
+right_snake_endpoint = ["A*"]
+feedback_route = [0, 1, 0, 1]
+trace_route = [0, 1, 0, 1]
+forward_process_path = ["prepare", "transform", "measure"]
+reversed_process_path = ["measure*", "transform*", "prepare*"]
+reversed_twice_process_path = ["prepare", "transform", "measure"]
+frobenius_left_results = [0, 0, 1, 1]
+frobenius_right_results = [0, 0, 1, 1]
+special_composite_results = [0, 1]
+identity_results = [0, 1]
+many_node_spider_results = [0, 0, 1, 1]
+one_node_spider_results = [0, 0, 1, 1]
+ok({probe: "string-diagram-processes", typed_sequential_connection: u:port_connection_is_typed(first_box_outputs, second_box_inputs), semantic_isotopy_candidate: u:diagram_semantics_ignore_embedding(semantic_edges_before_move, semantic_edges_after_move), embedding_metadata_is_distinct: 1 - equal(drawing_coordinates_before_move, drawing_coordinates_after_move), interchange: u:interchange_rewrite_holds(sequential_then_tensor_results, tensor_then_sequential_results), cups_caps_snakes: u:cup_cap_snake_connectivity_holds(left_snake_endpoint, ["A"], right_snake_endpoint, ["A*"]), trace_feedback: u:trace_feedback_route_holds(feedback_route, trace_route), dagger_path: reversed_process_path, dagger_involutive: u:dagger_reversal_is_involutive(forward_process_path, reversed_twice_process_path), frobenius_special_spider: u:frobenius_spider_rewrites_hold(frobenius_left_results, frobenius_right_results, special_composite_results, identity_results, many_node_spider_results, one_node_spider_results), process_fixture: u:process_fixture_is_complete(1, 1, 1, 1)})

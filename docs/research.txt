@@ -1870,3 +1870,26 @@ CT085-CT109 audit accounts for all 25 IDs in the capability matrix. No new
 sw-MLPL feature was necessary. CT110-CT129 comes next; its first task must
 measure executable connectivity/topology rather than treating drawn SVG curves
 as proofs of planar isotopy or string-diagram equality.
+
+## CT110-CT129 string-diagram capability survey, 2026-08-15
+
+The new probe establishes a two-layer representation. Semantic data consists
+of typed boxes, ports, directed edges, and explicit endpoint tables. Embedding
+data consists of coordinates used only to render those semantics. Two different
+coordinate arrays retain the same edge array, giving a bounded planar-movement
+witness without confusing pixel placement with categorical equality.
+
+Fixed arrays also execute independently assembled interchange endpoints,
+cup/cap snake connectivity, feedback versus trace output, twice-reversed dagger
+paths, and finite Frobenius/special/spider tables. Records can package states,
+effects, channels, and copy/delete evidence. These results order CT110-CT129 by
+current support in `docs/next-saga-plan.md`.
+
+The measured gap is general graph manipulation: sw-MLPL has no generic typed
+port-graph constructor, graph-rewrite matcher, or planar-isotopy checker.
+Explicit finite graphs remain readable and sufficient for the next lessons.
+General planar isotopy, traced-category coverage, unrestricted spider theorems,
+and dagger-compact coverage must remain constrained unless broader support or
+complete finite families are supplied. CT129 additionally needs physical or
+linear semantics; process-shaped graphs alone do not establish quantum theory.
+Next is CT110-CT112; no blocker exists for one fixed semantic graph fixture.

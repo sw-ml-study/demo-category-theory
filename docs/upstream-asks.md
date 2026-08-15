@@ -121,3 +121,21 @@ pentagon, triangle, braiding, and hexagon fixtures fit current nested records
 and arrays. A future request for arbitrary-length coherence traversal would be
 the existing callable-composition/function-container gap in another guise and
 must demonstrate broader practical value before being duplicated here.
+
+## Typed port graphs and bounded rewrites
+
+- Evidence: `probes/string_diagram_processes.mlpl` can compare fixed edge and
+  endpoint arrays, but every incidence relation and rewrite match is manually
+  enumerated. Coordinates must remain a separate, unchecked narration layer.
+- Current workaround: records plus parallel port/edge arrays; independently
+  construct both rewrite endpoints and compare their finite behavior.
+- Requested capability direction: a reusable typed directed port-graph value
+  with incidence validation, boundary-preserving composition, subgraph matching,
+  and explicit rewrite results. Planar embedding/topology should be optional
+  metadata, not silently inferred from coordinates.
+- General value: workflow DAGs, dataflow and compiler-IR optimization, circuit
+  rewriting, neural/model graphs, and dependency visualization.
+- Acceptance case: compose two one-port boxes, tensor two such composites,
+  match an interchange pattern, rewrite it while preserving the four external
+  ports, and reject a type-mismatched connection. Moving node coordinates must
+  leave the semantic graph unchanged.

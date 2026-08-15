@@ -804,3 +804,8 @@ snake laws typed and structurally distinct, then separates local dual data from
 every-object compact-closed coverage. Future string-diagram lessons must pair
 geometry with executable connectivity/path evidence; an SVG alone is narration,
 not a proof of isotopy or diagram equality.
+Implementation note (2026-08-15, string-diagram Step 001): every future string
+diagram leaf must store and check typed semantic connectivity independently of
+SVG coordinates. A changed embedding with unchanged edges may illustrate a
+bounded isotopy; a rewrite needs independently constructed semantic endpoints;
+and general topology claims remain explicit coverage or capability boundaries.

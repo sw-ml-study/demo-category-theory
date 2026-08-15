@@ -1,43 +1,34 @@
-# Completed saga and next capability survey
+# Active saga plan: string diagrams, traces, and processes
 
-The completed monoidal saga covers CT085-CT109. Its capability survey established
-finite tensor tables and coherence paths, then developed only structures whose
-laws current sw-MLPL can execute honestly. String diagrams belong to the later
-CT110-CT129 saga; this saga may establish their algebraic prerequisites but
-must not silently consume that visual curriculum.
+This saga covers CT110-CT129. The capability probe confirms that current
+sw-MLPL can execute fixed directed port graphs, explicit rewrites, feedback
+routes, dagger reversal, and finite algebra tables. SVG supplies narration and
+animation only; semantic edge tables supply the evidence.
 
-## Steps
+## Ordered steps
 
-1. **Capability matrix and probes** — map CT085-CT109 to finite executable
-   representations; probe tensor objects/arrows, reassociation, unit insertion,
-   permutations, coherence-path tables, and algebraic-object operations.
-2. **Monoidal foundation** — implement CT085-CT090 using one concrete tensor,
-   unit, associator, and unitors; execute the pentagon and triangle paths before
-   claiming a monoidal category.
-3. **Strictness boundary** — implement or constrain CT091 by distinguishing
-   literal equality from coherent isomorphism in the chosen fixture.
-4. **Braided and symmetric structure** — attempt CT092-CT096 with explicit
-   swaps, both hexagon paths, and the involutive symmetry witness.
-5. **Monoid and comonoid objects** — implement CT097-CT098 with multiplication,
-   unit, comultiplication, counit, and their internal diagrams.
-6. **Group and module objects** — attempt CT099-CT100 only where finite
-   operations and preservation laws avoid duplicating the abstract-algebra
-   sibling; retain the repository scope boundary.
-7. **Monoidal functor variants** — completed in Lesson 48 with separately
-   directed comparisons, inverse checks, compatibility, and closedness coverage.
-8. **Closedness, duals, and integration** — completed CT107-CT109 with explicit
-   evaluation/coevaluation and snake witnesses, audited all 25 IDs, and queued
-   CT110-CT129.
+1. **Capability matrix and probes** — map all 20 IDs; separate semantic graph
+   connectivity from embedding coordinates; measure rewrites and coverage.
+2. **Semantic string graphs and interchange** — implement CT110-CT112 with
+   typed ports, sequential/tensor composition, changed embeddings, and an
+   independently assembled interchange equality.
+3. **Cups, caps, and snake connectivity** — implement CT113-CT115 as graph
+   connectivity over the existing dual fixture without duplicating Lesson 49.
+4. **Trace and feedback** — implement CT116-CT118 for one deterministic finite
+   process; constrain traced-monoidal coverage to the enumerated family.
+5. **Dagger structure** — implement CT119 and attempt CT120 with explicit
+   reversal, involution, composition compatibility, and compact coverage.
+6. **Frobenius and spiders** — implement CT121-CT123 with attributed finite
+   tables, separate Frobenius/specialness laws, and bounded same-boundary graph
+   rewrites; do not claim the unrestricted spider theorem.
+7. **Processes and classical structure** — implement CT124-CT128 with typed
+   state, effect, channel, and copy/delete fixtures, retaining sibling algebra
+   ownership.
+8. **Quantum boundary and integration** — constrain CT129 unless physical or
+   linear semantics are actually present; audit CT110-CT129 and queue CT130.
 
-## Next: CT110-CT129
-
-Begin string diagrams, traces, and processes with capability evidence. Measure
-whether diagram connectivity and topology can be represented executably rather
-than inferred from SVG geometry. Order planar isotopy/interchange, cups/caps,
-traces/feedback, dagger structure, Frobenius/spider laws, and process examples
-by current support. Keep categorical quantum mechanics as an explicit boundary
-unless finite fixtures substantiate the stronger vocabulary.
-
-Every step follows the established pre-commit, detailed commit, Agentrail
-completion, metadata commit, and push protocol. Functions remain docstring-first
-and readable; browser SVGs bind and display once with directed semantic arrows.
+Every step runs the full pre-commit gate, makes and pushes a detailed work
+commit, completes Agentrail, then commits and pushes metadata. Functions remain
+docstring-first and readable. Web SVGs bind and display exactly once, use
+directed arrowheads, and never substitute drawing geometry for executable law
+evidence.

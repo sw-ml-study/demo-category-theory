@@ -110,3 +110,4 @@ finite-monoidal-functors	demos/48-monoidal-functors/comparison_maps.mlpl	48-mono
 finite-monoidal-functors-web	demos/web/finite_monoidal_functors.mlpl	web	CT101-CT106-monoidal-functor-closed-boundary	0	0	svg	arrays,equal,reduce_mul	runnable
 finite-dual-compact-boundary	demos/49-dual-compact-boundary/snake_routes.mlpl	49-dual-compact-boundary	CT107-CT109-dual-compact-boundary	0	0	ascii,svg	arrays,equal,reduce_mul	runnable
 finite-dual-compact-boundary-web	demos/web/finite_dual_compact_boundary.mlpl	web	CT107-CT109-dual-compact-boundary	0	0	svg	arrays,equal,reduce_mul	runnable
+string-diagram-processes-probe	probes/string_diagram_processes.mlpl	probes	CT110-CT129-capability-survey	0	0	ascii	arrays,records,equal,reduce_mul	runnable

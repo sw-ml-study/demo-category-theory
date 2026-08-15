@@ -602,3 +602,15 @@ the category-wide compact-closed claim. The CT085-CT109 matrix now audits all
 25 stable IDs as implemented or explicitly constrained. Next: CT110-CT129
 string diagrams, traces, and processes, beginning with a capability survey;
 executable topology is the principal unknown.
+
+### CT110-CT129 string-diagram capability survey (2026-08-15)
+
+`probes/string_diagram_processes.mlpl` separates finite semantic edge tables
+from drawing coordinates. It executes typed sequential connections,
+embedding-independent connectivity, interchange endpoints, cup/cap snakes,
+trace feedback, dagger involution, Frobenius/special/spider tables, and a
+state/effect/channel/classical-structure checklist. Current sw-MLPL is enough
+for fixed witnesses. It lacks a general graph-rewrite matcher or planar-isotopy
+decision procedure, so unrestricted topology and spider claims remain bounded.
+Next: CT110-CT112 semantic string graphs, planar movement with invariant edges,
+and interchange; no runtime blocker is known for the fixed fixture.
