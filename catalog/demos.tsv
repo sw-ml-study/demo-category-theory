@@ -104,3 +104,5 @@ finite-braided-symmetric	demos/45-braided-symmetric/hexagon.mlpl	45-braided-symm
 finite-braided-symmetric-web	demos/web/finite_braided_symmetric.mlpl	web	CT092-CT096-braiding-hexagon-symmetry	0	0	svg	records,equal	runnable
 finite-monoid-comonoid	demos/46-monoid-comonoid/internal_diagrams.mlpl	46-monoid-comonoid	CT097-CT098-internal-objects	0	0	ascii,svg	arrays,equal	runnable
 finite-monoid-comonoid-web	demos/web/finite_monoid_comonoid.mlpl	web	CT097-CT098-internal-objects	0	0	svg	arrays,equal	runnable
+finite-group-module-boundary	demos/47-group-module-boundary/inverse_and_missing_action.mlpl	47-group-module-boundary	CT099-CT100-group-module-boundary	0	0	ascii,svg	arrays,equal	runnable
+finite-group-module-boundary-web	demos/web/finite_group_module_boundary.mlpl	web	CT099-CT100-group-module-boundary	0	0	svg	arrays,equal	runnable

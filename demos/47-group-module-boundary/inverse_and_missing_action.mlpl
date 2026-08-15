@@ -1,0 +1,15 @@
+# Lesson 47 -- group-object packaging and module-object boundary.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_group_module_boundary.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 47 -- PACKAGE A GROUP; DO NOT INVENT A MODULE", intro: "Use the attributed Z2 inverse fixture internally, then expose the absent scalar-action evidence."})
+group_object = u:group_object_inverse_diagram_holds([0, 0], [0, 0], [0, 0])
+broken_inverse = 1 - u:group_object_inverse_diagram_holds([0, 0], [0, 1], [0, 0])
+module_missing = 1 - u:module_action_fixture_is_complete(0, 0, 0, 0)
+disp([group_object, broken_inverse, module_missing])
+wrote = write_text("out/47-group-module-boundary.svg", u:finite_group_module_boundary_visual())
+u:epilog_open()
+u:explain("out/47-group-module-boundary.svg", "The Z2 fixture supplies multiplication, unit, and inverse arrows. The module panel lists the action data that neither repository currently supplies.")
+u:takeaway("A group object is categorical packaging of established algebra; a module object waits for an attributable scalar-action fixture.")
+if group_object * broken_inverse * module_missing * is_ok(wrote) { ok("group object and module boundary verified") } else { err("group/module boundary failed") }

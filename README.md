@@ -537,6 +537,16 @@ commuting laws and broken route. Sources:
 [CLI lesson](demos/46-monoid-comonoid/internal_diagrams.mlpl),
 [web lesson](demos/web/finite_monoid_comonoid.mlpl).
 
+### 47. Package known group data; expose missing module evidence
+
+![A Z2 internal inverse diagram beside four missing module-action obligations](assets/previews/47-group-module-boundary.svg)
+
+What to notice: both Z2 inverse routes reach unit `0`; changing one route
+fails. The module panel is deliberately incomplete because no stable
+scalar-action fixture exists locally. Sources:
+[CLI lesson](demos/47-group-module-boundary/inverse_and_missing_action.mlpl),
+[web lesson](demos/web/finite_group_module_boundary.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

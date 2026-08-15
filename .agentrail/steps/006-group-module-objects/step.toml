@@ -1,6 +1,6 @@
 number = 6
 slug = "group-module-objects"
-status = "pending"
+status = "in-progress"
 description = "Attempt CT099-CT100 only as categorical packaging over stable attributed fini..."
 role = "legacy"
 context_files = []

@@ -1825,3 +1825,16 @@ dual notions from collapsing into one Boolean. The XOR-like table is only a
 stable fixture: algebra-law classification remains owned by
 `demo-abstract-algebra`. No new sw-MLPL capability is required. Next is the
 CT099-CT100 group/module scope decision.
+
+## CT099-CT100 group and module objects, 2026-08-15
+
+The sibling repository supplies stable finite group evidence but no module or
+scalar-action fixture. Lesson 47 therefore packages only Z2's inverse as an
+internal morphism and checks multiplication with the inverse on both sides
+against the unit. A changed right route fails.
+
+CT100 remains constrained by evidence rather than syntax. A valid future
+fixture must supply a scalar action, scalar associativity, scalar unit, and
+additive compatibility before this repository can package it categorically.
+Inventing those tables here would cross the sibling ownership boundary. Next
+is CT101-CT106 monoidal functor variants; no runtime blocker is known.

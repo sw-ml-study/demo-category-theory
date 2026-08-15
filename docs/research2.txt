@@ -791,3 +791,7 @@ Implementation note (2026-08-15, monoidal Step 005): Lesson 46 presents the
 monoid and comonoid as arrow-dual diagrams and keeps their failures separate.
 Future internal-algebra leaves must attribute fixtures and avoid rebuilding
 the sibling repository's classification ladder.
+Implementation note (2026-08-15, monoidal Step 006): Lesson 47 makes missing
+fixture evidence visual data rather than silently fabricating an example. A
+future module lesson must fill all four named obligations from an attributable
+source before replacing the constraint.

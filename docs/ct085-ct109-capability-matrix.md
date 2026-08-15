@@ -20,8 +20,8 @@ explicit fixtures; none infers generic monoidal structure or coherence.
 | CT096 | symmetry | involutive swap witness | implemented in Lesson 45 |
 | CT097 | monoid object | finite multiplication/unit tables checked inside the chosen tensor category | implemented as categorical packaging in Lesson 46 |
 | CT098 | comonoid object | diagonal/counit tables and coassociativity routes | implemented as the arrow-dual in Lesson 46 |
-| CT099 | group object | monoid-object maps plus inverse diagram | constrained to categorical packaging; do not duplicate group classification |
-| CT100 | module object | finite scalar-action table and compatibility diagrams | runnable only after copying a stable attributed algebra fixture |
+| CT099 | group object | monoid-object maps plus inverse diagram | implemented as attributed Z2 categorical packaging in Lesson 47 |
+| CT100 | module object | finite scalar-action table and compatibility diagrams | constrained: no stable attributed module fixture exists locally |
 | CT101 | monoidal functor | object/arrow action plus directed tensor/unit comparisons | runnable for one concrete pair of monoidal fixtures |
 | CT102 | lax monoidal functor | comparison `F(A)⊗F(B) → F(A⊗B)` | representable; laws need a dedicated bounded fixture |
 | CT103 | oplax monoidal functor | comparison `F(A⊗B) → F(A)⊗F(B)` | representable; must remain visibly opposite to lax |

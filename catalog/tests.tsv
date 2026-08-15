@@ -28,3 +28,4 @@ finite-monoidal-foundation-tests	tests/test_finite_monoidal_foundation.mlpl	43	C
 finite-monoidal-strictness-tests	tests/test_finite_monoidal_strictness.mlpl	44	CT091-strictness-boundary	0	0	none	records,equal	runnable
 finite-braided-symmetric-tests	tests/test_finite_braided_symmetric.mlpl	45	CT092-CT096-braiding-hexagon-symmetry	0	0	none	records,equal	runnable
 finite-monoid-comonoid-tests	tests/test_finite_monoid_comonoid.mlpl	46	CT097-CT098-internal-objects	0	0	none	arrays,equal	runnable
+finite-group-module-boundary-tests	tests/test_finite_group_module_boundary.mlpl	47	CT099-CT100-group-module-boundary	0	0	none	arrays,equal	runnable

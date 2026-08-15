@@ -346,6 +346,9 @@ three-value hexagon; arbitrary braid words remain outside this bounded claim.
 Lesson 46 confirms fixed internal algebra diagrams need only finite arrays and
 equality. The remaining constraint is repository ownership, not language
 support.
+Lesson 47 confirms CT099 needs only fixed equality tables. CT100 is blocked by
+the absence of an owned scalar-action fixture, not an interpreter capability;
+no upstream sw-MLPL request follows.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

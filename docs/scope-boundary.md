@@ -36,6 +36,10 @@ The small checker copied into `lib/category.mlpl` is attributed to that sibling
 and intentionally local: neither standalone repository has a runtime
 dependency on the other.
 
+Lesson 47 similarly copies only the stable Z2 inverse outputs needed for an
+internal group-object diagram. No module fixture exists to copy; module-object
+packaging remains constrained until the algebra repository owns one.
+
 ## Deferred beyond the concrete curriculum
 
 Generic `Functor`, `Applicative`, `Monad`, lens/optics, and recursion-scheme

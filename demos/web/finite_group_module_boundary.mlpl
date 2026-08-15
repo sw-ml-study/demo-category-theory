@@ -1,0 +1,30 @@
+# Web Lesson 47 -- group object and module boundary.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- monoid objects, inverses, and the repository scope boundary.
+# * CATEGORICAL SETTING -- attributed finite Z2 data inside the tensor fixture.
+# * LAW / UNIVERSAL PROPERTY -- inverse morphism reaches the unit on both sides.
+# * BOUNDARY -- no stable scalar-action fixture, so no module object is claimed.
+# * WHAT THIS SHOWS
+# * Package known group data categorically; display missing module evidence.
+# ***************************************************************************
+;
+include "lib/finite_group_module_boundary.mlpl"  # reuse group and boundary checks
+group_object = u:group_object_inverse_diagram_holds([0, 0], [0, 0], [0, 0])  # CT099
+broken_inverse = 1 - u:group_object_inverse_diagram_holds([0, 0], [0, 1], [0, 0])  # COUNTEREXAMPLE
+module_missing = 1 - u:module_action_fixture_is_complete(0, 0, 0, 0)  # CT100 boundary
+disp([group_object, broken_inverse, module_missing])
+# ***************************************************************************
+# * THE VISUAL
+# * Green inverse routes belong to Z2; dashed boxes are absent module data.
+# ***************************************************************************
+def u:finite_group_module_boundary_web_visual() { "Render the internal Z2 inverse diagram and missing module obligations."; u:finite_group_module_boundary_visual() }  # narrated shared visual entry point
+finite_group_module_boundary_visual = u:finite_group_module_boundary_web_visual()  # bind visual constant
+finite_group_module_boundary_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Both Z2 inverse routes reach unit 0; changing one route fails.
+# * Four empty module obligations mean CT100 remains constrained.
+# * THE POINT -- categorical packaging needs stable algebraic evidence first.
+# ***************************************************************************

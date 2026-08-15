@@ -572,3 +572,11 @@ inside the finite monoidal fixture, checks their associative/coassociative and
 unit/counit diagrams, and gives separate failures. It does not reclassify the
 operation table. Next: CT099-CT100 group/module packaging, gated by the sibling
 scope boundary rather than runtime support.
+
+### CT099-CT100 group/module boundary (2026-08-15)
+
+Lesson 47 packages the stable attributed Z2 inverse data as an internal group
+object and checks both inverse routes to the unit. No scalar-action/module
+fixture exists locally, so CT100 remains constrained by four named missing
+obligations. Next: CT101-CT106 monoidal functor variants; no runtime blocker is
+known for fixed directed comparison maps.
