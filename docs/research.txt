@@ -1937,3 +1937,15 @@ sliding as missing through coverage `[1,1,0]`. It therefore demonstrates one
 trace and one feedback graph without claiming the chosen category is traced
 monoidal. No new language feature is needed. Next is CT119-CT120 finite dagger
 reversal and the stronger dagger-compact coverage boundary.
+
+## CT119-CT120 finite dagger structure, 2026-08-15
+
+Lesson 53 treats dagger as semantic reversal, not an SVG reflection. The
+forward label path `[f,g]` becomes the reverse adjoint path `[g*,f*]`; identity
+is fixed and applying dagger twice restores `f`. A same-order adjoint path and
+a changed twice-dagger label are independent failures.
+
+For dagger compactness, cup-A dagger is checked against cap-A, then every-object
+coverage `[1,0]` exposes missing data for B. Thus CT119 is implemented for the
+finite fixture while CT120 remains constrained. Next is CT121-CT123; existing
+attributed algebra tables support bounded Frobenius and spider rewrites.

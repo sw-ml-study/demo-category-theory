@@ -1,0 +1,18 @@
+# Lesson 53 -- finite dagger structure and dagger-compact boundary.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_dagger_structure.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 53 -- REVERSE DIRECTION AND COMPOSITION ORDER", intro: "Apply explicit adjoint labels, reverse the process path, check involution, then audit dagger-compact coverage separately."})
+dagger_laws = u:dagger_category_laws_hold(["idA"], ["idA"], ["g*", "f*"], ["g*", "f*"], ["f"], ["f"])
+wrong_order = 1 - u:dagger_category_laws_hold(["idA"], ["idA"], ["f*", "g*"], ["g*", "f*"], ["f"], ["f"])
+non_involutive = 1 - u:dagger_category_laws_hold(["idA"], ["idA"], ["g*", "f*"], ["g*", "f*"], ["changed"], ["f"])
+cup_cap_compatible = u:cup_cap_are_dagger_compatible(["capA"], ["capA"])
+incompatible_cup_cap = 1 - u:cup_cap_are_dagger_compatible(["changedCap"], ["capA"])
+coverage_missing = 1 - u:dagger_compact_coverage_is_complete([1, 0])
+disp([dagger_laws, wrong_order, non_involutive, cup_cap_compatible, incompatible_cup_cap, coverage_missing])
+wrote = write_text("out/53-dagger-structure.svg", u:finite_dagger_structure_visual())
+u:epilog_open()
+u:explain("out/53-dagger-structure.svg", "The blue path reverses C-to-B-to-A and reads g-dagger before f-dagger. Cup-A dagger matches cap-A, but object B remains uncovered.")
+u:takeaway("Dagger reverses arrows and composition order involutively. Dagger compactness additionally needs compatible duals for every object.")
+if dagger_laws * wrong_order * non_involutive * cup_cap_compatible * incompatible_cup_cap * coverage_missing * is_ok(wrote) { ok("dagger structure verified") } else { err("dagger structure failed") }

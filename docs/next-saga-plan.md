@@ -15,8 +15,8 @@ animation only; semantic edge tables supply the evidence.
    graph connectivity over the existing dual fixture without duplicating it.
 4. **Trace and feedback** — completed in Lesson 52 for one deterministic finite
    process with explicit incomplete traced-law coverage.
-5. **Dagger structure** — implement CT119 and attempt CT120 with explicit
-   reversal, involution, composition compatibility, and compact coverage.
+5. **Dagger structure** — completed in Lesson 53 with explicit reversal,
+   involution, composition order, cup/cap compatibility, and compact coverage.
 6. **Frobenius and spiders** — implement CT121-CT123 with attributed finite
    tables, separate Frobenius/specialness laws, and bounded same-boundary graph
    rewrites; do not claim the unrestricted spider theorem.

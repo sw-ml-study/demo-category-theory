@@ -643,3 +643,11 @@ remains visible. Explicit feedback execution and the traced endpoint both reach
 `8`; type `U/V` and endpoint `8/9` fail separately. Representative trace-law
 coverage `[1,1,0]` leaves sliding absent, so CT117 remains constrained. Next:
 CT119-CT120 dagger and dagger-compact coverage; fixed reversal is runnable.
+
+### CT119-CT120 dagger structure (2026-08-15)
+
+Lesson 53 reverses `A → B → C` into `C → B → A`, maps `f,g` to explicit
+adjoint labels, and checks identity preservation, reversed composition order,
+and involution. Wrong order and a changed twice-dagger label fail separately.
+Cup-A dagger equals cap-A, but object coverage `[1,0]` blocks dagger compactness.
+Next: CT121-CT123 finite Frobenius, specialness, and bounded spider rewrites.

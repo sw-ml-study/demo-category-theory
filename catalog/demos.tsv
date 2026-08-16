@@ -117,3 +117,5 @@ finite-cup-cap-connectivity	demos/51-cup-cap-connectivity/typed_snakes.mlpl	51-c
 finite-cup-cap-connectivity-web	demos/web/finite_cup_cap_connectivity.mlpl	web	CT113-CT115-cup-cap-snakes	0	0	svg	arrays,records,equal	runnable
 finite-trace-feedback	demos/52-trace-feedback/close_feedback.mlpl	52-trace-feedback	CT116-CT118-trace-feedback	0	0	ascii,svg	arrays,equal,reduce_mul	runnable
 finite-trace-feedback-web	demos/web/finite_trace_feedback.mlpl	web	CT116-CT118-trace-feedback	0	0	svg	arrays,equal,reduce_mul	runnable
+finite-dagger-structure	demos/53-dagger-structure/reverse_process.mlpl	53-dagger-structure	CT119-CT120-dagger-boundary	0	0	ascii,svg	arrays,equal,reduce_mul	runnable
+finite-dagger-structure-web	demos/web/finite_dagger_structure.mlpl	web	CT119-CT120-dagger-boundary	0	0	svg	arrays,equal,reduce_mul	runnable

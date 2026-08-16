@@ -1,0 +1,17 @@
+# Tests for CT119 dagger laws and CT120 dagger-compact boundary.
+include "lib/finite_dagger_structure.mlpl";
+@test {name: "dagger reverses composition and is involutive", tags: ["CT119", "dagger"]}
+def u:test_finite_dagger_laws() { "Check all dagger laws and reject wrong order and a non-involutive label.";
+  u:assert_eq(u:dagger_category_laws_hold(["idA"], ["idA"], ["g*", "f*"], ["g*", "f*"], ["f"], ["f"]), 1, "dagger laws")?;
+  u:assert_eq(u:dagger_category_laws_hold(["idA"], ["idA"], ["f*", "g*"], ["g*", "f*"], ["f"], ["f"]), 0, "wrong order")?;
+  u:assert_eq(u:dagger_category_laws_hold(["idA"], ["idA"], ["g*", "f*"], ["g*", "f*"], ["changed"], ["f"]), 0, "non-involutive")?;
+  ok({test: "dagger-laws", cases: 3})
+}
+@test {name: "dagger compactness needs compatibility and coverage", tags: ["CT120", "coverage-boundary"]}
+def u:test_dagger_compact_boundary() { "Check cup-cap dagger compatibility and reject incomplete every-object coverage.";
+  u:assert_eq(u:cup_cap_are_dagger_compatible(["capA"], ["capA"]), 1, "compatible cup cap")?;
+  u:assert_eq(u:cup_cap_are_dagger_compatible(["changedCap"], ["capA"]), 0, "incompatible cup cap")?;
+  u:assert_eq(u:dagger_compact_coverage_is_complete([1, 0]), 0, "missing object")?;
+  ok({test: "dagger-compact-boundary", cases: 3})
+}
+u:run_registered_tests()

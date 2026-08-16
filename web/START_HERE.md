@@ -75,6 +75,9 @@ snake graphs. This leaf checks connectivity; Lesson 49 checks pairing algebra.
 Then load `finite_trace_feedback.mlpl`: identify the external `A → B` boundary,
 follow the blue `U` output-to-input loop, and compare explicit feedback with the
 trace endpoint before inspecting the incomplete trace-law checklist.
+Continue with `finite_dagger_structure.mlpl`: reverse the green `A → B → C`
+path into the blue adjoint path, noting that both direction and composition
+order reverse. Then inspect cup/cap compatibility and missing object coverage.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

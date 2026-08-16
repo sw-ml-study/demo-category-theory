@@ -17,8 +17,8 @@ of coordinates is never used as evidence for diagram equality.
 | CT116 | trace | finite feedback port closure and output table | implemented for one deterministic fixture in Lesson 52 |
 | CT117 | traced monoidal category | trace laws across every enumerated applicable map | constrained by explicit law coverage `[1,1,0]` |
 | CT118 | feedback | explicit edge from selected output port to selected input port | implemented as typed `U` output-to-input closure in Lesson 52 |
-| CT119 | dagger category | path reversal with arrow labels mapped to adjoints | runnable for a finite involutive path table |
-| CT120 | dagger compact category | dagger, compact duals, and category-wide coverage | constrained by compact coverage and dagger compatibility evidence |
+| CT119 | dagger category | path reversal with arrow labels mapped to adjoints | implemented with identity, reversed composition, and involution in Lesson 53 |
+| CT120 | dagger compact category | dagger, compact duals, and category-wide coverage | constrained by explicit compatible cup/cap plus incomplete coverage `[1,0]` |
 | CT121 | Frobenius algebra | finite multiplication/comultiplication compatibility tables | runnable using attributed internal-algebra fixtures |
 | CT122 | special Frobenius algebra | multiplication after comultiplication equals identity | runnable for one finite table fixture |
 | CT123 | spider theorem | connected same-boundary networks have equal endpoint tables | bounded rewrite runnable; general theorem constrained |

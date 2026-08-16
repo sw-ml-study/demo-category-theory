@@ -821,3 +821,7 @@ Implementation note (2026-08-15, string-diagram Step 004): Lesson 52 names the
 feedback interface separately from the external boundary and closes only a
 type-compatible port pair. Future trace visuals must state what becomes internal,
 what remains external, and which trace laws or coverage obligations are absent.
+Implementation note (2026-08-15, string-diagram Step 005): Lesson 53 checks
+direction, label adjunction, composition order, involution, dual compatibility,
+and coverage separately. Future reversal visuals must never infer dagger laws
+from geometric mirroring alone.

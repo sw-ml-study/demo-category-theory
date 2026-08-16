@@ -597,6 +597,15 @@ blocks a traced-category claim. Sources:
 [CLI lesson](demos/52-trace-feedback/close_feedback.mlpl),
 [web lesson](demos/web/finite_trace_feedback.mlpl).
 
+### 53. Reverse arrows and composition order together
+
+![A forward process, its reversed adjoint path, and incomplete dagger-compact coverage](assets/previews/53-dagger-structure.svg)
+
+What to notice: `g after f` reverses to `f† after g†`; the traversed labels are
+`g†` then `f†`. Cup-A dagger matches cap-A, but coverage `[1,0]` blocks dagger
+compactness. Sources: [CLI lesson](demos/53-dagger-structure/reverse_process.mlpl),
+[web lesson](demos/web/finite_dagger_structure.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

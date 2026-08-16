@@ -1,0 +1,33 @@
+# Web Lesson 53 -- finite dagger structure and dagger-compact boundary.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- composition, dual objects, cups, caps, compact coverage.
+# * CATEGORICAL SETTING -- one finite typed process A through B to C.
+# * LAW -- dagger preserves identity, reverses composition, and is involutive.
+# * BOUNDARY -- one missing object dual blocks dagger compactness.
+# * WHAT THIS SHOWS
+# * Reverse direction and order together; then audit compact data separately.
+# ***************************************************************************
+;
+include "lib/finite_dagger_structure.mlpl"  # reuse dagger checks
+dagger_laws = u:dagger_category_laws_hold(["idA"], ["idA"], ["g*", "f*"], ["g*", "f*"], ["f"], ["f"])  # CT119
+wrong_order = 1 - u:dagger_category_laws_hold(["idA"], ["idA"], ["f*", "g*"], ["g*", "f*"], ["f"], ["f"])  # COUNTEREXAMPLE
+non_involutive = 1 - u:dagger_category_laws_hold(["idA"], ["idA"], ["g*", "f*"], ["g*", "f*"], ["changed"], ["f"])  # COUNTEREXAMPLE
+cup_cap_compatible = u:cup_cap_are_dagger_compatible(["capA"], ["capA"])  # CT120 evidence
+incompatible_cup_cap = 1 - u:cup_cap_are_dagger_compatible(["changedCap"], ["capA"])  # COUNTEREXAMPLE
+coverage_missing = 1 - u:dagger_compact_coverage_is_complete([1, 0])  # CT120 boundary
+disp([dagger_laws, wrong_order, non_involutive, cup_cap_compatible, incompatible_cup_cap, coverage_missing])
+# ***************************************************************************
+# * THE VISUAL
+# * Green runs A-to-C; blue runs C-to-A with adjoints in reverse order.
+# ***************************************************************************
+def u:finite_dagger_structure_web_visual() { "Render the shared dagger and dagger-compact boundary visual."; u:finite_dagger_structure_visual() }  # narrated entry point
+finite_dagger_structure_visual = u:finite_dagger_structure_web_visual()  # bind visual constant
+finite_dagger_structure_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * The reversed path reads g-dagger then f-dagger; applying dagger twice restores f.
+# * Cup-A dagger equals cap-A, but coverage [1,0] leaves B absent.
+# * THE POINT -- dagger laws are local; dagger compactness needs category coverage.
+# ***************************************************************************
