@@ -78,6 +78,9 @@ trace endpoint before inspecting the incomplete trace-law checklist.
 Continue with `finite_dagger_structure.mlpl`: reverse the green `A → B → C`
 path into the blue adjoint path, noting that both direction and composition
 order reverse. Then inspect cup/cap compatibility and missing object coverage.
+Then load `finite_frobenius_spiders.mlpl`: compare the two merge/split routes,
+watch split-then-merge collapse to identity, and verify that the multi-node and
+single-node graphs have the same typed 2-to-2 boundary before comparing outputs.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

@@ -1,0 +1,34 @@
+# Web Lesson 54 -- finite Frobenius, specialness, and bounded spider rewrite.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * PREREQUISITES -- monoid/comonoid objects and semantic string graphs.
+# * CATEGORICAL SETTING -- attributed finite classical-bit merge/split fixture.
+# * LAW -- Frobenius compatibility, specialness, and one bounded spider rewrite.
+# * BOUNDARY -- algebra classification stays with the sibling; theorem is general.
+# * WHAT THIS SHOWS
+# * Follow directed merge/split nodes, then compare boundary and endpoint data.
+# ***************************************************************************
+;
+include "lib/finite_frobenius_spiders.mlpl"  # reuse finite laws
+frobenius = u:frobenius_compatibility_holds([0, 0, 1, 1], [0, 0, 1, 1])  # CT121
+broken_frobenius = 1 - u:frobenius_compatibility_holds([0, 0, 1, 1], [0, 1, 1, 1])  # COUNTEREXAMPLE
+specialness = u:special_frobenius_holds([0, 1], [0, 1])  # CT122
+broken_specialness = 1 - u:special_frobenius_holds([0, 0], [0, 1])  # COUNTEREXAMPLE
+spider = u:bounded_spider_rewrite_holds([2, 2], [2, 2], [0, 0, 1, 1], [0, 0, 1, 1])  # CT123
+broken_boundary = 1 - u:bounded_spider_rewrite_holds([2, 2], [1, 2], [0, 0, 1, 1], [0, 0, 1, 1])  # COUNTEREXAMPLE
+broken_endpoint = 1 - u:bounded_spider_rewrite_holds([2, 2], [2, 2], [0, 0, 1, 1], [0, 1, 1, 1])  # COUNTEREXAMPLE
+disp([frobenius, broken_frobenius, specialness, broken_specialness, spider, broken_boundary, broken_endpoint])
+# ***************************************************************************
+# * THE VISUAL
+# * Directed μ/δ nodes show two routes, cancellation, and bounded fusion.
+# ***************************************************************************
+def u:finite_frobenius_spiders_web_visual() { "Render the shared finite Frobenius and bounded-spider visual."; u:finite_frobenius_spiders_visual() }  # narrated entry point
+finite_frobenius_spiders_visual = u:finite_frobenius_spiders_web_visual()  # bind visual constant
+finite_frobenius_spiders_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Route endpoints agree; μ after δ is identity; the 2-to-2 rewrite agrees.
+# * Changed route, identity, boundary, and endpoint failures remain separate.
+# * THE POINT -- this is one executable rewrite, not the general spider theorem.
+# ***************************************************************************

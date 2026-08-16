@@ -57,4 +57,5 @@ cp "$repo_root/out/50-semantic-string-graphs.svg" "$dest/50-semantic-string-grap
 cp "$repo_root/out/51-cup-cap-connectivity.svg" "$dest/51-cup-cap-connectivity.svg"
 cp "$repo_root/out/52-trace-feedback.svg" "$dest/52-trace-feedback.svg"
 cp "$repo_root/out/53-dagger-structure.svg" "$dest/53-dagger-structure.svg"
+cp "$repo_root/out/54-frobenius-spiders.svg" "$dest/54-frobenius-spiders.svg"
 echo "README previews written"

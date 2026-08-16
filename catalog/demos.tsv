@@ -119,3 +119,5 @@ finite-trace-feedback	demos/52-trace-feedback/close_feedback.mlpl	52-trace-feedb
 finite-trace-feedback-web	demos/web/finite_trace_feedback.mlpl	web	CT116-CT118-trace-feedback	0	0	svg	arrays,equal,reduce_mul	runnable
 finite-dagger-structure	demos/53-dagger-structure/reverse_process.mlpl	53-dagger-structure	CT119-CT120-dagger-boundary	0	0	ascii,svg	arrays,equal,reduce_mul	runnable
 finite-dagger-structure-web	demos/web/finite_dagger_structure.mlpl	web	CT119-CT120-dagger-boundary	0	0	svg	arrays,equal,reduce_mul	runnable
+finite-frobenius-spiders	demos/54-frobenius-spiders/merge_split.mlpl	54-frobenius-spiders	CT121-CT123-frobenius-spiders	0	0	ascii,svg	arrays,equal	runnable
+finite-frobenius-spiders-web	demos/web/finite_frobenius_spiders.mlpl	web	CT121-CT123-frobenius-spiders	0	0	svg	arrays,equal	runnable

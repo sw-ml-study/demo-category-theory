@@ -1,0 +1,18 @@
+# Tests for CT121-CT123 finite Frobenius, specialness, and bounded spiders.
+include "lib/finite_frobenius_spiders.mlpl";
+@test {name: "finite Frobenius and specialness routes agree", tags: ["CT121", "CT122"]}
+def u:test_frobenius_and_specialness() { "Accept the attributed routes and reject changed compatibility and identity tables.";
+  u:assert_eq(u:frobenius_compatibility_holds([0, 0, 1, 1], [0, 0, 1, 1]), 1, "Frobenius")?;
+  u:assert_eq(u:frobenius_compatibility_holds([0, 0, 1, 1], [0, 1, 1, 1]), 0, "broken Frobenius")?;
+  u:assert_eq(u:special_frobenius_holds([0, 1], [0, 1]), 1, "specialness")?;
+  u:assert_eq(u:special_frobenius_holds([0, 0], [0, 1]), 0, "broken specialness")?;
+  ok({test: "frobenius-special", cases: 4})
+}
+@test {name: "bounded spider rewrite preserves boundary and endpoint", tags: ["CT123", "spider-boundary"]}
+def u:test_bounded_spider_rewrite() { "Accept one same-boundary rewrite and reject boundary and endpoint changes separately.";
+  u:assert_eq(u:bounded_spider_rewrite_holds([2, 2], [2, 2], [0, 0, 1, 1], [0, 0, 1, 1]), 1, "bounded spider")?;
+  u:assert_eq(u:bounded_spider_rewrite_holds([2, 2], [1, 2], [0, 0, 1, 1], [0, 0, 1, 1]), 0, "changed boundary")?;
+  u:assert_eq(u:bounded_spider_rewrite_holds([2, 2], [2, 2], [0, 0, 1, 1], [0, 1, 1, 1]), 0, "changed endpoint")?;
+  ok({test: "bounded-spider", cases: 3})
+}
+u:run_registered_tests()

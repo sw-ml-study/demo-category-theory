@@ -1949,3 +1949,17 @@ For dagger compactness, cup-A dagger is checked against cap-A, then every-object
 coverage `[1,0]` exposes missing data for B. Thus CT119 is implemented for the
 finite fixture while CT120 remains constrained. Next is CT121-CT123; existing
 attributed algebra tables support bounded Frobenius and spider rewrites.
+
+## CT121-CT123 finite Frobenius and bounded spiders, 2026-08-16
+
+Lesson 54 packages the attributed classical-bit merge/split data as categorical
+routes. The two Frobenius constructions are supplied independently and reach
+`[0,0,1,1]`; a changed route fails. Specialness separately checks
+`multiplication after comultiplication = identity` on `[0,1]`.
+
+The spider example requires the connected multi-node graph and one-node graph
+to share typed boundary `[2,2]` before their endpoint tables are compared.
+Boundary and behavior failures are independent. This demonstrates one bounded
+rewrite, not the general spider theorem or an algebra classification. No new
+sw-MLPL feature is needed. Next is CT124-CT128 process/state/effect/channel and
+classical structure, preserving the sibling ownership boundary.

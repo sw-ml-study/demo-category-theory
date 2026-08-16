@@ -606,6 +606,17 @@ What to notice: `g after f` reverses to `f† after g†`; the traversed labels 
 compactness. Sources: [CLI lesson](demos/53-dagger-structure/reverse_process.mlpl),
 [web lesson](demos/web/finite_dagger_structure.mlpl).
 
+### 54. Fuse one finite merge/split network
+
+![Two Frobenius routes, a specialness composite, and one bounded spider rewrite](assets/previews/54-frobenius-spiders.svg)
+
+What to notice: independently constructed merge/split routes agree;
+`μ ∘ δ` is identity; and the multi-node and one-node graphs share both a
+`2 → 2` boundary and endpoint table. This is one bounded rewrite, not the
+general spider theorem. Sources:
+[CLI lesson](demos/54-frobenius-spiders/merge_split.mlpl),
+[web lesson](demos/web/finite_frobenius_spiders.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

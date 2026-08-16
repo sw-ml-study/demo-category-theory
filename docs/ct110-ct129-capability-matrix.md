@@ -19,9 +19,9 @@ of coordinates is never used as evidence for diagram equality.
 | CT118 | feedback | explicit edge from selected output port to selected input port | implemented as typed `U` output-to-input closure in Lesson 52 |
 | CT119 | dagger category | path reversal with arrow labels mapped to adjoints | implemented with identity, reversed composition, and involution in Lesson 53 |
 | CT120 | dagger compact category | dagger, compact duals, and category-wide coverage | constrained by explicit compatible cup/cap plus incomplete coverage `[1,0]` |
-| CT121 | Frobenius algebra | finite multiplication/comultiplication compatibility tables | runnable using attributed internal-algebra fixtures |
-| CT122 | special Frobenius algebra | multiplication after comultiplication equals identity | runnable for one finite table fixture |
-| CT123 | spider theorem | connected same-boundary networks have equal endpoint tables | bounded rewrite runnable; general theorem constrained |
+| CT121 | Frobenius algebra | finite multiplication/comultiplication compatibility tables | implemented for an attributed classical-bit fixture in Lesson 54 |
+| CT122 | special Frobenius algebra | multiplication after comultiplication equals identity | implemented for the same fixture in Lesson 54 |
+| CT123 | spider theorem | connected same-boundary networks have equal endpoint tables | one bounded rewrite implemented; general theorem constrained |
 | CT124 | process theory | objects as systems and arrows as composable processes | runnable for one typed finite workflow |
 | CT125 | state | unit-to-system process record | runnable |
 | CT126 | effect | system-to-unit process record | runnable |

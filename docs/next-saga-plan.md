@@ -17,9 +17,8 @@ animation only; semantic edge tables supply the evidence.
    process with explicit incomplete traced-law coverage.
 5. **Dagger structure** — completed in Lesson 53 with explicit reversal,
    involution, composition order, cup/cap compatibility, and compact coverage.
-6. **Frobenius and spiders** — implement CT121-CT123 with attributed finite
-   tables, separate Frobenius/specialness laws, and bounded same-boundary graph
-   rewrites; do not claim the unrestricted spider theorem.
+6. **Frobenius and spiders** — completed in Lesson 54 with attributed finite
+   tables, separate Frobenius/specialness laws, and one bounded graph rewrite.
 7. **Processes and classical structure** — implement CT124-CT128 with typed
    state, effect, channel, and copy/delete fixtures, retaining sibling algebra
    ownership.

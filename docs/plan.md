@@ -651,3 +651,13 @@ adjoint labels, and checks identity preservation, reversed composition order,
 and involution. Wrong order and a changed twice-dagger label fail separately.
 Cup-A dagger equals cap-A, but object coverage `[1,0]` blocks dagger compactness.
 Next: CT121-CT123 finite Frobenius, specialness, and bounded spider rewrites.
+
+### CT121-CT123 finite Frobenius and spider rewrite (2026-08-16)
+
+Lesson 54 reuses an attributed classical-bit fixture without reclassifying its
+algebra. Independently constructed merge/split routes agree at
+`[0,0,1,1]`; multiplication after comultiplication is identity `[0,1]`.
+A connected multi-node graph and one spider node share boundary `2 → 2` and
+the same endpoint table. Changed route, identity, boundary, and endpoint data
+fail separately. CT123 remains bounded: this is not the general spider theorem.
+Next: CT124-CT128 process theory, state, effect, channel, classical structure.
