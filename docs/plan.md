@@ -671,3 +671,13 @@ both requirements across the whole repository, including generated web copies
 and documentation templates. Format-dependent tests and audits must consume
 the formatter's multiline representation. Next remains CT124-CT128; the source
 hygiene work introduces no sw-MLPL capability blocker.
+
+### CT124-CT128 finite process theory and classical structure (2026-08-18)
+
+Lesson 55 composes an explicit state `I → A`, channel `A → B`, and effect
+`B → I`, with separate counterexamples for type mismatch, reversed direction,
+and changed channel behavior. The attributed copy/delete fixture becomes a
+classical structure only after copy, delete, Frobenius, and specialness all
+pass. This is bounded categorical packaging and retains sibling algebra
+ownership. Next: CT129 quantum boundary and CT110-CT129 integration; the blocker
+is absent physical/linear semantics, not a missing SVG or finite-array feature.

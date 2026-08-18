@@ -1974,3 +1974,18 @@ recognizes that multiline form and covers libraries, probes, tests, demos, web
 copies, and documentation templates. A formatter `--check` gate is part of
 `just check`, making formatting and first-expression function docstrings
 pre-commit and pre-push invariants rather than review conventions.
+
+## CT124-CT128 finite process theory and classical structure, 2026-08-18
+
+Lesson 55 makes systems the typed boundaries `A` and `B`, and processes the
+arrows joining them. A state points `I → A`, a channel points `A → B`, and an
+effect points `B → I`; the two intermediate type equalities are checked apart
+from the channel's finite behavior table. Reversed directions, a mismatched
+handoff, and a changed table fail independently.
+
+The attributed bit fixture is packaged as classical structure only when copy,
+delete, Frobenius, and specialness evidence are all present. Removing any duty
+blocks the name, and algebra classification remains with the sibling repository.
+Current sw-MLPL needs no new feature for this bounded lesson. Next is CT129:
+record the quantum boundary because typed graphs alone do not supply physical,
+probabilistic, or linear semantics.

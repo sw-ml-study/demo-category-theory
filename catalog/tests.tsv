@@ -36,3 +36,4 @@ finite-cup-cap-connectivity-tests	tests/test_finite_cup_cap_connectivity.mlpl	51
 finite-trace-feedback-tests	tests/test_finite_trace_feedback.mlpl	52	CT116-CT118-trace-feedback	0	0	none	arrays,equal,reduce_mul	runnable
 finite-dagger-structure-tests	tests/test_finite_dagger_structure.mlpl	53	CT119-CT120-dagger-boundary	0	0	none	arrays,equal,reduce_mul	runnable
 finite-frobenius-spiders-tests	tests/test_finite_frobenius_spiders.mlpl	54	CT121-CT123-frobenius-spiders	0	0	none	arrays,equal	runnable
+finite-process-theory-tests	tests/test_finite_process_theory.mlpl	55	CT124-CT128-process-classical	0	0	none	arrays,equal,reduce_mul	runnable

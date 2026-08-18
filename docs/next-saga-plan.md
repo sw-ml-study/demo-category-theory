@@ -19,9 +19,9 @@ animation only; semantic edge tables supply the evidence.
    involution, composition order, cup/cap compatibility, and compact coverage.
 6. **Frobenius and spiders** — completed in Lesson 54 with attributed finite
    tables, separate Frobenius/specialness laws, and one bounded graph rewrite.
-7. **Processes and classical structure** — implement CT124-CT128 with typed
-   state, effect, channel, and copy/delete fixtures, retaining sibling algebra
-   ownership.
+7. **Processes and classical structure** — completed in Lesson 55 with typed
+   state, effect, channel, and a four-obligation copy/delete gate retaining
+   sibling algebra ownership.
 8. **Quantum boundary and integration** — constrain CT129 unless physical or
    linear semantics are actually present; audit CT110-CT129 and queue CT130.
 

@@ -81,6 +81,11 @@ order reverse. Then inspect cup/cap compatibility and missing object coverage.
 Then load `finite_frobenius_spiders.mlpl`: compare the two merge/split routes,
 watch split-then-merge collapse to identity, and verify that the multi-node and
 single-node graphs have the same typed 2-to-2 boundary before comparing outputs.
+Finish with `finite_process_theory.mlpl`: read the upper workflow strictly from
+left to right as `I → A → B → I`, then inspect the lower copy/delete gate. The
+first panel teaches typed process composition; the second reuses Lesson 54's
+attributed laws before granting the name classical structure. It does not claim
+quantum semantics.
 
 These use finite tables and bounded candidate families. They do not establish
 completeness, cocompleteness, or arbitrary/infinite indexed constructions.

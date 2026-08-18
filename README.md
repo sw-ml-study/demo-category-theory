@@ -617,6 +617,17 @@ general spider theorem. Sources:
 [CLI lesson](demos/54-frobenius-spiders/merge_split.mlpl),
 [web lesson](demos/web/finite_frobenius_spiders.mlpl).
 
+### 55. Prepare, transform, and observe a typed system
+
+![A state-channel-effect workflow and a gated classical copy-delete structure](assets/previews/55-process-theory.svg)
+
+What to notice: the upper arrowheads expose the boundary sequence
+`I → A → B → I`; reversing a state or effect, or mismatching an intermediate
+port, blocks composition. The lower panel calls copy/delete classical structure
+only when copy, delete, Frobenius, and specialness all pass. Sources:
+[CLI lesson](demos/55-process-theory/state_channel_effect.mlpl),
+[web lesson](demos/web/finite_process_theory.mlpl).
+
 Generated working artifacts belong in gitignored `out/`; README-ready outputs
 belong in `assets/previews/` and are rebuilt reproducibly.
 

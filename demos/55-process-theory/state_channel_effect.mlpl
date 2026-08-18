@@ -1,0 +1,24 @@
+# Lesson 55 -- typed processes, states, effects, channels, and classical data.
+# visual: ascii, svg
+# loops: 0
+include "../../lib/finite_process_theory.mlpl"
+include "../../lib/render.mlpl"
+u:prolog({title: "LESSON 55 -- PREPARE, TRANSFORM, OBSERVE", intro: "Follow a typed state into a channel and an effect, then require every copy/delete law before calling a bit structure classical."})
+typed_handoffs = u:process_boundaries_compose(["A"], ["A"], ["B"], ["B"])
+broken_handoff = 1 - u:process_boundaries_compose(["A"], ["B"], ["B"], ["B"])
+directions = u:state_and_effect_directions_hold(["I"], ["A"], ["B"], ["I"])
+reversed_directions = 1 - u:state_and_effect_directions_hold(["A"], ["I"], ["I"], ["B"])
+channel = u:channel_behavior_matches([0, 1], [0, 1])
+changed_channel = 1 - u:channel_behavior_matches([0, 0], [0, 1])
+classical = u:classical_structure_obligations_hold(1, 1, 1, 1)
+missing_obligation = 1 - u:classical_structure_obligations_hold(1, 1, 1, 0)
+disp([typed_handoffs, broken_handoff, directions, reversed_directions, channel, changed_channel, classical, missing_obligation])
+wrote = write_text("out/55-process-theory.svg", u:finite_process_theory_visual())
+u:epilog_open()
+u:explain("out/55-process-theory.svg", "Top: I prepares A, a channel transforms A to B, and an effect consumes B back into I. Bottom: copy/delete becomes classical structure only behind four checked obligations.")
+u:takeaway("Process theory begins with typed composition; a classical structure additionally needs copy, delete, Frobenius, and specialness evidence.")
+if typed_handoffs * broken_handoff * directions * reversed_directions * channel * changed_channel * classical * missing_obligation * is_ok(wrote) {
+  ok("finite process theory verified")
+} else {
+  err("finite process theory failed")
+}

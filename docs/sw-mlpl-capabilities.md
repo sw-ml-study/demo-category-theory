@@ -392,6 +392,11 @@ is not required; no new capability request follows.
 Lesson 54 confirms fixed Frobenius and spider tables fit arrays and equality.
 General spider normalization would need the already requested typed graph
 matcher; the bounded lesson adds no new capability request.
+Lesson 55 confirms that fixed states, effects, channels, and classical-structure
+obligations fit readable arrays, named parameters, and equality. Generic typed
+process composition would reduce manual boundary checks but is already covered
+by the typed port-graph request; no new capability request follows. CT129 is
+blocked by absent physical or linear semantics, not by display support.
 # First-class composition gap measured in Lesson 03 (2026-08-13)
 
 Function references can be stored in records and invoked, so an explicit

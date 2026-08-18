@@ -121,3 +121,5 @@ finite-dagger-structure	demos/53-dagger-structure/reverse_process.mlpl	53-dagger
 finite-dagger-structure-web	demos/web/finite_dagger_structure.mlpl	web	CT119-CT120-dagger-boundary	0	0	svg	arrays,equal,reduce_mul	runnable
 finite-frobenius-spiders	demos/54-frobenius-spiders/merge_split.mlpl	54-frobenius-spiders	CT121-CT123-frobenius-spiders	0	0	ascii,svg	arrays,equal	runnable
 finite-frobenius-spiders-web	demos/web/finite_frobenius_spiders.mlpl	web	CT121-CT123-frobenius-spiders	0	0	svg	arrays,equal	runnable
+finite-process-theory	demos/55-process-theory/state_channel_effect.mlpl	55-process-theory	CT124-CT128-process-classical	0	0	ascii,svg	arrays,equal,reduce_mul	runnable
+finite-process-theory-web	demos/web/finite_process_theory.mlpl	web	CT124-CT128-process-classical	0	0	svg	arrays,equal,reduce_mul	runnable

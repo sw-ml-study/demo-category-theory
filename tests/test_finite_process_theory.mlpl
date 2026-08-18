@@ -1,0 +1,21 @@
+# Tests for CT124-CT128 typed finite process theory and classical structure.
+include "lib/finite_process_theory.mlpl";
+@test {name: "typed state channel effect workflow", tags: ["CT124", "CT125", "CT126", "CT127"]}
+def u:test_typed_process_workflow() {
+  "Accept the typed workflow and reject boundary direction and behavior changes separately.";
+  u:assert_eq(u:process_boundaries_compose(["A"], ["A"], ["B"], ["B"]), 1, "typed handoffs")?;
+  u:assert_eq(u:process_boundaries_compose(["A"], ["B"], ["B"], ["B"]), 0, "mismatched handoff")?;
+  u:assert_eq(u:state_and_effect_directions_hold(["I"], ["A"], ["B"], ["I"]), 1, "state and effect directions")?;
+  u:assert_eq(u:state_and_effect_directions_hold(["A"], ["I"], ["I"], ["B"]), 0, "reversed directions")?;
+  u:assert_eq(u:channel_behavior_matches([0, 1], [0, 1]), 1, "channel behavior")?;
+  u:assert_eq(u:channel_behavior_matches([0, 0], [0, 1]), 0, "changed channel behavior")?;
+  ok({test: "typed-process-workflow", cases: 6})
+}
+@test {name: "classical structure requires every obligation", tags: ["CT128", "classical-structure"]}
+def u:test_classical_structure_gate() {
+  "Accept complete copy-delete evidence and reject a missing specialness obligation.";
+  u:assert_eq(u:classical_structure_obligations_hold(1, 1, 1, 1), 1, "complete obligations")?;
+  u:assert_eq(u:classical_structure_obligations_hold(1, 1, 1, 0), 0, "missing specialness")?;
+  ok({test: "classical-structure-gate", cases: 2})
+}
+u:run_registered_tests()

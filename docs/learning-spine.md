@@ -33,6 +33,10 @@ products + coproducts + exponentials -> slices
 
 composition + products -> tensor + unit -> associator / unitors
                                       -> pentagon / triangle coherence
+
+typed string graphs -> trace / dagger -> Frobenius spiders
+                                      -> states / channels / effects
+                                      -> classical-structure gate
 ```
 
 ## Guided paths

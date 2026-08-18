@@ -834,3 +834,7 @@ generated `.mlpl` function must begin with a self-documenting string expression,
 and every `.mlpl` file must pass the canonical sibling formatter before commit
 and push. Audits must parse the formatter's multiline definition shape so
 formatting cannot accidentally disable documentation checks.
+Implementation note (2026-08-18, string-diagram Step 007): Lesson 55 separates
+boundary compatibility, arrow direction, process behavior, and classical-law
+coverage. Future process leaves must show the unit boundary explicitly and must
+not infer physical or quantum meaning from composable boxes and wires alone.

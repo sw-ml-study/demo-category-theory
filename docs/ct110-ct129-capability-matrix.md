@@ -22,11 +22,11 @@ of coordinates is never used as evidence for diagram equality.
 | CT121 | Frobenius algebra | finite multiplication/comultiplication compatibility tables | implemented for an attributed classical-bit fixture in Lesson 54 |
 | CT122 | special Frobenius algebra | multiplication after comultiplication equals identity | implemented for the same fixture in Lesson 54 |
 | CT123 | spider theorem | connected same-boundary networks have equal endpoint tables | one bounded rewrite implemented; general theorem constrained |
-| CT124 | process theory | objects as systems and arrows as composable processes | runnable for one typed finite workflow |
-| CT125 | state | unit-to-system process record | runnable |
-| CT126 | effect | system-to-unit process record | runnable |
-| CT127 | channel | typed system-to-system process table | runnable |
-| CT128 | classical structure | attributed copy/delete Frobenius fixture | runnable if sibling ownership is retained |
+| CT124 | process theory | objects as systems and arrows as composable processes | implemented for one typed finite workflow in Lesson 55 |
+| CT125 | state | unit-to-system process record | implemented as directed `I → A` data in Lesson 55 |
+| CT126 | effect | system-to-unit process record | implemented as directed `B → I` data in Lesson 55 |
+| CT127 | channel | typed system-to-system process table | implemented with boundary and behavior failures in Lesson 55 |
+| CT128 | classical structure | attributed copy/delete Frobenius fixture | implemented behind copy/delete/Frobenius/specialness evidence in Lesson 55 |
 | CT129 | categorical quantum-mechanics boundary | additional physical/linear semantics and dagger-compact coverage | constrained; graph vocabulary alone does not establish quantum semantics |
 
 ## Measured findings
@@ -51,4 +51,4 @@ of coordinates is never used as evidence for diagram equality.
 Implement current-support concepts first: CT110-CT112 semantic graphs and
 interchange; CT113-CT115 cup/cap connectivity; CT116-CT118 bounded
 trace/feedback; CT119-CT120 dagger with explicit coverage; CT121-CT123 finite
-Frobenius/spider rewrites; CT124-CT129 process fixtures and the quantum boundary.
+Frobenius/spider rewrites; CT124-CT128 process fixtures; then CT129 quantum boundary.

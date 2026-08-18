@@ -1,0 +1,41 @@
+# Web Lesson 55 -- typed process theory and classical structure.
+# visual: svg
+# loops: 0
+# ***************************************************************************
+# * WHAT THIS SHOWS
+# * A state prepares A from I, a channel transforms A to B, and an effect
+# * consumes B into I. Copy/delete earns "classical structure" only after laws.
+# * PREREQUISITES -- typed composition, monoidal structure, Lesson 54.
+# * CATEGORICAL SETTING -- one finite typed process workflow and attributed bit.
+# * LAW -- matching boundaries compose; classical data satisfies four duties.
+# * BOUNDARY -- this is categorical packaging, not quantum or algebraic proof.
+# ***************************************************************************
+;
+include "lib/finite_process_theory.mlpl"  # reuse typed process checks
+typed_handoffs = u:process_boundaries_compose(["A"], ["A"], ["B"], ["B"])  # A and B ports match
+broken_handoff = 1 - u:process_boundaries_compose(["A"], ["B"], ["B"], ["B"])  # COUNTEREXAMPLE
+directions = u:state_and_effect_directions_hold(["I"], ["A"], ["B"], ["I"])  # I-to-A and B-to-I
+reversed_directions = 1 - u:state_and_effect_directions_hold(["A"], ["I"], ["I"], ["B"])  # COUNTEREXAMPLE
+channel = u:channel_behavior_matches([0, 1], [0, 1])  # finite A-to-B table
+changed_channel = 1 - u:channel_behavior_matches([0, 0], [0, 1])  # COUNTEREXAMPLE
+classical = u:classical_structure_obligations_hold(1, 1, 1, 1)  # copy delete Frobenius specialness
+missing_obligation = 1 - u:classical_structure_obligations_hold(1, 1, 1, 0)  # COUNTEREXAMPLE
+disp([typed_handoffs, broken_handoff, directions, reversed_directions])  # STAGE 1: typed route
+disp([channel, changed_channel])  # STAGE 2: channel behavior
+disp([classical, missing_obligation])  # STAGE 3: classical gate
+# ***************************************************************************
+# * THE VISUAL
+# * Directed top wires show the process boundary; the lower panel gates data.
+# ***************************************************************************
+def u:finite_process_theory_web_visual() {
+  "Return the narrated process-theory visual from the finite library fixture.";
+  u:finite_process_theory_visual()
+}  # narrated visual entry point
+finite_process_theory_visual = u:finite_process_theory_web_visual()  # bind visual constant
+finite_process_theory_visual  # display bound visual once
+# ***************************************************************************
+# * HOW TO READ THE RESULT
+# * Top: follow arrowheads I -> state -> A -> channel -> B -> effect -> I.
+# * Bottom: copy/delete is admitted only when both operations and both laws pass.
+# * THE POINT -- typed processes compose; classical structure needs extra laws.
+# ***************************************************************************
