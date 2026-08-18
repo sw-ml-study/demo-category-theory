@@ -829,3 +829,8 @@ Implementation note (2026-08-16, string-diagram Step 006): Lesson 54 checks
 Frobenius, specialness, boundary equality, and endpoint equality independently.
 Future graph fusion lessons must establish connectivity and typed boundaries
 before behavior, and must not promote one rewrite to a general theorem.
+Implementation note (2026-08-18, repository hygiene): every authored or
+generated `.mlpl` function must begin with a self-documenting string expression,
+and every `.mlpl` file must pass the canonical sibling formatter before commit
+and push. Audits must parse the formatter's multiline definition shape so
+formatting cannot accidentally disable documentation checks.

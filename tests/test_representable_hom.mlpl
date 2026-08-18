@@ -1,7 +1,8 @@
 # Tests for CT025-CT026 and CT037-CT041 finite hom-functors.
 include "lib/representable_hom.mlpl";
 @test {name: "covariant and contravariant hom actions compose with f", tags: ["CT039", "CT040", "hom-functor"]}
-def u:test_hom_actions() { "Verify postcomposition and precomposition both send the relevant identity to f.";
+def u:test_hom_actions() {
+  "Verify postcomposition and precomposition both send the relevant identity to f.";
   u:assert_eq(equal(u:postcompose_by_walking_arrow([0]), [1]), 1, "covariant postcomposition")?;
   u:assert_eq(equal(u:precompose_by_walking_arrow([2]), [1]), 1, "contravariant precomposition")?;
   witness = u:hom_action_witness([1], [0]);
@@ -9,7 +10,8 @@ def u:test_hom_actions() { "Verify postcomposition and precomposition both send 
   ok({test: "hom-actions", cases: 3})
 }
 @test {name: "representables carry universal elements and arrows", tags: ["CT025", "CT026", "CT037", "CT038", "CT041"]}
-def u:test_representable_universals() { "Verify walking-arrow representables, universal factorization, and distinct Yoneda rows.";
+def u:test_representable_universals() {
+  "Verify walking-arrow representables, universal factorization, and distinct Yoneda rows.";
   u:assert_eq(equal(u:representable_hom_from_a().at_b, [1]), 1, "representable at B")?;
   u:assert_eq(equal(u:corepresentable_hom_into_b().at_a, [1]), 1, "corepresentable at A")?;
   element = u:universal_element_factorization(1, 1);

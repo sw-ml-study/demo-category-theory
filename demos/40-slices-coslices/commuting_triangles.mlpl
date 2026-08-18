@@ -18,4 +18,8 @@ wrote = write_text("out/40-slices-coslices.svg", u:finite_slices_visual())
 u:epilog_open()
 u:explain("out/40-slices-coslices.svg", "Slice structure maps point from each object to the fixed base. Coslice structure maps point from the base to each object. Morphisms must preserve those maps by commuting triangles.")
 u:takeaway("A slice fixes the target; a coslice fixes the source. Their identities and composites remain ordinary arrows constrained by the base triangle.")
-if slice_triangle * coslice_triangle * category_laws * broken_slice * broken_coslice * is_ok(wrote) { ok("finite slice and coslice categories verified") } else { err("finite triangle invariant failed") }
+if slice_triangle * coslice_triangle * category_laws * broken_slice * broken_coslice * is_ok(wrote) {
+  ok("finite slice and coslice categories verified")
+} else {
+  err("finite triangle invariant failed")
+}

@@ -661,3 +661,13 @@ A connected multi-node graph and one spider node share boundary `2 → 2` and
 the same endpoint table. Changed route, identity, boundary, and endpoint data
 fail separately. CT123 remains bounded: this is not the general spider theorem.
 Next: CT124-CT128 process theory, state, effect, channel, classical structure.
+
+### Permanent MLPL hygiene gate (2026-08-18)
+
+All 250 current MLPL sources are canonical-format inputs. `AGENTS.md` and
+`CLAUDE.md` require a first-expression docstring in every user-defined function
+and canonical formatting before every commit and push. `just check` enforces
+both requirements across the whole repository, including generated web copies
+and documentation templates. Format-dependent tests and audits must consume
+the formatter's multiline representation. Next remains CT124-CT128; the source
+hygiene work introduces no sw-MLPL capability blocker.

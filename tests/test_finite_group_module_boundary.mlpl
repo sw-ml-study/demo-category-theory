@@ -1,13 +1,15 @@
 # Tests for CT099 group object and CT100 module-object boundary.
 include "lib/finite_group_module_boundary.mlpl";
 @test {name: "Z2 inverse is packaged as an internal group-object diagram", tags: ["CT099", "group-object"]}
-def u:test_finite_group_object_inverse_diagram() { "Check both inverse routes to the unit and reject a changed right route.";
+def u:test_finite_group_object_inverse_diagram() {
+  "Check both inverse routes to the unit and reject a changed right route.";
   u:assert_eq(u:group_object_inverse_diagram_holds([0, 0], [0, 0], [0, 0]), 1, "two inverse routes")?;
   u:assert_eq(u:group_object_inverse_diagram_holds([0, 0], [0, 1], [0, 0]), 0, "broken right inverse")?;
   ok({test: "finite-group-object", cases: 2})
 }
 @test {name: "module object needs a complete attributed action fixture", tags: ["CT100", "module-boundary"]}
-def u:test_module_object_fixture_boundary() { "Reject the absent module fixture and accept only a complete obligation vector.";
+def u:test_module_object_fixture_boundary() {
+  "Reject the absent module fixture and accept only a complete obligation vector.";
   u:assert_eq(u:module_action_fixture_is_complete(0, 0, 0, 0), 0, "missing fixture")?;
   u:assert_eq(u:module_action_fixture_is_complete(1, 1, 1, 1), 1, "complete hypothetical fixture")?;
   ok({test: "module-object-boundary", cases: 2})

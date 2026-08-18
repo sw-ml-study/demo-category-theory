@@ -1,8 +1,14 @@
 # Probe: nested record read and immutable rebuild in sw-MLPL 0.20.0.
 # visual: ascii
 # loops: 0
-def u:get_learning_rate(configuration) { "Read the nested learning rate from one model configuration."; configuration.training.learning_rate }
-def u:set_learning_rate(configuration, learning_rate) { "Rebuild one model configuration with a replacement nested learning rate."; {name: configuration.name, training: {learning_rate: learning_rate, batch_size: configuration.training.batch_size}, metadata: configuration.metadata} }
+def u:get_learning_rate(configuration) {
+  "Read the nested learning rate from one model configuration.";
+  configuration.training.learning_rate
+}
+def u:set_learning_rate(configuration, learning_rate) {
+  "Rebuild one model configuration with a replacement nested learning rate.";
+  {name: configuration.name, training: {learning_rate: learning_rate, batch_size: configuration.training.batch_size}, metadata: configuration.metadata}
+}
 configuration = {name: "classifier", training: {learning_rate: 0.01, batch_size: 32}, metadata: {version: 3}}
 updated = u:set_learning_rate(configuration, 0.02)
 restored = u:set_learning_rate(configuration, u:get_learning_rate(configuration))

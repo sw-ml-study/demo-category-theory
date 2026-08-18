@@ -18,4 +18,8 @@ wrote = write_text("out/20-opposite-duality.svg", u:opposite_duality_diagram())
 u:epilog_open()
 u:explain("out/20-opposite-duality.svg", "Every arrow in C reverses in C-op, so a composite path is read in reverse order. Transposing twice restores the original finite relation.")
 u:takeaway("Duality is a systematic arrow reversal: definitions and theorems travel with it, but composition order must reverse too.")
-if equal(restored, relation) * equal(dual_path, [30, 20, 10]) * broken_witness.found * is_ok(wrote) { ok("opposite and dual statement verified") } else { err("duality invariant failed") }
+if equal(restored, relation) * equal(dual_path, [30, 20, 10]) * broken_witness.found * is_ok(wrote) {
+  ok("opposite and dual statement verified")
+} else {
+  err("duality invariant failed")
+}

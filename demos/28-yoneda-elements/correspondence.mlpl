@@ -24,4 +24,8 @@ wrote = write_text("out/28-finite-yoneda.svg", u:finite_yoneda_stages_diagram())
 u:epilog_open()
 u:explain("out/28-finite-yoneda.svg", "Read left to right: choose 10; eta_A sends idA to 10 while eta_B sends f to 20 and the square commutes; evaluating eta_A at idA recovers 10. The dashed 21 is the broken square.")
 u:takeaway("For this walking-arrow fixture, elements of F(A) correspond to natural transformations Hom(A,-) to F. Category-of-elements reconstruction is a separate bounded extension, not the Yoneda correspondence itself.")
-if equal(element_round_trip, 10) * equal(transformation_round_trip, transformation) * naturality * failure.found * equal(element_edge, [0, 1]) * equal(reconstructed, [10, 20]) * is_ok(wrote) { ok("finite Yoneda correspondence verified") } else { err("finite Yoneda invariant failed") }
+if equal(element_round_trip, 10) * equal(transformation_round_trip, transformation) * naturality * failure.found * equal(element_edge, [0, 1]) * equal(reconstructed, [10, 20]) * is_ok(wrote) {
+  ok("finite Yoneda correspondence verified")
+} else {
+  err("finite Yoneda invariant failed")
+}

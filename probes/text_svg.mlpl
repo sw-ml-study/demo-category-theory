@@ -3,8 +3,13 @@
 # visual: svg
 # loops: 0
 
-def u:concatenate_text(a, b) { "Compute concatenate text for this executable category-theory example.";  decode_bytes(concat(tokenize_bytes(a), tokenize_bytes(b))) }
+def u:concatenate_text(a, b) {
+  "Compute concatenate text for this executable category-theory example.";
+  decode_bytes(concat(tokenize_bytes(a), tokenize_bytes(b)))
+}
 s = u:concatenate_text("<svg xmlns=\"http://www.w3.org/2000/svg\">", "</svg>")
 if equal(s, "<svg xmlns=\"http://www.w3.org/2000/svg\"></svg>") {
   ok({probe: "text-svg", bridge: "tokenize/concat/decode"})
-} else { err("text bridge behavior changed") }
+} else {
+  err("text bridge behavior changed")
+}

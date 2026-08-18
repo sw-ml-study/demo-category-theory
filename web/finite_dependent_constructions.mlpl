@@ -28,7 +28,10 @@ disp([sum_complete, product_complete, wrong_provenance, missing_choice, missing_
 # * THE VISUAL
 # * Green collection arrows retain tags; blue choice arrows form sections.
 # ***************************************************************************
-def u:finite_dependent_constructions_web_visual() { "Render fiberwise sums, products, and the missing local-closure quantifier."; u:finite_dependent_constructions_visual() }  # narrated shared visual entry point
+def u:finite_dependent_constructions_web_visual() {
+  "Render fiberwise sums, products, and the missing local-closure quantifier.";
+  u:finite_dependent_constructions_visual()
+}  # narrated shared visual entry point
 finite_dependent_constructions_visual = u:finite_dependent_constructions_web_visual()  # bind visual constant
 finite_dependent_constructions_visual  # display bound visual once
 # ***************************************************************************

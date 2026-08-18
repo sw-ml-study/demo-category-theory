@@ -16,4 +16,8 @@ wrote = write_text("out/51-cup-cap-connectivity.svg", u:finite_cup_cap_connectiv
 u:epilog_open()
 u:explain("out/51-cup-cap-connectivity.svg", "The cup directs I into A and A-star; the cap directs A-star and A into I. Green and blue snake graphs retain different typed boundaries and normalize separately.")
 u:takeaway("Cup and cap drawings carry semantic port direction. Their two typed composites straighten to different identity wires.")
-if cup_typed * cup_direction_mismatch * cap_typed * cap_order_mismatch * snake_connectivity * broken_left_snake * broken_right_snake * is_ok(wrote) { ok("cup cap and snake connectivity verified") } else { err("cup cap connectivity failed") }
+if cup_typed * cup_direction_mismatch * cap_typed * cap_order_mismatch * snake_connectivity * broken_left_snake * broken_right_snake * is_ok(wrote) {
+  ok("cup cap and snake connectivity verified")
+} else {
+  err("cup cap connectivity failed")
+}

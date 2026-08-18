@@ -2,13 +2,30 @@
 # visual: ascii
 # loops: 0
 
-def u:inject_left(x) { "Compute inject left for this executable category-theory example.";  {tag: "left", value: x} }
-def u:inject_right(x) { "Compute inject right for this executable category-theory example.";  {tag: "right", value: x} }
-def u:fold_tagged_value(v, on_left, on_right) { "Compute fold tagged value for this executable category-theory example.";
-  if equal(v.tag, "left") { call(on_left, [v.value]) } else { call(on_right, [v.value]) }
+def u:inject_left(x) {
+  "Compute inject left for this executable category-theory example.";
+  {tag: "left", value: x}
 }
-def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
-def u:double(x) { "Compute double for this executable category-theory example.";  x * 2 }
+def u:inject_right(x) {
+  "Compute inject right for this executable category-theory example.";
+  {tag: "right", value: x}
+}
+def u:fold_tagged_value(v, on_left, on_right) {
+  "Compute fold tagged value for this executable category-theory example.";
+  if equal(v.tag, "left") {
+    call(on_left, [v.value])
+  } else {
+    call(on_right, [v.value])
+  }
+}
+def u:increment(x) {
+  "Compute increment for this executable category-theory example.";
+  x + 1
+}
+def u:double(x) {
+  "Compute double for this executable category-theory example.";
+  x * 2
+}
 a = u:fold_tagged_value(u:inject_left(3), :u:increment, :u:double)
 b = u:fold_tagged_value(u:inject_right(3), :u:increment, :u:double)
 ok({probe: "tagged-values", expected: [4, 6], left: a, right: b})

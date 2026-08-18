@@ -30,7 +30,10 @@ disp([empty_arity, pair_arity, malformed_witness, functor_laws, broken_compositi
 # * THE VISUAL
 # * Boxes are shapes; slots are positions; the green arrow maps payloads only.
 # ***************************************************************************
-def u:finite_polynomial_containers_web_visual() { "Render P(X)=1+X squared as shapes, positions, mapped payloads, and a bad arity."; u:finite_polynomial_container_visual() }  # narrated shared visual entry point
+def u:finite_polynomial_containers_web_visual() {
+  "Render P(X)=1+X squared as shapes, positions, mapped payloads, and a bad arity.";
+  u:finite_polynomial_container_visual()
+}  # narrated shared visual entry point
 finite_polynomial_containers_visual = u:finite_polynomial_containers_web_visual()  # bind visual constant
 finite_polynomial_containers_visual  # display bound visual once
 # ***************************************************************************

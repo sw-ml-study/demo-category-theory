@@ -16,4 +16,8 @@ wrote = write_text("out/39-finite-subobjects.svg", u:finite_subobjects_visual())
 u:epilog_open()
 u:explain("out/39-finite-subobjects.svg", "Each Boolean row names a subobject. The characteristic map for {0} sends 0 to true and 1 to false; pulling back true recovers exactly that subset. The partial map stores output 9 only there.")
 u:takeaway("In this finite-Set fixture, truth-valued characteristic maps classify subobjects. Partial maps add an explicit domain because sw-MLPL does not type partiality.")
-if complete_inventory * classified_subobject * wrong_characteristic_map * partial_map_is_well_formed * extra_output_rejected * is_ok(wrote) { ok("finite subobjects and partial map verified") } else { err("finite subobject invariant failed") }
+if complete_inventory * classified_subobject * wrong_characteristic_map * partial_map_is_well_formed * extra_output_rejected * is_ok(wrote) {
+  ok("finite subobjects and partial map verified")
+} else {
+  err("finite subobject invariant failed")
+}

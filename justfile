@@ -19,6 +19,7 @@ assets:
     ./scripts/build-assets
 
 audit:
+    ./scripts/check-mlpl-format
     ./scripts/validate-catalog catalog/demos.tsv
     ./scripts/validate-catalog catalog/tests.tsv
     ./scripts/check-docstrings

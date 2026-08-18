@@ -1,9 +1,18 @@
 # Probe: each over vectors and matrices in sw-MLPL 0.20.0.
 # visual: ascii
 # loops: 0
-def u:identity(x) { "Compute identity for this executable category-theory example.";  x }
-def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
-def u:double(x) { "Compute double for this executable category-theory example.";  2 * x }
+def u:identity(x) {
+  "Compute identity for this executable category-theory example.";
+  x
+}
+def u:increment(x) {
+  "Compute increment for this executable category-theory example.";
+  x + 1
+}
+def u:double(x) {
+  "Compute double for this executable category-theory example.";
+  2 * x
+}
 v = [1, 2, 3]
 m = [[1, 2], [3, 4]]
 vector_id = each(:u:identity, v)

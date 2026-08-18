@@ -5,9 +5,18 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 02 -- IDENTITY AND COMPOSITION", intro: "Compare f with identity before and after f over every input."})
-def u:increment(x) { "Serve as the scalar morphism f whose lifted or composed action is being tested.";  x + 1 }
-def u:identity_then_increment(x) { "Execute identity before f for the left identity equation.";  u:then_apply(:u:identity, :u:increment, x) }
-def u:increment_then_identity(x) { "Execute identity after f for the right identity equation.";  u:then_apply(:u:increment, :u:identity, x) }
+def u:increment(x) {
+  "Serve as the scalar morphism f whose lifted or composed action is being tested.";
+  x + 1
+}
+def u:identity_then_increment(x) {
+  "Execute identity before f for the left identity equation.";
+  u:then_apply(:u:identity, :u:increment, x)
+}
+def u:increment_then_identity(x) {
+  "Execute identity after f for the right identity equation.";
+  u:then_apply(:u:increment, :u:identity, x)
+}
 xs = range(6)
 plain = each(:u:increment, xs)
 identity_before_f_outputs = each(:u:identity_then_increment, xs)
@@ -17,4 +26,8 @@ wrote = write_text("out/02-identity-composition.svg", u:identity_diagram())
 u:epilog_open()
 u:explain("out/02-identity-composition.svg", "The identity loop changes nothing, so it can disappear from either side of the green arrow.")
 u:takeaway("Identity is a do-nothing morphism that leaves composition unchanged on either side.")
-if equal(plain, identity_before_f_outputs) * equal(plain, identity_after_f_outputs) * is_ok(wrote) { ok("both identity laws hold") } else { err("identity law failed") }
+if equal(plain, identity_before_f_outputs) * equal(plain, identity_after_f_outputs) * is_ok(wrote) {
+  ok("both identity laws hold")
+} else {
+  err("identity law failed")
+}

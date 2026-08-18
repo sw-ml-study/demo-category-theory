@@ -1,14 +1,16 @@
 # Tests for CT059-CT063 bounded filtered and directed systems.
 include "lib/filtered_directed_systems.mlpl";
 @test {name: "finite filtered and directed witness checks", tags: ["CT059", "filtered", "directed"]}
-def u:test_finite_filtered_directed_witnesses() { "Accept complete bounded witnesses and reject a missing common successor.";
+def u:test_finite_filtered_directed_witnesses() {
+  "Accept complete bounded witnesses and reject a missing common successor.";
   u:assert_eq(u:finite_category_is_filtered([1, 1, 1], [1, 1]), 1, "filtered fixture")?;
   u:assert_eq(u:finite_preorder_is_directed([1, 1, 1]), 1, "directed preorder")?;
   u:assert_eq(u:finite_category_is_filtered([1, 0, 1], [1, 1]), 0, "missing successor")?;
   ok({test: "finite-filtered-directed", cases: 3})
 }
 @test {name: "bounded forward and reverse systems", tags: ["CT060", "CT061", "CT062", "CT063"]}
-def u:test_bounded_forward_reverse_systems() { "Check cocone labels, inverse tuples, and only observed finite stabilization.";
+def u:test_bounded_forward_reverse_systems() {
+  "Check cocone labels, inverse tuples, and only observed finite stabilization.";
   u:assert_eq(u:bounded_filtered_cocone_is_compatible([7, 9], [7, 9]), 1, "filtered cocone")?;
   u:assert_eq(u:bounded_direct_system_labels_are_compatible([4, 8], [4, 8]), 1, "direct labels")?;
   u:assert_eq(u:bounded_inverse_system_tuple_is_compatible([2, 5], [2, 5]), 1, "inverse tuple")?;

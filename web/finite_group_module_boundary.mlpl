@@ -19,7 +19,10 @@ disp([group_object, broken_inverse, module_missing])
 # * THE VISUAL
 # * Green inverse routes belong to Z2; dashed boxes are absent module data.
 # ***************************************************************************
-def u:finite_group_module_boundary_web_visual() { "Render the internal Z2 inverse diagram and missing module obligations."; u:finite_group_module_boundary_visual() }  # narrated shared visual entry point
+def u:finite_group_module_boundary_web_visual() {
+  "Render the internal Z2 inverse diagram and missing module obligations.";
+  u:finite_group_module_boundary_visual()
+}  # narrated shared visual entry point
 finite_group_module_boundary_visual = u:finite_group_module_boundary_web_visual()  # bind visual constant
 finite_group_module_boundary_visual  # display bound visual once
 # ***************************************************************************

@@ -4,9 +4,18 @@
 include "../../lib/context.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 12 -- MAP THE VALUE, KEEP THE CONTEXT", intro: "Increment a successful payload while an existing failure travels unchanged on a separate track."})
-def u:increment_payload(value) { "Increment one successful contextual payload."; value + 1 }
-def u:increment_then_double_payload(value) { "Increment and then double one successful contextual payload."; 2 * (value + 1) }
-def u:double_payload(value) { "Double one successful contextual payload."; 2 * value }
+def u:increment_payload(value) {
+  "Increment one successful contextual payload.";
+  value + 1
+}
+def u:increment_then_double_payload(value) {
+  "Increment and then double one successful contextual payload.";
+  2 * (value + 1)
+}
+def u:double_payload(value) {
+  "Double one successful contextual payload.";
+  2 * value
+}
 success = u:context_success(3)
 failure = u:context_failure("bad input")
 mapped_success = u:context_map(success, :u:increment_payload)
@@ -18,5 +27,8 @@ wrote = write_text("out/12-context-map.svg", u:context_map_diagram())
 u:epilog_open()
 u:explain("out/12-context-map.svg", "The green track changes success 3 into success 4. The red track carries the same failure message past the transform without touching a payload.")
 u:takeaway("This concrete context is a second functor: map preserves identity/composition, and failure is structure rather than an exceptional side channel.")
-if equal(mapped_success, u:context_success(4)) * equal(mapped_failure, failure) * equal(mapped_twice, mapped_once) * is_ok(wrote) { ok("context map laws verified") } else { err("context map invariant failed") }
-
+if equal(mapped_success, u:context_success(4)) * equal(mapped_failure, failure) * equal(mapped_twice, mapped_once) * is_ok(wrote) {
+  ok("context map laws verified")
+} else {
+  err("context map invariant failed")
+}

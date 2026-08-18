@@ -16,4 +16,8 @@ wrote = write_text("out/54-frobenius-spiders.svg", u:finite_frobenius_spiders_vi
 u:epilog_open()
 u:explain("out/54-frobenius-spiders.svg", "The attributed classical-bit merge/split routes agree, split then merge is identity, and one connected 2-to-2 graph matches one spider node.")
 u:takeaway("Frobenius and specialness enable this bounded fusion; one finite rewrite does not prove the general spider theorem.")
-if frobenius * broken_frobenius * specialness * broken_specialness * spider * broken_boundary * broken_endpoint * is_ok(wrote) { ok("finite Frobenius spiders verified") } else { err("Frobenius spider failed") }
+if frobenius * broken_frobenius * specialness * broken_specialness * spider * broken_boundary * broken_endpoint * is_ok(wrote) {
+  ok("finite Frobenius spiders verified")
+} else {
+  err("Frobenius spider failed")
+}

@@ -1,8 +1,14 @@
 # Probe: finite array folds and bounded arithmetic unfolds in sw-MLPL 0.20.0.
 # visual: ascii
 # loops: 0
-def u:double_fold_value(value) { "Double one value before a finite array reduction."; value * 2 }
-def u:bounded_arithmetic_unfold(seed, step, count) { "Generate a deterministic finite arithmetic sequence from seed, step, and count."; seed + range(count) * step }
+def u:double_fold_value(value) {
+  "Double one value before a finite array reduction.";
+  value * 2
+}
+def u:bounded_arithmetic_unfold(seed, step, count) {
+  "Generate a deterministic finite arithmetic sequence from seed, step, and count.";
+  seed + range(count) * step
+}
 values = [2, 4, 6, 8]
 fold_after_map = reduce_add(each(:u:double_fold_value, values))
 map_after_fold = 2 * reduce_add(values)

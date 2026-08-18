@@ -20,4 +20,8 @@ wrote = write_text("out/31-bounded-indexed-products.svg", u:bounded_indexed_prod
 u:epilog_open()
 u:explain("out/31-bounded-indexed-products.svg", "Three projections point from the product into A, B, and C; three tagged injections point from those objects into the coproduct. The discrete index has no nonidentity compatibility equations.")
 u:takeaway("For a finite discrete diagram, product is its limit and coproduct is its colimit. This is width three, not a claim about arbitrary or infinite families.")
-if indexed_laws * bad_product_rejected * bad_case_rejected * is_ok(wrote) { ok("bounded indexed product and coproduct verified") } else { err("bounded indexed construction invariant failed") }
+if indexed_laws * bad_product_rejected * bad_case_rejected * is_ok(wrote) {
+  ok("bounded indexed product and coproduct verified")
+} else {
+  err("bounded indexed construction invariant failed")
+}

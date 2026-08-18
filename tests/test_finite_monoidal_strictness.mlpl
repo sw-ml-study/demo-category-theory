@@ -1,7 +1,8 @@
 # Tests for CT091 strict monoidal boundary.
 include "lib/finite_monoidal_strictness.mlpl";
 @test {name: "parenthesized tensors are isomorphic but not equal", tags: ["CT091", "strictness"]}
-def u:test_finite_monoidal_strictness_boundary() { "Distinguish nested-record inequality from an associator with a two-sided inverse.";
+def u:test_finite_monoidal_strictness_boundary() {
+  "Distinguish nested-record inequality from an associator with a two-sided inverse.";
   left_nested = {left: {left: 2, right: 3}, right: 5};
   right_nested = {left: 2, right: {left: 3, right: 5}};
   u:assert_eq(equal(left_nested, right_nested), 0, "not literal equality")?;

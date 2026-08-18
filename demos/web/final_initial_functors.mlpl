@@ -23,7 +23,10 @@ disp([empty_final_comma, disconnected_initial_comma])
 # * THE VISUAL
 # * Read c-down-u on the left and u-down-c on the right; do not swap them.
 # ***************************************************************************
-def u:final_initial_functors_web_visual() { "Render opposite comma orientations and their finite extremum comparisons."; u:final_initial_functors_visual() }  # narrated shared visual entry point
+def u:final_initial_functors_web_visual() {
+  "Render opposite comma orientations and their finite extremum comparisons.";
+  u:final_initial_functors_visual()
+}  # narrated shared visual entry point
 final_initial_functors_visual = u:final_initial_functors_web_visual()  # bind visual constant
 final_initial_functors_visual  # display bound visual once
 # ***************************************************************************

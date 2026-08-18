@@ -14,4 +14,8 @@ wrote = write_text("out/49-dual-compact-boundary.svg", u:finite_dual_compact_bou
 u:epilog_open()
 u:explain("out/49-dual-compact-boundary.svg", "Evaluation removes A-star tensor A; coevaluation creates A tensor A-star. The green A route and blue A-star route return different typed identities, while object B still lacks a verified dual.")
 u:takeaway("A dual object needs both snake identities. Compact closed is stronger: every object needs such verified dual data.")
-if pairing_tables * snake_identities * broken_left_snake * broken_right_snake * compact_coverage_missing * is_ok(wrote) { ok("dual object and compact boundary verified") } else { err("dual object boundary failed") }
+if pairing_tables * snake_identities * broken_left_snake * broken_right_snake * compact_coverage_missing * is_ok(wrote) {
+  ok("dual object and compact boundary verified")
+} else {
+  err("dual object boundary failed")
+}

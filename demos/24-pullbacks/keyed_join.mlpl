@@ -17,4 +17,8 @@ wrote = write_text("out/24-pullback.svg", u:pullback_diagram())
 u:epilog_open()
 u:explain("out/24-pullback.svg", "The join pairs left rows [0,1] with right rows [1,0], so both routes expose keys [10,20]. An un-reordered pairing breaks the square.")
 u:takeaway("A pullback is the universal synchronized join: every compatible pair of row selections factors through it uniquely.")
-if square.commutes * factorization.commutes * factorization.unique * broken.found * is_ok(wrote) { ok("pullback join verified") } else { err("pullback invariant failed") }
+if square.commutes * factorization.commutes * factorization.unique * broken.found * is_ok(wrote) {
+  ok("pullback join verified")
+} else {
+  err("pullback invariant failed")
+}

@@ -1,12 +1,50 @@
 # lib/representable_hom.mlpl -- walking-arrow hom-functors and universals.
 # loops: 0
-def u:postcompose_by_walking_arrow(arrows) { "Postcompose arrows in Hom(A,A) by the unique walking arrow f."; each(:u:identity_a_becomes_f, arrows) }
-def u:identity_a_becomes_f(arrow) { "Map the identity on A to f under postcomposition."; if equal(arrow, 0) { 1 } else { -1 } }
-def u:precompose_by_walking_arrow(arrows) { "Precompose arrows in Hom(B,B) by the unique walking arrow f."; each(:u:identity_b_becomes_f, arrows) }
-def u:identity_b_becomes_f(arrow) { "Map the identity on B to f under precomposition."; if equal(arrow, 2) { 1 } else { -1 } }
-def u:representable_hom_from_a() { "Represent Hom(A,-) on the two objects of the walking-arrow category."; {at_a: [0], at_b: [1]} }
-def u:corepresentable_hom_into_b() { "Represent Hom(-,B) on the two objects of the walking-arrow category."; {at_a: [1], at_b: [2]} }
-def u:universal_element_factorization(selected_element, representing_arrow) { "Check that the identity universal element represents a selected finite element uniquely."; {exists: equal(selected_element, representing_arrow), unique: equal(representing_arrow, selected_element), arrow: representing_arrow} }
-def u:universal_arrow_factorization(candidate_arrow, mediator, reconstructed_arrow) { "Check one named universal arrow factors a candidate through exactly one mediator."; {commutes: equal(candidate_arrow, reconstructed_arrow), unique: equal(mediator, candidate_arrow)} }
-def u:yoneda_object_codes() { "Encode the two Yoneda-embedding objects as their representable hom-functor rows."; [[1, 1], [0, 1]] }
-def u:hom_action_witness(expected, actual) { "Retain a counterexample when a proposed hom action maps the wrong arrow."; {found: 1 - equal(expected, actual), expected: expected, actual: actual} }
+def u:postcompose_by_walking_arrow(arrows) {
+  "Postcompose arrows in Hom(A,A) by the unique walking arrow f.";
+  each(:u:identity_a_becomes_f, arrows)
+}
+def u:identity_a_becomes_f(arrow) {
+  "Map the identity on A to f under postcomposition.";
+  if equal(arrow, 0) {
+    1
+  } else {
+    -1
+  }
+}
+def u:precompose_by_walking_arrow(arrows) {
+  "Precompose arrows in Hom(B,B) by the unique walking arrow f.";
+  each(:u:identity_b_becomes_f, arrows)
+}
+def u:identity_b_becomes_f(arrow) {
+  "Map the identity on B to f under precomposition.";
+  if equal(arrow, 2) {
+    1
+  } else {
+    -1
+  }
+}
+def u:representable_hom_from_a() {
+  "Represent Hom(A,-) on the two objects of the walking-arrow category.";
+  {at_a: [0], at_b: [1]}
+}
+def u:corepresentable_hom_into_b() {
+  "Represent Hom(-,B) on the two objects of the walking-arrow category.";
+  {at_a: [1], at_b: [2]}
+}
+def u:universal_element_factorization(selected_element, representing_arrow) {
+  "Check that the identity universal element represents a selected finite element uniquely.";
+  {exists: equal(selected_element, representing_arrow), unique: equal(representing_arrow, selected_element), arrow: representing_arrow}
+}
+def u:universal_arrow_factorization(candidate_arrow, mediator, reconstructed_arrow) {
+  "Check one named universal arrow factors a candidate through exactly one mediator.";
+  {commutes: equal(candidate_arrow, reconstructed_arrow), unique: equal(mediator, candidate_arrow)}
+}
+def u:yoneda_object_codes() {
+  "Encode the two Yoneda-embedding objects as their representable hom-functor rows.";
+  [[1, 1], [0, 1]]
+}
+def u:hom_action_witness(expected, actual) {
+  "Retain a counterexample when a proposed hom action maps the wrong arrow.";
+  {found: 1 - equal(expected, actual), expected: expected, actual: actual}
+}

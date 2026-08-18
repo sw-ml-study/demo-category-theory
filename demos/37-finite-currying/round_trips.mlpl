@@ -18,4 +18,8 @@ wrote = write_text("out/37-finite-currying.svg", u:finite_currying_visual())
 u:epilog_open()
 u:explain("out/37-finite-currying.svg", "Curry groups the four product-input outputs into one A-to-B row for each X. Beta starts with the flat h table; eta starts with the row-shaped k table.")
 u:takeaway("Beta and eta say the two finite representations lose no behavior. This is fixed table reshaping, not a generic callable-returning curry operator.")
-if beta_law * eta_law * swapped_entry_failure * is_ok(wrote) { ok("finite curry beta and eta verified") } else { err("finite curry invariant failed") }
+if beta_law * eta_law * swapped_entry_failure * is_ok(wrote) {
+  ok("finite curry beta and eta verified")
+} else {
+  err("finite curry invariant failed")
+}

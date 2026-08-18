@@ -1,7 +1,8 @@
 # Tests for CT107 dual object and CT108-CT109 compact-closed boundary.
 include "lib/finite_dual_compact_boundary.mlpl";
 @test {name: "dual object has two typed snake identities", tags: ["CT107", "dual-object"]}
-def u:test_dual_object_snake_identities() { "Accept distinct left/right snake routes and reject independently changed endpoints.";
+def u:test_dual_object_snake_identities() {
+  "Accept distinct left/right snake routes and reject independently changed endpoints.";
   u:assert_eq(u:dual_object_snake_identities_hold(["A", "A*", "A"], ["A*", "A", "A*"], ["A"], ["A"], ["A*"], ["A*"]), 1, "two typed snakes")?;
   u:assert_eq(u:dual_object_snake_identities_hold(["A", "A*", "A"], ["A*", "A", "A*"], ["changed-A"], ["A"], ["A*"], ["A*"]), 0, "broken left snake")?;
   u:assert_eq(u:dual_object_snake_identities_hold(["A", "A*", "A"], ["A*", "A", "A*"], ["A"], ["A"], ["changed-dual"], ["A*"]), 0, "broken right snake")?;
@@ -9,7 +10,8 @@ def u:test_dual_object_snake_identities() { "Accept distinct left/right snake ro
   ok({test: "dual-object-snakes", cases: 4})
 }
 @test {name: "compact closure needs every object dual", tags: ["CT108", "CT109", "coverage-boundary"]}
-def u:test_compact_closed_coverage_boundary() { "Reject partial object-dual evidence and accept only a hypothetical complete finite coverage vector.";
+def u:test_compact_closed_coverage_boundary() {
+  "Reject partial object-dual evidence and accept only a hypothetical complete finite coverage vector.";
   u:assert_eq(u:compact_closed_object_coverage_is_complete([1, 0]), 0, "missing object dual")?;
   u:assert_eq(u:compact_closed_object_coverage_is_complete([1, 1]), 1, "all enumerated duals")?;
   ok({test: "compact-closed-coverage", cases: 2})

@@ -1,11 +1,49 @@
 # lib/universal_endpoints.mlpl -- finite duality and endpoint-object laws.
 # loops: 0
 
-def u:opposite_relation(adjacency) { "Reverse every arrow in a finite relation by transposing its adjacency matrix."; transpose(adjacency) }
-def u:opposite_twice(adjacency) { "Apply finite arrow reversal twice and return the original relation orientation."; u:opposite_relation(u:opposite_relation(adjacency)) }
-def u:reverse_three_arrow_path(path) { "Reverse the order of one three-arrow path for its explicit dual statement."; [take(path, 0, 2), take(path, 0, 1), take(path, 0, 0)] }
-def u:endpoint_function_count(source_size, target_size) { "Count functions for the empty-source, singleton-target, and singleton-source endpoint fixtures."; if equal(source_size, 0) { 1 } else { if equal(target_size, 1) { 1 } else { if equal(source_size, 1) { target_size } else { 0 } } } }
-def u:is_initial_by_hom_counts(hom_counts, object_index, object_count) { "Check that one finite-category object has exactly one outgoing arrow to every object in the fixture."; row = take(hom_counts, 0, object_index); equal(row, fill([object_count], 1)) }
-def u:is_terminal_by_hom_counts(hom_counts, object_index, object_count) { "Check that one finite-category object has exactly one incoming arrow from every object in the fixture."; column = take(transpose(hom_counts), 0, object_index); equal(column, fill([object_count], 1)) }
-def u:is_zero_by_hom_counts(hom_counts, object_index, object_count) { "Check that one finite-category object is both initial and terminal."; u:is_initial_by_hom_counts(hom_counts, object_index, object_count) * u:is_terminal_by_hom_counts(hom_counts, object_index, object_count) }
-def u:unique_arrow_witness(concept, expected_count, actual_count) { "Retain one counterexample when a proposed universal endpoint has the wrong arrow count."; {found: 1 - equal(expected_count, actual_count), concept: concept, expected_count: expected_count, actual_count: actual_count} }
+def u:opposite_relation(adjacency) {
+  "Reverse every arrow in a finite relation by transposing its adjacency matrix.";
+  transpose(adjacency)
+}
+def u:opposite_twice(adjacency) {
+  "Apply finite arrow reversal twice and return the original relation orientation.";
+  u:opposite_relation(u:opposite_relation(adjacency))
+}
+def u:reverse_three_arrow_path(path) {
+  "Reverse the order of one three-arrow path for its explicit dual statement.";
+  [take(path, 0, 2), take(path, 0, 1), take(path, 0, 0)]
+}
+def u:endpoint_function_count(source_size, target_size) {
+  "Count functions for the empty-source, singleton-target, and singleton-source endpoint fixtures.";
+  if equal(source_size, 0) {
+    1
+  } else {
+    if equal(target_size, 1) {
+      1
+    } else {
+      if equal(source_size, 1) {
+        target_size
+      } else {
+        0
+      }
+    }
+  }
+}
+def u:is_initial_by_hom_counts(hom_counts, object_index, object_count) {
+  "Check that one finite-category object has exactly one outgoing arrow to every object in the fixture.";
+  row = take(hom_counts, 0, object_index);
+  equal(row, fill([object_count], 1))
+}
+def u:is_terminal_by_hom_counts(hom_counts, object_index, object_count) {
+  "Check that one finite-category object has exactly one incoming arrow from every object in the fixture.";
+  column = take(transpose(hom_counts), 0, object_index);
+  equal(column, fill([object_count], 1))
+}
+def u:is_zero_by_hom_counts(hom_counts, object_index, object_count) {
+  "Check that one finite-category object is both initial and terminal.";
+  u:is_initial_by_hom_counts(hom_counts, object_index, object_count) * u:is_terminal_by_hom_counts(hom_counts, object_index, object_count)
+}
+def u:unique_arrow_witness(concept, expected_count, actual_count) {
+  "Retain one counterexample when a proposed universal endpoint has the wrong arrow count.";
+  {found: 1 - equal(expected_count, actual_count), concept: concept, expected_count: expected_count, actual_count: actual_count}
+}

@@ -18,4 +18,8 @@ wrote = write_text("out/26-finite-limits-colimits.svg", u:finite_limits_colimits
 u:epilog_open()
 u:explain("out/26-finite-limits-colimits.svg", "A cone points into a diagram and a cocone points out. Requiring exactly one mediator selects the terminal cone or initial cocone in this bounded family.")
 u:takeaway("Products, equalizers, and pullbacks are finite limits of different shapes; their duals are finite colimits. These fixtures do not prove completeness or cocompleteness.")
-if cone.commutes * cocone.commutes * equal(broken_cone.commutes, 0) * equal(broken_cocone.commutes, 0) * finite_limit.universal * finite_colimit.universal * non_limit.found * is_ok(wrote) { ok("bounded universal cones verified") } else { err("finite cone invariant failed") }
+if cone.commutes * cocone.commutes * equal(broken_cone.commutes, 0) * equal(broken_cocone.commutes, 0) * finite_limit.universal * finite_colimit.universal * non_limit.found * is_ok(wrote) {
+  ok("bounded universal cones verified")
+} else {
+  err("finite cone invariant failed")
+}

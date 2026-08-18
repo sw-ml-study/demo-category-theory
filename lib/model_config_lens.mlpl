@@ -1,8 +1,24 @@
 # lib/model_config_lens.mlpl -- one concrete lawful nested-record lens.
 # loops: 0
 
-def u:get_model_learning_rate(configuration) { "Read the nested learning rate from one model configuration."; configuration.training.learning_rate }
-def u:set_model_learning_rate(configuration, learning_rate) { "Rebuild a model configuration with one replacement learning rate and all other fields preserved."; {name: configuration.name, training: {learning_rate: learning_rate, batch_size: configuration.training.batch_size}, metadata: configuration.metadata} }
-def u:update_model_learning_rate(configuration, transform) { "Apply a scalar transform to the focused learning rate and rebuild the model configuration."; updated_rate = take(call(transform, [u:get_model_learning_rate(configuration)]), 0, 0); u:set_model_learning_rate(configuration, updated_rate) }
-def u:set_model_learning_rate_broken(configuration, learning_rate) { "Demonstrate an unlawful setter by also resetting the sibling batch size."; {name: configuration.name, training: {learning_rate: learning_rate, batch_size: 1}, metadata: configuration.metadata} }
-def u:lens_law_witness(law, expected, actual) { "Retain one named lens-law counterexample with expected and actual records or values."; {found: 1 - equal(expected, actual), law: law, expected: expected, actual: actual} }
+def u:get_model_learning_rate(configuration) {
+  "Read the nested learning rate from one model configuration.";
+  configuration.training.learning_rate
+}
+def u:set_model_learning_rate(configuration, learning_rate) {
+  "Rebuild a model configuration with one replacement learning rate and all other fields preserved.";
+  {name: configuration.name, training: {learning_rate: learning_rate, batch_size: configuration.training.batch_size}, metadata: configuration.metadata}
+}
+def u:update_model_learning_rate(configuration, transform) {
+  "Apply a scalar transform to the focused learning rate and rebuild the model configuration.";
+  updated_rate = take(call(transform, [u:get_model_learning_rate(configuration)]), 0, 0);
+  u:set_model_learning_rate(configuration, updated_rate)
+}
+def u:set_model_learning_rate_broken(configuration, learning_rate) {
+  "Demonstrate an unlawful setter by also resetting the sibling batch size.";
+  {name: configuration.name, training: {learning_rate: learning_rate, batch_size: 1}, metadata: configuration.metadata}
+}
+def u:lens_law_witness(law, expected, actual) {
+  "Retain one named lens-law counterexample with expected and actual records or values.";
+  {found: 1 - equal(expected, actual), law: law, expected: expected, actual: actual}
+}

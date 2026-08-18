@@ -16,4 +16,8 @@ wrote = write_text("out/48-monoidal-functors.svg", u:finite_monoidal_functors_vi
 u:epilog_open()
 u:explain("out/48-monoidal-functors.svg", "Arrowheads distinguish lax F(A) tensor F(B) to F(A tensor B) from oplax in the reverse direction. The square is tensor compatibility, while the dashed pair is missing closedness evidence.")
 u:takeaway("Direction defines lax versus oplax; invertibility defines strong; one internal-hom pair cannot establish closed monoidal structure.")
-if coherence * broken_coherence * strong_inverse * broken_inverse * transformation * broken_transformation * closedness_missing * is_ok(wrote) { ok("monoidal functor variants verified") } else { err("monoidal functor variant failed") }
+if coherence * broken_coherence * strong_inverse * broken_inverse * transformation * broken_transformation * closedness_missing * is_ok(wrote) {
+  ok("monoidal functor variants verified")
+} else {
+  err("monoidal functor variant failed")
+}

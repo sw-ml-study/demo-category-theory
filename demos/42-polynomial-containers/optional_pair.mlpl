@@ -23,4 +23,8 @@ wrote = write_text("out/42-polynomial-containers.svg", u:finite_polynomial_conta
 u:epilog_open()
 u:explain("out/42-polynomial-containers.svg", "The shape selects zero or two positions. Mapping changes payloads in those positions while retaining the selected shape.")
 u:takeaway("The finite container presents P(X)=1+X^2 as shapes and positions; identity and composition hold on its displayed payload action.")
-if empty_arity * pair_arity * malformed_witness * functor_laws * broken_composition * is_ok(wrote) { ok("finite polynomial container verified") } else { err("polynomial container invariant failed") }
+if empty_arity * pair_arity * malformed_witness * functor_laws * broken_composition * is_ok(wrote) {
+  ok("finite polynomial container verified")
+} else {
+  err("polynomial container invariant failed")
+}

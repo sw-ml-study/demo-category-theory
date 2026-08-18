@@ -1,12 +1,30 @@
 # Probe: finite representations for CT045-CT064.
 # visual: ascii
 # loops: 0
-def u:apply_three_point_map(function_table, inputs) { "Apply a finite function table to three explicit inputs."; [take(function_table, 0, take(inputs, 0, 0)), take(function_table, 0, take(inputs, 0, 1)), take(function_table, 0, take(inputs, 0, 2))] }
-def u:compose_three_point_maps(first_map, second_map) { "Compose two three-point finite function tables."; u:apply_three_point_map(second_map, first_map) }
-def u:bounded_mediator_counts_are_unique(counts) { "Check existence and uniqueness for three explicit candidate mediators."; equal(counts, fill([3], 1)) }
-def u:bounded_chain_stabilizes(values) { "Check whether the final two values of a three-stage chain agree."; equal(take(values, 0, 1), take(values, 0, 2)) }
-def u:three_leg_mediator_is_forced(candidate, legs) { "Check whether three discrete cone legs force one finite product mediator."; equal(candidate, legs) }
-def u:three_branch_case_map_is_forced(branch_outputs, expected_outputs) { "Check whether three tagged coproduct branches force one finite case map."; equal(branch_outputs, expected_outputs) }
+def u:apply_three_point_map(function_table, inputs) {
+  "Apply a finite function table to three explicit inputs.";
+  [take(function_table, 0, take(inputs, 0, 0)), take(function_table, 0, take(inputs, 0, 1)), take(function_table, 0, take(inputs, 0, 2))]
+}
+def u:compose_three_point_maps(first_map, second_map) {
+  "Compose two three-point finite function tables.";
+  u:apply_three_point_map(second_map, first_map)
+}
+def u:bounded_mediator_counts_are_unique(counts) {
+  "Check existence and uniqueness for three explicit candidate mediators.";
+  equal(counts, fill([3], 1))
+}
+def u:bounded_chain_stabilizes(values) {
+  "Check whether the final two values of a three-stage chain agree.";
+  equal(take(values, 0, 1), take(values, 0, 2))
+}
+def u:three_leg_mediator_is_forced(candidate, legs) {
+  "Check whether three discrete cone legs force one finite product mediator.";
+  equal(candidate, legs)
+}
+def u:three_branch_case_map_is_forced(branch_outputs, expected_outputs) {
+  "Check whether three tagged coproduct branches force one finite case map.";
+  equal(branch_outputs, expected_outputs)
+}
 diagram = {object_sizes: [2, 3], source_codes: [0], target_codes: [1], arrow_tables: [[0, 1]]}
 bounded_family = [[2, 3, 4], [5, 6, 7]]
 identity_map = [0, 1, 2]

@@ -18,4 +18,8 @@ wrote = write_text("out/34-filtered-directed-systems.svg", u:filtered_directed_s
 u:epilog_open()
 u:explain("out/34-filtered-directed-systems.svg", "The finite filtered fixture supplies common successors and coequalizers. Green arrows form a forward direct system; blue arrows form a reverse inverse system. Compatibility is checked only across the displayed stages.")
 u:takeaway("A directed preorder is a special filtered index, but a stable finite prefix is evidence about that prefix—not a proof of an infinite direct or inverse limit.")
-if filtered_fixture * directed_preorder * filtered_cocone * direct_labels * inverse_tuple * observed_stability * missing_successor * broken_label * is_ok(wrote) { ok("bounded filtered and directed systems verified") } else { err("bounded system invariant failed") }
+if filtered_fixture * directed_preorder * filtered_cocone * direct_labels * inverse_tuple * observed_stability * missing_successor * broken_label * is_ok(wrote) {
+  ok("bounded filtered and directed systems verified")
+} else {
+  err("bounded system invariant failed")
+}

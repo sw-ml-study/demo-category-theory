@@ -19,4 +19,8 @@ wrote = write_text("out/23-coequalizer.svg", u:coequalizer_diagram())
 u:epilog_open()
 u:explain("out/23-coequalizer.svg", "The parallel arrows force 0~1 and 1~2, so q maps all labels to one class. Every constant coequalizing map factors uniquely through q.")
 u:takeaway("A coequalizer is the universal quotient that imposes the equalities demanded by parallel arrows, no more and no less.")
-if equal(routes.left, routes.right) * factorization.commutes * factorization.unique * broken_witness.found * is_ok(wrote) { ok("coequalizer universal property verified") } else { err("coequalizer invariant failed") }
+if equal(routes.left, routes.right) * factorization.commutes * factorization.unique * broken_witness.found * is_ok(wrote) {
+  ok("coequalizer universal property verified")
+} else {
+  err("coequalizer invariant failed")
+}

@@ -2,7 +2,8 @@
 include "lib/diagonal_product_adjunction.mlpl";
 
 @test {name: "diagonal and product obey both triangle identities", tags: ["adjunction", "triangle", "product"]}
-def u:test_diagonal_product_triangles() { "The unit and counit composites return both representative objects unchanged.";
+def u:test_diagonal_product_triangles() {
+  "The unit and counit composites return both representative objects unchanged.";
   product_value = {left: 3, right: 5};
   first_triangle = u:product_counit(u:diagonal_duplicate(product_value));
   u:assert_eq(equal(first_triangle, product_value), 1, "product triangle")?;
@@ -13,7 +14,8 @@ def u:test_diagonal_product_triangles() { "The unit and counit composites return
 }
 
 @test {name: "bad counit breaks the product triangle", tags: ["adjunction", "counterexample", "product"]}
-def u:test_broken_product_counit() { "Selecting the left component twice changes a product with distinct values.";
+def u:test_broken_product_counit() {
+  "Selecting the left component twice changes a product with distinct values.";
   product_value = {left: 3, right: 5};
   broken = u:product_counit_broken(u:diagonal_duplicate(product_value));
   witness = u:adjunction_law_witness("product triangle", product_value, broken);

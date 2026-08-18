@@ -1,7 +1,8 @@
 # Tests for CT042-CT044 bounded Yoneda and elements.
 include "lib/finite_yoneda.mlpl";
 @test {name: "finite Yoneda correspondence round trips naturally", tags: ["CT042", "Yoneda"]}
-def u:test_finite_yoneda_round_trips() { "Verify both correspondence directions, naturality, and a broken B-component.";
+def u:test_finite_yoneda_round_trips() {
+  "Verify both correspondence directions, naturality, and a broken B-component.";
   transformation = u:transformation_from_selected_element(10);
   u:assert_eq(transformation.at_a, 10, "eta_A at idA must be the chosen element")?;
   u:assert_eq(transformation.at_b, 20, "eta_B at f must be F(f)(10)")?;
@@ -14,7 +15,8 @@ def u:test_finite_yoneda_round_trips() { "Verify both correspondence directions,
   ok({test: "finite-yoneda", cases: 6})
 }
 @test {name: "category of elements reconstructs the bounded functor", tags: ["CT043", "CT044", "elements", "density"]}
-def u:test_category_of_elements_reconstruction() { "Verify the induced edge and recover both functor values from element rows.";
+def u:test_category_of_elements_reconstruction() {
+  "Verify the induced edge and recover both functor values from element rows.";
   nodes = u:category_of_elements_nodes();
   u:assert_eq(equal(u:category_of_elements_edge(), [0, 1]), 1, "induced element arrow")?;
   u:assert_eq(equal(u:reconstruct_functor_from_elements(nodes), [10, 20]), 1, "bounded reconstruction")?;

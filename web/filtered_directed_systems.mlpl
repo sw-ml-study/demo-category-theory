@@ -25,7 +25,10 @@ disp([missing_successor, broken_direct_label])
 # * THE VISUAL
 # * Read the filtered witness, then forward and reverse systems, then boundary.
 # ***************************************************************************
-def u:filtered_directed_systems_web_visual() { "Render bounded filtered and directed systems with an explicit infinite-claim warning."; u:filtered_directed_systems_visual() }  # give the web leaf a narrated visual entry point
+def u:filtered_directed_systems_web_visual() {
+  "Render bounded filtered and directed systems with an explicit infinite-claim warning.";
+  u:filtered_directed_systems_visual()
+}  # give the web leaf a narrated visual entry point
 filtered_directed_systems_visual = u:filtered_directed_systems_web_visual()  # bind visual constant
 filtered_directed_systems_visual  # display bound visual once
 # ***************************************************************************

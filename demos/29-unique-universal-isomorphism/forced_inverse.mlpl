@@ -18,4 +18,8 @@ wrote = write_text("out/29-unique-universal-isomorphism.svg", u:unique_universal
 u:epilog_open()
 u:explain("out/29-unique-universal-isomorphism.svg", "P stores pairs in ordinary order; Q swaps storage order. Requiring both projections to agree forces the green swap map in each direction, and the two composites are identities.")
 u:takeaway("A universal object need not be literally equal to another choice. Its universal property forces exactly one structure-preserving isomorphism between them.")
-if unique_isomorphism * failure.found * equal(forward_then_backward, identity_map) * equal(backward_then_forward, identity_map) * is_ok(wrote) { ok("unique universal isomorphism verified") } else { err("unique universal isomorphism invariant failed") }
+if unique_isomorphism * failure.found * equal(forward_then_backward, identity_map) * equal(backward_then_forward, identity_map) * is_ok(wrote) {
+  ok("unique universal isomorphism verified")
+} else {
+  err("unique universal isomorphism invariant failed")
+}

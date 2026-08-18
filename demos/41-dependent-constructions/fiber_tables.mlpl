@@ -20,4 +20,8 @@ wrote = write_text("out/41-dependent-constructions.svg", u:finite_dependent_cons
 u:epilog_open()
 u:explain("out/41-dependent-constructions.svg", "The dependent sum keeps every value and tags its source fiber. The dependent product lists every row that chooses one value from each fiber.")
 u:takeaway("Finite fiber tables execute both constructions, but one checked slice cannot prove that every slice has exponentials.")
-if sum_complete * product_complete * wrong_provenance * missing_choice * missing_slice * is_ok(wrote) { ok("finite dependent constructions verified") } else { err("dependent construction invariant failed") }
+if sum_complete * product_complete * wrong_provenance * missing_choice * missing_slice * is_ok(wrote) {
+  ok("finite dependent constructions verified")
+} else {
+  err("dependent construction invariant failed")
+}

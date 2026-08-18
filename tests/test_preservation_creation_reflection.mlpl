@@ -2,7 +2,8 @@
 include "lib/preservation_creation_reflection.mlpl";
 
 @test {name: "functor preserves bounded limits and colimits", tags: ["CT055", "CT056", "preservation"]}
-def u:test_preservation_of_bounded_universals() { "Verify source and image universality while retaining loss-of-universality witnesses.";
+def u:test_preservation_of_bounded_universals() {
+  "Verify source and image universality while retaining loss-of-universality witnesses.";
   lost_limit = u:preservation_failure_witness(1, 0);
   lost_colimit = u:preservation_failure_witness(1, 0);
   u:assert_eq(u:functor_preserves_limit(1, 1), 1, "limit not preserved")?;
@@ -12,7 +13,8 @@ def u:test_preservation_of_bounded_universals() { "Verify source and image unive
 }
 
 @test {name: "creation and reflection impose different bounded checks", tags: ["CT057", "CT058", "creation", "reflection"]}
-def u:test_creation_differs_from_reflection() { "Require a unique lifted source limit for creation but only backward detection for reflection.";
+def u:test_creation_differs_from_reflection() {
+  "Require a unique lifted source limit for creation but only backward detection for reflection.";
   false_reflection = u:reflection_failure_witness(1, 0);
   nonunique_creation = u:creation_failure_witness(1, 2);
   u:assert_eq(u:functor_reflects_limit(1, 1), 1, "limit not reflected")?;

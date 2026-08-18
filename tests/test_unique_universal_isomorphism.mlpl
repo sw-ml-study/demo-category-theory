@@ -1,14 +1,16 @@
 # Tests for CT054 uniqueness up to unique isomorphism.
 include "lib/unique_universal_isomorphism.mlpl";
 @test {name: "universal product candidates have forced inverse comparisons", tags: ["CT054", "universal", "isomorphism"]}
-def u:test_unique_universal_comparison() { "Verify projection preservation and both inverse equations for two product representations.";
+def u:test_unique_universal_comparison() {
+  "Verify projection preservation and both inverse equations for two product representations.";
   comparison = u:product_comparison_map();
   u:assert_eq(u:comparison_preserves_projections(comparison), 1, "comparison preserves both projections")?;
   u:assert_eq(u:universal_candidates_are_uniquely_isomorphic(comparison, comparison), 1, "forced maps are inverse")?;
   ok({test: "unique-universal-isomorphism", cases: 2})
 }
 @test {name: "a competing comparison fails a required projection", tags: ["CT054", "counterexample"]}
-def u:test_non_universal_comparison_witness() { "Verify the identity index map cannot compare the differently stored products.";
+def u:test_non_universal_comparison_witness() {
+  "Verify the identity index map cannot compare the differently stored products.";
   witness = u:unique_universal_failure_witness([0, 1, 2, 3]);
   u:assert_eq(witness.found, 1, "bad comparison rejected")?;
   ok({test: "unique-universal-counterexample", cases: 1})

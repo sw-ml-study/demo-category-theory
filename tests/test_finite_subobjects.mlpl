@@ -1,7 +1,8 @@
 # Tests for CT074-CT077 bounded subobjects and partial maps.
 include "lib/finite_subobjects.mlpl";
 @test {name: "two-point subobjects are classified by truth maps", tags: ["CT074", "CT075", "CT076"]}
-def u:test_finite_subobject_classification() { "Inventory all four subobjects and reject a characteristic map for the wrong subset.";
+def u:test_finite_subobject_classification() {
+  "Inventory all four subobjects and reject a characteristic map for the wrong subset.";
   rows = [[0, 0], [1, 0], [0, 1], [1, 1]];
   u:assert_eq(u:two_point_subobject_inventory_is_complete(rows), 1, "all subobjects")?;
   u:assert_eq(u:characteristic_map_classifies_subobject([1, 0], [1, 0]), 1, "classified subset")?;
@@ -9,7 +10,8 @@ def u:test_finite_subobject_classification() { "Inventory all four subobjects an
   ok({test: "finite-subobjects", cases: 3})
 }
 @test {name: "partial map carries outputs only on its domain", tags: ["CT077", "partial-map"]}
-def u:test_bounded_partial_map() { "Match true domain positions to stored outputs and reject an extra output.";
+def u:test_bounded_partial_map() {
+  "Match true domain positions to stored outputs and reject an extra output.";
   u:assert_eq(u:bounded_partial_map_is_well_formed([1, 0], [9]), 1, "one defined point")?;
   u:assert_eq(u:bounded_partial_map_is_well_formed([1, 0], [9, 8]), 0, "extra output")?;
   ok({test: "bounded-partial-map", cases: 2})

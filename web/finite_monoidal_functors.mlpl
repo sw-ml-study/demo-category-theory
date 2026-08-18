@@ -21,7 +21,10 @@ disp([coherence, broken_coherence, strong_inverse, transformation, closedness_mi
 # * THE VISUAL
 # * Arrowheads encode comparison direction; the square encodes compatibility.
 # ***************************************************************************
-def u:finite_monoidal_functors_web_visual() { "Render the shared directed comparison-map lesson visual."; u:finite_monoidal_functors_visual() }  # narrated visual entry point
+def u:finite_monoidal_functors_web_visual() {
+  "Render the shared directed comparison-map lesson visual.";
+  u:finite_monoidal_functors_visual()
+}  # narrated visual entry point
 finite_monoidal_functors_visual = u:finite_monoidal_functors_web_visual()  # bind visual constant
 finite_monoidal_functors_visual  # display bound visual once
 # ***************************************************************************

@@ -17,4 +17,8 @@ wrote = write_text("out/36-finite-exponentials.svg", u:finite_exponentials_visua
 u:epilog_open()
 u:explain("out/36-finite-exponentials.svg", "The left object contains all four functions A to B as rows. Evaluation receives one row together with an input and returns that row's selected output.")
 u:takeaway("For two-point finite sets, B^A has 2^2 function elements and evaluation is ordinary application. This one object does not prove exponentials exist in every category.")
-if complete_exponential * correct_evaluation * counterexample_visible * is_ok(wrote) { ok("finite exponential and evaluation verified") } else { err("finite exponential invariant failed") }
+if complete_exponential * correct_evaluation * counterexample_visible * is_ok(wrote) {
+  ok("finite exponential and evaluation verified")
+} else {
+  err("finite exponential invariant failed")
+}

@@ -12,4 +12,8 @@ wrote = write_text("out/47-group-module-boundary.svg", u:finite_group_module_bou
 u:epilog_open()
 u:explain("out/47-group-module-boundary.svg", "The Z2 fixture supplies multiplication, unit, and inverse arrows. The module panel lists the action data that neither repository currently supplies.")
 u:takeaway("A group object is categorical packaging of established algebra; a module object waits for an attributable scalar-action fixture.")
-if group_object * broken_inverse * module_missing * is_ok(wrote) { ok("group object and module boundary verified") } else { err("group/module boundary failed") }
+if group_object * broken_inverse * module_missing * is_ok(wrote) {
+  ok("group object and module boundary verified")
+} else {
+  err("group/module boundary failed")
+}

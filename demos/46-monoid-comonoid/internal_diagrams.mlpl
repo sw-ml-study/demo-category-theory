@@ -13,4 +13,8 @@ wrote=write_text("out/46-monoid-comonoid.svg",u:finite_monoid_comonoid_visual())
 u:epilog_open()
 u:explain("out/46-monoid-comonoid.svg","Multiplication and unit point into M; comultiplication and counit reverse those roles. Each side has its own commuting laws and failure.")
 u:takeaway("Monoid and comonoid objects are algebraic operations expressed as morphisms inside a monoidal category; classification stays with the algebra curriculum.")
-if monoid_ok*comonoid_ok*broken_monoid*broken_comonoid*is_ok(wrote){ok("internal monoid and comonoid verified")}else{err("internal diagram failed")}
+if monoid_ok*comonoid_ok*broken_monoid*broken_comonoid*is_ok(wrote){
+  ok("internal monoid and comonoid verified")
+}else{
+  err("internal diagram failed")
+}

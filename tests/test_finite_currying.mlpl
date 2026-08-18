@@ -1,13 +1,15 @@
 # Tests for CT067-CT070 finite currying laws.
 include "lib/finite_exponentials.mlpl";
 @test {name: "finite curry and uncurry change table shape", tags: ["CT067", "CT068"]}
-def u:test_finite_curry_uncurry() { "Check the exact two-row curry and canonical flattened uncurry.";
+def u:test_finite_curry_uncurry() {
+  "Check the exact two-row curry and canonical flattened uncurry.";
   u:assert_eq(u:curry_binary_product_table([0, 1, 1, 0]), [[0, 1], [1, 0]], "curried rows")?;
   u:assert_eq(u:uncurry_binary_function_rows([[0, 1], [1, 0]]), [0, 1, 1, 0], "uncurried table")?;
   ok({test: "finite-curry-uncurry", cases: 2})
 }
 @test {name: "finite beta and eta are opposite round trips", tags: ["CT069", "CT070"]}
-def u:test_finite_beta_eta() { "Verify both round trips and expose a swapped-entry table as unequal.";
+def u:test_finite_beta_eta() {
+  "Verify both round trips and expose a swapped-entry table as unequal.";
   u:assert_eq(u:finite_beta_law_holds([0, 1, 1, 0]), 1, "beta")?;
   u:assert_eq(u:finite_eta_law_holds([[0, 1], [1, 0]]), 1, "eta")?;
   u:assert_eq(equal(u:uncurry_binary_function_rows([[0, 1], [0, 1]]), [0, 1, 1, 0]), 0, "swapped entry fails")?;

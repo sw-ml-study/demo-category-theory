@@ -15,4 +15,8 @@ wrote = write_text("out/38-cartesian-closed-boundary.svg", u:cartesian_closed_bo
 u:epilog_open()
 u:explain("out/38-cartesian-closed-boundary.svg", "The left panel certifies one internal hom. The singleton arrow selects negation as a global element. The lower missing pair blocks the every-pair claim required for cartesian closure.")
 u:takeaway("Internal hom and global elements are local data. Cartesian closed is a property of a category with products and exponentials for every object pair.")
-if pair_certificate * missing_pair_witness * equal(selected_global_element, [1, 0]) * is_ok(wrote) { ok("internal hom boundary verified") } else { err("cartesian closed boundary failed") }
+if pair_certificate * missing_pair_witness * equal(selected_global_element, [1, 0]) * is_ok(wrote) {
+  ok("internal hom boundary verified")
+} else {
+  err("cartesian closed boundary failed")
+}

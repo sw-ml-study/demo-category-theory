@@ -10,4 +10,6 @@ different = equal(a, c)
 nested = equal([[1, 2]], [[1, 2]])
 if same * (1 - different) * nested {
   ok({probe: "nested-equality", records: same, tags_differ: 1 - different, arrays: nested})
-} else { err("structured equality behavior changed") }
+} else {
+  err("structured equality behavior changed")
+}

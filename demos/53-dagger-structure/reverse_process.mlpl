@@ -15,4 +15,8 @@ wrote = write_text("out/53-dagger-structure.svg", u:finite_dagger_structure_visu
 u:epilog_open()
 u:explain("out/53-dagger-structure.svg", "The blue path reverses C-to-B-to-A and reads g-dagger before f-dagger. Cup-A dagger matches cap-A, but object B remains uncovered.")
 u:takeaway("Dagger reverses arrows and composition order involutively. Dagger compactness additionally needs compatible duals for every object.")
-if dagger_laws * wrong_order * non_involutive * cup_cap_compatible * incompatible_cup_cap * coverage_missing * is_ok(wrote) { ok("dagger structure verified") } else { err("dagger structure failed") }
+if dagger_laws * wrong_order * non_involutive * cup_cap_compatible * incompatible_cup_cap * coverage_missing * is_ok(wrote) {
+  ok("dagger structure verified")
+} else {
+  err("dagger structure failed")
+}

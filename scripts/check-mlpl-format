@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+formatter="$repo_root/../sw-mlpl/scripts/mlpl-fmt.sh"
+[ -x "$formatter" ] || { echo "missing canonical formatter: $formatter" >&2; exit 1; }
+
+# Keep formatter processes bounded while still discovering every MLPL source,
+# including documentation templates and generated web copies.
+find "$repo_root" -name '*.mlpl' -type f -print | sort | while IFS= read -r source; do
+  "$formatter" --check "$source"
+done

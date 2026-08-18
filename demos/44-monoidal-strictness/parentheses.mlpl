@@ -20,4 +20,8 @@ wrote = write_text("out/44-monoidal-strictness.svg", u:finite_monoidal_strictnes
 u:epilog_open()
 u:explain("out/44-monoidal-strictness.svg", "The boxes retain different record shapes. Associator arrows preserve payload order and invert each other; the dashed reverse swaps 3 and 5.")
 u:takeaway("This fixture is monoidal but not strict: parentheses are connected coherently by isomorphism rather than erased by equality.")
-if literal_difference * inverse_laws * bad_inverse * is_ok(wrote) { ok("finite monoidal strictness boundary verified") } else { err("strictness boundary failed") }
+if literal_difference * inverse_laws * bad_inverse * is_ok(wrote) {
+  ok("finite monoidal strictness boundary verified")
+} else {
+  err("strictness boundary failed")
+}

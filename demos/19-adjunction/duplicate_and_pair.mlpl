@@ -15,4 +15,8 @@ wrote = write_text("out/19-diagonal-product-adjunction.svg", u:diagonal_product_
 u:epilog_open()
 u:explain("out/19-diagonal-product-adjunction.svg", "After products and functors are known: the unit duplicates (3,5), the counit takes matching projections, and each triangle returns its starting value. A bad counit returns (3,3).")
 u:takeaway("The two triangle identities make diagonal duplication left adjoint to product. This concrete Set example earns the adjunction vocabulary.")
-if equal(product_triangle, product_value) * equal(diagonal_triangle, diagonal_value) * broken_witness.found * is_ok(wrote) { ok("diagonal-product adjunction verified") } else { err("adjunction triangle invariant failed") }
+if equal(product_triangle, product_value) * equal(diagonal_triangle, diagonal_value) * broken_witness.found * is_ok(wrote) {
+  ok("diagonal-product adjunction verified")
+} else {
+  err("adjunction triangle invariant failed")
+}

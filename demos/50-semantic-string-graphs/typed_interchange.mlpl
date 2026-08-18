@@ -15,4 +15,8 @@ wrote = write_text("out/50-semantic-string-graphs.svg", u:finite_string_graphs_v
 u:epilog_open()
 u:explain("out/50-semantic-string-graphs.svg", "The top drawings move f and g but retain semantic edge 0-to-1 with type B. Below, the green and blue constructions group four boxes differently and reach outputs [4,8].")
 u:takeaway("A string diagram denotes typed connectivity and composition. Coordinates narrate one bounded movement; semantic edges and route endpoints carry the evidence.")
-if typed_connection * type_mismatch * bounded_movement * changed_connectivity * interchange * broken_interchange * is_ok(wrote) { ok("semantic string graphs and interchange verified") } else { err("semantic string graph failed") }
+if typed_connection * type_mismatch * bounded_movement * changed_connectivity * interchange * broken_interchange * is_ok(wrote) {
+  ok("semantic string graphs and interchange verified")
+} else {
+  err("semantic string graph failed")
+}

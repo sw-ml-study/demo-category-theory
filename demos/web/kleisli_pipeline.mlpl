@@ -6,9 +6,18 @@
 # * A successful input crosses three stages; a bad input stops at the first.
 # ***************************************************************************
 ;
-def u:positive_stage(value) { "Double a positive input."; value * 2 }  # first successful stage
-def u:even_stage(value) { "Halve one even input."; value / 2 }  # second successful stage
-def u:enrich_stage(value) { "Add ten to the pipeline payload."; value + 10 }  # final successful stage
+def u:positive_stage(value) {
+  "Double a positive input.";
+  value * 2
+}  # first successful stage
+def u:even_stage(value) {
+  "Halve one even input.";
+  value / 2
+}  # second successful stage
+def u:enrich_stage(value) {
+  "Add ten to the pipeline payload.";
+  value + 10
+}  # final successful stage
 successful = u:enrich_stage(u:even_stage(u:positive_stage(4)))  # all stages run
 failed = {tag: "failure", value: 0, message: "not positive"}  # -1 stops immediately
 disp([successful, equal(failed.message, "not positive")])  # 14 and preserved failure
@@ -16,7 +25,10 @@ disp([successful, equal(failed.message, "not positive")])  # 14 and preserved fa
 # * THE VISUAL
 # * Green reaches 14. Red stops at validation and bypasses every later stage.
 # ***************************************************************************
-def u:kleisli_pipeline_visual() { "Render the directed SVG witness for this lesson categorical law."; "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 820 280\" width=\"820\" height=\"280\" role=\"img\"><title>fallible pipeline composition</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.failed{stroke-dasharray:10 7;stroke:rgb(247,118,142)}.token{fill:rgb(247,118,142);animation:p 4s infinite alternate}@keyframes p{to{transform:translateX(570px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(570px)}}</style><rect width=\"820\" height=\"280\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"30\" y=\"55\" width=\"130\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"240\" y=\"55\" width=\"130\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"450\" y=\"55\" width=\"130\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"660\" y=\"55\" width=\"130\" height=\"60\" rx=\"14\"/><line class=\"arrow\" x1=\"160\" y1=\"85\" x2=\"240\" y2=\"85\"/><line class=\"arrow\" x1=\"370\" y1=\"85\" x2=\"450\" y2=\"85\"/><line class=\"arrow\" x1=\"580\" y1=\"85\" x2=\"660\" y2=\"85\"/><text x=\"95\" y=\"92\" text-anchor=\"middle\">input 4</text><text x=\"305\" y=\"92\" text-anchor=\"middle\">positive 8</text><text x=\"515\" y=\"92\" text-anchor=\"middle\">even 4</text><text x=\"725\" y=\"92\" text-anchor=\"middle\">enrich 14</text><rect class=\"obj\" x=\"30\" y=\"180\" width=\"130\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"240\" y=\"180\" width=\"180\" height=\"60\" rx=\"14\"/><line class=\"arrow failed\" x1=\"160\" y1=\"210\" x2=\"240\" y2=\"210\"/><text x=\"95\" y=\"217\" text-anchor=\"middle\">input -1</text><text x=\"330\" y=\"217\" text-anchor=\"middle\">failure: positive</text><text x=\"610\" y=\"217\" text-anchor=\"middle\">later stages skipped</text><circle class=\"token\" cx=\"140\" cy=\"105\" r=\"9\"/></svg>" }  # named custom visual
+def u:kleisli_pipeline_visual() {
+  "Render the directed SVG witness for this lesson categorical law.";
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 820 280\" width=\"820\" height=\"280\" role=\"img\"><title>fallible pipeline composition</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.failed{stroke-dasharray:10 7;stroke:rgb(247,118,142)}.token{fill:rgb(247,118,142);animation:p 4s infinite alternate}@keyframes p{to{transform:translateX(570px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(570px)}}</style><rect width=\"820\" height=\"280\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"30\" y=\"55\" width=\"130\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"240\" y=\"55\" width=\"130\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"450\" y=\"55\" width=\"130\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"660\" y=\"55\" width=\"130\" height=\"60\" rx=\"14\"/><line class=\"arrow\" x1=\"160\" y1=\"85\" x2=\"240\" y2=\"85\"/><line class=\"arrow\" x1=\"370\" y1=\"85\" x2=\"450\" y2=\"85\"/><line class=\"arrow\" x1=\"580\" y1=\"85\" x2=\"660\" y2=\"85\"/><text x=\"95\" y=\"92\" text-anchor=\"middle\">input 4</text><text x=\"305\" y=\"92\" text-anchor=\"middle\">positive 8</text><text x=\"515\" y=\"92\" text-anchor=\"middle\">even 4</text><text x=\"725\" y=\"92\" text-anchor=\"middle\">enrich 14</text><rect class=\"obj\" x=\"30\" y=\"180\" width=\"130\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"240\" y=\"180\" width=\"180\" height=\"60\" rx=\"14\"/><line class=\"arrow failed\" x1=\"160\" y1=\"210\" x2=\"240\" y2=\"210\"/><text x=\"95\" y=\"217\" text-anchor=\"middle\">input -1</text><text x=\"330\" y=\"217\" text-anchor=\"middle\">failure: positive</text><text x=\"610\" y=\"217\" text-anchor=\"middle\">later stages skipped</text><circle class=\"token\" cx=\"140\" cy=\"105\" r=\"9\"/></svg>"
+}  # named custom visual
 kleisli_pipeline_visual = u:kleisli_pipeline_visual()  # bind visual constant
 kleisli_pipeline_visual  # display bound visual once
 # ***************************************************************************
@@ -24,4 +36,3 @@ kleisli_pipeline_visual  # display bound visual once
 # * Context-aware handoff runs later stages only after success.
 # * THE POINT -- Kleisli composition makes fallible functions composable.
 # ***************************************************************************
-

@@ -23,7 +23,10 @@ disp([complete_inventory, classified_subobject, wrong_characteristic_map, partia
 # * THE VISUAL
 # * Inventory subsets, follow χ into truth, then read the restricted partial map.
 # ***************************************************************************
-def u:finite_subobjects_web_visual() { "Render finite truth classification and a bounded domain-restricted partial map."; u:finite_subobjects_visual() }  # narrated shared visual entry point
+def u:finite_subobjects_web_visual() {
+  "Render finite truth classification and a bounded domain-restricted partial map.";
+  u:finite_subobjects_visual()
+}  # narrated shared visual entry point
 finite_subobjects_visual = u:finite_subobjects_web_visual()  # bind visual constant
 finite_subobjects_visual  # display bound visual once
 # ***************************************************************************

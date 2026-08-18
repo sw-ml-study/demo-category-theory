@@ -5,7 +5,16 @@ budget=${WEB_GROUP_BUDGET:-26}
 bad=0
 for f in "$repo_root"/web/*.mlpl; do
   [ -f "$f" ] || continue
-  groups=$(awk 'NF && $1 !~ /^#/ {n++} END{print n+0}' "$f")
+  # Canonical formatting expands function bodies and compound expressions over
+  # several physical lines. Count learner-facing top-level statement groups,
+  # including each function definition once, instead of layout lines.
+  groups=$(awk '
+    /^def u:/ { n++; in_function=1; next }
+    in_function && /^}/ { in_function=0; next }
+    in_function { next }
+    /^[^[:space:]#}]/ { n++ }
+    END { print n+0 }
+  ' "$f")
   [ "$groups" -le "$budget" ] || { echo "${f#$repo_root/}: $groups groups exceeds $budget" >&2; bad=1; }
 done
 [ "$bad" -eq 0 ]

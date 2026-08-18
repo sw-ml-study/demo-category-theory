@@ -27,7 +27,10 @@ disp([literal_difference, inverse_laws, bad_inverse])
 # * THE VISUAL
 # * Separate boxes retain parentheses; directed green arrows are inverse maps.
 # ***************************************************************************
-def u:finite_monoidal_strictness_web_visual() { "Render unequal tensor nestings, inverse associators, and a wrong reverse map."; u:finite_monoidal_strictness_visual() }  # narrated shared visual entry point
+def u:finite_monoidal_strictness_web_visual() {
+  "Render unequal tensor nestings, inverse associators, and a wrong reverse map.";
+  u:finite_monoidal_strictness_visual()
+}  # narrated shared visual entry point
 finite_monoidal_strictness_visual = u:finite_monoidal_strictness_web_visual()  # bind visual constant
 finite_monoidal_strictness_visual  # display bound visual once
 # ***************************************************************************

@@ -25,7 +25,10 @@ disp([beta_law, eta_law, swapped_entry_failure])
 # * THE VISUAL
 # * Follow curry right and uncurry left; beta and eta choose opposite starts.
 # ***************************************************************************
-def u:finite_currying_web_visual() { "Render opposite finite beta and eta round trips with a swapped-entry failure."; u:finite_currying_visual() }  # narrated shared visual entry point
+def u:finite_currying_web_visual() {
+  "Render opposite finite beta and eta round trips with a swapped-entry failure.";
+  u:finite_currying_visual()
+}  # narrated shared visual entry point
 finite_currying_visual = u:finite_currying_web_visual()  # bind visual constant
 finite_currying_visual  # display bound visual once
 # ***************************************************************************

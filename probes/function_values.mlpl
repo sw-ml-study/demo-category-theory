@@ -2,10 +2,22 @@
 # visual: ascii
 # loops: 0
 
-def u:increment(x) { "Compute increment for this executable category-theory example.";  x + 1 }
-def u:double(x) { "Compute double for this executable category-theory example.";  x * 2 }
-def u:apply(f, x) { "Compute apply for this executable category-theory example.";  call(f, [x]) }
-def u:compose_apply(f, g, x) { "Compute compose apply for this executable category-theory example.";  call(g, [call(f, [x])]) }
+def u:increment(x) {
+  "Compute increment for this executable category-theory example.";
+  x + 1
+}
+def u:double(x) {
+  "Compute double for this executable category-theory example.";
+  x * 2
+}
+def u:apply(f, x) {
+  "Compute apply for this executable category-theory example.";
+  call(f, [x])
+}
+def u:compose_apply(f, g, x) {
+  "Compute compose apply for this executable category-theory example.";
+  call(g, [call(f, [x])])
+}
 f = :u:increment
 ops = {map: :u:double}
 direct = u:apply(f, 3)

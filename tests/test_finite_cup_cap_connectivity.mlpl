@@ -1,7 +1,8 @@
 # Tests for CT113-CT115 cup, cap, and snake semantic connectivity.
 include "lib/finite_cup_cap_connectivity.mlpl";
 @test {name: "cup and cap have typed directed boundaries", tags: ["CT113", "CT114", "ports"]}
-def u:test_cup_cap_typed_boundaries() { "Accept the directed cup/cap boundaries and reject a swapped or mistyped port.";
+def u:test_cup_cap_typed_boundaries() {
+  "Accept the directed cup/cap boundaries and reject a swapped or mistyped port.";
   u:assert_eq(u:cup_connectivity_is_typed(["I"], ["A"], ["A*"]), 1, "typed cup")?;
   u:assert_eq(u:cup_connectivity_is_typed(["A"], ["I"], ["A*"]), 0, "cup direction mismatch")?;
   u:assert_eq(u:cap_connectivity_is_typed(["A*"], ["A"], ["I"]), 1, "typed cap")?;
@@ -9,7 +10,8 @@ def u:test_cup_cap_typed_boundaries() { "Accept the directed cup/cap boundaries 
   ok({test: "cup-cap-boundaries", cases: 4})
 }
 @test {name: "two snake graphs normalize to typed identities", tags: ["CT115", "snake-connectivity"]}
-def u:test_snake_connectivity_normalization() { "Accept distinct typed snakes and reject independently changed left and right endpoints.";
+def u:test_snake_connectivity_normalization() {
+  "Accept distinct typed snakes and reject independently changed left and right endpoints.";
   u:assert_eq(u:snake_connectivity_normalizes({boundary: "A", path: [0, 1, 2]}, {boundary: "A*", path: [3, 4, 5]}, ["A"], ["A"], ["A*"], ["A*"]), 1, "two snake identities")?;
   u:assert_eq(u:snake_connectivity_normalizes({boundary: "A", path: [0, 1, 2]}, {boundary: "A*", path: [3, 4, 5]}, ["B"], ["A"], ["A*"], ["A*"]), 0, "broken left snake")?;
   u:assert_eq(u:snake_connectivity_normalizes({boundary: "A", path: [0, 1, 2]}, {boundary: "A*", path: [3, 4, 5]}, ["A"], ["A"], ["B*"], ["A*"]), 0, "broken right snake")?;

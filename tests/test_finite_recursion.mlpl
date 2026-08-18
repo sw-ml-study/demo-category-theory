@@ -1,11 +1,18 @@
 # Tests for finite fold and bounded unfold fixtures.
 include "lib/finite_recursion.mlpl";
 
-def u:double_fold_input(value) { "Double one input before folding the finite array."; value * 2 }
-def u:square_fold_input(value) { "Square one input for a deliberately non-homomorphic comparison."; value * value }
+def u:double_fold_input(value) {
+  "Double one input before folding the finite array.";
+  value * 2
+}
+def u:square_fold_input(value) {
+  "Square one input for a deliberately non-homomorphic comparison.";
+  value * value
+}
 
 @test {name: "fold fusion preserves a linear summary", tags: ["fold", "fusion", "finite"]}
-def u:test_fold_fusion() { "Mapping a linear scale before summing equals scaling the completed sum.";
+def u:test_fold_fusion() {
+  "Mapping a linear scale before summing equals scaling the completed sum.";
   values = [2, 4, 6, 8];
   fused = u:fold_after_map(values, :u:double_fold_input);
   separate = 2 * u:fold_sum(values);
@@ -18,7 +25,8 @@ def u:test_fold_fusion() { "Mapping a linear scale before summing equals scaling
 }
 
 @test {name: "bounded unfold regenerates an arithmetic sequence", tags: ["unfold", "round-trip", "finite"]}
-def u:test_bounded_unfold_round_trip() { "Recovering seed and step regenerates a bounded arithmetic fixture exactly.";
+def u:test_bounded_unfold_round_trip() {
+  "Recovering seed and step regenerates a bounded arithmetic fixture exactly.";
   generated = u:bounded_arithmetic_unfold(3, 2, 4);
   regenerated = u:regenerate_arithmetic_sequence(generated);
   u:assert_eq(equal(generated, regenerated), 1, "arithmetic regeneration")?;

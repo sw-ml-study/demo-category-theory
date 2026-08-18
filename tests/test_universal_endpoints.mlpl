@@ -2,7 +2,8 @@
 include "lib/universal_endpoints.mlpl";
 
 @test {name: "opposite reverses arrows and dualizes path order", tags: ["CT020", "CT021", "duality"]}
-def u:test_opposite_and_dual_statement() { "Finite transpose reverses arrows, is involutive, and reverses explicit composition order.";
+def u:test_opposite_and_dual_statement() {
+  "Finite transpose reverses arrows, is involutive, and reverses explicit composition order.";
   relation = [[0, 1, 0], [0, 0, 1], [0, 0, 0]];
   opposite = u:opposite_relation(relation);
   u:assert_eq(equal(opposite, [[0, 0, 0], [1, 0, 0], [0, 1, 0]]), 1, "opposite arrows")?;
@@ -12,7 +13,8 @@ def u:test_opposite_and_dual_statement() { "Finite transpose reverses arrows, is
 }
 
 @test {name: "initial terminal and zero objects have unique arrows", tags: ["CT022", "CT023", "CT024", "universal"]}
-def u:test_universal_endpoint_objects() { "Finite function counts and a pointed category distinguish initial, terminal, and zero objects.";
+def u:test_universal_endpoint_objects() {
+  "Finite function counts and a pointed category distinguish initial, terminal, and zero objects.";
   u:assert_eq(u:endpoint_function_count(0, 3), 1, "empty initial arrow")?;
   u:assert_eq(u:endpoint_function_count(3, 1), 1, "singleton terminal arrow")?;
   not_initial = u:unique_arrow_witness("singleton initial", 1, u:endpoint_function_count(1, 2));

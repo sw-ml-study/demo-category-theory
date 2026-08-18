@@ -22,7 +22,10 @@ disp([pair_certificate, category_wide_certificate, missing_pair_witness])
 # * THE VISUAL
 # * Read local internal hom, singleton selection, then the missing every-pair box.
 # ***************************************************************************
-def u:cartesian_closed_boundary_web_visual() { "Render local internal-hom evidence and the missing category-wide coverage witness."; u:cartesian_closed_boundary_visual() }  # narrated shared visual entry point
+def u:cartesian_closed_boundary_web_visual() {
+  "Render local internal-hom evidence and the missing category-wide coverage witness.";
+  u:cartesian_closed_boundary_visual()
+}  # narrated shared visual entry point
 cartesian_closed_boundary_visual = u:cartesian_closed_boundary_web_visual()  # bind visual constant
 cartesian_closed_boundary_visual  # display bound visual once
 # ***************************************************************************

@@ -1,14 +1,16 @@
 # Tests for CT085-CT090 finite monoidal foundation.
 include "lib/finite_monoidal_foundation.mlpl";
 @test {name: "tensor associator and unitors preserve values", tags: ["CT086", "CT087", "CT088", "CT089", "CT090"]}
-def u:test_finite_tensor_structure_maps() { "Check the displayed associator and both unitors on concrete values.";
+def u:test_finite_tensor_structure_maps() {
+  "Check the displayed associator and both unitors on concrete values.";
   u:assert_eq(u:associate_tensor_left_to_right({left: {left: 2, right: 3}, right: 5}), {left: 2, right: {left: 3, right: 5}}, "associator")?;
   u:assert_eq(u:remove_left_tensor_unit({left: 0, right: 7}), 7, "left unitor")?;
   u:assert_eq(u:remove_right_tensor_unit({left: 7, right: 0}), 7, "right unitor")?;
   ok({test: "finite-tensor-structure", cases: 3})
 }
 @test {name: "pentagon routes have distinct intermediates and one endpoint", tags: ["CT085", "pentagon"]}
-def u:test_finite_pentagon_coherence() { "Build two- and three-associator pentagon paths, compare endpoints, and reject a changed value.";
+def u:test_finite_pentagon_coherence() {
+  "Build two- and three-associator pentagon paths, compare endpoints, and reject a changed value.";
   start_tensor = {left: {left: {left: 2, right: 3}, right: 5}, right: 7};
   short_path = u:pentagon_short_coherence_path(start_tensor);
   long_path = u:pentagon_long_coherence_path(start_tensor);
@@ -18,7 +20,8 @@ def u:test_finite_pentagon_coherence() { "Build two- and three-associator pentag
   ok({test: "finite-pentagon", cases: 3})
 }
 @test {name: "triangle routes use associator and opposite unitors", tags: ["CT085", "triangle"]}
-def u:test_finite_triangle_coherence() { "Build both triangle routes and check their common tensor endpoint.";
+def u:test_finite_triangle_coherence() {
+  "Build both triangle routes and check their common tensor endpoint.";
   start_tensor = {left: {left: 2, right: 0}, right: 3};
   associator_route = u:triangle_associator_then_left_unitor(start_tensor);
   right_unitor_route = u:triangle_right_unitor_then_identity(start_tensor);

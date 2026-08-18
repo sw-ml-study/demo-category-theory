@@ -4,17 +4,77 @@
 # not claim static exhaustiveness or a generic Monad interface.
 # loops: 0
 
-def u:context_success(value) { "Wrap one payload in the successful context."; {tag: "success", value: value, message: ""} }
-def u:context_failure(message) { "Wrap one diagnostic message in the failed context."; {tag: "failure", value: 0, message: message} }
-def u:context_is_success(context) { "Return one when the context contains a successful payload."; equal(context.tag, "success") }
-def u:context_is_failure(context) { "Return one when the context contains a failure message."; equal(context.tag, "failure") }
-def u:normalize_called_scalar(value) { "Extract the scalar returned by call for an ordinary unary transform."; take(value, 0, 0) }
-def u:context_map(context, transform) { "Transform a successful payload while preserving an existing failure unchanged."; if u:context_is_success(context) { u:context_success(u:normalize_called_scalar(call(transform, [context.value]))) } else { context } }
-def u:context_bind(context, contextual_step) { "Run the next contextual stage only when the current context is successful."; if u:context_is_success(context) { call(contextual_step, [context.value]) } else { context } }
-def u:context_counterexample(expected, actual) { "Describe whether two contextual results differ and retain both observed values."; {found: 1 - equal(expected, actual), expected: expected, actual: actual} }
-def u:context_return_called(value) { "Lift a value received through call into the successful context."; u:context_success(u:normalize_called_scalar(value)) }
-def u:kleisli_apply_two(first_stage, second_stage, input) { "Compose two context-returning stages and apply them to one input."; u:context_bind(call(first_stage, [input]), second_stage) }
-def u:kleisli_apply_three(first_stage, second_stage, third_stage, input) { "Compose three context-returning stages and apply them left to right."; u:context_bind(u:kleisli_apply_two(first_stage, second_stage, input), third_stage) }
-def u:kleisli_law_witness(input, expected, actual) { "Return a stable contextual-law witness for one concrete input."; {found: 1 - equal(expected, actual), input: input, expected: expected, actual: actual} }
-def u:context_apply(function_context, value_context) { "Apply an independently contextual function to an independently contextual scalar value."; if u:context_is_failure(function_context) { function_context } else { if u:context_is_failure(value_context) { value_context } else { u:context_success(u:normalize_called_scalar(call(function_context.value, [value_context.value]))) } } }
-def u:context_pair(left_context, right_context) { "Combine two independent successful payloads into one product record, preserving the first failure."; if u:context_is_failure(left_context) { left_context } else { if u:context_is_failure(right_context) { right_context } else { u:context_success({left: left_context.value, right: right_context.value}) } } }
+def u:context_success(value) {
+  "Wrap one payload in the successful context.";
+  {tag: "success", value: value, message: ""}
+}
+def u:context_failure(message) {
+  "Wrap one diagnostic message in the failed context.";
+  {tag: "failure", value: 0, message: message}
+}
+def u:context_is_success(context) {
+  "Return one when the context contains a successful payload.";
+  equal(context.tag, "success")
+}
+def u:context_is_failure(context) {
+  "Return one when the context contains a failure message.";
+  equal(context.tag, "failure")
+}
+def u:normalize_called_scalar(value) {
+  "Extract the scalar returned by call for an ordinary unary transform.";
+  take(value, 0, 0)
+}
+def u:context_map(context, transform) {
+  "Transform a successful payload while preserving an existing failure unchanged.";
+  if u:context_is_success(context) { u:context_success(u:normalize_called_scalar(call(transform, [context.value]))) } else {
+    context
+  }
+}
+def u:context_bind(context, contextual_step) {
+  "Run the next contextual stage only when the current context is successful.";
+  if u:context_is_success(context) {
+    call(contextual_step, [context.value])
+  } else {
+    context
+  }
+}
+def u:context_counterexample(expected, actual) {
+  "Describe whether two contextual results differ and retain both observed values.";
+  {found: 1 - equal(expected, actual), expected: expected, actual: actual}
+}
+def u:context_return_called(value) {
+  "Lift a value received through call into the successful context.";
+  u:context_success(u:normalize_called_scalar(value))
+}
+def u:kleisli_apply_two(first_stage, second_stage, input) {
+  "Compose two context-returning stages and apply them to one input.";
+  u:context_bind(call(first_stage, [input]), second_stage)
+}
+def u:kleisli_apply_three(first_stage, second_stage, third_stage, input) {
+  "Compose three context-returning stages and apply them left to right.";
+  u:context_bind(u:kleisli_apply_two(first_stage, second_stage, input), third_stage)
+}
+def u:kleisli_law_witness(input, expected, actual) {
+  "Return a stable contextual-law witness for one concrete input.";
+  {found: 1 - equal(expected, actual), input: input, expected: expected, actual: actual}
+}
+def u:context_apply(function_context, value_context) {
+  "Apply an independently contextual function to an independently contextual scalar value.";
+  if u:context_is_failure(function_context) {
+    function_context
+  } else {
+    if u:context_is_failure(value_context) {
+      value_context
+    } else { u:context_success(u:normalize_called_scalar(call(function_context.value, [value_context.value]))) }
+  }
+}
+def u:context_pair(left_context, right_context) {
+  "Combine two independent successful payloads into one product record, preserving the first failure.";
+  if u:context_is_failure(left_context) {
+    left_context
+  } else {
+    if u:context_is_failure(right_context) {
+      right_context
+    } else { u:context_success({left: left_context.value, right: right_context.value}) }
+  }
+}

@@ -14,4 +14,8 @@ wrote = write_text("out/52-trace-feedback.svg", u:finite_trace_feedback_visual()
 u:epilog_open()
 u:explain("out/52-trace-feedback.svg", "The blue U-output-to-U-input edge is internalized by trace. A input and B output stay external, and explicit feedback agrees with the traced endpoint 8.")
 u:takeaway("Trace closes a designated compatible feedback wire. One example and two laws do not establish a traced monoidal category.")
-if feedback_typed * feedback_mismatch * trace_endpoint * changed_trace_endpoint * missing_law_coverage * is_ok(wrote) { ok("trace and feedback verified") } else { err("trace feedback failed") }
+if feedback_typed * feedback_mismatch * trace_endpoint * changed_trace_endpoint * missing_law_coverage * is_ok(wrote) {
+  ok("trace and feedback verified")
+} else {
+  err("trace feedback failed")
+}

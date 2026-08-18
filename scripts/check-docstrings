@@ -2,22 +2,22 @@
 set -eu
 repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 bad=0
-for f in $(find "$repo_root/lib" "$repo_root/probes" "$repo_root/tests" "$repo_root/demos" -name '*.mlpl' 2>/dev/null | sort); do
+for f in $(find "$repo_root" -name '*.mlpl' -type f 2>/dev/null | sort); do
   head -n 24 "$f" | grep -q '^# ' || { echo "missing header: ${f#$repo_root/}" >&2; bad=1; }
-  case "$f" in "$repo_root"/probes/*|"$repo_root"/demos/*)
+  case "$f" in "$repo_root"/probes/*|"$repo_root"/demos/*|"$repo_root"/web/*)
     head -n 24 "$f" | grep -q '^# visual:' || { echo "missing visual: ${f#$repo_root/}" >&2; bad=1; }
     head -n 24 "$f" | grep -q '^# loops:' || { echo "missing loops: ${f#$repo_root/}" >&2; bad=1; };; esac
 done
 
-# Every function carries an MLPL docstring as the first expression in its
-# body. Function names must carry domain meaning rather than forcing readers to
-# decode one-letter or implementation abbreviations.
-for f in $(find "$repo_root/lib" "$repo_root/probes" "$repo_root/tests" "$repo_root/demos" -name '*.mlpl' 2>/dev/null | sort); do
+# Every formatted function carries an MLPL docstring as the first expression
+# on the line immediately after its definition header. Function names must
+# carry domain meaning rather than forcing readers to decode abbreviations.
+for f in $(find "$repo_root" -name '*.mlpl' -type f 2>/dev/null | sort); do
   awk '
     /^def u:/ {
       line=$0
       name=line; sub(/^def u:/, "", name); sub(/\(.*/, "", name)
-      if (line !~ /\{[[:space:]]*"[^"].*";/) {
+      if ((getline first_expression) <= 0 || first_expression !~ /^[[:space:]]*"[^"].*";[[:space:]]*(#.*)?$/) {
         print FILENAME ":" NR ": function " name " lacks a first-expression docstring" > "/dev/stderr"
         bad=1
       }

@@ -1963,3 +1963,14 @@ Boundary and behavior failures are independent. This demonstrates one bounded
 rewrite, not the general spider theorem or an algebra classification. No new
 sw-MLPL feature is needed. Next is CT124-CT128 process/state/effect/channel and
 classical structure, preserving the sibling ownership boundary.
+
+## Repository-wide MLPL source hygiene, 2026-08-18
+
+The canonical sibling formatter rewrites compact one-line definitions into a
+stable multiline form, so format-sensitive validation must inspect the first
+body expression rather than the definition line. All current `.mlpl` sources
+were formatted with `../sw-mlpl/scripts/mlpl-fmt.sh`; the docstring audit now
+recognizes that multiline form and covers libraries, probes, tests, demos, web
+copies, and documentation templates. A formatter `--check` gate is part of
+`just check`, making formatting and first-expression function docstrings
+pre-commit and pre-push invariants rather than review conventions.

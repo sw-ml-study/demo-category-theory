@@ -12,4 +12,8 @@ wrote = write_text("out/05-product.svg", u:product_diagram())
 u:epilog_open()
 u:explain("out/05-product.svg", "The pair at the top has two green projections. Requiring fst=3 and snd=8 leaves no freedom: pair(3,9) visibly misses the second target.")
 u:takeaway("A product is not merely two fields; it is the unique mediator determined by both projections.")
-if good.commutes * good.unique * (1 - bad.commutes) * is_ok(wrote) { ok("product universal property verified") } else { err("product invariant failed") }
+if good.commutes * good.unique * (1 - bad.commutes) * is_ok(wrote) {
+  ok("product universal property verified")
+} else {
+  err("product invariant failed")
+}

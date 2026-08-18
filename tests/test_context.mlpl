@@ -1,20 +1,59 @@
 # Conformance for the concrete contextual record and its mapping/bind behavior.
 # loops: 0
 include "lib/context.mlpl";
-def u:identity_payload(value) { "Return one payload unchanged."; value }
-def u:increment_payload(value) { "Increment one numeric payload."; value + 1 }
-def u:double_payload(value) { "Double one numeric payload."; value * 2 }
-def u:increment_then_double_payload(value) { "Increment and then double one numeric payload."; 2 * (value + 1) }
-def u:validate_positive_payload(value) { "Double a positive payload or return a contextual failure."; scalar = take(value, 0, 0); if equal(lt(0, scalar), 1) { u:context_success(scalar * 2) } else { u:context_failure("not positive") } }
-def u:require_even_payload(value) { "Return half of an even payload or a contextual failure."; scalar = take(value, 0, 0); if equal(mod(scalar, 2), 0) { u:context_success(scalar / 2) } else { u:context_failure("not even") } }
-def u:add_ten_payload(value) { "Add ten to a contextual payload."; scalar = take(value, 0, 0); u:context_success(scalar + 10) }
-def u:identity_context_payload(value) { "Return one scalar payload unchanged."; value }
-def u:increment_then_double_context_payload(value) { "Increment and then double one scalar payload."; 2 * (value + 1) }
-def u:load_row_count(dataset_id) { "Load a fixed row count for one known dataset identifier."; scalar = take(dataset_id, 0, 0); if equal(scalar, 7) { u:context_success(120) } else { u:context_failure("dataset missing") } }
-def u:choose_batch_count(row_count) { "Choose a batch count from a previously loaded row count."; scalar = take(row_count, 0, 0); u:context_success(scalar / 10) }
+def u:identity_payload(value) {
+  "Return one payload unchanged.";
+  value
+}
+def u:increment_payload(value) {
+  "Increment one numeric payload.";
+  value + 1
+}
+def u:double_payload(value) {
+  "Double one numeric payload.";
+  value * 2
+}
+def u:increment_then_double_payload(value) {
+  "Increment and then double one numeric payload.";
+  2 * (value + 1)
+}
+def u:validate_positive_payload(value) {
+  "Double a positive payload or return a contextual failure.";
+  scalar = take(value, 0, 0);
+  if equal(lt(0, scalar), 1) { u:context_success(scalar * 2) } else { u:context_failure("not positive") }
+}
+def u:require_even_payload(value) {
+  "Return half of an even payload or a contextual failure.";
+  scalar = take(value, 0, 0);
+  if equal(mod(scalar, 2), 0) { u:context_success(scalar / 2) } else { u:context_failure("not even") }
+}
+def u:add_ten_payload(value) {
+  "Add ten to a contextual payload.";
+  scalar = take(value, 0, 0);
+  u:context_success(scalar + 10)
+}
+def u:identity_context_payload(value) {
+  "Return one scalar payload unchanged.";
+  value
+}
+def u:increment_then_double_context_payload(value) {
+  "Increment and then double one scalar payload.";
+  2 * (value + 1)
+}
+def u:load_row_count(dataset_id) {
+  "Load a fixed row count for one known dataset identifier.";
+  scalar = take(dataset_id, 0, 0);
+  if equal(scalar, 7) { u:context_success(120) } else { u:context_failure("dataset missing") }
+}
+def u:choose_batch_count(row_count) {
+  "Choose a batch count from a previously loaded row count.";
+  scalar = take(row_count, 0, 0);
+  u:context_success(scalar / 10)
+}
 
 @test {name: "context records retain nested payloads", tags: ["contexts", "records"]}
-def u:test_context_records() { "Nested records and arrays survive contextual wrapping and equality.";
+def u:test_context_records() {
+  "Nested records and arrays survive contextual wrapping and equality.";
   nested = u:context_success({items: [1, 2], meta: {count: 2}});
   u:assert_eq(equal(nested, u:context_success({items: [1, 2], meta: {count: 2}})), 1, "nested payload changed")?;
   u:assert_eq(u:context_is_success(nested), 1, "success tag missing")?;
@@ -23,7 +62,8 @@ def u:test_context_records() { "Nested records and arrays survive contextual wra
 }
 
 @test {name: "context map obeys concrete functor laws", tags: ["contexts", "laws"]}
-def u:test_context_map_laws() { "Mapping identity/composition works and failures short-circuit.";
+def u:test_context_map_laws() {
+  "Mapping identity/composition works and failures short-circuit.";
   success = u:context_success(3);
   failure = u:context_failure("bad input");
   u:assert_eq(equal(u:context_map(success, :u:identity_payload), success), 1, "identity law")?;
@@ -35,7 +75,8 @@ def u:test_context_map_laws() { "Mapping identity/composition works and failures
 }
 
 @test {name: "context bind returns contexts and preserves failures", tags: ["contexts", "bind"]}
-def u:test_context_bind_surface() { "Contextual function returns survive call and earlier failures skip later work.";
+def u:test_context_bind_surface() {
+  "Contextual function returns survive call and earlier failures skip later work.";
   bound = u:context_bind(u:context_success(4), :u:validate_positive_payload);
   u:assert_eq(equal(bound, u:context_success(8)), 1, "context return distorted")?;
   earlier = u:context_failure("earlier");
@@ -46,7 +87,8 @@ def u:test_context_bind_surface() { "Contextual function returns survive call an
 }
 
 @test {name: "Kleisli composition obeys identity and associativity", tags: ["contexts", "kleisli", "laws"]}
-def u:test_kleisli_laws() { "Concrete fallible stages obey left/right identity and associativity.";
+def u:test_kleisli_laws() {
+  "Concrete fallible stages obey left/right identity and associativity.";
   input = 4;
   direct = call(:u:validate_positive_payload, [input]);
   left_identity = u:context_bind(call(:u:context_return_called, [input]), :u:validate_positive_payload);
@@ -64,7 +106,8 @@ def u:test_kleisli_laws() { "Concrete fallible stages obey left/right identity a
 }
 
 @test {name: "independent context application obeys concrete laws", tags: ["contexts", "applicative", "laws"]}
-def u:test_independent_context_laws() { "Independent contextual functions and values obey identity and composition fixtures.";
+def u:test_independent_context_laws() {
+  "Independent contextual functions and values obey identity and composition fixtures.";
   value_context = u:context_success(5);
   identity_result = u:context_apply(u:context_success(:u:identity_context_payload), value_context);
   u:assert_eq(equal(identity_result, value_context), 1, "independent identity")?;
@@ -81,7 +124,8 @@ def u:test_independent_context_laws() { "Independent contextual functions and va
 }
 
 @test {name: "dependent context uses the earlier result", tags: ["contexts", "monad", "dependency"]}
-def u:test_dependent_context_pipeline() { "A later batching decision consumes the row count produced by the earlier stage.";
+def u:test_dependent_context_pipeline() {
+  "A later batching decision consumes the row count produced by the earlier stage.";
   successful = u:kleisli_apply_two(:u:load_row_count, :u:choose_batch_count, 7);
   missing = u:kleisli_apply_two(:u:load_row_count, :u:choose_batch_count, -1);
   u:assert_eq(equal(successful, u:context_success(12)), 1, "dependent success")?;

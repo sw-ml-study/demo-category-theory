@@ -294,8 +294,14 @@ Category theory exercises the language; it does not dictate new syntax.
   counterexample, not a bare boolean.
 - Keep functions small and pure; isolate display and filesystem effects in thin
   runners. Prefer whole-array operations and document unavoidable loops.
-- Every `.mlpl` `def` begins with an MLPL docstring as its first expression.
-  Function names state their category-theory or transformation role; avoid
+- Every user-defined function in every `.mlpl` file begins with an MLPL
+  docstring as its first body expression. This applies to libraries, probes,
+  tests, CLI demos, authored web demos, and generated web copies.
+- Before every work commit and push, format all `.mlpl` files with the canonical
+  formatter from `../sw-mlpl/scripts/mlpl-fmt.sh`, then require its `--check`
+  mode to pass. `just check` enforces both formatting and multiline-aware
+  docstring validation; never commit or push `.mlpl` changes without it.
+- Function names state their category-theory or transformation role; avoid
   one-letter names and cryptic abbreviations when a readable name exists.
 - Demos are deterministic, standalone, and self-checking. They end with
   `ok(...)` or `err(...)`; rendering is never the authority for correctness.

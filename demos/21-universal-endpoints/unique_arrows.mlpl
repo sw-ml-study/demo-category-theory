@@ -17,4 +17,8 @@ wrote = write_text("out/21-universal-endpoints.svg", u:universal_endpoints_diagr
 u:epilog_open()
 u:explain("out/21-universal-endpoints.svg", "Empty has one arrow to every finite set; every finite set has one arrow to singleton. In the pointed fixture, object 0 has one arrow both ways and is zero.")
 u:takeaway("Initial points outward uniquely, terminal receives uniquely, and zero does both. Zero is category-relative: ordinary FinSet has no such object.")
-if equal(empty_to_three, 1) * equal(three_to_singleton, 1) * not_initial.found * not_terminal.found * zero_object * equal(ordinary_object, 0) * is_ok(wrote) { ok("universal endpoints verified") } else { err("universal endpoint invariant failed") }
+if equal(empty_to_three, 1) * equal(three_to_singleton, 1) * not_initial.found * not_terminal.found * zero_object * equal(ordinary_object, 0) * is_ok(wrote) {
+  ok("universal endpoints verified")
+} else {
+  err("universal endpoint invariant failed")
+}

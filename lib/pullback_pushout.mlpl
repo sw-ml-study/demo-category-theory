@@ -1,10 +1,39 @@
 # lib/pullback_pushout.mlpl -- bounded join and tagged-merge universal squares.
 # loops: 0
 
-def u:apply_two_indices(table, indices) { "Apply a finite table to two explicit indices."; [take(table, 0, take(indices, 0, 0)), take(table, 0, take(indices, 0, 1))] }
-def u:pullback_join_fixture(left_keys, right_keys) { "Build the two-row pullback join for the reversed-key fixture."; {left_indices: [0, 1], right_indices: [1, 0], shared_keys: left_keys} }
-def u:pullback_square(left_keys, right_keys, join) { "Check that both pullback projections reach the same shared keys."; left_route = u:apply_two_indices(left_keys, join.left_indices); right_route = u:apply_two_indices(right_keys, join.right_indices); {commutes: equal(left_route, right_route), left_route: left_route, right_route: right_route} }
-def u:pullback_factorization(join, left_leg, right_leg, mediator) { "Check the unique mediator reconstructs both legs through the pullback projections."; reconstructed_left = u:apply_two_indices(join.left_indices, mediator); reconstructed_right = u:apply_two_indices(join.right_indices, mediator); {commutes: equal(reconstructed_left, left_leg) * equal(reconstructed_right, right_leg), unique: equal(mediator, [1, 0])} }
-def u:pushout_square(left_injection, right_injection, left_quotient, right_quotient) { "Check that both shared-interface routes enter the same pushout classes."; left_route = u:apply_two_indices(left_quotient, left_injection); right_route = u:apply_two_indices(right_quotient, right_injection); {commutes: equal(left_route, right_route), left_route: left_route, right_route: right_route} }
-def u:pushout_factorization(left_quotient, right_quotient, left_map, right_map, factor) { "Check a compatible tagged merge factors uniquely through the four-class pushout."; reconstructed_left = [take(factor, 0, take(left_quotient, 0, 0)), take(factor, 0, take(left_quotient, 0, 1)), take(factor, 0, take(left_quotient, 0, 2))]; reconstructed_right = [take(factor, 0, take(right_quotient, 0, 0)), take(factor, 0, take(right_quotient, 0, 1)), take(factor, 0, take(right_quotient, 0, 2))]; {commutes: equal(reconstructed_left, left_map) * equal(reconstructed_right, right_map), unique: equal(factor, [7, 8, 9, 10])} }
-def u:universal_square_witness(concept, expected, actual) { "Retain a named pullback or pushout square failure."; {found: 1 - equal(expected, actual), concept: concept, expected: expected, actual: actual} }
+def u:apply_two_indices(table, indices) {
+  "Apply a finite table to two explicit indices.";
+  [take(table, 0, take(indices, 0, 0)), take(table, 0, take(indices, 0, 1))]
+}
+def u:pullback_join_fixture(left_keys, right_keys) {
+  "Build the two-row pullback join for the reversed-key fixture.";
+  {left_indices: [0, 1], right_indices: [1, 0], shared_keys: left_keys}
+}
+def u:pullback_square(left_keys, right_keys, join) {
+  "Check that both pullback projections reach the same shared keys.";
+  left_route = u:apply_two_indices(left_keys, join.left_indices);
+  right_route = u:apply_two_indices(right_keys, join.right_indices);
+  {commutes: equal(left_route, right_route), left_route: left_route, right_route: right_route}
+}
+def u:pullback_factorization(join, left_leg, right_leg, mediator) {
+  "Check the unique mediator reconstructs both legs through the pullback projections.";
+  reconstructed_left = u:apply_two_indices(join.left_indices, mediator);
+  reconstructed_right = u:apply_two_indices(join.right_indices, mediator);
+  {commutes: equal(reconstructed_left, left_leg) * equal(reconstructed_right, right_leg), unique: equal(mediator, [1, 0])}
+}
+def u:pushout_square(left_injection, right_injection, left_quotient, right_quotient) {
+  "Check that both shared-interface routes enter the same pushout classes.";
+  left_route = u:apply_two_indices(left_quotient, left_injection);
+  right_route = u:apply_two_indices(right_quotient, right_injection);
+  {commutes: equal(left_route, right_route), left_route: left_route, right_route: right_route}
+}
+def u:pushout_factorization(left_quotient, right_quotient, left_map, right_map, factor) {
+  "Check a compatible tagged merge factors uniquely through the four-class pushout.";
+  reconstructed_left = [take(factor, 0, take(left_quotient, 0, 0)), take(factor, 0, take(left_quotient, 0, 1)), take(factor, 0, take(left_quotient, 0, 2))];
+  reconstructed_right = [take(factor, 0, take(right_quotient, 0, 0)), take(factor, 0, take(right_quotient, 0, 1)), take(factor, 0, take(right_quotient, 0, 2))];
+  {commutes: equal(reconstructed_left, left_map) * equal(reconstructed_right, right_map), unique: equal(factor, [7, 8, 9, 10])}
+}
+def u:universal_square_witness(concept, expected, actual) {
+  "Retain a named pullback or pushout square failure.";
+  {found: 1 - equal(expected, actual), concept: concept, expected: expected, actual: actual}
+}

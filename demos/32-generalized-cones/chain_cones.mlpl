@@ -18,4 +18,8 @@ wrote = write_text("out/32-generalized-bounded-cones.svg", u:generalized_bounded
 u:epilog_open()
 u:explain("out/32-generalized-bounded-cones.svg", "Blue cone legs point into the chain and blue cocone legs point out. Both adjacent squares must commute; only then do mediator counts [1,1,1] establish bounded universality.")
 u:takeaway("Compatibility makes a family of legs a cone or cocone; unique factorization makes that cone a limit or that cocone a colimit.")
-if limit_law * colimit_law * (1 - broken_cone.commutes) * (1 - nonunique_colimit) * is_ok(wrote) { ok("bounded chain limit and colimit cones verified") } else { err("bounded chain cone invariant failed") }
+if limit_law * colimit_law * (1 - broken_cone.commutes) * (1 - nonunique_colimit) * is_ok(wrote) {
+  ok("bounded chain limit and colimit cones verified")
+} else {
+  err("bounded chain cone invariant failed")
+}

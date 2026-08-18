@@ -20,7 +20,10 @@ disp([monoid_ok,comonoid_ok,broken_monoid,broken_comonoid])
 # * THE VISUAL
 # * Directed green arrows merge on the left and split on the right.
 # ***************************************************************************
-def u:finite_monoid_comonoid_web_visual(){"Render internal multiplication/unit and their comonoid duals.";u:finite_monoid_comonoid_visual()}  # narrated shared visual entry point
+def u:finite_monoid_comonoid_web_visual(){
+  "Render internal multiplication/unit and their comonoid duals.";
+  u:finite_monoid_comonoid_visual()
+}  # narrated shared visual entry point
 finite_monoid_comonoid_visual=u:finite_monoid_comonoid_web_visual()  # bind visual constant
 finite_monoid_comonoid_visual  # display bound visual once
 # ***************************************************************************

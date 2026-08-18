@@ -19,4 +19,8 @@ wrote = write_text("out/45-braided-symmetric.svg", u:finite_braided_symmetric_vi
 u:epilog_open()
 u:explain("out/45-braided-symmetric.svg", "Green braids A past the composite B tensor C. Blue braids past B and C separately through other nestings. The lower arrows swap a pair twice.")
 u:takeaway("The hexagon makes whole-block and componentwise braiding coherent; symmetry adds that the reverse braid undoes the first.")
-if distinct_path * hexagon_agrees * changed_endpoint * naturality * symmetry * is_ok(wrote) { ok("finite braided symmetric coherence verified") } else { err("braided coherence failed") }
+if distinct_path * hexagon_agrees * changed_endpoint * naturality * symmetry * is_ok(wrote) {
+  ok("finite braided symmetric coherence verified")
+} else {
+  err("braided coherence failed")
+}

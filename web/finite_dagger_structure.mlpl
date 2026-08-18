@@ -22,7 +22,10 @@ disp([dagger_laws, wrong_order, non_involutive, cup_cap_compatible, incompatible
 # * THE VISUAL
 # * Green runs A-to-C; blue runs C-to-A with adjoints in reverse order.
 # ***************************************************************************
-def u:finite_dagger_structure_web_visual() { "Render the shared dagger and dagger-compact boundary visual."; u:finite_dagger_structure_visual() }  # narrated entry point
+def u:finite_dagger_structure_web_visual() {
+  "Render the shared dagger and dagger-compact boundary visual.";
+  u:finite_dagger_structure_visual()
+}  # narrated entry point
 finite_dagger_structure_visual = u:finite_dagger_structure_web_visual()  # bind visual constant
 finite_dagger_structure_visual  # display bound visual once
 # ***************************************************************************

@@ -23,7 +23,10 @@ disp([frobenius, broken_frobenius, specialness, broken_specialness, spider, brok
 # * THE VISUAL
 # * Directed μ/δ nodes show two routes, cancellation, and bounded fusion.
 # ***************************************************************************
-def u:finite_frobenius_spiders_web_visual() { "Render the shared finite Frobenius and bounded-spider visual."; u:finite_frobenius_spiders_visual() }  # narrated entry point
+def u:finite_frobenius_spiders_web_visual() {
+  "Render the shared finite Frobenius and bounded-spider visual.";
+  u:finite_frobenius_spiders_visual()
+}  # narrated entry point
 finite_frobenius_spiders_visual = u:finite_frobenius_spiders_web_visual()  # bind visual constant
 finite_frobenius_spiders_visual  # display bound visual once
 # ***************************************************************************

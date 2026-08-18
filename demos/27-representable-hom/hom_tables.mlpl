@@ -17,4 +17,8 @@ wrote = write_text("out/27-representable-hom.svg", u:representable_hom_diagram()
 u:epilog_open()
 u:explain("out/27-representable-hom.svg", "Postcomposition moves id-A to f in Hom(A,-); precomposition moves id-B to f in Hom(-,B). The identity elements generate the displayed arrows uniquely.")
 u:takeaway("A representable functor is a hom-view from one object. This finite table prepares Yoneda without claiming generic functor syntax.")
-if equal(covariant, [1]) * equal(contravariant, [1]) * element.exists * element.unique * universal_arrow.commutes * universal_arrow.unique * broken.found * is_ok(wrote) { ok("finite representables verified") } else { err("representable invariant failed") }
+if equal(covariant, [1]) * equal(contravariant, [1]) * element.exists * element.unique * universal_arrow.commutes * universal_arrow.unique * broken.found * is_ok(wrote) {
+  ok("finite representables verified")
+} else {
+  err("representable invariant failed")
+}

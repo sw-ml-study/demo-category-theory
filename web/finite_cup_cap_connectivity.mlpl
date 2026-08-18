@@ -23,7 +23,10 @@ disp([cup_typed, cup_direction_mismatch, cap_typed, cap_order_mismatch, snake_co
 # * THE VISUAL
 # * Boundary ports label I, A, and A-star; arrowheads encode creation/removal.
 # ***************************************************************************
-def u:finite_cup_cap_connectivity_web_visual() { "Render the shared typed cup, cap, and snake-connectivity visual."; u:finite_cup_cap_connectivity_visual() }  # narrated visual entry point
+def u:finite_cup_cap_connectivity_web_visual() {
+  "Render the shared typed cup, cap, and snake-connectivity visual.";
+  u:finite_cup_cap_connectivity_visual()
+}  # narrated visual entry point
 finite_cup_cap_connectivity_visual = u:finite_cup_cap_connectivity_web_visual()  # bind visual constant
 finite_cup_cap_connectivity_visual  # display bound visual once
 # ***************************************************************************

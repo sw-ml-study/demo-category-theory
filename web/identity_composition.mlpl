@@ -6,8 +6,14 @@
 # * Adding a do-nothing identity before or after inc changes no destination.
 # ***************************************************************************
 ;
-def u:increment(x) { "Serve as the scalar morphism f whose lifted or composed action is being tested.";  x + 1 }  # the meaningful arrow
-def u:identity(x) { "Represent the identity morphism whose composition leaves the lesson arrow unchanged.";  x }  # the identity arrow
+def u:increment(x) {
+  "Serve as the scalar morphism f whose lifted or composed action is being tested.";
+  x + 1
+}  # the meaningful arrow
+def u:identity(x) {
+  "Represent the identity morphism whose composition leaves the lesson arrow unchanged.";
+  x
+}  # the identity arrow
 xs = range(6)  # check more than the pictured token
 plain = each(:u:increment, xs)  # f
 before = each(:u:increment, each(:u:identity, xs))  # id then f
@@ -17,7 +23,10 @@ disp([plain, before, after])  # all three rows must match
 # * THE VISUAL
 # * The loop is identity. The token finishes at B whether the loop is used.
 # ***************************************************************************
-def u:identity_composition_visual() { "Render the directed SVG witness for this lesson categorical law."; "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 220\" width=\"700\" height=\"220\" role=\"img\"><title>identity and composition</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);fill:none;stroke:rgb(158,206,106);stroke-width:4}.token{fill:rgb(247,118,142);animation:m 3s infinite alternate}@keyframes m{to{transform:translateX(400px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(400px)}}</style><rect width=\"700\" height=\"220\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"60\" y=\"85\" width=\"150\" height=\"80\" rx=\"16\"/><rect class=\"obj\" x=\"490\" y=\"85\" width=\"150\" height=\"80\" rx=\"16\"/><line class=\"arrow\" x1=\"210\" y1=\"125\" x2=\"490\" y2=\"125\"/><path class=\"arrow\" d=\"M90 85C70 25 200 25 180 85\"/><text x=\"135\" y=\"35\" text-anchor=\"middle\">id</text><text x=\"350\" y=\"105\" text-anchor=\"middle\">inc</text><circle class=\"token\" cx=\"190\" cy=\"145\" r=\"11\"/></svg>" }  # named custom visual
+def u:identity_composition_visual() {
+  "Render the directed SVG witness for this lesson categorical law.";
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 220\" width=\"700\" height=\"220\" role=\"img\"><title>identity and composition</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);fill:none;stroke:rgb(158,206,106);stroke-width:4}.token{fill:rgb(247,118,142);animation:m 3s infinite alternate}@keyframes m{to{transform:translateX(400px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(400px)}}</style><rect width=\"700\" height=\"220\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"60\" y=\"85\" width=\"150\" height=\"80\" rx=\"16\"/><rect class=\"obj\" x=\"490\" y=\"85\" width=\"150\" height=\"80\" rx=\"16\"/><line class=\"arrow\" x1=\"210\" y1=\"125\" x2=\"490\" y2=\"125\"/><path class=\"arrow\" d=\"M90 85C70 25 200 25 180 85\"/><text x=\"135\" y=\"35\" text-anchor=\"middle\">id</text><text x=\"350\" y=\"105\" text-anchor=\"middle\">inc</text><circle class=\"token\" cx=\"190\" cy=\"145\" r=\"11\"/></svg>"
+}  # named custom visual
 identity_composition_visual = u:identity_composition_visual()  # bind visual constant
 identity_composition_visual  # display bound visual once
 # ***************************************************************************

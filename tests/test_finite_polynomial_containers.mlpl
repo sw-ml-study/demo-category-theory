@@ -1,7 +1,8 @@
 # Tests for CT083-CT084 finite polynomial functor and container interpretation.
 include "lib/finite_polynomial_containers.mlpl";
 @test {name: "container shapes determine payload positions", tags: ["CT084", "container"]}
-def u:test_finite_container_interpretation() { "Interpret empty and pair shapes and reject a pair with one missing payload.";
+def u:test_finite_container_interpretation() {
+  "Interpret empty and pair shapes and reject a pair with one missing payload.";
   optional_pair_container = u:make_finite_container([0, 1], [0, 2]);
   empty_value = u:interpret_container_value(optional_pair_container, 0, []);
   pair_value = u:interpret_container_value(optional_pair_container, 1, [7, 9]);
@@ -12,7 +13,8 @@ def u:test_finite_container_interpretation() { "Interpret empty and pair shapes 
   ok({test: "finite-container", cases: 3})
 }
 @test {name: "polynomial action preserves identity and composition", tags: ["CT083", "polynomial-functor"]}
-def u:test_finite_polynomial_payload_map() { "Check identity and composition on pair payloads and reject a changed sequential path.";
+def u:test_finite_polynomial_payload_map() {
+  "Check identity and composition on pair payloads and reject a changed sequential path.";
   u:assert_eq(u:polynomial_payload_map_laws_hold([7, 9], [7, 9], [16, 20], [16, 20]), 1, "polynomial laws")?;
   u:assert_eq(u:polynomial_payload_map_laws_hold([7, 9], [7, 9], [16, 20], [16, 21]), 0, "broken composition")?;
   ok({test: "finite-polynomial-map", cases: 2})

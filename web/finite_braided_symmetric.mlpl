@@ -26,7 +26,10 @@ disp([distinct_path, hexagon_agrees, changed_endpoint, naturality, symmetry])
 # * THE VISUAL
 # * Green crosses a block; blue crosses components; all arrows are directed.
 # ***************************************************************************
-def u:finite_braided_symmetric_web_visual() { "Render two hexagon routes, double-swap symmetry, and a changed endpoint."; u:finite_braided_symmetric_visual() }  # narrated shared visual entry point
+def u:finite_braided_symmetric_web_visual() {
+  "Render two hexagon routes, double-swap symmetry, and a changed endpoint.";
+  u:finite_braided_symmetric_visual()
+}  # narrated shared visual entry point
 finite_braided_symmetric_visual = u:finite_braided_symmetric_web_visual()  # bind visual constant
 finite_braided_symmetric_visual  # display bound visual once
 # ***************************************************************************

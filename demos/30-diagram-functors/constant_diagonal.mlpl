@@ -19,4 +19,8 @@ wrote = write_text("out/30-diagram-functors.svg", u:finite_diagram_functors_visu
 u:epilog_open()
 u:explain("out/30-diagram-functors.svg", "The top row is the constant diagram: one object X and its identity repeat over every node and arrow. Blue vertical components form a diagram transformation and compose pointwise.")
 u:takeaway("A diagram category has functors as objects and natural transformations as arrows. The diagonal functor sends one object to the constant diagram of that shape.")
-if constant_laws * transformation_category_laws * failure.found * is_ok(wrote) { ok("finite diagram and diagonal functor laws verified") } else { err("finite diagram functor invariant failed") }
+if constant_laws * transformation_category_laws * failure.found * is_ok(wrote) {
+  ok("finite diagram and diagonal functor laws verified")
+} else {
+  err("finite diagram functor invariant failed")
+}

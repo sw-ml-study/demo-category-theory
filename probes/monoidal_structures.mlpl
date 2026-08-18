@@ -1,12 +1,30 @@
 # Probe: finite representations for CT085-CT109.
 # visual: ascii
 # loops: 0
-def u:reassociate_three_values(left_nested_tensor) { "Move parentheses from (A tensor B) tensor C to A tensor (B tensor C) for one nested record."; {left: left_nested_tensor.left.left, right: {left: left_nested_tensor.left.right, right: left_nested_tensor.right}} }
-def u:remove_left_unit(left_unit_tensor) { "Remove a displayed singleton unit from the left side of one tensor record."; left_unit_tensor.right }
-def u:remove_right_unit(right_unit_tensor) { "Remove a displayed singleton unit from the right side of one tensor record."; right_unit_tensor.left }
-def u:braid_two_values(tensor_pair) { "Swap the two positions of one finite tensor pair."; {left: tensor_pair.right, right: tensor_pair.left} }
-def u:coherence_routes_agree(first_route, second_route) { "Compare two explicitly constructed finite coherence routes extensionally."; equal(first_route, second_route) }
-def u:finite_operation_law_holds(first_results, second_results) { "Compare two finite operation-table law result arrays."; equal(first_results, second_results) }
+def u:reassociate_three_values(left_nested_tensor) {
+  "Move parentheses from (A tensor B) tensor C to A tensor (B tensor C) for one nested record.";
+  {left: left_nested_tensor.left.left, right: {left: left_nested_tensor.left.right, right: left_nested_tensor.right}}
+}
+def u:remove_left_unit(left_unit_tensor) {
+  "Remove a displayed singleton unit from the left side of one tensor record.";
+  left_unit_tensor.right
+}
+def u:remove_right_unit(right_unit_tensor) {
+  "Remove a displayed singleton unit from the right side of one tensor record.";
+  right_unit_tensor.left
+}
+def u:braid_two_values(tensor_pair) {
+  "Swap the two positions of one finite tensor pair.";
+  {left: tensor_pair.right, right: tensor_pair.left}
+}
+def u:coherence_routes_agree(first_route, second_route) {
+  "Compare two explicitly constructed finite coherence routes extensionally.";
+  equal(first_route, second_route)
+}
+def u:finite_operation_law_holds(first_results, second_results) {
+  "Compare two finite operation-table law result arrays.";
+  equal(first_results, second_results)
+}
 left_nested_tensor = {left: {left: 2, right: 3}, right: 5}
 right_nested_tensor = u:reassociate_three_values(left_nested_tensor)
 left_unit_removed = u:remove_left_unit({left: 0, right: 7})

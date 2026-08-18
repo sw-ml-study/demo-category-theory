@@ -18,4 +18,8 @@ wrote = write_text("out/25-pushout.svg", u:pushout_diagram())
 u:epilog_open()
 u:explain("out/25-pushout.svg", "The shared fields land in classes 0 and 1; left-private and right-private fields remain classes 2 and 3. A mismatched identification breaks the square.")
 u:takeaway("A pushout is the universal compatible merge: it identifies the interface and preserves each side's remaining information.")
-if square.commutes * factorization.commutes * factorization.unique * broken.found * is_ok(wrote) { ok("pushout merge verified") } else { err("pushout invariant failed") }
+if square.commutes * factorization.commutes * factorization.unique * broken.found * is_ok(wrote) {
+  ok("pushout merge verified")
+} else {
+  err("pushout invariant failed")
+}

@@ -8,11 +8,26 @@
 # * BOUNDARY -- arrays alone are not a functor, and no generic interface is claimed.
 # ***************************************************************************
 ;
-def u:increment(x) { "Serve as the scalar morphism f whose lifted or composed action is being tested.";  x + 1 }  # scalar f
-def u:double(x) { "Serve as the scalar morphism g whose lifted or composed action is being tested.";  2 * x }  # scalar g
-def u:increment_then_double(x) { "Represent the scalar composite g after f for the composition law.";  2 * (x + 1) }  # g after f
-def u:identity_value(x) { "Represent the identity morphism used by the concrete array functor law.";  x }  # scalar identity
-def u:array_functor_visual() { "Render scalar composition beside the corresponding lifted array-map composition law."; "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 760 300\" width=\"760\" height=\"300\" role=\"img\"><title>array construction and each preserve category laws</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.token{fill:rgb(247,118,142);animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(400px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(400px)}}</style><rect width=\"760\" height=\"300\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"70\" y=\"55\" width=\"150\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"540\" y=\"55\" width=\"150\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"70\" y=\"200\" width=\"150\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"540\" y=\"200\" width=\"150\" height=\"60\" rx=\"14\"/><line class=\"arrow\" x1=\"220\" y1=\"85\" x2=\"540\" y2=\"85\"/><line class=\"arrow\" x1=\"220\" y1=\"230\" x2=\"540\" y2=\"230\"/><text x=\"145\" y=\"92\" text-anchor=\"middle\">1</text><text x=\"615\" y=\"92\" text-anchor=\"middle\">4</text><text x=\"145\" y=\"237\" text-anchor=\"middle\">[1,2,3]</text><text x=\"615\" y=\"237\" text-anchor=\"middle\">[4,6,8]</text><text x=\"380\" y=\"75\" text-anchor=\"middle\">g after f</text><text x=\"380\" y=\"220\" text-anchor=\"middle\">each(g) after each(f)</text><circle class=\"token\" cx=\"200\" cy=\"102\" r=\"9\"/></svg>" }  # named custom visual
+def u:increment(x) {
+  "Serve as the scalar morphism f whose lifted or composed action is being tested.";
+  x + 1
+}  # scalar f
+def u:double(x) {
+  "Serve as the scalar morphism g whose lifted or composed action is being tested.";
+  2 * x
+}  # scalar g
+def u:increment_then_double(x) {
+  "Represent the scalar composite g after f for the composition law.";
+  2 * (x + 1)
+}  # g after f
+def u:identity_value(x) {
+  "Represent the identity morphism used by the concrete array functor law.";
+  x
+}  # scalar identity
+def u:array_functor_visual() {
+  "Render scalar composition beside the corresponding lifted array-map composition law.";
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 760 300\" width=\"760\" height=\"300\" role=\"img\"><title>array construction and each preserve category laws</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.token{fill:rgb(247,118,142);animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(400px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(400px)}}</style><rect width=\"760\" height=\"300\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"70\" y=\"55\" width=\"150\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"540\" y=\"55\" width=\"150\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"70\" y=\"200\" width=\"150\" height=\"60\" rx=\"14\"/><rect class=\"obj\" x=\"540\" y=\"200\" width=\"150\" height=\"60\" rx=\"14\"/><line class=\"arrow\" x1=\"220\" y1=\"85\" x2=\"540\" y2=\"85\"/><line class=\"arrow\" x1=\"220\" y1=\"230\" x2=\"540\" y2=\"230\"/><text x=\"145\" y=\"92\" text-anchor=\"middle\">1</text><text x=\"615\" y=\"92\" text-anchor=\"middle\">4</text><text x=\"145\" y=\"237\" text-anchor=\"middle\">[1,2,3]</text><text x=\"615\" y=\"237\" text-anchor=\"middle\">[4,6,8]</text><text x=\"380\" y=\"75\" text-anchor=\"middle\">g after f</text><text x=\"380\" y=\"220\" text-anchor=\"middle\">each(g) after each(f)</text><circle class=\"token\" cx=\"200\" cy=\"102\" r=\"9\"/></svg>"
+}  # named custom visual
 xs = [1, 2, 3]  # one concrete array context
 maps_composed_sequentially = each(:u:double, each(:u:increment, xs))  # map(g) after map(f)
 composition_mapped_once = each(:u:increment_then_double, xs)  # map(g after f)

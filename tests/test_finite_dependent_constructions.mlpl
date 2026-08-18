@@ -1,7 +1,8 @@
 # Tests for CT080-CT082 bounded dependent constructions.
 include "lib/finite_dependent_constructions.mlpl";
 @test {name: "dependent sums retain fiber provenance", tags: ["CT082", "dependent-sum"]}
-def u:test_finite_dependent_sum() { "Check the tagged union of two finite fibers and reject a wrong base tag.";
+def u:test_finite_dependent_sum() {
+  "Check the tagged union of two finite fibers and reject a wrong base tag.";
   family = u:make_flat_finite_family([0, 1], [10, 11, 20], [0, 2], [2, 1]);
   dependent_sum = u:dependent_sum_table(family, [0, 0, 1]);
   u:assert_eq(u:finite_dependent_sum_is_complete(dependent_sum, [0, 0, 1], [10, 11, 20]), 1, "complete tagged sum")?;
@@ -9,14 +10,16 @@ def u:test_finite_dependent_sum() { "Check the tagged union of two finite fibers
   ok({test: "finite-dependent-sum", cases: 2})
 }
 @test {name: "dependent products choose from every fiber", tags: ["CT081", "dependent-product"]}
-def u:test_finite_dependent_product() { "Check both choices from fibers of sizes two and one, then reject a missing choice.";
+def u:test_finite_dependent_product() {
+  "Check both choices from fibers of sizes two and one, then reject a missing choice.";
   all_choices = u:dependent_product_choices([[10, 20], [11, 20]]);
   u:assert_eq(u:finite_dependent_product_is_complete(all_choices, [[10, 20], [11, 20]]), 1, "complete choices")?;
   u:assert_eq(u:finite_dependent_product_is_complete([[10, 20]], all_choices), 0, "missing choices")?;
   ok({test: "finite-dependent-product", cases: 2})
 }
 @test {name: "local cartesian closure needs every slice", tags: ["CT080", "local-cartesian-closure"]}
-def u:test_local_cartesian_closure_boundary() { "Accept full displayed coverage and reject one missing slice exponential.";
+def u:test_local_cartesian_closure_boundary() {
+  "Accept full displayed coverage and reject one missing slice exponential.";
   u:assert_eq(u:local_cartesian_closure_coverage_holds([1, 1]), 1, "displayed coverage")?;
   u:assert_eq(u:local_cartesian_closure_coverage_holds([1, 0]), 0, "missing slice")?;
   ok({test: "local-cartesian-closure-boundary", cases: 2})

@@ -7,7 +7,17 @@ for f in "$repo_root"/demos/web/*.mlpl; do
   for phrase in 'WHAT THIS SHOWS' 'HOW TO READ THE RESULT' 'THE POINT'; do
     grep -qF "$phrase" "$f" || { echo "${f#$repo_root/}: missing $phrase" >&2; bad=1; }
   done
-  awk 'BEGIN{bad=0} /^[[:space:]]*(def |[A-Za-z_][A-Za-z0-9_]*[[:space:]]*=|u:[A-Za-z_]|svg\()/ && $0 !~ /#/ {print FILENAME ": executable line lacks trailing comment: " NR > "/dev/stderr"; bad=1} END{exit bad}' "$f" || bad=1
+  awk '
+    BEGIN { bad=0; in_function=0 }
+    /^def u:/ { in_function=1; next }
+    in_function && /^}/ { in_function=0; next }
+    in_function { next }
+    /^[[:space:]]*([A-Za-z_][A-Za-z0-9_]*[[:space:]]*=|u:[A-Za-z_]|svg\()/ && $0 !~ /#/ {
+      print FILENAME ": top-level executable line lacks trailing comment: " NR > "/dev/stderr"
+      bad=1
+    }
+    END { exit bad }
+  ' "$f" || bad=1
 done
 [ "$bad" -eq 0 ]
 echo "narration: ok"

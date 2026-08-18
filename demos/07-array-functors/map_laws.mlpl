@@ -4,9 +4,18 @@
 include "../../lib/category.mlpl"
 include "../../lib/render.mlpl"
 u:prolog({title: "LESSON 07 -- ARRAY MAP PRESERVES IDENTITY AND COMPOSITION", intro: "Lift scalar functions with each, then execute the two functor laws over a visible vector."})
-def u:increment(x) { "Serve as the scalar morphism f whose lifted or composed action is being tested.";  x + 1 }
-def u:double(x) { "Serve as the scalar morphism g whose lifted or composed action is being tested.";  2 * x }
-def u:increment_then_double(x) { "Represent the scalar composite g after f for the composition law.";  2 * (x + 1) }
+def u:increment(x) {
+  "Serve as the scalar morphism f whose lifted or composed action is being tested.";
+  x + 1
+}
+def u:double(x) {
+  "Serve as the scalar morphism g whose lifted or composed action is being tested.";
+  2 * x
+}
+def u:increment_then_double(x) {
+  "Represent the scalar composite g after f for the composition law.";
+  2 * (x + 1)
+}
 xs = [1, 2, 3]
 lifted = each(:u:double, each(:u:increment, xs))
 composition_mapped_once = each(:u:increment_then_double, xs)
@@ -17,4 +26,8 @@ wrote = write_text("out/07-array-functor.svg", u:functor_diagram())
 u:epilog_open()
 u:explain("out/07-array-functor.svg", "The top arrow maps one scalar; the bottom arrow maps the whole array. Both pulse together because lifting preserves composition.")
 u:takeaway("The array construction maps value types to array types, while each maps arrows and preserves identity/composition. Arrays alone are not the functor.")
-if u:array_functor_identity(xs) * u:array_functor_composition(:u:increment, :u:double, :u:increment_then_double, xs) * witness.found * eq(witness.index, 0) * is_ok(wrote) { ok("array functor laws verified") } else { err("array functor law failed") }
+if u:array_functor_identity(xs) * u:array_functor_composition(:u:increment, :u:double, :u:increment_then_double, xs) * witness.found * eq(witness.index, 0) * is_ok(wrote) {
+  ok("array functor laws verified")
+} else {
+  err("array functor law failed")
+}

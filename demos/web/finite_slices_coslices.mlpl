@@ -25,7 +25,10 @@ disp([slice_triangle, coslice_triangle, category_laws, broken_slice, broken_cosl
 # * THE VISUAL
 # * Arrowheads reveal whether structure points into or out of the fixed base.
 # ***************************************************************************
-def u:finite_slices_coslices_web_visual() { "Render opposite base orientations and commuting-triangle failures."; u:finite_slices_visual() }  # narrated shared visual entry point
+def u:finite_slices_coslices_web_visual() {
+  "Render opposite base orientations and commuting-triangle failures.";
+  u:finite_slices_visual()
+}  # narrated shared visual entry point
 finite_slices_coslices_visual = u:finite_slices_coslices_web_visual()  # bind visual constant
 finite_slices_coslices_visual  # display bound visual once
 # ***************************************************************************

@@ -7,8 +7,22 @@
 # * the two identity arrows to the same arrow f.
 # ***************************************************************************
 ;
-def u:identity_a_to_f(arrow) { "Postcompose id-A by f."; if equal(arrow, 0) { 1 } else { -1 } }  # covariant action
-def u:identity_b_to_f(arrow) { "Precompose id-B by f."; if equal(arrow, 2) { 1 } else { -1 } }  # contravariant action
+def u:identity_a_to_f(arrow) {
+  "Postcompose id-A by f.";
+  if equal(arrow, 0) {
+    1
+  } else {
+    -1
+  }
+}  # covariant action
+def u:identity_b_to_f(arrow) {
+  "Precompose id-B by f.";
+  if equal(arrow, 2) {
+    1
+  } else {
+    -1
+  }
+}  # contravariant action
 hom_from_a_at_a = [0]  # Hom(A,A)
 hom_from_a_at_b = [1]  # Hom(A,B)
 hom_into_b_at_a = [1]  # Hom(A,B)
@@ -22,7 +36,10 @@ disp([universal_element_factors, equal([[1,1],[0,1]], [[1,1],[0,1]])])  # univer
 # * THE VISUAL
 # * Directed hom actions meet at f; the lower box names unique factorization.
 # ***************************************************************************
-def u:representable_hom_visual() { "Return the finite representable hom-action diagram."; "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 860 300\" width=\"860\" height=\"300\" role=\"img\"><title>finite representables and hom action</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.token{fill:rgb(247,118,142);animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(250px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(250px)}}</style><rect width=\"860\" height=\"300\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"30\" y=\"55\" width=\"190\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"335\" y=\"55\" width=\"190\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"640\" y=\"55\" width=\"190\" height=\"65\" rx=\"12\"/><line class=\"arrow\" x1=\"220\" y1=\"87\" x2=\"335\" y2=\"87\"/><line class=\"arrow\" x1=\"640\" y1=\"87\" x2=\"525\" y2=\"87\"/><text x=\"125\" y=\"94\" text-anchor=\"middle\">[idA]</text><text x=\"430\" y=\"94\" text-anchor=\"middle\">[f]</text><text x=\"735\" y=\"94\" text-anchor=\"middle\">[idB]</text><text x=\"277\" y=\"72\" text-anchor=\"middle\">postcompose</text><text x=\"583\" y=\"72\" text-anchor=\"middle\">precompose</text><rect class=\"obj\" x=\"190\" y=\"195\" width=\"480\" height=\"65\" rx=\"12\"/><text x=\"430\" y=\"222\" text-anchor=\"middle\">universal identity element</text><text x=\"430\" y=\"246\" text-anchor=\"middle\">selected f = unique representing arrow f</text><circle class=\"token\" cx=\"200\" cy=\"107\" r=\"9\"/></svg>" }  # named custom visual
+def u:representable_hom_visual() {
+  "Return the finite representable hom-action diagram.";
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 860 300\" width=\"860\" height=\"300\" role=\"img\"><title>finite representables and hom action</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.token{fill:rgb(247,118,142);animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(250px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(250px)}}</style><rect width=\"860\" height=\"300\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"30\" y=\"55\" width=\"190\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"335\" y=\"55\" width=\"190\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"640\" y=\"55\" width=\"190\" height=\"65\" rx=\"12\"/><line class=\"arrow\" x1=\"220\" y1=\"87\" x2=\"335\" y2=\"87\"/><line class=\"arrow\" x1=\"640\" y1=\"87\" x2=\"525\" y2=\"87\"/><text x=\"125\" y=\"94\" text-anchor=\"middle\">[idA]</text><text x=\"430\" y=\"94\" text-anchor=\"middle\">[f]</text><text x=\"735\" y=\"94\" text-anchor=\"middle\">[idB]</text><text x=\"277\" y=\"72\" text-anchor=\"middle\">postcompose</text><text x=\"583\" y=\"72\" text-anchor=\"middle\">precompose</text><rect class=\"obj\" x=\"190\" y=\"195\" width=\"480\" height=\"65\" rx=\"12\"/><text x=\"430\" y=\"222\" text-anchor=\"middle\">universal identity element</text><text x=\"430\" y=\"246\" text-anchor=\"middle\">selected f = unique representing arrow f</text><circle class=\"token\" cx=\"200\" cy=\"107\" r=\"9\"/></svg>"
+}  # named custom visual
 representable_hom_visual = u:representable_hom_visual()  # bind visual constant
 representable_hom_visual  # display bound visual once
 # ***************************************************************************

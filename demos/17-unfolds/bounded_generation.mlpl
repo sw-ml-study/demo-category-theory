@@ -16,4 +16,8 @@ wrote = write_text("out/17-bounded-unfold.svg", u:bounded_unfold_diagram())
 u:epilog_open()
 u:explain("out/17-bounded-unfold.svg", "Seed 3 and step 2 expand to [3,5,7,9]. Recovering the first difference regenerates it; irregular input [3,5,8,9] does not round-trip.")
 u:takeaway("This unfold is deterministic and explicitly bounded. The round-trip belongs to arithmetic sequences, not arbitrary arrays or general recursion schemes.")
-if equal(generated, [3, 5, 7, 9]) * equal(generated, regenerated) * broken_witness.found * is_ok(wrote) { ok("bounded unfold round-trip verified") } else { err("bounded unfold invariant failed") }
+if equal(generated, [3, 5, 7, 9]) * equal(generated, regenerated) * broken_witness.found * is_ok(wrote) {
+  ok("bounded unfold round-trip verified")
+} else {
+  err("bounded unfold invariant failed")
+}

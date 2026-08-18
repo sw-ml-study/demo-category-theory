@@ -30,7 +30,10 @@ disp([pentagon_distinct, pentagon_agrees, pentagon_changed, triangle_agrees])
 # * THE VISUAL
 # * Green and blue arrows visit different nestings; arrowheads show direction.
 # ***************************************************************************
-def u:finite_monoidal_foundation_web_visual() { "Render distinct pentagon and triangle coherence routes plus a changed endpoint."; u:finite_monoidal_foundation_visual() }  # narrated shared visual entry point
+def u:finite_monoidal_foundation_web_visual() {
+  "Render distinct pentagon and triangle coherence routes plus a changed endpoint.";
+  u:finite_monoidal_foundation_visual()
+}  # narrated shared visual entry point
 finite_monoidal_foundation_visual = u:finite_monoidal_foundation_web_visual()  # bind visual constant
 finite_monoidal_foundation_visual  # display bound visual once
 # ***************************************************************************

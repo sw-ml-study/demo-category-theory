@@ -1,13 +1,15 @@
 # Tests for CT101-CT106 monoidal functor variants and closedness boundary.
 include "lib/finite_monoidal_functors.mlpl";
 @test {name: "directed comparisons satisfy bounded coherence", tags: ["CT101", "CT102", "CT103"]}
-def u:test_monoidal_functor_comparison_coherence() { "Accept matching tensor and unit routes and reject a changed tensor route.";
+def u:test_monoidal_functor_comparison_coherence() {
+  "Accept matching tensor and unit routes and reject a changed tensor route.";
   u:assert_eq(u:monoidal_functor_coherence_holds(["A", "B"], ["A", "B"], ["I"], ["I"]), 1, "coherent routes")?;
   u:assert_eq(u:monoidal_functor_coherence_holds(["A", "B"], ["B", "A"], ["I"], ["I"]), 0, "broken tensor coherence")?;
   ok({test: "monoidal-comparisons", cases: 2})
 }
 @test {name: "strong comparisons and monoidal transformation have explicit laws", tags: ["CT104", "CT105"]}
-def u:test_strong_and_transformation_laws() { "Check both strong inverses and all three transformation diagrams with separate failures.";
+def u:test_strong_and_transformation_laws() {
+  "Check both strong inverses and all three transformation diagrams with separate failures.";
   u:assert_eq(u:strong_monoidal_comparisons_are_inverse(["A", "B"], ["A", "B"], ["A", "B"], ["A", "B"]), 1, "two inverses")?;
   u:assert_eq(u:strong_monoidal_comparisons_are_inverse(["A", "B"], ["A", "B"], ["B", "A"], ["A", "B"]), 0, "broken reverse composite")?;
   u:assert_eq(u:monoidal_natural_transformation_is_compatible([2, 4], [2, 4], ["A", "B"], ["A", "B"], ["I"], ["I"]), 1, "compatible square")?;
@@ -15,7 +17,8 @@ def u:test_strong_and_transformation_laws() { "Check both strong inverses and al
   ok({test: "strong-and-transformation", cases: 4})
 }
 @test {name: "closed monoidal claim requires every pair", tags: ["CT106", "coverage-boundary"]}
-def u:test_closed_monoidal_coverage_boundary() { "Reject partial pair evidence and accept a hypothetical complete finite coverage vector.";
+def u:test_closed_monoidal_coverage_boundary() {
+  "Reject partial pair evidence and accept a hypothetical complete finite coverage vector.";
   u:assert_eq(u:closed_monoidal_pair_coverage_is_complete([1, 0]), 0, "missing pair")?;
   u:assert_eq(u:closed_monoidal_pair_coverage_is_complete([1, 1]), 1, "all enumerated pairs")?;
   ok({test: "closed-coverage", cases: 2})

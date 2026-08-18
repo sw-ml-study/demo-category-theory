@@ -23,7 +23,10 @@ disp([complete_exponential, correct_evaluation, selected_output, wrong_row_outpu
 # * THE VISUAL
 # * First inventory all functions, then follow one function-input pair through ev.
 # ***************************************************************************
-def u:finite_exponentials_web_visual() { "Render the complete two-point function object and one evaluation with a wrong-row failure."; u:finite_exponentials_visual() }  # narrated shared visual entry point
+def u:finite_exponentials_web_visual() {
+  "Render the complete two-point function object and one evaluation with a wrong-row failure.";
+  u:finite_exponentials_visual()
+}  # narrated shared visual entry point
 finite_exponentials_visual = u:finite_exponentials_web_visual()  # bind visual constant
 finite_exponentials_visual  # display bound visual once
 # ***************************************************************************

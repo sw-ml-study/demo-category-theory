@@ -23,4 +23,8 @@ wrote = write_text("out/43-monoidal-foundation.svg", u:finite_monoidal_foundatio
 u:epilog_open()
 u:explain("out/43-monoidal-foundation.svg", "Green takes two associators across the pentagon; blue takes three around it. The triangle compares associator-then-left-unitor with right-unitor tensor identity.")
 u:takeaway("A monoidal category permits nonliteral rebracketing, but the pentagon and triangle force every displayed coherent route to agree.")
-if pentagon_distinct * pentagon_agrees * pentagon_changed * triangle_agrees * is_ok(wrote) { ok("finite monoidal coherence verified") } else { err("monoidal coherence failed") }
+if pentagon_distinct * pentagon_agrees * pentagon_changed * triangle_agrees * is_ok(wrote) {
+  ok("finite monoidal coherence verified")
+} else {
+  err("monoidal coherence failed")
+}

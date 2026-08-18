@@ -1,10 +1,14 @@
 # Tests for the concrete model-configuration learning-rate lens.
 include "lib/model_config_lens.mlpl";
 
-def u:double_learning_rate(value) { "Double one focused model learning rate."; value * 2 }
+def u:double_learning_rate(value) {
+  "Double one focused model learning rate.";
+  value * 2
+}
 
 @test {name: "model configuration lens obeys three laws", tags: ["lens", "optics", "records"]}
-def u:test_model_configuration_lens_laws() { "The concrete learning-rate getter and setter obey get-put, put-get, and put-put.";
+def u:test_model_configuration_lens_laws() {
+  "The concrete learning-rate getter and setter obey get-put, put-get, and put-put.";
   configuration = {name: "classifier", training: {learning_rate: 0.01, batch_size: 32}, metadata: {version: 3}};
   get_put = u:set_model_learning_rate(configuration, u:get_model_learning_rate(configuration));
   u:assert_eq(equal(get_put, configuration), 1, "get-put")?;
@@ -20,7 +24,8 @@ def u:test_model_configuration_lens_laws() { "The concrete learning-rate getter 
 }
 
 @test {name: "broken model setter exposes a get-put witness", tags: ["lens", "counterexample", "records"]}
-def u:test_broken_model_configuration_setter() { "Resetting a sibling field violates get-put even when the focused value is unchanged.";
+def u:test_broken_model_configuration_setter() {
+  "Resetting a sibling field violates get-put even when the focused value is unchanged.";
   configuration = {name: "classifier", training: {learning_rate: 0.01, batch_size: 32}, metadata: {version: 3}};
   broken = u:set_model_learning_rate_broken(configuration, u:get_model_learning_rate(configuration));
   witness = u:lens_law_witness("get-put", configuration, broken);

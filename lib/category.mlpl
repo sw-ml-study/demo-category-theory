@@ -6,18 +6,37 @@
 # shows MLPL 0.20.0 rejects function references in homogeneous list literals.
 # loops: 0
 
-def u:identity(x) { "Compute identity for this executable category-theory example.";  x }
-def u:apply(f, x) { "Compute apply for this executable category-theory example.";  take(call(f, [x]), 0, 0) }
-def u:then_apply(f, g, x) { "Compute then apply for this executable category-theory example.";  u:apply(g, u:apply(f, x)) }
-def u:three_apply(f, g, h, x) { "Compute three apply for this executable category-theory example.";  u:apply(h, u:then_apply(f, g, x)) }
+def u:identity(x) {
+  "Compute identity for this executable category-theory example.";
+  x
+}
+def u:apply(f, x) {
+  "Compute apply for this executable category-theory example.";
+  take(call(f, [x]), 0, 0)
+}
+def u:then_apply(f, g, x) {
+  "Compute then apply for this executable category-theory example.";
+  u:apply(g, u:apply(f, x))
+}
+def u:three_apply(f, g, h, x) {
+  "Compute three apply for this executable category-theory example.";
+  u:apply(h, u:then_apply(f, g, x))
+}
 
 # Evaluate two unary functions over a numeric array.
-def u:map_call(f, xs) { "Compute map call for this executable category-theory example.";  each(f, xs) }
-def u:path_outputs(f, xs) { "Compute path outputs for this executable category-theory example.";  u:map_call(f, xs) }
+def u:map_call(f, xs) {
+  "Compute map call for this executable category-theory example.";
+  each(f, xs)
+}
+def u:path_outputs(f, xs) {
+  "Compute path outputs for this executable category-theory example.";
+  u:map_call(f, xs)
+}
 
 # Compare two named unary paths over xs. The stable witness is the first
 # differing input, with both observed outputs. When equal, found is 0.
-def u:path_counterexample(left, right, xs) { "Compute path counterexample for this executable category-theory example.";
+def u:path_counterexample(left, right, xs) {
+  "Compute path counterexample for this executable category-theory example.";
   lhs = u:path_outputs(left, xs)
   rhs = u:path_outputs(right, xs)
   agree = eq(lhs, rhs)
@@ -26,13 +45,18 @@ def u:path_counterexample(left, right, xs) { "Compute path counterexample for th
   {found: found, input: take(xs, 0, i), left: take(lhs, 0, i), right: take(rhs, 0, i)}
 }
 
-def u:paths_equal(left, right, xs) { "Compute paths equal for this executable category-theory example.";
+def u:paths_equal(left, right, xs) {
+  "Compute paths equal for this executable category-theory example.";
   1 - u:path_counterexample(left, right, xs).found
 }
 
 # A square commutes when top-then-right and left-then-bottom agree everywhere.
-def u:route_outputs(first, second, xs) { "Compute route outputs for this executable category-theory example.";  each(second, each(first, xs)) }
-def u:square_counterexample(top, right, left, bottom, xs) { "Compute square counterexample for this executable category-theory example.";
+def u:route_outputs(first, second, xs) {
+  "Compute route outputs for this executable category-theory example.";
+  each(second, each(first, xs))
+}
+def u:square_counterexample(top, right, left, bottom, xs) {
+  "Compute square counterexample for this executable category-theory example.";
   upper = u:route_outputs(top, right, xs)
   lower = u:route_outputs(left, bottom, xs)
   agree = eq(upper, lower)
@@ -40,39 +64,66 @@ def u:square_counterexample(top, right, left, bottom, xs) { "Compute square coun
   i = take(grade_up(flatten(agree)), 0, 0) * found
   {found: found, input: take(xs, 0, i), upper: take(upper, 0, i), lower: take(lower, 0, i)}
 }
-def u:square_commutes(top, right, left, bottom, xs) { "Compute square commutes for this executable category-theory example.";
+def u:square_commutes(top, right, left, bottom, xs) {
+  "Compute square commutes for this executable category-theory example.";
   1 - u:square_counterexample(top, right, left, bottom, xs).found
 }
 
 # Concrete value-level products. The universal-property check says a proposed
 # mediator is forced to be the pair when both projections have the right value.
-def u:pair(a, b) { "Compute pair for this executable category-theory example.";  {first: a, second: b} }
-def u:first_projection(p) { "Compute first projection for this executable category-theory example.";  p.first }
-def u:second_projection(p) { "Compute second projection for this executable category-theory example.";  p.second }
-def u:product_factor(a, b, candidate) { "Compute product factor for this executable category-theory example.";
+def u:pair(a, b) {
+  "Compute pair for this executable category-theory example.";
+  {first: a, second: b}
+}
+def u:first_projection(p) {
+  "Compute first projection for this executable category-theory example.";
+  p.first
+}
+def u:second_projection(p) {
+  "Compute second projection for this executable category-theory example.";
+  p.second
+}
+def u:product_factor(a, b, candidate) {
+  "Compute product factor for this executable category-theory example.";
   {commutes: equal(u:first_projection(candidate), a) * equal(u:second_projection(candidate), b), unique: equal(candidate, u:pair(a, b))}
 }
 
 # Concrete value-level coproducts. Tags are manually checked records: MLPL
 # does not provide statically exhaustive algebraic data types.
-def u:left_value(x) { "Compute left value for this executable category-theory example.";  {tag: "left", value: x} }
-def u:right_value(x) { "Compute right value for this executable category-theory example.";  {tag: "right", value: x} }
-def u:copair(v, on_left, on_right) { "Compute copair for this executable category-theory example.";
+def u:left_value(x) {
+  "Compute left value for this executable category-theory example.";
+  {tag: "left", value: x}
+}
+def u:right_value(x) {
+  "Compute right value for this executable category-theory example.";
+  {tag: "right", value: x}
+}
+def u:copair(v, on_left, on_right) {
+  "Compute copair for this executable category-theory example.";
   if equal(v.tag, "left") { u:apply(on_left, v.value) } else { u:apply(on_right, v.value) }
 }
-def u:coproduct_agrees(on_left, on_right, left_inputs, right_inputs, candidate_left, candidate_right) { "Compute coproduct agrees for this executable category-theory example.";
+def u:coproduct_agrees(on_left, on_right, left_inputs, right_inputs, candidate_left, candidate_right) {
+  "Compute coproduct agrees for this executable category-theory example.";
   canonical_left = each(on_left, left_inputs)
   canonical_right = each(on_right, right_inputs)
   {commutes: equal(canonical_left, candidate_left) * equal(canonical_right, candidate_right), unique: equal(canonical_left, candidate_left) * equal(canonical_right, candidate_right)}
 }
 
 # Arrays as one concrete functor: lift a scalar function with each.
-def u:array_map(f, xs) { "Compute array map for this executable category-theory example.";  each(f, xs) }
-def u:array_functor_identity(xs) { "Compute array functor identity for this executable category-theory example.";  equal(u:array_map(:u:identity, xs), xs) }
-def u:array_functor_composition(f, g, composed, xs) { "Compute array functor composition for this executable category-theory example.";
+def u:array_map(f, xs) {
+  "Compute array map for this executable category-theory example.";
+  each(f, xs)
+}
+def u:array_functor_identity(xs) {
+  "Compute array functor identity for this executable category-theory example.";
+  equal(u:array_map(:u:identity, xs), xs)
+}
+def u:array_functor_composition(f, g, composed, xs) {
+  "Compute array functor composition for this executable category-theory example.";
   equal(u:array_map(g, u:array_map(f, xs)), u:array_map(composed, xs))
 }
-def u:array_map_counterexample(expected, actual) { "Compute array map counterexample for this executable category-theory example.";
+def u:array_map_counterexample(expected, actual) {
+  "Compute array map counterexample for this executable category-theory example.";
   agree = eq(flatten(expected), flatten(actual))
   found = 1 - reduce(:and, agree)
   i = take(grade_up(agree), 0, 0) * found
@@ -81,10 +132,20 @@ def u:array_map_counterexample(expected, actual) { "Compute array map counterexa
 
 # A concrete natural transformation: transpose commutes with every cellwise
 # map. The two routes are transpose(map(f,m)) and map(f,transpose(m)).
-def u:transpose_after_map(f, m) { "Compute transpose after map for this executable category-theory example.";  transpose(each(f, m)) }
-def u:map_after_transpose(f, m) { "Compute map after transpose for this executable category-theory example.";  each(f, transpose(m)) }
-def u:transpose_natural(f, m) { "Compute transpose natural for this executable category-theory example.";  equal(u:transpose_after_map(f, m), u:map_after_transpose(f, m)) }
-def u:naturality_counterexample(f, component, m) { "Compute naturality counterexample for this executable category-theory example.";
+def u:transpose_after_map(f, m) {
+  "Compute transpose after map for this executable category-theory example.";
+  transpose(each(f, m))
+}
+def u:map_after_transpose(f, m) {
+  "Compute map after transpose for this executable category-theory example.";
+  each(f, transpose(m))
+}
+def u:transpose_natural(f, m) {
+  "Compute transpose natural for this executable category-theory example.";
+  equal(u:transpose_after_map(f, m), u:map_after_transpose(f, m))
+}
+def u:naturality_counterexample(f, component, m) {
+  "Compute naturality counterexample for this executable category-theory example.";
   upper = call(component, [each(f, m)])
   lower = each(f, call(component, [m]))
   u:array_map_counterexample(upper, lower)
@@ -93,21 +154,63 @@ def u:naturality_counterexample(f, component, m) { "Compute naturality counterex
 # Homomorphism checker copied and attributed from
 # ../demo-abstract-algebra/lib/algebra.mlpl (verified 2026-08-12). Kept local so
 # standalone demo repositories have no runtime cross-repository dependency.
-def u:apply_names(t, p) { "Compute apply names for this executable category-theory example.";  reshape(gather_rows(reshape(p, [tally(p), 1]), flatten(t)), shape(t)) }
-def u:gather_table_axes(t, idx) { "Compute gather table axes for this executable category-theory example.";  transpose(gather_rows(transpose(gather_rows(t, idx)), idx)) }
-def u:homomorphism_left_side(f, s) { "Compute homomorphism left side for this executable category-theory example.";  u:apply_names(s, f) }
-def u:homomorphism_right_side(f, t) { "Compute homomorphism right side for this executable category-theory example.";  u:gather_table_axes(t, f) }
-def u:is_homomorphism(f, s, t) { "Compute is homomorphism for this executable category-theory example.";  equal(u:homomorphism_left_side(f, s), u:homomorphism_right_side(f, t)) }
-def u:compose_maps(f, g) { "Compute compose maps for this executable category-theory example.";  flatten(gather_rows(reshape(g, [tally(g), 1]), f)) }
+def u:apply_names(t, p) {
+  "Compute apply names for this executable category-theory example.";
+  reshape(gather_rows(reshape(p, [tally(p), 1]), flatten(t)), shape(t))
+}
+def u:gather_table_axes(t, idx) {
+  "Compute gather table axes for this executable category-theory example.";
+  transpose(gather_rows(transpose(gather_rows(t, idx)), idx))
+}
+def u:homomorphism_left_side(f, s) {
+  "Compute homomorphism left side for this executable category-theory example.";
+  u:apply_names(s, f)
+}
+def u:homomorphism_right_side(f, t) {
+  "Compute homomorphism right side for this executable category-theory example.";
+  u:gather_table_axes(t, f)
+}
+def u:is_homomorphism(f, s, t) {
+  "Compute is homomorphism for this executable category-theory example.";
+  equal(u:homomorphism_left_side(f, s), u:homomorphism_right_side(f, t))
+}
+def u:compose_maps(f, g) {
+  "Compute compose maps for this executable category-theory example.";
+  flatten(gather_rows(reshape(g, [tally(g), 1]), f))
+}
 
-def u:composition_leaf(arrow_name, arrow_function) { "Represent one named morphism as a leaf in an executable composition tree."; {tag: "leaf", name: arrow_name, arrow: arrow_function, first: 0, second: 0} }
-def u:compose_expressions(first_expression, second_expression) { "Construct a composition node that executes the first expression and then the second."; {tag: "compose", name: "compose", arrow: :u:identity, first: first_expression, second: second_expression} }
-def u:evaluate_composition(expression, input_value) { "Evaluate a composition tree while preserving its explicit parenthesized structure."; if equal(expression.tag, "leaf") { u:apply(expression.arrow, input_value) } else { u:evaluate_composition(expression.second, u:evaluate_composition(expression.first, input_value)) } }
-def u:identity_map(n) { "Compute identity map for this executable category-theory example.";  range(n) }
+def u:composition_leaf(arrow_name, arrow_function) {
+  "Represent one named morphism as a leaf in an executable composition tree.";
+  {tag: "leaf", name: arrow_name, arrow: arrow_function, first: 0, second: 0}
+}
+def u:compose_expressions(first_expression, second_expression) {
+  "Construct a composition node that executes the first expression and then the second.";
+  {tag: "compose", name: "compose", arrow: :u:identity, first: first_expression, second: second_expression}
+}
+def u:evaluate_composition(expression, input_value) {
+  "Evaluate a composition tree while preserving its explicit parenthesized structure.";
+  if equal(expression.tag, "leaf") { u:apply(expression.arrow, input_value) } else { u:evaluate_composition(expression.second, u:evaluate_composition(expression.first, input_value)) }
+}
+def u:identity_map(n) {
+  "Compute identity map for this executable category-theory example.";
+  range(n)
+}
 
 # Four-leaf reduction trees make reassociation visible without teaching the
 # algebra ladder again. Equality licenses regrouping; inequality forbids it.
-def u:sum_left4(xs) { "Compute sum left4 for this executable category-theory example.";  ((take(xs, 0, 0) + take(xs, 0, 1)) + take(xs, 0, 2)) + take(xs, 0, 3) }
-def u:sum_tree4(xs) { "Compute sum tree4 for this executable category-theory example.";  (take(xs, 0, 0) + take(xs, 0, 1)) + (take(xs, 0, 2) + take(xs, 0, 3)) }
-def u:subtract_left4(xs) { "Compute subtract left4 for this executable category-theory example.";  ((take(xs, 0, 0) - take(xs, 0, 1)) - take(xs, 0, 2)) - take(xs, 0, 3) }
-def u:subtract_tree4(xs) { "Compute subtract tree4 for this executable category-theory example.";  (take(xs, 0, 0) - take(xs, 0, 1)) - (take(xs, 0, 2) - take(xs, 0, 3)) }
+def u:sum_left4(xs) {
+  "Compute sum left4 for this executable category-theory example.";
+  ((take(xs, 0, 0) + take(xs, 0, 1)) + take(xs, 0, 2)) + take(xs, 0, 3)
+}
+def u:sum_tree4(xs) {
+  "Compute sum tree4 for this executable category-theory example.";
+  (take(xs, 0, 0) + take(xs, 0, 1)) + (take(xs, 0, 2) + take(xs, 0, 3))
+}
+def u:subtract_left4(xs) {
+  "Compute subtract left4 for this executable category-theory example.";
+  ((take(xs, 0, 0) - take(xs, 0, 1)) - take(xs, 0, 2)) - take(xs, 0, 3)
+}
+def u:subtract_tree4(xs) {
+  "Compute subtract tree4 for this executable category-theory example.";
+  (take(xs, 0, 0) - take(xs, 0, 1)) - (take(xs, 0, 2) - take(xs, 0, 3))
+}

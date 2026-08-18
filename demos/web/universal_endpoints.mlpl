@@ -6,7 +6,18 @@
 # * Initial sends one arrow, terminal receives one, and zero does both.
 # ***************************************************************************
 ;
-def u:endpoint_count(source_size, target_size) { "Count the endpoint function fixtures."; if equal(source_size, 0) { 1 } else { if equal(target_size, 1) { 1 } else { target_size } } }  # bounded counts
+def u:endpoint_count(source_size, target_size) {
+  "Count the endpoint function fixtures.";
+  if equal(source_size, 0) {
+    1
+  } else {
+    if equal(target_size, 1) {
+      1
+    } else {
+      target_size
+    }
+  }
+}  # bounded counts
 empty_to_three = u:endpoint_count(0, 3)  # unique initial arrow
 three_to_singleton = u:endpoint_count(3, 1)  # unique terminal arrow
 singleton_to_two = u:endpoint_count(1, 2)  # two arrows, so not initial
@@ -19,7 +30,10 @@ disp([equal(zero_row, [1, 1]), equal(zero_column, [1, 1])])  # zero object
 # * THE VISUAL
 # * Green unique arrows define the endpoints; red warns that FinSet has no zero.
 # ***************************************************************************
-def u:universal_endpoints_visual() { "Render the directed SVG witness for this lesson categorical law."; "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 840 290\" width=\"840\" height=\"290\" role=\"img\"><title>initial, terminal, and zero objects</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.bad{stroke-dasharray:10 7;stroke:rgb(247,118,142)}.token{fill:rgb(247,118,142);animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(150px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(150px)}}</style><rect width=\"840\" height=\"290\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"25\" y=\"45\" width=\"145\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"330\" y=\"45\" width=\"145\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"670\" y=\"45\" width=\"145\" height=\"65\" rx=\"12\"/><line class=\"arrow\" x1=\"170\" y1=\"77\" x2=\"330\" y2=\"77\"/><line class=\"arrow\" x1=\"475\" y1=\"77\" x2=\"670\" y2=\"77\"/><text x=\"98\" y=\"84\" text-anchor=\"middle\">empty initial</text><text x=\"402\" y=\"84\" text-anchor=\"middle\">finite X</text><text x=\"742\" y=\"84\" text-anchor=\"middle\">one terminal</text><rect class=\"obj\" x=\"150\" y=\"185\" width=\"180\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"510\" y=\"185\" width=\"180\" height=\"65\" rx=\"12\"/><line class=\"arrow\" x1=\"330\" y1=\"205\" x2=\"510\" y2=\"205\"/><line class=\"arrow bad\" x1=\"510\" y1=\"235\" x2=\"330\" y2=\"235\"/><text x=\"240\" y=\"225\" text-anchor=\"middle\">pointed zero</text><text x=\"600\" y=\"225\" text-anchor=\"middle\">object A</text><circle class=\"token\" cx=\"150\" cy=\"97\" r=\"9\"/></svg>" }  # named custom visual
+def u:universal_endpoints_visual() {
+  "Render the directed SVG witness for this lesson categorical law.";
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 840 290\" width=\"840\" height=\"290\" role=\"img\"><title>initial, terminal, and zero objects</title><desc>Blue outlined containers are categorical objects; labeled directed arrows are morphisms; circular tokens are elements. Dashed paths and COUNTEREXAMPLE labels mark failures without relying on color.</desc><defs><marker id=\"arrowhead\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M 0 0 L 10 5 L 0 10 z\" fill=\"context-stroke\"/></marker></defs><style>text{font-family:monospace;fill:rgb(192,202,245)}.obj{fill:rgb(31,35,53);stroke:rgb(122,162,247);stroke-width:3}.arrow{marker-end:url(\\23 arrowhead);stroke:rgb(158,206,106);stroke-width:4}.bad{stroke-dasharray:10 7;stroke:rgb(247,118,142)}.token{fill:rgb(247,118,142);animation:p 3s infinite alternate}@keyframes p{to{transform:translateX(150px)}}@media(prefers-reduced-motion:reduce){.token{animation:none;transform:translateX(150px)}}</style><rect width=\"840\" height=\"290\" fill=\"rgb(26,27,38)\"/><rect class=\"obj\" x=\"25\" y=\"45\" width=\"145\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"330\" y=\"45\" width=\"145\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"670\" y=\"45\" width=\"145\" height=\"65\" rx=\"12\"/><line class=\"arrow\" x1=\"170\" y1=\"77\" x2=\"330\" y2=\"77\"/><line class=\"arrow\" x1=\"475\" y1=\"77\" x2=\"670\" y2=\"77\"/><text x=\"98\" y=\"84\" text-anchor=\"middle\">empty initial</text><text x=\"402\" y=\"84\" text-anchor=\"middle\">finite X</text><text x=\"742\" y=\"84\" text-anchor=\"middle\">one terminal</text><rect class=\"obj\" x=\"150\" y=\"185\" width=\"180\" height=\"65\" rx=\"12\"/><rect class=\"obj\" x=\"510\" y=\"185\" width=\"180\" height=\"65\" rx=\"12\"/><line class=\"arrow\" x1=\"330\" y1=\"205\" x2=\"510\" y2=\"205\"/><line class=\"arrow bad\" x1=\"510\" y1=\"235\" x2=\"330\" y2=\"235\"/><text x=\"240\" y=\"225\" text-anchor=\"middle\">pointed zero</text><text x=\"600\" y=\"225\" text-anchor=\"middle\">object A</text><circle class=\"token\" cx=\"150\" cy=\"97\" r=\"9\"/></svg>"
+}  # named custom visual
 universal_endpoints_visual = u:universal_endpoints_visual()  # bind visual constant
 universal_endpoints_visual  # display bound visual once
 # ***************************************************************************
